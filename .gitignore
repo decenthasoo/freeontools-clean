@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# Environment files
+.env
+*.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files (VS Code, etc.)
+.vscode/
+.idea/
+
+# Frontend cache
+dist/
+build/
