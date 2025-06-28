@@ -1,0 +1,596 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Tip Calculator - Free & Fast Bill Splitting Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Tip Calculator is a free & fast way to split tips and calculate total bills. Simple, accurate, and no sign-up required." name="description">
+<meta content="Tip Calculator, split bill calculator, tip splitter, restaurant tip calculator, how to calculate tips, fast tip calculator" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/tip-calculator" rel="canonical"/>
+<meta content="Tip Calculator - Free & Fast Bill Splitting Tool" property="og:title"/>
+<meta content="Easily split tips and calculate final bills with this free &amp; fast tip calculator. No ads, no login. Just accurate results in seconds." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/assets/tip-calculator-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Tip Calculator - Free &amp; Fast Bill Splitting Tool" name="twitter:title"/>
+<meta content="Quickly find out how much to tip and split the bill with this easy-to-use, free online tip calculator." name="twitter:description"/>
+<meta content="https://www.freeontools.com/assets/tip-calculator-preview.png" name="twitter:image"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/assets/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontoolstools",
+    "https://www.linkedin.com/company/freeontools"
+  ]
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Tip Calculator",
+  "url": "https://www.freeontools.com",
+  "image": "https://www.freeontools.com/assets/tip-calculator-preview.png",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Tip Calculator"
+  },
+  "ratingValue": "4.8",
+  "bestRating": "5",
+  "ratingCount": "987"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Carlos M."
+  },
+  "datePublished": "2025-05-05",
+  "reviewBody": "This tip calculator is a must-have when eating out. Super fast, works on my phone, and no clutter. Love how simple it is!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Tip Calculator"
+  }
+}
+  </script>
+<style>
+        /* Body styling */
+   body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        /* Header styling */
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        /* Header styling */
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            color: #666;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding-bottom: 20px;
+        }
+        /* Container styling */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        /* Container styling */
+        .content-container {
+            background-color: #fff;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+        }
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          text-align: left !important;
+}
+        /* Container styling */
+        .content-container p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        /* Form element styling */
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        /* Form element styling */
+        form input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .tip-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .tip-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #eee;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .tip-btn.active {
+            background-color: #f28c38;
+            color: #fff;
+        }
+        #custom-tip {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        #calculate {
+            width: 100%;
+            padding: 15px;
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        #results {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #results p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+            .tip-options {
+                flex-direction: column;
+            }
+            .tip-btn {
+                margin-bottom: 10px;
+            }
+        /* Container styling */
+            .container {
+                width: 95%;
+            }
+        /* Container styling */
+            .content-container {
+                width: 95%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        /* Header styling */
+            header h1 {
+                font-size: 2em;
+            }
+        /* Header styling */
+            header p {
+                font-size: 1em;
+            }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Tip Calculator
+   </h1>
+<p>
+    Calculate your tip easily and split the bill among friends.
+   </p>
+</header>
+<main>
+<!-- Main content container -->
+<div class="container">
+<!-- User input form -->
+<form id="tip-form">
+<label for="bill">
+      Bill Amount:
+     </label>
+<input id="bill" min="0.01" name="bill" placeholder="Enter bill amount" required="" step="0.01" type="number"/>
+<label for="tip-percentage">
+      Tip Percentage:
+     </label>
+<div class="tip-options">
+<button class="tip-btn" data-tip="10" type="button">
+       10%
+      </button>
+<button class="tip-btn" data-tip="15" type="button">
+       15%
+      </button>
+<button class="tip-btn" data-tip="20" type="button">
+       20%
+      </button>
+</div>
+<input id="custom-tip" min="0" placeholder="Custom tip %" step="0.01" type="number"/>
+<label for="people">
+      Number of People:
+     </label>
+<input id="people" min="1" name="people" placeholder="Number of people" step="1" type="number" value="1"/>
+<button id="calculate" type="submit">
+      Calculate
+     </button>
+</form>
+<div id="results">
+<p>
+      Total Tip:
+      <span id="total-tip">
+</span>
+</p>
+<p>
+      Tip per Person:
+      <span id="tip-per-person">
+</span>
+</p>
+<p>
+      Total per Person:
+      <span id="total-per-person">
+</span>
+</p>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What Is a Tip Calculator?
+    </h2>
+<p>
+     A Tip Calculator is a handy tool that helps you figure out how much to tip when you're at a restaurant, bar, or anywhere service is involved. You simply enter your total bill and the percentage you want to tip, and the tool instantly tells you how much to leave. Whether you’re tipping 15%, 20%, or even 25%, this tool does all the math so you don’t have to.
+    </p>
+<p>
+     No more awkwardly calculating tips in your head while the waiter’s waiting for you to sign the bill. This tool has got you covered!
+    </p>
+<h3>
+     Try Our Tip Calculator Now
+    </h3>
+<p>
+     Want to know exactly how much to tip? Just plug in your bill total and the percentage you want to tip, and let the tool handle the math. It’s fast, simple, and accurate—no guesswork needed!
+    </p>
+<h3>
+     Why Use a Tip Calculator?
+    </h3>
+<p>
+     Here’s why a Tip Calculator is a must-have:
+    </p>
+<ul>
+<li>
+      Saves time – You don’t have to manually calculate the tip or do the math in your head. Just enter your bill, and you’re done!
+     </li>
+<li>
+      No mistakes – Ever calculated a tip wrong? This tool ensures you get the exact amount every time.
+     </li>
+<li>
+      Customizable – Whether you want to leave a 10%, 15%, 20%, or even a custom tip percentage, you can adjust it based on your preference.
+     </li>
+<li>
+      Great for group dining – If you’re splitting a bill with friends or family, the tool can even calculate your share of the tip.
+     </li>
+<li>
+      Ideal for tipping in different countries – Tipping practices vary around the world, and this tool helps you calculate the right tip for the local custom.
+     </li>
+</ul>
+<p>
+     No more mental math—just use this tool, and you’ll always know exactly how much to leave as a tip!
+    </p>
+<h3>
+     Features of the Tip Calculator
+    </h3>
+<p>
+     Why is the Tip Calculator so useful? Here are its top features:
+    </p>
+<ul>
+<li>
+      Quick and easy to use – Just enter the bill amount and tip percentage. No complicated steps.
+     </li>
+<li>
+      Custom tip percentages – You can choose from a range of percentages or input your own to fit the situation.
+     </li>
+<li>
+      Splits the tip – If you’re dining with a group, you can even split the tip among everyone.
+     </li>
+<li>
+      Instant results – Get your tip amount instantly, along with your total to pay.
+     </li>
+<li>
+      No sign-ups needed – Just open the tool, input your numbers, and get going.
+     </li>
+<li>
+      Free and accessible – No hidden costs—just a free, easy-to-use tool that’s available online.
+     </li>
+</ul>
+<h3>
+     How to Use the Tip Calculator
+    </h3>
+<p>
+     Ready to calculate the tip? Here’s how to use the Tip Calculator:
+    </p>
+<ol>
+<li>
+      Open the Tip Calculator tool.
+     </li>
+<li>
+      Enter your total bill amount (before tax and tip).
+     </li>
+<li>
+      Choose the tip percentage (like 15%, 20%, or input your custom amount).
+     </li>
+<li>
+      Hit the "Calculate" button.
+     </li>
+<li>
+      Voila! You’ll get the tip amount and your final total (including the tip).
+     </li>
+</ol>
+<p>
+     Pro tip: If you’re splitting the bill with friends, just enter the number of people, and the tool will divide the tip evenly for you.
+    </p>
+<h3>
+     Why Choose This Tip Calculator?
+    </h3>
+<p>
+     Here’s why this tool is a game-changer for tipping:
+    </p>
+<ul>
+<li>
+      Super fast and simple – Enter the numbers, hit calculate, and you’re done.
+     </li>
+<li>
+      Accurate and reliable – You’ll never make a tip calculation error again.
+     </li>
+<li>
+      Customizable – Whether you’re tipping 10%, 20%, or just want to figure out a specific amount, this tool works for every situation.
+     </li>
+<li>
+      Perfect for group dining – It’s great for splitting the bill and calculating each person’s share of the tip.
+     </li>
+<li>
+      Free and online – You don’t need to download anything. Just use it on your phone, tablet, or computer.
+     </li>
+<li>
+      No sign-up required – Just type and go!
+     </li>
+</ul>
+<p>
+     If you want to make tipping a breeze, this tool is your new best friend.
+    </p>
+<h3>
+     FAQs About the Tip Calculator
+    </h3>
+<p>
+<strong>
+      How do I use the Tip Calculator?
+     </strong>
+<br/>
+     It’s super simple! Just enter your bill total, choose your tip percentage, and hit calculate. The tool will tell you exactly how muchව
+     <p>
+<strong>
+       Can I customize the tip percentage?
+      </strong>
+<br/>
+      Yes! You can choose from common percentages (like 15%, 20%, etc.), or you can enter a custom percentage based on your preference.
+     </p>
+<p>
+<strong>
+       Can I split the tip between multiple people?
+      </strong>
+<br/>
+      Absolutely! If you're dining with a group, you can enter the number of people, and the tool will divide the tip equally.
+     </p>
+<p>
+<strong>
+       Does the calculator include tax?
+      </strong>
+<br/>
+      No, the calculator just works off the total bill amount before tax. If you want to calculate your tip including tax, make sure to add the tax to your total before using the calculator.
+     </p>
+<p>
+<strong>
+       Is the Tip Calculator free?
+      </strong>
+<br/>
+      Yes, the Tip Calculator is totally free to use! No sign-up, no hidden charges—just a helpful, fast tool for anyone who needs to calculate tips.
+     </p>
+<h3>
+      Wrap-Up: Tip Like a Pro
+     </h3>
+<p>
+      The Tip Calculator is your go-to tool for figuring out exactly how much to tip in any situation. It’s fast, reliable, and super easy to use—no math skills required. Whether you're dining out, having a drink at a bar, or even dealing with a delivery service, this tool will help you calculate the tip in seconds.
+     </p>
+<p>
+      So next time you’re ready to leave a tip, just use this tool and be confident you’ve got the right amount.
+     </p>
+</p>
+</div>
+</main>
+<script>
+        // DOM element manipulation
+   const form = document.getElementById('tip-form');
+        // DOM element manipulation
+        const billInput = document.getElementById('bill');
+        // DOM element manipulation
+        const customTipInput = document.getElementById('custom-tip');
+        // DOM element manipulation
+        const peopleInput = document.getElementById('people');
+        // DOM element manipulation
+        const totalTipSpan = document.getElementById('total-tip');
+        // DOM element manipulation
+        const tipPerPersonSpan = document.getElementById('tip-per-person');
+        // DOM element manipulation
+        const totalPerPersonSpan = document.getElementById('total-per-person');
+        // DOM element manipulation
+        const tipButtons = document.querySelectorAll('.tip-btn');
+        
+        let selectedTip = 0;
+        
+        tipButtons.forEach(button => {
+        // Event listener for user interactions
+            button.addEventListener('click', () => {
+                tipButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                selectedTip = parseFloat(button.dataset.tip);
+                customTipInput.value = '';
+            });
+        });
+        
+        // Event listener for user interactions
+        customTipInput.addEventListener('input', () => {
+            if (customTipInput.value) {
+                tipButtons.forEach(btn => btn.classList.remove('active'));
+                selectedTip = parseFloat(customTipInput.value);
+            }
+        });
+        
+        // Event listener for user interactions
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const bill = parseFloat(billInput.value);
+            const people = parseInt(peopleInput.value);
+            let tipPercentage = selectedTip;
+            
+            if (customTipInput.value) {
+                tipPercentage = parseFloat(customTipInput.value);
+            }
+            
+            if (isNaN(bill) || bill <= 0) {
+                alert('Please enter a valid bill amount.');
+                return;
+            }
+            
+            if (isNaN(tipPercentage) || tipPercentage < 0) {
+                alert('Please enter a valid tip percentage.');
+                return;
+            }
+            
+            if (isNaN(people) || people < 1) {
+                alert('Please enter a valid number of people.');
+                return;
+            }
+            
+            const totalTip = bill * (tipPercentage / 100);
+            const tipPerPerson = totalTip / people;
+            const totalPerPerson = (bill / people) + tipPerPerson;
+            
+            totalTipSpan.textContent = totalTip.toFixed(2);
+            tipPerPersonSpan.textContent = tipPerPerson.toFixed(2);
+            totalPerPersonSpan.textContent = totalPerPerson.toFixed(2);
+            
+        // DOM element manipulation
+            document.getElementById('results').style.display = 'block';
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

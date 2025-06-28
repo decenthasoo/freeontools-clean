@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tutorials - Free On Tools</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <meta name="description" content="Tutorials for Free On Tools - Learn how to use our 200+ free online tools, from SEO to image editing, with easy guides."/>
+    <meta name="keywords" content="Tutorials, Free On Tools, Online Tools, Meta Tag Generator, Image Brightness Adjuster, YouTube Thumbnail Downloader, Word Counter"/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://www.freeontools.com/tutorials"/>
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Tutorials - Free On Tools"/>
+    <meta property="og:description" content="Tutorials for Free On Tools - Learn how to use our 200+ free online tools with easy guides."/>
+    <meta property="og:image" content="https://www.freeontools.com/images/logo.png"/>
+    <meta property="og:url" content="https://www.freeontools.com/tutorials"/>
+    <meta property="og:type" content="website"/>
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:title" content="Tutorials - Free On Tools"/>
+    <meta name="twitter:description" content="Tutorials for Free On Tools - Learn how to use our 200+ free online tools with easy guides."/>
+    <meta name="twitter:image" content="https://www.freeontools.com/images/logo.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Free On Tools",
+        "url": "https://www.freeontools.com",
+        "logo": "https://www.freeontools.com/images/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/Freeontools",
+            "https://twitter.com/Freeontools",
+            "https://www.instagram.com/Freeontools"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@freeontools.com",
+            "contactType": "Customer Service"
+        }
+    }
+    </script>
+    <style>
+        /* Reuse styles from your tool page for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f0f2f5;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+        }
+        .hero {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background: linear-gradient(135deg, #f28c38 0%, #d97a2e 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem;
+            width: 100%;
+            margin-top: -35px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            padding: 0.6rem 0;
+            background: #f0f2f5;
+            margin-top: -55px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+        h2 {
+            color: #222;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .content-container {
+            background: white;
+            padding: 1.5rem 30px;
+            border-radius: 10px;
+            margin-top: 1.2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .content-container:hover {
+            transform: translateY(-5px);
+        }
+        .content-container p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+            text-align: left;
+        }
+        .content-container a {
+            color: #f28c38;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .content-container a:hover {
+            color: #d97a2e;
+            text-decoration: underline;
+        }
+        .contact-info {
+            background: #f0f2f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .contact-info i {
+            color: #f28c38;
+            margin-right: 0.5rem;
+        }
+        /* Accordion Styles */
+        .accordion {
+            margin-bottom: 1rem;
+        }
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+        .accordion-header {
+            background: #f9f9f9;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        .accordion-header:hover {
+            background: #f1f1f1;
+        }
+        .accordion-header i {
+            color: #f28c38;
+            transition: transform 0.3s ease;
+        }
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            font-size: 1rem;
+            color: #555;
+        }
+        .accordion-content.active {
+            display: block;
+        }
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .content-container {
+                padding: 1rem 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.3rem;
+            }
+            header {
+                padding: 0.5rem 0;
+                margin-bottom: 0.5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .accordion-header {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .content-container {
+                padding: 0.7rem 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+            .accordion-header {
+                font-size: 0.95rem;
+            }
+            p {
+                font-size: 0.85rem;
+            }
+            .content-container {
+                padding: 0.5rem 10px;
+            }
+            .contact-info {
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <header>
+        <div class="hero">
+            <h1>Tutorials</h1>
+            <p>Learn how to use our 200+ free tools with quick, easy guides—no stress!</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content-container">
+            <h2>Tutorials for Your Tools Hub</h2>
+            <p>Yo, ready to rock our tools? Let’s nerd out with some quick tutorials, like we’re chilling over pizza.</p>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" aria-expanded="false" aria-controls="tutorial1">
+                        How to Use the Meta Tag Generator (SEO & Marketing Tools)
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content" id="tutorial1">
+                        <p>Wanna boost your site’s SEO? The <a href="Tools/meta-tag-generator.html">Meta Tag Generator</a> is your jam. Head to the tool on <a href="https://www.freeontools.com">https://www.freeontools.com</a>. Toss in your website’s URL or paste some content. Write a title—short, punchy, under 60 characters. Add a description, like 160 characters, crammed with keywords. Throw in tags—“SEO,” “blog,” whatever’s vibing. Click generate, and boom! Copy-paste those meta tags into your site’s HTML. No coding guru? Chill, it’s easy. Wanna climb Google ranks? Do this. Screw up? Try again, it’s free. Stuck? Hit us at <a href="mailto:contact@freeontools.com">contact@freeontools.com</a>.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" aria-expanded="false" aria-controls="tutorial2">
+                        How to Brighten Images with the Image Brightness Adjuster (Image & Design Tools)
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content" id="tutorial2">
+                        <p>Got a gloomy pic? The <a href="Tools/image-brightness-adjuster.html">Image Brightness Adjuster</a> saves the day. Find the tool, click “Upload Image.” Pick a JPG or PNG—drag-and-drop’s cool too. Slide the brightness bar up to make it shine. Need it darker? Slide down. Tweak contrast for extra flair. Like it? Hit “Download.” Don’t overdo it, or it’s neon city. Works on your phone, so edit anywhere. Glitches? Ugh, tech life—email <a href="mailto:contact@freeontools.com">contact@freeontools.com</a>. Free, fast, no sign-up drama.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" aria-expanded="false" aria-controls="tutorial3">
+                        How to Grab a YouTube Thumbnail (Fun & Entertainment Tools)
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content" id="tutorial3">
+                        <p>Eyeing a YouTube thumbnail? Our <a href="Tools/youtube-thumbnail-downloader.html">YouTube Thumbnail Downloader</a> is clutch. Go to the tool, copy the video’s URL from your browser. Paste it, hit “Fetch.” Bam, thumbnail options—low-res, high-res, you pick. Click “Download,” and it’s yours. Use it for inspo, not sketchy stuff, ‘kay? Works for public videos. Super quick, no login. Wrong URL? Double-check or yell at us via <a href="mailto:contact@freeontools.com">contact@freeontools.com</a>. Go wild, stay legal.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" aria-expanded="false" aria-controls="tutorial4">
+                        How to Count Words with the Word Counter (Text & Content Tools)
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content" id="tutorial4">
+                        <p>Writing a blog and need a word count? The <a href="Tools/word-counter.html">Word Counter</a> is your pal. Open the tool, paste your text in the box—or type it fresh. Hit “Count,” and voila—word count, character count, even sentence count. Perfect for nailing that 500-word essay or tweet limit. Bloggers, students, anyone—this tool’s a lifesaver. Slow load? Try refreshing or ping <a href="mailto:contact@freeontools.com">contact@freeontools.com</a>. Free, no hassle, just results.</p>
+                    </div>
+                </div>
+            </div>
+            <p>More tutorials coming! We’re cooking up guides for <strong>Productivity Tools</strong>, <strong>Developer Tools</strong>, and more. Got a tool you’re lost on? Holler at <a href="mailto:contact@freeontools.com">contact@freeontools.com</a> or hit our <a href="https://www.freeontools.com/contact-us">Contact Us</a> page!</p>
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contact@freeontools.com">contact@freeontools.com</a></p>
+                <p><i class="fas fa-globe"></i>Website: <a href="https://www.freeontools.com">https://www.freeontools.com</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                const isActive = content.classList.contains('active');
+
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('i').classList.remove('active');
+                    item.previousElementSibling.setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle current accordion
+                if (!isActive) {
+                    content.classList.add('active');
+                    icon.classList.add('active');
+                    header.setAttribute('aria-expanded', 'true');
+                } else {
+                    content.classList.remove('active');
+                    icon.classList.remove('active');
+                    header.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+    <script src="../js/script.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

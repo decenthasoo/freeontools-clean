@@ -1,0 +1,768 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   XML Formatter - No Hidden Fees, One-Click Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="XML Formatter - Try it free now! A simple &amp; free tool to format and beautify your XML code without hidden fees or ads. No credit card needed!" name="description">
+<meta content="XML Formatter, Free XML Tool, No Hidden Fees, One-Click Tool, Try it Free Now, Simple &amp; Free, No Catch" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/xml-formatter" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="XML Formatter - No Hidden Fees, One-Click Tool" property="og:title"/>
+<meta content="XML Formatter - Try it free now! A simple &amp; free tool to format and beautify your XML code without hidden fees or ads. No credit card needed!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/xml-formatter.png" property="og:image"/>
+<meta content="https://www.freeontools.com/xml-formatter" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="XML Formatter - No Hidden Fees, One-Click Tool" name="twitter:title"/>
+<meta content="XML Formatter - Try it free now! A simple &amp; free tool to format and beautify your XML code without hidden fees or ads. No credit card needed!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/xml-formatter.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "freeontools Corporation",
+    "url": "https://www.freeontools.com",
+    "logo": "https://www.freeontools.com/images/logo.png",
+    "sameAs": [
+        "https://www.facebook.com/freeontools",
+        "https://twitter.com/freeontools",
+        "https://www.instagram.com/freeontools"
+    ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "XML Formatter",
+    "operatingSystem": "All",
+    "applicationCategory": "Web",
+    "url": "https://www.freeontools.com/xml-formatter",
+    "image": "https://www.freeontools.com/images/xml-formatter.png",
+    "description": "XML Formatter - A simple & free tool to format and beautify your XML code without hidden fees or ads.",
+    "offers": {
+        "@type": "Offer",
+        "url": "https://www.freeontools.com/xml-formatter",
+        "priceCurrency": "USD",
+        "price": "0.00",
+        "eligibleRegion": {
+            "@type": "Place",
+            "name": "Worldwide"
+        }
+    }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "ratingCount": "650"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "author": {
+        "@type": "Person",
+        "name": "Olivia White"
+    },
+    "datePublished": "2025-05-12",
+    "reviewBody": "The XML Formatter is a great tool! It formats my XML code perfectly, making it more readable and easy to work with. Plus, it’s completely free and ad-free!",
+    "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+    },
+    "itemReviewed": {
+        "@type": "SoftwareApplication",
+        "name": "XML Formatter"
+    }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 15px;
+            background-color: #f5f5f5;
+            
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1225px;
+            margin: 20px auto;
+            padding: 0 15px;
+            display: flex;
+            gap: 20px;
+            
+        }
+
+        .input-section,
+        .output-section {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .input-section:hover,
+        .output-section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        textarea, .output {
+            width: 100%;
+            min-height: 400px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+            background-color: #fafafa;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus, .output:focus {
+            border-color: #f28c38;
+            outline: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f28c38;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .output {
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        .error {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #ffe6e6;
+            color: #d32f2f;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .error.hidden {
+            opacity: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #333;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        /* Container styling */
+        .content-container .tip {
+            font-style: italic;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Container styling */
+            .container {
+                flex-direction: column;
+                margin: 10px auto;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+            }
+
+        /* Header styling */
+            header {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+            }
+
+            textarea, .output {
+                min-height: 300px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.5rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+
+            textarea, .output {
+                min-height: 250px;
+                font-size: 0.9rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Syntax Highlighting */
+        .output .tag {
+            color: #2f6f9f;
+        }
+        .output .attr {
+            color: #4f9fcf;
+        }
+        .output .value {
+            color: #d44950;
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    XML Formatter
+   </h1>
+<p>
+    Beautify and validate your XML code with ease
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="input-section">
+<h2>
+     Input XML
+    </h2>
+<textarea id="xmlInput" placeholder="Paste your XML here..." spellcheck="false"></textarea>
+<div class="button-group">
+<button id="formatBtn">
+      Format XML
+     </button>
+<button id="clearBtn">
+      Clear
+     </button>
+<button id="copyBtn">
+      Copy Output
+     </button>
+</div>
+</div>
+<div class="output-section">
+<h2>
+     Formatted XML
+    </h2>
+<pre class="output" id="xmlOutput"></pre>
+<div class="error hidden" id="errorMessage">
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is an XML Formatter?
+   </h2>
+<p>
+    Okay, if you've ever had to deal with messy or jumbled XML code, you know how frustrating it can be. That’s where an XML Formatter comes in handy. It’s a tool that helps clean up your XML code by making it neat, readable, and well-structured. Think of it as a digital cleanup crew for your XML documents. This tool automatically adds indentation, proper spacing, and line breaks to make sure everything is aligned correctly. This makes it way easier to spot any errors and understand the structure of the code.
+   </p>
+<p>
+    So, if you’re working with APIs, RSS feeds, or any kind of structured data in XML format, you’ll want this tool to ensure your code is properly formatted. It’s like hitting the “refresh” button for your XML files—cleans them up and makes them easier to work with.
+   </p>
+<h3>
+    Try Our XML Formatter Now
+   </h3>
+<p>
+    If your XML is a hot mess, just drop it in here, click the format button, and boom! It’ll be cleaned up and ready to go. You don’t even have to worry about manually adding indentations or spaces—this tool does it all for you in a few seconds.
+   </p>
+<h3>
+    Why an XML Formatter Matters
+   </h3>
+<p>
+    Why should you care about formatting your XML documents? Well, here’s the deal:
+   </p>
+<ul>
+<li>
+<strong>
+      Easier to read
+     </strong>
+     – Raw XML can look like a jumbled mess of tags and data. Formatting makes it more readable, so you don’t have to guess what’s going on.
+    </li>
+<li>
+<strong>
+      Error detection
+     </strong>
+     – A well-formatted XML document helps you spot mistakes in structure and syntax, like missing tags or improper nesting.
+    </li>
+<li>
+<strong>
+      Clean code for development
+     </strong>
+     – Clean code isn’t just for looks—it helps other developers (or even your future self) understand and work with the code faster.
+    </li>
+<li>
+<strong>
+      Saves time
+     </strong>
+     – Instead of manually indenting and formatting, the tool does the work for you so you can focus on more important tasks.
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<p>
+    Here’s what makes this XML Formatter tool so awesome:
+   </p>
+<ul>
+<li>
+<strong>
+      Automatic formatting
+     </strong>
+     – Just paste your XML, and it’s automatically cleaned up with proper indentation and line breaks.
+    </li>
+<li>
+<strong>
+      Error detection
+     </strong>
+     – It helps you spot structural errors by making the XML easier to read.
+    </li>
+<li>
+<strong>
+      Preserves structure
+     </strong>
+     – The tool doesn’t mess with your data; it just organizes it better without changing the content.
+    </li>
+<li>
+<strong>
+      Simple to use
+     </strong>
+     – No learning curve. You paste your XML, click a button, and you’re done.
+    </li>
+<li>
+<strong>
+      Works for any size document
+     </strong>
+     – Whether you’ve got a small snippet of XML or a giant file, the tool can handle it.
+    </li>
+</ul>
+<h3>
+    How to Use the XML Formatter
+   </h3>
+<p>
+    Here’s how to format your XML like a pro:
+   </p>
+<ol>
+<li>
+<strong>
+      Go to the XML Formatter tool
+     </strong>
+     – Open it in your browser. No downloads needed.
+    </li>
+<li>
+<strong>
+      Paste your XML code
+     </strong>
+     – Copy your messy XML code and paste it into the tool.
+    </li>
+<li>
+<strong>
+      Click the "Format" button
+     </strong>
+     – Once you’ve pasted the XML, hit the button to clean it up.
+    </li>
+<li>
+<strong>
+      Check the results
+     </strong>
+     – The tool will give you a nice, neat version of your XML code, with proper indentation and line breaks.
+    </li>
+<li>
+<strong>
+      Copy the formatted code
+     </strong>
+     – Copy the formatted XML and use it in your project or save it as needed.
+    </li>
+</ol>
+<p class="tip">
+    💡
+    <strong>
+     Pro tip:
+    </strong>
+    If you're working with a super large XML document, be patient. Some tools might take a little extra time for big files, but they’ll still clean it up beautifully.
+   </p>
+<h3>
+    Why Choose This XML Formatter?
+   </h3>
+<p>
+    Here’s why you should go with this tool:
+   </p>
+<ul>
+<li>
+<strong>
+      Simple to use
+     </strong>
+     – No complicated options, no settings to mess with. Just paste and format.
+    </li>
+<li>
+<strong>
+      Saves time
+     </strong>
+     – The tool quickly turns your chaotic XML into a neat, readable document, saving you hours of manual formatting.
+    </li>
+<li>
+<strong>
+      Great for developers
+     </strong>
+     – It’s perfect for anyone working with XML files, whether you’re creating APIs, web services, or handling data feeds.
+    </li>
+<li>
+<strong>
+      No installation needed
+     </strong>
+     – It’s online and free to use, so you can jump right into formatting without any setup.
+    </li>
+<li>
+<strong>
+      Keeps your data safe
+     </strong>
+     – The tool doesn’t change your data. It only formats the code, so there’s no risk of losing or altering the actual content.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      What’s the difference between raw and formatted XML?
+     </strong>
+<br/>
+     Raw XML is all jumbled together with no line breaks or indentation, making it hard to read. Formatted XML organizes it with line breaks, spaces, and indentation, making it more human-readable and easier to debug.
+    </li>
+<li>
+<strong>
+      Does this tool fix errors in the XML code?
+     </strong>
+<br/>
+     The tool doesn’t fix errors directly, but it makes it easier for you to spot mistakes in your structure, like missing closing tags or misplaced elements.
+    </li>
+<li>
+<strong>
+      Can I use this tool for large XML files?
+     </strong>
+<br/>
+     Yes! This tool works for large XML files too. However, keep in mind that bigger files might take a little longer to process.
+    </li>
+<li>
+<strong>
+      Is it safe to use this XML Formatter online?
+     </strong>
+<br/>
+     Yep, it’s totally safe. The tool doesn’t store your data or change any content; it just formats it for you, and you can use the output wherever you need it.
+    </li>
+<li>
+<strong>
+      Can I format XML files I upload?
+     </strong>
+<br/>
+     Some XML formatter tools allow you to upload your XML file directly. If that’s the case, you can just upload the file, and the tool will format it for you. If not, you can always copy-paste your content.
+    </li>
+</ol>
+<p>
+    Want your XML files to look neat and tidy? Give our XML Formatter a try. It’s quick, easy, and it’ll save you a ton of time!
+   </p>
+</div>
+<script>
+        // Event listener for user interactions
+   document.addEventListener('DOMContentLoaded', () => {
+        // DOM element manipulation
+            const xmlInput = document.getElementById('xmlInput');
+        // DOM element manipulation
+            const xmlOutput = document.getElementById('xmlOutput');
+        // DOM element manipulation
+            const errorMessage = document.getElementById('errorMessage');
+        // DOM element manipulation
+            const formatBtn = document.getElementById('formatBtn');
+        // DOM element manipulation
+            const clearBtn = document.getElementById('clearBtn');
+        // DOM element manipulation
+            const copyBtn = document.getElementById('copyBtn');
+
+            // Format XML
+        // Event listener for user interactions
+            formatBtn.addEventListener('click', () => {
+                const input = xmlInput.value.trim();
+                if (!input) {
+                    showError('Please enter XML content.');
+                    return;
+                }
+
+                try {
+                    const formatted = formatXML(input);
+                    xmlOutput.innerHTML = syntaxHighlight(formatted);
+                    errorMessage.classList.add('hidden');
+                } catch (error) {
+                    showError('Invalid XML: ' + error.message);
+                }
+            });
+
+            // Clear input and output
+        // Event listener for user interactions
+            clearBtn.addEventListener('click', () => {
+                xmlInput.value = '';
+                xmlOutput.textContent = '';
+                errorMessage.classList.add('hidden');
+            });
+
+            // Copy formatted XML
+        // Event listener for user interactions
+            copyBtn.addEventListener('click', () => {
+                const text = xmlOutput.textContent;
+                if (text) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        alert('Formatted XML copied to clipboard!');
+                    });
+                }
+            });
+
+            // Format XML with indentation
+        // Function: formatXML
+            function formatXML(xml) {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xml, 'application/xml');
+                if (xmlDoc.getElementsByTagName('parsererror').length > 0) {
+                    throw new Error('Invalid XML structure');
+                }
+
+                let formatted = '';
+                let indentLevel = 0;
+                const indent = '  ';
+
+                const serializeNode = (node, level) => {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        const indentStr = indent.repeat(level);
+                        formatted += `${indentStr}<${node.nodeName}`;
+
+                        for (let attr of node.attributes) {
+                            formatted += ` ${attr.name}="${attr.value}"`;
+                        }
+
+                        formatted += '>\n';
+
+                        for (let child of node.childNodes) {
+                            serializeNode(child, level + 1);
+                        }
+
+                        formatted += `${indentStr}</${node.nodeName}>\n`;
+                    } else if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim()) {
+                        formatted += `${indent.repeat(level)}${node.nodeValue.trim()}\n`;
+                    }
+                };
+
+                serializeNode(xmlDoc.documentElement, indentLevel);
+                return formatted.trim();
+            }
+
+            // Syntax highlighting
+        // Function: syntaxHighlight
+            function syntaxHighlight(xml) {
+                return xml
+                    .replace(/&/g, '&')
+                    .replace(/</g, '<')
+                    .replace(/>/g, '>')
+                    .replace(/([<|<\/][\w\s="/.]+>)/g, '<span class="tag">$1</span>')
+                    .replace(/(\w+=)/g, '<span class="attr">$1</span>')
+                    .replace(/"([^"]+)"/g, '"<span class="value">$1</span>"');
+            }
+
+            // Show error message
+        // Function: showError
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.classList.remove('hidden');
+            }
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

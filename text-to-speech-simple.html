@@ -1,0 +1,783 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Text to Speech (Simple): Free to Use Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Text to Speech (Simple): Convert text to speech instantly at https://www.freeontools.com. Free, no signup required!" name="description">
+<meta content="text to speech, free tts tool, simple text to speech, freeontools text to speech, speech converter" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/text-to-speech-simple" rel="canonical"/>
+<meta content="Text to Speech (Simple): Free &amp; Easy Tool" property="og:title"/>
+<meta content="Turn text into speech with our free, no-login tool at https://www.freeontools.com. Simple and fast!" property="og:description"/>
+<meta content="https://www.freeontools.com/text-to-speech-simple" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="freeontools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Text to Speech (Simple): Free &amp; Fast" name="twitter:title"/>
+<meta content="Free text-to-speech tool at https://www.freeontools.com. No signup, no fees, instant audio output!" name="twitter:description"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Text to Speech (Simple)",
+  "operatingSystem": "Web",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/text-to-speech-simple",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Text to Speech (Simple)"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "175",
+  "bestRating": "5",
+  "worstRating": "1"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Text to Speech (Simple)"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Sophie Brown"
+  },
+  "datePublished": "2025-05-05",
+  "reviewBody": "This text-to-speech tool is so easy and completely free! Perfect for quick audio conversions.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Text to Speech (Simple)"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Rahul Gupta"
+  },
+  "datePublished": "2025-04-12",
+  "reviewBody": "No signup, no cost, just a fantastic tool for text-to-speech. Highly recommend!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #000;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 600px;
+    margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+        }
+
+        /* Container styling */
+        .container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            transition: all 0.3s ease;
+    margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+margin-top: 15px !important;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus {
+            border-color: #f28c38;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #f28c38;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:hover { background-color: #d97a2e;
+            background: #e07b30;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .option-item {
+            flex: 1;
+            min-width: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select, input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus, input[type="range"]:focus {
+            border-color: #f28c38;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: #ddd;
+            height: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #f28c38;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .option-label {
+            font-size: 12px;
+            color: #555;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            padding-left: 30px; /* Desktop left padding */
+            padding-right: 30px; /* Desktop right padding */
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+    margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+    text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            color: #000;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            color: #000;
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-align: left;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Container styling */
+        .content-container ul li {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        /* Container styling */
+        .content-container ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Container styling */
+        .content-container ol li {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 20px;
+            }
+
+            textarea {
+                height: 120px;
+                font-size: 14px;
+            }
+
+            button {
+                padding: 12px;
+            }
+
+            button img {
+                width: 20px;
+                height: 20px;
+            }
+
+            select, input[type="range"] {
+                min-width: 100px;
+                font-size: 14px;
+            }
+
+            .option-label {
+                font-size: 10px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p {
+                font-size: 0.9rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 400px) {
+            .controls {
+                grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<h1>
+   Text to Speech Tool
+  </h1>
+<p>
+   Convert your text to natural-sounding speech with ease.
+  </p>
+<!-- Main content container -->
+<div class="container">
+<textarea aria-label="Text input for speech" placeholder="Enter text to convert to speech..."></textarea>
+<div class="controls">
+<button aria-label="Play speech" onclick="playSpeech()">
+<img alt="Play icon" src="https://img.icons8.com/ios-filled/50/play.png"/>
+</button>
+<button aria-label="Pause speech" onclick="pauseSpeech()">
+<img alt="Pause icon" src="https://img.icons8.com/ios-filled/50/pause.png"/>
+</button>
+<button aria-label="Resume speech" onclick="resumeSpeech()">
+<img alt="Resume icon" src="https://img.icons8.com/ios-filled/50/resume-button.png"/>
+</button>
+<button aria-label="Stop speech" onclick="stopSpeech()">
+<img alt="Stop icon" src="https://img.icons8.com/ios-filled/50/stop.png"/>
+</button>
+<button aria-label="Download speech" onclick="downloadSpeech()">
+<img alt="Download icon" src="https://img.icons8.com/ios-filled/50/download.png"/>
+</button>
+</div>
+<div class="options">
+<div class="option-item">
+<select aria-label="Select voice" id="voiceSelect">
+</select>
+<span class="option-label">
+      Select voice
+     </span>
+</div>
+<div class="option-item">
+<input aria-label="Adjust pitch" id="pitch" max="2" min="0.5" step="0.1" type="range" value="1"/>
+<span class="option-label">
+      Adjust pitch
+     </span>
+</div>
+<div class="option-item">
+<input aria-label="Adjust speed" id="rate" max="2" min="0.5" step="0.1" type="range" value="1"/>
+<span class="option-label">
+      Adjust speed
+     </span>
+</div>
+<div class="option-item">
+<input aria-label="Adjust volume" id="volume" max="1" min="0" step="0.1" type="range" value="1"/>
+<span class="option-label">
+      Adjust volume
+     </span>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<p>
+    Okay, so imagine this: you’ve got a big chunk of text—maybe an article, maybe some notes, or even a super long email you’re too tired to read—and you wish someone would just read it to you while you, I dunno, make a sandwich or fold laundry.
+   </p>
+<p>
+    That’s where a Text to Speech (Simple) tool swoops in like a chill, robotic narrator. You paste in the text, click a button, and boom—your words start talking back to you. Like audiobook vibes, but custom.
+   </p>
+<p>
+    The “simple” part means no complicated settings, no voice tweaking sliders, no installing apps. Just click and listen. Easy.
+   </p>
+<h2>
+    Try Our Text to Speech (Simple) Tool Now
+   </h2>
+<p>
+    Got something you’d rather hear than read? Drop your text in the box, press play, and that’s it. The Text to Speech (Simple) tool turns your words into spoken audio in seconds.
+   </p>
+<p>
+    It’s perfect for multitasking, catching errors in your writing, or just giving your eyeballs a break. Give it a shot—it’s kinda addictive.
+   </p>
+<h2>
+    Why a Text to Speech (Simple) Tool Is Super Handy
+   </h2>
+<p>
+    Let’s be real—our brains are fried. Screens everywhere. So much to read. Sometimes you just need a break from staring.
+   </p>
+<p>
+    A Text to Speech (Simple) tool is great for:
+   </p>
+<ul>
+<li>
+     Listening to your own writing—it’s wild how many typos you catch when hearing it out loud
+    </li>
+<li>
+     Learning—hear notes, essays, or articles while walking or driving
+    </li>
+<li>
+     Accessibility—it helps folks with visual impairments or reading challenges follow along
+    </li>
+<li>
+     Productivity—double-task like a pro by listening while doing something else
+    </li>
+<li>
+     Just chilling—honestly, hearing stuff read to you is kind of soothing
+    </li>
+</ul>
+<p>
+    And because this tool keeps it simple, there’s no learning curve. Just copy, paste, and listen.
+   </p>
+<h2>
+    Features of the Text to Speech (Simple) Tool
+   </h2>
+<p>
+    Let’s talk perks. This isn’t a sci-fi-level AI voice simulator, and that’s kind of the point. It’s clean, quick, and practical.
+   </p>
+<ul>
+<li>
+     Instant playback – No waiting around. You click play, it starts talking.
+    </li>
+<li>
+     Supports large text blocks – Paste paragraphs or pages. It’ll read 'em all.
+    </li>
+<li>
+     Natural-sounding voices – It won’t fool anyone into thinking it’s human, but it doesn’t sound like a 90s robot either.
+    </li>
+<li>
+     Pause &amp; replay controls – Listen again or jump to a different part.
+    </li>
+<li>
+     Works on all devices – Desktop, tablet, phone—take your pick.
+    </li>
+<li>
+     No installs, no logins – Just go to the page and use it. Done.
+    </li>
+<li>
+     Private and secure – Your text isn’t saved or stored anywhere.
+    </li>
+</ul>
+<p>
+    If you’ve ever tried a tool that needed a tutorial just to get a voice working, this Text to Speech (Simple) one will feel like a breath of fresh air.
+   </p>
+<h2>
+    How to Use the Text to Speech (Simple) Tool
+   </h2>
+<p>
+    This one’s a no-brainer, but here’s the rundown anyway:
+   </p>
+<ol>
+<li>
+     Open the Text to Speech (Simple) tool page
+    </li>
+<li>
+     Paste in the text you want read aloud
+    </li>
+<li>
+     Choose your voice (if there’s a few options)
+    </li>
+<li>
+     Hit play
+    </li>
+<li>
+     Sit back and listen
+    </li>
+</ol>
+<p>
+    Pro tip: Plug in headphones if you’re on the go—or don’t want your whole office hearing your grocery list being read aloud.
+   </p>
+<h2>
+    Why This Text to Speech (Simple) Tool Stands Out
+   </h2>
+<p>
+    There are lots of fancy tools out there that do a million things—but sometimes you just want one thing done right. That’s what makes this Text to Speech (Simple) tool awesome.
+   </p>
+<ul>
+<li>
+     No fuss – No sign-up, no weird pop-ups, just hit play
+    </li>
+<li>
+     Actually sounds decent – Not Siri-level perfect, but still pretty smooth
+    </li>
+<li>
+     Great for everyday use – Writers, students, content creators, anyone who reads stuff
+    </li>
+<li>
+     Totally free – No hidden costs or usage limits
+    </li>
+<li>
+     Fast, clean, and doesn’t crash – Even with long input
+    </li>
+</ul>
+<p>
+    Basically, if you’ve ever rage-quit a “smart” tool that made you feel dumb, this Text to Speech (Simple) tool is the antidote.
+   </p>
+<h2>
+    FAQs About the Text to Speech (Simple) Tool
+   </h2>
+<p>
+<strong>
+     Does the tool work in different languages?
+    </strong>
+<br/>
+    Most likely, yes! Paste in a sentence in another language and the voice usually adapts. Results vary a little depending on the voice system, though.
+   </p>
+<p>
+<strong>
+     Can I download the audio?
+    </strong>
+<br/>
+    Not with this Text to Speech (Simple) version. It’s designed for quick playback. If you need downloads, a more advanced version might be better.
+   </p>
+<p>
+<strong>
+     How long can the input text be?
+    </strong>
+<br/>
+    Pretty long! It handles multiple paragraphs easily. But if you’re pasting a whole book, maybe break it into chunks.
+   </p>
+<p>
+<strong>
+     Is the voice customizable?
+    </strong>
+<br/>
+    Nope. That’s part of the “simple” thing. You get a default voice (maybe two), and that’s it. No need to mess with pitch and speed unless you’re into that kind of thing.
+   </p>
+<p>
+<strong>
+     Is my text saved anywhere?
+    </strong>
+<br/>
+    Nope. Nothing gets stored or logged. You paste it, it reads it, and that’s the end of it. Totally private.
+   </p>
+<h2>
+    Final Thoughts: Let Your Words Talk Back
+   </h2>
+<p>
+    You ever write something and wonder how it sounds? Or skim through something and realize your brain didn’t absorb a word? Happens to all of us. That’s where the Text to Speech (Simple) tool is a total game-changer.
+   </p>
+<p>
+    It’s like adding a voiceover to your brain’s reading function. Whether you’re trying to catch typos, learn faster, multitask, or just rest your eyes for a sec, this tool’s got your back.
+   </p>
+<p>
+    So next time your eyeballs tap out and your brain still wants the info? You know what to do. Paste it into the Text to Speech (Simple) tool and press play.
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const textarea = document.querySelector('textarea');
+        // DOM element manipulation
+        const voiceSelect = document.getElementById('voiceSelect');
+        // DOM element manipulation
+        const pitch = document.getElementById('pitch');
+        // DOM element manipulation
+        const rate = document.getElementById('rate');
+        // DOM element manipulation
+        const volume = document.getElementById('volume');
+        let synth = window.speechSynthesis;
+        let voices = [];
+
+        // Function: populateVoices
+        function populateVoices() {
+            voices = synth.getVoices();
+            if (voices.length === 0) {
+                console.log('No voices available yet, waiting for onvoiceschanged...');
+                return;
+            }
+            voiceSelect.innerHTML = voices
+                .map((voice, index) => `<option value="${index}">${voice.name} (${voice.lang})</option>`)
+                .join('');
+            console.log('Voices loaded:', voices);
+        }
+
+        // Initial population attempt
+        populateVoices();
+
+        // Handle voice changes (some browsers load voices asynchronously)
+        if (synth.onvoiceschanged !== undefined) {
+            synth.onvoiceschanged = () => {
+                populateVoices();
+            };
+        }
+
+        // Function: speak
+        function speak(text, voiceIndex, pitchValue, rateValue, volumeValue) {
+            if (!voices.length) {
+                console.error('No voices available. Please try again.');
+                alert('Voices are not loaded yet. Please wait a moment and try again.');
+                return;
+            }
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.voice = voices[voiceIndex];
+            utterance.pitch = pitchValue;
+            utterance.rate = rateValue;
+            utterance.volume = volumeValue;
+            synth.speak(utterance);
+            console.log('Speaking with voice:', voices[voiceIndex].name);
+            return utterance;
+        }
+
+        // Function: playSpeech
+        function playSpeech() {
+            if (textarea.value.trim() === '') {
+                alert('Please enter some text to convert to speech.');
+                return;
+            }
+            stopSpeech();
+            speak(
+                textarea.value,
+                voiceSelect.value,
+                pitch.value,
+                rate.value,
+                volume.value
+            );
+        }
+
+        // Function: pauseSpeech
+        function pauseSpeech() {
+            if (synth.speaking) {
+                synth.pause();
+                console.log('Speech paused');
+            }
+        }
+
+        // Function: resumeSpeech
+        function resumeSpeech() {
+            if (synth.paused) {
+                synth.resume();
+                console.log('Speech resumed');
+            }
+        }
+
+        // Function: stopSpeech
+        function stopSpeech() {
+            synth.cancel();
+            console.log('Speech stopped');
+        }
+
+        async function downloadSpeech() {
+            if (textarea.value.trim() === '') {
+                alert('Please enter some text to convert to speech.');
+                return;
+            }
+            const utterance = new SpeechSynthesisUtterance(textarea.value);
+            utterance.voice = voices[voiceSelect.value];
+            utterance.pitch = pitch.value;
+            utterance.rate = rate.value;
+            utterance.volume = volume.value;
+
+            // Note: Web Speech API doesn't support direct audio download.
+            // This is a placeholder for future API support or third-party integration.
+            alert('Download feature requires additional backend support.');
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

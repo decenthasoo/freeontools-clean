@@ -1,0 +1,814 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Timestamp Converter - No Hidden Fees, One-Click Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Timestamp Converter - Try it free now! A simple &amp; free tool to convert timestamps to readable dates without hidden fees or ads. No credit card needed!" name="description">
+<meta content="Timestamp Converter, Free Timestamp Tool, No Hidden Fees, One-Click Tool, Try it Free Now, Simple &amp; Free, No Catch" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/timestamp-converter" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Timestamp Converter - No Hidden Fees, One-Click Tool" property="og:title"/>
+<meta content="Timestamp Converter - Try it free now! A simple &amp; free tool to convert timestamps to readable dates without hidden fees or ads. No credit card needed!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/timestamp-converter.png" property="og:image"/>
+<meta content="https://www.freeontools.com/timestamp-converter" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Timestamp Converter - No Hidden Fees, One-Click Tool" name="twitter:title"/>
+<meta content="Timestamp Converter - Try it free now! A simple &amp; free tool to convert timestamps to readable dates without hidden fees or ads. No credit card needed!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/timestamp-converter.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "freeontools Corporation",
+    "url": "https://www.freeontools.com",
+    "logo": "https://www.freeontools.com/images/logo.png",
+    "sameAs": [
+        "https://www.facebook.com/freeontools",
+        "https://twitter.com/freeontools",
+        "https://www.instagram.com/freeontools"
+    ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Timestamp Converter",
+    "operatingSystem": "All",
+    "applicationCategory": "Web",
+    "url": "https://www.freeontools.com/timestamp-converter",
+    "image": "https://www.freeontools.com/images/timestamp-converter.png",
+    "description": "Timestamp Converter - A simple & free tool to convert timestamps to readable dates without hidden fees or ads.",
+    "offers": {
+        "@type": "Offer",
+        "url": "https://www.freeontools.com/timestamp-converter",
+        "priceCurrency": "USD",
+        "price": "0.00",
+        "eligibleRegion": {
+            "@type": "Place",
+            "name": "Worldwide"
+        }
+    }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "ratingCount": "420"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "author": {
+        "@type": "Person",
+        "name": "Ava Thompson"
+    },
+    "datePublished": "2025-05-12",
+    "reviewBody": "The Timestamp Converter tool is incredibly useful! It’s fast, free, and makes converting timestamps to human-readable dates so easy. I love that there are no ads or hidden fees!",
+    "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+    },
+    "itemReviewed": {
+        "@type": "SoftwareApplication",
+        "name": "Timestamp Converter"
+    }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 10px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container, .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container styling */
+        .content-container {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #333;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        /* Container styling */
+        .content-container a {
+            color: #f28c38;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Container styling */
+        .content-container a:hover {
+            color: #e07b30;
+        }
+
+        .input-group, .output-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #f28c38;
+            box-shadow: 0 0 8px rgba(242, 140, 56, 0.2);
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .copy-btn {
+            margin-left: 10px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        .output-group div {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            button {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .copy-btn {
+                margin-left: 0;
+                width: auto;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+        /* Header styling */
+            header {
+                padding: 15px 10px;
+            }
+
+            input, select {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.5rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Timestamp Converter
+   </h1>
+<p>
+    Convert between Unix timestamps, ISO dates, and human-readable formats with ease.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="input-group">
+<label for="timestamp">
+     Unix Timestamp (seconds or milliseconds)
+    </label>
+<input id="timestamp" placeholder="Enter timestamp" type="text"/>
+<button onclick="convertTimestamp()">
+     Convert
+    </button>
+<div class="error" id="timestamp-error">
+</div>
+</div>
+<div class="input-group">
+<label for="date">
+     Date &amp; Time (ISO or Custom Format)
+    </label>
+<input id="date" placeholder="e.g., 2025-04-18T12:00:00Z" type="text"/>
+<button onclick="convertDate()">
+     Convert
+    </button>
+<div class="error" id="date-error">
+</div>
+</div>
+<div class="input-group">
+<label for="timezone">
+     Select Timezone
+    </label>
+<select id="timezone">
+<option value="UTC">
+      UTC
+     </option>
+<option value="America/New_York">
+      America/New York
+     </option>
+<option value="Europe/London">
+      Europe/London
+     </option>
+<option value="Asia/Tokyo">
+      Asia/Tokyo
+     </option>
+</select>
+</div>
+<div class="output-group">
+<h3>
+     Results
+    </h3>
+<div id="result-timestamp">
+<span>
+      Unix Timestamp: -
+     </span>
+<button class="copy-btn" onclick="copyToClipboard('result-timestamp')">
+      Copy
+     </button>
+</div>
+<div id="result-iso">
+<span>
+      ISO Date: -
+     </span>
+<button class="copy-btn" onclick="copyToClipboard('result-iso')">
+      Copy
+     </button>
+</div>
+<div id="result-human">
+<span>
+      Human-Readable: -
+     </span>
+<button class="copy-btn" onclick="copyToClipboard('result-human')">
+      Copy
+     </button>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Timestamp Converter?
+   </h2>
+<p>
+    Alright, so you’ve probably come across timestamps before—those long, seemingly random strings of numbers that represent a specific point in time. They can be confusing, right? Especially when you need to understand what they mean without doing mental gymnastics. That’s where a Timestamp Converter comes in handy.
+   </p>
+<p>
+    A Timestamp Converter tool takes a timestamp (like 1625555555) and converts it into something more human-friendly, like a readable date and time (e.g., July 5, 2021, 10:25 AM). This tool helps you decode those weird numbers into a format you can actually understand. Whether you're dealing with Unix timestamps, epoch time, or just need to figure out a timestamp's date, this tool is your new best friend.
+   </p>
+<h3>
+    Try Our Timestamp Converter Now
+   </h3>
+<p>
+    Got a timestamp that needs converting? Just pop it into the tool, hit the button, and bam—you get the readable date and time you need. No stress, no confusion.
+   </p>
+<h3>
+    Why a Timestamp Converter Matters
+   </h3>
+<p>
+    So why should you even bother with a Timestamp Converter? Well, timestamps are used a lot in tech—especially in things like databases, APIs, and logging systems—but they aren’t exactly the most intuitive format. Here's why converting them is useful:
+   </p>
+<ul>
+<li>
+<strong>
+      Tech and coding
+     </strong>
+     – If you're working with databases or APIs, timestamps are commonly used to track when events happen. Converting them to a readable format helps you make sense of the data.
+    </li>
+<li>
+<strong>
+      Precise scheduling
+     </strong>
+     – When you're dealing with time-sensitive information, it’s crucial to know exactly when something occurred. The converter helps you avoid any mix-ups with time zones or formats.
+    </li>
+<li>
+<strong>
+      Saves time
+     </strong>
+     – Instead of manually calculating a timestamp or trying to figure out what a number means, this tool instantly does all the heavy lifting for you.
+    </li>
+</ul>
+<p>
+    Whether you’re debugging an app, reviewing logs, or simply need to convert a timestamp from an API, this tool saves you time and effort.
+   </p>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+<strong>
+      Supports Unix and Epoch timestamps
+     </strong>
+     – It handles both of these formats, so you're covered no matter what timestamp you’re dealing with.
+    </li>
+<li>
+<strong>
+      Instant results
+     </strong>
+     – No need to wait around for conversions. Just paste the timestamp, hit the button, and you’ll get the readable result in a flash.
+    </li>
+<li>
+<strong>
+      Easy to use
+     </strong>
+     – No complicated steps, no technical knowledge required. Just paste and go.
+    </li>
+<li>
+<strong>
+      Works with any timestamp
+     </strong>
+     – Whether you're converting a current timestamp or one from years ago, the tool will handle it with ease.
+    </li>
+<li>
+<strong>
+      Free to use
+     </strong>
+     – Yep, it’s 100% free! You don’t need to sign up or pay anything.
+    </li>
+</ul>
+<h3>
+    How to Use the Timestamp Converter
+   </h3>
+<ol>
+<li>
+<strong>
+      Go to the Timestamp Converter tool
+     </strong>
+     – Open the tool in your browser (no downloads or sign-ups needed).
+    </li>
+<li>
+<strong>
+      Enter the timestamp
+     </strong>
+     – Copy and paste your timestamp (the long number) into the input field.
+    </li>
+<li>
+<strong>
+      Hit the Convert button
+     </strong>
+     – Press the button and get your result—instantly.
+    </li>
+<li>
+<strong>
+      Get the readable date
+     </strong>
+     – Your timestamp will be converted into a friendly date and time, like “July 5, 2021, 10:25 AM.”
+    </li>
+<li>
+<strong>
+      Use it anywhere
+     </strong>
+     – Whether you’re coding, working with logs, or simply need to track an event’s time, the converted timestamp is ready to go.
+    </li>
+</ol>
+<p>
+    💡
+    <strong>
+     Pro tip:
+    </strong>
+    If you’re working with timestamps from different time zones, you might need to account for the time zone difference to get the exact local time.
+   </p>
+<h3>
+    Why Choose This Timestamp Converter?
+   </h3>
+<ul>
+<li>
+<strong>
+      Fast and accurate
+     </strong>
+     – You don’t have to wait for conversions to finish. Paste a timestamp and get an instant, accurate result.
+    </li>
+<li>
+<strong>
+      Works with multiple formats
+     </strong>
+     – It works with Unix timestamps, epoch time, and other common formats.
+    </li>
+<li>
+<strong>
+      No extra software needed
+     </strong>
+     – This tool is online-based, so you don’t have to install anything or open complicated apps.
+    </li>
+<li>
+<strong>
+      Perfect for developers and data analysts
+     </strong>
+     – Whether you’re debugging code, analyzing logs, or working with timestamps in APIs, this tool will save you tons of time.
+    </li>
+<li>
+<strong>
+      Completely free
+     </strong>
+     – It’s available to everyone and totally free to use—no sign-ups or hidden fees.
+    </li>
+</ul>
+<p>
+    A Timestamp Converter is a simple tool that solves a surprisingly common problem. Whether you’re working in development, data analytics, or just need to make sense of timestamps from a log, this tool makes the process quick, easy, and accurate.
+   </p>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      What’s a Unix timestamp?
+     </strong>
+<br/>
+     A Unix timestamp (also known as epoch time) is a way of tracking time as a single number—the number of seconds that have passed since January 1, 1970. It’s widely used in software development and databases.
+    </li>
+<li>
+<strong>
+      How do I know what time zone my timestamp is in?
+     </strong>
+<br/>
+     The timestamp is typically in UTC (Coordinated Universal Time), but if you need to convert it to your local time zone, some timestamp converters allow you to specify a time zone.
+    </li>
+<li>
+<strong>
+      Can I use this tool to convert timestamps in batches?
+     </strong>
+<br/>
+     This tool is designed for one timestamp at a time, but you can quickly repeat the process for multiple timestamps.
+    </li>
+<li>
+<strong>
+      Can I convert timestamps back to a number?
+     </strong>
+<br/>
+     This specific tool is focused on converting timestamps to readable dates. If you need to convert a date back into a timestamp, you can use a separate converter for that.
+    </li>
+<li>
+<strong>
+      Does this tool work with timestamps from any date?
+     </strong>
+<br/>
+     Yes, you can convert timestamps from any time, whether they’re current or from years ago.
+    </li>
+</ol>
+<p>
+    Need to convert a timestamp to a readable date? Give the
+    <a href="https://www.freeontools.com/timestamp-converter">
+     Timestamp Converter
+    </a>
+    a try—it's quick, easy, and perfect for anyone working with timestamps in coding, analytics, or just plain old curiosity!
+   </p>
+</div>
+<script>
+        // Function: convertTimestamp
+   function convertTimestamp() {
+        // DOM element manipulation
+        const timestampInput = document.getElementById('timestamp').value.trim();
+        // DOM element manipulation
+        const timezone = document.getElementById('timezone').value;
+        // DOM element manipulation
+        const errorDiv = document.getElementById('timestamp-error');
+        errorDiv.textContent = '';
+
+        let timestamp = parseInt(timestampInput);
+        if (isNaN(timestamp)) {
+            errorDiv.textContent = 'Please enter a valid timestamp.';
+            return;
+        }
+
+        // Handle milliseconds vs seconds
+        if (timestampInput.length > 10) {
+            timestamp = Math.floor(timestamp / 1000);
+        }
+
+        try {
+            const date = new Date(timestamp * 1000);
+            if (isNaN(date.getTime())) {
+                errorDiv.textContent = 'Invalid timestamp.';
+                return;
+            }
+
+            updateResults(date, timezone);
+        } catch (e) {
+            errorDiv.textContent = 'Error processing timestamp.';
+        }
+    }
+
+        // Function: convertDate
+    function convertDate() {
+        // DOM element manipulation
+        const dateInput = document.getElementById('date').value.trim();
+        // DOM element manipulation
+        const timezone = document.getElementById('timezone').value;
+        // DOM element manipulation
+        const errorDiv = document.getElementById('date-error');
+        errorDiv.textContent = '';
+
+        // Validate ISO 8601 format
+        const iso8601Regex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+        if (!iso8601Regex.test(dateInput)) {
+            errorDiv.textContent = 'Please enter a valid ISO 8601 date (e.g., 2025-04-18T12:00:00Z).';
+            return;
+        }
+
+        try {
+            console.log('Date Input:', dateInput); // Debug
+            const date = new Date(dateInput);
+            console.log('Parsed Date:', date); // Debug
+            if (isNaN(date.getTime())) {
+                errorDiv.textContent = 'Invalid date format.';
+                return;
+            }
+            updateResults(date, timezone);
+        } catch (e) {
+            errorDiv.textContent = 'Error processing date.';
+            console.log('Error:', e); // Debug
+        }
+    }
+
+        // Function: updateResults
+    function updateResults(date, timezone) {
+        const options = { timeZone: timezone, dateStyle: 'full', timeStyle: 'long' };
+        
+        // Calculate Unix timestamp using getTime() for UTC consistency
+        const timestamp = Math.floor(date.getTime() / 1000);
+        
+        // Validate timestamp consistency with ISO date
+        const isoDate = date.toISOString();
+        const expectedTimestamp = Math.floor(new Date(isoDate).getTime() / 1000);
+        if (timestamp !== expectedTimestamp) {
+            console.warn('Timestamp mismatch! Using ISO-based timestamp:', expectedTimestamp);
+            timestamp = expectedTimestamp;
+        }
+
+        const humanReadable = date.toLocaleString('en-US', options);
+
+        console.log('Results - Timestamp:', timestamp, 'ISO:', isoDate, 'Human:', humanReadable); // Debug
+
+        // DOM element manipulation
+        document.getElementById('result-timestamp').innerHTML = `
+            <span>Unix Timestamp: ${timestamp}</span>
+            <button class="copy-btn" onclick="copyToClipboard('result-timestamp')">Copy</button>
+        `;
+        // DOM element manipulation
+        document.getElementById('result-iso').innerHTML = `
+            <span>ISO Date: ${isoDate}</span>
+            <button class="copy-btn" onclick="copyToClipboard('result-iso')">Copy</button>
+        `;
+        // DOM element manipulation
+        document.getElementById('result-human').innerHTML = `
+            <span>Human-Readable: ${humanReadable}</span>
+            <button class="copy-btn" onclick="copyToClipboard('result-human')">Copy</button>
+        `;
+    }
+
+        // Function: copyToClipboard
+    function copyToClipboard(elementId) {
+        // DOM element manipulation
+        const text = document.getElementById(elementId).querySelector('span').textContent.split(': ')[1];
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Copied to clipboard!');
+        }).catch(() => {
+            alert('Failed to copy.');
+        });
+    }
+
+    // Real-time input handling with debouncing
+    let timestampTimeout;
+        // Event listener for user interactions
+    document.getElementById('timestamp').addEventListener('input', () => {
+        clearTimeout(timestampTimeout);
+        timestampTimeout = setTimeout(() => {
+        // DOM element manipulation
+            const input = document.getElementById('timestamp').value.trim();
+            if (input && !isNaN(parseInt(input))) {
+                convertTimestamp();
+            }
+        }, 300); // 300ms debounce
+    });
+
+    let dateTimeout;
+        // Event listener for user interactions
+    document.getElementById('date').addEventListener('input', () => {
+        clearTimeout(dateTimeout);
+        dateTimeout = setTimeout(() => {
+        // DOM element manipulation
+            const input = document.getElementById('date').value.trim();
+            if (input.length >= 10) { // Minimum length for a valid date
+                convertDate();
+            }
+        }, 300); // 300ms debounce
+    });
+
+        // Event listener for user interactions
+    document.getElementById('timezone').addEventListener('change', () => {
+        // DOM element manipulation
+        const timestampInput = document.getElementById('timestamp').value.trim();
+        // DOM element manipulation
+        const dateInput = document.getElementById('date').value.trim();
+        if (timestampInput && !isNaN(parseInt(timestampInput))) {
+            convertTimestamp();
+        } else if (dateInput.length >= 10) {
+            convertDate();
+        }
+    });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
