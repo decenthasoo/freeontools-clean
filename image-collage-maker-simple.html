@@ -1,0 +1,806 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Image Collage Maker (Simple) - Use Without Limits
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image Collage Maker (Simple) lets you create custom photo collages online. Use Without Limits, no signup, 100% free, and fast." name="description">
+<meta content="Image Collage Maker, Simple collage tool, free photo collage maker, drag and drop collage, create collage online, image layout tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-collage-maker-simple" rel="canonical"/>
+<meta content="Image Collage Maker (Simple) - Use Without Limits" property="og:title"/>
+<meta content="Create photo collages online quickly and easily. Use Without Limits. No login required. Completely free and fast." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/assets/image-collage-maker-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Collage Maker (Simple) - Use Without Limits" name="twitter:title"/>
+<meta content="Design and download stunning image collages online for free. Easy to use and works on all devices. No restrictions." name="twitter:description"/>
+<meta content="https://www.freeontools.com/assets/image-collage-maker-preview.png" name="twitter:image"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/assets/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontoolstools",
+    "https://twitter.com/freeontoolstools",
+    "https://www.linkedin.com/company/freeontoolstools"
+  ]
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Collage Maker (Simple)",
+  "url": "https://www.freeontools.com",
+  "image": "https://www.freeontools.com/assets/image-collage-maker-preview.png",
+  "applicationCategory": "PhotoEditingApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Collage Maker (Simple)"
+  },
+  "ratingValue": "4.8",
+  "bestRating": "5",
+  "ratingCount": "1104"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Tanya K."
+  },
+  "datePublished": "2025-04-10",
+  "reviewBody": "I love this collage tool! It’s straightforward, runs smoothly on mobile, and doesn’t ask for anything. Perfect for social media posts!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Collage Maker (Simple)"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+             margin: 0;
+            background-color: #fafafa;
+            line-height: 1.6;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* Header styling */
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Header styling */
+        header p {
+            margin: 15px 0 0;
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .controls {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .controls h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .layout-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1em;
+
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e07a2f;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .collage-area {
+            flex: 2;
+            min-width: 300px;
+            display: grid;
+            gap: 10px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: var(--aspect-ratio);
+            transition: all 0.3s ease;
+        }
+
+        .grid-cell {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+        }
+
+        /* New content container styles */
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        /* Responsive media queries */
+        @media (max-width: 1024px) {
+        /* Container styling */
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .controls {
+                width: 100%;
+                max-width: 600px;
+                padding: 15px;
+            }
+
+            .collage-area {
+                width: 100%;
+                max-width: 600px;
+                margin-top: 20px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Header styling */
+            header h1 {
+                font-size: 2em;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1em;
+            }
+
+            .controls h2 {
+                font-size: 1.3em;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .layout-options,
+            .action-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .collage-area {
+                gap: 5px;
+                padding: 5px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.5em;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.95em;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+        /* Header styling */
+            header {
+                padding: 20px 10px;
+            }
+
+        /* Header styling */
+            header h1 {
+                font-size: 1.8em;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 0.9em;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .controls {
+                padding: 10px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                font-size: 1em;
+            }
+
+            .collage-area {
+                gap: 3px;
+                padding: 3px;
+            }
+
+        /* Container styling */
+            .content-container {
+                margin: 10px;
+                padding: 15px; /* Mobile padding */
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 320px) {
+        /* Container styling */
+            .container {
+                padding: 5px;
+            }
+
+            .controls {
+                padding: 5px;
+            }
+
+            .collage-area {
+                padding: 2px;
+                gap: 2px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px; /* Mobile padding */
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Image Collage Maker (Simple)
+   </h1>
+<p>
+    Create stunning collages with your images in just a few clicks.
+   </p>
+</header>
+<main>
+<!-- Main content container -->
+<div class="container">
+<div class="controls">
+<h2>
+      Select Layout
+     </h2>
+<div class="layout-options">
+<button class="layout-btn" data-layout="2x2">
+       2x2 Grid
+      </button>
+<button class="layout-btn" data-layout="3x3">
+       3x3 Grid
+      </button>
+<button class="layout-btn" data-layout="1x3">
+       Horizontal Strip
+      </button>
+</div>
+<h2>
+      Upload Images
+     </h2>
+<button id="upload-btn">
+      Upload Images
+     </button>
+<input accept="image/*" id="image-upload" multiple="" style="display: none;" type="file"/>
+<div class="action-buttons">
+<button id="download-btn">
+       Download Collage
+      </button>
+<button id="reset-btn">
+       Reset
+      </button>
+</div>
+</div>
+<div class="collage-area" id="collage-area">
+<!-- Grid cells will be added dynamically -->
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What Is an Image Collage Maker?
+    </h2>
+<p>
+     Ever wanted to combine multiple photos into one fun, eye-catching image? That’s exactly what the Image Collage Maker does! It lets you easily create a collage by combining several images into a single, cohesive masterpiece. Whether you’re putting together vacation photos, showcasing a product line, or just having fun with your images, this tool makes it super simple to create something unique and creative.
+    </p>
+<p>
+     It’s like being an artist with a digital canvas, where you get to pick and place your favorite images wherever you want. No complicated steps—just drag, drop, and create!
+    </p>
+<h2>
+     Try Our Image Collage Maker Now
+    </h2>
+<p>
+     Want to make your own collage? Upload your images, choose your layout, and watch the magic happen. In just a few clicks, you’ll have your very own image collage ready to go. It's easy, fast, and totally free!
+    </p>
+<h2>
+     Why Use an Image Collage Maker?
+    </h2>
+<p>
+     So, why would you want to make a collage? Here's why this tool comes in handy:
+    </p>
+<ul>
+<li>
+      Show off multiple images – Got a bunch of great photos you want to share? Collages let you show them all off in one shot.
+     </li>
+<li>
+      Perfect for memories – Collages are great for capturing moments, like vacations, family photos, or event memories, all in one creative layout.
+     </li>
+<li>
+      Great for social media – Want to post a collection of photos in a stylish way? Collages look awesome on Instagram, Facebook, and Pinterest.
+     </li>
+<li>
+      Design tool for projects – If you’re working on something like a flyer, poster, or social media ad, a collage can make your project stand out.
+     </li>
+<li>
+      Customizable – You can adjust the layout, add filters, and personalize it however you want.
+     </li>
+</ul>
+<p>
+     Basically, if you want to combine a bunch of photos into one awesome image, this tool is perfect for the job!
+    </p>
+<h2>
+     Features of the Image Collage Maker
+    </h2>
+<p>
+     Here’s why the Image Collage Maker is so awesome:
+    </p>
+<ul>
+<li>
+      Multiple layout options – Choose from a variety of pre-designed layouts, or make your own custom grid.
+     </li>
+<li>
+      Easy to use – Just upload your images, adjust the layout, and hit the button—no fancy design skills needed.
+     </li>
+<li>
+      Resize and arrange images – You can resize, crop, or reposition images within the collage to get it looking just right.
+     </li>
+<li>
+      Free and online – No need for downloads or sign-ups—just upload, create, and go.
+     </li>
+<li>
+      Download and share – Once your collage is ready, download it or share it directly to your social media accounts.
+     </li>
+</ul>
+<h2>
+     How to Use the Image Collage Maker
+    </h2>
+<p>
+     Ready to make a collage? Here’s how:
+    </p>
+<ol>
+<li>
+      Open the Image Collage Maker tool.
+     </li>
+<li>
+      Upload your images (the more, the merrier!).
+     </li>
+<li>
+      Choose your collage layout (grid, custom, etc.).
+     </li>
+<li>
+      Resize and reposition the images until you’re happy with the arrangement.
+     </li>
+<li>
+      Hit the button to generate your collage.
+     </li>
+<li>
+      Download your image or share it directly to social media.
+     </li>
+</ol>
+<p>
+     Pro tip: Try playing with the filters and backgrounds to give your collage a unique style!
+    </p>
+<h2>
+     Why Choose This Image Collage Maker?
+    </h2>
+<p>
+     Here’s why this tool is a no-brainer:
+    </p>
+<ul>
+<li>
+      Fast and simple – No complicated steps, just upload, arrange, and create your collage in a few clicks.
+     </li>
+<li>
+      Customizable – Adjust the layout and placement to make your collage look exactly how you want it.
+     </li>
+<li>
+      Perfect for any project – Whether it’s for a personal memory or a professional design, this tool works for everything.
+     </li>
+<li>
+      No software required – Just do it all online, no downloads or installations.
+     </li>
+<li>
+      Free to use – No sign-ups, no payments—just a free, easy-to-use tool.
+     </li>
+</ul>
+<p>
+     If you need to create a quick and easy collage, this is the tool for you.
+    </p>
+<h2>
+     FAQs About the Image Collage Maker
+    </h2>
+<p>
+<strong>
+      Can I upload as many images as I want?
+     </strong>
+</p>
+<p>
+     Yes! You can upload multiple images and arrange them however you like. The more photos, the more creative the collage!
+    </p>
+<p>
+<strong>
+      Do I need any special design skills?
+     </strong>
+</p>
+<p>
+     Not at all! This tool is designed to be super easy, even for beginners. Just upload and arrange, and you’ll be good to go.
+    </p>
+<p>
+<strong>
+      Can I resize or crop the images in the collage?
+     </strong>
+</p>
+<p>
+     Yes! You can resize and crop the images to fit perfectly into the layout. It’s all about making the collage look just the way you want it.
+    </p>
+<p>
+<strong>
+      What formats do the images need to be in?
+     </strong>
+</p>
+<p>
+     You can upload JPG, PNG, and most common image formats. It’s that simple!
+    </p>
+<p>
+<strong>
+      Is this tool free?
+     </strong>
+</p>
+<p>
+     Yes! The Image Collage Maker is completely free and doesn’t require any sign-ups or hidden charges.
+    </p>
+<h2>
+     Wrap-Up: Get Creative with Collages
+    </h2>
+<p>
+     The Image Collage Maker is the easiest way to turn a bunch of your favorite images into a single, creative masterpiece. Whether you’re making a collage for fun or for a project, this tool makes it super quick and easy.
+    </p>
+<p>
+     So go ahead—upload your images, pick a layout, and get your collage started today!
+    </p>
+</div>
+</main>
+<script>
+   let currentLayout = '2x2';
+        // DOM element manipulation
+        const collageArea = document.getElementById('collage-area');
+        // DOM element manipulation
+        const imageUpload = document.getElementById('image-upload');
+        // DOM element manipulation
+        const uploadBtn = document.getElementById('upload-btn');
+        // DOM element manipulation
+        const downloadBtn = document.getElementById('download-btn');
+        // DOM element manipulation
+        const resetBtn = document.getElementById('reset-btn');
+
+        // Function: updateCollageArea
+        function updateCollageArea() {
+            collageArea.innerHTML = '';
+            let rows, cols;
+            switch (currentLayout) {
+                case '2x2':
+                    rows = 2;
+                    cols = 2;
+                    break;
+                case '3x3':
+                    rows = 3;
+                    cols = 3;
+                    break;
+                case '1x3':
+                    rows = 1;
+                    cols = 3;
+                    break;
+            }
+            collageArea.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+            collageArea.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+            collageArea.style.setProperty('--aspect-ratio', `${cols} / ${rows}`);
+            const totalCells = rows * cols;
+            for (let i = 0; i < totalCells; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('grid-cell');
+                collageArea.appendChild(cell);
+            }
+        }
+
+        // Initial setup
+        updateCollageArea();
+
+        // Layout selection
+        // DOM element manipulation
+        document.querySelectorAll('.layout-btn').forEach(button => {
+        // Event listener for user interactions
+            button.addEventListener('click', () => {
+                currentLayout = button.dataset.layout;
+                updateCollageArea();
+            });
+        });
+
+        // Trigger file upload
+        // Event listener for user interactions
+        uploadBtn.addEventListener('click', () => {
+            imageUpload.click();
+        });
+
+        // Handle image uploads
+        // Event listener for user interactions
+        imageUpload.addEventListener('change', (event) => {
+            const files = event.target.files;
+        // DOM element manipulation
+            const gridCells = document.querySelectorAll('.grid-cell');
+            let index = 0;
+            for (let file of files) {
+                if (index >= gridCells.length) break;
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    gridCells[index].style.backgroundImage = `url(${e.target.result})`;
+                };
+                reader.readAsDataURL(file);
+                index++;
+            }
+        });
+
+        // Download collage
+        // Event listener for user interactions
+        downloadBtn.addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            const maxSize = 600;
+            let rows, cols;
+            switch (currentLayout) {
+                case '2x2':
+                    rows = 2;
+                    cols = 2;
+                    break;
+                case '3x3':
+                    rows = 3;
+                    cols = 3;
+                    break;
+                case '1x3':
+                    rows = 1;
+                    cols = 3;
+                    break;
+            }
+            if (cols >= rows) {
+                canvas.width = maxSize;
+                canvas.height = maxSize * (rows / cols);
+            } else {
+                canvas.height = maxSize;
+                canvas.width = maxSize * (cols / rows);
+            }
+            const ctx = canvas.getContext('2d');
+        // DOM element manipulation
+            const gridCells = document.querySelectorAll('.grid-cell');
+            const cellWidth = canvas.width / cols;
+            const cellHeight = canvas.height / rows;
+            let imagesLoaded = 0;
+            const totalCells = rows * cols;
+
+            if (totalCells === 0) return;
+
+            gridCells.forEach((cell, index) => {
+                const bgImage = cell.style.backgroundImage;
+                if (bgImage && bgImage !== 'none') {
+                    const img = new Image();
+                    const url = bgImage.slice(4, -1).replace(/"/g, "");
+                    img.src = url;
+                    img.onload = () => {
+                        const x = (index % cols) * cellWidth;
+                        const y = Math.floor(index / cols) * cellHeight;
+                        ctx.drawImage(img, x, y, cellWidth, cellHeight);
+                        imagesLoaded++;
+                        if (imagesLoaded === totalCells) {
+                            triggerDownload(canvas);
+                        }
+                    };
+                } else {
+                    imagesLoaded++;
+                    if (imagesLoaded === totalCells) {
+                        triggerDownload(canvas);
+                    }
+                }
+            });
+        });
+
+        // Reset collage
+        // Event listener for user interactions
+        resetBtn.addEventListener('click', () => {
+            updateCollageArea();
+            imageUpload.value = '';
+        });
+
+        // Helper function to trigger download
+        // Function: triggerDownload
+        function triggerDownload(canvas) {
+            const dataURL = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = dataURL;
+            link.download = 'collage.png';
+            link.click();
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

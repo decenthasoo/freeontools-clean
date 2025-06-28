@@ -1,0 +1,951 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Image to Text Extractor - 100% Free Without Login
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image to Text Extractor - Extract text from images with this free tool. No login, no ads, and 100% free. Try it now!" name="description">
+<meta content="Image to Text Extractor, Free Text Extraction, OCR Tool, Extract Text from Images, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-to-text-extractor" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Image to Text Extractor - 100% Free Without Login" property="og:title"/>
+<meta content="Image to Text Extractor - Extract text from images with this free tool. No login, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/image-to-text-extractor.png" property="og:image"/>
+<meta content="https://www.freeontools.com/image-to-text-extractor" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Image to Text Extractor - 100% Free Without Login" name="twitter:title"/>
+<meta content="Image to Text Extractor - Extract text from images with this free tool. No login, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/image-to-text-extractor.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image to Text Extractor",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/image-to-text-extractor",
+  "image": "https://www.freeontools.com/images/image-to-text-extractor.png",
+  "description": "Extract text from images quickly and accurately using this free OCR tool. No sign-up required, completely free to use.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/image-to-text-extractor",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.91",
+  "bestRating": "5",
+  "ratingCount": "580"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Sophia Evans"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This text extractor is incredible! I was able to copy the text from my image in seconds. A great tool for anyone who needs to convert images to text.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image to Text Extractor"
+  }
+}
+  </script>
+<script src="https://unpkg.com/tesseract.js@4.0.2/dist/tesseract.min.js">
+</script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        /* Container styling */
+        .container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: center;
+            animation: slideUp 0.8s ease-out;
+margin-left: auto;
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 100%;
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: left;
+            animation: slideUp 0.8s ease-out;
+margin-left: auto;
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #222;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .upload-area:hover,
+        .upload-area.dragover {
+            border-color: #f28c38;
+            background-color: #fff5eb;
+        }
+
+        .upload-area p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        #preview {
+            max-width: 100%;
+            max-height: 200px;
+            margin: 10px auto;
+            border-radius: 8px;
+            display: none;
+            object-fit: contain;
+        }
+
+        #extracted-text {
+            width: 100%;
+            height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            resize: none;
+            font-size: 1rem;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        .btn {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .loader {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #f28c38;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Header styling */
+            header {
+                padding: 15px 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 15px;
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                margin: 15px;
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 10px;
+            }
+
+        /* Container styling */
+            .content-container {
+                margin: 10px;
+            }
+
+            .upload-area {
+                padding: 15px;
+            }
+
+            #extracted-text {
+                height: 120px;
+            }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Image to Text Extractor (Simple)
+   </h1>
+<p>
+    Upload a high-resolution image with clear, printed text for near-100% accuracy.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="upload-area" id="upload-area">
+<p>
+     Drag &amp; Drop your image here or click to upload (Max 1 MB, high-resolution, high-contrast images work best)
+    </p>
+<input accept="image/*" hidden="" id="image-input" type="file"/>
+<img alt="Uploaded image preview" id="preview"/>
+</div>
+<textarea id="extracted-text" placeholder="Extracted text will appear here..." readonly=""></textarea>
+<div class="loader" id="loader">
+</div>
+<div class="error" id="error">
+</div>
+<button class="btn" disabled="" id="extract-btn">
+    Extract Text
+   </button>
+<button class="btn" disabled="" id="copy-btn">
+    Copy Text
+   </button>
+<button class="btn" id="clear-btn">
+    Clear
+   </button>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is an Image to Text Extractor?
+   </h2>
+<p>
+    Okay, so you’ve got a screenshot with a quote, or a photo of a flyer, or some ancient handwritten notes that are basically hieroglyphics at this point—and now you’re like, “How do I turn this into real, editable text?” That’s where the Image to Text Extractor comes in like the hero it is.
+   </p>
+<p>
+    This little tool grabs the text hiding inside an image and pulls it out so you can copy, paste, edit, or do whatever you need with it. No typing things out manually. No squinting at pixels. No drama. Just drop the image in and boom—hello, actual text.
+   </p>
+<h3>
+    Try Our Image to Text Extractor Now
+   </h3>
+<p>
+    Got a picture with words in it? Upload it. Click a button. Get the text out like magic. Whether it’s a screenshot, scanned doc, or a meme with actual info—this Image to Text Extractor makes it stupid easy.
+   </p>
+<h3>
+    Why an Image to Text Extractor Is Super Handy
+   </h3>
+<p>
+    Let’s be real: there are way too many moments in life where someone sends you an image instead of just... typing the actual text. 🙃 And sometimes you’ve got no choice but to get the info out. Enter this tool.
+   </p>
+<p>
+    Here’s why you’d actually use it:
+   </p>
+<ul>
+<li>
+     You’ve got scanned notes or a form you want to copy into a doc
+    </li>
+<li>
+     Someone sent you a screenshot with a long paragraph (why do people do this?)
+    </li>
+<li>
+     You want to extract text from posters, signs, labels, or instructions
+    </li>
+<li>
+     You’re digitizing old stuff like recipes, invoices, or business cards
+    </li>
+<li>
+     You’re lazy but smart (aka the best combo)
+    </li>
+</ul>
+<p>
+    Basically, any time there’s readable text inside an image, this tool saves you the hassle of typing it out.
+   </p>
+<h3>
+    Features
+   </h3>
+<p>
+    This Image to Text Extractor is basic in the best way. It’s not bloated. It just works.
+   </p>
+<ul>
+<li>
+     Upload any common image format (PNG, JPG, JPEG, etc.)
+    </li>
+<li>
+     Extracts visible text from the image—fast
+    </li>
+<li>
+     One-click copy feature
+    </li>
+<li>
+     Works right in your browser—no installs, no hoops
+    </li>
+<li>
+     Clean, readable output you can instantly reuse
+    </li>
+<li>
+     No annoying ads or watermarks
+    </li>
+<li>
+     Totally free, no account needed
+    </li>
+</ul>
+<p>
+    It’s the kind of tool you don’t know you need until you need it, and then you’re like, “Oh dang, this is kinda perfect.”
+   </p>
+<h3>
+    How to Use the Image to Text Extractor
+   </h3>
+<p>
+    Zero technical knowledge required. Promise.
+   </p>
+<ol>
+<li>
+     Head to the Image to Text Extractor page
+    </li>
+<li>
+     Upload your image file (drag and drop or click-to-upload)
+    </li>
+<li>
+     Hit the “Extract Text” button
+    </li>
+<li>
+     Boom. The tool shows you the text pulled from the image
+    </li>
+<li>
+     Click “Copy” and use it wherever—notes app, doc, spreadsheet, email, you name it
+    </li>
+</ol>
+<p>
+    Pro tip: Works best when the image is clear and the text isn’t super tiny or warped.
+   </p>
+<h3>
+    Why Choose This Image to Text Extractor?
+   </h3>
+<p>
+    You could use other tools, but honestly? Most of them want your email, throw ads in your face, or make you download sketchy software. This one? It’s simple, clean, and does what it says.
+   </p>
+<p>
+    Why people keep using it:
+   </p>
+<ul>
+<li>
+     It’s fast and doesn’t slow down your browser
+    </li>
+<li>
+     No fluff—just a straightforward extraction process
+    </li>
+<li>
+     Great for students, freelancers, researchers, and anyone sick of retyping things
+    </li>
+<li>
+     Doesn’t limit you to just one image per day or make you subscribe to anything
+    </li>
+<li>
+     Built for real-world use, not just a demo
+    </li>
+</ul>
+<p>
+    It’s kind of like that reliable friend who shows up when you’re moving—quietly gets things done without making it a big deal.
+   </p>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      What types of image files can I use?
+     </strong>
+<br/>
+     Most common ones like JPG, PNG, and JPEG are good to go.
+    </li>
+<li>
+<strong>
+      Will this extract handwriting too?
+     </strong>
+<br/>
+     If it’s super neat handwriting, maybe. But mostly it’s tuned for printed or digital text.
+    </li>
+<li>
+<strong>
+      Is there a size limit on the images?
+     </strong>
+<br/>
+     No strict cap, but smaller files load faster. If your image is massive, maybe resize it a little for speed.
+    </li>
+<li>
+<strong>
+      Can I extract text from memes?
+     </strong>
+<br/>
+     Totally. Whether it’s a meme, a screenshot of a tweet, or anything with readable words—it works.
+    </li>
+<li>
+<strong>
+      Is the tool free forever?
+     </strong>
+<br/>
+     Yep. No fees, no sign-ups. Just click and extract.
+    </li>
+</ol>
+<p>
+    So yeah, next time someone sends you a screenshot of something you actually need to use—don’t groan. Just open up the Image to Text Extractor and let it do the annoying part for you.
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const uploadArea = document.getElementById('upload-area');
+        // DOM element manipulation
+        const imageInput = document.getElementById('image-input');
+        // DOM element manipulation
+        const preview = document.getElementById('preview');
+        // DOM element manipulation
+        const extractedText = document.getElementById('extracted-text');
+        // DOM element manipulation
+        const extractBtn = document.getElementById('extract-btn');
+        // DOM element manipulation
+        const copyBtn = document.getElementById('copy-btn');
+        // DOM element manipulation
+        const clearBtn = document.getElementById('clear-btn');
+        // DOM element manipulation
+        const loader = document.getElementById('loader');
+        // DOM element manipulation
+        const error = document.getElementById('error');
+
+        // Drag and Drop
+        // Event listener for user interactions
+        uploadArea.addEventListener('click', () => imageInput.click());
+        // Event listener for user interactions
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        // Event listener for user interactions
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        // Event listener for user interactions
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            handleFile(file);
+        });
+
+        // File Input
+        // Event listener for user interactions
+        imageInput.addEventListener('change', () => {
+            const file = imageInput.files[0];
+            handleFile(file);
+        });
+
+        // Function: handleFile
+        function handleFile(file) {
+            if (!file || !file.type.startsWith('image/')) {
+                showError('Please upload a valid image file (e.g., PNG, JPG).');
+                resetPreview();
+                return;
+            }
+            // Check file size (1 MB = 1,048,576 bytes)
+            if (file.size > 1048576) {
+                showError('Image size exceeds 1 MB. Please compress the image (e.g., use an online tool like TinyPNG) and try again.');
+                resetPreview();
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = () => {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+                extractBtn.disabled = false;
+                error.style.display = 'none';
+                checkImageQuality(file);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Check Image Quality
+        async function checkImageQuality(file) {
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
+            await new Promise((resolve) => { img.onload = resolve; });
+            const warnings = [];
+            if (img.width < 300 || img.height < 300) {
+                warnings.push('Low resolution detected (minimum 300x300 pixels recommended).');
+            }
+            if (img.width > 2000 || img.height > 2000) {
+                warnings.push('Large image detected (maximum 2000x2000 pixels recommended for faster processing).');
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            const imageData = ctx.getImageData(0, 0, img.width, img.height).data;
+            let brightnessSum = 0;
+            let variance = 0;
+            for (let i = 0; i < imageData.length; i += 4) {
+                const brightness = (imageData[i] + imageData[i + 1] + imageData[i + 2]) / 3;
+                brightnessSum += brightness;
+            }
+            const avgBrightness = brightnessSum / (imageData.length / 4);
+            for (let i = 0; i < imageData.length; i += 4) {
+                const brightness = (imageData[i] + imageData[i + 1] + imageData[i + 2]) / 3;
+                variance += Math.pow(brightness - avgBrightness, 2);
+            }
+            const stdDev = Math.sqrt(variance / (imageData.length / 4));
+            if (stdDev < 20) {
+                warnings.push('Low contrast detected (use dark text on a light background).');
+            }
+            if (warnings.length > 0) {
+                showError(`Image quality issues: ${warnings.join(' ')} For best results, use a 300-2000 pixel, high-contrast image with clear, printed text.`);
+            }
+            URL.revokeObjectURL(img.src);
+        }
+
+        // Advanced Image Preprocessing
+        // Function: preprocessImage
+        function preprocessImage(imageSrc) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.src = imageSrc;
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    // Cap image size for performance
+                    const maxDimension = 1500;
+                    let scale = 1;
+                    if (img.width > maxDimension || img.height > maxDimension) {
+                        scale = Math.min(maxDimension / img.width, maxDimension / img.height);
+                    }
+                    canvas.width = img.width * scale;
+                    canvas.height = img.height * scale;
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                    // Grayscale
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const data = imageData.data;
+                    for (let i = 0; i < data.length; i += 4) {
+                        const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                        data[i] = data[i + 1] = data[i + 2] = avg;
+                    }
+                    ctx.putImageData(imageData, 0, 0);
+
+                    // Simplified contrast and noise reduction
+                    ctx.filter = `contrast(200%) brightness(110%)`;
+                    ctx.drawImage(canvas, 0, 0);
+
+                    // Adaptive thresholding
+                    const thresholdData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const tData = thresholdData.data;
+                    const threshold = 128;
+                    for (let i = 0; i < tData.length; i += 4) {
+                        const value = tData[i] > threshold ? 255 : 0;
+                        tData[i] = tData[i + 1] = tData[i + 2] = value;
+                    }
+                    ctx.putImageData(thresholdData, 0, 0);
+
+                    resolve(canvas.toDataURL('image/png'));
+                };
+            });
+        }
+
+        // Sanitize and Correct Text
+        // Function: sanitizeText
+        function sanitizeText(text) {
+            if (!text) return '';
+            let cleaned = text
+                .replace(/[^\x20-\x7E\n]/g, '') // Remove non-printable characters
+                .replace(/\s+/g, ' ') // Normalize spaces
+                .replace(/[{}\[\]<>]/g, '') // Remove brackets
+                .trim();
+
+            // Correct common OCR errors
+            cleaned = cleaned
+                .replace(/\b1\b/g, 'I')
+                .replace(/\b0\b/g, 'O')
+                .replace(/\b5\b/g, 'S')
+                .replace(/\bZ\b/g, '2')
+                .replace(/\bB\b/g, '8');
+
+            return cleaned;
+        }
+
+        // Timeout Wrapper for Promises
+        // Function: withTimeout
+        function withTimeout(promise, ms, errorMessage) {
+            return Promise.race([
+                promise,
+                new Promise((_, reject) => setTimeout(() => reject(new Error(errorMessage)), ms))
+            ]);
+        }
+
+        // OCR.Space API
+        async function ocrSpace(file) {
+            const apiKey = 'K88508465688957'; // Your OCR.Space API key
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('language', 'eng');
+            formData.append('isOverlayRequired', false);
+            formData.append('detectOrientation', true); // Handle rotated text
+            formData.append('scale', true); // Improve resolution
+            formData.append('OCREngine', 2); // Engine 2 for accuracy
+
+            try {
+                console.time('OCR.Space');
+                console.log(`Uploading image of size: ${(file.size / 1024).toFixed(2)} KB`);
+                const response = await withTimeout(
+        // API or data fetching
+                    fetch('https://api.ocr.space/parse/image', {
+                        method: 'POST',
+                        headers: { 'apikey': apiKey },
+                        body: formData,
+                    }),
+                    15000,
+                    'OCR.Space API timed out after 15 seconds.'
+                );
+                const result = await response.json();
+                console.timeEnd('OCR.Space');
+                if (result.IsErroredOnProcessing) {
+                    throw new Error(`OCR.Space error: ${result.ErrorMessage.join(', ')}`);
+                }
+                if (result.ParsedResults && result.ParsedResults[0]) {
+                    const text = result.ParsedResults[0].ParsedText;
+                    console.log('OCR.Space raw output:', text);
+                    return { text: sanitizeText(text), confidence: 0.85 };
+                }
+                console.log('OCR.Space: No text detected');
+                return null;
+            } catch (err) {
+                console.error('OCR.Space error:', err);
+                showError(`OCR.Space failed: ${err.message}. Check your internet or try a smaller, clearer image (max 1 MB).`);
+                return null;
+            }
+        }
+
+        // Tesseract.js Fallback
+        async function tesseractFallback(imageSrc) {
+            try {
+                console.time('Tesseract');
+                const processedImage = await preprocessImage(imageSrc);
+                const { data: { text, confidence } } = await withTimeout(
+                    Tesseract.recognize(processedImage, 'eng', {
+                        tessedit_ocr_engine_mode: 3,
+                        tessedit_pageseg_mode: 6,
+                        tessedit_char_whitelist: 'ABCDEFGHIJKLMNOPQRSTUVWfreeontoolsabcdefghijklmnopqrstuvwfreeontools0123456789.,!?- ',
+                    }),
+                    30000,
+                    'Tesseract timed out after 30 seconds.'
+                );
+                console.timeEnd('Tesseract');
+                console.log('Tesseract raw output:', text, `Confidence: ${confidence}`);
+                return confidence > 80 ? { text: sanitizeText(text), confidence: confidence / 100 } : null;
+            } catch (err) {
+                console.error('Tesseract error:', err);
+                return null;
+            }
+        }
+
+        // Extract Text
+        // Event listener for user interactions
+        extractBtn.addEventListener('click', async () => {
+            if (!preview.src || !imageInput.files[0]) return;
+            loader.style.display = 'block';
+            extractBtn.disabled = true;
+            error.style.display = 'none';
+
+            let finalText = '';
+            let maxConfidence = 0;
+            try {
+                console.time('Total Extraction');
+                // Try OCR.Space
+                const ocrSpaceResult = await ocrSpace(imageInput.files[0]);
+                if (ocrSpaceResult && ocrSpaceResult.text && ocrSpaceResult.confidence > maxConfidence) {
+                    finalText = ocrSpaceResult.text;
+                    maxConfidence = ocrSpaceResult.confidence;
+                }
+
+                // Fallback to Tesseract.js (single attempt)
+                if (!finalText) {
+                    const tesseractResult = await tesseractFallback(preview.src);
+                    if (tesseractResult && tesseractResult.text && tesseractResult.confidence > maxConfidence) {
+                        finalText = tesseractResult.text;
+                        maxConfidence = tesseractResult.confidence;
+                    }
+                }
+
+                if (!finalText) {
+                    throw new Error('No text extracted from any OCR engine. Ensure the image (max 1 MB) contains clear, printed text.');
+                }
+
+                extractedText.value = finalText;
+                copyBtn.disabled = !finalText;
+                console.timeEnd('Total Extraction');
+            } catch (err) {
+                showError(`Text extraction failed: ${err.message}. Use a high-resolution (300-2000 pixels), high-contrast image with clear, printed text (max 1 MB).`);
+                console.error('Extraction error:', err);
+            } finally {
+                loader.style.display = 'none';
+                extractBtn.disabled = false;
+            }
+        });
+
+        // Copy Text
+        // Event listener for user interactions
+        copyBtn.addEventListener('click', () => {
+            extractedText.select();
+            document.execCommand('copy');
+            alert('Text copied to clipboard!');
+        });
+
+        // Clear
+        // Event listener for user interactions
+        clearBtn.addEventListener('click', () => {
+            resetPreview();
+            extractedText.value = '';
+            imageInput.value = '';
+            extractBtn.disabled = true;
+            copyBtn.disabled = true;
+            error.style.display = 'none';
+        });
+
+        // Function: resetPreview
+        function resetPreview() {
+            preview.src = '';
+            preview.style.display = 'none';
+        }
+
+        // Function: showError
+        function showError(message) {
+            error.textContent = message;
+            error.style.display = 'block';
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

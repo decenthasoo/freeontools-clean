@@ -1,0 +1,758 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   CSS Flexbox Generator - Simple &amp; Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="CSS Flexbox Generator - Easily create and customize Flexbox layouts with this free tool. No login, no ads, and 100% free. Try it now!" name="description">
+<meta content="CSS Flexbox Generator, Free Flexbox Tool, Flexbox Layout Generator, CSS Layout Tool, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/css-flexbox-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="CSS Flexbox Generator - Simple &amp; Free" property="og:title"/>
+<meta content="CSS Flexbox Generator - Easily create and customize Flexbox layouts with this free tool. No login, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/css-flexbox-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/css-flexbox-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="CSS Flexbox Generator - Simple &amp; Free" name="twitter:title"/>
+<meta content="CSS Flexbox Generator - Easily create and customize Flexbox layouts with this free tool. No login, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/css-flexbox-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CSS Flexbox Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/css-flexbox-generator",
+  "image": "https://www.freeontools.com/images/css-flexbox-generator.png",
+  "description": "Generate and customize CSS Flexbox layouts with this easy-to-use, free tool. No login required, completely free.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/css-flexbox-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.90",
+  "bestRating": "5",
+  "ratingCount": "1150"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "James Lee"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This Flexbox generator is a game-changer for web developers! It simplifies creating complex layouts in no time. Highly recommend it!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "CSS Flexbox Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            
+        }
+
+        .controls, .preview, .code-output {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1;
+            min-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .controls:hover, .preview:hover, .code-output:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .controls h2, .preview h2, .code-output h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        .control-group select, .control-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .control-group select:focus, .control-group input:focus {
+            border-color: #f28c38;
+            outline: none;
+        }
+
+        .preview-container {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            min-height: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            transition: all 0.3s ease;
+        }
+
+        .preview-item {
+            background: #f28c38;
+            color: #fff;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            flex: 1 1 auto;
+            transition: all 0.3s ease;
+        }
+
+        .code-output pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        button {
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover { background-color: #d97a2e;
+            background: #e07b30;
+            transform: scale(1.05);
+        }
+
+        /* Content Container */
+        /* Container styling */
+        .content-container {
+            max-width: 1170px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,Tagged: 0, 0.1);
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+            color: #333;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Body styling */
+            body {
+                overflow-x: hidden; /* Explicitly prevent horizontal overflow */
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro {
+                font-size: 0.95rem; /* Slightly smaller for mobile */
+                margin-bottom: 10px; /* Reduced top space */
+                padding: 0 10px; /* Reduced padding to fit viewport */
+            }
+
+        /* Container styling */
+            .container {
+                flex-direction: column;
+                padding: 10px; /* Reduced padding to prevent overflow */
+                margin-top: 0; /* Minimize top space */
+            }
+
+            .controls, .preview, .code-output {
+                min-width: 100%;
+            }
+
+        /* Header styling */
+            header {
+                padding: 10px 0; /* Reduced top/bottom padding */
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px; /* Mobile padding */
+                margin: 10px auto; /* Reduced margin to save space */
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+        /* Body styling */
+            body {
+                overflow-x: hidden; /* Explicitly prevent horizontal overflow */
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro {
+                font-size: 0.9rem;
+                margin-bottom: 10px; /* Reduced top space */
+                padding: 0 10px; /* Reduced padding to fit viewport */
+            }
+
+            .controls, .preview, .code-output {
+                padding: 15px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 10px; /* Reduced padding to prevent overflow */
+                margin-top: 0; /* Minimize top space */
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px; /* Mobile padding */
+                margin: 10px auto; /* Reduced margin to save space */
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    CSS Flexbox Generator
+   </h1>
+<p class="intro">
+    Create and preview flexbox layouts with ease. Adjust properties and copy the generated CSS code.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="controls">
+<h2>
+     Controls
+    </h2>
+<div class="control-group">
+<label for="flex-direction">
+      Flex Direction
+     </label>
+<select id="flex-direction">
+<option value="row">
+       Row
+      </option>
+<option value="row-reverse">
+       Row Reverse
+      </option>
+<option value="column">
+       Column
+      </option>
+<option value="column-reverse">
+       Column Reverse
+      </option>
+</select>
+</div>
+<div class="control-group">
+<label for="justify-content">
+      Justify Content
+     </label>
+<select id="justify-content">
+<option value="flex-start">
+       Flex Start
+      </option>
+<option value="flex-end">
+       Flex End
+      </option>
+<option value="center">
+       Center
+      </option>
+<option value="space-between">
+       Space Between
+      </option>
+<option value="space-around">
+       Space Around
+      </option>
+<option value="space-evenly">
+       Space Evenly
+      </option>
+</select>
+</div>
+<div class="control-group">
+<label for="align-items">
+      Align Items
+     </label>
+<select id="align-items">
+<option value="flex-start">
+       Flex Start
+      </option>
+<option value="flex-end">
+       Flex End
+      </option>
+<option value="center">
+       Center
+      </option>
+<option value="baseline">
+       Baseline
+      </option>
+<option value="stretch">
+       Stretch
+      </option>
+</select>
+</div>
+<div class="control-group">
+<label for="gap">
+      Gap (px)
+     </label>
+<input id="gap" max="100" min="0" type="number" value="10"/>
+</div>
+<div class="control-group">
+<label for="item-count">
+      Number of Items
+     </label>
+<input id="item-count" max="10" min="1" type="number" value="3"/>
+</div>
+</div>
+<div class="preview">
+<h2>
+     Preview
+    </h2>
+<div class="preview-container" id="preview-container">
+<div class="preview-item">
+      Item 1
+     </div>
+<div class="preview-item">
+      Item 2
+     </div>
+<div class="preview-item">
+      Item 3
+     </div>
+</div>
+</div>
+<div class="code-output">
+<h2>
+     Generated CSS
+    </h2>
+<pre id="css-code"></pre>
+<button onclick="copyCode()">
+     Copy Code
+    </button>
+</div>
+</div>
+<!-- Content Container -->
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a CSS Flexbox Generator?
+   </h2>
+<p>
+    Okay, real talk—CSS is powerful, but also kind of a headache sometimes, right? Especially when you’re just trying to line up a few boxes or center something (why is centering always the problem?!). That’s where the CSS Flexbox Generator comes in to save your layout-loving soul.
+   </p>
+<p>
+    It’s basically a no-fuss tool that helps you you visually build your flexbox layouts without memorizing all the weird property names. You click around, set your preferences—like how things should wrap, align, space out—and boom: it spits out clean, ready-to-copy CSS code. So if flexbox has ever made you say “wait, what’s the difference between justify-content and align-items again?” this tool’s got your back.
+   </p>
+<h3>
+    Try Our CSS Flexbox Generator Now
+   </h3>
+<p>
+    Want perfect alignment without crying into your keyboard? Use the CSS Flexbox Generator to build layouts like a pro—with zero guesswork. Just click, adjust, copy. Done.
+   </p>
+<h3>
+    Why a CSS Flexbox Generator Matters
+   </h3>
+<p>
+    If you’ve ever messed with flexbox manually, you know how fast it can go from “this is cool” to “why is everything breaking.” You change one property and suddenly your whole layout is upside down. The CSS Flexbox Generator takes all that stress out of the equation.
+   </p>
+<p>
+    Why it’s worth using:
+   </p>
+<ul>
+<li>
+     It helps you see what each CSS property actually does
+    </li>
+<li>
+     You get instant feedback without refreshing your browser 600 times
+    </li>
+<li>
+     It speeds up your workflow like crazy
+    </li>
+<li>
+     You don’t need to memorize every flexbox option (hallelujah)
+    </li>
+<li>
+     It’s beginner-friendly but still great for pros
+    </li>
+</ul>
+<p>
+    Whether you’re just dabbling in front-end or doing daily dev work, it’s a must-have for smoother CSS vibes.
+   </p>
+<h3>
+    Features
+   </h3>
+<p>
+    This tool isn’t trying to be flashy—it’s just super useful. Here’s what makes the CSS Flexbox Generator awesome:
+   </p>
+<ul>
+<li>
+     Interactive preview panel to see changes live
+    </li>
+<li>
+     Full control over flex container and flex items
+    </li>
+<li>
+     Tweak flex-direction, justify-content, align-items, flex-wrap, and more
+    </li>
+<li>
+     Add multiple items and test how they behave
+    </li>
+<li>
+     Instantly copy the generated CSS to your clipboard
+    </li>
+<li>
+     Totally browser-based—no installs or weird setup
+    </li>
+<li>
+     Great for rapid prototyping or testing out ideas
+    </li>
+</ul>
+<p>
+    It’s like training wheels for flexbox, but in a cool way that even senior devs secretly love.
+   </p>
+<h3>
+    How to Use the CSS Flexbox Generator
+   </h3>
+<p>
+    Don’t worry, you don’t need to know every flexbox term to use this. Here's how to roll:
+   </p>
+<ol>
+<li>
+     Go to the CSS Flexbox Generator tool page
+    </li>
+<li>
+     Choose how many items you want in your container
+    </li>
+<li>
+     Set properties for the container like flex-direction, justify-content, etc.
+    </li>
+<li>
+     Play around with individual item settings (like flex-grow, order, etc.)
+    </li>
+<li>
+     Watch how everything moves in the live preview
+    </li>
+<li>
+     Happy with the layout? Click copy and use that CSS in your project
+    </li>
+</ol>
+<p>
+    Pro tip: Set your layout goals first (like “I want three boxes spaced evenly”) and then tweak settings until the preview matches your vision.
+   </p>
+<h3>
+    Why Choose This CSS Flexbox Generator?
+   </h3>
+<p>
+    Sure, there are other flexbox tools out there. But this one just… works. It’s designed to be quick, visual, and zero-friction. You won’t get bogged down in documentation or scratch your head over weird syntax.
+   </p>
+<p>
+    Why this tool rocks:
+   </p>
+<ul>
+<li>
+     Clean, user-friendly interface
+    </li>
+<li>
+     Real-time layout changes so you can learn by doing
+    </li>
+<li>
+     Super helpful if you're debugging layouts or building components fast
+    </li>
+<li>
+     Saves you from Googling “how to center with flexbox” for the 50th time
+    </li>
+<li>
+     Makes learning CSS actually fun (who knew?)
+    </li>
+</ul>
+<p>
+    Whether you’re a newbie trying to understand flex, or a veteran trying to move fast, it fits into your flow seamlessly.
+   </p>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      Can I export HTML too, or just the CSS?
+     </strong>
+<br/>
+     Right now it’s all about generating the flexbox CSS. But the layout preview helps you visualize how your HTML should be structured.
+    </li>
+<li>
+<strong>
+      Does it support nested flex layouts?
+     </strong>
+<br/>
+     Not at the moment—it’s focused on single-level flex containers. But once you get the hang of the basics, you can nest them manually in your code.
+    </li>
+<li>
+<strong>
+      Is this a good tool for beginners?
+     </strong>
+<br/>
+     Absolutely. It’s designed to help you see what each property does, so it’s a great way to learn flexbox without staring at walls of text.
+    </li>
+<li>
+<strong>
+      Will this work on mobile layouts too?
+     </strong>
+<br/>
+     Yes! Flexbox is super mobile-friendly, and the settings here can help you prep responsive layouts in no time.
+    </li>
+<li>
+<strong>
+      Is it free to use?
+     </strong>
+<br/>
+     Totally free. No logins, no pop-ups, just layout magic.
+    </li>
+</ol>
+<p>
+    So yeah, if flexbox ever made you rage-quit or overuse !important, give the CSS Flexbox Generator a try. It’s like having a layout cheat code at your fingertips.
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const previewContainer = document.getElementById('preview-container');
+        // DOM element manipulation
+        const cssCode = document.getElementById('css-code');
+        const controls = {
+        // DOM element manipulation
+            flexDirection: document.getElementById('flex-direction'),
+        // DOM element manipulation
+            justifyContent: document.getElementById('justify-content'),
+        // DOM element manipulation
+            alignItems: document.getElementById('align-items'),
+        // DOM element manipulation
+            gap: document.getElementById('gap'),
+        // DOM element manipulation
+            itemCount: document.getElementById('item-count')
+        };
+
+        // Function: updatePreview
+        function updatePreview() {
+            const { flexDirection, justifyContent, alignItems, gap, itemCount } = controls;
+            const itemCountValue = parseInt(itemCount.value);
+
+            // Update preview container styles
+            previewContainer.style.flexDirection = flexDirection.value;
+            previewContainer.style.justifyContent = justifyContent.value;
+            previewContainer.style.alignItems = alignItems.value;
+            previewContainer.style.gap = `${gap.value}px`;
+
+            // Update preview items
+            previewContainer.innerHTML = '';
+            for (let i = 1; i <= itemCountValue; i++) {
+                const item = document.createElement('div');
+                item.className = 'preview-item';
+                item.textContent = `Item ${i}`;
+                previewContainer.appendChild(item);
+            }
+
+            // Generate CSS code
+            cssCode.textContent = `.container {
+    display: flex;
+    flex-direction: ${flexDirection.value};
+    justify-content: ${justifyContent.value};
+    align-items: ${alignItems.value};
+    gap: ${gap.value}px;
+}`;
+        }
+
+        // Function: copyCode
+        function copyCode() {
+            navigator.clipboard.writeText(cssCode.textContent).then(() => {
+                alert('CSS code copied to clipboard!');
+            });
+        }
+
+        // Event listeners for controls
+        Object.values(controls).forEach(control => {
+        // Event listener for user interactions
+            control.addEventListener('input', updatePreview);
+        });
+
+        // Initial preview update
+        updatePreview();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

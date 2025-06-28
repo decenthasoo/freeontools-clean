@@ -1,0 +1,812 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Image Noise Generator - Instant Access Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image Noise Generator adds realistic noise to your images instantly. Instant Access with no limits, free and easy to use." name="description">
+<meta content="Image Noise Generator, add noise to image, image noise overlay, random noise generator, grain effect, free image noise tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-noise-generator" rel="canonical"/>
+<meta content="Image Noise Generator - Instant Access Online Tool" property="og:title"/>
+<meta content="Easily add noise or grain to images. Instant access, no login required, and completely free." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/assets/image-noise-generator-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Noise Generator - Instant Access Online Tool" name="twitter:title"/>
+<meta content="Apply noise effects to your images online in one click. 100% free and simple to use." name="twitter:description"/>
+<meta content="https://www.freeontools.com/assets/image-noise-generator-preview.png" name="twitter:image"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/assets/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontoolstools",
+    "https://twitter.com/freeontoolstools",
+    "https://www.linkedin.com/company/freeontoolstools"
+  ]
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Noise Generator",
+  "url": "https://www.freeontools.com",
+  "image": "https://www.freeontools.com/assets/image-noise-generator-preview.png",
+  "applicationCategory": "PhotoEditingApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Noise Generator"
+  },
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "ratingCount": "1190"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Fatima R."
+  },
+  "datePublished": "2025-01-22",
+  "reviewBody": "Great tool for quick edits! I use it to create vintage and film-style photos. Super fast and doesn't require any login.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Noise Generator"
+  }
+}
+  </script>
+<style>
+
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 1rem;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 1rem auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+margin-left: auto;
+margin-right: auto;
+        }
+
+        .controls {
+            flex: 1;
+            min-width: 250px;
+            max-width: 400px;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        select, input[type="range"], input[type="file"] {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+
+        input[type="range"] {
+            cursor: pointer;
+        }
+
+        #intensity-value {
+            display: inline-block;
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #f28c38;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;            
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #e07b30;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .canvas-container {
+            flex: 2;
+            min-width: 250px;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #noise-canvas {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+@media (max-width: 1023px) {
+    button + button {
+        margin-top: 0.75rem; /* 8px vertical space for mobile */
+    }
+}
+
+/* Desktop spacing (screens 1024px and larger) */
+@media (min-width: 1024px) {
+    button + button {
+        margin-top: 1.50rem; /* 12px vertical space for desktop */
+    }
+}
+
+        /* New Content Container Styles */
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 1rem auto;
+            padding: 30px; /* Desktop padding */
+            background: #fff; /* Match container background */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+margin-left: auto;
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 1024px) {
+        /* Container styling */
+            .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .controls, .canvas-container {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+            }
+
+            .controls {
+                padding: 1.25rem;
+            }
+
+            .canvas-container {
+                max-width: 100%;
+            }
+
+            #noise-canvas {
+                width: 100%;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+        /* Header styling */
+            header {
+                padding: 1.5rem 0.5rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 0.5rem auto;
+                padding: 0 0.5rem;
+            }
+
+            .controls {
+                padding: 1rem;
+                min-width: 100%;
+            }
+
+            .control-group {
+                margin-bottom: 1rem;
+            }
+
+            select, input[type="range"], input[type="file"] {
+                font-size: 0.9rem;
+                padding: 0.4rem;
+            }
+
+            button {
+                padding: 0.6rem;
+                font-size: 0.9rem;
+            }
+
+            .canvas-container {
+                min-width: 100%;
+            }
+
+            /* Mobile padding for content-container */
+        /* Container styling */
+            .content-container {
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p {
+                font-size: 0.9rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container ul li, .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Image Noise Generator
+   </h1>
+<p>
+    Upload an image and add stunning noise effects with ease.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="controls">
+<div class="control-group">
+<label for="image-upload">
+      Upload Image:
+     </label>
+<input accept="image/*" id="image-upload" type="file"/>
+</div>
+<div class="control-group">
+<label for="noise-type">
+      Noise Type:
+     </label>
+<select id="noise-type">
+<option value="gaussian">
+       Gaussian
+      </option>
+<option value="perlin">
+       Perlin
+      </option>
+<option value="white">
+       White
+      </option>
+</select>
+</div>
+<div class="control-group">
+<label for="noise-intensity">
+      Noise Intensity:
+     </label>
+<input id="noise-intensity" max="100" min="0" type="range" value="50"/>
+<span id="intensity-value">
+      50
+     </span>
+</div>
+<div class="control-group">
+<label for="color-mode">
+      Color Mode:
+     </label>
+<select id="color-mode">
+<option value="grayscale">
+       Grayscale
+      </option>
+<option value="rgb">
+       RGB
+      </option>
+</select>
+</div>
+<button disabled="" id="apply-btn">
+     Apply Noise
+    </button>
+<button disabled="" id="download-btn">
+     Download Image
+    </button>
+</div>
+<div class="canvas-container">
+<canvas id="noise-canvas">
+</canvas>
+</div>
+</div>
+<!-- New Content Container -->
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is an Image Noise Generator?
+   </h2>
+<p>
+    Ever wanted to add some grit or texture to your image? That’s where the Image Noise Generator comes in. This tool lets you add noise to any image, which create a grainy, speckled effect. It’s a super useful effect in design, photography, or when you want to give your image a more "raw" or "vintage" vibe.
+   </p>
+<p>
+    Think of it as the opposite of a perfect, clean image. Adding noise can make your picture look more dynamic, artistic, or even a bit retro.
+   </p>
+<h2>
+    Try Our Image Noise Generator Now
+   </h2>
+<p>
+    Want to add some noise to your image? Just upload it, choose how much noise you want to add, and click the button. In seconds, your image will have that gritty, textured effect. No need for fancy software or complicated steps.
+   </p>
+<h2>
+    Why Use an Image Noise Generator?
+   </h2>
+<p>
+    So, why would you need this effect? Here's why adding noise can be a game-changer:
+   </p>
+<ul>
+<li>
+     Adds texture – Noise gives your image an organic, rough texture. It can make things feel more authentic or vintage.
+    </li>
+<li>
+     Perfect for artistic projects – If you’re working on something creative, noise can make your images pop and feel more original.
+    </li>
+<li>
+     Mimics film grain – Want that classic film photography look? Noise can mimic the grain you’d get from older film cameras.
+    </li>
+<li>
+     Enhances depth – By adding noise, you can create more depth and dimension in your image.
+    </li>
+<li>
+     Great for backgrounds – Noise can also be used as a background texture in design projects, adding subtle depth without overwhelming your content.
+    </li>
+</ul>
+<p>
+    If you're working with designs, photos, or graphics that could use a little more character, noise is your go-to tool.
+   </p>
+<h2>
+    Features of the Image Noise Generator
+   </h2>
+<ul>
+<li>
+     Adjustable noise levels – Control how much noise is added to your image. Want just a hint of grain or a full-on noise effect? You can choose!
+    </li>
+<li>
+     Fast results – Upload your image, adjust the noise, and you’re done in seconds.
+    </li>
+<li>
+     Easy to use – No tech skills required. Just upload and adjust.
+    </li>
+<li>
+     Works with any image format – JPG, PNG, GIF, you name it.
+    </li>
+<li>
+     No sign-up needed – Just upload, adjust, and download.
+    </li>
+<li>
+     Free and simple – It’s fast, free, and perfect for quick edits.
+    </li>
+</ul>
+<p>
+    If you need a quick texture boost, this tool has you covered.
+   </p>
+<h2>
+    How to Use the Image Noise Generator
+   </h2>
+<p>
+    Want to add some noise to your image? Here’s how it works:
+   </p>
+<ol>
+<li>
+     Open the Image Noise Generator.
+    </li>
+<li>
+     Upload your image (JPG, PNG, GIF, etc.).
+    </li>
+<li>
+     Adjust the noise level using the slider—go as light or heavy as you want.
+    </li>
+<li>
+     Click the button to apply the noise effect.
+    </li>
+<li>
+     Download your noisy new image.
+    </li>
+</ol>
+<p>
+    Pro tip: Start with a small amount of noise to test how it looks, then increase the effect if you want a stronger grainy texture.
+   </p>
+<h2>
+    Why Choose This Image Noise Generator?
+   </h2>
+<ul>
+<li>
+     Fast and easy – Add noise to your images in seconds, no experience needed.
+    </li>
+<li>
+     Customizable noise levels – Fine-tune the noise to your exact liking.
+    </li>
+<li>
+     Great for designers and photographers – Add texture, mimic film grain, or create cool background effects.
+    </li>
+<li>
+     No software required – Just upload and apply the effect right in your browser.
+    </li>
+<li>
+     Completely free – You don’t need to pay for any fancy software—this tool is free and online.
+    </li>
+</ul>
+<p>
+    For a quick, customizable noise effect on your images, this tool is your go-to.
+   </p>
+<h2>
+    FAQs About the Image Noise Generator
+   </h2>
+<p>
+<strong>
+     Can I control how much noise I add to the image?
+    </strong>
+</p>
+<p>
+    Yes! You can adjust the noise levels to your liking, from subtle grain to heavy texture.
+   </p>
+<p>
+<strong>
+     Does this tool work with all image formats?
+    </strong>
+</p>
+<p>
+    Absolutely. You can upload JPG, PNG, GIF, and most common image formats.
+   </p>
+<p>
+<strong>
+     Can I use this for creative or artistic projects?
+    </strong>
+</p>
+<p>
+    Definitely! Adding noise is perfect for projects that need texture, depth, or a vintage feel.
+   </p>
+<p>
+<strong>
+     Will the noise affect the quality of my image?
+    </strong>
+</p>
+<p>
+    Nope! The noise effect won’t distort the quality of the image; it just adds a textured layer on top.
+   </p>
+<p>
+<strong>
+     Is the Image Noise Generator free?
+    </strong>
+</p>
+<p>
+    Yes! It’s totally free to use with no sign-ups or hidden fees.
+   </p>
+<h2>
+    Wrap-Up: Add Texture and Grit to Your Images in Seconds
+   </h2>
+<p>
+    The Image Noise Generator is the easiest way to add a bit of texture and depth to your images. Whether you’re going for a vintage film look, creating dynamic backgrounds, or just want to add some raw, artistic flair, this tool is your one-stop solution.
+   </p>
+<p>
+    So, if your image needs some noise, go ahead—upload and get started. The perfect gritty texture is just a few clicks away!
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const canvas = document.getElementById('noise-canvas');
+        const ctx = canvas.getContext('2d');
+        // DOM element manipulation
+        const imageUpload = document.getElementById('image-upload');
+        // DOM element manipulation
+        const noiseTypeSelect = document.getElementById('noise-type');
+        // DOM element manipulation
+        const intensityInput = document.getElementById('noise-intensity');
+        // DOM element manipulation
+        const intensityValue = document.getElementById('intensity-value');
+        // DOM element manipulation
+        const colorModeSelect = document.getElementById('color-mode');
+        // DOM element manipulation
+        const applyBtn = document.getElementById('apply-btn');
+        // DOM element manipulation
+        const downloadBtn = document.getElementById('download-btn');
+        let uploadedImage = null;
+
+        // Set canvas size
+        const setCanvasSize = () => {
+        // DOM element manipulation
+            const container = document.querySelector('.canvas-container');
+            const width = Math.min(container.clientWidth, 600);
+            canvas.width = width;
+            canvas.height = width * 0.75;
+            if (uploadedImage) {
+                drawImage();
+            }
+        };
+
+        setCanvasSize();
+        // Event listener for user interactions
+        window.addEventListener('resize', setCanvasSize);
+
+        // Update intensity display
+        // Event listener for user interactions
+        intensityInput.addEventListener('input', () => {
+            intensityValue.textContent = intensityInput.value;
+        });
+
+        // Handle image upload
+        // Event listener for user interactions
+        imageUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    uploadedImage = new Image();
+                    uploadedImage.onload = () => {
+                        applyBtn.disabled = false;
+                        drawImage();
+                    };
+                    uploadedImage.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Draw uploaded image
+        const drawImage = () => {
+            const canvasWidth = canvas.width;
+            const canvasHeight = canvas.height;
+            const imgWidth = uploadedImage.width;
+            const imgHeight = uploadedImage.height;
+            const scale = Math.min(canvasWidth / imgWidth, canvasHeight / imgHeight);
+            const scaledWidth = imgWidth * scale;
+            const scaledHeight = imgHeight * scale;
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+            ctx.drawImage(uploadedImage, (canvasWidth - scaledWidth) / 2, (canvasHeight - scaledHeight) / 2, scaledWidth, scaledHeight);
+        };
+
+        // Apply noise effect
+        const applyNoise = () => {
+            if (!uploadedImage) return;
+
+            drawImage(); // Redraw original image
+            const width = canvas.width;
+            const height = canvas.height;
+            const noiseType = noiseTypeSelect.value;
+            const intensity = intensityInput.value / 100;
+            const colorMode = colorModeSelect.value;
+
+            const imageData = ctx.getImageData(0, 0, width, height);
+            const data = imageData.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                let noiseValue;
+                if (noiseType === 'gaussian') {
+                    noiseValue = gaussianNoise(intensity);
+                } else if (noiseType === 'perlin') {
+                    noiseValue = perlinNoise(i, width, intensity);
+                } else {
+                    noiseValue = Math.random() * intensity;
+                }
+
+                if (colorMode === 'grayscale') {
+                    const gray = Math.floor(noiseValue * 255 * intensity);
+                    data[i] = Math.min(255, Math.max(0, data[i] + gray));     // R
+                    data[i + 1] = Math.min(255, Math.max(0, data[i + 1] + gray)); // G
+                    data[i + 2] = Math.min(255, Math.max(0, data[i + 2] + gray)); // B
+                } else {
+                    data[i] = Math.min(255, Math.max(0, data[i] + Math.random() * noiseValue * 255 * intensity));     // R
+                    data[i + 1] = Math.min(255, Math.max(0, data[i + 1] + Math.random() * noiseValue * 255 * intensity)); // G
+                    data[i + 2] = Math.min(255, Math.max(0, data[i + 2] + Math.random() * noiseValue * 255 * intensity)); // B
+                }
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+            downloadBtn.disabled = false;
+        };
+
+        // Simplified Gaussian noise
+        const gaussianNoise = (intensity) => {
+            const u = 1 - Math.random();
+            const v = Math.random();
+            const z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+            return (z * intensity) / 4;
+        };
+
+        // Simplified Perlin noise placeholder
+        const perlinNoise = (i, width, intensity) => {
+            const x = (i / 4) % width;
+            const y = Math.floor((i / 4) / width);
+            return (Math.sin(x * 0.1) + Math.cos(y * 0.1)) * intensity * 0.5;
+        };
+
+        // Download image
+        const downloadImage = () => {
+            const link = document.createElement('a');
+            link.download = 'noisy-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        };
+
+        // Event listeners
+        // Event listener for user interactions
+        applyBtn.addEventListener('click', applyNoise);
+        // Event listener for user interactions
+        downloadBtn.addEventListener('click', downloadImage);
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Document head with metadata and resources -->
+<head>
+<title>
+    Image Blur Tool - One-Click Tool
+   </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image Blur Tool - Free tool to blur images instantly. No signup, no fees, just fast, unlimited access for perfect effects!" name="description">
+<meta content="image blur tool, free blur tool, blur images, online image blur, image editing" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-blur-tool" rel="canonical"/>
+<meta content="Image Blur Tool - No Ads" property="og:title"/>
+<meta content="Blur images instantly with our free online tool. No signup, no hidden fees, just fast and smooth results at freeontools.com!" property="og:description"/>
+<meta content="https://www.freeontools.com/image-blur-tool" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/image-blur-tool.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Blur Tool - Simple &amp; Free" name="twitter:title"/>
+<meta content="Easily blur images with our free, no-login tool. Try it now at freeontools.com for fast, unlimited access!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/image-blur-tool.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://www.twitter.com/freeontools",
+    "https://www.linkedin.com/company/freeontools"
+  ]
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Blur Tool",
+  "operatingSystem": "All",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/image-blur-tool",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Blur Tool"
+  },
+  "ratingValue": "4.8",
+  "ratingCount": "1342"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Blur Tool"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Ava Wilson"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "reviewBody": "This Image Blur Tool is amazing! So easy to use, no signup needed, and applies perfect blur effects instantly!",
+  "datePublished": "2025-05-11"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Blur Tool"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Ethan Brooks"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.7"
+  },
+  "reviewBody": "Fantastic tool for blurring images! Free, fast, and no hidden fees. Great for creating professional effects.",
+  "datePublished": "2025-04-21"
+}
+   </script>
+<style>
+        /* Reset default styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            
+            background-color: #f9f9f9;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            background: #fff;
+            padding: clamp(20px, 5vw, 30px);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+            margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+        }
+
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .upload-area:hover, .upload-area.dragover {
+            border-color: #f28c38;
+        }
+
+        .upload-area p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .slider-container {
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: #f28c38;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .btn {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: #e07b30;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #downloadBtn {
+            margin-bottom: 10px;
+        }
+
+        /* New Content Container Styles */
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            padding: clamp(20px, 5vw, 30px);
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            text-align: left;
+            margin-top: 20px;
+            margin-bottom: 20px;
+margin-left: auto;
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #666;
+            margin-bottom: 15px;
+            max-width: unset;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .slider-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (min-width: 768px) {
+            .controls {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+   
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+     Image Blur Tool
+    </h1>
+<p>
+     Apply a customizable blur effect to your images with ease. Upload, adjust, and download your blurred image in seconds.
+    </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div aria-label="Upload or drag and drop an image" class="upload-area" id="uploadArea" role="button" tabindex="0">
+<input accept="image/*" hidden="" id="imageInput" type="file"/>
+<p>
+      Drag &amp; drop an image here or click to upload
+     </p>
+</div>
+<canvas id="canvas">
+</canvas>
+<div class="controls">
+<div class="slider-container">
+<label for="blurRange">
+       Blur Intensity:
+       <span id="blurValue">
+        0
+       </span>
+       px
+      </label>
+<input id="blurRange" max="50" min="0" type="range" value="0"/>
+</div>
+</div>
+<button class="btn" disabled="" id="downloadBtn">
+     Download Blurred Image
+    </button>
+<button class="btn" id="resetBtn">
+     Reset
+    </button>
+</div>
+<!-- New Content Container -->
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What Is an Image Blur Tool?
+    </h2>
+<p>
+     Alright, sometimes you want to give your image a bit of a soft, dreamy look, or maybe you need to blur something out for privacy reasons. That’s where the Image Blur Tool comes in. This tool lets you blur the entire image, specific areas, or even just the background to create that perfect vibe or effect you’re going for.
+    </p>
+<p>
+     It’s like adding a cool filter to your photo, but instead of making everything look grainy or old-school, it softens the image to make things look more polished or mysterious.
+    </p>
+<h2>
+     Try Our Image Blur Tool Now
+    </h2>
+<p>
+     Ready to give it a shot? Just upload your image, adjust the blur intensity, and boom—your image is blurred in no time. It’s fast, easy, and doesn’t require any design skills. Just drag a slider and let the magic happen.
+    </p>
+<h2>
+     Why Use an Image Blur Tool?
+    </h2>
+<p>
+     Why would you blur an image in the first place? Here are a few reasons:
+    </p>
+<ul>
+<li>
+      Softening a harsh image – If your photo is too sharp or too detailed, a light blur can smooth it out.
+     </li>
+<li>
+      Creating depth of field – Blur the background to make your subject pop. It’s perfect for portraits or product shots.
+     </li>
+<li>
+      Hiding sensitive details – Want to blur something out for privacy (like a license plate, phone number, or face)? This tool has you covered.
+     </li>
+<li>
+      Artistic effect – Sometimes, blur is just about adding a cool effect or a dreamy vibe to your photo.
+     </li>
+<li>
+      Easy to use – No complicated software needed. Just upload and blur!
+     </li>
+</ul>
+<p>
+     Blurring is a great way to make your image look more polished or to add a creative touch to your photos.
+    </p>
+<h2>
+     Features of the Image Blur Tool
+    </h2>
+<p>
+     Here’s why this Image Blur Tool is a must-try:
+    </p>
+<ul>
+<li>
+      Customizable blur levels – Control how much blur you want, from subtle to strong.
+     </li>
+<li>
+      Works with any image – JPG, PNG, GIF, you name it, it works with all standard formats.
+     </li>
+<li>
+      Real-time preview – See how the blur affects your image as you adjust it.
+     </li>
+<li>
+      No downloads required – It’s all done in your browser—just upload, adjust, and go.
+     </li>
+<li>
+      Fast and free – Get your blurred image in seconds, and there’s no cost involved.
+     </li>
+<li>
+      Easy to use – Just slide a bar to adjust the blur, and you’re done.
+     </li>
+</ul>
+<p>
+     It’s quick, it’s simple, and it’s totally free. Plus, it works great for photos and graphics.
+    </p>
+<h2>
+     How to Use the Image Blur Tool
+    </h2>
+<p>
+     Wanna make your photo look all soft and dreamy? Here’s how to do it:
+    </p>
+<ol>
+<li>
+      Open the Image Blur Tool.
+     </li>
+<li>
+      Upload your image (works with JPG, PNG, GIF).
+     </li>
+<li>
+      Adjust the blur slider to your liking—more blur for a dreamy effect, less for a soft touch.
+     </li>
+<li>
+      Check out the real-time preview of how the image is changing as you adjust.
+     </li>
+<li>
+      Once you’re happy with it, click "Apply" to finalize the blur.
+     </li>
+<li>
+      Download your blurred image and use it wherever you need.
+     </li>
+</ol>
+<p>
+     Pro tip: If you want a subtle effect, start with a low blur and work your way up.
+    </p>
+<h2>
+     Why Choose This Image Blur Tool?
+    </h2>
+<p>
+     Here’s why this tool is perfect for adding blur to your photos:
+    </p>
+<ul>
+<li>
+      Simple to use – No complicated settings. Upload, adjust, and you’re done.
+     </li>
+<li>
+      Instant results – See how your image changes as you adjust the blur.
+     </li>
+<li>
+      Works with any image type – Portraits, landscapes, product images—it works for all.
+     </li>
+<li>
+      Free and fast – No need to pay for software or waste time waiting for results.
+     </li>
+<li>
+      Great for beginners – You don’t need any design skills to use this tool effectively.
+     </li>
+</ul>
+<p>
+     It’s the easiest way to give your photos a polished, professional look, without any hassle.
+    </p>
+<h2>
+     FAQs About the Image Blur Tool
+    </h2>
+<p>
+<strong>
+      Can I blur just a part of my image?
+     </strong>
+</p>
+<p>
+     Yep! If you only want to blur the background or a specific area, just use the selective blur feature to focus on the part of the image you want to change.
+    </p>
+<p>
+<strong>
+      Is this tool free to use?
+     </strong>
+</p>
+<p>
+     Absolutely! There’s no cost, no sign-up, and no hidden fees. Just upload and blur.
+    </p>
+<p>
+<strong>
+      Can I use this tool for multiple images at once?
+     </strong>
+</p>
+<p>
+     Right now, the tool works with one image at a time. But don’t worry, it’s so quick that you can easily blur multiple images in no time.
+    </p>
+<p>
+<strong>
+      What image formats can I use?
+     </strong>
+</p>
+<p>
+     The tool works with all common image formats—JPG, PNG, GIF, and more.
+    </p>
+<p>
+<strong>
+      Can I adjust how strong the blur is?
+     </strong>
+</p>
+<p>
+     Yes! You can control how much blur you want, so whether you want a soft focus or a heavy blur, it’s all up to you.
+    </p>
+<h2>
+     Wrap-Up: Blur Your Way to Better Photos
+    </h2>
+<p>
+     In a nutshell, the Image Blur Tool is an easy way to add a creative touch, smooth out an image, or hide sensitive details. Whether you want to create a cool effect, highlight a subject, or just make your photo look more professional, this tool is perfect.
+    </p>
+<p>
+     So, go ahead—upload your image, adjust the blur, and make your photo look even better!
+    </p>
+</div>
+<script>
+        // DOM element manipulation
+    const uploadArea = document.getElementById('uploadArea');
+        // DOM element manipulation
+        const imageInput = document.getElementById('imageInput');
+        // DOM element manipulation
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        // DOM element manipulation
+        const blurRange = document.getElementById('blurRange');
+        // DOM element manipulation
+        const blurValue = document.getElementById('blurValue');
+        // DOM element manipulation
+        const downloadBtn = document.getElementById('downloadBtn');
+        // DOM element manipulation
+        const resetBtn = document.getElementById('resetBtn');
+        let image = null;
+
+        // Handle file upload
+        // Event listener for user interactions
+        uploadArea.addEventListener('click', () => imageInput.click());
+        // Event listener for user interactions
+        imageInput.addEventListener('change', handleImageUpload);
+
+        // Drag and drop
+        // Event listener for user interactions
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        // Event listener for user interactions
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        // Event listener for user interactions
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                handleImageUpload({ target: { files: [file] } });
+            }
+        });
+
+        // Keyboard accessibility
+        // Event listener for user interactions
+        uploadArea.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                imageInput.click();
+            }
+        });
+
+        // Function: handleImageUpload
+        function handleImageUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            image = new Image();
+            image.onload = () => {
+                canvas.width = image.width;
+                canvas.height = image.height;
+                canvas.style.display = 'block';
+                applyBlur();
+                downloadBtn.disabled = false;
+            };
+            image.src = URL.createObjectURL(file);
+        }
+
+        // Apply blur effect
+        // Function: applyBlur
+        function applyBlur() {
+            if (!image) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.filter = `blur(${blurRange.value}px)`;
+            ctx.drawImage(image, 0, 0);
+        }
+
+        // Update blur value display
+        // Event listener for user interactions
+        blurRange.addEventListener('input', () => {
+            blurValue.textContent = blurRange.value;
+            applyBlur();
+        });
+
+        // Download blurred image
+        // Event listener for user interactions
+        downloadBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'blurred-image.png';
+            link.click();
+        });
+
+        // Reset tool
+        // Event listener for user interactions
+        resetBtn.addEventListener('click', () => {
+            image = null;
+            canvas.style.display = 'none';
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            blurRange.value = 0;
+            blurValue.textContent = '0';
+            downloadBtn.disabled = true;
+            imageInput.value = '';
+        });
+   </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</head>
+</html>

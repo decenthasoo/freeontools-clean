@@ -1,0 +1,838 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   AI Story Generator - Simple & Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="AI Story Generator - Generate creative and unique stories with the power of AI. Perfect for writers, content creators, and anyone looking for inspiration. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="AI Story Generator, Generate Stories, Creative Writing Tool, Free Story Generator, AI Writing Tool, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/ai-story-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="AI Story Generator - Simple &amp; Free" property="og:title"/>
+<meta content="AI Story Generator - Generate creative and unique stories with the power of AI. Perfect for writers, content creators, and anyone looking for inspiration. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/ai-story-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/ai-story-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="AI Story Generator - Simple &amp; Free" name="twitter:title"/>
+<meta content="AI Story Generator - Generate creative and unique stories with the power of AI. Perfect for writers, content creators, and anyone looking for inspiration. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/ai-story-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI Story Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/ai-story-generator",
+  "image": "https://www.freeontools.com/images/ai-story-generator.png",
+  "description": "Generate creative and unique stories using AI technology. Perfect for content creators and writers who need inspiration or a quick story idea. No login required, no ads.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/ai-story-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.90",
+  "bestRating": "5",
+  "ratingCount": "1020"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Oliver Martinez"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "I love the AI Story Generator! It gives me amazing story ideas and helps me overcome writer's block. So easy to use and completely free!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "AI Story Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .story-generator-container {
+            background: #f9f9f9;
+            color: #f4f7fa;
+
+
+        }
+
+        .story-generator-container .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            
+        }
+
+        .story-generator-container .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            padding-left: 30px; /* Specified left padding */
+            padding-right: 30px; /* Specified right padding */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+            text-align: left; /* Left-aligned content */
+        }
+
+        .story-generator-container .content-container h2 {
+            color: #222;
+            font-size: 2rem;
+            margin-bottom: 20px;
+text-align: left !important;
+          
+}
+
+        .story-generator-container .content-container h3 {
+            color: #222;
+            font-size: 1.5rem;
+            margin: 20px 0 15px;
+text-align: left !important;
+          
+}
+
+        .story-generator-container .content-container p {
+            color: #2d3748;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+text-align: left !important;
+         
+}
+
+        .story-generator-container .content-container ul,
+        .story-generator-container .content-container ol {
+            color: #2d3748;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .story-generator-container .content-container ul li,
+        .story-generator-container .content-container ol li {
+            margin-bottom: 10px;
+        }
+
+        .story-generator-container header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .story-generator-container h1 {
+            font-size: 2.5rem;
+            color: #222;
+
+
+
+            
+        }
+
+        .story-generator-container header p {
+            font-size: 1.2rem;
+            color: #555;
+ max-width: 600px;
+
+        }
+
+        .story-generator-container #storyOutput {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: none;
+            animation: fadeInUp 1s ease-out;
+            margin-bottom: 40px;
+margin-top: 60px;
+        }
+
+        .story-generator-container #storyOutput h2 {
+            color: #222;
+            margin-bottom: 20px;
+text-align: left !important;
+        }
+
+        .story-generator-container #storyContent {
+            color: #2d3748;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .story-generator-container .generator-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: slideInUp 1s ease-out;
+        }
+
+        .story-generator-container .form-group {
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .story-generator-container .form-group:nth-child(1) { animation-delay: 0.2s; }
+        .story-generator-container .form-group:nth-child(2) { animation-delay: 0.4s; }
+        .story-generator-container .form-group:nth-child(3) { animation-delay: 0.6s; }
+
+        .story-generator-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2a5298;
+        }
+
+        .story-generator-container select,
+        .story-generator-container input[type="number"],
+        .story-generator-container input[type="text"],
+        .story-generator-container textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f0f4f8;
+            color: #2d3748;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .story-generator-container textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .story-generator-container select:hover,
+        .story-generator-container input:hover,
+        .story-generator-container textarea:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-generator-container button {
+            width: 100%;
+            padding: 15px;
+            background: #f28c38;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .story-generator-container button:hover { background-color: #d97a2e;
+            background: #e07b30;
+            transform: scale(1.05);
+        }
+
+        .story-generator-container #advancedToggle {
+            background: #f28c38;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+
+        .story-generator-container #advancedToggle:hover {
+            background: #e07b30;
+        }
+
+        .story-generator-container #advancedSettings {
+            display: none;
+            padding: 20px;
+            background: rgba(240, 244, 248, 0.9);
+            border-radius: 8px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            .story-generator-container h1 { font-size: 2rem; }
+            .story-generator-container .generator-form,
+            .story-generator-container #storyOutput { padding: 25px; }
+            .story-generator-container header p { font-size: 1rem; }
+            .story-generator-container .content-container {
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="story-generator-container">
+<div class="hero" style="text-align: center; margin-bottom: 22px;">
+<h1>
+     AI Story Generator
+    </h1><p>Unleash your imagination with authentic, customizable tales.</p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<!-- Page header section -->
+
+<section id="storyOutput">
+<h2>
+      Your Authentic Tale
+     </h2>
+<div id="storyContent">
+</div>
+</section>
+<section class="generator-form">
+<div class="form-group">
+<label for="genre">
+       Choose Your Genre:
+      </label>
+<select id="genre">
+<option value="fantasy">
+        Fantasy
+       </option>
+<option value="scifi">
+        Science Fiction
+       </option>
+<option value="mystery">
+        Mystery
+       </option>
+<option value="horror">
+        Horror
+       </option>
+<option value="romance">
+        Romance
+       </option>
+<option value="adventure">
+        Adventure
+       </option>
+<option value="historical">
+        Historical
+       </option>
+<option value="thriller">
+        Thriller
+       </option>
+</select>
+</div>
+<div class="form-group">
+<label for="length">
+       Story Length (words):
+      </label>
+<input id="length" max="1000" min="100" type="number" value="300"/>
+</div>
+<div class="form-group">
+<label for="tone">
+       Select Tone:
+      </label>
+<select id="tone">
+<option value="serious">
+        Serious
+       </option>
+<option value="humorous">
+        Humorous
+       </option>
+<option value="dark">
+        Dark
+       </option>
+<option value="light">
+        Light
+       </option>
+<option value="dramatic">
+        Dramatic
+       </option>
+<option value="mystical">
+        Mystical
+       </option>
+</select>
+</div>
+<div id="advancedToggle" onclick="toggleAdvanced()">
+      Advanced Settings (Optional)
+     </div>
+<div id="advancedSettings">
+<div class="form-group">
+<label for="perspective">
+        Narrative Perspective:
+       </label>
+<select id="perspective">
+<option value="third">
+         Third Person
+        </option>
+<option value="first">
+         First Person
+        </option>
+</select>
+</div>
+<div class="form-group">
+<label for="charDesc">
+        Character Description (optional):
+       </label>
+<textarea id="charDesc" placeholder="e.g., tall, blue-eyed warrior"></textarea>
+</div>
+<div class="form-group">
+<label for="charName">
+        Character Name (optional):
+       </label>
+<input id="charName" placeholder="e.g., Elara" type="text"/>
+</div>
+<div class="form-group">
+<label for="settingDesc">
+        Setting Description (optional):
+       </label>
+<textarea id="settingDesc" placeholder="e.g., misty forest with ancient ruins"></textarea>
+</div>
+</div>
+<button onclick="generateStory()">
+      Create Your Story
+     </button>
+</section>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What is an AI Story Generator?
+    </h2>
+<p>
+     An AI Story Generator is a tool powered by artificial intelligence that creates stories based on a set of prompts, keywords, or themes you provide. It’s like having a creative assistant that helps you brainstorm, outline, or even write entire stories. Whether you're looking to craft short stories, novels, or anything in between, an AI Story Generator can give you a strong starting point or help you overcome writer’s block by suggesting plot twists, character details, or setting ideas.
+    </p>
+<p>
+     It uses deep learning algorithms to analyze language patterns, structure, and themes from countless books, articles, and other sources to generate text that sounds like it was written by a human. Essentially, you give it the inputs, and it provides you with a narrative that’s ready to be fleshed out or polished.
+    </p>
+<h3>
+     Try Our AI Story Generator Now
+    </h3>
+<p>
+     Feeling stuck or looking for a bit of inspiration? Pop over to our AI Story Generator, enter your idea or theme, and watch as it spins out a story just for you. Whether you're writing for fun or crafting your next big project, this tool is here to give you a creative boost!
+    </p>
+<h3>
+     Why You Need an AI Story Generator
+    </h3>
+<p>
+     If you’ve ever stared at a blank page, wishing the words would just appear, this tool is a game-changer. Here’s why:
+    </p>
+<ul>
+<li>
+<strong>
+       Boosts Creativity:
+      </strong>
+      Sometimes, you just need a little nudge. The AI can help you come up with fresh ideas, plot twists, or character traits you hadn’t thought of.
+     </li>
+<li>
+<strong>
+       Saves Time:
+      </strong>
+      Writing takes time, but the AI can speed up the process by generating drafts or suggestions, so you spend less time staring at the screen.
+     </li>
+<li>
+<strong>
+       Overcomes Writer’s Block:
+      </strong>
+      If you’re stuck in the middle of your story, the AI can offer new directions to take the plot, making sure your creativity keeps flowing.
+     </li>
+<li>
+<strong>
+       Endless Possibilities:
+      </strong>
+      The beauty of AI is that it can create stories in any genre—fantasy, romance, thriller, sci-fi, and so much more. The only limit is your imagination.
+     </li>
+</ul>
+<h3>
+     Features
+    </h3>
+<p>
+     Here’s what makes this AI Story Generator stand out:
+    </p>
+<ul>
+<li>
+<strong>
+       Customizable Inputs:
+      </strong>
+      Give it a prompt, theme, or character traits, and the AI tailors the story to match.
+     </li>
+<li>
+<strong>
+       Generates Complete Stories:
+      </strong>
+      You don’t just get a few sentences—this tool can generate full-length stories, complete with characters, dialogue, and plots.
+     </li>
+<li>
+<strong>
+       Multiple Genres:
+      </strong>
+      Whether you want a romance, horror, fantasy, or mystery, it’s capable of writing in any genre.
+     </li>
+<li>
+<strong>
+       Free to Use:
+      </strong>
+      No fees, no subscriptions—just pure creative freedom at your fingertips.
+     </li>
+<li>
+<strong>
+       Fast and Easy:
+      </strong>
+      You provide the ideas, and the AI does the heavy lifting in seconds.
+     </li>
+</ul>
+<h3>
+     How to Use the AI Story Generator
+    </h3>
+<p>
+     Using the AI Story Generator is as easy as 1-2-3:
+    </p>
+<ol>
+<li>
+<strong>
+       Enter Your Idea or Prompt:
+      </strong>
+      Start by providing a basic concept, genre, or even just a few keywords. Want a story about a lost spaceship or a haunted house? The AI will take it from there.
+     </li>
+<li>
+<strong>
+       Click to Generate:
+      </strong>
+      Hit the “Generate” button, and within moments, the AI will present you with a full story or a few paragraphs to get you started.
+     </li>
+<li>
+<strong>
+       Review and Edit:
+      </strong>
+      Read through what the AI has generated. If you like it, great! If you want to make changes, you can edit the text however you like. It’s your story, after all.
+     </li>
+<li>
+<strong>
+       Expand or Share:
+      </strong>
+      Use the generated text as a starting point for a longer story or share it with friends for feedback.
+     </li>
+</ol>
+<p>
+<strong>
+      Pro tip:
+     </strong>
+     If you want even more specific results, try adding character names, settings, or plot points to really guide the AI in the right direction.
+    </p>
+<h3>
+     Why Choose This AI Story Generator?
+    </h3>
+<p>
+     Here’s why this tool is a must-have for anyone into writing:
+    </p>
+<ul>
+<li>
+<strong>
+       Instant Creativity:
+      </strong>
+      Struggling to find inspiration? The AI can give you a jumpstart with a unique story idea in seconds.
+     </li>
+<li>
+<strong>
+       Endless Options:
+      </strong>
+      Whether you’re a beginner writer or a seasoned pro, the AI can help you write in any style or genre.
+     </li>
+<li>
+<strong>
+       Saves Time:
+      </strong>
+      Instead of drafting long outlines, you can quickly generate a complete story and tweak it to fit your needs.
+     </li>
+<li>
+<strong>
+       Free and Easy:
+      </strong>
+      This tool is accessible to anyone, with no sign-ups or hidden fees. Just write, generate, and get creative!
+     </li>
+</ul>
+<h3>
+     FAQs
+    </h3>
+<ol>
+<li>
+<strong>
+       How long will the stories be?
+      </strong>
+<br/>
+      It depends on what you choose! The AI can generate short stories or longer pieces, depending on how much input you give it. Just adjust your prompt, and it will deliver accordingly.
+     </li>
+<li>
+<strong>
+       Can I use the generated story for my own work?
+      </strong>
+<br/>
+      Definitely! You can use the story as-is or as a starting point. The generated text is yours to do with as you please.
+     </li>
+<li>
+<strong>
+       Can I generate stories in different genres?
+      </strong>
+<br/>
+      Yes! The AI can write in a wide range of genres, from fantasy to mystery to science fiction. Just specify what you’re looking for.
+     </li>
+<li>
+<strong>
+       Is the AI capable of writing dialogue?
+      </strong>
+<br/>
+      Yep! The AI can generate dialogue between characters, adding realism to your story and making it feel more natural.
+     </li>
+<li>
+<strong>
+       Can I customize the story further after it’s generated?
+      </strong>
+<br/>
+      Absolutely. The AI provides a draft, but you can modify the text however you want to make it fit your style or needs.
+     </li>
+</ol>
+<p>
+     An AI Story Generator is a perfect tool for anyone looking to ignite their creativity, overcome writer’s block, or just generate quick content for a project. Whether you’re writing for fun or working on a professional project, this tool is here to help you create the stories you’ve been imagining.
+    </p>
+</div>
+</div>
+<script>
+        // Function: toggleAdvanced
+   function toggleAdvanced() {
+        // DOM element manipulation
+            const advanced = document.getElementById('advancedSettings');
+            advanced.style.display = advanced.style.display === 'block' ? 'none' : 'block';
+        }
+
+        async function generateStory() {
+        // DOM element manipulation
+            const genre = document.getElementById('genre').value;
+        // DOM element manipulation
+            const length = parseInt(document.getElementById('length').value);
+        // DOM element manipulation
+            const tone = document.getElementById('tone').value;
+        // DOM element manipulation
+            const perspective = document.getElementById('perspective').value;
+        // DOM element manipulation
+            const charDesc = document.getElementById('charDesc').value.trim();
+        // DOM element manipulation
+            const charName = document.getElementById('charName').value.trim();
+        // DOM element manipulation
+            const settingDesc = document.getElementById('settingDesc').value.trim();
+        // DOM element manipulation
+            const output = document.getElementById('storyOutput');
+        // DOM element manipulation
+            const content = document.getElementById('storyContent');
+
+            content.innerHTML = 'Crafting your unique tale...';
+            output.style.display = 'block';
+
+            try {
+                const story = await createAuthenticStory(genre, length, tone, perspective, charDesc, charName, settingDesc);
+                content.innerHTML = story;
+            } catch (error) {
+                content.innerHTML = 'Failed to craft your tale. Please try again.';
+                console.error(error);
+            }
+        }
+
+        async function createAuthenticStory(genre, length, tone, perspective, charDesc, charName, settingDesc) {
+            const characters = [
+                { name: 'Elara', trait: 'courageous' }, { name: 'Kael', trait: 'ingenious' },
+                { name: 'Zara', trait: 'mysterious' }, { name: 'Jaxon', trait: 'resolute' }
+            ];
+
+            const settings = {
+                fantasy: ['Eldrathia', 'Fizzleguard', 'Morvath'],
+                scifi: ['Zenith-9', 'Klutz-7', 'Nebula X-13'],
+                mystery: ['Greyhaven', 'Bumbleton', 'Shadowmere'],
+                horror: ['Blackthorn Manor', 'Wraithwood', 'Silent Hollow'],
+                romance: ['Lovelace', 'Stardust Bay', 'Rosewood'],
+                adventure: ['Zahir’s Reach', 'Stormpeak', 'Sapphire Isles'],
+                historical: ['Normandy', 'Victorian London', 'Ancient Rome'],
+                thriller: ['Eclipse City', 'Darkhaven', 'Neon Sprawl']
+            };
+
+            const actions = {
+                fantasy: ['retrieve a mythical artifact', 'vanquish a dark force', 'unravel an ancient prophecy'],
+                scifi: ['repair a failing system', 'thwart an alien threat', 'decode a cosmic signal'],
+                mystery: ['solve a baffling murder', 'uncover a hidden truth', 'track an elusive thief'],
+                horror: ['banish a vengeful spirit', 'survive a cursed night', 'escape a haunted realm'],
+                romance: ['win a guarded heart', 'reunite with a lost love', 'overcome a rival’s scheme'],
+                adventure: ['discover a lost ruin', 'conquer a deadly peak', 'cross a perilous expanse'],
+                historical: ['alter a war’s outcome', 'guard a royal secret', 'endure a historic trial'],
+                thriller: ['stop a ruthless killer', 'expose a dark conspiracy', 'evade a deadly pursuit']
+            };
+
+            const toneModifiers = {
+                serious: { action: 'with steadfast resolve', end: 'in a triumph of will.' },
+                humorous: { action: 'in a series of comical blunders', end: 'with unexpected hilarity.' },
+                dark: { action: 'through grim and perilous trials', end: 'at a haunting cost.' },
+                light: { action: 'with a cheerful spirit', end: 'in a burst of joy.' },
+                dramatic: { action: 'amidst epic clashes and stakes', end: 'in a blaze of glory.' },
+                mystical: { action: 'guided by ethereal visions', end: 'woven into fate’s tapestry.' }
+            };
+
+            const char = charName ? { name: charName, trait: charDesc || 'determined' } : characters[Math.floor(Math.random() * characters.length)];
+            const setting = settingDesc || settings[genre][Math.floor(Math.random() * settings[genre].length)];
+            const action = actions[genre][Math.floor(Math.random() * actions[genre].length)];
+            const modifier = toneModifiers[tone];
+
+            let story = '';
+            if (perspective === 'first') {
+                story = `I am ${char.name}${charDesc ? ', ' + charDesc : ''}, and in the ${tone === 'dark' ? 'shadowed' : tone === 'light' ? 'vibrant' : 'intriguing'} realm of ${setting}, I set out to ${action}. `;
+                story += `I faced this challenge ${modifier.action}, each moment unveiling new facets of my journey. `;
+            } else {
+                story = `In the ${tone === 'dark' ? 'shadowed' : tone === 'light' ? 'vibrant' : 'intriguing'} realm of ${setting}, ${char.name}${charDesc ? ', ' + charDesc : ''}, a ${char.trait} soul, set out to ${action}. `;
+                story += `${char.name} faced the challenge ${modifier.action}, each step revealing new layers of the journey. `;
+            }
+
+            const currentWords = story.split(' ').length;
+            if (currentWords < length) {
+                const expansions = {
+                    fantasy: [
+                        `${perspective === 'first' ? 'I' : char.name} met a sage whose cryptic words hinted at destiny. `,
+                        `A strange glow led ${perspective === 'first' ? 'me' : 'them'} through twisting paths of wonder. `,
+                        `The air shimmered with magic older than the stones beneath ${perspective === 'first' ? 'my' : 'their'} feet. `
+                    ],
+                    scifi: [
+                        `${perspective === 'first' ? 'I' : char.name} found a derelict drone broadcasting forgotten data. `,
+                        `Stars guided ${perspective === 'first' ? 'me' : 'them'} through a maze of cosmic debris. `,
+                        `A faint signal pulsed, hinting at truths beyond ${perspective === 'first' ? 'my' : 'their'} reach. `
+                    ],
+                    mystery: [
+                        `${perspective === 'first' ? 'I' : char.name} discovered a note tucked in an old book’s spine. `,
+                        `Faint footsteps echoed, leading ${perspective === 'first' ? 'me' : 'them'} to unseen answers. `,
+                        `The night held secrets ${perspective === 'first' ? 'I' : char.name} could almost grasp. `
+                    ],
+                    horror: [
+                        `${perspective === 'first' ? 'I' : char.name} heard whispers from walls that shouldn’t speak. `,
+                        `A cold touch brushed ${perspective === 'first' ? 'my' : 'their'} skin in the dark. `,
+                        `Something watched ${perspective === 'first' ? 'me' : 'them'} from beyond the shadows. `
+                    ],
+                    romance: [
+                        `${perspective === 'first' ? 'I' : char.name} caught a glance that lingered too long. `,
+                        `A soft melody drew ${perspective === 'first' ? 'me' : 'them'} closer to fate’s embrace. `,
+                        `The world faded as ${perspective === 'first' ? 'I' : char.name} felt a spark ignite. `
+                    ],
+                    adventure: [
+                        `${perspective === 'first' ? 'I' : char.name} unearthed a relic beneath weathered stone. `,
+                        `Wind howled as ${perspective === 'first' ? 'me' : 'them'} scaled cliffs of legend. `,
+                        `The unknown called ${perspective === 'first' ? 'me' : 'them'} with a voice of daring. `
+                    ],
+                    historical: [
+                        `${perspective === 'first' ? 'I' : char.name} read tales carved in ancient wood. `,
+                        `Steel rang as ${perspective === 'first' ? 'I' : char.name} stood against time’s tide. `,
+                        `History unfolded before ${perspective === 'first' ? 'my' : 'their'} eyes in vivid hues. `
+                    ],
+                    thriller: [
+                        `${perspective === 'first' ? 'I' : char.name} found a clue in a stranger’s glance. `,
+                        `Pulse racing, ${perspective === 'first' ? 'I' : char.name} dodged fate’s closing grip. `,
+                        `Danger lurked where ${perspective === 'first' ? 'I' : char.name} least expected it. `
+                    ]
+                };
+
+                let remainingWords = length - currentWords;
+                const genreExpansions = expansions[genre];
+                let usedExpansions = [];
+
+                while (remainingWords > 0 && usedExpansions.length < genreExpansions.length) {
+                    const available = genreExpansions.filter(exp => !usedExpansions.includes(exp));
+                    if (available.length === 0) break;
+                    const expansion = available[Math.floor(Math.random() * available.length)];
+                    story += expansion;
+                    usedExpansions.push(expansion);
+                    remainingWords -= expansion.split(' ').length;
+                }
+
+                if (remainingWords > 0) {
+                    story += `${perspective === 'first' ? 'I' : char.name} pressed on, ${perspective === 'first' ? 'my' : 'their'} ${char.trait} spirit unbroken. `;
+                }
+            }
+
+            story += `In the end, ${perspective === 'first' ? 'I' : char.name} completed ${perspective === 'first' ? 'my' : 'their'} quest ${modifier.end}`;
+
+            return story;
+        }
+
+        // Event listener for user interactions
+        document.getElementById('length').addEventListener('change', function(e) {
+            if (this.value < 100) this.value = 100;
+            if (this.value > 1000) this.value = 1000;
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

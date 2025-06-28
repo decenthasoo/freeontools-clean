@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Feedback - Free On Tools</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <meta name="description" content="Feedback for Free On Tools - Share your thoughts on our 200+ free online tools to help us improve."/>
+    <meta name="keywords" content="Feedback, Free On Tools, Online Tools, Suggestions, Support, User Input"/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://www.freeontools.com/feedback"/>
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Feedback - Free On Tools"/>
+    <meta property="og:description" content="Feedback for Free On Tools - Share your thoughts on our 200+ free online tools."/>
+    <meta property="og:image" content="https://www.freeontools.com/images/logo.png"/>
+    <meta property="og:url" content="https://www.freeontools.com/feedback"/>
+    <meta property="og:type" content="website"/>
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:title" content="Feedback - Free On Tools"/>
+    <meta name="twitter:description" content="Feedback for Your Tools Hub - Share your thoughts on our 200+ free online tools."/>
+    <meta name="twitter:image" content="https://www.freeontools.com/images/logo.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Free On Tools",
+        "url": "https://www.freeontools.com",
+        "logo": "https://www.freeontools.com/images/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/Freeontools",
+            "https://twitter.com/Freeontools",
+            "https://www.instagram.com/Freeontools"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@freeontools.com",
+            "contactType": "Customer Service"
+        }
+    }
+    </script>
+    <style>
+        /* Reuse styles from your tool page for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f0f2f5;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+        }
+        .hero {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background: linear-gradient(135deg, #f28c38 0%, #d97a2e 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem;
+            width: 100%;
+            margin-top: -35px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            padding: 0.6rem 0;
+            background: #f0f2f5;
+            margin-top: -55px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+        h2 {
+            color: #222;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        h3 {
+            color: #222;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .content-container {
+            background: white;
+            padding: 1.5rem 30px;
+            border-radius: 10px;
+            margin-top: 1.2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .content-container:hover {
+            transform: translateY(-5px);
+        }
+        .content-container p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+            text-align: left;
+        }
+        .content-container a {
+            color: #f28c38;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .content-container a:hover {
+            color: #d97a2e;
+            text-decoration: underline;
+        }
+        .contact-info {
+            background: #f0f2f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .contact-info i {
+            color: #f28c38;
+            margin-right: 0.5rem;
+        }
+        /* Feedback Form Styles */
+        .feedback-form {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .feedback-form label {
+            display: block;
+            font-size: 1rem;
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .feedback-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .feedback-form button {
+            background: #f28c38;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .feedback-form button:hover {
+            background: #d97a2e;
+        }
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .content-container {
+                padding: 1rem 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.3rem;
+            }
+            header {
+                padding: 0.5rem 0;
+                margin-bottom: 0.5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            h3 {
+                font-size: 1.1rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .content-container {
+                padding: 0.7rem 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+            h3 {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 0.85rem;
+            }
+            .content-container {
+                padding: 0.5rem 10px;
+            }
+            .contact-info, .feedback-form {
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <header>
+        <div class="hero">
+            <h1>Feedback</h1>
+            <p>Share your thoughts on our 200+ free tools—help us make them better!</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content-container">
+            <h2>Your Tools Hub Feedback</h2>
+            <p>Yo, what’s good? Welcome to the Your Tools Hub Feedback page! We’re pumped to hear your thoughts on our 200+ free tools, like we’re chatting over coffee.</p>
+            <div class="terms-section">
+                <h3>Why Your Feedback Rocks</h3>
+                <p>Our tools—think SEO & Marketing Tools, Image & Design Tools, or Productivity Tools are built for you. Love them? Hate something? Got a wild idea? Tell us! Your input shapes what we do next. Maybe you want a new feature for Text & Content Tools or a tweak for Fun & Entertainment Tools. Spill the beans at <a href="https://www.freeontools.com">https://www.freeontools.com</a>. We read every message, no bots here.</p>
+            </div>
+            <div class="terms-section">
+                <h3>How to Share Feedback</h3>
+                <p>Use the form below or email us at <a href="mailto:contact@freeontools.com">contact@freeontools.com</a>. Form’s quick—name, email, your thoughts. Tell us what you’re using (like Developer Tools or Education Tools), what’s awesome, or what’s buggy. Got a feature request? Lay it out. Screenshots help for issues. We reply within 48 hours (check spam if you don’t see us). Prefer a direct vibe? Hit our <a href="https://www.freeontools.com/contact-support">Contact Support</a> page.</p>
+            </div>
+            <div class="terms-section">
+                <h3>What We Do With It</h3>
+                <p>Your feedback’s gold. We use it to fix glitches, add features, or plan new tools. Reported a bug in Finance & Calculation Tools? We’re on it. Suggested a cool Productivity Tools idea? It’s on our list. We keep your info private—check our <a href="https://www.freeontools.com/privacy-policy">Privacy Policy</a> for deets. No spam, no sharing, just us improving. See our <a href="https://www.freeontools.com/terms-of-service">Terms of Service</a> for the fine print.</p>
+            </div>
+            <div class="terms-section">
+                <h3>Before You Send</h3>
+                <p>Got a quick question? Our <a href="https://www.freeontools.com/help-center">Help Center</a> or <a href="https://www.freeontools.com/faq">FAQ</a> might have answers. Need a how-to? Check <a href="https://www.freeontools.com/tutorials">Tutorials</a> or <a href="https://www.freeontools.com/documentation">Documentation</a>. Issue with a tool? Peek at our <a href="https://www.freeontools.com/system-status">System Status</a> (updated June 04, 2025, 03:08 PM IST). Still need to chat? We’re all ears.</p>
+            </div>
+            <div class="feedback-form">
+                <h3>Drop Your Feedback</h3>
+                <form action="/submit-feedback" method="POST" aria-label="Feedback Form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true"/>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required aria-required="true"/>
+                    <label for="feedback">Feedback</label>
+                    <textarea id="feedback" name="feedback" placeholder="What’s on your mind?" required aria-required="true"></textarea>
+                    <button type="submit">Send Feedback</button>
+                </form>
+            </div>
+            <p>Let’s Make It Better! Drop your thoughts via the form or <a href="mailto:contact@freeontools.com">contact@freeontools.com</a>. Thanks for keeping it real—we’re stoked to hear from you!</p>
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contact@freeontools.com">contact@freeontools.com</a></p>
+                <p><i class="fas fa-globe"></i>Website: <a href="https://www.freeontools.com">https://www.freeontools.com</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="../js/script.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

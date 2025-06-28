@@ -1,0 +1,976 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Document head with metadata and resources -->
+<head>
+<title>
+    Email Signature Generator - Instant Access Tool
+   </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Email Signature Generator - Instant Access tool to create professional email signatures. Free, no signup, no fees, just fast and easy results!" name="description">
+<meta content="email signature generator, free email signature, create email signature, professional email signature, online signature tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/email-signature-generator" rel="canonical"/>
+<meta content="Email Signature Generator - Zero Cost Tool" property="og:title"/>
+<meta content="Create professional email signatures instantly with our free online tool. No signup, no hidden fees, just fast results at freeontools.com!" property="og:description"/>
+<meta content="https://www.freeontools.com/email-signature-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/email-signature-generator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Email Signature Generator - Free Forever" name="twitter:title"/>
+<meta content="Generate professional email signatures with our free, no-login tool. Try it now at freeontools.com for unlimited access!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/email-signature-generator.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://www.twitter.com/freeontools",
+    "https://www.linkedin.com/company/freeontools"
+  ]
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Email Signature Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/email-signature-generator",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Email Signature Generator"
+  },
+  "ratingValue": "4.7",
+  "ratingCount": "982"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Email Signature Generator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Olivia Brown"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "reviewBody": "This Email Signature Generator is fantastic! So easy to use, no signup needed, and creates professional signatures in seconds!",
+  "datePublished": "2025-04-20"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Email Signature Generator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Noah Kim"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.6"
+  },
+  "reviewBody": "Great tool for creating email signatures! Fast, free, and no hidden fees. Perfect for professionals on the go.",
+  "datePublished": "2025-03-30"
+}
+   </script>
+<style>
+        /* Reset default styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            
+            
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .form-section, .preview-section {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="url"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #f28c38;
+            box-shadow: 0 0 5px rgba(242, 140, 56, 0.2);
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+        }
+
+        .preview-section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #222;
+        }
+
+        #signature-preview {
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #ffffff;
+            flex: 1;
+        }
+
+        .signature {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .signature img.profile-pic {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .signature .details {
+            flex: 1;
+        }
+
+        .signature p {
+            margin: 4px 0;
+        }
+
+        .signature .name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .signature .job-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .signature .company {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signature a {
+            color: #f28c38;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .signature a:hover {
+            color: #e07b30;
+        }
+
+        .signature .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .signature .social-links i {
+            font-size: 16px;
+            color: #f28c38;
+            transition: color 0.2s;
+        }
+
+        .signature .social-links a:hover i {
+            color: #e07b30;
+        }
+
+        .signature .divider {
+            width: 50px;
+            height: 2px;
+            background: #f28c38;
+            margin: 10px 0;
+        }
+
+        .signature .logo {
+            display: block;
+            max-width: 150px;
+            margin: 15px auto 0;
+        }
+
+        #html-code {
+            width: 100%;
+            height: 120px;
+            margin-top: 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            resize: none;
+            background: #f9f9f9;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .error {
+            border-color: #ff4d4d !important;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 10px;
+        }
+
+        /* Container styling */
+        .content-container strong {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 0;
+            }
+
+        /* Container styling */
+            .container {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .form-section, .preview-section {
+                min-width: 100%;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .header p {
+                font-size: 14px;
+                padding: 0 15px;
+            }
+
+            .signature {
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .signature .details {
+                text-align: left;
+            }
+
+            .signature .social-links {
+                justify-content: flex-start;
+            }
+
+            .signature .divider {
+                margin: 10px 0;
+            }
+
+            .button-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            button {
+                width: 100%;
+                max-width: none;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                margin: 15px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 18px;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul,
+        /* Container styling */
+            .content-container ol {
+                font-size: 13px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            input, button, #html-code {
+                font-size: 12px;
+            }
+
+            .signature {
+                font-size: 12px;
+                gap: 10px;
+            }
+
+            .signature img.profile-pic {
+                width: 50px;
+                height: 50px;
+            }
+
+            .signature .name {
+                font-size: 16px;
+            }
+
+            .signature .details {
+                text-align: left;
+            }
+
+            .signature .social-links {
+                justify-content: flex-start;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                margin: 10px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 16px;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul,
+        /* Container styling */
+            .content-container ol {
+                font-size: 12px;
+            }
+        }
+   
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="header">
+<h1>
+     Email Signature Generator
+    </h1>
+<p>
+     Create a professional email signature in minutes with our easy-to-use tool.
+    </p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<div class="form-section">
+<div class="form-group">
+<label for="fullName">
+       Full Name *
+      </label>
+<input id="fullName" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="jobTitle">
+       Job Title
+      </label>
+<input id="jobTitle" placeholder="Software Engineer" type="text"/>
+</div>
+<div class="form-group">
+<label for="company">
+       Company
+      </label>
+<input id="company" placeholder="Tech Corp" type="text"/>
+</div>
+<div class="form-group">
+<label for="phone">
+       Phone Number
+      </label>
+<input id="phone" placeholder="+1234567890" type="tel"/>
+</div>
+<div class="form-group">
+<label for="whatsapp">
+       WhatsApp Number
+      </label>
+<input id="whatsapp" placeholder="+1234567890" type="tel"/>
+</div>
+<div class="form-group">
+<label for="email">
+       Email Address *
+      </label>
+<input id="email" placeholder="john.doe@example.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="website">
+       Website
+      </label>
+<input id="website" placeholder="https://example.com" type="url"/>
+</div>
+<div class="form-group">
+<label for="linkedin">
+       LinkedIn URL
+      </label>
+<input id="linkedin" placeholder="https://linkedin.com/in/johndoe" type="url"/>
+</div>
+<div class="form-group">
+<label for="twitter">
+       Twitter URL
+      </label>
+<input id="twitter" placeholder="https://twitter.com/johndoe" type="url"/>
+</div>
+<div class="form-group">
+<label for="instagram">
+       Instagram URL
+      </label>
+<input id="instagram" placeholder="https://instagram.com/johndoe" type="url"/>
+</div>
+<div class="form-group">
+<label for="facebook">
+       Facebook URL
+      </label>
+<input id="facebook" placeholder="https://facebook.com/johndoe" type="url"/>
+</div>
+<div class="form-group">
+<label for="profilePic">
+       Profile Picture URL
+      </label>
+<input id="profilePic" placeholder="https://example.com/profile.jpg" type="url"/>
+</div>
+<div class="form-group">
+<label for="companyLogo">
+       Company Logo URL
+      </label>
+<input id="companyLogo" placeholder="https://example.com/logo.png" type="url"/>
+</div>
+</div>
+<div class="preview-section">
+<h2>
+      Signature Preview
+     </h2>
+<div class="signature" id="signature-preview">
+<p>
+       Enter your details to see the preview.
+      </p>
+</div>
+<h2>
+      HTML Code
+     </h2>
+<textarea id="html-code" readonly=""></textarea>
+<div class="button-row">
+<button onclick="copyToClipboard()">
+       Copy to Clipboard
+      </button>
+<button onclick="downloadSignature()">
+       Download HTML
+      </button>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What Is an Email Signature Generator?
+    </h2>
+<p>
+     Alright, you know when you send an email and it just ends awkwardly? Like you sign off with “thanks” and then type your name like a lonely potato? Yeah. No vibe. That’s where the Email Signature Generator comes in.
+    </p>
+<p>
+     Basically, it builds that fancy lil' block at the end of your email with your name, job title, contact info, maybe a headshot, social links, and boom—you look legit. The Email Signature Generator helps you create a clean, professional, “I-have-my-life-together” kind of signature without having to know a single thing about coding or design.
+    </p>
+<p>
+     Whether you’re freelancing, job hunting, or just want to flex your company branding a bit, this tool has your back.
+    </p>
+<h2>
+     Try Our Email Signature Generator Now
+    </h2>
+<p>
+     Don’t be that person still signing off with just “- Bob.” Head to the Email Signature Generator, fill in your details, and walk away with a signature that actually looks like you know what you're doing.
+    </p>
+<p>
+     No code. No design skills. Just fill out a few fields and bam—done.
+    </p>
+<h2>
+     Why Use an Email Signature Generator?
+    </h2>
+<p>
+     Okay, let’s break it down. Why even bother with a signature? Isn’t your name enough?
+    </p>
+<p>
+     Well, sure... if you're emailing your grandma. But if you're reaching out to clients, applying for gigs, running a business, or networking like a boss, that signature is prime real estate.
+    </p>
+<p>
+     Using an Email Signature Generator gives you:
+    </p>
+<ul>
+<li>
+      Instant professionalism – You look way more put-together
+     </li>
+<li>
+      Personal branding – Add your logo, photo, or social links
+     </li>
+<li>
+      Quick contact access – No one has to dig through old threads for your number
+     </li>
+<li>
+      Consistent communication – Looks the same every time, across all your emails
+     </li>
+<li>
+      Time saved – No manually formatting your info every time
+     </li>
+</ul>
+<p>
+     It’s a small detail with big impact. And a good Email Signature Generator makes it painless.
+    </p>
+<h2>
+     Features of the Email Signature Generator
+    </h2>
+<p>
+     Let’s talk perks. This tool isn’t just slapping your name into bold font and calling it a day. The Email Signature Generator does a lot more than you’d think:
+    </p>
+<ul>
+<li>
+      Simple form-based builder – Just type in your info and pick a style
+     </li>
+<li>
+      Clean, professional templates – No janky fonts or weird colors
+     </li>
+<li>
+      Supports images and logos – Add a headshot or brand logo
+     </li>
+<li>
+      Social media buttons – LinkedIn, Twitter, Instagram—you choose
+     </li>
+<li>
+      Mobile-friendly output – Looks great on desktop and phones
+     </li>
+<li>
+      Copy-and-paste ready – Works with Gmail, Outlook, Apple Mail, and more
+     </li>
+<li>
+      No account required – Just build it and go. Easy peasy.
+     </li>
+</ul>
+<p>
+     The Email Signature Generator handles the formatting and styling for you—so all you have to do is paste it into your email settings.
+    </p>
+<h2>
+     How to Use the Email Signature Generator
+    </h2>
+<p>
+     Don’t worry, it’s not one of those tools with 400 steps. Here’s how to get your shiny new signature:
+    </p>
+<ol>
+<li>
+      Head to the Email Signature Generator page
+     </li>
+<li>
+      Fill in your name, title, company, phone number, whatever you want to include
+     </li>
+<li>
+      Upload a logo or headshot if you’re feeling fancy
+     </li>
+<li>
+      Add your social links (optional but cool)
+     </li>
+<li>
+      Choose your style or layout
+     </li>
+<li>
+      Hit “Generate”
+     </li>
+<li>
+      Copy the HTML or plain text version
+     </li>
+<li>
+      Paste it into your email client’s signature settings
+     </li>
+</ol>
+<p>
+     Pro tip: Test it by sending yourself an email first to make sure it looks great across devices.
+    </p>
+<h2>
+     Why Choose This Email Signature Generator?
+    </h2>
+<p>
+     Look, there are a bunch of email signature tools out there. Some make you sign up. Others hit you with a paywall after 3 uses. And don’t even get me started on the ones that just look... janky.
+    </p>
+<p>
+     Here’s why this Email Signature Generator hits different:
+    </p>
+<ul>
+<li>
+      Clean and modern designs – No Comic Sans nightmares here
+     </li>
+<li>
+      Super intuitive – Anyone can use it, even your non-techy uncle
+     </li>
+<li>
+      Works everywhere – Gmail, Outlook, Yahoo (yes, people still use Yahoo), etc.
+     </li>
+<li>
+      Fast results – Takes like 2 minutes, tops
+     </li>
+<li>
+      Totally free – No upgrades, no weird hidden costs
+     </li>
+<li>
+      Customizable but simple – Just enough options to make it yours, not too many to overwhelm
+     </li>
+</ul>
+<p>
+     It’s built for people who want a good-looking email signature without turning it into a whole project. And that’s what a good Email Signature Generator should do.
+    </p>
+<h2>
+     FAQs About the Email Signature Generator
+    </h2>
+<p>
+<strong>
+      Will this signature work with Gmail?
+     </strong>
+</p>
+<p>
+     Totally. Just copy the generated signature and paste it into Gmail’s settings under the “Signature” section. Done.
+    </p>
+<p>
+<strong>
+      Can I add a picture or logo?
+     </strong>
+</p>
+<p>
+     Yup! The Email Signature Generator lets you upload an image file—great for headshots or brand logos.
+    </p>
+<p>
+<strong>
+      What if I want to change it later?
+     </strong>
+</p>
+<p>
+     No problem. Just go back to the tool, update your info, and generate a new one. It only takes a minute.
+    </p>
+<p>
+<strong>
+      Can I make more than one signature?
+     </strong>
+</p>
+<p>
+     For sure. Want one for work and one for your side hustle? Go wild.
+    </p>
+<p>
+<strong>
+      Is the signature mobile-friendly?
+     </strong>
+</p>
+<p>
+     Yes! It’s designed to look good across devices—phones, tablets, laptops, whatever your reader is using.
+    </p>
+<h2>
+     Final Thoughts: Big Style in a Small Box
+    </h2>
+<p>
+     Let’s be honest. Nobody gets excited about email signatures. But once you have a slick one, you kinda feel unstoppable. It’s like showing up to a meeting in a clean outfit—professional, polished, confident.
+    </p>
+<p>
+     And the Email Signature Generator makes it way too easy. You don’t have to mess with HTML or download anything sketchy. Just plug in your info, pick a style, and boom—you’ve got a signature that shows you mean business.
+    </p>
+<p>
+     So if your emails are still ending with just “Thanks, [Your Name]”… c’mon. You deserve better. The Email Signature Generator is right here waiting for you.
+    </p>
+</div>
+<script>
+        // Function: updatePreview
+    function updatePreview() {
+        // DOM element manipulation
+            const fullName = document.getElementById('fullName').value.trim();
+        // DOM element manipulation
+            const jobTitle = document.getElementById('jobTitle').value.trim();
+        // DOM element manipulation
+            const company = document.getElementById('company').value.trim();
+        // DOM element manipulation
+            const phone = document.getElementById('phone').value.trim();
+        // DOM element manipulation
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+        // DOM element manipulation
+            const email = document.getElementById('email').value.trim();
+        // DOM element manipulation
+            const website = document.getElementById('website').value.trim();
+        // DOM element manipulation
+            const linkedin = document.getElementById('linkedin').value.trim();
+        // DOM element manipulation
+            const twitter = document.getElementById('twitter').value.trim();
+        // DOM element manipulation
+            const instagram = document.getElementById('instagram').value.trim();
+        // DOM element manipulation
+            const facebook = document.getElementById('facebook').value.trim();
+        // DOM element manipulation
+            const profilePic = document.getElementById('profilePic').value.trim();
+        // DOM element manipulation
+            const companyLogo = document.getElementById('companyLogo').value.trim();
+
+            let signatureHTML = `<div style="font-family: 'Poppins', Arial, sans-serif; font-size: 14px; color: #333; display: flex; align-items: flex-start; gap: 20px; max-width: 100%;">`;
+            
+            // Show preview as soon as any field is filled
+            if (fullName || jobTitle || company || phone || whatsapp || email || website || linkedin || twitter || instagram || facebook || profilePic || companyLogo) {
+                // Profile Picture
+                if (profilePic) {
+                    signatureHTML += `<img src="${profilePic}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-left: 0;" alt="Profile Picture" class="profile-pic">`;
+                }
+
+                signatureHTML += `<div style="flex: 1;" class="details">`;
+                if (fullName) signatureHTML += `<p style="font-size: 18px; font-weight: 700; color: #222; margin: 0;"><span style="white-space: nowrap;">${fullName}</span></p>`;
+                if (jobTitle) signatureHTML += `<p style="font-size: 14px; font-weight: 500; color: #555; margin: 0;" class="job-title">${jobTitle}</p>`;
+                if (company) signatureHTML += `<p style="font-size: 14px; color: #555; margin: 0;" class="company">${company}</p>`;
+                if (fullName || jobTitle || company) signatureHTML += `<div style="width: 50px; height: 2px; background: #f28c38; margin: 10px 0;" class="divider"></div>`;
+
+                // Contact details, each on its own line
+                if (phone) signatureHTML += `<p style="margin: 4px 0;">Phone: <a href="tel:${phone}" style="color: #f28c38; text-decoration: none;">${phone}</a></p>`;
+                if (whatsapp) signatureHTML += `<p style="margin: 4px 0;">WhatsApp: <a href="https://wa.me/${whatsapp.replace(/[^0-9+]/g, '')}" style="color: #f28c38; text-decoration: none;">${whatsapp}</a></p>`;
+                if (email) signatureHTML += `<p style="margin: 4px 0;"><span style="white-space: nowrap;">Email : <a href="mailto:${email}" style="color: #f28c38; text-decoration: none;">${email}</a></span></p>`;
+                if (website) signatureHTML += `<p style="margin: 4px 0;"><span style="white-space: nowrap;">Website: <a href="${website}" style="color: #f28c38; text-decoration: none;">${website}</a></span></p>`;
+
+                // Social Links
+                const socialLinks = [];
+                if (linkedin) socialLinks.push(`<a href="${linkedin}" style="color: #f28c38; text-decoration: none;"><i class="fab fa-linkedin"></i></a>`);
+                if (twitter) socialLinks.push(`<a href="${twitter}" style="color: #f28c38; text-decoration: none;"><i class="fab fa-twitter"></i></a>`);
+                if (instagram) socialLinks.push(`<a href="${instagram}" style="color: #f28c38; text-decoration: none;"><i class="fab fa-instagram"></i></a>`);
+                if (facebook) socialLinks.push(`<a href="${facebook}" style="color: #f28c38; text-decoration: none;"><i class="fab fa-facebook"></i></a>`);
+                if (whatsapp) socialLinks.push(`<a href="https://wa.me/${whatsapp.replace(/[^0-9+]/g, '')}" style="color: #f28c38; text-decoration: none;"><i class="fab fa-whatsapp"></i></a>`);
+                if (socialLinks.length) {
+                    signatureHTML += `<div style="display: flex; gap: 10px; margin-top: 10px;" class="social-links">${socialLinks.join('')}</div>`;
+                }
+
+                signatureHTML += `</div></div>`;
+
+                // Company Logo (inside preview box)
+                if (companyLogo) {
+                    signatureHTML += `<div style="display: block; margin: 15px auto 0; margin-left: -10px; text-align: center; max-width: 100%; overflow: hidden;"><img src="${companyLogo}" style="max-width: 100%; width: auto; height: auto; margin-left: auto; margin-right: auto; display: block;" alt="Company Logo" class="logo"></div>`;
+                }
+            } else {
+                signatureHTML = `<p>Enter your details to see the preview.</p>`;
+            }
+
+            // Update Preview
+        // DOM element manipulation
+            document.getElementById('signature-preview').innerHTML = signatureHTML;
+
+            // Update HTML Code (only if required fields are filled)
+        // DOM element manipulation
+            document.getElementById('html-code').value = (fullName && email) ? signatureHTML : '';
+        }
+
+        // Function: copyToClipboard
+        function copyToClipboard() {
+        // DOM element manipulation
+            const htmlCode = document.getElementById('html-code').value;
+            if (!htmlCode) {
+                alert('Please fill in Full Name and Email Address to generate the signature.');
+                return;
+            }
+        // DOM element manipulation
+            const textarea = document.getElementById('html-code');
+            textarea.select();
+            document.execCommand('copy');
+            alert('HTML code copied to clipboard!');
+        }
+
+        // Function: downloadSignature
+        function downloadSignature() {
+        // DOM element manipulation
+            const htmlCode = document.getElementById('html-code').value;
+            if (!htmlCode) {
+                alert('Please fill in Full Name and Email Address to generate the signature.');
+                return;
+            }
+            const blob = new Blob([htmlCode], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'email-signature.html';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Live Preview on Input
+        // DOM element manipulation
+        document.querySelectorAll('input').forEach(input => {
+        // Event listener for user interactions
+            input.addEventListener('input', updatePreview);
+        });
+   </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</head>
+</html>

@@ -1,0 +1,669 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   JavaScript Beautifier - Simple &amp; Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="JavaScript Beautifier - Format and beautify your JavaScript code instantly with this free tool. No login, no ads, and 100% free. Try it now!" name="description">
+<meta content="JavaScript Beautifier, Free Code Formatter, Beautify JS Code, JavaScript Formatter, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/javascript-beautifier" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="JavaScript Beautifier - Simple &amp; Free" property="og:title"/>
+<meta content="JavaScript Beautifier - Format and beautify your JavaScript code instantly with this free tool. No login, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/javascript-beautifier.png" property="og:image"/>
+<meta content="https://www.freeontools.com/javascript-beautifier" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="JavaScript Beautifier - Simple &amp; Free" name="twitter:title"/>
+<meta content="JavaScript Beautifier - Format and beautify your JavaScript code instantly with this free tool. No login, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/javascript-beautifier.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "JavaScript Beautifier",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/javascript-beautifier",
+  "image": "https://www.freeontools.com/images/javascript-beautifier.png",
+  "description": "Beautify and format your JavaScript code easily and instantly with this free online tool. No signup required, fully free to use.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/javascript-beautifier",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.95",
+  "bestRating": "5",
+  "ratingCount": "1230"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Richards"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This tool is fantastic! It quickly formats my JavaScript code and makes it much easier to read and maintain. Highly recommended!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "JavaScript Beautifier"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 10px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+            
+        }
+
+        .editor-section {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .input-section, .output-section {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1rem;
+            font-family: 'Poppins', Arial, sans-serif;
+            resize: none;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #f28c38;
+            box-shadow: 0 0 8px rgba(242, 140, 56, 0.3);
+        }
+
+        #outputCode {
+            background-color: #f9f9f9;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #222;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Header styling */
+            header {
+                padding: 15px 10px;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 10px auto;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            textarea {
+                height: 200px;
+                font-size: 0.95rem;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .editor-section {
+                padding: 15px;
+            }
+
+            textarea {
+                height: 150px;
+                font-size: 0.9rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
+                width: 100%;
+                max-width: 200px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.4rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    JavaScript Beautifier
+   </h1>
+<p>
+    Transform your JavaScript code into clean, readable format instantly.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="editor-section">
+<div class="input-section">
+<textarea id="inputCode" placeholder="Paste your JavaScript code here..."></textarea>
+</div>
+<div class="controls">
+<button id="beautifyBtn">
+      Beautify Code
+     </button>
+<button id="copyBtn">
+      Copy to Clipboard
+     </button>
+<button id="clearBtn">
+      Clear
+     </button>
+</div>
+<div class="output-section">
+<textarea id="outputCode" placeholder="Beautified code will appear here..." readonly=""></textarea>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a JavaScript Beautifier?
+   </h2>
+<p>
+    Alright, let’s get into the nerdy stuff. If you’ve ever seen a long chunk of JavaScript code and thought, “What the heck is going on here?”—you’re not alone. JavaScript can get messy, and that's where a JavaScript Beautifier comes to the rescue. It takes your ugly, unorganized code and makes it pretty, readable, and properly formatted. You know, like a digital tidy-up.
+   </p>
+<p>
+    If you’ve ever had to work with minified code (the stuff that's all squished together like it’s trying to escape), you know it can be a pain to figure out. The JavaScript Beautifier takes care of that by adding proper indentation, line breaks, and spacing, making it easier to understand and debug. It’s like turning a giant, tangled mess into a neat little box.
+   </p>
+<h3>
+    Try Our JavaScript Beautifier Now
+   </h3>
+<p>
+    Got some messy JavaScript you need cleaned up? Just drop your code into the tool, click a button, and watch as it transforms into something that actually makes sense. It’s like magic, but with less sparkle.
+   </p>
+<h3>
+    Why a JavaScript Beautifier is a Game Changer
+   </h3>
+<p>
+    Whether you're a beginner, a pro, or somewhere in between, messy code is a universal pain. Here's why this tool is totally worth it:
+   </p>
+<ul>
+<li>
+     It makes your code easy to read, which is super helpful for debugging and understanding what’s going on
+    </li>
+<li>
+     Saves you time by automatically organizing your code instead of manually fixing it line by line
+    </li>
+<li>
+     Helps when you're working with minified code or dealing with someone else's sloppy work
+    </li>
+<li>
+     Makes your code presentable—perfect for sharing with teammates or in code reviews
+    </li>
+<li>
+     Keeps things neat without having to rely on an IDE or complex setups
+    </li>
+</ul>
+<p>
+    Plus, when you’re dealing with large chunks of code, it’s just easier to follow when it’s all spaced out and clean.
+   </p>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+     Auto-indentation: Puts things in their place so you can see the structure at a glance
+    </li>
+<li>
+     Line breaks: Adds breaks where needed so your code isn’t a never-ending line of madness
+    </li>
+<li>
+     Spacing: Clears up any messy spacing so everything is uniform and readable
+    </li>
+<li>
+     Supports modern JavaScript: Works with ES6+ code, arrow functions, and all the newer syntax
+    </li>
+<li>
+     Handles large files: You can paste in big blocks of code without it breaking down
+    </li>
+<li>
+     Free and fast: No downloads, no sign-ups, just pure code-beautifying magic
+    </li>
+</ul>
+<p>
+    In other words, it does everything to make your code look like it’s been groomed by a pro.
+   </p>
+<h3>
+    How to Use the JavaScript Beautifier
+   </h3>
+<ol>
+<li>
+     Open the Beautifier tool
+    </li>
+<li>
+     Paste or upload your messy JavaScript code
+    </li>
+<li>
+     Hit the beautify button
+    </li>
+<li>
+     Copy the clean code and use it wherever you need it
+    </li>
+</ol>
+<p>
+    Pro tip: You can even tweak some settings for different indentations or line breaks if you have preferences, but the default works fine for most situations.
+   </p>
+<h3>
+    Why Choose This JavaScript Beautifier?
+   </h3>
+<ul>
+<li>
+     Fast &amp; efficient: It fixes your code in no time, saving you hours of frustration
+    </li>
+<li>
+     No signup or fluff: You don’t need to sign up for anything—just paste and go
+    </li>
+<li>
+     Handles everything: Whether it’s simple or complex JavaScript, this beautifier handles it all
+    </li>
+<li>
+     Portable: Access it anywhere without needing special software
+    </li>
+<li>
+     Helps with debugging: Clean code is much easier to debug than a mess of jumbled lines
+    </li>
+</ul>
+<p>
+    It's basically the personal assistant you never knew you needed for your JavaScript projects.
+   </p>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      What does “beautify” mean for JavaScript code?
+     </strong>
+<br/>
+     Beautifying your code just means formatting it to be more readable. This includes adding indentation, line breaks, and spacing, so it’s easier to follow and debug.
+    </li>
+<li>
+<strong>
+      Can this beautifier handle minified JavaScript?
+     </strong>
+<br/>
+     Absolutely! Minified code is usually a mess of characters with no spacing, and the beautifier will fix that by adding proper formatting, making it much easier to童 work with.
+    </li>
+<li>
+<strong>
+      Can I use this tool for other programming languages?
+     </strong>
+<br/>
+     This tool is specifically for JavaScript. If you need to beautify code in other languages like HTML or CSS, you’ll need a different tool for that.
+    </li>
+<li>
+<strong>
+      Is it safe to use with sensitive code?
+     </strong>
+<br/>
+     Yes! The tool doesn’t store or share your code, so it’s perfectly safe to use with your personal or sensitive projects.
+    </li>
+<li>
+<strong>
+      Does this tool work with modern JavaScript (like ES6+)?
+     </strong>
+<br/>
+     Yes! It supports the latest JavaScript features, so whether you’re using let/const, arrow functions, or other ES6+ features, the beautifier can handle it.
+    </li>
+</ol>
+<p>
+    With the JavaScript Beautifier, you no longer have to spend your time wrestling with messy code. Just plug it in, let the tool do its thing, and suddenly you’ve got clean, readable code that won’t give you a headache. It's a time-saver and a must for anyone working with JavaScript.
+   </p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.min.js">
+</script>
+<script>
+        // Event listener for user interactions
+   document.addEventListener('DOMContentLoaded', () => {
+        // DOM element manipulation
+            const inputCode = document.getElementById('inputCode');
+        // DOM element manipulation
+            const outputCode = document.getElementById('outputCode');
+        // DOM element manipulation
+            const beautifyBtn = document.getElementById('beautifyBtn');
+        // DOM element manipulation
+            const copyBtn = document.getElementById('copyBtn');
+        // DOM element manipulation
+            const clearBtn = document.getElementById('clearBtn');
+
+            // Beautify code
+        // Event listener for user interactions
+            beautifyBtn.addEventListener('click', () => {
+                try {
+                    const code = inputCode.value;
+                    const beautified = js_beautify(code, {
+                        indent_size: 2,
+                        space_in_empty_paren: true
+                    });
+                    outputCode.value = beautified;
+                    outputCode.classList.add('fade-in');
+                    setTimeout(() => outputCode.classList.remove('fade-in'), 500);
+                } catch (error) {
+                    outputCode.value = 'Error: Invalid JavaScript code';
+                }
+            });
+
+            // Copy to clipboard
+        // Event listener for user interactions
+            copyBtn.addEventListener('click', () => {
+                outputCode.select();
+                try {
+                    document.execCommand('copy');
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy to Clipboard', 2000);
+                } catch (error) {
+                    alert('Failed to copy code');
+                }
+            });
+
+            // Clear both textareas
+        // Event listener for user interactions
+            clearBtn.addEventListener('click', () => {
+                inputCode.value = '';
+                outputCode.value = '';
+                inputCode.focus();
+            });
+
+            // Add fade-in animation class
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .fade-in {
+                    animation: fadeInText 0.5s ease-in;
+                }
+                @keyframes fadeInText {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,1124 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   CSS Shadow Generator - Try It Free Now
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="CSS Shadow Generator - Easily create box and text shadows for your web projects. No credit card needed, 100% free and beginner-friendly. Try it free now!" name="description">
+<meta content="CSS Shadow Generator, Box Shadow, Text Shadow, CSS Tools, Web Design Tools, No Ads, Free Without Login, 100% Free, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/css-shadow-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="CSS Shadow Generator - Try It Free Now" property="og:title"/>
+<meta content="CSS Shadow Generator - Easily create box and text shadows for your web projects. No credit card needed, 100% free and beginner-friendly. Try it free now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/css-shadow-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/css-shadow-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="CSS Shadow Generator - Try It Free Now" name="twitter:title"/>
+<meta content="CSS Shadow Generator - Easily create box and text shadows for your web projects. No credit card needed, 100% free and beginner-friendly. Try it free now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/css-shadow-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CSS Shadow Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "url": "https://www.freeontools.com/css-shadow-generator",
+  "image": "https://www.freeontools.com/images/css-shadow-generator.png",
+  "description": "Quickly generate CSS box and text shadows with this easy-to-use online tool. No login or credit card required—just copy your code and go!",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/css-shadow-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.87",
+  "bestRating": "5",
+  "ratingCount": "1035"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Leo Grant"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This CSS Shadow Generator is perfect! It saved me a ton of time and the output is clean and customizable. Great for both box and text shadows.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "CSS Shadow Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            text-align: center;
+        }
+
+        /* Container styling */
+        .container {
+            width: 1200px;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in;
+    margin-left: auto;
+    margin-right: auto;
+margin-top: 20px;
+        }
+
+        .controls, .preview {
+            flex: 1;
+            padding: 20px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .shadow-type label {
+            margin-right: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .shadow-type input {
+            margin-right: 5px;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            flex: 1;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .control-group input[type="range"],
+        .control-group input[type="color"] {
+            flex: 2;
+            margin: 0 10px;
+        }
+
+        .control-group span {
+            flex: 0.5;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .btn {
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(242, 140, 56, 0.4);
+        }
+
+        .preview-box, .preview-text {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .preview-text {
+            display: none;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .code-output {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+        }
+
+        /* Container styling */
+        .content-container {
+            width: 1200px;
+            margin: 0;
+            padding: 40px 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            animation: fadeIn 0.5s ease-in;
+margin-top: 20px;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 12px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #f28c38, #f28c38);
+        }
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin: 35px 0 20px;
+            position: relative;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3::before {
+            content: '▹';
+            color: #f28c38;
+            margin-right: 8px;
+        }
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #444;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 2px solid #f28c38;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p:first-of-type::first-letter {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #f28c38;
+            float: left;
+            margin-right: 10px;
+            line-height: 1;
+        }
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 25px 0 35px 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #444;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        /* Container styling */
+        .content-container ul li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #f28c38;
+            font-size: 1rem;
+            top: 2px;
+        }
+
+        /* Container styling */
+        .content-container ol li::marker {
+            font-weight: 600;
+            color: #f28c38;
+        }
+
+        /* Container styling */
+        .content-container ul ul {
+            margin: 10px 0 10px 25px;
+        }
+
+        /* Container styling */
+        .content-container ul ul li::before {
+            content: '◇';
+            font-size: 0.9rem;
+            top: 3px;
+        }
+
+        /* Container styling */
+        .content-container strong {
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* Container styling */
+        .content-container .pro-tip {
+            background: #fff8f0;
+            border: 2px solid #f28c38;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(242, 140, 56, 0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Container styling */
+        .content-container .pro-tip:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Container styling */
+        .content-container .pro-tip::before {
+            content: '💡';
+            font-size: 1.8rem;
+        }
+
+        /* Container styling */
+        .content-container .faq-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        /* Container styling */
+        .content-container .faq-item:hover {
+            background: #f5f5f5;
+        }
+
+        /* Container styling */
+        .content-container .faq-item strong {
+            display: block;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        /* Container styling */
+        .content-container .faq-item p {
+            font-size: 1.15rem;
+            margin-bottom: 0;
+            padding-left: 0;
+            border-left: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 1200px) {
+        /* Container styling */
+            .container, .content-container {
+                width: 100%;
+                max-width: 100%; /* Prevent overflow */
+
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                margin: 8px 0 5px; /* Further reduced top margin */
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin: 0 auto 8px; /* Further reduced bottom margin */
+            }
+
+        /* Container styling */
+            .container {
+                padding: 8px; /* Further reduced padding */
+                flex-wrap: wrap; /* Prevent flex overflow */
+                gap: 10px; /* Reduced gap to minimize width */
+            }
+
+            .controls, .preview {
+                padding: 10px; /* Reduced padding to fit viewport */
+            }
+
+            .preview-box, .preview-text {
+                height: 120px;
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 12px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px; /* Further reduced top/bottom padding, 15px left/right */
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 2rem;
+                margin-top: 8px; /* Further reduced top margin */
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.5rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p {
+                font-size: 1rem;
+                padding-left: 10px; /* Reduced to prevent overflow */
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container ul,
+        /* Container styling */
+            .content-container ol {
+                margin-left: 15px; /* Reduced to prevent overflow */
+            }
+
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 1rem;
+                padding-left: 15px; /* Reduced to prevent overflow */
+            }
+
+        /* Container styling */
+            .content-container .pro-tip {
+                font-size: 1rem;
+                padding: 20px; /* Reduced padding */
+            }
+
+        /* Container styling */
+            .content-container .faq-item strong {
+                font-size: 1.1rem;
+            }
+
+        /* Container styling */
+            .content-container .faq-item p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+                margin: 3px 0 2px; /* Further reduced margins */
+            }
+
+            p {
+                font-size: 0.85rem;
+                margin: 0 auto 5px; /* Further reduced bottom margin */
+                padding: 0 8px; /* Reduced padding to fit viewport */
+            }
+
+        /* Container styling */
+            .container {
+                padding: 5px; /* Further reduced padding */
+                gap: 8px; /* Further reduced gap */
+            }
+
+            .control-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .control-group.checkbox-group {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .control-group.checkbox-group label {
+                flex: 1;
+            }
+
+            .control-group.checkbox-group input[type="checkbox"] {
+                flex: 0 0 auto;
+                margin: 0 10px 0 0;
+            }
+
+            .control-group label, .control-group input, .control-group span {
+                flex: none;
+                width: 100%;
+                margin: 5px 0;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 10px 15px; /* Reduced top/bottom to 10px, 15px left/right as required */
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.75rem;
+                margin-top: 3px; /* Further reduced top margin */
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p {
+                font-size: 0.95rem;
+                padding-left: 8px; /* Further reduced to prevent overflow */
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container ul,
+        /* Container styling */
+            .content-container ol {
+                margin-left: 10px; /* Further reduced to prevent overflow */
+            }
+
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.95rem;
+                padding-left: 12px; /* Further reduced to prevent overflow */
+            }
+
+        /* Container styling */
+            .content-container .pro-tip {
+                font-size: 0.95rem;
+                padding: 15px; /* Further reduced padding */
+            }
+
+        /* Container styling */
+            .content-container .faq-item strong {
+                font-size: 1rem;
+            }
+
+        /* Container styling */
+            .content-container .faq-item p {
+                font-size: 0.95rem;
+            }
+
+        /* Container styling */
+            .content-container p:first-of-type::first-letter {
+                font-size: 1.5rem;
+            }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<h1>
+   CSS Shadow Generator
+  </h1>
+<p>
+   Create professional box-shadow and text-shadow effects with real-time previews and clean CSS output.
+  </p>
+<!-- Main content container -->
+<div class="container">
+<div class="controls">
+<div class="shadow-type">
+<h3>
+      Shadow Type
+     </h3>
+<label>
+<input checked="" name="shadowType" type="radio" value="box"/>
+      Box Shadow
+     </label>
+<label>
+<input name="shadowType" type="radio" value="text"/>
+      Text Shadow
+     </label>
+</div>
+<div class="shadow-options">
+<h3>
+      Shadow Properties
+     </h3>
+<div class="control-group">
+<label>
+       Horizontal Offset
+      </label>
+<input id="hOffset" max="50" min="-50" type="range" value="10"/>
+<span id="hOffsetValue">
+       10px
+      </span>
+</div>
+<div class="control-group">
+<label>
+       Vertical Offset
+      </label>
+<input id="vOffset" max="50" min="-50" type="range" value="10"/>
+<span id="vOffsetValue">
+       10px
+      </span>
+</div>
+<div class="control-group">
+<label>
+       Blur Radius
+      </label>
+<input id="blur" max="100" min="0" type="range" value="20"/>
+<span id="blurValue">
+       20px
+      </span>
+</div>
+<div class="control-group">
+<label>
+       Spread Radius (Box Shadow)
+      </label>
+<input id="spread" max="50" min="0" type="range" value="0"/>
+<span id="spreadValue">
+       0px
+      </span>
+</div>
+<div class="control-group">
+<label>
+       Opacity
+      </label>
+<input id="opacity" max="1" min="0" step="0.01" type="range" value="0.5"/>
+<span id="opacityValue">
+       0.5
+      </span>
+</div>
+<div class="control-group">
+<label>
+       Shadow Color
+      </label>
+<input id="shadowColor" type="color" value="#000000"/>
+</div>
+<div class="control-group checkbox-group">
+<label>
+       Inset (Box Shadow)
+      </label>
+<input id="inset" type="checkbox"/>
+</div>
+</div>
+<button class="btn copy-btn">
+     Copy CSS
+    </button>
+</div>
+<div class="preview">
+<h3>
+     Preview
+    </h3>
+<div class="preview-box" id="previewBox">
+     Box Shadow
+    </div>
+<div class="preview-text" id="previewText">
+     Text Shadow
+    </div>
+<div class="code-output">
+<h3>
+      Generated CSS
+     </h3>
+<pre id="cssOutput"></pre>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a CSS Shadow Generator?
+   </h2>
+<p>
+    Ever noticed those cool little shadows behind buttons, boxes, or text on a website that make things pop out? That’s what a CSS Shadow Generator helps you create—those nifty visual effects that add depth and style to your site. It’s a tool that lets you quickly generate CSS code for shadows, whether you're adding them to text, images, or whole divs. Instead of manually adjusting the settings for each shadow property, the tool handles the work for you. You just play around with the settings, and boom, you get the CSS code ready to copy.
+   </p>
+<p>
+    You can experiment with how far the shadow should stretch, how blurry or sharp it should be, and what color it should have—all in a few clicks. No more fiddling with the numbers for hours. It’s fast and easy.
+   </p>
+<h3>
+    Try Our CSS Shadow Generator Now
+   </h3>
+<p>
+    Want to make your website look more dynamic? Try out our CSS Shadow Generator. Just adjust the settings, and you'll get the perfect shadow effect in seconds.
+   </p>
+<h2>
+    Why a CSS Shadow Generator Matters
+   </h2>
+<p>
+    So, why would you want to bother with shadows on your website? Here’s the lowdown:
+   </p>
+<ul>
+<li>
+<strong>
+      Visual appeal
+     </strong>
+     – Shadows give your website elements a 3D feel, making them pop and look more interactive. It’s a small touch that can make a big difference.
+    </li>
+<li>
+<strong>
+      Better user experience
+     </strong>
+     – Shadows can help users focus on important elements like buttons or CTAs (call-to-action buttons). It’s like saying, "Hey, look at me!" without being too loud.
+    </li>
+<li>
+<strong>
+      Easy customization
+     </strong>
+     – You can create shadows in all sorts of styles, from subtle and elegant to bold and dramatic, all tailored to your design.
+    </li>
+<li>
+<strong>
+      Quick results
+     </strong>
+     – Instead of spending time tweaking CSS code to get the right shadow, you can get it instantly with this tool.
+    </li>
+</ul>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+<strong>
+      Adjustable settings
+     </strong>
+     – You can control the offset, blur radius, spread radius, and color of the shadow. It’s super customizable!
+    </li>
+<li>
+<strong>
+      Multiple shadow types
+     </strong>
+     – Create shadows for text, images, boxes, buttons—anything you can think of.
+    </li>
+<li>
+<strong>
+      Real-time preview
+     </strong>
+     – See how your shadow looks as you make changes. You can adjust the intensity and distance until it looks just right.
+    </li>
+<li>
+<strong>
+      CSS output ready
+     </strong>
+     – Once you’ve got the shadow looking how you want it, the tool generates the CSS code for you to copy directly into your stylesheet.
+    </li>
+<li>
+<strong>
+      Works for all elements
+     </strong>
+     – Whether it’s a button, header, or an entire section, this tool works for all elements on your page.
+    </li>
+</ul>
+<h2>
+    How to Use the CSS Shadow Generator
+   </h2>
+<p>
+    Here’s a super simple guide to making shadows:
+   </p>
+<ol>
+<li>
+<strong>
+      Go to the CSS Shadow Generator tool
+     </strong>
+     – Open the tool in your browser. No need to sign up or download anything.
+    </li>
+<li>
+<strong>
+      Choose your element
+     </strong>
+     – Decide what you want the shadow to apply to. Are you working with text, an image, or a div? Pick your target.
+    </li>
+<li>
+<strong>
+      Adjust the settings
+     </strong>
+     – Play around with the shadow's settings:
+     <ul>
+<li>
+<strong>
+        Horizontal and vertical offset
+       </strong>
+       – This controls how far the shadow is from the element. Play with these numbers to move the shadow around.
+      </li>
+<li>
+<strong>
+        Blur radius
+       </strong>
+       – This will make your shadow sharp or soft. A higher value gives a more blurred shadow.
+      </li>
+<li>
+<strong>
+        Spread radius
+       </strong>
+       – Want the shadow to be bigger or smaller? Adjust the spread to change the size.
+      </li>
+<li>
+<strong>
+        Color
+       </strong>
+       – Choose the color of the shadow. You can make it subtle with light grays or bold with darker colors.
+      </li>
+</ul>
+</li>
+<li>
+<strong>
+      Preview and tweak
+     </strong>
+     – You’ll see the shadow update in real-time as you adjust the settings. Keep playing until it looks just right.
+    </li>
+<li>
+<strong>
+      Generate the code
+     </strong>
+     – Once you’re happy with the shadow, the tool will show you the CSS code. Copy that code and paste it into your website’s stylesheet.
+    </li>
+<li>
+<strong>
+      Add the CSS to your site
+     </strong>
+     – Paste the generated code into your CSS file, and the shadow effect will be applied to your chosen element.
+    </li>
+</ol>
+<div class="pro-tip">
+<strong>
+     Pro tip:
+    </strong>
+    Shadows are all about balance—don’t go too overboard with them. A subtle shadow can look sleek and modern, while too much can make things look messy.
+   </div>
+<h2>
+    Why Choose This CSS Shadow Generator?
+   </h2>
+<ul>
+<li>
+<strong>
+      Super easy to use
+     </strong>
+     – No need to be a CSS expert. Just tweak the settings, and you’ve got a shadow that fits your design.
+    </li>
+<li>
+<strong>
+      Instant preview
+     </strong>
+     – Get real-time feedback on how your shadow looks while you adjust the settings.
+    </li>
+<li>
+<strong>
+      Time-saver
+     </strong>
+     – Instead of manually calculating values and writing out CSS code, you get the code instantly. Perfect for speeding up your workflow.
+    </li>
+<li>
+<strong>
+      Versatile
+     </strong>
+     – Works on any type of element. Whether it’s for a button, text, or an image, you can easily add shadows wherever you need them.
+    </li>
+<li>
+<strong>
+      Free to use
+     </strong>
+     – You don’t have to pay to generate shadow code. It’s free and ready whenever you need it.
+    </li>
+</ul>
+<h2>
+    FAQs
+   </h2>
+<div class="faq-item">
+<strong>
+     Can I use this for shadows on text?
+    </strong>
+<p>
+     Yep! You can generate shadows for text, which can help give it more depth and make it stand out against the background.
+    </p>
+</div>
+<div class="faq-item">
+<strong>
+     What’s the difference between offset and blur radius?
+    </strong>
+<p>
+     The offset controls how far the shadow is from the element (left/right or up/down), while the blur radius controls how soft or sharp the shadow is. Higher blur = softer shadow.
+    </p>
+</div>
+<div class="faq-item">
+<strong>
+     Can I make the shadow color any shade I want?
+    </strong>
+<p>
+     Totally! You can choose any color for your shadow. You can even use RGBA or HEX color codes to make it semi-transparent or any custom shade.
+    </p>
+</div>
+<div class="faq-item">
+<strong>
+     How do I apply the shadow to my website?
+    </strong>
+<p>
+     Once you’ve generated the CSS code, just copy and paste it into your website’s stylesheet, and the shadow will be applied to the element you selected.
+    </p>
+</div>
+<div class="faq-item">
+<strong>
+     Can I generate multiple shadows for one element?
+    </strong>
+<p>
+     Yes! You can add multiple shadows to an element by separating each shadow with a comma in the CSS. For example, you can add a subtle shadow and then a bolder one for a layered effect.
+    </p>
+</div>
+<p>
+    Want to add some flair to your website? Try out the CSS Shadow Generator now and make your elements stand out with some stylish shadows. It's quick, easy, and a great way to enhance your site's design.
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const hOffset = document.getElementById('hOffset');
+        // DOM element manipulation
+        const vOffset = document.getElementById('vOffset');
+        // DOM element manipulation
+        const blur = document.getElementById('blur');
+        // DOM element manipulation
+        const spread = document.getElementById('spread');
+        // DOM element manipulation
+        const opacity = document.getElementById('opacity');
+        // DOM element manipulation
+        const shadowColor = document.getElementById('shadowColor');
+        // DOM element manipulation
+        const inset = document.getElementById('inset');
+        // DOM element manipulation
+        const previewBox = document.getElementById('previewBox');
+        // DOM element manipulation
+        const previewText = document.getElementById('previewText');
+        // DOM element manipulation
+        const cssOutput = document.getElementById('cssOutput');
+        // DOM element manipulation
+        const copyBtn = document.querySelector('.copy-btn');
+        // DOM element manipulation
+        const shadowTypeInputs = document.querySelectorAll('input[name="shadowType"]');
+
+        // Function: updateShadow
+        function updateShadow() {
+            const hOffsetValue = hOffset.value;
+            const vOffsetValue = vOffset.value;
+            const blurValue = blur.value;
+            const spreadValue = spread.value;
+            const opacityValue = opacity.value;
+            const colorValue = hexToRgba(shadowColor.value, opacityValue);
+            const isInset = inset.checked;
+        // DOM element manipulation
+            const shadowType = document.querySelector('input[name="shadowType"]:checked').value;
+
+        // DOM element manipulation
+            document.getElementById('hOffsetValue').textContent = `${hOffsetValue}px`;
+        // DOM element manipulation
+            document.getElementById('vOffsetValue').textContent = `${vOffsetValue}px`;
+        // DOM element manipulation
+            document.getElementById('blurValue').textContent = `${blurValue}px`;
+        // DOM element manipulation
+            document.getElementById('spreadValue').textContent = `${spreadValue}px`;
+        // DOM element manipulation
+            document.getElementById('opacityValue').textContent = opacityValue;
+
+            if (shadowType === 'box') {
+                previewBox.style.display = 'flex';
+                previewText.style.display = 'none';
+                const shadow = isInset
+                    ? `inset ${hOffsetValue}px ${vOffsetValue}px ${blurValue}px ${spreadValue}px ${colorValue}`
+                    : `${hOffsetValue}px ${vOffsetValue}px ${blurValue}px ${spreadValue}px ${colorValue}`;
+                previewBox.style.boxShadow = shadow;
+                cssOutput.textContent = `box-shadow: ${shadow};`;
+            } else {
+                previewBox.style.display = 'none';
+                previewText.style.display = 'flex';
+                const shadow = `${hOffsetValue}px ${vOffsetValue}px ${blurValue}px ${colorValue}`;
+                previewText.style.textShadow = shadow;
+                cssOutput.textContent = `text-shadow: ${shadow};`;
+            }
+        }
+
+        // Function: hexToRgba
+        function hexToRgba(hex, opacity) {
+            let r = 0, g = 0, b = 0;
+            if (hex.length === 7) {
+                r = parseInt(hex.slice(1, 3), 16);
+                g = parseInt(hex.slice(3, 5), 16);
+                b = parseInt(hex.slice(5, 7), 16);
+            }
+            return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+        }
+
+        // Function: copyToClipboard
+        function copyToClipboard() {
+            const text = cssOutput.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy CSS';
+                }, 2000);
+            });
+        }
+
+        // Event listener for user interactions
+        hOffset.addEventListener('input', updateShadow);
+        // Event listener for user interactions
+        vOffset.addEventListener('input', updateShadow);
+        // Event listener for user interactions
+        blur.addEventListener('input', updateShadow);
+        // Event listener for user interactions
+        spread.addEventListener('input', updateShadow);
+        // Event listener for user interactions
+        opacity.addEventListener('input', updateShadow);
+        // Event listener for user interactions
+        shadowColor.addEventListener('input', updateShadow);
+        // Event listener for user interactions
+        inset.addEventListener('change', updateShadow);
+        // Event listener for user interactions
+        shadowTypeInputs.forEach(input => input.addEventListener('change', updateShadow));
+        // Event listener for user interactions
+        copyBtn.addEventListener('click', copyToClipboard);
+
+        updateShadow();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

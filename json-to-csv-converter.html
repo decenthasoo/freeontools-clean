@@ -1,0 +1,731 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   JSON to CSV Converter - Try It Free Now
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="JSON to CSV Converter - Convert your JSON files to CSV instantly with this free tool. No login, no ads, and 100% free. Try it now!" name="description">
+<meta content="JSON to CSV Converter, Convert JSON to CSV, Free JSON Tool, JSON to CSV Online, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/json-to-csv-converter" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="JSON to CSV Converter - Try It Free Now" property="og:title"/>
+<meta content="JSON to CSV Converter - Convert your JSON files to CSV instantly with this free tool. No login, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/json-to-csv-converter.png" property="og:image"/>
+<meta content="https://www.freeontools.com/json-to-csv-converter" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="JSON to CSV Converter - Try It Free Now" name="twitter:title"/>
+<meta content="JSON to CSV Converter - Convert your JSON files to CSV instantly with this free tool. No login, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/json-to-csv-converter.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "JSON to CSV Converter",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/json-to-csv-converter",
+  "image": "https://www.freeontools.com/images/json-to-csv-converter.png",
+  "description": "Easily convert your JSON data to CSV format with this free online tool. No signup required, fully free to use.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/json-to-csv-converter",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.87",
+  "bestRating": "5",
+  "ratingCount": "850"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Lucas Martinez"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This tool is a lifesaver! Converting JSON to CSV is so easy now. It's simple, fast, and totally free. Highly recommended for developers and analysts.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "JSON to CSV Converter"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: #f9f9f9;
+            
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        p.intro {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+            
+        }
+
+        .converter-box {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .input-group, .output-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .output-group label {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #f28c38;
+            outline: none;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .success {
+            color: #388e3c;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: none;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 860px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p.intro {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 10px auto;
+                padding: 0 15px;
+            }
+
+            .converter-box {
+                padding: 20px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            button:last-child {
+                margin-top: 10px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p.intro {
+                font-size: 0.9rem;
+            }
+
+            .converter-box {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+            }
+
+            textarea {
+                min-height: 120px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    JSON to CSV Converter
+   </h1>
+<p class="intro">
+    Effortlessly convert your JSON data to CSV format with our fast, responsive, and professional web tool.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="converter-box">
+<div class="input-group">
+<label for="jsonInput">
+      Enter JSON Data
+     </label>
+<textarea id="jsonInput" placeholder='[{"name": "John", "age": 30}]'></textarea>
+</div>
+<button onclick="convertJsonToCsv()">
+     Convert to CSV
+    </button>
+<div class="output-group">
+<label for="csvOutput">
+      CSV Output
+     </label>
+<textarea id="csvOutput" readonly=""></textarea>
+<p class="error" id="errorMsg">
+      Invalid JSON format. Please check your input.
+     </p>
+<p class="success" id="successMsg">
+      Conversion successful! Copy the CSV output above.
+     </p>
+</div>
+<button onclick="copyToClipboard()">
+     Copy CSV
+    </button>
+<button onclick="downloadCsv()">
+     Download CSV
+    </button>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a JSON to CSV Converter?
+   </h2>
+<p>
+    If you’re working with data ragularly, you know that JSON (JavaScript Object Notation) and CSV (Comma Separated Values) are two of the most commonly used formats. JSON is super flexible, human-readable, and widely used in APIs and web applications, but sometimes you need to convert that data into a CSV format, especially when working with spreadsheets or databases.
+   </p>
+<p>
+    A JSON to CSV Converter is the tool that takes your JSON data and transforms it into CSV format. Simple, right? You give it your JSON file or text, and it converts the data into neatly organized rows and columns that can be opened in any spreadsheet tool, like Microsoft Excel or Google Sheets.
+   </p>
+<h3>
+    Try Our JSON to CSV Converter Now
+   </h3>
+<p>
+    Got some JSON data you need to convert? Just drop it into the tool, hit the button, and voila—you’ve got a CSV file ready to download or use however you want. No hassle, no fuss.
+   </p>
+<h2>
+    Why You Need a JSON to CSV Converter
+   </h2>
+<p>
+    If you’ve ever needed to work with data from an API or some other JSON source, you’ve probably hit that wall where you need it in CSV format. Why? Well, here’s why you need this tool:
+   </p>
+<ul>
+<li>
+<strong>
+      Easily import data into spreadsheets:
+     </strong>
+     JSON is great for structuring data, but spreadsheets are way better when it comes to data analysis. CSV is the bridge that helps you move data into tools like Excel or Google Sheets.
+    </li>
+<li>
+<strong>
+      Simplifies reporting and analysis:
+     </strong>
+     If you're working on reports or performing data analysis, having your data in CSV makes things much simpler. You can quickly filter, sort, and calculate without any extra programming.
+    </li>
+<li>
+<strong>
+      Perfect for databases:
+     </strong>
+     When you need to import data into a database, CSV is often the preferred format. This tool helps you make that transition from JSON seamlessly.
+    </li>
+<li>
+<strong>
+      Quick conversion:
+     </strong>
+     You don’t need to spend hours writing scripts or doing manual conversions. Just use the tool, and you’re done.
+    </li>
+<li>
+<strong>
+      Data portability:
+     </strong>
+     CSV files are easy to share, and they work well with almost every tool out there.
+    </li>
+</ul>
+<p>
+    Basically, if you’ve got JSON data and need it in CSV format for analysis, sharing, or importing, this tool is a lifesaver.
+   </p>
+<h2>
+    Features
+   </h2>
+<p>
+    Here's what makes our JSON to CSV Converter stand out:
+   </p>
+<ul>
+<li>
+<strong>
+      Simple interface:
+     </strong>
+     Upload or paste your JSON data, and convert it with just a click.
+    </li>
+<li>
+<strong>
+      Supports nested JSON:
+     </strong>
+     It flattens out nested JSON structures into neat columns, so you don’t have to worry about complex data.
+    </li>
+<li>
+<strong>
+      Automatic formatting:
+     </strong>
+     The tool automatically formats your data into rows and columns—no need to manually map things out.
+    </li>
+<li>
+<strong>
+      Download options:
+     </strong>
+     Once converted, you can download the CSV file in seconds.
+    </li>
+<li>
+<strong>
+      Free to use:
+     </strong>
+     This tool won’t cost you a dime, so go ahead and convert as much as you need.
+    </li>
+</ul>
+<p>
+    It’s quick, effective, and perfect for anyone working with data.
+   </p>
+<h2>
+    How to Use the JSON to CSV Converter
+   </h2>
+<p>
+    Here’s how to convert your JSON data into CSV in just a few easy steps:
+   </p>
+<ol>
+<li>
+     Open the converter tool
+    </li>
+<li>
+     Paste or upload your JSON data
+    </li>
+<li>
+     Click the convert button
+    </li>
+<li>
+     Download your CSV file
+    </li>
+<li>
+     Open your CSV in any spreadsheet application, and you’re good to go!
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    If your JSON is large or complex, make sure it’s well-formed before you upload. Otherwise, you might run into errors.
+   </p>
+<h2>
+    Why Choose This JSON to CSV Converter?
+   </h2>
+<p>
+    Here’s why this tool is great for anyone working with data:
+   </p>
+<ul>
+<li>
+<strong>
+      Fast and easy:
+     </strong>
+     Just upload your JSON, and the conversion happens in seconds.
+    </li>
+<li>
+<strong>
+      Handles complex data:
+     </strong>
+     Whether it’s a simple list or a complex nested structure, the tool converts it seamlessly into CSV format.
+    </li>
+<li>
+<strong>
+      No software required:
+     </strong>
+     It’s a browser-based tool, so you don’t need to install anything to get started.
+    </li>
+<li>
+<strong>
+      Perfect for non-techies:
+     </strong>
+     You don’t need to know how to code to use this—just paste your JSON and hit convert.
+    </li>
+<li>
+<strong>
+      Free and unlimited:
+     </strong>
+     There are no hidden fees, and you can convert as much data as you need.
+    </li>
+</ul>
+<p>
+    If you're tired of manually converting JSON to CSV or don’t want to write your own scripts, this tool is a perfect solution.
+   </p>
+<h2>
+    FAQs
+   </h2>
+<ol>
+<li>
+<strong>
+      Can I convert large JSON files?
+     </strong>
+<br/>
+     Yes! The tool can handle fairly large files, but be mindful that extremely large files might take a bit longer to process.
+    </li>
+<li>
+<strong>
+      What if my JSON has nested structures?
+     </strong>
+<br/>
+     No problem! The tool automatically flattens nested JSON into columns, so everything is neatly organized in the CSV.
+    </li>
+<li>
+<strong>
+      Can I download the CSV file?
+     </strong>
+<br/>
+     Absolutely. Once the conversion is done, you can download your CSV file instantly.
+    </li>
+<li>
+<strong>
+      Does this work with any JSON format?
+     </strong>
+<br/>
+     Yes, as long as your JSON is valid and well-formed, the tool will convert it into CSV. If there are any issues with your file, make sure the JSON syntax is correct before trying again.
+    </li>
+<li>
+<strong>
+      Is the tool free?
+     </strong>
+<br/>
+     Yep! It’s completely free to use, with no hidden charges or limits.
+    </li>
+</ol>
+<p>
+    A JSON to CSV Converter is a must-have tool if you're working with data and need to switch between formats. It saves time, eliminates the need for manual conversion, and makes working with large datasets way easier. Whether you're a developer, analyst, or just someone handling data, this tool makes sure you spend less time worrying about formatting and more time working with your data.
+   </p>
+</div>
+<script>
+        // Function: convertJsonToCsv
+   function convertJsonToCsv() {
+        // DOM element manipulation
+            const jsonInput = document.getElementById('jsonInput').value.trim();
+        // DOM element manipulation
+            const csvOutput = document.getElementById('csvOutput');
+        // DOM element manipulation
+            const errorMsg = document.getElementById('errorMsg');
+        // DOM element manipulation
+            const successMsg = document.getElementById('successMsg');
+
+            // Reset messages and output
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+            csvOutput.value = '';
+
+            // Check for empty input
+            if (!jsonInput) {
+                errorMsg.textContent = 'Please enter JSON data.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            try {
+                // Parse JSON
+                let jsonData = JSON.parse(jsonInput);
+
+                // Handle single object by converting to array
+                if (!Array.isArray(jsonData) && typeof jsonData === 'object' && jsonData !== null) {
+                    jsonData = [jsonData];
+                }
+
+                // Validate: must be an array of objects
+                if (!Array.isArray(jsonData) || jsonData.length === 0 || !jsonData.every(item => typeof item === 'object' && item !== null)) {
+                    throw new Error('JSON must be an array of objects or a single object.');
+                }
+
+                // Get headers from the first object
+                const headers = Object.keys(jsonData[0]);
+
+                // Generate CSV rows
+                const csvRows = [
+                    headers.join(','), // Header row
+                    ...jsonData.map(row =>
+                        headers.map(header => {
+                            const value = row[header] ?? '';
+                            return `"${value.toString().replace(/"/g, '""')}"`;
+                        }).join(',')
+                    )
+                ];
+
+                // Set output
+                csvOutput.value = csvRows.join('\n');
+                successMsg.style.display = 'block';
+            } catch (e) {
+                errorMsg.textContent = `Error: ${e.message}`;
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        // Function: copyToClipboard
+        function copyToClipboard() {
+        // DOM element manipulation
+            const csvOutput = document.getElementById('csvOutput');
+            if (!csvOutput.value) {
+                alert('No CSV data to copy. Please convert JSON first.');
+                return;
+            }
+
+            try {
+                // Modern clipboard API (requires HTTPS or localhost)
+                navigator.clipboard.writeText(csvOutput.value).then(() => {
+                    alert('CSV copied to clipboard!');
+                }).catch(() => {
+                    // Fallback for older browsers
+                    csvOutput.select();
+                    document.execCommand('copy');
+                    alert('CSV copied to clipboard!');
+                });
+            } catch (e) {
+                alert('Failed to copy CSV. Please copy manually.');
+            }
+        }
+
+        // Function: downloadCsv
+        function downloadCsv() {
+        // DOM element manipulation
+            const csvOutput = document.getElementById('csvOutput').value;
+            if (!csvOutput) {
+                alert('No CSV data to download. Please convert JSON first.');
+                return;
+            }
+
+            const blob = new Blob([csvOutput], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'converted_data.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

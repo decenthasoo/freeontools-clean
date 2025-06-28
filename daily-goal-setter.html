@@ -1,0 +1,832 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Daily Goal Setter - Free & Easy Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Daily Goal Setter - Free &amp; Easy! Set and track your daily goals with ease. No signup, no ads, just simple and fast goal setting!" name="description">
+<meta content="Daily Goal Setter, Free Goal Setting Tool, Set Goals Online, Daily Goals Tracker, Easy Goal Setting, Goal Planner, Free Online Goal Setter" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/daily-goal-setter" rel="canonical"/>
+<meta content="Daily Goal Setter - Free &amp; Easy Online Tool" property="og:title"/>
+<meta content="Set and track your daily goals effortlessly. Free &amp; easy to use, with no signup required. Keep your daily tasks organized and on track." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/daily-goal-setter-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Daily Goal Setter - Free &amp; Easy Online Tool" name="twitter:title"/>
+<meta content="Stay on top of your goals with this free &amp; easy daily goal setter. Track and manage your daily tasks with no signup or ads!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/daily-goal-setter-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Daily Goal Setter",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "180"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Daily Goal Setter"
+  },
+  "ratingValue": "4.8",
+  "ratingCount": "180"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Mia Johnson"
+  },
+  "datePublished": "2025-05-20",
+  "reviewBody": "I love using this daily goal setter! It's simple, easy to use, and helps me stay organized. The best part is that it’s completely free with no signup required.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Daily Goal Setter"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            flex-direction: column;
+
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 100%;
+margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 8px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+
+            margin: 0 auto;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        /* Container styling */
+        .container, .content-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 12px;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 10px;
+
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            text-align: left;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            text-align: left;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+
+
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li::before {
+            content: '•';
+            color: #555;
+            position: absolute;
+            left: 0;
+            font-size: 1.4rem;
+            line-height: 1.6;
+        }
+
+        /* Container styling */
+        .content-container ol li::before {
+            content: counter(list-item) '.';
+            counter-increment: list-item;
+            color: #555;
+            position: absolute;
+            left: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Container styling */
+        .content-container ol {
+            counter-reset: list-item;
+        }
+
+        /* Container styling */
+        .content-container ul li strong, .content-container ol li strong {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #f28c38;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        button {
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(242, 140, 56, 0.4);
+        }
+
+        .progress-section {
+            margin-bottom: 12px;
+        }
+
+        .progress-bar {
+            background: #ddd;
+            border-radius: 8px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .progress {
+            background: #f28c38;
+            height: 100%;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        .goal-list {
+            list-style: none;
+            width: 100%;
+        }
+
+        .goal-item {
+            display: flex;
+            flex-direction: column;
+            background: #f9f9f9;
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            animation: fadeIn 0.5s ease;
+            width: 100%;
+        }
+
+        .goal-item.completed {
+            background: #e0f7e0;
+            text-decoration: line-through;
+        }
+
+        .goal-details {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .goal-details h3 {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .goal-details p {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .goal-actions {
+            display: flex;
+            color: #777;
+            flex-wrap: wrap;
+            gap: 5px;
+            width: 100%;
+        }
+
+        .goal-actions button {
+            flex: 1;
+            margin: 0;
+            padding: 8px;
+            min-width: 80px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            overflow-x: hidden;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 480px;
+            animation: slideIn 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .modal-content button {
+            width: auto;
+            padding: 8px 15px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Tablet and smaller screens */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                width: 95%;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 10px;
+                margin-top: 8px;
+            }
+
+            input[type="text"],
+            textarea {
+                padding: 7px;
+                font-size: 0.9rem;
+            }
+
+            button {
+                padding: 8px;
+            }
+        }
+
+        /* Mobile screens */
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 0.85rem;
+                width: 98%;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 8px;
+                margin-top: 6px;
+                border-radius: 8px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .input-section {
+                gap: 6px;
+            }
+
+            input[type="text"],
+            textarea {
+                padding: 6px;
+                font-size: 0.85rem;
+            }
+
+            button {
+                padding: 7px;
+                font-size: 0.85rem;
+            }
+
+            .goal-details h3 {
+                font-size: 1rem;
+            }
+
+            .goal-details p {
+                font-size: 0.8rem;
+            }
+
+            .goal-actions button {
+                padding: 6px;
+                font-size: 0.8rem;
+                min-width: 70px;
+            }
+
+            .modal-content {
+                padding: 10px;
+                width: 95%;
+                max-width: 400px;
+            }
+
+            .modal-content h2 {
+                font-size: 1.2rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.1rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin-bottom: 12px;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container ul li, .content-container ol li {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin-bottom: 8px;
+                padding-left: 18px;
+            }
+
+        /* Container styling */
+            .content-container ul li::before {
+                font-size: 1.2rem;
+            }
+
+        /* Container styling */
+            .content-container ol li::before {
+                font-size: 0.85rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Daily Goal Setter
+   </h1>
+<p>
+    Plan your day, track your progress, and achieve your goals with ease.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="input-section">
+<input id="goal-title" placeholder="Enter your goal" required="" type="text"/>
+<textarea id="goal-description" placeholder="Add a description (optional)"></textarea>
+<button onclick="addGoal()">
+     Add Goal
+    </button>
+</div>
+<div class="progress-section">
+<h3>
+     Progress
+    </h3>
+<div class="progress-bar">
+<div class="progress" id="progress">
+</div>
+</div>
+</div>
+<ul class="goal-list" id="goal-list">
+</ul>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Daily Goal Setter?
+   </h2>
+<p>
+    Alright, so here’s the deal: You wake up, and your to-do list is a mile long. It’s overwhelming, right? Sometimes it feels like there’s so much to do, you have no idea where to start. That’s where the Daily Goal Setter comes in. It’s a simple tool that helps you prioritize your tasks for the day, break them down into manageable chunks, and gives you that extra little boost of motivation to get stuff done. Instead of staring at a never-ending list, you’ll have a focused set of goals that are realistic, achievable, and help you move forward. It's like giving your day a purpose, one goal at a time.
+   </p>
+<h2>
+    Try Our Daily Goal Setter Now
+   </h2>
+<p>
+    Here’s the best part: it’s super easy to use. You just input your goals for the day, maybe assign a little time to each one, and hit “Add Goal.” You’ll get a clear view of what needs to get done and when. Now you’re not just going through the motions—you’re checking things off and feeling productive.
+   </p>
+<h2>
+    Why Does a Daily Goal Setter Matter?
+   </h2>
+<p>
+    You know those days when you’re busy all day but somehow still don’t feel like you’ve accomplished much? Happens to the best of us. But a Daily Goal Setter changes that. Instead of running around in circles, you’ve got a concrete set of goals that help you focus your energy. It keeps you organized, gives you a clear path to follow, and keeps you on track. Plus, breaking big tasks into smaller, more manageable ones? Total game changer. It helps you feel less overwhelmed, more in control, and honestly, a lot more productive. And let’s not forget the little wins you get when you check off each goal. It feels so good.
+   </p>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+     Helps you stay focused: No more multitasking or bouncing around from task to task. You’ve got your goals for the day right in front of you.
+    </li>
+<li>
+     Customizable: Whether you’re working on personal goals, work tasks, or a mix of both, you can adjust it to suit your needs.
+    </li>
+<li>
+     Keeps you motivated: There’s something about checking off a completed goal that gives you that rush of satisfaction. It’ll keep you going all day long.
+    </li>
+<li>
+     Simple to use: No complicated setup—just enter your goals, assign them a time if you want, and get to work.
+    </li>
+<li>
+     Progress tracking: You can check back and see what you’ve already accomplished. It’s like giving yourself a little pat on the back for getting things done.
+    </li>
+<li>
+     Time-blocking optional: If you’re really into time management, you can even set times for each goal to keep yourself on track and prevent distractions.
+    </li>
+<li>
+     Free to use: No fees, no hidden charges, no subscriptions. It’s all about getting stuff done without the pressure.
+    </li>
+</ul>
+<h2>
+    How to Use a Daily Goal Setter
+   </h2>
+<ol>
+<li>
+     Go to the tool page: Open the Daily Goal Setter tool. It’s available on any device, so whether you’re on your phone or computer, you’re good to go.
+    </li>
+<li>
+     Add your goals: Start typing in the goals you want to achieve today. They don’t have to be huge—just whatever you want to focus on. Maybe it’s answering emails, finishing a report, or finally organizing your closet.
+    </li>
+<li>
+     Assign times (optional): If you like to get super specific, you can set a time for each goal. This keeps you focused and helps you stay on track. Or, you can just leave it open-ended.
+    </li>
+<li>
+     Hit “Add Goal”: After you’ve got your goals listed, hit the “Add Goal” button. You’ll get a clear breakdown of what your day looks like.
+    </li>
+<li>
+     Get to work!: Now that you’ve got your goals set, it’s time to crush them. As you complete each one, mark it off. That little checkmark feels so satisfying.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip
+    </strong>
+    : If you’re feeling extra productive, you can add a bonus goal or two. That’ll give you something to aim for if you finish your regular goals early!
+   </p>
+<h2>
+    Why Choose This Daily Goal Setter?
+   </h2>
+<p>
+    The Daily Goal Setter is a must-have if you’re tired of feeling like your day gets away from you. It’s the perfect way to get organized, stay on track, and feel like you’re actually accomplishing something. No more wandering around with a vague sense of what you “should” be doing—now you’ve got a clear, actionable plan. Plus, the sense of satisfaction you get from ticking off goals? Totally worth it.
+   </p>
+<p>
+    The best part? It’s free and super easy to use. You don’t need to sign up for anything, and there’s nothing complicated to figure out. It’s just a tool that helps you set up your day so you can get stuff done without stress. Who wouldn’t want that?
+   </p>
+<h2>
+    FAQs
+   </h2>
+<ul>
+<li>
+<strong>
+      Can I add multiple goals for the same time?
+     </strong>
+     Totally! If you’ve got a few tasks that can overlap, just set them for the same time slot. It’s flexible like that.
+    </li>
+<li>
+<strong>
+      Do I have to set a time for each goal?
+     </strong>
+     Nah, you don’t have to. Setting times is totally optional. If you’re just looking to get things done without a strict schedule, feel free to leave that part out.
+    </li>
+<li>
+<strong>
+      Can I track my progress over time?
+     </strong>
+     Yes! You can look back at your completed goals and see how productive you’ve been. It’s a nice little motivator to keep going.
+    </li>
+<li>
+<strong>
+      Is it really free?
+     </strong>
+     Yup, 100% free. No strings attached. Just start setting goals and get to work.
+    </li>
+<li>
+<strong>
+      Can I use this for both personal and work goals?
+     </strong>
+     For sure! Whether you’re working on a big project at work or trying to get your house organized, this tool can handle all kinds of goals.
+    </li>
+</ul>
+</div>
+<div class="modal" id="edit-modal">
+<div class="modal-content">
+<h2>
+     Edit Goal
+    </h2>
+<input id="edit-title" placeholder="Goal title" required="" type="text"/>
+<textarea id="edit-description" placeholder="Goal description"></textarea>
+<button onclick="saveEdit()">
+     Save
+    </button>
+<button onclick="closeModal()">
+     Cancel
+    </button>
+</div>
+</div>
+<script>
+   let goals = JSON.parse(localStorage.getItem('goals')) || [];
+        let editIndex = null;
+
+        // Function: addGoal
+        function addGoal() {
+        // DOM element manipulation
+            const title = document.getElementById('goal-title').value.trim();
+        // DOM element manipulation
+            const description = document.getElementById('goal-description').value.trim();
+
+            if (!title) return;
+
+            goals.push({ title, description, completed: false });
+            saveGoals();
+            renderGoals();
+        // DOM element manipulation
+            document.getElementById('goal-title').value = '';
+        // DOM element manipulation
+            document.getElementById('goal-description').value = '';
+        }
+
+        // Function: renderGoals
+        function renderGoals() {
+        // DOM element manipulation
+            const goalList = document.getElementById('goal-list');
+            goalList.innerHTML = '';
+
+            goals.forEach((goal, index) => {
+                const li = document.createElement('li');
+                li.className = `goal-item ${goal.completed ? 'completed' : ''}`;
+                li.innerHTML = `
+                    <div class="goal-details">
+                        <h3>${goal.title}</h3>
+                        ${goal.description ? `<p>${goal.description}</p>` : ''}
+                    </div>
+                    <div class="goal-actions">
+                        <button onclick="toggleComplete(${index})">${goal.completed ? 'Undo' : 'Complete'}</button>
+                        <button onclick="editGoal(${index})">Edit</button>
+                        <button onclick="deleteGoal(${index})">Delete</button>
+                    </div>
+                `;
+                goalList.appendChild(li);
+            });
+
+            updateProgress();
+        }
+
+        // Function: toggleComplete
+        function toggleComplete(index) {
+            goals[index].completed = !goals[index].completed;
+            saveGoals();
+            renderGoals();
+        }
+
+        // Function: editGoal
+        function editGoal(index) {
+            editIndex = index;
+            const goal = goals[index];
+        // DOM element manipulation
+            document.getElementById('edit-title').value = goal.title;
+        // DOM element manipulation
+            document.getElementById('edit-description').value = goal.description;
+        // DOM element manipulation
+            document.getElementById('edit-modal').style.display = 'flex';
+        }
+
+        // Function: saveEdit
+        function saveEdit() {
+        // DOM element manipulation
+            const title = document.getElementById('edit-title').value.trim();
+        // DOM element manipulation
+            const description = document.getElementById('edit-description').value.trim();
+
+            if (!title) return;
+
+            goals[editIndex] = { ...goals[editIndex], title, description };
+            saveGoals();
+            renderGoals();
+            closeModal();
+        }
+
+        // Function: deleteGoal
+        function deleteGoal(index) {
+            goals.splice(index, 1);
+            saveGoals();
+            renderGoals();
+        }
+
+        // Function: closeModal
+        function closeModal() {
+        // DOM element manipulation
+            document.getElementById('edit-modal').style.display = 'none';
+            editIndex = null;
+        }
+
+        // Function: updateProgress
+        function updateProgress() {
+            const total = goals.length;
+            const completed = goals.filter(g => g.completed).length;
+            const progress = total ? (completed / total) * 100 : 0;
+        // DOM element manipulation
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        // Function: saveGoals
+        function saveGoals() {
+            localStorage.setItem('goals', JSON.stringify(goals));
+        }
+
+        // Event listener for user interactions
+        document.getElementById('goal-title').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addGoal();
+        });
+
+        renderGoals();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

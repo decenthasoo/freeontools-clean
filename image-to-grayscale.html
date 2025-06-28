@@ -1,0 +1,740 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Document head with metadata and resources -->
+<head>
+<title>
+    Image to Grayscale - Totally Free Tool
+   </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image to Grayscale - Free tool to convert images to grayscale instantly. No signup, no fees, just fast, unlimited access!" name="description">
+<meta content="image to grayscale, grayscale converter, free grayscale tool, convert image to grayscale, online image converter" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-to-grayscale" rel="canonical"/>
+<meta content="Image to Grayscale - Forever Free" property="og:title"/>
+<meta content="Convert images to grayscale instantly with our free online tool. No signup, no hidden fees, just fast results at freeontools.com!" property="og:description"/>
+<meta content="https://www.freeontools.com/image-to-grayscale" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/image-to-grayscale.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image to Grayscale - No Signup Needed" name="twitter:title"/>
+<meta content="Instantly convert images to grayscale with our free, no-login tool. Try it now at freeontools.com for unlimited access!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/image-to-grayscale.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://www.twitter.com/freeontools",
+    "https://www.linkedin.com/company/freeontools"
+  ]
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image to Grayscale",
+  "operatingSystem": "All",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/image-to-grayscale",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image to Grayscale"
+  },
+  "ratingValue": "4.7",
+  "ratingCount": "1289"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image to Grayscale"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Ella Johnson"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "reviewBody": "This Image to Grayscale tool is fantastic! Super quick, no signup needed, and converts images perfectly every time!",
+  "datePublished": "2025-04-30"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image to Grayscale"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Mason Gupta"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.6"
+  },
+  "reviewBody": "Really handy tool for grayscale conversion! Free, fast, and no ads. Great for photo editing projects.",
+  "datePublished": "2025-03-20"
+}
+   </script>
+<!-- Favicon -->
+<link href="favicon.png" rel="icon" type="image/png"/>
+<!-- Poppins Font -->
+<!-- CSS -->
+<style>
+        /* Reset default styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1;
+        }
+
+        .image-tool {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: left;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 1rem;
+            color: #555;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .upload-area:hover {
+            border-color: #f28c38;
+        }
+
+        .upload-area p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .btn {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: #d97a30;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide images by default */
+        }
+
+        .preview-container {
+            flex: 1;
+            min-width: 280px;
+            max-width: 380px;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
+
+            .image-tool {
+                padding: 1.5rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 1.5rem;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+            .preview-container {
+                min-width: 100%;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .image-tool {
+                padding: 1rem;
+            }
+        }
+   
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+     Image to Grayscale Converter
+    </h1>
+<p class="intro-text">
+     Transform your images to grayscale effortlessly with our free and responsive tool.
+    </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="image-tool">
+<div class="upload-area" id="uploadArea">
+<p>
+       Drag and drop your image here or click to upload
+      </p>
+<input accept="image/*" id="imageInput" type="file"/>
+</div>
+<button class="btn" disabled="" id="convertBtn">
+      Convert to Grayscale
+     </button>
+<button class="btn" disabled="" id="downloadBtn">
+      Download Grayscale Image
+     </button>
+<button class="btn" id="resetBtn">
+      Reset
+     </button>
+<div class="image-preview">
+<div class="preview-container">
+<h3>
+        Original Image
+       </h3>
+<img alt="Original Image Preview" id="originalPreview"/>
+</div>
+<div class="preview-container">
+<h3>
+        Grayscale Image
+       </h3>
+<img alt="Grayscale Image Preview" id="grayscalePreview"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Main content container -->
+<div class="container">
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+      What Is an Image to Grayscale Tool?
+     </h2>
+<p>
+      Alright, let’s talk grayscale. Imagine you’ve got this super vibrant image—lots of colors popping—but sometimes, you just want to tone it down, go for that classic black-and-white vibe, or maybe even create something more artistic. Enter the Image to Grayscale tool.
+     </p>
+<p>
+      This tool takes any colored image and transforms it into a grayscale version. All those vibrant hues? Gone. In their place? A sleek, stylish black-and-white version that can look sophisticated, artistic, or just cleaner for whatever project you're working on.
+     </p>
+<h2>
+      Try Our Image to Grayscale Tool Now
+     </h2>
+<p>
+      Don’t waste time overthinking it—just upload your image, click the button, and boom, it’s in grayscale. It’s that simple. No need for complicated software or extra steps.
+     </p>
+<h2>
+      Why Use an Image to Grayscale Tool?
+     </h2>
+<p>
+      So you’re probably wondering,
+      <em>
+       Why would I want to turn a perfectly good color image into black and white?
+      </em>
+</p>
+<p>
+      Well, here’s the deal:
+     </p>
+<ul>
+<li>
+<strong>
+        Artistic Touch
+       </strong>
+       – Sometimes you want to give your photos an old-school, timeless look. Grayscale is the perfect way to do that.
+      </li>
+<li>
+<strong>
+        Cleaner Presentation
+       </strong>
+       – If you’re putting images on your website, a grayscale photo can make things look more polished and cohesive.
+      </li>
+<li>
+<strong>
+        Focus on Texture, Shape, and Contrast
+       </strong>
+       – Without the distraction of color, grayscale lets you see the details of your image more clearly.
+      </li>
+<li>
+<strong>
+        Printing Made Easy
+       </strong>
+       – If you’re printing images, grayscale is often more cost-effective, especially if you’re printing in black and white.
+      </li>
+<li>
+<strong>
+        Speed &amp; Efficiency
+       </strong>
+       – Grayscale images are smaller in file size, which means quicker loading times on websites.
+      </li>
+</ul>
+<p>
+      Whether you're going for a chic design or just cleaning things up, converting an image to grayscale is a great, easy option.
+     </p>
+<h2>
+      Features of the Image to Grayscale Tool
+     </h2>
+<p>
+      What makes this tool stand out? Let’s break it down:
+     </p>
+<ul>
+<li>
+<strong>
+        Super simple to use
+       </strong>
+       – No need for Photoshop or other fancy programs. Just upload and go.
+      </li>
+<li>
+<strong>
+        Instant conversion
+       </strong>
+       – Click the button, and in seconds, your image is converted to grayscale.
+      </li>
+<li>
+<strong>
+        Works on any image format
+       </strong>
+       – JPG, PNG, GIF—whatever you’ve got, it handles it.
+      </li>
+<li>
+<strong>
+        Totally free
+       </strong>
+       – No subscriptions, no fees, just a free, handy tool to use.
+      </li>
+<li>
+<strong>
+        High-quality output
+       </strong>
+       – Your image doesn’t lose any sharpness or detail. It’s still crisp and clear, just without the color.
+      </li>
+<li>
+<strong>
+        No extra steps
+       </strong>
+       – Just upload, convert, and download. That’s it.
+      </li>
+</ul>
+<p>
+      No need for software or complicated edits—this tool is perfect for getting the grayscale effect without the headache.
+     </p>
+<h2>
+      How to Use the Image to Grayscale Tool
+     </h2>
+<p>
+      You don’t need to be a tech genius to use this. Here’s how to turn your image to grayscale:
+     </p>
+<ol>
+<li>
+       Open the tool (you know the drill).
+      </li>
+<li>
+       Upload the image you want to convert.
+      </li>
+<li>
+       Hit the “Convert” button (it’s like magic).
+      </li>
+<li>
+       Download the newly-grayscaled image.
+      </li>
+</ol>
+<p>
+      It really doesn’t get simpler than that. Plus, it’s quick—seconds, not minutes.
+     </p>
+<p>
+      Pro tip: If you’re doing a bunch of images, consider batch processing or repeat the steps until you’ve got all your photos converted.
+     </p>
+<h2>
+      Why Choose This Image to Grayscale Tool?
+     </h2>
+<p>
+      Sure, there are other ways to convert to grayscale, but here’s why this tool is awesome:
+     </p>
+<ul>
+<li>
+<strong>
+        It’s fast
+       </strong>
+       – Seconds, not hours, to convert an image.
+      </li>
+<li>
+<strong>
+        No software required
+       </strong>
+       – No downloads or complicated software. Just a browser and an internet connection.
+      </li>
+<li>
+<strong>
+        Free forever
+       </strong>
+       – No hidden fees, no “premium versions.” Just a free, simple tool.
+      </li>
+<li>
+<strong>
+        Quality conversion
+       </strong>
+       – You won’t end up with a blurry or low-res image after converting. It stays sharp and clear.
+      </li>
+<li>
+<strong>
+        Easy to use
+       </strong>
+       – Upload, click, and download. No fuss.
+      </li>
+</ul>
+<p>
+      It’s a straightforward tool that’s perfect for anyone who wants to convert images without any unnecessary steps.
+     </p>
+<h2>
+      FAQs About the Image to Grayscale Tool
+     </h2>
+<p>
+<strong>
+       Will converting my image to grayscale reduce its quality?
+      </strong>
+</p>
+<p>
+      Nope! The tool works hard to keep your image looking crisp and clear, even though it’s no longer in color.
+     </p>
+<p>
+<strong>
+       Can I use this tool on any kind of image?
+      </strong>
+</p>
+<p>
+      Yep! Whether it’s a photo, graphic, or illustration, this tool works with most image types, including JPG, PNG, and GIF.
+     </p>
+<p>
+<strong>
+       Is this tool free to use?
+      </strong>
+</p>
+<p>
+      You bet! There’s no catch—just upload and convert without paying a dime.
+     </p>
+<p>
+<strong>
+       Does it work for high-resolution images?
+      </strong>
+</p>
+<p>
+      Absolutely. High-res images will convert just as easily as low-res ones. Your image quality stays top-notch.
+     </p>
+<p>
+<strong>
+       Can I use the grayscale image for my website?
+      </strong>
+</p>
+<p>
+      Of course! Grayscale images are great for websites, especially if you’re looking for a sleek, clean aesthetic.
+     </p>
+<h2>
+      Final Thoughts: Simplifying Your Image Editing
+     </h2>
+<p>
+      If you’re looking to add some simplicity and elegance to your images, converting them to grayscale is a quick and easy way to do it. It’s a handy tool for anyone who needs to tone down the colors, add some contrast, or make things look a bit more professional.
+     </p>
+<p>
+      So go ahead, try it out and turn those colorful pics into classic, stylish grayscale. It’s the easiest way to give your images a whole new vibe!
+     </p>
+</div>
+</div>
+<!-- Page footer section -->
+<script>
+        // DOM element manipulation
+    const imageInput = document.getElementById('imageInput');
+        // DOM element manipulation
+        const uploadArea = document.getElementById('uploadArea');
+        // DOM element manipulation
+        const convertBtn = document.getElementById('convertBtn');
+        // DOM element manipulation
+        const downloadBtn = document.getElementById('downloadBtn');
+        // DOM element manipulation
+        const resetBtn = document.getElementById('resetBtn');
+        // DOM element manipulation
+        const originalPreview = document.getElementById('originalPreview');
+        // DOM element manipulation
+        const grayscalePreview = document.getElementById('grayscalePreview');
+
+        let originalImage = null;
+        let grayscaleImage = null;
+
+        // Drag and Drop
+        // Event listener for user interactions
+        uploadArea.addEventListener('click', () => imageInput.click());
+        // Event listener for user interactions
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#f28c38';
+        });
+        // Event listener for user interactions
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.borderColor = '#ccc';
+        });
+        // Event listener for user interactions
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#ccc';
+            const file = e.dataTransfer.files[0];
+            handleImage(file);
+        });
+
+        // File Input
+        // Event listener for user interactions
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            handleImage(file);
+        });
+
+        // Function: handleImage
+        function handleImage(file) {
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    originalImage = new Image();
+                    originalImage.src = e.target.result;
+                    originalImage.onload = () => {
+                        originalPreview.src = originalImage.src;
+                        originalPreview.style.display = 'block'; // Show original image
+                        convertBtn.disabled = false;
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Convert to Grayscale
+        // Event listener for user interactions
+        convertBtn.addEventListener('click', () => {
+            if (!originalImage) return;
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = originalImage.width;
+            canvas.height = originalImage.height;
+
+            ctx.drawImage(originalImage, 0, 0);
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+                data[i] = data[i + 1] = data[i + 2] = gray;
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+            grayscaleImage = canvas.toDataURL('image/jpeg');
+            grayscalePreview.src = grayscaleImage;
+            grayscalePreview.style.display = 'block'; // Show grayscale image
+            downloadBtn.disabled = false;
+        });
+
+        // Download Grayscale Image
+        // Event listener for user interactions
+        downloadBtn.addEventListener('click', () => {
+            if (grayscaleImage) {
+                const link = document.createElement('a');
+                link.href = grayscaleImage;
+                link.download = 'grayscale-image.jpg';
+                link.click();
+            }
+        });
+
+        // Reset
+        // Event listener for user interactions
+        resetBtn.addEventListener('click', () => {
+            imageInput.value = '';
+            originalPreview.src = '';
+            grayscalePreview.src = '';
+            originalPreview.style.display = 'none'; // Hide original image
+            grayscalePreview.style.display = 'none'; // Hide grayscale image
+            convertBtn.disabled = true;
+            downloadBtn.disabled = true;
+            originalImage = null;
+            grayscaleImage = null;
+        });
+   </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</head>
+</html>

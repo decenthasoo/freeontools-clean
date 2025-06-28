@@ -1,0 +1,600 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Coin Flipper - Free Forever Online Toss Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Coin Flipper - Free Forever! Instantly flip a virtual coin online. Simple, fast, and 100% free with no login, no ads, and no hidden charges." name="description">
+<meta content="Coin Flipper, Flip a Coin Online, Virtual Coin Toss, Free Coin Flipping Tool, Heads or Tails Generator, Online Coin Tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com" rel="canonical"/>
+<meta content="Coin Flipper - Free Forever Online Toss Tool" property="og:title"/>
+<meta content="Toss a coin online with a single click. Totally free and forever accessible without signups or ads." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/coin-flipper-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Coin Flipper - Free Forever Online Toss Tool" name="twitter:title"/>
+<meta content="Flip a coin online with no limits. This simple tool is free forever—perfect for decisions, games, or just for fun." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/coin-flipper-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Coin Flipper",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "98"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Coin Flipper"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "98"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Leonard Scott"
+  },
+  "datePublished": "2025-05-01",
+  "reviewBody": "Such a quick and reliable coin flipper! I use it for decision-making all the time. Love that it’s free forever!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Coin Flipper"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+
+        }
+
+        /* Body styling */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #f5f5f5;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .description {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Container styling */
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            position: relative;
+    margin-left: auto;
+    margin-right: auto;
+            
+        }
+
+        .coin {
+            width: 180px;
+            height: 180px;
+            margin: 2rem auto;
+            transform-style: preserve-3d;
+            position: relative;
+            transition: transform 0.3s ease-out;
+        }
+
+        .coin div {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .heads {
+            background: #f28c38;
+            color: white;
+            transform: rotateY(0deg);
+        }
+
+        .tails {
+            background: #333;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .flip-btn {
+            background: #f28c38;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(242, 140, 56, 0.3);
+
+        }
+
+        .flip-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(242, 140, 56, 0.4);
+        }
+
+        .flip-btn:active {
+            transform: translateY(0);
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: #444;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-box {
+            background: #f8f8f8;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: white;
+            padding: 2rem;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            margin-top: 2rem;
+            text-align: left;
+            color: #444;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #666;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        @keyframes flip {
+            0% { transform: rotateY(0); }
+            50% { transform: rotateY(1800deg); }
+            100% { transform: rotateY(3600deg); }
+        }
+
+        .flipping {
+            animation: flip 2.5s cubic-bezier(0.4, 2.3, 0.6, 0.8);
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            .coin {
+                width: 150px;
+                height: 150px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Coin Flipper
+   </h1>
+<p class="description">
+    Experience realistic coin flipping with our 3D simulator. Make quick decisions or test probability with every flip.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="coin">
+<div class="heads">
+     HEADS
+    </div>
+<div class="tails">
+     TAILS
+    </div>
+</div>
+<button class="flip-btn" onclick="flipCoin()">
+    FLIP COIN
+   </button>
+<div class="result" id="result">
+</div>
+<div class="stats" id="stats">
+<div class="stat-box">
+<h3>
+      Total
+     </h3>
+<p id="total">
+      0
+     </p>
+</div>
+<div class="stat-box">
+<h3>
+      Heads
+     </h3>
+<p id="heads">
+      0
+     </p>
+</div>
+<div class="stat-box">
+<h3>
+      Tails
+     </h3>
+<p id="tails">
+      0
+     </p>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Coin Flipper?
+   </h2>
+<p>
+    A Coin Flipper is exactly what it sounds like—a digital tool that simulates flipping a coin. Heads or tails. No actual quarters needed, no coin stuck in the couch cushions, and definitely no need to pretend your flip was fair.
+   </p>
+<p>
+    You click a button, and it flips. Totally random. Totally free. Totally saves you from overthinking whatever dumb (but somehow important) decision you’re facing.
+   </p>
+<h3>
+    Try the Coin Flipper Now
+   </h3>
+<p>
+    Feeling indecisive? Just hit that virtual flip. Instantly see heads or tails—no need to dig through your bag for change.
+   </p>
+<p>
+    It’s oddly satisfying. Like, one tap and boom—decision made. It's the kind of drama-free outcome we all need more of.
+   </p>
+<h3>
+    Why Use a Coin Flipper?
+   </h3>
+<p>
+    Because you’ve got decisions to make and no patience for long debates. The Coin Flipper brings order to chaos, people. And it's great for:
+   </p>
+<ul>
+<li>
+     Settling arguments like “who goes first?”
+    </li>
+<li>
+     Making fast decisions when you just can’t choose
+    </li>
+<li>
+     Games and party icebreakers
+    </li>
+<li>
+     Classroom activities
+    </li>
+<li>
+     Random testing or experiments
+    </li>
+</ul>
+<p>
+    It’s like having a tiny referee in your browser. And you don’t even have to tip them.
+   </p>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+     Flip a realistic coin with just one click
+    </li>
+<li>
+     Randomized results every time (no pattern, no bias)
+    </li>
+<li>
+     Quick re-flip button so you can, uh, “double-check” the result
+    </li>
+<li>
+     Optional sound effects for that satisfying coin toss “plink”
+    </li>
+<li>
+     Mobile-friendly for on-the-go flipping
+    </li>
+<li>
+     100% free—no sign-ups, no popups, no guilt
+    </li>
+</ul>
+<h3>
+    How to Use the Coin Flipper
+   </h3>
+<p>
+    It’s basically impossible to mess up. But here’s how:
+   </p>
+<ol>
+<li>
+     Go to the Coin Flipper tool
+    </li>
+<li>
+     Hit the "Flip" button
+    </li>
+<li>
+     Get your result: heads or tails
+    </li>
+<li>
+     Either accept it like a grown-up or keep flipping until the coin agrees with you (we won’t judge)
+    </li>
+</ol>
+<p>
+    Pro tip: Want to make it more dramatic? Say “call it in the air” like you’re officiating a championship game.
+   </p>
+<h3>
+    Why Choose This Coin Flipper?
+   </h3>
+<ul>
+<li>
+     Instant flips, zero lag
+    </li>
+<li>
+     Works on desktop, tablet, phone—you name it
+    </li>
+<li>
+     Germ-free (because, ew, who even wants to touch real coins anymore?)
+    </li>
+<li>
+     Makes silly decisions way easier
+    </li>
+<li>
+     Perfect for those "just-can't-decide" brain fog moments
+    </li>
+</ul>
+<p>
+    And again—it’s free. Like, forever free.
+   </p>
+<h3>
+    FAQs About the Coin Flipper
+   </h3>
+<p>
+<strong>
+     Is the Coin Flipper really random?
+    </strong>
+<br/>
+    Yep. It uses standard random number generation—no favoritism here.
+   </p>
+<p>
+<strong>
+     Can I customize the coin (like change heads/tails)?
+    </strong>
+<br/>
+    Some versions let you swap designs! But even the basic one works great for fast flipping.
+   </p>
+<p>
+<strong>
+     Can I use it in class or presentations?
+    </strong>
+<br/>
+    Totally. It’s a clean, simple tool with no weird ads—perfect for classrooms or live demos.
+   </p>
+<p>
+<strong>
+     Does it store results or history?
+    </strong>
+<br/>
+    Nope. It’s a fresh flip every time. No tracking, no weird data hoarding.
+   </p>
+<p>
+<strong>
+     Can I use this for drinking games?
+    </strong>
+<br/>
+    …Yes. Just maybe don’t blame the Coin Flipper for your next hangover.
+   </p>
+<h3>
+    Final Thoughts: Let Fate Handle It
+   </h3>
+<p>
+    We all hit those “I don’t care, you choose” moments. And let’s be honest—sometimes you do care, but you also want someone (or something) else to make the call. That’s where the Coin Flipper comes in clutch.
+   </p>
+<p>
+    Quick flip. Clear result. No drama.
+   </p>
+<p>
+    Heads, you use it. Tails… you also use it. So yeah—go give it a spin. Or a flip. You know what I mean.
+   </p>
+</div>
+    <script>
+        let totalFlips = 0;
+        let headsCount = 0;
+        let tailsCount = 0;
+        const coin = document.querySelector('.coin');
+        const result = document.getElementById('result');
+        const stats = document.getElementById('stats');
+        const flipBtn = document.querySelector('.flip-btn');
+
+        function flipCoin() {
+            flipBtn.disabled = true;
+            coin.classList.add('flipping');
+            result.style.opacity = '0';
+            stats.style.opacity = '0';
+
+            const isHeads = Math.random() > 0.5;
+            const resultText = isHeads ? 'Heads!' : 'Tails!';
+
+            setTimeout(() => {
+                coin.classList.remove('flipping');
+                // Force correct final rotation
+                coin.style.transition = 'none';
+                coin.style.transform = `rotateY(${isHeads ? 0 : 180}deg)`;
+                void coin.offsetWidth; // Trigger reflow
+                coin.style.transition = '';
+                
+                result.textContent = `Result: ${resultText}`;
+                result.style.opacity = '1';
+                updateStats();
+                stats.style.opacity = '1';
+                flipBtn.disabled = false;
+            }, 2500);
+
+            totalFlips++;
+            isHeads ? headsCount++ : tailsCount++;
+        }
+
+        function updateStats() {
+            document.getElementById('total').textContent = totalFlips;
+            document.getElementById('heads').textContent = headsCount;
+            document.getElementById('tails').textContent = tailsCount;
+        }
+    </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

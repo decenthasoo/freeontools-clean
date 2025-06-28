@@ -1,0 +1,845 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Investment Return Calculator - Free & Easy
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Investment Return Calculator - Free &amp; Easy tool to calculate your investment returns with no signup needed, instant access, and no hidden fees." name="description">
+<meta content="Investment Return Calculator, ROI Calculator, Investment Calculator, Free Investment Tool, Return on Investment, Investment Estimator, Simple Investment Calculator" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/investment-return-calculator" rel="canonical"/>
+<meta content="Investment Return Calculator - Free &amp; Easy" property="og:title"/>
+<meta content="Use the Investment Return Calculator for free, no signup, no hidden fees. Instant access to calculate your investment returns with ease." property="og:description"/>
+<meta content="https://www.freeontools.com/investment-return-calculator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/investment-return-calculator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Investment Return Calculator - Free &amp; Easy" name="twitter:title"/>
+<meta content="Instantly calculate your investment returns with this free tool. No login required, no fees, and no ads." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/investment-return-calculator.jpg" name="twitter:image"/>
+<meta content="@freeontools" name="twitter:creator"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-5555",
+    "contactType": "Customer Service"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Investment Return Calculator",
+  "operatingSystem": "All",
+  "applicationCategory": "Finance",
+  "description": "A free, easy-to-use investment return calculator tool that provides instant access to calculate your ROI.",
+  "url": "https://www.freeontools.com/investment-return-calculator",
+  "image": "https://www.freeontools.com/images/investment-return-calculator.jpg"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "worstRating": "1",
+  "ratingCount": "210"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Carter"
+  },
+  "datePublished": "2025-05-08",
+  "reviewBody": "This Investment Return Calculator is fantastic! It helped me quickly assess my investment returns without any hassle. Highly recommended!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Olivia Brooks"
+  },
+  "datePublished": "2025-04-30",
+  "reviewBody": "Love this tool! It’s fast, easy to use, and very accurate. It’s become a regular part of my investment strategy.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.8",
+    "bestRating": "5"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .intro-text {
+font-size: 1.1rem;
+color: #555;
+max-width: 600px;
+margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #f28c38;
+        }
+
+        button {
+
+            padding: 12px;
+            background-color: #f28c38;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            
+        }
+
+        button:hover {
+            background-color: #e07b30;
+        }
+
+        #results {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+        }
+
+        #results h3 {
+            font-size: 1.3rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        #results p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        #error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .chart {
+            font-family: monospace;
+            white-space: pre;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Container styling */
+        .content-container {
+            background-color: #fff;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            text-align: left;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.5rem;
+            color: #222;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
+
+            input, select, button {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Investment Return Calculator
+   </h1>
+<p class="intro-text">
+    Plan your financial future with our advanced calculator. Estimate returns based on your investment amount, period, and interest rate.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<!-- User input form -->
+<form id="investmentForm">
+<div class="form-group">
+<label for="investmentType">
+      Investment Type
+     </label>
+<select id="investmentType" required="">
+<option value="compound">
+       Compound Interest
+      </option>
+<option value="simple">
+       Simple Interest
+      </option>
+<option value="portfolio">
+       Stock/Portfolio Returns
+      </option>
+</select>
+</div>
+<div class="form-group">
+<label for="principal">
+      Initial Investment ($)
+     </label>
+<input id="principal" min="0" placeholder="e.g., 10000" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="rate">
+      Annual Rate (%)
+     </label>
+<input id="rate" min="0" placeholder="e.g., 5" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="time">
+      Investment Period (Years)
+     </label>
+<input id="time" min="1" placeholder="e.g., 10" required="" type="number"/>
+</div>
+<div class="form-group" id="frequencyGroup">
+<label for="frequency">
+      Compound Frequency
+     </label>
+<select id="frequency" required="">
+<option value="1">
+       Annually
+      </option>
+<option value="2">
+       Semi-Annually
+      </option>
+<option value="4">
+       Quarterly
+      </option>
+<option value="12">
+       Monthly
+      </option>
+</select>
+</div>
+<div class="form-group">
+<label for="contribution">
+      Monthly Contribution ($)
+     </label>
+<input id="contribution" min="0" placeholder="e.g., 100" step="0.01" type="number" value="0"/>
+</div>
+<div class="form-group">
+<label for="inflation">
+      Inflation Rate (%)
+     </label>
+<input id="inflation" min="0" placeholder="e.g., 2" step="0.01" type="number" value="0"/>
+</div>
+<div class="form-group">
+<label for="tax">
+      Tax Rate on Returns (%)
+     </label>
+<input id="tax" min="0" placeholder="e.g., 15" step="0.01" type="number" value="0"/>
+</div>
+<button type="submit">
+     Calculate Returns
+    </button>
+<button onclick="resetForm()" type="button">
+     Reset
+    </button>
+</form>
+<div id="error">
+</div>
+<div id="results">
+<h3>
+     Investment Summary
+    </h3>
+<p id="totalValue">
+</p>
+<p id="totalGains">
+</p>
+<p id="totalContributions">
+</p>
+<p id="inflationAdjusted">
+</p>
+<p id="afterTax">
+</p>
+<p id="chart">
+</p>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is an Investment Return Calculator?
+   </h2>
+<p>
+    An Investment Return Calculator is a tool that helps you figure out how much money you’ve made (or could make) on your investments. It’s a super handy tool for tracking how well your investments are doing over time, whether you're looking at stocks, bonds, mutual funds, or other assets.
+   </p>
+<p>
+    With this calculator, you can get an estimate of your returns based on the initial investment, the final value, and the time period. It calculates the total gain or loss, giving you a clear picture of your investment’s performance.
+   </p>
+<h3>
+    Try Our Investment Return Calculator Now
+   </h3>
+<p>
+    Want to know how well your investment is performing? Just plug in your initial investment amount, your final value, and the time period, and the Investment Return Calculator will do the rest. Fast, free, and super simple!
+   </p>
+<h3>
+    Why Use an Investment Return Calculator?
+   </h3>
+<p>
+    Here’s why the Investment Return Calculator is essential for investors:
+   </p>
+<ul>
+<li>
+<strong>
+      See your growth
+     </strong>
+     – It shows you how much your investment has grown or shrunk, helping you understand your financial performance.
+    </li>
+<li>
+<strong>
+      Make smarter decisions
+     </strong>
+     – Knowing your return on investment (ROI) helps you decide whether to hold, sell, or buy more.
+    </li>
+<li>
+<strong>
+      Compare investments
+     </strong>
+     – You can use the calculator to compare the performance of different investments over the same time period.
+    </li>
+<li>
+<strong>
+      Track performance over time
+     </strong>
+     – It helps you keep an eye on your long-term investment goals and make adjustments when needed.
+    </li>
+<li>
+<strong>
+      Account for inflation
+     </strong>
+     – You can adjust your calculations to account for inflation and see if your returns are keeping pace with the cost of living.
+    </li>
+</ul>
+<h3>
+    Features of the Investment Return Calculator
+   </h3>
+<p>
+    Here’s why the Investment Return Calculator is the tool you need:
+   </p>
+<ul>
+<li>
+<strong>
+      Easy to use
+     </strong>
+     – Just input the details and hit calculate—no complex formulas needed.
+    </li>
+<li>
+<strong>
+      Track multiple investments
+     </strong>
+     – You can track multiple investments to see how each one is performing over time.
+    </li>
+<li>
+<strong>
+      Shows total return and annualized return
+     </strong>
+     – You get both your total gain/loss and the annual return rate to better understand your investment’s performance.
+    </li>
+<li>
+<strong>
+      Compare different time periods
+     </strong>
+     – You can adjust the time frame to see how different periods impact your returns.
+    </li>
+<li>
+<strong>
+      Quick results
+     </strong>
+     – You’ll know your investment performance in just seconds!
+    </li>
+</ul>
+<h3>
+    How to Use the Investment Return Calculator
+   </h3>
+<p>
+    Here’s how to use the Investment Return Calculator to find out your returns:
+   </p>
+<ol>
+<li>
+     Open the Investment Return Calculator tool.
+    </li>
+<li>
+     Enter your initial investment—how much you put into the investment at the beginning.
+    </li>
+<li>
+     Enter the final value—how much the investment is worth now (or at the end of the period you’re calculating for).
+    </li>
+<li>
+     Enter the time period—how long the investment was held (in years).
+    </li>
+<li>
+     Hit "Calculate" and the tool will give you your total return and annualized return.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    Make sure to input the time period in years for accurate annualized return results!
+   </p>
+<h3>
+    Why Choose This Investment Return Calculator?
+   </h3>
+<p>
+    Here’s why this Investment Return Calculator is perfect for you:
+   </p>
+<ul>
+<li>
+<strong>
+      Fast and accurate
+     </strong>
+     – No need to do the math yourself. This tool instantly calculates your return based on your input.
+    </li>
+<li>
+<strong>
+      No complex formulas required
+     </strong>
+     – You don’t need to be a financial expert to understand the results. The calculator does all the heavy lifting.
+    </li>
+<li>
+<strong>
+      Compare investments
+     </strong>
+     – It’s great for comparing how different investments have performed over time, whether you’re looking at stocks, bonds, real estate, or any other type of investment.
+    </li>
+<li>
+<strong>
+      Track your financial growth
+     </strong>
+     – You’ll be able to see exactly how much your money has grown (or shrunk) over time.
+    </li>
+<li>
+<strong>
+      Completely free to use
+     </strong>
+     – No sign-ups, no subscriptions, just a simple and free tool to help you track your investment performance.
+    </li>
+</ul>
+<h3>
+    FAQs About the Investment Return Calculator
+   </h3>
+<p>
+<strong>
+     What does "return on investment" (ROI) mean?
+    </strong>
+</p>
+<p>
+    Return on investment (ROI) is a measure of the profitability of an investment. It shows how much money you've made (or lost) relative to your original investment. The higher the ROI, the better the investment performance.
+   </p>
+<p>
+<strong>
+     How is the total return different from the annualized return?
+    </strong>
+</p>
+<p>
+    Total return shows the overall gain or loss on an investment, including any dividends or interest earned.
+   </p>
+<p>
+    Annualized return gives you an average annual return over the time period of the investment, allowing you to compare it to other investments over the same period.
+   </p>
+<p>
+<strong>
+     Can I use the Investment Return Calculator for multiple investments?
+    </strong>
+</p>
+<p>
+    Yes! You can use it to track multiple investments, either one at a time or by comparing them over the same time frame.
+   </p>
+<p>
+<strong>
+     Can I adjust for inflation in the Investment Return Calculator?
+    </strong>
+</p>
+<p>
+    Some calculators allow you to adjust for inflation in your investment return calculations. It’s a great way to see if your investment has truly kept pace with the cost of living. Look for that option in advanced calculators or adjust manually.
+   </p>
+<p>
+<strong>
+     Is the Investment Return Calculator free?
+    </strong>
+</p>
+<p>
+    Yes! The Investment Return Calculator is completely free to use. No sign-ups, no hidden costs—just easy calculations.
+   </p>
+<h3>
+    Wrap-Up: Track Your Investment Success
+   </h3>
+<p>
+    The Investment Return Calculator is a must-have tool for anyone who’s investing. It helps you quickly understand how your investments are performing, whether you’re just getting started or already have a portfolio of assets. Plus, it helps you make more informed decisions on where to put your money next.
+   </p>
+<p>
+<strong>
+     Ready to see how your investments are doing? Try the Investment Return Calculator now and start tracking your financial progress!
+    </strong>
+</p>
+</div>
+<script>
+        // Event listener for user interactions
+   document.getElementById('investmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateReturns();
+        });
+
+        // Event listener for user interactions
+        document.getElementById('investmentType').addEventListener('change', function() {
+        // DOM element manipulation
+            const frequencyGroup = document.getElementById('frequencyGroup');
+            frequencyGroup.style.display = this.value === 'compound' ? 'block' : 'none';
+        });
+
+        // Function: calculateReturns
+        function calculateReturns() {
+        // DOM element manipulation
+            const errorDiv = document.getElementById('error');
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+
+            // Get inputs
+        // DOM element manipulation
+            const investmentType = document.getElementById('investmentType').value;
+        // DOM element manipulation
+            const principal = parseFloat(document.getElementById('principal').value);
+        // DOM element manipulation
+            const rate = parseFloat(document.getElementById('rate').value) / 100;
+        // DOM element manipulation
+            const time = parseFloat(document.getElementById('time').value);
+        // DOM element manipulation
+            const frequency = parseInt(document.getElementById('frequency').value);
+        // DOM element manipulation
+            const contribution = parseFloat(document.getElementById('contribution').value) || 0;
+        // DOM element manipulation
+            const inflation = parseFloat(document.getElementById('inflation').value) / 100 || 0;
+        // DOM element manipulation
+            const tax = parseFloat(document.getElementById('tax').value) / 100 || 0;
+
+            // Validate inputs
+            if (isNaN(principal) || principal < 0) {
+                showError('Initial investment must be a non-negative number.');
+                return;
+            }
+            if (isNaN(rate) || rate < 0) {
+                showError('Annual rate must be a non-negative number.');
+                return;
+            }
+            if (isNaN(time) || time < 1) {
+                showError('Investment period must be at least 1 year.');
+                return;
+            }
+            if (contribution < 0) {
+                showError('Monthly contribution cannot be negative.');
+                return;
+            }
+            if (inflation < 0) {
+                showError('Inflation rate cannot be negative.');
+                return;
+            }
+            if (tax < 0 || tax > 1) {
+                showError('Tax rate must be between 0 and 100%.');
+                return;
+            }
+
+            let totalValue = 0;
+            let totalContributions = contribution * 12 * time;
+            let totalGains = 0;
+
+            // Calculate based on investment type
+            if (investmentType === 'compound') {
+                // Compound interest with contributions
+                totalValue = principal * Math.pow(1 + rate / frequency, frequency * time);
+                if (contribution > 0) {
+                    // Future value of a series: FV = PMT * [(1 + r/n)^(nt) - 1] / (r/n)
+                    const monthlyRate = rate / frequency;
+                    const periods = frequency * time;
+                    totalValue += contribution * 12 / frequency * ((Math.pow(1 + monthlyRate, periods) - 1) / monthlyRate);
+                }
+            } else if (investmentType === 'simple') {
+                // Simple interest: A = P + P*r*t
+                totalValue = principal * (1 + rate * time);
+                if (contribution > 0) {
+                    // Contributions are added without interest
+                    totalValue += totalContributions;
+                }
+            } else if (investmentType === 'portfolio') {
+                // Portfolio returns (assumes compounded returns like compound interest)
+                totalValue = principal * Math.pow(1 + rate, time); // Annual compounding for simplicity
+                if (contribution > 0) {
+                    // Approximate contributions with annual compounding
+                    totalValue += contribution * 12 * ((Math.pow(1 + rate, time) - 1) / rate);
+                }
+            }
+
+            // Calculate gains
+            totalGains = totalValue - principal - totalContributions;
+
+            // Inflation adjustment
+            const inflationAdjusted = totalValue / Math.pow(1 + inflation, time);
+
+            // Tax on gains
+            const taxableGains = totalGains * (1 - tax);
+            const afterTaxValue = principal + totalContributions + taxableGains;
+
+            // Display results
+        // DOM element manipulation
+            document.getElementById('totalValue').textContent = `Total Value: $${totalValue.toFixed(2)}`;
+        // DOM element manipulation
+            document.getElementById('totalGains').textContent = `Total Gains: $${totalGains.toFixed(2)}`;
+        // DOM element manipulation
+            document.getElementById('totalContributions').textContent = `Total Contributions: $${totalContributions.toFixed(2)}`;
+        // DOM element manipulation
+            document.getElementById('inflationAdjusted').textContent = `Inflation-Adjusted Value: $${inflationAdjusted.toFixed(2)}`;
+        // DOM element manipulation
+            document.getElementById('afterTax').textContent = `After-Tax Value: $${afterTaxValue.toFixed(2)}`;
+
+            // Simple ASCII chart
+            const maxChartWidth = 20;
+            const valueScaled = Math.min(totalValue / (principal * 2), 1) * maxChartWidth;
+            const chart = '█'.repeat(Math.floor(valueScaled)) + '-'.repeat(maxChartWidth - Math.floor(valueScaled));
+        // DOM element manipulation
+            document.getElementById('chart').innerHTML = `Growth: [${chart}]`;
+
+        // DOM element manipulation
+            document.getElementById('results').style.display = 'block';
+        }
+
+        // Function: showError
+        function showError(message) {
+        // DOM element manipulation
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        // DOM element manipulation
+            document.getElementById('results').style.display = 'none';
+        }
+
+        // Function: resetForm
+        function resetForm() {
+        // DOM element manipulation
+            document.getElementById('investmentForm').reset();
+        // DOM element manipulation
+            document.getElementById('results').style.display = 'none';
+        // DOM element manipulation
+            document.getElementById('error').style.display = 'none';
+        // DOM element manipulation
+            document.getElementById('frequencyGroup').style.display = 'block';
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

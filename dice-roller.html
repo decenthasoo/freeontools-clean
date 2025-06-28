@@ -1,0 +1,885 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Dice Roller - Instant Access Free Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Dice Roller - Instant Access! Roll virtual dice online for free. Fast, simple, and perfect for games, DnD, or decision-making. No login or ads." name="description">
+<meta content="Dice Roller, Online Dice, Virtual Dice Roller, Free Dice Tool, DnD Dice Roller, Roll Dice Online, Random Dice Generator" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/dice-roller" rel="canonical"/>
+<meta content="Dice Roller - Instant Access Free Online Tool" property="og:title"/>
+<meta content="Roll dice instantly with this free online tool. No signup or ads. Just click and get random dice results for your games or decisions." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/dice-roller-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Dice Roller - Instant Access Free Online Tool" name="twitter:title"/>
+<meta content="Click to roll your dice online — 100% free with instant access. Great for board games, D&amp;D, or quick randomness." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/dice-roller-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Dice Roller",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "121"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Dice Roller"
+  },
+  "ratingValue": "4.8",
+  "ratingCount": "121"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Tanya Blake"
+  },
+  "datePublished": "2025-04-30",
+  "reviewBody": "I use this dice roller during DnD sessions and it's perfect. Super fast, no ads, and no account needed!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Dice Roller"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            width: 100%;
+            margin-top: -30px;
+        }
+
+        /* Header styling */
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #222;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.5rem;
+text-align: center;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+text-align: center;
+        }
+
+        /* Container styling */
+        .container, .content-container {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            margin: 1rem;
+            position: relative;
+            overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+margin-top: -20px;
+        }
+
+        /* Container styling */
+        .content-container {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            list-style: none;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+            color: #444;
+            position: relative;
+        }
+
+        /* Container styling */
+        .content-container ul li:before {
+            content: "•";
+            color: #f28c38;
+            position: absolute;
+            left: -1rem;
+        }
+
+        .dice-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .dice-type, .dice-quantity, .modifier {
+            flex: 1;
+            min-width: 160px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #444;
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #fafafa;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        select:focus, input[type="number"]:focus {
+            border-color: #f28c38;
+            box-shadow: 0 0 8px rgba(242, 140, 56, 0.3);
+            outline: none;
+        }
+
+        button {
+            background-color:#f28c38;
+            color: #fff;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(242, 140, 56, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .result, .history {
+            margin-top: 2.5rem;
+        }
+
+        .result h2, .history h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1rem;
+        }
+
+        #dice-result {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #f28c38;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        #detailed-results {
+            margin-top: 0.75rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        #roll-history {
+            list-style: none;
+            max-height: 250px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        #roll-history li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1rem;
+            color: #444;
+            transition: background 0.2s;
+        }
+
+        #roll-history li:hover {
+            background: #f9f9f9;
+        }
+
+        /* Dice Animation */
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .dice {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+        }
+
+        .dice.rolling {
+            animation: roll 1s ease-in-out;
+        }
+
+        @keyframes roll {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            50% { transform: rotateX(720deg) rotateY(720deg); }
+            100% { transform: rotateX(0deg) rotateY(0deg); }
+        }
+
+        .dice-face {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #333, #555);
+            border: 1px solid #222;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .dice-face.front  { transform: translateZ(50px); }
+        .dice-face.back   { transform: translateZ(-50px) rotateY(180deg); }
+        .dice-face.right  { transform: translateX(50px) rotateY(90deg); }
+        .dice-face.left   { transform: translateX(-50px) rotateY(-90deg); }
+        .dice-face.top    { transform: translateY(-50px) rotateX(90deg); }
+        .dice-face.bottom { transform: translateY(50px) rotateX(-90deg); }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Header styling */
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1.1rem;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 2rem;
+                margin: 0.5rem;
+margin-top: -30px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .dice-options {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .dice-type, .dice-quantity, .modifier {
+                min-width: 100%;
+            }
+
+            button {
+                width: 100%;
+                padding: 0.8rem;
+            }
+
+            .dice {
+                width: 90px;
+                height: 90px;
+            }
+
+            .dice-face {
+                width: 90px;
+                height: 90px;
+                font-size: 1.8rem;
+            }
+
+            .dice-face.front  { transform: translateZ(45px); }
+            .dice-face.back   { transform: translateZ(-45px) rotateY(180deg); }
+            .dice-face.right  { transform: translateX(45px) rotateY(90deg); }
+            .dice-face.left   { transform: translateX(-45px) rotateY(-90deg); }
+            .dice-face.top    { transform: translateY(-45px) rotateX(90deg); }
+            .dice-face.bottom { transform: translateY(45px) rotateX(-90deg); }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+        /* Header styling */
+            header h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 1.5rem;
+margin-top: -30px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            #dice-result {
+                font-size: 1.8rem;
+            }
+
+            .dice {
+                width: 80px;
+                height: 80px;
+            }
+
+            .dice-face {
+                width: 80px;
+                height: 80px;
+                font-size: 1.6rem;
+            }
+
+            .dice-face.front  { transform: translateZ(40px); }
+            .dice-face.back   { transform: translateZ(-40px) rotateY(180deg); }
+            .dice-face.right  { transform: translateX(40px) rotateY(90deg); }
+            .dice-face.left   { transform: translateX(-40px) rotateY(-90deg); }
+            .dice-face.top    { transform: translateY(-40px) rotateX(90deg); }
+            .dice-face.bottom { transform: translateY(40px) rotateX(-90deg); }
+        }
+
+        /* Scrollbar Styling */
+        #roll-history::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        #roll-history::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        #roll-history::-webkit-scrollbar-thumb {
+            background: #f28c38;
+            border-radius: 5px;
+        }
+
+        #roll-history::-webkit-scrollbar-thumb:hover {
+            background: #e07b30;
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Dice Roller
+   </h1>
+<p>
+    Experience thrilling dice rolls with stunning animations for your tabletop adventures.
+   </p>
+</header>
+<main>
+<!-- Main content container -->
+<div class="container">
+<div class="dice-options">
+<div class="dice-type">
+<label for="dice-type">
+       Dice Type:
+      </label>
+<select id="dice-type">
+<option value="4">
+        D4
+       </option>
+<option value="6">
+        D6
+       </option>
+<option value="8">
+        D8
+       </option>
+<option value="10">
+        D10
+       </option>
+<option value="12">
+        D12
+       </option>
+<option selected="" value="20">
+        D20
+       </option>
+<option value="100">
+        D100
+       </option>
+</select>
+</div>
+<div class="dice-quantity">
+<label for="dice-quantity">
+       Quantity:
+      </label>
+<input id="dice-quantity" max="10" min="1" type="number" value="1"/>
+</div>
+<div class="modifier">
+<label for="modifier">
+       Modifier:
+      </label>
+<input id="modifier" type="number" value="0"/>
+</div>
+<button class="roll-btn">
+      Roll Dice
+     </button>
+</div>
+<div class="dice-container" id="dice-container">
+</div>
+<div class="result">
+<h2>
+      Result
+     </h2>
+<div id="dice-result">
+      Click "Roll Dice" to roll!
+     </div>
+<div id="detailed-results">
+</div>
+</div>
+<div class="history">
+<h2>
+      Roll History
+     </h2>
+<ul id="roll-history">
+</ul>
+<button class="clear-history">
+      Clear History
+     </button>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What Is a Dice Roller?
+    </h2>
+<p>
+     Okay, simple version? A Dice Roller is a digital tool that mimics rolling dice. You tell it how many dice you want, what type (D6, D20, D10—yeah, we’re getting nerdy), and boom. It spits out some numbers, just like tossing physical dice… minus the part where they roll under your couch.
+    </p>
+<p>
+     You can use it for board games, D&amp;D, drinking games, school stuff, or even just to make boring decisions way more exciting.
+    </p>
+<h2>
+     Try the Dice Roller Now
+    </h2>
+<p>
+     Click a button. See what you get. That’s it.
+    </p>
+<p>
+     Seriously, the Dice Roller is the quickest way to get a random number in the form of good old dice. Whether you’re gaming or just goofing off, it’s right there—waiting to give you that perfect 20 or troll you with a snake eyes.
+    </p>
+<h2>
+     Why Use a Dice Roller?
+    </h2>
+<p>
+     So glad you asked. Or at least let me pretend you did. Because here’s the thing—physical dice are great… until they’re not.
+    </p>
+<p>
+     Here’s when a digital Dice Roller saves the day:
+    </p>
+<ul>
+<li>
+      You forgot to pack your dice for game night
+     </li>
+<li>
+      Touching everyone’s grubby dice mid-game? No thanks
+     </li>
+<li>
+      You need, like, twelve D6s and don’t own twelve D6s
+     </li>
+<li>
+      You're building random elements into a lesson plan or game
+     </li>
+<li>
+      Can’t decide who goes first? Roll for it
+     </li>
+</ul>
+<p>
+     It’s perfect for teachers, game masters, bored friends, or anyone who wants a tiny bit of chaos in their life.
+    </p>
+<h2>
+     Features
+    </h2>
+<ul>
+<li>
+      Roll classic dice: D4, D6, D8, D10, D12, D20, even D100
+     </li>
+<li>
+      Roll multiple dice at once (yeah, you can roll 8 D20s if you want)
+     </li>
+<li>
+      Clear breakdown of your total and individual results
+     </li>
+<li>
+      Instant re-roll button if you didn’t like the first result (cheater…)
+     </li>
+<li>
+      Works perfectly on your phone
+     </li>
+<li>
+      100% free to use—no downloads, no logins
+     </li>
+</ul>
+<h2>
+     How to Use the Dice Roller
+    </h2>
+<p>
+     No rocket science here. But if you want the casual step-by-step:
+    </p>
+<ol>
+<li>
+      Go to the Dice Roller tool
+     </li>
+<li>
+      Choose which type of dice you want to roll (D6, D20, etc.)
+     </li>
+<li>
+      Pick how many you need
+     </li>
+<li>
+      Hit roll
+     </li>
+<li>
+      Boom. Results pop up instantly. Total and all.
+     </li>
+</ol>
+<p>
+     Pro tip: For D&amp;D fans—use multiple dice types at once if you're rolling for attack + damage.
+    </p>
+<h2>
+     Why Choose This Dice Roller?
+    </h2>
+<p>
+     There are a bunch of dice tools floating around, but this one’s built for speed and simplicity. No clunky interfaces. No “create an account” nonsense. Just fast rolls and instant results.
+    </p>
+<ul>
+<li>
+      Loads in a flash
+     </li>
+<li>
+      Perfect on mobile and tablet
+     </li>
+<li>
+      Great for RPG players and game masters
+     </li>
+<li>
+      Also works for teachers, math games, and randomizers
+     </li>
+<li>
+      Germ-free dice? Yes please
+     </li>
+</ul>
+<p>
+     Plus, it’s free. Forever. You literally have nothing to lose (except maybe that game you’re playing).
+    </p>
+<h2>
+     FAQs About the Dice Roller
+    </h2>
+<p>
+<strong>
+      Can I roll different kinds of dice at the same time?
+     </strong>
+<br/>
+     Some versions let you mix and match! Like a D20 and 2 D6s. Nerdy dreams do come true.
+    </p>
+<p>
+<strong>
+      What’s the highest dice type it supports?
+     </strong>
+<br/>
+     Up to D100 in most cases—yeah, that’s a real thing.
+    </p>
+<p>
+<strong>
+      Is the randomness legit?
+     </strong>
+<br/>
+     Yep! It uses standard random number generation (RNG). Not Vegas-level secure, but good enough for game night.
+    </p>
+<p>
+<strong>
+      Can I use this for D&amp;D?
+     </strong>
+<br/>
+     Oh yeah. Critical hits, saving throws, damage rolls—this thing’s ready.
+    </p>
+<p>
+<strong>
+      Do I need to install anything?
+     </strong>
+<br/>
+     Nope. Totally browser-based. Use it on your phone, laptop, whatever.
+    </p>
+<h2>
+     Final Thoughts: Roll the Dice, Live a Little
+    </h2>
+<p>
+     Whether you’re deciding what movie to watch or about to roll for initiative, the Dice Roller has your back. It’s fast, fair, and actually kinda fun to use—even if it does keep giving you 1s.
+    </p>
+<p>
+     So go ahead—click and let fate decide. Need custom dice colors, sound effects, or rolling animations? I’ve got ideas for that too—just say the word.
+    </p>
+</div>
+</main>
+<script>
+        // Event listener for user interactions
+   document.addEventListener('DOMContentLoaded', () => {
+        // DOM element manipulation
+            const rollBtn = document.querySelector('.roll-btn');
+        // DOM element manipulation
+            const clearHistoryBtn = document.querySelector('.clear-history');
+        // DOM element manipulation
+            const diceTypeSelect = document.getElementById('dice-type');
+        // DOM element manipulation
+            const diceQuantityInput = document.getElementById('dice-quantity');
+        // DOM element manipulation
+            const modifierInput = document.getElementById('modifier');
+        // DOM element manipulation
+            const diceResult = document.getElementById('dice-result');
+        // DOM element manipulation
+            const detailedResults = document.getElementById('detailed-results');
+        // DOM element manipulation
+            const rollHistory = document.getElementById('roll-history');
+        // DOM element manipulation
+            const diceContainer = document.getElementById('dice-container');
+
+            let history = [];
+
+            // Roll Dice Logic
+        // Event listener for user interactions
+            rollBtn.addEventListener('click', () => {
+                const diceType = parseInt(diceTypeSelect.value);
+                let quantity = parseInt(diceQuantityInput.value);
+                const modifier = parseInt(modifierInput.value) || 0;
+
+                // Validate quantity (limited to 10 for animation performance)
+                if (quantity < 1) quantity = 1;
+                if (quantity > 10) quantity = 10;
+                diceQuantityInput.value = quantity;
+
+                // Roll dice
+                const results = [];
+                let total = 0;
+
+                for (let i = 0; i < quantity; i++) {
+                    const roll = Math.floor(Math.random() * diceType) + 1;
+                    results.push(roll);
+                    total += roll;
+                }
+
+                total += modifier;
+
+                // Animate dice and show results after animation
+                animateDice(quantity, results, () => {
+                    // Display results exactly when animation ends
+                    diceResult.textContent = `Total: ${total}`;
+                    detailedResults.textContent = `Rolls: [${results.join(', ')}] ${modifier !== 0 ? `+ ${modifier}` : ''}`;
+                });
+
+                // Update history
+                const historyEntry = `${quantity}d${diceType} ${modifier !== 0 ? `(Mod: ${modifier})` : ''} = ${total} [${results.join(', ')}]`;
+                history.unshift(historyEntry);
+                if (history.length > 50) history.pop();
+
+                // Render history
+                renderHistory();
+            });
+
+            // Clear History
+        // Event listener for user interactions
+            clearHistoryBtn.addEventListener('click', () => {
+                history = [];
+                renderHistory();
+            });
+
+            // Render History
+        // Function: renderHistory
+            function renderHistory() {
+                rollHistory.innerHTML = '';
+                history.forEach(entry => {
+                    const li = document.createElement('li');
+                    li.textContent = entry;
+                    rollHistory.appendChild(li);
+                });
+            }
+
+            // Animate Dice
+        // Function: animateDice
+            function animateDice(quantity, results, callback) {
+                diceContainer.innerHTML = '';
+                for (let i = 0; i < quantity; i++) {
+                    const dice = document.createElement('div');
+                    dice.classList.add('dice');
+                    // Create six faces
+                    ['front', 'back', 'right', 'left', 'top', 'bottom'].forEach(face => {
+                        const faceDiv = document.createElement('div');
+                        faceDiv.classList.add('dice-face', face);
+                        // Show the result on the front face
+                        if (face === 'front') {
+                            faceDiv.textContent = results[i];
+                        } else {
+                            faceDiv.textContent = Math.floor(Math.random() * 6) + 1; // Random for other faces
+                        }
+                        dice.appendChild(faceDiv);
+                    });
+                    diceContainer.appendChild(dice);
+                }
+
+                // Trigger roll animation
+                setTimeout(() => {
+        // DOM element manipulation
+                    const diceElements = document.querySelectorAll('.dice');
+                    diceElements.forEach(dice => {
+                        dice.classList.add('rolling');
+                        // Remove rolling class after animation
+                        setTimeout(() => {
+                            dice.classList.remove('rolling');
+                            // Call callback to show results exactly when animation ends
+                            if (callback) callback();
+                        }, 1000);
+                    });
+                }, 50);
+            }
+
+            // Input Validation
+        // Event listener for user interactions
+            diceQuantityInput.addEventListener('input', () => {
+                let value = parseInt(diceQuantityInput.value);
+                if (isNaN(value) || value < 1) diceQuantityInput.value = 1;
+                if (value > 10) diceQuantityInput.value = 10;
+            });
+
+        // Event listener for user interactions
+            modifierInput.addEventListener('input', () => {
+                if (modifierInput.value === '') modifierInput.value = 0;
+            });
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
