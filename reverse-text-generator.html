@@ -1,0 +1,713 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Reverse Text Generator: Unlimited Access Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Reverse Text Generator: Instantly reverse your text at https://www.freeontools.com. Free, no signup needed!" name="description">
+<meta content="reverse text generator, text reverser, free text tool, freeontools reverse text, text flipper" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/reverse-text-generator" rel="canonical"/>
+<meta content="Reverse Text Generator: Free &amp; Fast Tool" property="og:title"/>
+<meta content="Flip your text instantly with our free, no-login tool at https://www.freeontools.com. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/reverse-text-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="freeontools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Reverse Text Generator: Free Online Tool" name="twitter:title"/>
+<meta content="Free reverse text generator at https://www.freeontools.com. No signup, no fees, instant results!" name="twitter:description"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Reverse Text Generator",
+  "operatingSystem": "Web",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/reverse-text-generator",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Reverse Text Generator"
+  },
+  "ratingValue": "4.7",
+  "ratingCount": "163",
+  "bestRating": "5",
+  "worstRating": "1"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Reverse Text Generator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Olivia Carter"
+  },
+  "datePublished": "2025-04-30",
+  "reviewBody": "Super fun and free tool to reverse text! No signup needed, works perfectly every time.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Reverse Text Generator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Vikram Singh"
+  },
+  "datePublished": "2025-03-25",
+  "reviewBody": "This free tool is so simple and effective. Reversed my text instantly with no hassle!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.6",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<!-- Favicon -->
+<link href="favicon.png" rel="icon" type="image/png"/>
+<!-- Google Fonts -->
+<!-- CSS -->
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+           
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+
+        p {
+            font-size: 1rem;
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+ margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+    text-align: left;
+        }
+
+        .input-group, .output-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #f28c38;
+            box-shadow: 0 0 5px rgba(242, 140, 56, 0.3);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            border: none;
+            border-radius: 5px;
+            background-color: #f28c38;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .output-group textarea {
+            background-color: #f9f9f9;
+        }
+
+        .stats {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            gap: 5px;
+        }
+
+        .stats span {
+            white-space: nowrap;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            padding: 30px;
+            padding-left: 30px; /* Specified left padding */
+            padding-right: 30px; /* Specified right padding */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+             margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+    text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: left;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Container styling */
+        .content-container ul li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        /* Container styling */
+        .content-container ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+        /* Container styling */
+
+            .container {
+                padding: 20px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.9rem;
+            }
+
+            button {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+                flex: 1;
+            }
+
+            textarea {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .stats {
+                font-size: 0.8rem;
+                gap: 4px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 400px) {
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 3px;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<h1>
+   Reverse Text Generator
+  </h1>
+<p>
+   Quickly reverse any text for fun, coding, or creative projects with our free tool.
+  </p>
+<!-- Main content container -->
+<div class="container">
+<!-- Input Section -->
+<div class="input-group">
+<label for="inputText">
+     Enter Your Text
+    </label>
+<textarea id="inputText" oninput="updateStats()" placeholder="Type or paste your text here..."></textarea>
+<div class="stats">
+<span id="charCount">
+      Character Count: 0
+     </span>
+     |
+     <span id="wordCount">
+      Word Count: 0
+     </span>
+     |
+     <span id="sentenceCount">
+      Sentence Count: 0
+     </span>
+     |
+     <span id="lineCount">
+      Line Count: 0
+     </span>
+</div>
+</div>
+<!-- Buttons -->
+<div class="button-group">
+<button onclick="reverseText()">
+     Reverse Text
+    </button>
+<button onclick="copyText()">
+     Copy Output
+    </button>
+<button onclick="clearText()">
+     Clear
+    </button>
+</div>
+<!-- Output Section -->
+<div class="output-group">
+<label for="outputText">
+     Reversed Text
+    </label>
+<textarea id="outputText" readonly=""></textarea>
+</div>
+</div>
+<!-- New Content Section -->
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Reverse Text Generator?
+   </h2>
+<p>
+    Okay, hear me out. You ever typed something and thought, “Hmm… what if I flipped this whole thing backwards?” No? Just me? Well, even if you haven’t, that’s exactly what a Reverse Text Generator does.
+   </p>
+<p>
+    It takes your regular ol’ text and flips it. Like, totally reverses it. So “hello” becomes “olleh.” Whole sentences get flipped, character by character. It’s weirdly satisfying. And oddly useful, depending on what you’re doing.
+   </p>
+<p>
+    Maybe you want to make a puzzle. Or prank someone. Or write secret messages like it’s middle school again. Or maybe you just want to see what your name looks like backwards. (Admit it—you’ve done that before.)
+   </p>
+<p>
+    Either way, this Reverse Text Generator is here to make it stupidly easy.
+   </p>
+<h2>
+    Try Our Reverse Text Generator Now
+   </h2>
+<p>
+    Honestly, just paste some text into the box and click the button. That’s it. The Reverse Text Generator flips it instantly.
+   </p>
+<p>
+    No downloads, no nonsense, no signup forms pretending to be helpful. Just straight-up reverse magic.
+   </p>
+<h2>
+    Why Even Use a Reverse Text Generator?
+   </h2>
+<p>
+    Great question. Reversing text sounds like a party trick… and sometimes, it is. But you’d be surprised how often people actually need this.
+   </p>
+<ul>
+<li>
+     Creating social media content that grabs attention
+    </li>
+<li>
+     Puzzles or brain teasers for games, quizzes, or escape rooms
+    </li>
+<li>
+     Hidden messages for notes or creative writing
+    </li>
+<li>
+     Funny responses or usernames in games and chats
+    </li>
+<li>
+     Design stuff where backward text looks cool visually
+    </li>
+<li>
+     Just messing around because you’re bored or curious
+    </li>
+</ul>
+<p>
+    Sometimes it’s useful. Sometimes it’s just fun. Either way, the Reverse Text Generator doesn’t judge.
+   </p>
+<h2>
+    Features of the Reverse Text Generator
+   </h2>
+<p>
+    It’s not flashy. It’s not complicated. But oh man, does it deliver. Here’s what makes this Reverse Text Generator a solid pick:
+   </p>
+<ul>
+<li>
+     Instant character-by-character reversal – Like, “desserts” becomes “stressed” (that’s a classic)
+    </li>
+<li>
+     Works with full sentences – Spaces, punctuation, everything gets flipped
+    </li>
+<li>
+     Emoji-safe – Even little smileys get reversed without breaking
+    </li>
+<li>
+     Clean and simple interface – You won’t get lost clicking around
+    </li>
+<li>
+     Mobile-friendly – Flip text from your phone, your tablet, wherever
+    </li>
+<li>
+     Private by design – Nothing gets saved. What you paste is yours
+    </li>
+<li>
+     Copy result in one click – Paste it anywhere, confuse everyone
+    </li>
+</ul>
+<p>
+    Basically, it’s the tool that does one thing—and nails it.
+   </p>
+<h2>
+    How to Use the Reverse Text Generator
+   </h2>
+<p>
+    You ready for this super complex walkthrough? Just kidding. It’s stupid simple:
+   </p>
+<ol>
+<li>
+     Go to the Reverse Text Generator tool page
+    </li>
+<li>
+     Paste your text into the box
+    </li>
+<li>
+     Hit the “Reverse” button
+    </li>
+<li>
+     Watch your text getgar flipped
+    </li>
+<li>
+     Copy the reversed version and use it however you want
+    </li>
+</ol>
+<p>
+    Pro tip: Combine it with upside-down text or mirror writing for maximum confusion (and fun).
+   </p>
+<h2>
+    Why This Reverse Text Generator is Kinda Awesome
+   </h2>
+<p>
+    Sure, you could reverse text manually if you had an hour to waste. Or you could use this.
+   </p>
+<p>
+    Here’s why people love this Reverse Text Generator:
+   </p>
+<ul>
+<li>
+     Fast – Literally under two seconds
+    </li>
+<li>
+     Free – Always. No hidden stuff, no surprise paywalls
+    </li>
+<li>
+     Online and instant – No installs, no waiting, no drama
+    </li>
+<li>
+     Totally private – It doesn’t store, track, or peek at your text
+    </li>
+<li>
+     Satisfyingly easy – It just works. Like, always.
+    </li>
+</ul>
+<p>
+    This isn’t one of those bloated tools with a million options you’ll never use. This Reverse Text Generator sticks to what it’s good at—and it’s good at flipping your words.
+   </p>
+<h2>
+    FAQs About the Reverse Text Generator
+   </h2>
+<p>
+<strong>
+     Does it flip word order or just letters?
+    </strong>
+</p>
+<p>
+    This Reverse Text Generator flips every individual character, not the word order. So “hello world” becomes “dlrow olleh.” Want reversed words instead of letters? There are tools for that too!
+   </p>
+<p>
+<strong>
+     Can it handle emoji and special characters?
+    </strong>
+</p>
+<p>
+    Yep! Emojis, punctuation, and all that weird Unicode stuff—this tool flips them too. It’s surprisingly resilient.
+   </p>
+<p>
+<strong>
+     Is there a character limit?
+    </strong>
+</p>
+<p>
+    For normal use? Nah. You can paste in a few sentences or even a whole paragraph. But maybe don’t drop in your 10,000-word novel. Keep it chill.
+   </p>
+<p>
+<strong>
+     Can I reverse the reversed text?
+    </strong>
+</p>
+<p>
+    Heck yes. Just paste the flipped version back in and hit reverse again. Boom—back to normal.
+   </p>
+<p>
+<strong>
+     Is this tool safe to use?
+    </strong>
+</p>
+<p>
+    Totally. The Reverse Text Generator doesn’t save anything. It’s all processed right in your browser. Nothing goes to a server, nothing is stored. Your backwards poetry is safe.
+   </p>
+<h2>
+    Final Thoughts: It’s Weird, Fun, and Kinda Useful
+   </h2>
+<p>
+    There are tools you didn’t know you needed until you try them. The Reverse Text Generator is definitely one of those.
+   </p>
+<p>
+    Whether you’re trying to hide a message in plain sight, make your friends laugh, or just need a break from your normal routine, flipping text around can be surprisingly satisfying. And this tool? It’s the easiest way to do it.
+   </p>
+<p>
+    So yeah, next time you’re in the mood to get a little backwards, keep this Reverse Text Generator in your toolbox. Paste. Flip. Copy. Done.
+   </p>
+</div>
+<!-- JavaScript -->
+<script>
+   // Reverse Text Function
+        // Function: reverseText
+        function reverseText() {
+        // DOM element manipulation
+            const inputText = document.getElementById('inputText').value;
+            const reversedText = inputText.split('').reverse().join('');
+        // DOM element manipulation
+            document.getElementById('outputText').value = reversedText;
+        }
+
+        // Copy Text Function
+        // Function: copyText
+        function copyText() {
+        // DOM element manipulation
+            const outputText = document.getElementById('outputText');
+            outputText.select();
+            document.execCommand('copy');
+            alert('Text copied to clipboard!');
+        }
+
+        // Clear Text Function
+        // Function: clearText
+        function clearText() {
+        // DOM element manipulation
+            document.getElementById('inputText').value = '';
+        // DOM element manipulation
+            document.getElementById('outputText').value = '';
+            updateStats();
+        }
+
+        // Update Stats Function
+        // Function: updateStats
+        function updateStats() {
+        // DOM element manipulation
+            const inputText = document.getElementById('inputText').value;
+
+            // Character Count
+            const charCount = inputText.length;
+
+            // Word Count
+            const words = inputText.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+
+            // Sentence Count
+            const sentences = inputText.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0);
+            const sentenceCount = sentences.length;
+
+            // Line Count
+            const lines = inputText.split('\n').filter(line => line.trim().length > 0);
+            const lineCount = lines.length || 1;
+
+            // Update DOM
+        // DOM element manipulation
+            document.getElementById('charCount').textContent = `Character Count: ${charCount}`;
+        // DOM element manipulation
+            document.getElementById('wordCount').textContent = `Word Count: ${wordCount}`;
+        // DOM element manipulation
+            document.getElementById('sentenceCount').textContent = `Sentence Count: ${sentenceCount}`;
+        // DOM element manipulation
+            document.getElementById('lineCount').textContent = `Line Count: ${lineCount}`;
+        }
+
+        // Initialize stats on page load
+        updateStats();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

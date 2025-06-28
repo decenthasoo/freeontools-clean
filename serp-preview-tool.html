@@ -1,0 +1,1563 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   SERP Preview Tool - Simple & Free
+</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="SERP Preview Tool - Preview how your website appears on search engine results pages. Easily optimize your titles and meta descriptions for better SEO. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="SERP Preview Tool, SEO Preview Tool, Search Engine Result Preview, Title and Meta Description Preview, Free SERP Tool, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/serp-preview-tool" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="SERP Preview Tool - Simple & Free" property="og:title"/>
+<meta content="SERP Preview Tool - Preview how your website appears on search engine results pages. Easily optimize your titles and meta descriptions for better SEO. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/serp-preview-tool.png" property="og:image"/>
+<meta content="https://www.freeontools.com/serp-preview-tool" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="SERP Preview Tool - Simple & Free" name="twitter:title"/>
+<meta content="SERP Preview Tool - Preview how your website appears on search engine results pages. Easily optimize your titles and meta descriptions for better SEO. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/serp-preview-tool.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "freeontools Corporation",
+    "url": "https://www.freeontools.com",
+    "logo": "https://www.freeontools.com/images/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/freeontools",
+      "https://twitter.com/freeontools",
+      "https://www.instagram.com/freeontools"
+    ]
+  }
+</script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SERP Preview Tool",
+    "operatingSystem": "All",
+    "applicationCategory": "WebApplication",
+    "url": "https://www.freeontools.com/serp-preview-tool",
+    "image": "https://www.freeontools.com/images/serp-preview-tool.png",
+    "description": "Preview how your website appears in search engine results and optimize your titles and descriptions to improve SEO. No login required, no ads.",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.freeontools.com/serp-preview-tool",
+      "priceCurrency": "USD",
+      "price": "0.00",
+      "eligibleRegion": {
+        "@type": "Place",
+        "name": "Worldwide"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1050",
+      "bestRating": "5"
+    }
+  }
+</script>
+<!-- Review Schema 1 -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Charlotte Lee"
+    },
+    "datePublished": "2025-05-12",
+    "reviewBody": "This SERP Preview Tool is exactly what I needed! It allows me to see how my SEO changes will impact search engine results in real-time. So helpful and easy to use.",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "SERP Preview Tool"
+    }
+  }
+</script>
+<!-- Review Schema 2 -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Anonymous User"
+    },
+    "datePublished": "2025-04-01",
+    "reviewBody": "Incredible tool for previewing Google search results!",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "SERP Preview Tool"
+    }
+  }
+</script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background: #f5f6f5;
+            color: #2D3748;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            padding: 70px 20px;
+            color: #222;
+            position: relative;
+margin-top: -50px;
+
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 50%);
+            animation: pulse 8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .header-section h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 12px;
+margin-top: -50px;
+        }
+
+        .header-section p {
+            font-size: 1.4em;
+            font-weight: 400;
+            opacity: 0.85;
+            min-height: 4em; /* Ensures space for 2-3 lines */
+            background: rgba(255, 255, 255, 0.1); /* Subtle background for visibility */
+
+            border-radius: 4px;
+max-width: 600px;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+margin-top: -20px;
+        }
+
+        /* Main Container */
+        /* Container styling */
+        .container {
+            max-width: 1280px;
+            margin: 60px auto;
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+            margin-top: -20px;
+        }
+
+        .input-section, .preview-section {
+            flex: 1;
+            min-width: 320px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-section:hover, .preview-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            font-size: 1em;
+            font-weight: 600;
+            color: #2D3748;
+            margin-bottom: 12px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 1.1em;
+            color: #2D3748;
+            background: #F7FAFC;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #f28c38;
+            box-shadow: 0 0 0 4px rgba(242, 140, 56, 0.25);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .char-count {
+            position: absolute;
+            right: 16px;
+            top: 48px;
+            font-size: 0.9em;
+            color: #718096;
+            transition: color 0.3s ease;
+        }
+
+        .char-count.warning {
+            color: #f28c38;
+        }
+
+        .char-count.error {
+            color: #E53E3E;
+        }
+
+        .error {
+            color: #E53E3E;
+            font-size: 0.9em;
+            margin-top: 8px;
+            display: none;
+        }
+
+        /* Options Group */
+        .options-group {
+            margin: 30px 0;
+            padding: 20px;
+            background: #F7FAFC;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .options-group label {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.95em;
+            color: #2D3748;
+            cursor: pointer;
+        }
+
+        .options-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 12px;
+            accent-color: #f28c38;
+        }
+
+        /* Preview Box */
+        .preview-box {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #E2E8F0;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .preview-box:hover {
+            transform: scale(1.015);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-box h2 {
+            color: #2D3748;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .desktop-preview .title, .mobile-preview .title {
+            color: #1A0DAB;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-preview .title {
+            font-size: 1.2em;
+        }
+
+        .desktop-preview .title:hover, .mobile-preview .title:hover {
+            color: #174EA6;
+            text-decoration: underline;
+        }
+
+        .url {
+            color: #006621;
+            font-size: 1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .url::before {
+            content: "▼";
+            font-size: 0.85em;
+            color: #006621;
+        }
+
+        .description {
+            color: #4A5568;
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .extra-info {
+            font-size: 0.95em;
+            color: #718096;
+            margin-top: 10px;
+        }
+
+        .rating {
+            color: #f28c38;
+            margin-right: 8px;
+        }
+
+        .sitelinks {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .sitelink-item {
+            color: #1A0DAB;
+            font-size: 0.95em;
+            text-decoration: none;
+        }
+
+        .sitelink-item:hover {
+            text-decoration: underline;
+        }
+
+        .preview-image, .preview-map {
+            width: 100px;
+            height: 100px;
+            background: #EDF2F7;
+            margin-top: 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .preview-map {
+            background: #FEF5E7;
+            position: relative;
+        }
+
+        .preview-map::after {
+            content: "📍";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+        }
+
+        .map-pack {
+            margin-top: 20px;
+            padding: 15px;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .map-pack-item {
+            margin-bottom: 15px;
+        }
+
+        .map-pack-item .title {
+            font-size: 1.2em;
+            color: #1A0DAB;
+        }
+
+        .map-pack-item .address {
+            font-size: 0.95em;
+            color: #4A5568;
+        }
+
+        .map-pack-item .rating {
+            font-size: 0.9em;
+        }
+
+        /* Buttons */
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 16px 32px;
+            background: #f28c38;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover { 
+            background: #d97706;
+            transform: scale(1.05);
+        }
+
+        #reset-btn {
+            background: #f28c38;
+        }
+
+        #reset-btn:hover {
+            background: #d97706;
+        }
+
+        /* Content Container */
+        /* Container styling */
+        .content-container {
+            max-width: 1280px;
+            margin: 0 auto 80px;
+            background: #FFFFFF;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #2D3748;
+            margin-bottom: 25px;
+            text-align: left !important;
+        }
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.7em;
+            font-weight: 500;
+            color: #2D3748;
+            margin: 30px 0 15px;
+            text-align: left !important;
+        }
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1.1em;
+            color: #4A5568;
+            margin-bottom: 25px;
+            text-align: left !important;
+        }
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin-bottom: 30px;
+            padding-left: 35px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #4A5568;
+        }
+
+        /* Container styling */
+        .content-container ul li strong, .content-container ol li strong {
+            color: #2D3748;
+            font-weight: 600;
+        }
+
+        /* Tablet (769px–1199px) */
+        /* Responsive media queries */
+        @media (max-width: 1199px) {
+            /* Container styling */
+            .container {
+                flex-direction: column;
+                gap: 40px;
+                padding: 0 15px;
+            }
+
+            .input-section, .preview-section {
+                min-width: 100%;
+                padding: 30px;
+            }
+
+            /* Container styling */
+            .content-container {
+                padding: 40px;
+
+            }
+
+            .header-section {
+                padding: 60px 15px;
+            }
+
+            .header-section h1 {
+                font-size: 3em;
+            }
+
+            .header-section p {
+                font-size: 1.2em;
+                min-height: 3.6em; /* Adjust for smaller screens */
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            button {
+                padding: 14px 28px;
+                flex: 1 1 45%;
+                max-width: 260px;
+            }
+        }
+
+        /* Mobile (≤768px) */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            .header-section {
+
+            }
+
+            .header-section h1 {
+                font-size: 2.5em;
+            }
+
+            .header-section p {
+                font-size: 1.1em;
+                min-height: 3.3em; /* Adjust for mobile */
+            }
+
+            /* Container styling */
+            .container {
+                margin: 40px auto;
+                padding: 0 10px;
+margin-top: -50px;
+            }
+
+            .input-section, .preview-section {
+                padding: 25px;
+            }
+
+            /* Container styling */
+            .content-container {
+                padding: 30px;
+margin-top: -25px;
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+            }
+
+            .preview-box {
+                padding: 20px;
+            }
+
+            .preview-box h2 {
+                font-size: 1.6em;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            button {
+                padding: 14px;
+                flex: 1 1 100%;
+                max-width: none;
+            }
+
+            /* Container styling */
+            .content-container h2 {
+                font-size: 2em;
+                text-align: left !important;
+            }
+
+            /* Container styling */
+            .content-container h3 {
+                font-size: 1.5em;
+                text-align: left !important;
+            }
+
+            /* Container styling */
+            .content-container p, .content-container ul li, .content-container ol li {
+                font-size: 1em;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 0px 20px;
+    text-align: center;
+    box-sizing: border-box;
+margin-top: 15px !important;
+}
+</style>
+</head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="header-section">
+<h1>
+    SERP Preview Tool
+</h1>
+<p>
+    Visualize how your website appears in Google search results and optimize your titles and meta descriptions to improve SEO performance.
+</p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<section class="input-section">
+<div class="form-group">
+<label for="country">
+      Country
+     </label>
+<select id="country">
+<option value="in">
+       India
+      </option>
+<option value="cn">
+       China
+      </option>
+<option value="us">
+       United States
+      </option>
+<option value="id">
+       Indonesia
+      </option>
+<option value="pk">
+       Pakistan
+      </option>
+<option value="ng">
+       Nigeria
+      </option>
+<option value="br">
+       Brazil
+      </option>
+<option value="bd">
+       Bangladesh
+      </option>
+<option value="ru">
+       Russia
+      </option>
+<option value="mx">
+       Mexico
+      </option>
+<option value="jp">
+       Japan
+      </option>
+<option value="et">
+       Ethiopia
+      </option>
+<option value="ph">
+       Philippines
+      </option>
+<option value="eg">
+       Egypt
+      </option>
+<option value="vn">
+       Vietnam
+      </option>
+<option value="cd">
+       DR Congo
+      </option>
+<option value="tr">
+       Turkey
+      </option>
+<option value="ir">
+       Iran
+      </option>
+<option value="de">
+       Germany
+      </option>
+<option value="th">
+       Thailand
+      </option>
+<option value="uk">
+       United Kingdom
+      </option>
+<option value="fr">
+       France
+      </option>
+<option value="it">
+       Italy
+      </option>
+<option value="za">
+       South Africa
+      </option>
+<option value="kr">
+       South Korea
+      </option>
+<option value="mm">
+       Myanmar
+      </option>
+<option value="co">
+       Colombia
+      </option>
+<option value="es">
+       Spain
+      </option>
+<option value="ua">
+       Ukraine
+      </option>
+<option value="ar">
+       Argentina
+      </option>
+<option value="dz">
+       Algeria
+      </option>
+<option value="sd">
+       Sudan
+      </option>
+<option value="iq">
+       Iraq
+      </option>
+<option value="af">
+       Afghanistan
+      </option>
+<option value="pl">
+       Poland
+      </option>
+<option value="ca">
+       Canada
+      </option>
+<option value="ma">
+       Morocco
+      </option>
+<option value="sa">
+       Saudi Arabia
+      </option>
+<option value="uz">
+       Uzbekistan
+      </option>
+<option value="pe">
+       Peru
+      </option>
+<option value="ao">
+       Angola
+      </option>
+<option value="my">
+       Malaysia
+      </option>
+<option value="mz">
+       Mozambique
+      </option>
+<option value="gh">
+       Ghana
+      </option>
+<option value="ye">
+       Yemen
+      </option>
+<option value="np">
+       Nepal
+      </option>
+<option value="ve">
+       Venezuela
+      </option>
+<option value="mg">
+       Madagascar
+      </option>
+<option value="ci">
+       Ivory Coast
+      </option>
+<option value="cm">
+       Cameroon
+      </option>
+<option value="ne">
+       Niger
+      </option>
+<option value="au">
+       Australia
+      </option>
+<option value="kp">
+       North Korea
+      </option>
+<option value="tw">
+       Taiwan
+      </option>
+<option value="bf">
+       Burkina Faso
+      </option>
+<option value="ml">
+       Mali
+      </option>
+<option value="lk">
+       Sri Lanka
+      </option>
+<option value="mw">
+       Malawi
+      </option>
+<option value="zm">
+       Zambia
+      </option>
+<option value="ro">
+       Romania
+      </option>
+<option value="cl">
+       Chile
+      </option>
+<option value="kz">
+       Kazakhstan
+      </option>
+<option value="td">
+       Chad
+      </option>
+<option value="ec">
+       Ecuador
+      </option>
+<option value="so">
+       Somalia
+      </option>
+<option value="gt">
+       Guatemala
+      </option>
+<option value="sn">
+       Senegal
+      </option>
+<option value="nl">
+       Netherlands
+      </option>
+<option value="kh">
+       Cambodia
+      </option>
+<option value="zw">
+       Zimbabwe
+      </option>
+<option value="gn">
+       Guinea
+      </option>
+<option value="rw">
+       Rwanda
+      </option>
+<option value="bj">
+       Benin
+      </option>
+<option value="bi">
+       Burundi
+      </option>
+<option value="tn">
+       Tunisia
+      </option>
+<option value="bo">
+       Bolivia
+      </option>
+<option value="be">
+       Belgium
+      </option>
+<option value="ht">
+       Haiti
+      </option>
+<option value="cu">
+       Cuba
+      </option>
+<option value="ss">
+       South Sudan
+      </option>
+<option value="do">
+       Dominican Republic
+      </option>
+<option value="cz">
+       Czech Republic
+      </option>
+<option value="gr">
+       Greece
+      </option>
+<option value="jo">
+       Jordan
+      </option>
+<option value="pt">
+       Portugal
+      </option>
+<option value="az">
+       Azerbaijan
+      </option>
+<option value="se">
+       Sweden
+      </option>
+<option value="hn">
+       Honduras
+      </option>
+<option value="ae">
+       United Arab Emirates
+      </option>
+<option value="hu">
+       Hungary
+      </option>
+<option value="tj">
+       Tajikistan
+      </option>
+<option value="by">
+       Belarus
+      </option>
+<option value="at">
+       Austria
+      </option>
+<option value="pg">
+       Papua New Guinea
+      </option>
+<option value="rs">
+       Serbia
+      </option>
+<option value="il">
+       Israel
+      </option>
+<option value="ch">
+       Switzerland
+      </option>
+<option value="tg">
+       Togo
+      </option>
+<option value="sl">
+       Sierra Leone
+      </option>
+</select>
+</div>
+<div class="form-group">
+<label for="title">
+      Page Title (60 characters max)
+     </label>
+<input id="title" maxlength="60" placeholder="Enter page title" type="text"/>
+<span class="char-count" id="title-count">
+      60
+     </span>
+</div>
+<div class="form-group">
+<label for="url">
+      URL
+     </label>
+<input id="url" placeholder="https://example.com" type="text"/>
+<span class="error" id="url-error">
+      Please enter a valid URL (e.g., https://example.com)
+     </span>
+</div>
+<div class="form-group">
+<label for="description">
+      Meta Description (160 characters max)
+     </label>
+<textarea id="description" maxlength="160" placeholder="Enter meta description" rows="3"></textarea>
+<span class="char-count" id="desc-count">
+      160
+     </span>
+</div>
+<div class="options-group">
+<label>
+<input id="show-date" type="checkbox"/>
+      Date
+     </label>
+<label>
+<input id="show-rating" type="checkbox"/>
+      Rating
+     </label>
+<label>
+<input id="show-ads" type="checkbox"/>
+      Ads
+     </label>
+<label>
+<input id="show-sitelinks" type="checkbox"/>
+      Sitelinks
+     </label>
+<label>
+<input id="show-image" type="checkbox"/>
+      Image
+     </label>
+<label>
+<input id="show-map" type="checkbox"/>
+      Map
+     </label>
+<label>
+<input id="show-map-pack" type="checkbox"/>
+      Map Pack
+     </label>
+</div>
+<div class="buttons">
+<button onclick="saveImage()">
+      Save as Image
+     </button>
+<button onclick="exportHtml()">
+      Export HTML
+     </button>
+<button onclick="shareLink()">
+      Share Link
+     </button>
+<button id="reset-btn" onclick="resetForm()">
+      Reset
+     </button>
+</div>
+</section>
+<section class="preview-section">
+<div class="preview-box desktop-preview">
+<h2>
+      Desktop Preview
+     </h2>
+<div class="title" id="desktop-title">
+      Your page title
+     </div>
+<div class="url" id="desktop-url">
+      https://example.com
+     </div>
+<div class="description" id="desktop-desc">
+      Your meta description preview will appear here.
+     </div>
+<div class="extra-info" id="desktop-extra">
+</div>
+</div>
+<div class="preview-box mobile-preview">
+<h2>
+      Mobile Preview
+     </h2>
+<div class="title" id="mobile-title">
+      Your page title
+     </div>
+<div class="url" id="mobile-url">
+      https://example.com
+     </div>
+<div class="description" id="mobile-desc">
+      Your meta description preview will appear here.
+     </div>
+<div class="extra-info" id="mobile-extra">
+</div>
+</div>
+</section>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a SERP Preview Tool?
+   </h2>
+<p>
+    So, you're working on your website and you’ve got your SEO all set—meta tags, optimized content, and snappy titles. But wait, how does your site actually look in Google’s search results? This is where the SERP Preview Tool comes in. It’s a tool that lets you see a preview of how your page will look in the search engine results pages (SERPs). Essentially, it helps you understand how your title, description, and other elements will appear when someone Googles your site.
+   </p>
+<p>
+    Why should you care? Well, the way your page looks in search results can impact whether people click on it or scroll right past. If your title and description are too long or don’t match what users are searching for, you might lose potential visitors. A SERP preview shows you how to tweak things so your results pop and attract more clicks.
+   </p>
+<h2>
+    Try Our SERP Preview Tool Now
+   </h2>
+<p>
+    Wanna see how your website will show up in search results? Just plug in your title, URL, and description, and this tool will give you an instant preview. No need to guess or rely on assumptions—get a clear picture of how your page looks in search results. It’s quick, free, and super helpful for optimizing your content.
+   </p>
+<h2>
+    Why You Need a SERP Preview Tool
+   </h2>
+<p>
+    Alright, here’s the deal: you’ve worked hard to make your content awesome, but how does it look to the outside world? The SERP Preview Tool gives you a chance to double-check your meta tags and see how your page will be displayed in search engines. Here’s why it matters:
+   </p>
+<ul>
+<li>
+<strong>
+      Title and Description Optimization:
+     </strong>
+     It helps you make sure your title and description are the right length and actually make sense when shown in search results. Too long, and they’ll get cut off. Too short, and they might not say enough.
+    </li>
+<li>
+<strong>
+      Better Click-Through Rates (CTR):
+     </strong>
+     The more attractive and relevant your title and description look in the SERPs, the more likely people are to click on your page. Simple as that.
+    </li>
+<li>
+<strong>
+      Improve SEO:
+     </strong>
+     A proper preview can help you optimize your meta tags, making your page more appealing to search engines and users alike.
+    </li>
+<li>
+<strong>
+      No Surprises:
+     </strong>
+     It’s easy to overlook how your title looks when Google truncates it, but the SERP Preview Tool lets you see it upfront, so there are no surprises later.
+    </li>
+</ul>
+<h2>
+    Features
+   </h2>
+<p>
+    So, why is this SERP Preview Tool the best option for optimizing your search appearance? Here are some key features:
+   </p>
+<ul>
+<li>
+<strong>
+      Instant Preview:
+     </strong>
+     No waiting around—get a live preview of how your page will look in search results.
+    </li>
+<li>
+<strong>
+      Customizable Inputs:
+     </strong>
+     Input your title, meta description, and even URL to get a true-to-life preview.
+    </li>
+<li>
+<strong>
+      Character Count:
+     </strong>
+     The tool shows you how many characters your title and description have, so you can stay within the ideal length and avoid truncation.
+    </li>
+<li>
+<strong>
+      SEO Focused:
+     </strong>
+     It helps you optimize your page’s title and description for both SEO and user experience.
+    </li>
+<li>
+<strong>
+      Free and Easy:
+     </strong>
+     You don’t need a paid account or any technical knowledge. Just input your details and see the preview right away.
+    </li>
+</ul>
+<h2>
+    How to Use the SERP Preview Tool
+   </h2>
+<p>
+    Using the tool is a breeze—here’s how you can start optimizing your search result appearance in just a few simple steps:
+   </p>
+<ol>
+<li>
+<strong>
+      Enter Your Page Title:
+     </strong>
+     Start by typing in the title you’ve chosen for your page. The tool will show you how it looks within the search result snippet.
+    </li>
+<li>
+<strong>
+      Add Your Meta Description:
+     </strong>
+     Next, add your meta description. The SERP Preview Tool will display how it fits within the snippet as well.
+    </li>
+<li>
+<strong>
+      Paste the URL:
+     </strong>
+     Add the page URL you’re working on. This helps the tool create a more accurate preview.
+    </li>
+<li>
+<strong>
+      Check the Preview:
+     </strong>
+     Now, check out the preview! You’ll see exactly how the title, description, and URL will appear in search results.
+    </li>
+<li>
+<strong>
+      Adjust and Optimize:
+     </strong>
+     If the preview looks off (like if your title is cut off or the description is too long), tweak it and check again until you’re happy with the look.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    Aim for a title around 50–60 characters and a description between 120–160 characters to avoid truncation.
+   </p>
+<h2>
+    Why Choose This SERP Preview Tool?
+   </h2>
+<p>
+    Here’s why this tool stands out from the crowd:
+   </p>
+<ul>
+<li>
+<strong>
+      Fast and Accurate:
+     </strong>
+     Get an instant, accurate preview of your search result listing. No need to wonder how things will look when they go live.
+    </li>
+<li>
+<strong>
+      User-Friendly:
+     </strong>
+     You don’t need to be a developer or SEO expert. Just fill in your title, description, and URL, and you’re good to go.
+    </li>
+<li>
+<strong>
+      Perfect for SEO Optimization:
+     </strong>
+     It helps you avoid common SEO mistakes like having overly long titles or descriptions that don’t display well.
+    </li>
+<li>
+<strong>
+      Free to Use:
+     </strong>
+     No sign-ups, no hidden fees—just use it whenever you need to check how your page will show up in search.
+    </li>
+</ul>
+<h2>
+    FAQs
+   </h2>
+<ol>
+<li>
+<strong>
+      What’s the point of using a SERP Preview Tool?
+     </strong>
+<br/>
+     It helps you see exactly how your page will appear in search results. You can check if your title or description is too long, and make adjustments to ensure they’re as clickable as possible.
+    </li>
+<li>
+<strong>
+      How do I know if my title or description is too long?
+     </strong>
+<br/>
+     The tool will show you a character count for both the title and description, so you can easily stay within the ideal range (usually around 60 characters for the title and 160 characters for the description).
+    </li>
+<li>
+<strong>
+      Do I need to be an SEO expert to use this tool?
+     </strong>
+<br/>
+     Not at all! The tool is super simple to use and doesn’t require any advanced SEO knowledge. Just input your title, description, and URL, and you’re good to go.
+    </li>
+<li>
+<strong>
+      Can I use the preview for multiple pages?
+     </strong>
+<br/>
+     Yes! You can use the tool as many times as you need to optimize different pages on your site. Just change the inputs each time.
+    </li>
+<li>
+<strong>
+      Is this tool really free?
+     </strong>
+<br/>
+     Yep! The SERP Preview Tool is free to use—no sign-ups or hidden charges involved.
+    </li>
+</ol>
+<p>
+    The SERP Preview Tool is a must-have for anyone serious about SEO. It helps you make sure your page looks as good as possible in search results, leading to better visibility, higher click-through rates, and more traffic. Whether you’re tweaking an existing page or working on a new one, this tool gives you the clarity you need to optimize your meta tags and boost your SEO game.
+   </p>
+</div>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js">
+</script>
+<script>
+   // Initialize elements
+   const titleInput = document.getElementById('title');
+   const urlInput = document.getElementById('url');
+   const descInput = document.getElementById('description');
+   const countrySelect = document.getElementById('country');
+   const titleCount = document.getElementById('title-count');
+   const descCount = document.getElementById('desc-count');
+   const urlError = document.getElementById('url-error');
+   const checkboxes = document.querySelectorAll('.options-group input[type="checkbox"]');
+
+   // Preview elements
+   const desktopTitle = document.getElementById('desktop-title');
+   const desktopUrl = document.getElementById('desktop-url');
+   const desktopDesc = document.getElementById('desktop-desc');
+   const desktopExtra = document.getElementById('desktop-extra');
+   const mobileTitle = document.getElementById('mobile-title');
+   const mobileUrl = document.getElementById('mobile-url');
+   const mobileDesc = document.getElementById('mobile-desc');
+   const mobileExtra = document.getElementById('mobile-extra');
+
+   // Live character count
+   function updateCharCount(input, countElement, maxLength) {
+       const remaining = maxLength - input.value.length;
+       countElement.textContent = remaining;
+       countElement.classList.remove('warning', 'error');
+       if (remaining <= 10) {
+           countElement.classList.add('warning');
+       }
+       if (remaining < 0) {
+           countElement.classList.add('error');
+       }
+   }
+
+   // URL validation - updated pattern to accept more URL formats
+   function validateUrl(url) {
+       const pattern = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)([\/\?\#][\w\-\.\?\=\&\#\%]*)*\/?$/;
+       return pattern.test(url);
+   }
+
+   // Live preview update
+   function updatePreview() {
+       // Update titles
+       const title = titleInput.value || 'Your page title';
+       desktopTitle.textContent = title;
+       mobileTitle.textContent = title;
+
+       // Update URLs
+       const url = urlInput.value || 'https://example.com';
+       desktopUrl.textContent = url;
+       mobileUrl.textContent = url;
+
+       // Validate URL
+       urlError.style.display = url && !validateUrl(url) ? 'block' : 'none';
+
+       // Update descriptions
+       const desc = descInput.value || 'Your meta description preview will appear here.';
+       desktopDesc.textContent = desc;
+       mobileDesc.textContent = desc;
+
+       // Update extra info based on checkboxes
+       let extraHtml = '';
+       if (document.getElementById('show-date').checked) {
+           extraHtml += `<span>${new Date().toLocaleDateString()}</span> `;
+       }
+       if (document.getElementById('show-rating').checked) {
+           extraHtml += `<span class="rating">★★★★★</span>(4.8) `;
+       }
+       if (document.getElementById('show-ads').checked) {
+           extraHtml += `<span>[Ad]</span> `;
+       }
+       if (document.getElementById('show-sitelinks').checked) {
+           extraHtml += `
+               <div class="sitelinks">
+                   <a href="#" class="sitelink-item">Home</a>
+                   <a href="#" class="sitelink-item">About</a>
+                   <a href="#" class="sitelink-item">Services</a>
+                   <a href="#" class="sitelink-item">Contact</a>
+               </div>`;
+       }
+       if (document.getElementById('show-image').checked) {
+           extraHtml += `<div class="preview-image"></div>`;
+       }
+       if (document.getElementById('show-map').checked) {
+           extraHtml += `<div class="preview-map"></div>`;
+       }
+       if (document.getElementById('show-map-pack').checked) {
+           extraHtml += `
+               <div class="map-pack">
+                   <div class="map-pack-item">
+                       <div class="title">Business Name</div>
+                       <div class="address">123 Main St, City</div>
+                       <div class="rating">★★★★★ (4.9)</div>
+                   </div>
+               </div>`;
+       }
+       desktopExtra.innerHTML = extraHtml;
+       mobileExtra.innerHTML = extraHtml;
+   }
+
+   // Save as Image with error handling
+   function saveImage() {
+       if (typeof html2canvas === 'undefined') {
+           alert('Error: The image generation library failed to load. Please try again later.');
+           return;
+       }
+       
+       const previewSection = document.querySelector('.preview-section');
+       html2canvas(previewSection).then(canvas => {
+           const link = document.createElement('a');
+           link.download = 'serp-preview.png';
+           link.href = canvas.toDataURL('image/png');
+           link.click();
+       }).catch(err => {
+           alert('Error saving image: ' + err.message);
+       });
+   }
+
+   // Export HTML
+   function exportHtml() {
+       const title = titleInput.value || 'Your page title';
+       const desc = descInput.value || 'Your meta description';
+       const html = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>${title}</title>
+   <meta name="description" content="${desc}">
+</head>
+<body>
+   <!-- Your content here -->
+</body>
+</html>`;
+       const blob = new Blob([html], { type: 'text/html' });
+       const link = document.createElement('a');
+       link.download = 'serp-preview.html';
+       link.href = URL.createObjectURL(blob);
+       link.click();
+   }
+
+   // Share Link - improved with better compatibility
+   function shareLink() {
+       const params = new URLSearchParams({
+           title: titleInput.value,
+           url: urlInput.value,
+           description: descInput.value,
+           country: countrySelect.value,
+           date: document.getElementById('show-date').checked,
+           rating: document.getElementById('show-rating').checked,
+           ads: document.getElementById('show-ads').checked,
+           sitelinks: document.getElementById('show-sitelinks').checked,
+           image: document.getElementById('show-image').checked,
+           map: document.getElementById('show-map').checked,
+           mapPack: document.getElementById('show-map-pack').checked
+       });
+       
+       const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+       
+       // First try the Web Share API if available
+       if (navigator.share) {
+           navigator.share({
+               title: 'SERP Preview',
+               text: 'Check out this SERP preview I created',
+               url: shareUrl
+           }).catch(err => {
+               console.log('Error sharing:', err);
+               fallbackCopyToClipboard(shareUrl);
+           });
+       } else {
+           // Fallback to clipboard copy
+           fallbackCopyToClipboard(shareUrl);
+       }
+   }
+
+   // Improved clipboard copy function
+   function fallbackCopyToClipboard(text) {
+       // Create a temporary textarea element
+       const textarea = document.createElement('textarea');
+       textarea.value = text;
+       textarea.style.position = 'fixed';  // Prevent scrolling to bottom
+       document.body.appendChild(textarea);
+       textarea.select();
+       
+       try {
+           // Try to copy using the modern clipboard API first
+           if (navigator.clipboard) {
+               navigator.clipboard.writeText(text).then(() => {
+                   showCopySuccess(text);
+               }).catch(() => {
+                   // If that fails, use the older execCommand method
+                   document.execCommand('copy');
+                   showCopySuccess(text);
+               });
+           } else {
+               // Fallback for older browsers
+               document.execCommand('copy');
+               showCopySuccess(text);
+           }
+       } catch (err) {
+           console.error('Failed to copy:', err);
+           alert('Failed to copy link. Please copy it manually:\n' + text);
+       } finally {
+           document.body.removeChild(textarea);
+       }
+   }
+
+   function showCopySuccess(text) {
+       // Create a nice notification instead of an alert
+       const notification = document.createElement('div');
+       notification.style.position = 'fixed';
+       notification.style.bottom = '20px';
+       notification.style.right = '20px';
+       notification.style.backgroundColor = '#4CAF50';
+       notification.style.color = 'white';
+       notification.style.padding = '15px';
+       notification.style.borderRadius = '5px';
+       notification.style.zIndex = '1000';
+       notification.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+       notification.innerHTML = `
+           <div>Link copied to clipboard!</div>
+           <div style="font-size: 0.8em; margin-top: 5px; word-break: break-all;">${text}</div>
+       `;
+       
+       document.body.appendChild(notification);
+       
+       // Remove after 3 seconds
+       setTimeout(() => {
+           notification.style.opacity = '0';
+           setTimeout(() => {
+               document.body.removeChild(notification);
+           }, 500);
+       }, 3000);
+   }
+
+   // Reset Form - now properly resets character counts
+   function resetForm() {
+       titleInput.value = '';
+       urlInput.value = '';
+       descInput.value = '';
+       countrySelect.value = 'in';
+       checkboxes.forEach(cb => cb.checked = false);
+       urlError.style.display = 'none';
+       titleCount.textContent = '60';
+       descCount.textContent = '160';
+       titleCount.classList.remove('warning', 'error');
+       descCount.classList.remove('warning', 'error');
+       updatePreview();
+   }
+
+   // Event Listeners
+   titleInput.addEventListener('input', () => {
+       updateCharCount(titleInput, titleCount, 60);
+       updatePreview();
+   });
+
+   descInput.addEventListener('input', () => {
+       updateCharCount(descInput, descCount, 160);
+       updatePreview();
+   });
+
+   urlInput.addEventListener('input', updatePreview);
+   countrySelect.addEventListener('change', updatePreview);
+   checkboxes.forEach(cb => cb.addEventListener('change', updatePreview));
+
+   // Initialize - show remaining characters (max length when empty)
+   titleCount.textContent = 60;
+   descCount.textContent = 160;
+   updatePreview();
+</script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

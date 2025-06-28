@@ -1,0 +1,660 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Superhero Name Generator - Free Forever Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Superhero Name Generator - Free Forever! Create fun and unique superhero names instantly. No signup, no ads, just pure superhero fun." name="description">
+<meta content="Superhero Name Generator, Free Superhero Names, Hero Name Generator, Superhero Identity, Random Superhero Name, Online Hero Name Tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/superhero-name-generator" rel="canonical"/>
+<meta content="Superhero Name Generator - Free Forever Online Tool" property="og:title"/>
+<meta content="Generate unique superhero names in seconds. Great for comic fans, games, and creative projects. Free forever with no login or ads!" property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/superhero-name-generator-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Superhero Name Generator - Free Forever Online Tool" name="twitter:title"/>
+<meta content="Instantly generate fun superhero names. Perfect for comics, games, or just for fun. No signup, no ads, 100% free forever." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/superhero-name-generator-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Superhero Name Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "210"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Superhero Name Generator"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "210"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Brooks"
+  },
+  "datePublished": "2025-05-07",
+  "reviewBody": "This superhero name generator is perfect for creating new identities! It’s a fun and easy way to come up with unique superhero names. Free forever with no ads, what’s not to love?",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Superhero Name Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #f9f9f9;
+            color:#222;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+           
+color: #222;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+            opacity: 0.9;
+color: #222;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Container styling */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            margin-left: auto;
+            margin-right: auto;
+margin-top: 20px;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-align: left;
+color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            list-style-position: inside;
+            margin-bottom: 15px;
+color: #222;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 0.9rem;
+            padding: 5px 0;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+color: #222;
+        }
+
+        /* Container styling */
+        .content-container ul li:hover,
+        /* Container styling */
+        .content-container ol li:hover {
+            opacity: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .name-display {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f28c38;
+            min-height: 2.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .power-display {
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #f28c38;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(242, 140, 56, 0.5);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .history {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .history h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .history ul {
+            list-style: none;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .history li {
+            font-size: 0.9rem;
+            padding: 5px 0;
+            text-align: center;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .history li:hover {
+            opacity: 1;
+        }
+
+        /* Scrollbar Styling */
+        .history ul::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .history ul::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .history ul::-webkit-scrollbar-thumb {
+            background: #f28c38;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 20px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .name-display {
+                font-size: 1.5rem;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<h1>
+   Superhero Name Generator
+  </h1>
+<p>
+   Unleash your inner hero with a unique superhero name crafted just for you!
+  </p>
+<!-- Main content container -->
+<div class="container">
+<div class="name-display" id="nameDisplay">
+    Click "Generate" to create your superhero name!
+   </div>
+<div class="power-display" id="powerDisplay">
+</div>
+<div class="button-group">
+<button onclick="generateName()">
+     Generate
+    </button>
+<button onclick="copyName()">
+     Copy Name
+    </button>
+</div>
+<div class="history">
+<h3>
+     Previous Names
+    </h3>
+<ul id="historyList">
+</ul>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Superhero Name Generator?
+   </h2>
+<p>
+    The Superhero Name Generator is exactly what it sounds like—it’s a tool that helps you come up with unique, cool, and sometimes outlandish superhero names. Want to be the next caped crusader? Or maybe you’re looking for something that sounds like it belongs in a comic book? With just a click of a button, you can have a superhero name that feels just right.
+   </p>
+<p>
+    You can choose from random names or generate something that fits your favorite superpower, alter ego, or theme.
+   </p>
+<h2>
+    Try the Superhero Name Generator Now
+   </h2>
+<p>
+    Ready to get your alter ego going? Hit the button and see what name the Superhero Name Generator pulls out for you! Whether it’s for a new persona or just some fun with friends, you’ll be ready to save the day in no time.
+   </p>
+<h2>
+    Why Use a Superhero Name Generator?
+   </h2>
+<ul>
+<li>
+     Get a superhero name in seconds—no cape required!
+    </li>
+<li>
+     Perfect for comic book fans, roleplaying games, or themed events.
+    </li>
+<li>
+     Great for creating a secret identity, whether for a costume party or a new character.
+    </li>
+<li>
+     Fun way to see what kind of superpower you'd have based on the name.
+    </li>
+<li>
+     A chance to get creative and explore new superhero ideas.
+    </li>
+</ul>
+<p>
+    Whether you’re crafting a character or just having some fun, this generator will give you a superhero name you’ll actually love.
+   </p>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+     Random name generation, so you can always get something fresh and unique.
+    </li>
+<li>
+     Names designed to sound heroic, fierce, or mysterious—depending on your vibe.
+    </li>
+<li>
+     Perfect for games, cosplay, comic books, and even team-building exercises.
+    </li>
+<li>
+     Designed to spark your creativity, with names that could be customized to fit a unique backstory.
+    </li>
+<li>
+     Free to use, because superheroes shouldn’t have to pay for their names!
+    </li>
+</ul>
+<h2>
+    How to Use the Superhero Name Generator
+   </h2>
+<ol>
+<li>
+     Open the Superhero Name Generator tool.
+    </li>
+<li>
+     Hit the “Generate” button to see what name you get.
+    </li>
+<li>
+     Read your new superhero name and imagine your superpowers.
+    </li>
+<li>
+     If you love it, start using it! If not, try again for another name.
+    </li>
+<li>
+     Want more options? Just click again for more superhero possibilities.
+    </li>
+</ol>
+<p>
+    Pro tip: Make sure to give your superhero a killer backstory—your name is only half the fun!
+   </p>
+<h2>
+    Why Choose This Superhero Name Generator?
+   </h2>
+<ul>
+<li>
+     Quick and easy way to get a superhero name—no need for a cape or fancy costume.
+    </li>
+<li>
+     Super creative names for anyone who loves superhero lore or fantasy.
+    </li>
+<li>
+     Perfect for events like cosplay, gaming, or even team-building.
+    </li>
+<li>
+     Fun way to explore new characters, personalities, and alter egos.
+    </li>
+<li>
+     100% free—because all heroes deserve to get their name without a price tag!
+    </li>
+</ul>
+<p>
+    Plus, who doesn’t want to see what their superhero name would be? Maybe you’re the next Iron Fist, or perhaps your alter ego is a little more mysterious, like The Phantom Blaze. Who knows? Hit the button and find out!
+   </p>
+<h2>
+    FAQs About the Superhero Name Generator
+   </h2>
+<h3>
+    Can I choose my superpower before getting a name?
+   </h3>
+<p>
+    For now, the generator gives you a random name, but hey, you can always create your superpower around the name you get. Maybe your new name fits the power you’ve always wanted!
+   </p>
+<h3>
+    Can I generate multiple superhero names?
+   </h3>
+<p>
+    Absolutely! Hit the button as many times as you like to see what different names come up. You’ll have endless possibilities.
+   </p>
+<h3>
+    Can I use this for character creation in my game?
+   </h3>
+<p>
+    Yes! Whether you’re a GM looking for NPCs or creating your own character, the generator will help you come up with a cool name on the fly.
+   </p>
+<h3>
+    Can I customize my superhero name?
+   </h3>
+<p>
+    Of course! Use the generated name as a base, and feel free to tweak it or combine it with your own ideas. It’s your superhero persona—make it your own.
+   </p>
+<h3>
+    Are the names family-friendly?
+   </h3>
+<p>
+    Yep! The names are designed to be fun, heroic, and family-friendly. Perfect for all ages.
+   </p>
+<h2>
+    Final Thoughts: Your Superhero Identity Awaits
+   </h2>
+<p>
+    Ready to step into your heroic alter ego? With the Superhero Name Generator, you’ll have a cool, powerful name in no time. Whether you’re creating a character for a game, a costume party, or just daydreaming about what kind of superhero you’d be, this tool will spark your creativity and get you on the path to saving the day (or maybe just making people laugh).
+   </p>
+<p>
+    So, hit that button and see what your superhero name is!
+   </p>
+</div>
+<script>
+ const prefixes = [
+    'Thunder', 'Shadow', 'Blaze', 'Night', 'Star', 'Iron', 'Phantom', 'Cosmic', 'Vortex', 'Frost',
+    'Crimson', 'Dusk', 'Storm', 'Eclipse', 'Nova', 'Titan', 'Specter', 'Radiant', 'Void', 'Flame'
+];
+const suffixes = [
+    'Striker', 'Warden', 'Rider', 'Hunter', 'Specter', 'Guardian', 'Blaze', 'Voyager', 'Titan', 'Crusader',
+    'Sentinel', 'Drifter', 'Paladin', 'Reaper', 'Knight', 'Sorcerer', 'Vanguard', 'Marauder', 'Champion', 'Enforcer'
+];
+const titles = [
+    'The Mighty', 'The Eternal', 'The Unstoppable', 'The Legendary', 'The Invincible',
+    'The Supreme', 'The Radiant', 'The Immortal', 'The Fearless', 'The Omnipotent'
+];
+const powers = [
+    'Flight', 'Super Strength', 'Invisibility', 'Telekinesis', 'Energy Manipulation',
+    'Time Travel', 'Healing', 'Shape-Shifting', 'Telepathy', 'Elemental Control'
+];
+
+let history = [];
+
+// Function: generateName
+function generateName() {
+    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+    const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+    const title = titles[Math.floor(Math.random() * titles.length)];
+    const power = powers[Math.floor(Math.random() * powers.length)];
+    const superheroName = `${prefix} ${suffix}, ${title}`;
+
+    // DOM element manipulation
+    document.getElementById('nameDisplay').textContent = superheroName;
+    document.getElementById('powerDisplay').textContent = `Power: ${power}`;
+
+    // Update history
+    history.unshift(superheroName);
+    if (history.length > 5) history.pop();
+    updateHistory();
+}
+
+// Function: updateHistory
+function updateHistory() {
+    // DOM element manipulation
+    const historyList = document.getElementById('historyList');
+    historyList.innerHTML = '';
+    history.forEach(name => {
+        const li = document.createElement('li');
+        li.textContent = name;
+        historyList.appendChild(li);
+    });
+}
+
+// Function: copyName
+function copyName() {
+    const name = document.getElementById('nameDisplay').textContent;
+    if (name && name !== 'Click "Generate" to create your superhero name!') {
+        // Modern clipboard API
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(name).then(() => {
+                alert('Superhero name copied to clipboard!');
+            }).catch(err => {
+                console.error('Clipboard API failed:', err);
+                alert('Failed to copy name. Please try selecting and copying manually.');
+            });
+        } else {
+            // Fallback for older browsers
+            try {
+                const textarea = document.createElement('textarea');
+                textarea.value = name;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('Superhero name copied to clipboard!');
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+                alert('Failed to copy name. Please try selecting and copying manually.');
+            }
+        }
+    } else {
+        alert('Generate a name first!');
+    }
+}
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

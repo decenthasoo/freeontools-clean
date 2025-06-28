@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>System Status - Free On Tools</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <meta name="description" content="System Status for Free On Tools - Check the health of our 200+ free online tools in real-time."/>
+    <meta name="keywords" content="System Status, Free On Tools, Online Tools, Tool Health, Uptime, Support"/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://www.freeontools.com/system-status"/>
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="System Status - Free On Tools"/>
+    <meta property="og:description" content="System Status for Free On Tools - Check the health of our 200+ free online tools."/>
+    <meta property="og:image" content="https://www.freeontools.com/images/logo.png"/>
+    <meta property="og:url" content="https://www.freeontools.com/system-status"/>
+    <meta property="og:type" content="website"/>
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:title" content="System Status - Free On Tools"/>
+    <meta name="twitter:description" content="System Status for Free On Tools - Check the health of our 200+ free online tools."/>
+    <meta name="twitter:image" content="https://www.freeontools.com/images/logo.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Your Tools Hub",
+        "url": "https://www.freeontools.com",
+        "logo": "https://www.freeontools.com/images/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/Freeontools",
+            "https://twitter.com/Freeontools",
+            "https://www.instagram.com/Freeontools"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@freeontools.com",
+            "contactType": "Customer Service"
+        }
+    }
+    </script>
+    <style>
+        /* Reuse styles from your tool page for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f0f2f5;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+        }
+        .hero {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background: linear-gradient(135deg, #f28c38 0%, #d97a2e 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem;
+            width: 100%;
+            margin-top: -35px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            padding: 0.6rem 0;
+            background: #f0f2f5;
+            margin-top: -55px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+        h2 {
+            color: #222;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        h3 {
+            color: #222;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .content-container {
+            background: white;
+            padding: 1.5rem 30px;
+            border-radius: 10px;
+            margin-top: 1.2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .content-container:hover {
+            transform: translateY(-5px);
+        }
+        .content-container p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+            text-align: left;
+        }
+        .content-container a {
+            color: #f28c38;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .content-container a:hover {
+            color: #d97a2e;
+            text-decoration: underline;
+        }
+        .contact-info {
+            background: #f0f2f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .contact-info i {
+            color: #f28c38;
+            margin-right: 0.5rem;
+        }
+        /* Status Table Styles */
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .status-table th, .status-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .status-table th {
+            background: #f28c38;
+            color: white;
+            font-weight: 500;
+        }
+        .status-table td {
+            font-size: 1rem;
+            color: #333;
+        }
+        .status-indicator {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .content-container {
+                padding: 1rem 2rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.3rem;
+            }
+            header {
+                padding: 0.5rem 0;
+                margin-bottom: 0.5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            h3 {
+                font-size: 1.1rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+            .content-container {
+                padding: 0.7rem 1.5rem;
+            }
+            .status-table th, .status-table td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            h3 {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .content-container {
+                padding: 0.5rem 1rem;
+            }
+            .status-table th, .status-table td {
+                padding: 0.6rem;
+                font-size: 0.85rem;
+            }
+            .status-table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <header>
+        <div class="hero">
+            <h1>System Status</h1>
+            <p>Check the real-time health of our 200+ free tools—no surprises!</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content-container">
+            <h2>Your Tools Hub System Status</h2>
+            <p>Yo, welcome to the Your Tools Hub System Status page! Wanna know if our 200+ free tools are humming along? We’re keeping it real, like checking the weather before a picnic.</p>
+            <div class="terms-section">
+                <h3>What’s This Page About?</h3>
+                <p>This is your go-to spot to check the health of our tools at <a href="https://www.freeontools.com">https://www.freeontools.com</a>. We’ve got <strong>SEO & Marketing Tools</strong>, <strong>Image & Design Tools</strong>, <strong>Productivity Tools</strong>, and more. Below, you’ll see if they’re good to go, under maintenance, or acting up. We update this page when things change—outages, upgrades, you name it. Transparency’s our jam, so you’re never in the dark.</p>
+            </div>
+            <div class="terms-section">
+                <h3>Current Status</h3>
+                <p>As of June 04, 2025, 3:01 PM IST, here’s the vibe:</p>
+                <table class="status-table" aria-label="System Status of Tool Categories">
+                    <thead>
+                        <tr>
+                            <th>Tool Category</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SEO & Marketing Tools</td>
+                            <td><span class="status-indicator">🟢</span> Operational</td>
+                        </tr>
+                        <tr>
+                            <td>Text & Content Tools</td>
+                            <td><span class="status-indicator">🟢</span> Operational</td>
+                        </tr>
+                        <tr>
+                            <td>Image & Design Tools</td>
+                            <td><span class="status-indicator">🟢</span> Operational</td>
+                        </tr>
+                        <tr>
+                            <td>Finance & Calculation Tools</td>
+                            <td><span class="status-indicator">🟢</span> Operational</td>
+                        </tr>
+                        <tr>
+                            <td>Fun & Entertainment Tools</td>
+                            <td><span class="status-indicator">🟢</span> Operational</td>
+                        </tr>
+                        <tr>
+                            <td>Productivity Tools</td>
+                            <td><span class="status-indicator">🟢</span> Operational</td>
+                        </tr>
+                        <tr>
+                            <td>Education Tools</td>
+                            <td><span class="status-indicator">🟢</span> Operational</td>
+                        </tr>
+                        <tr>
+                            <td>Developer Tools</td>
+                            <td><span class="status-indicator">🟢</span> Operational</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>All systems are green! If you hit a snag, it might be your end—try refreshing or checking our <a href="https://www.freeontools.com/help-center">Help Center</a>. Issues persist? Holler at <a href="mailto:contact@freeontools.com">contact@freeontools.com</a>.</p>
+            </div>
+            <div class="terms-section">
+                <h3>What If There’s a Problem?</h3>
+                <p>Tech’s not perfect. If a tool category’s down (🟠 or 🔴), we’re on it. Check this page for updates. Planned maintenance? We’ll post here in advance. Unexpected outage? We’ll share what’s up and when it’ll be fixed. Need help now? Visit our <a href="https://www.freeontools.com/contact-support">Contact Support</a> page or email <a href="mailto:contact@freeontools.com">contact@freeontools.com</a>. Our <a href="https://www.freeontools.com/faq">FAQ</a> might have quick fixes too.</p>
+            </div>
+            <div class="terms-section">
+                <h3>Keeping You Posted</h3>
+                <p>We monitor our tools 24/7. Major updates or issues get posted here ASAP. Want to know more about our tools? Check our <a href="https://www.freeontools.com/documentation">Documentation</a> or <a href="https://www.freeontools.com/tutorials">Tutorials</a>. Curious about data or rules? See our <a href="https://www.freeontools.com/privacy-policy">Privacy Policy</a> or <a href="https://www.freeontools.com/terms-of-service">Terms of Service</a>. We’re all about keeping your projects smooth.</p>
+            </div>
+            <p>Got Feedback? Notice something off? Got ideas to make our tools better? Reach out via <a href="https://www.freeontools.com/contact-support">Contact Support</a> or <a href="mailto:contact@freeontools.com"">contact@freeontools.com</a>. We’re stoked to keep the good vibes going!</p>
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contact@freeontools.com">contact@freeontools.com</a></p>
+                <p><i class="fas fa-globe"></i>Website: <a href="https://www.freeontools.com">https://www.freeontools.com</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="../js/script.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

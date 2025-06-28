@@ -1,0 +1,614 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Sticky Note Simulator - Free & Fast Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Sticky Note Simulator - Free &amp; Fast! Create virtual sticky notes and organize your thoughts instantly. No signup required, just fast and fun!" name="description">
+<meta content="Sticky Note Simulator, Free Sticky Notes, Virtual Sticky Notes, Organize Notes Online, Digital Sticky Notes, Sticky Note Tool, Online Note Organizer" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com" rel="canonical"/>
+<meta content="Sticky Note Simulator - Free &amp; Fast Online Tool" property="og:title"/>
+<meta content="Create and organize sticky notes digitally with this free &amp; fast sticky note simulator. No signup, no ads, just quick and easy note-taking!" property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/sticky-note-simulator-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Sticky Note Simulator - Free &amp; Fast Online Tool" name="twitter:title"/>
+<meta content="Use this free &amp; fast sticky note simulator to create and organize digital sticky notes. No signup or ads required! Perfect for task management." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/sticky-note-simulator-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Sticky Note Simulator",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "175"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Sticky Note Simulator"
+  },
+  "ratingValue": "4.6",
+  "ratingCount": "175"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Noah Wilson"
+  },
+  "datePublished": "2025-05-22",
+  "reviewBody": "This sticky note simulator is exactly what I needed for quick note-taking! It’s super easy to use, and I love that it’s completely free with no signup required.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Sticky Note Simulator"
+  }
+}
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js">
+</script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* Body styling */
+        body {
+            background: #f9f9f9;
+            min-height: 100vh;
+        }
+
+        .header-area {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #f9f9f9;
+            
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #f28c38;
+        }
+
+        .intro-text {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1rem auto;
+            line-height: 1.6;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            margin-top: -15px;
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .add-btn, .clear-btn {
+            background: #f28c38;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(242,140,56,0.3);
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .note {
+            background: #fff9e6;
+            min-height: 250px;
+            min-width: 250px;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            cursor: grab;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            resize: both;
+            overflow: visible;
+        }
+
+        .note:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .note-content {
+            width: 100%;
+            height: calc(100% - 40px);
+            border: none;
+            background: transparent;
+            resize: none;
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+            overflow: auto;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            background: rgba(255,255,255,0.9);
+            border: 2px solid #f28c38;
+            border-radius: 50%;
+            color: #f28c38;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .delete-btn:hover {
+            background: #f28c38;
+            color: white;
+        }
+
+        .color-picker {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            width: 28px;
+            height: 28px;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<header class="header-area">
+<h1>
+    Sticky Note Simulator
+   </h1>
+<p class="intro-text">
+    Create, organize, and manage your ideas with digital sticky notes. Drag, edit, and customize notes to suit your workflow.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="controls">
+<button class="add-btn" onclick="addNote()">
+     + New Note
+    </button>
+<button class="clear-btn" onclick="clearAllNotes()">
+     Clear All
+    </button>
+</div>
+<div class="notes-grid" id="notesContainer">
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What is a Sticky Note Simulator?
+    </h2>
+<p>
+     Okay, so you know how you’ve got that go-to pack of sticky notes—whether you’re jotting down reminders, writing quick to-do lists, or just sticking something to your fridge to remember later? Well, imagine doing all of that digitally without the little bits of paper cluttering up your desk. Enter the Sticky Note Simulator. It’s a virtual version of those handy sticky notes you love, except you can pop them up on your computer or phone screen whenever you need them. You can color-code, resize, and move them around. Need to jot down a quick note while working on something else? Boom, you’ve got it. It’s like having a desk full of sticky notes—without the mess.
+    </p>
+<h2>
+     Try Our Sticky Note Simulator Now
+    </h2>
+<p>
+     Just want to try it out? Easy. Hit the button to open the simulator, and you’ll be greeted with a blank slate of sticky notes that you can customize. It’s super simple—just type your note, and there you go.
+    </p>
+<h2>
+     Why Does a Sticky Note Simulator Matter?
+    </h2>
+<p>
+     Why should you ditch physical sticky notes for the virtual kind? Well, for starters, it saves you a ton of space. No more worrying about where to put your notes or having them disappear under a pile of papers. Plus, you’re helping out the environment by cutting down on paper waste. But it’s not just about saving space—this tool is designed to help you stay organized and keep important reminders front and center. Whether you're working on a project, studying, or managing your day-to-day tasks, digital sticky notes are like your personal assistant that always has your back. They're perfect for keeping your most important stuff right where you can see it.
+    </p>
+<h2>
+     Features
+    </h2>
+<p>
+     Why should you be using a Sticky Note Simulator? Here are a few reasons it’ll make your life easier:
+    </p>
+<ul>
+<li>
+<strong>
+       Customizable:
+      </strong>
+      Choose your colors, adjust the size, and move them around wherever you need them on your screen. Make them as unique as you are.
+     </li>
+<li>
+<strong>
+       No physical clutter:
+      </strong>
+      Forget about losing sticky notes or having them fall off the wall. This one stays put.
+     </li>
+<li>
+<strong>
+       Quick access:
+      </strong>
+      You can open it whenever you need it, and it’s always within reach. No digging through piles of paper.
+     </li>
+<li>
+<strong>
+       Multiple notes:
+      </strong>
+      Need more than one note? No problem. You can create as many sticky notes as you need—stack them, resize them, and keep everything organized.
+     </li>
+<li>
+<strong>
+       Text editing:
+      </strong>
+      Easy-to-use text editor so you can make your notes look just the way you want—bold, italic, or underline everything if you want.
+     </li>
+<li>
+<strong>
+       Reminder-friendly:
+      </strong>
+      Some simulators let you set reminders so that your notes pop up and remind you of important tasks.
+     </li>
+<li>
+<strong>
+       Portable:
+      </strong>
+      Whether you’re on your computer or your phone, your sticky notes are always ready to go. No physical notes left behind.
+     </li>
+</ul>
+<h2>
+     How to Use a Sticky Note Simulator
+    </h2>
+<p>
+     Using a Sticky Note Simulator is super easy. Here’s how you can get started:
+    </p>
+<ol>
+<li>
+<strong>
+       Open the simulator:
+      </strong>
+      First things first, head over to the Sticky Note Simulator. You can open it on any device, whether you’re on a computer, tablet, or phone.
+     </li>
+<li>
+<strong>
+       Create your sticky note:
+      </strong>
+      Click to create a new note. You can type in whatever you want to remember. Want to write a to-do list, a quick reminder, or a motivational quote? Go ahead.
+     </li>
+<li>
+<strong>
+       Customize it:
+      </strong>
+      Change the color, size, or position on the screen. You can make your notes big or small depending on what fits your workspace best.
+     </li>
+<li>
+<strong>
+       Move it around:
+      </strong>
+      Drag your notes to wherever you want them on your screen. Want one in the top right corner and another in the bottom left? Totally doable.
+     </li>
+<li>
+<strong>
+       Save your notes:
+      </strong>
+      Some Sticky Note Simulators allow you to save your notes so you can come back to them later. This is perfect for ongoing projects or long-term reminders.
+     </li>
+</ol>
+<p>
+<strong>
+      Pro tip:
+     </strong>
+     Set a couple of sticky notes with deadlines or goals for the day so you can easily track your progress. Keep them visible on your desktop for a little daily motivation!
+    </p>
+<h2>
+     Why Choose This Sticky Note Simulator?
+    </h2>
+<p>
+     This tool is a total game changer if you’re all about staying organized without the paper mess. It’s quick, it’s flexible, and it’s perfect for those who like having their reminders and to-dos right where they can see them. No more scribbling on the back of receipts or hunting for that one sticky note you swear you wrote on. Plus, it’s super customizable. Whether you need a few simple reminders or a whole wall of virtual sticky notes to manage your day, this tool’s got your back.
+    </p>
+<p>
+     The best part? You don’t have to worry about running out of sticky notes. You’ll never find yourself scrambling for a new pack when you’re in the middle of a task. Just create, customize, and keep going.
+    </p>
+<h2>
+     FAQs
+    </h2>
+<ul>
+<li>
+<strong>
+       Can I use this tool to organize big projects?
+      </strong>
+<br/>
+      Yep! You can create multiple sticky notes to track different tasks, goals, or ideas for a project. You can color-code them for even more organization!
+     </li>
+<li>
+<strong>
+       Can I set reminders for my sticky notes?
+      </strong>
+<br/>
+      Some versions of the simulator allow you to set pop-up reminders so you’ll never forget what’s on your virtual sticky note.
+     </li>
+<li>
+<strong>
+       Can I use this on mobile devices?
+      </strong>
+<br/>
+      Yes, you can! The Sticky Note Simulator works on most mobile devices, so you can take your notes with you wherever you go.
+     </li>
+<li>
+<strong>
+       Can I save my notes for later?
+      </strong>
+<br/>
+      Some simulators allow you to save your notes, so you can pick up where you left off the next day. Always a bonus for long-term projects.
+     </li>
+<li>
+<strong>
+       Can I have more than one sticky note at once?
+      </strong>
+<br/>
+      Definitely! You can create and arrange as many sticky notes as you need, without worrying about running out of space or cluttering up your desk.
+     </li>
+</ul>
+</div>
+<script>
+        // Function: addNote
+    function addNote() {
+            const note = document.createElement('div');
+            note.className = 'note';
+            note.style.animation = 'fadeIn 0.4s ease-out';
+            
+            const colorPicker = document.createElement('input');
+            colorPicker.type = 'color';
+            colorPicker.className = 'color-picker';
+            colorPicker.value = '#fff9e6';
+            colorPicker.oninput = (e) => note.style.background = e.target.value;
+            
+            const content = document.createElement('div');
+            content.className = 'note-content';
+            content.contentEditable = true;
+            content.placeholder = 'Start typing...';
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.innerHTML = '×';
+            deleteBtn.onclick = () => deleteNote(note);
+
+            note.appendChild(colorPicker);
+            note.appendChild(content);
+            note.appendChild(deleteBtn);
+        // DOM element manipulation
+            document.getElementById('notesContainer').appendChild(note);
+
+            interact(note)
+                .draggable({
+                    inertia: true,
+                    autoScroll: true,
+                    listeners: {
+                        start(event) {
+                            event.target.style.cursor = 'grabbing';
+                        },
+                        move(event) {
+                            const target = event.target;
+                            const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+                            const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+                            
+                            target.style.transform = `translate(${x}px, ${y}px)`;
+                            target.setAttribute('data-x', x);
+                            target.setAttribute('data-y', y);
+                        },
+                        end(event) {
+                            event.target.style.cursor = 'grab';
+                        }
+                    }
+                })
+                .resizable({
+                    edges: { left: true, right: true, bottom: true, top: true },
+                    listeners: {
+                        move(event) {
+                            let { x, y } = event.target.dataset;
+                            x = (parseFloat(x) || 0);
+                            y = (parseFloat(y) || 0);
+
+                            event.target.style.width = `${event.rect.width}px`;
+                            event.target.style.height = `${event.rect.height}px`;
+
+                            event.target.dataset.x = x + event.deltaRect.left;
+                            event.target.dataset.y = y + event.deltaRect.top;
+                        }
+                    },
+                    inertia: true
+                });
+        }
+
+        // Function: deleteNote
+        function deleteNote(note) {
+            note.style.transform = 'scale(0.8)';
+            note.style.opacity = '0';
+            setTimeout(() => note.remove(), 300);
+        }
+
+        // Function: clearAllNotes
+        function clearAllNotes() {
+            if(confirm('Are you sure you want to delete all notes?')) {
+        // DOM element manipulation
+                const notes = document.querySelectorAll('.note');
+                notes.forEach(note => {
+                    note.style.transform = 'scale(0.8)';
+                    note.style.opacity = '0';
+                    setTimeout(() => note.remove(), 300);
+                });
+            }
+        }
+   </script>
+</div>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

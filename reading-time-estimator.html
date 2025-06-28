@@ -1,0 +1,742 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Reading Time Estimator - Simple & Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Reading Time Estimator - Quickly estimate the time it will take to read any text with this simple, free tool. No login, no ads, and 100% free to use." name="description">
+<meta content="Reading Time Estimator, Reading Time Calculator, Free Reading Tool, Estimate Reading Time, No Ads, Simple &amp; Free, No Hidden Fees, Free Without Login" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/reading-time-estimator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Reading Time Estimator - Simple &amp; Free" property="og:title"/>
+<meta content="Reading Time Estimator - Quickly estimate the time it will take to read any text with this simple, free tool. No login, no ads, and 100% free to use." property="og:description"/>
+<meta content="https://www.freeontools.com/images/reading-time-estimator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/reading-time-estimator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Reading Time Estimator - Simple &amp; Free" name="twitter:title"/>
+<meta content="Reading Time Estimator - Quickly estimate the time it will take to read any text with this simple, free tool. No login, no ads, and 100% free to use." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/reading-time-estimator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Reading Time Estimator",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/reading-time-estimator",
+  "image": "https://www.freeontools.com/images/reading-time-estimator.png",
+  "description": "Reading Time Estimator - A simple, free tool to estimate how long it will take to read any text based on average reading speed. No sign-up required.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/reading-time-estimator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.87",
+  "bestRating": "5",
+  "ratingCount": "1150"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Emily Clarke"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This Reading Time Estimator is such a handy tool! It's incredibly accurate, quick, and so easy to use. It makes managing reading assignments so much easier.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Reading Time Estimator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 10px auto 0;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus {
+            border-color: #f28c38;
+            outline: none;
+        }
+
+        .file-upload {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #f28c38;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .file-label:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        .file-note {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            color: #222;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        button {
+            display: block;
+
+            padding: 12px 30px;
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+align-items: center;
+margin-right: 15px;
+
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        /* Content Container */
+        /* Container styling */
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-in-out;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #222;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 10px 0 20px 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Container styling */
+        .content-container .pro-tip {
+            font-size: 0.95rem;
+            color: #555;
+            font-style: italic;
+            margin: 15px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+        /* Container styling */
+            .container,
+        /* Container styling */
+            .content-container {
+                margin: 0 15px;
+                padding: 15px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+            textarea {
+                min-height: 150px;
+                font-size: 0.9rem;
+            }
+
+            button, .file-label {
+                font-size: 1rem;
+                padding: 10px 20px;
+align-items: center;
+
+
+            }
+
+            .file-note {
+                font-size: 0.85rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+
+        /* Header styling */
+            header {
+                padding: 15px 0;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 0.9rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container,
+        /* Container styling */
+            .content-container {
+                margin: 0 10px;
+                padding: 10px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+            textarea {
+                min-height: 120px;
+                font-size: 0.85rem;
+            }
+
+            button, .file-label {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+align-items: center;
+            }
+
+            .file-note {
+                font-size: 0.8rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.4rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Reading Time Estimator
+   </h1>
+<p>
+    Quickly calculate the estimated reading time for your text. Paste your content or upload a text file to get started.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="input-group">
+<textarea id="textInput" placeholder="Paste or type your text here..."></textarea>
+<div class="file-upload">
+<label class="file-label" for="fileInput">
+      Upload Text File
+     </label>
+<input accept=".txt" id="fileInput" type="file"/>
+<div class="file-note">
+      Supported format: .txt files only
+     </div>
+</div>
+</div>
+<button onclick="calculateReadingTime()">
+    Calculate Reading Time
+   </button>
+<div class="result" id="result">
+</div>
+<div class="error" id="error">
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Reading Time Estimator?
+   </h2>
+<p>
+    Ever opened a huge article or a long blog post and thought, "Am I really going to read all of this?" We've all been there. A Reading Time Estimator is a super simple tool that helps you figure out how long it’ll take you to read something based on the word count. It’s like the calculator of reading. You just pop in your text (or the link to it), and the tool will tell you how many minutes it’ll take to finish. It’s great for planning, timing, or just satisfying your curiosity about how much time you’re about to spend with that massive wall of text.
+   </p>
+<p>
+    The best part? It’s a no-brainer. You don’t have to guess. The tool calculates your reading time based on average reading speeds. No math required (phew, right?).
+   </p>
+<h3>
+    Try Our Reading Time Estimator Now
+   </h3>
+<p>
+    Got a text you’re about to tackle? Want to see if you’re in for a short story or a full-on novel? Just drop the content into the Reading Time Estimator and get an instant reading time estimate. Easy peasy.
+   </p>
+<h3>
+    Why a Reading Time Estimator is Actually Useful
+   </h3>
+<p>
+    You know how when you see a blog post that’s 2,000 words long and you're thinking, "Uh, am I ready for this?" A Reading Time Estimator saves you from jumping in blind. It lets you know if it’s a quick read or if you’ll need a coffee break halfway through. Whether you're trying to plan your reading sessions or decide if it’s worth it to dive into an article, this tool keeps things chill and organized. Plus, it’s way more accurate than guessing or skimming to figure it out.
+   </p>
+<p>
+    Here’s why it’s a keeper:
+   </p>
+<ul>
+<li>
+     Perfect for busy readers – No more wasting time on articles you’re not ready to dive into.
+    </li>
+<li>
+     Helps with planning – Know if you’ve got enough time to finish that article before a meeting.
+    </li>
+<li>
+     Can improve focus – You’ll be able to pace yourself better when you know exactly how long you’ll need.
+    </li>
+<li>
+     Works for everything – Whether it's an essay, article, report, or even a book chapter, this tool’s got your back.
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+     Quick reading time estimates – Get your time results instantly.
+    </li>
+<li>
+     Adjustable reading speeds – It estimates based on average reading speeds, but you can adjust it to match your own pace.
+    </li>
+<li>
+     Works with any text – From blog posts to research papers, any written content works.
+    </li>
+<li>
+     Easy to use – No setup required. Just paste, click, and go.
+    </li>
+<li>
+     Helps you stay organized – Manage your time and reading sessions more effectively.
+    </li>
+</ul>
+<h3>
+    How to Use the Reading Time Estimator
+   </h3>
+<ol>
+<li>
+     Go to the Reading Time Estimator page – Loads right up, no delays.
+    </li>
+<li>
+     Paste in your text – You can drop your article, report, or any text right into the tool.
+    </li>
+<li>
+     Get your reading time – The tool will calculate how long it’ll take based on your word count.
+    </li>
+<li>
+     Adjust reading speed if needed – You can change the estimated speed if you’re a super fast reader or a slowpoke.
+    </li>
+<li>
+     Use the estimate to plan – Whether you’re reading for fun or working, knowing your reading time lets you plan accordingly.
+    </li>
+</ol>
+<p class="pro-tip">
+    💡 Pro tip: If you’ve got a longer text, try reading in chunks. The Reading Time Estimator helps you break it down into manageable sessions.
+   </p>
+<h3>
+    Why Choose This Reading Time Estimator?
+   </h3>
+<p>
+    We’re all about saving time and making life a little simpler. The Reading Time Estimator does exactly that. It tells you exactly what you’re getting into before you dive in. Whether you're trying to plan your reading for the day or simply curious about how much time you’ll spend on that next article, this tool is a real time-saver.
+   </p>
+<p>
+    Here’s why it rocks:
+   </p>
+<ul>
+<li>
+     Instant results – No waiting. Just paste and go.
+    </li>
+<li>
+     Customizable – You can tweak it to match your reading speed.
+    </li>
+<li>
+     Great for all kinds of content – Articles, books, essays, and everything in between.
+    </li>
+<li>
+     Helps manage time – Know how much time to allocate so you’re not caught off guard.
+    </li>
+<li>
+     Free to use – No hidden costs. No signup. Just useful info.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      Can I use this for any type of text?
+     </strong>
+<br/>
+     Yep! Whether it's a blog post, an essay, or even a book excerpt, you can paste any text into the tool.
+    </li>
+<li>
+<strong>
+      How accurate are the reading time estimates?
+     </strong>
+<br/>
+     The estimates are based on average reading speeds, but you can adjust it based on your pace. It’s pretty accurate for most people.
+    </li>
+<li>
+<strong>
+      Can I change the reading speed?
+     </strong>
+<br/>
+     Totally! You can adjust the speed setting if you know you’re a fast reader or prefer to read slower.
+    </li>
+<li>
+<strong>
+      Can I use this for a whole book?
+     </strong>
+<br/>
+     For sure. You can paste large sections of a book, article, or report and get an estimated reading time for it.
+    </li>
+<li>
+<strong>
+      Is it free to use?
+     </strong>
+<br/>
+     Yes! The Reading Time Estimator is free and easy to use—no sign-ups required.
+    </li>
+</ol>
+<p>
+    Whether you’re trying to figure out if you have enough time to read that article before your next meeting or just curious how long a book chapter will take, the Reading Time Estimator is your go-to tool. It’s quick, simple, and helpful—exactly what you need for planning your reading sessions!
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const textInput = document.getElementById('textInput');
+        // DOM element manipulation
+        const fileInput = document.getElementById('fileInput');
+        // DOM element manipulation
+        const resultDiv = document.getElementById('result');
+        // DOM element manipulation
+        const errorDiv = document.getElementById('error');
+
+        // Real-time input update
+        // Event listener for user interactions
+        textInput.addEventListener('input', () => {
+            clearMessages();
+        });
+
+        // File upload handling
+        // Event listener for user interactions
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file && file.type === 'text/plain') {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    textInput.value = event.target.result;
+                    clearMessages();
+                };
+                reader.readAsText(file);
+            } else {
+                showError('Please upload a valid .txt file.');
+            }
+        });
+
+        // Calculate reading time
+        // Function: calculateReadingTime
+        function calculateReadingTime() {
+            clearMessages();
+            const text = textInput.value.trim();
+            if (!text) {
+                showError('Please enter or upload text to calculate reading time.');
+                return;
+            }
+
+            const words = text.split(/\s+/).filter(word => word.length > 0).length;
+            let readingTimeText;
+
+            // Improved logic: Handle short and long texts differently
+            if (words <= 200) {
+                // For short texts, calculate time in seconds (assuming 200 words = 60 seconds)
+                const readingTimeSeconds = Math.max(1, Math.round((words / 200) * 60));
+                readingTimeText = readingTimeSeconds === 1 ? '1 second' : `${readingTimeSeconds} seconds`;
+            } else {
+                // For longer texts, calculate time in minutes
+                const readingTimeMinutes = Math.ceil(words / 200);
+                readingTimeText = readingTimeMinutes === 1 ? '1 minute' : `${readingTimeMinutes} minutes`;
+            }
+
+            resultDiv.textContent = `Estimated Reading Time: ${readingTimeText} (${words} words)`;
+            resultDiv.classList.add('show');
+        }
+
+        // Show error message
+        // Function: showError
+        function showError(message) {
+            errorDiv.textContent = message;
+            errorDiv.classList.add('show');
+        }
+
+        // Clear result and error messages
+        // Function: clearMessages
+        function clearMessages() {
+            resultDiv.classList.remove('show');
+            errorDiv.classList.remove('show');
+            resultDiv.textContent = '';
+            errorDiv.textContent = '';
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

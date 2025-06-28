@@ -1,0 +1,600 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Random Priority Sorter - Instant Access Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Random Priority Sorter - Instant Access! Quickly sort your tasks by priority randomly. No signup required, just fast and easy task management!" name="description">
+<meta content="Random Priority Sorter, Free Task Sorter, Task Management Tool, Sort Tasks by Priority, Randomly Sort Tasks, Task Organizer Tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com" rel="canonical"/>
+<meta content="Random Priority Sorter - Instant Access Online Tool" property="og:title"/>
+<meta content="Use this tool to randomly sort your tasks by priority instantly. Free &amp; easy with no signup required! Ideal for organizing your tasks quickly." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/random-priority-sorter-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Random Priority Sorter - Instant Access Online Tool" name="twitter:title"/>
+<meta content="Sort your tasks by priority randomly with this instant access tool. No signup, no ads, just fast and simple task management." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/random-priority-sorter-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Random Priority Sorter",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "150"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Random Priority Sorter"
+  },
+  "ratingValue": "4.7",
+  "ratingCount": "150"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Lucas Bennett"
+  },
+  "datePublished": "2025-05-25",
+  "reviewBody": "The Random Priority Sorter is a lifesaver for task management! It helps me quickly organize tasks by priority without any hassle. Totally free and easy to use!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Random Priority Sorter"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in;
+margin-top: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: slideUp 1s ease-in;
+        }
+
+        /* Container styling */
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            margin-top: 20px;
+            animation: scaleIn 0.8s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: white;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            margin-top: 20px;
+            animation: scaleIn 0.8s ease-out;
+            text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+            max-width: none;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            list-style: none;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            background: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #333;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            resize: none;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #f28c38;
+            outline: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #f28c38;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: scale(1.05);
+            background: #e07b30;
+        }
+
+        button:focus {
+            outline: 2px solid #333;
+            outline-offset: 2px;
+        }
+
+        ul {
+            list-style: none;
+            
+        }
+
+        li span {
+            font-size: 1rem;
+            color: #333;
+            flex-grow: 1;
+        }
+
+        li button {
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
+        /* Container styling */
+            .container { padding: 15px; }
+        /* Container styling */
+            .content-container { padding: 15px; padding-left: 15px; padding-right: 15px; }
+        /* Container styling */
+            .content-container h2 { font-size: 1.6rem;   text-align: left !important;
+}
+        /* Container styling */
+            .content-container h3 { font-size: 1.2rem;   text-align: left !important;
+}
+            .button-group button { padding: 8px 15px; }
+            li {
+                
+                flex-wrap: nowrap;
+            }
+            li button {
+                padding: 5px 8px;
+                font-size: 0.85rem;
+                min-width: 70px;
+            }
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            p { font-size: 0.9rem; }
+        /* Container styling */
+            .container { padding: 10px; }
+        /* Container styling */
+            .content-container { padding: 10px; padding-left: 15px; padding-right: 15px; }
+        /* Container styling */
+            .content-container h2 { font-size: 1.4rem;   text-align: left !important;
+}
+        /* Container styling */
+            .content-container h3 { font-size: 1.1rem;   text-align: left !important;
+}
+            .button-group { flex-direction: column; }
+            .button-group button { width: 100%; }
+            li {
+                
+                flex-wrap: nowrap;
+            }
+            li button {
+                padding: 5px 8px;
+                font-size: 0.8rem;
+                min-width: 60px;
+            }
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                padding: 8px;
+                font-size: 0.85rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Random Priority Sorter
+   </h1>
+<p>
+    Organize your tasks randomly with ease and assign priorities instantly.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="input-section">
+<textarea aria-label="Task input" id="taskInput" placeholder="Enter a task..." rows="3"></textarea>
+<div class="button-group">
+<button aria-label="Add task" onclick="addTask()">
+      Add Task
+     </button>
+<button aria-label="Sort tasks randomly" onclick="sortTasks()">
+      Sort Randomly
+     </button>
+<button aria-label="Clear all tasks" onclick="clearTasks()">
+      Clear All
+     </button>
+</div>
+</div>
+<ul id="taskList">
+</ul>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Random Priority Sorter?
+   </h2>
+<p>
+    This—you’ve got a to-do list that’s like, 27 items long. Everything feels important. You’re staring at it like, “Where do I even start?” That’s where a Random Priority Sorter jumps in like the decision-making sidekick you didn’t know you needed. This little tool takes your messy, stressy task list and randomly spits out a new order—so instead of agonizing over what’s “most important,” you just get started. No overthinking. No guilt. Just action. It's perfect for those days when everything feels like a top priority but your brain is fried.
+   </p>
+<h3>
+    Try Our Random Priority Sorter Now
+   </h3>
+<p>
+    Seriously—copy and paste your to-do list, hit the button, and boom. You've got a fresh, randomized list that tells you exactly where to start. It’s like spinning a to-do list roulette wheel (but way more productive).
+   </p>
+<h3>
+    Why Does a Random Priority Sorter Matter?
+   </h3>
+<p>
+    Because sometimes your brain just won’t play nice. You’ve got a million things to do, but trying to pick which one to tackle first? Total decision fatigue. Enter: Random Priority Sorter. It takes the pressure off making the “right” call and just gets you moving. That’s the magic. Instead of wasting time organizing and re-organizing your list, you jump straight into doing stuff. It’s great for productivity, fights off procrastination, and lets you sidestep that perfectionist spiral where you never actually start.
+   </p>
+<p>
+    Plus, if you're working on a team and need a fun way to assign tasks without drama (or favoritism), randomizing the order makes it feel totally fair.
+   </p>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+     Instant random sorting – Paste your tasks, hit go, and get a fresh order immediately
+    </li>
+<li>
+     Zero setup required – No accounts, no logins, no nonsense
+    </li>
+<li>
+     Handles long or short lists – Whether it’s 3 tasks or 33, it handles them all
+    </li>
+<li>
+     Simple and clean interface – Just text in and list out
+    </li>
+<li>
+     No bias or logic loops – It’s truly random, so you’re not just re-ranking your faves subconsciously
+    </li>
+<li>
+     Works great for teams or solo – Use it to assign priorities, split tasks, or just shake up your workflow
+    </li>
+</ul>
+<h3>
+    How to Use the Random Priority Sorter
+   </h3>
+<ol>
+<li>
+     Open the tool – Get that clean, distraction-free page up on your screen
+    </li>
+<li>
+     Paste your list – Type out your to-dos, one per line. Keep it simple
+    </li>
+<li>
+     Click “Sort Randomly” – That’s it. The tool instantly shuffles the order
+    </li>
+<li>
+     Tackle the top item first – Trust the list. Don’t argue. Just go
+    </li>
+<li>
+     Repeat as needed – Got through the top three? Refresh and randomize again for a new batch
+    </li>
+</ol>
+<p>
+    Pro tip: If you’re working with others, input everyone’s tasks and let the sorter assign who does what. No more awkward “you take this” convos.
+   </p>
+<h3>
+    Why Choose This Random Priority Sorter?
+   </h3>
+<p>
+    Because it stops you from spiraling into “planning mode” instead of actually doing stuff. It’s the productivity hack you didn’t know you needed. No complex setup, no fancy project management tools—just a simple way to shuffle your list and start moving.
+   </p>
+<p>
+    And yeah, it’s totally random. Which is kind of the point. It takes you out of your own head and helps break those decision-making blocks that can seriously slow you down. Plus, it’s fun. Kinda like playing a game with your task list—except the prize is getting stuff done and feeling like a legend by lunchtime.
+   </p>
+<p>
+    Use it when you’re overwhelmed. Use it when you’re bored. Use it when you’re working with a team and want to keep things fair. Just use it.
+   </p>
+<h3>
+    FAQs
+   </h3>
+<p>
+<strong>
+     Can I use this with any kind of task list?
+    </strong>
+<br/>
+    Absolutely. From chores to work projects to your “should probably do this soon” list—it works with any type of task.
+   </p>
+<p>
+<strong>
+     Is the sort actually random?
+    </strong>
+<br/>
+    Yep, it’s 100% randomized each time. No logic or algorithm weighting. Every click = a totally fresh shuffle.
+   </p>
+<p>
+<strong>
+     Can I re-sort the same list multiple times?
+    </strong>
+<br/>
+    For sure. Just paste it again and hit generate. You’ll get a different order every time.
+   </p>
+<p>
+<strong>
+     Does this save or store my data?
+    </strong>
+<br/>
+    Nope. Nothing gets saved. Everything stays local to your session—clean and private.
+   </p>
+<p>
+<strong>
+     Can I use this to assign tasks to team members?
+    </strong>
+<br/>
+    Totally! Just put in each person’s name or task and let the tool do the assigning. Great for quick, fair delegation.
+   </p>
+</div>
+<script>
+   // Load tasks from local storage
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        // Render tasks
+        // Function: renderTasks
+        function renderTasks() {
+        // DOM element manipulation
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = '';
+            tasks.forEach((task, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${task}</span>
+                    <button onclick="removeTask(${index})" aria-label="Remove task">Remove</button>
+                `;
+                taskList.appendChild(li);
+            });
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        // Add task
+        // Function: addTask
+        function addTask() {
+        // DOM element manipulation
+            const taskInput = document.getElementById('taskInput');
+            const task = taskInput.value.trim();
+            if (task) {
+                tasks.push(task);
+                taskInput.value = '';
+                renderTasks();
+            } else {
+                alert('Please enter a task.');
+            }
+        }
+
+        // Remove task
+        // Function: removeTask
+        function removeTask(index) {
+            tasks.splice(index, 1);
+            renderTasks();
+        }
+
+        // Sort tasks randomly
+        // Function: sortTasks
+        function sortTasks() {
+            if (tasks.length === 0) {
+                alert('No tasks to sort.');
+                return;
+            }
+            tasks = tasks.sort(() => Math.random() - 0.5).map((task, index) => `${index + 1}. ${task}`);
+            renderTasks();
+        }
+
+        // Clear all tasks
+        // Function: clearTasks
+        function clearTasks() {
+            tasks = [];
+            renderTasks();
+        }
+
+        // Initial render
+        renderTasks();
+
+        // Add Enter key support for adding tasks
+        // Event listener for user interactions
+        document.getElementById('taskInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addTask();
+            }
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

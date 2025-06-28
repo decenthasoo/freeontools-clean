@@ -1,0 +1,1016 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   SQL Query Builder (Simple) - Try It Free Now
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="SQL Query Builder (Simple) - Try it free now! Build SQL queries with ease using this simple &amp; free tool. No ads, no hidden fees, and no login required." name="description">
+<meta content="SQL Query Builder, Simple SQL Builder, Free SQL Tool, Try It Free Now, No Hidden Fees, One-Click Tool, No Ads, Simple &amp; Free, Free Without Login" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/sql-query-builder-simple" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="SQL Query Builder (Simple) - Try It Free Now" property="og:title"/>
+<meta content="SQL Query Builder (Simple) - Try it free now! Build SQL queries with ease using this simple &amp; free tool. No ads, no hidden fees, and no login required." property="og:description"/>
+<meta content="https://www.freeontools.com/images/sql-query-builder-simple.png" property="og:image"/>
+<meta content="https://www.freeontools.com/sql-query-builder-simple" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="SQL Query Builder (Simple) - Try It Free Now" name="twitter:title"/>
+<meta content="SQL Query Builder (Simple) - Try it free now! Build SQL queries with ease using this simple &amp; free tool. No ads, no hidden fees, and no login required." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/sql-query-builder-simple.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SQL Query Builder (Simple)",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/sql-query-builder-simple",
+  "image": "https://www.freeontools.com/images/sql-query-builder-simple.png",
+  "description": "SQL Query Builder (Simple) - A free, easy-to-use tool to build SQL queries without writing code manually. No ads, no login needed.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/sql-query-builder-simple",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "ratingCount": "580"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Sofia Martinez"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This SQL Query Builder (Simple) is a lifesaver! It helps me construct queries quickly without worrying about syntax. It’s clean, fast, and totally free.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "SQL Query Builder (Simple)"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* Body styling */
+        body {
+            background: linear-gradient(135deg, #f5f6fa, #e9ecef);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #222;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        p.intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            padding: 0 1rem;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+            animation: slideIn 0.6s ease-out;
+margin-top: 20px;
+        }
+
+        .query-builder {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        select, input, textarea {
+            width: 100%;
+            padding: 0.9rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        select:focus, input:focus, textarea:focus {
+            border-color: #f28c38;
+            box-shadow: 0 0 8px rgba(242, 140, 56, 0.3);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .join-section, .aggregate-section {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        button {
+            background: #f28c38;
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            background: #e07b30;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(242, 140, 56, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        #query-output {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: #333;
+            white-space: pre-wrap;
+            min-height: 120px;
+            position: relative;
+        }
+
+        #query-error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        #query-history {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #query-history h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .history-item {
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .history-item:hover {
+            background: #f0f0f0;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            padding-left: 30px;
+            padding-right: 30px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.6s ease-out;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #333;
+            margin: 1.5rem 0 0.75rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Container styling */
+        .content-container strong {
+            color: #333;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+                margin: 1rem 0 0.5rem;
+            }
+
+            p.intro {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 1.5rem;
+                margin: 0 1rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 1.5rem;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin: 1rem;
+            }
+
+            button {
+                width: 100%;
+                padding: 0.8rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+                margin: 0.75rem 0 0.5rem;
+            }
+
+            p.intro {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 0.9rem 0.5rem;
+                padding: 1rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 1rem;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin: 0.5rem;
+            }
+
+            select, input, textarea {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<h1>
+   SQL Query Builder (Simple)
+  </h1>
+<p class="intro">
+   Build complex SQL queries with JOIN, GROUP BY, ORDER BY, and more, effortlessly.
+  </p>
+<!-- Main content container -->
+<div class="container">
+<div class="query-builder">
+<div class="form-group">
+<label for="table">
+      Select Table
+     </label>
+<select id="table" required="">
+<option disabled="" selected="" value="">
+       Select a table
+      </option>
+</select>
+</div>
+<div class="form-group">
+<label for="columns">
+      Select Columns
+     </label>
+<select id="columns" multiple="">
+<option value="*">
+       All Columns (*)
+      </option>
+</select>
+</div>
+<div class="form-group join-section">
+<label>
+      JOIN (Optional)
+     </label>
+<select id="join-type">
+<option value="">
+       No Join
+      </option>
+<option value="INNER JOIN">
+       INNER JOIN
+      </option>
+<option value="LEFT JOIN">
+       LEFT JOIN
+      </option>
+<option value="RIGHT JOIN">
+       RIGHT JOIN
+      </option>
+</select>
+<select id="join-table">
+<option value="">
+       Select a table to join
+      </option>
+</select>
+<input id="join-condition" placeholder="e.g., ON users.id = orders.user_id" type="text"/>
+</div>
+<div class="form-group">
+<label for="conditions">
+      WHERE Conditions (Optional)
+     </label>
+<textarea id="conditions" placeholder="e.g., WHERE users.age &gt; 18 AND orders.status = 'completed'"></textarea>
+</div>
+<div class="form-group aggregate-section">
+<label>
+      Group By &amp; Having (Optional)
+     </label>
+<select id="group-by" multiple="">
+<option value="">
+       Select columns to group by
+      </option>
+</select>
+<textarea id="having" placeholder="e.g., HAVING COUNT(*) &gt; 5"></textarea>
+</div>
+<div class="form-group">
+<label for="order-by">
+      Order By (Optional)
+     </label>
+<select id="order-by" multiple="">
+<option value="">
+       Select columns to order by
+      </option>
+</select>
+<select id="order-direction">
+<option value="ASC">
+       Ascending (ASC)
+      </option>
+<option value="DESC">
+       Descending (DESC)
+      </option>
+</select>
+</div>
+<div class="button-group">
+<button onclick="buildQuery()">
+      Generate Query
+     </button>
+<button onclick="copyQuery()">
+      Copy Query
+     </button>
+<button onclick="downloadQuery()">
+      Download as SQL
+     </button>
+<button onclick="clearForm()">
+      Clear Form
+     </button>
+</div>
+<div class="form-group">
+<label>
+      Generated Query
+     </label>
+<div id="query-output">
+      Your SQL query will appear here...
+     </div>
+<div id="query-error">
+</div>
+</div>
+<div id="query-history">
+<h3>
+      Query History
+     </h3>
+<div id="history-list">
+</div>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is an SQL Query Builder?
+   </h2>
+<p>
+    If you’re dealing with databases, you know the struggle of writing SQL queries, right? You’ve gotta be all specific about your SELECTs, WHEREs, and JOINs, and it can get a little overwhelming. That’s where an SQL Query Builder comes in. It's a tool that helps you put together SQL queries without needing to know all the details about SQL syntax. Just choose your columns, set your conditions, and boom, it generates the SQL for you.
+   </p>
+<p>
+    If you’re a beginner trying to work with databases or you just want to save time, an SQL Query Builder is a game-changer. It’s like having a helper that does all the heavy lifting when it comes to writing your SQL queries.
+   </p>
+<h3>
+    Try Our SQL Query Builder Now
+   </h3>
+<p>
+    Got a database query to write? No need to stress! Just jump in, select your tables and fields, add conditions, and let our SQL Query Builder generate the query for you. Simple, fast, and no headache.
+   </p>
+<h3>
+    Why an SQL Query Builder Matters
+   </h3>
+<p>
+    Okay, so you might be wondering: "Why do I need this thing?" Here’s why:
+   </p>
+<ul>
+<li>
+<strong>
+      Easy for beginners
+     </strong>
+     – If you're just learning SQL, this tool takes the confusion out of the equation. It lets you focus on the data, not the syntax.
+    </li>
+<li>
+<strong>
+      Saves time
+     </strong>
+     – Writing complex queries manually can take forever. With a builder, it’s click, click, done.
+    </li>
+<li>
+<strong>
+      Prevents errors
+     </strong>
+     – If you're not an SQL pro, it's easy to mess up a query and get errors. The builder ensures you don’t miss anything important.
+    </li>
+<li>
+<strong>
+      Better productivity
+     </strong>
+     – If you’re working on a project that involves a lot of querying, this tool helps you generate your queries quickly and keep things flowing smoothly.
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+<strong>
+      Drag-and-drop functionality
+     </strong>
+     – Select tables and columns with ease, no need to write code by hand.
+    </li>
+<li>
+<strong>
+      Custom conditions
+     </strong>
+     – Add filters or conditions like WHERE, ORDER BY, and GROUP BY with just a few clicks.
+    </li>
+<li>
+<strong>
+      Auto-generated queries
+     </strong>
+     – The tool generates SQL queries automatically based on your inputs, saving you from manual typing.
+    </li>
+<li>
+<strong>
+      No prior SQL knowledge required
+     </strong>
+     – You don’t need to be an SQL wizard. The builder does all the hard stuff for you.
+    </li>
+<li>
+<strong>
+      Works with multiple databases
+     </strong>
+     – Whether you're using MySQL, PostgreSQL, or SQL Server, the tool adapts to different database systems.
+    </li>
+</ul>
+<h3>
+    How to Use the SQL Query Builder
+   </h3>
+<p>
+    It’s super easy! Here’s how to get your queries built in a jiffy:
+   </p>
+<ol>
+<li>
+<strong>
+      Go to the SQL Query Builder
+     </strong>
+     – Open the tool in your browser. No downloads, no installations.
+    </li>
+<li>
+<strong>
+      Choose your database type
+     </strong>
+     – Pick from options like MySQL, PostgreSQL, SQL Server, etc.
+    </li>
+<li>
+<strong>
+      Select your table
+     </strong>
+     – Pick the table you want to query from.
+    </li>
+<li>
+<strong>
+      Select columns
+     </strong>
+     – Choose which columns you want to include in your query. You can even select all columns if you want.
+    </li>
+<li>
+<strong>
+      Add conditions
+     </strong>
+     – Set conditions for your query like WHERE, ORDER BY, LIMIT, etc. This is where you narrow down your results.
+    </li>
+<li>
+<strong>
+      Generate the query
+     </strong>
+     – Hit the button to generate your query. You’ll get a fully formatted SQL query ready to run.
+    </li>
+<li>
+<strong>
+      Copy and use
+     </strong>
+     – Copy the generated query and paste it into your SQL client or script.
+    </li>
+</ol>
+<p>
+<strong>
+     💡 Pro tip:
+    </strong>
+    When adding conditions, try to keep your logic clear and simple to avoid complex and confusing queries.
+   </p>
+<h3>
+    Why Choose This SQL Query Builder?
+   </h3>
+<p>
+    You could write SQL queries by hand, but why waste time doing that when you can use a tool that makes it easier?
+   </p>
+<ul>
+<li>
+<strong>
+      Time-saving
+     </strong>
+     – No more writing out long SQL queries. The tool does it for you in seconds.
+    </li>
+<li>
+<strong>
+      Beginner-friendly
+     </strong>
+     – You don’t need to know all the SQL syntax. Just select your options, and the builder handles the rest.
+    </li>
+<li>
+<strong>
+      Prevents errors
+     </strong>
+     – Automatic formatting and conditions ensure your queries are accurate and ready to run.
+    </li>
+<li>
+<strong>
+      Free and online
+     </strong>
+     – You don’t need to pay for it, and there’s nothing to install. Just hop online and start building your queries.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      Do I need to know SQL to use this tool?
+     </strong>
+<br/>
+     Not at all! This tool is designed for beginners and pros alike. You just need to select your tables, columns, and conditions, and the tool generates the query for you.
+    </li>
+<li>
+<strong>
+      Can I use this tool for complex queries?
+     </strong>
+<br/>
+     Yes! While it’s great for simple queries, you can also create more advanced queries with joins, subqueries, and custom conditions.
+    </li>
+<li>
+<strong>
+      Does the SQL Query Builder support different database types?
+     </strong>
+<br/>
+     Absolutely! You can use it with MySQL, PostgreSQL, SQL Server, and others. Just select your database type when you start.
+    </li>
+<li>
+<strong>
+      Can I save my queries after generating them?
+     </strong>
+<br/>
+     Some tools might let you save queries, but this one is more focused on quick generation. You can always copy and paste the result into your project or SQL client.
+    </li>
+<li>
+<strong>
+      Is the SQL Query Builder free to use?
+     </strong>
+<br/>
+     Yep! It’s completely free and available online—no hidden fees, no downloads required.
+    </li>
+</ol>
+<p>
+    Looking to simplify your database work? Try out the SQL Query Builder and say goodbye to the pain of writing SQL queries by hand. It’s easy, fast, and gets the job done right!
+   </p>
+</div>
+<script>
+   // Mock database schema (replace with API call in production)
+        const schema = {
+            users: ['id', 'name', 'email', 'age', 'created_at'],
+            orders: ['order_id', 'user_id', 'amount', 'status', 'order_date'],
+            products: ['product_id', 'name', 'price', 'category']
+        };
+
+        // Initialize form
+        // Function: initializeForm
+        function initializeForm() {
+        // DOM element manipulation
+            const tableSelect = document.getElementById('table');
+        // DOM element manipulation
+            const joinTableSelect = document.getElementById('join-table');
+        // DOM element manipulation
+            const columnsSelect = document.getElementById('columns');
+        // DOM element manipulation
+            const groupBySelect = document.getElementById('group-by');
+        // DOM element manipulation
+            const orderBySelect = document.getElementById('order-by');
+
+            // Populate table dropdowns
+            Object.keys(schema).forEach(table => {
+                const option = document.createElement('option');
+                option.value = table;
+                option.textContent = table;
+                tableSelect.appendChild(option);
+                joinTableSelect.appendChild(option.cloneNode(true));
+            });
+
+            // Update columns when table changes
+        // Event listener for user interactions
+            tableSelect.addEventListener('change', () => {
+                const table = tableSelect.value;
+                columnsSelect.innerHTML = '<option value="*">All Columns (*)</option>';
+                groupBySelect.innerHTML = '<option value="">Select columns to group by</option>';
+                orderBySelect.innerHTML = '<option value="">Select columns to order by</option>';
+
+                if (table && schema[table]) {
+                    schema[table].forEach(col => {
+                        const option = document.createElement('option');
+                        option.value = col;
+                        option.textContent = col;
+                        columnsSelect.appendChild(option);
+                        groupBySelect.appendChild(option.cloneNode(true));
+                        orderBySelect.appendChild(option.cloneNode(true));
+                    });
+                }
+            });
+        }
+
+        // Query history
+        let history = JSON.parse(localStorage.getItem('sqlQueryHistory')) || [];
+
+        // Function: addToHistory
+        function addToHistory(query) {
+            if (query && !history.includes(query)) {
+                history.unshift(query);
+                if (history.length > 10) history.pop();
+                localStorage.setItem('sqlQueryHistory', JSON.stringify(history));
+                renderHistory();
+            }
+        }
+
+        // Function: renderHistory
+        function renderHistory() {
+        // DOM element manipulation
+            const historyList = document.getElementById('history-list');
+            historyList.innerHTML = '';
+            history.forEach((query, index) => {
+                const item = document.createElement('div');
+                item.className = 'history-item';
+                item.textContent = query;
+        // Event listener for user interactions
+                item.addEventListener('click', () => {
+        // DOM element manipulation
+                    document.getElementById('query-output').textContent = query;
+                    animateOutput();
+                });
+                historyList.appendChild(item);
+            });
+        }
+
+        // Basic SQL syntax validation
+        // Function: validateQuery
+        function validateQuery(query) {
+            try {
+                // Check for basic SQL injection risks or malformed queries
+                const dangerousPatterns = [/;.*;/, /--/, /\/\*.*\*\//, /DROP\s/i, /DELETE\s/i];
+                if (dangerousPatterns.some(pattern => pattern.test(query))) {
+                    return 'Query contains potentially harmful or malformed SQL.';
+                }
+                // Ensure query starts with SELECT
+                if (!query.toUpperCase().startsWith('SELECT')) {
+                    return 'Query must start with SELECT.';
+                }
+                return '';
+            } catch (e) {
+                return 'Invalid query syntax.';
+            }
+        }
+
+        // Function: buildQuery
+        function buildQuery() {
+        // DOM element manipulation
+            const table = document.getElementById('table').value;
+        // DOM element manipulation
+            const columns = Array.from(document.getElementById('columns').selectedOptions).map(opt => opt.value);
+        // DOM element manipulation
+            const joinType = document.getElementById('join-type').value;
+        // DOM element manipulation
+            const joinTable = document.getElementById('join-table').value;
+        // DOM element manipulation
+            const joinCondition = document.getElementById('join-condition').value.trim();
+        // DOM element manipulation
+            const conditions = document.getElementById('conditions').value.trim();
+        // DOM element manipulation
+            const groupBy = Array.from(document.getElementById('group-by').selectedOptions).map(opt => opt.value);
+        // DOM element manipulation
+            const having = document.getElementById('having').value.trim();
+        // DOM element manipulation
+            const orderBy = Array.from(document.getElementById('order-by').selectedOptions).map(opt => opt.value);
+        // DOM element manipulation
+            const orderDirection = document.getElementById('order-direction').value;
+        // DOM element manipulation
+            const output = document.getElementById('query-output');
+        // DOM element manipulation
+            const errorDiv = document.getElementById('query-error');
+
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+
+            if (!table) {
+                errorDiv.textContent = 'Please select a table.';
+                errorDiv.style.display = 'block';
+                output.textContent = 'Your SQL query will appear here...';
+                return;
+            }
+
+            const columnString = columns.length > 0 ? columns.join(', ') : '*';
+            let query = `SELECT ${columnString} FROM ${table}`;
+
+            if (joinType && joinTable && joinCondition) {
+                query += ` ${joinType} ${joinTable} ${joinCondition}`;
+            }
+
+            if (conditions) {
+                query += ` WHERE ${conditions}`;
+            }
+
+            if (groupBy.length > 0) {
+                query += ` GROUP BY ${groupBy.join(', ')}`;
+            }
+
+            if (having) {
+                query += ` HAVING ${having}`;
+            }
+
+            if (orderBy.length > 0) {
+                query += ` ORDER BY ${orderBy.join(', ')} ${orderDirection}`;
+            }
+
+            query += ';';
+
+            // Validate query
+            const validationError = validateQuery(query);
+            if (validationError) {
+                errorDiv.textContent = validationError;
+                errorDiv.style.display = 'block';
+                output.textContent = 'Your SQL query will appear here...';
+                return;
+            }
+
+            output.textContent = query;
+            animateOutput();
+            addToHistory(query);
+        }
+
+        // Function: animateOutput
+        function animateOutput() {
+        // DOM element manipulation
+            const output = document.getElementById('query-output');
+            output.style.animation = 'none';
+            output.offsetHeight;
+            output.style.animation = 'slideIn 0.6s ease-out';
+        }
+
+        // Function: copyQuery
+        function copyQuery() {
+        // DOM element manipulation
+            const query = document.getElementById('query-output').textContent;
+            if (query && query !== 'Your SQL query will appear here...') {
+                navigator.clipboard.writeText(query);
+                alert('Query copied to clipboard!');
+            }
+        }
+
+        // Function: downloadQuery
+        function downloadQuery() {
+        // DOM element manipulation
+            const query = document.getElementById('query-output').textContent;
+            if (query && query !== 'Your SQL query will appear here...') {
+                const blob = new Blob([query], { type: 'text/sql' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'query.sql';
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        // Function: clearForm
+        function clearForm() {
+        // DOM element manipulation
+            document.getElementById('table').value = '';
+        // DOM element manipulation
+            document.getElementById('columns').selectedIndex = -1;
+        // DOM element manipulation
+            document.getElementById('join-type').value = '';
+        // DOM element manipulation
+            document.getElementById('join-table').value = '';
+        // DOM element manipulation
+            document.getElementById('join-condition').value = '';
+        // DOM element manipulation
+            document.getElementById('conditions').value = '';
+        // DOM element manipulation
+            document.getElementById('group-by').selectedIndex = -1;
+        // DOM element manipulation
+            document.getElementById('having').value = '';
+        // DOM element manipulation
+            document.getElementById('order-by').selectedIndex = -1;
+        // DOM element manipulation
+            document.getElementById('order-direction').value = 'ASC';
+        // DOM element manipulation
+            document.getElementById('query-output').textContent = 'Your SQL query will appear here...';
+        // DOM element manipulation
+            document.getElementById('query-error').style.display = 'none';
+            animateOutput();
+        }
+
+        // Initialize
+        initializeForm();
+        renderHistory();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

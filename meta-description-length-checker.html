@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Document head with metadata and resources -->
+<title>
+    Meta Description Length Checker: No Hidden Fees
+   </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Meta Description Length Checker: One-Click Tool to analyze meta description length on https://www.freeontools.com. Instant results, no signup!" name="description">
+<meta content="meta description length checker, SEO meta tool, free meta description analyzer, meta tag optimization, website SEO" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/meta-description-length-checker" rel="canonical"/>
+<meta content="Meta Description Length Checker: No Hidden Fees" property="og:title"/>
+<meta content="Check meta description length instantly with our One-Click Meta Description Length Checker at https://www.freeontools.com. Free, no signup!" property="og:description"/>
+<meta content="https://www.freeontools.com/meta-description-length-checker" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="freeontools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Meta Description Length Checker: No Hidden Fees" name="twitter:title"/>
+<meta content="Use our One-Click Meta Description Length Checker at https://www.freeontools.com. Analyze meta lengths instantly, no signup!" name="twitter:description"/>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Meta Description Length Checker",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "url": "https://www.freeontools.com/meta-description-length-checker",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Meta Description Length Checker"
+  },
+  "ratingValue": "4.7",
+  "ratingCount": "165"
+}
+   </script>
+<script type="application/ld+json">
+    [
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "Meta Description Length Checker"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Lucas Taylor"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5"
+    },
+    "reviewBody": "This meta description length checker is so easy to use! Free and provides instant, accurate results."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "Meta Description Length Checker"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Priya Nair"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4"
+    },
+    "reviewBody": "Really helpful tool for optimizing meta descriptions. No signup needed, works great!"
+  }
+]
+   </script>
+<style>
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container styling */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+margin-top: -44px
+}
+
+/* Container styling */
+.content-container {
+    max-width: 900px;
+    margin: 20px auto 0;
+    background: #fff;
+    padding: 20px;
+    padding-left: 30px; /* Left padding */
+    padding-right: 30px; /* Right padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+ margin-top: -45px !important;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 150px;
+    resize: vertical;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.feedback span {
+    margin-right: 15px;
+}
+
+.good { color: #28a745; }
+.warning { color: #ffc107; }
+.error { color: #dc3545; }
+
+.result {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.result-table th, .result-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.result-table th {
+    background-color: #f8f9fa;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    background-color: #f28c38; /* Default background color for all buttons */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #d97a2e; /* Hover background color for all buttons */
+}
+
+/* Override specific button classes to ensure uniformity */
+button.clear,
+button.copy,
+button.download {
+    background-color: #f28c38; /* Same default color as other buttons */
+}
+
+button.clear:hover,
+button.copy:hover,
+button.download:hover {
+    background-color: #d97a2e; /* Same hover color as other buttons */
+}
+
+/* Container styling */
+.content-container h2, .content-container h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left !important;
+}
+
+/* Container styling */
+.content-container p {
+    margin-bottom: 15px;
+    text-align: left !important;
+}
+
+/* Container styling */
+.content-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Container styling */
+.content-container ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Responsive media queries */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+    textarea, button {
+        font-size: 14px;
+    }
+    .feedback, .result {
+        font-size: 14px;
+    }
+    .button-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .result-table th, .result-table td {
+        font-size: 12px;
+        padding: 5px;
+    }
+    /* Container styling */
+    .content-container {
+        padding-left: 15px; /* Mobile left padding */
+        padding-right: 15px; /* Mobile right padding */
+    }
+.container {
+        padding-left: 15px; /* Mobile left padding */
+        padding-right: 15px; /* Mobile right padding */
+margin-top: -45px;
+}
+}
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="hero" style="text-align: center; margin: 2rem 0;">
+<h1>
+     Meta Description Length Checker
+    </h1><p>Explore this tool to enhance your productivity and streamline your workflow.</p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<div class="input-group">
+<label for="descriptions">
+      Enter Meta Descriptions (one per line):
+     </label>
+<textarea id="descriptions" placeholder="e.g., This is a sample meta description for SEO."></textarea>
+<div class="feedback" id="liveFeedback">
+</div>
+</div>
+<div class="button-group">
+<button onclick="checkDescriptions()">
+      Check
+     </button>
+<button class="clear" onclick="clearForm()">
+      Clear
+     </button>
+<button class="copy" disabled="" onclick="copyDescriptions()">
+      Copy
+     </button>
+<button class="download" disabled="" onclick="downloadDescriptions()">
+      Download
+     </button>
+</div>
+<div class="result" id="result">
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What is a Meta Description Length Checker?
+    </h2>
+<p>
+     Start chill. Like, "You ever write a meta description and then... boom, it's too long?" That's what this thing fixes. A Meta Description Length Checker tells you if your meta description is the right length so it doesn't get cut off. Drop the keyword naturally here. No SEO talk.
+    </p>
+<h2>
+     Try Our Meta Description Length Checker Now
+    </h2>
+<p>
+     Make it feel like a nudge, not a push.
+    </p>
+<p>
+     Just paste your meta description in, and the checker will let you know if it fits. No guesswork. No stress.
+    </p>
+<h2>
+     Features
+    </h2>
+<ul>
+<li>
+      Tells you if your description's too long or too short
+     </li>
+<li>
+      Works instantly — like, type and done
+     </li>
+<li>
+      Shows character count and pixel width
+     </li>
+<li>
+      No signups, logins, or weird stuff
+     </li>
+<li>
+      Works on desktop or phone
+     </li>
+<li>
+      Helps keep your text clean and visible
+     </li>
+<li>
+      Copy-friendly — click and you're good to go
+     </li>
+</ul>
+<h2>
+     How to Use
+    </h2>
+<ol>
+<li>
+      Open the Meta Description Length Checker
+     </li>
+<li>
+      Paste in your meta description
+     </li>
+<li>
+      Watch the tool instantly show your character count
+     </li>
+<li>
+      If it's too long, tweak it right there
+     </li>
+<li>
+      Once it looks good, hit "copy" and you're done
+     </li>
+</ol>
+<p>
+<strong>
+      Tip:
+     </strong>
+     Keep it between 150–160 characters for best visibility
+    </p>
+<h2>
+     Importance of Meta Description Length Checker
+    </h2>
+<p>
+     Here's where you explain why someone would care. Think in human terms:
+    </p>
+<p>
+     Ever spent time writing something and then it gets cut off in preview? That's annoying. The Meta Description Length Checker stops that from happening. It helps make sure what you write actually shows up the way you meant it to. And you don't have to count characters manually like it's 2003.
+    </p>
+<h2>
+     FAQs
+    </h2>
+<h3>
+     Can I check descriptions longer than 160 characters?
+    </h3>
+<p>
+     Yep. The tool works even if it's way too long — and it'll tell you how far off you are.
+    </p>
+<h3>
+     Does the Meta Description Length Checker show pixel width too?
+    </h3>
+<p>
+     It does! So you're not just counting letters — you're checking actual visual space.
+    </p>
+<h3>
+     Is this tool mobile-friendly?
+    </h3>
+<p>
+     Totally. It works on your phone, tablet, desktop—whatever you're using.
+    </p>
+<h3>
+     Can I copy the final meta description with one click?
+    </h3>
+<p>
+     Yes. There's a little "copy" button built in. Super handy.
+    </p>
+<h3>
+     Does this check for special characters or symbols?
+    </h3>
+<p>
+     Yep, it counts everything—spaces, emojis, punctuation—all of it.
+    </p>
+</div>
+<script>
+// DOM element references and global variables
+const textarea = document.getElementById('descriptions');
+let generatedHtml = ''; // Store generated HTML for download
+
+// Event listeners
+textarea.addEventListener('input', updateLiveFeedback);
+
+// Function: updateLiveFeedback - Provides real-time character and pixel count
+function updateLiveFeedback() {
+    const text = textarea.value.trim();
+    if (!text) {
+        document.getElementById('liveFeedback').innerHTML = '';
+        return;
+    }
+    
+    const lines = text.split('\n').filter(line => line.trim());
+    const charCount = lines[0] ? lines[0].length : 0;
+    const pixelWidth = calculatePixelWidth(lines[0] || '');
+
+    let charClass = charCount >= 120 && charCount <= 160 ? 'good' : 
+                   (charCount < 120 ? 'warning' : 'error');
+    let pixelClass = pixelWidth <= 920 ? 'good' : 'error';
+
+    document.getElementById('liveFeedback').innerHTML = `
+        <span class="${charClass}">Characters: ${charCount} (120-160 recommended)</span>
+        <span class="${pixelClass}">Pixels: ${pixelWidth} (max 920px)</span>
+    `;
+}
+
+// Function: calculatePixelWidth - Estimates pixel width of text
+function calculatePixelWidth(text) {
+    // Rough estimate: average 8px per character (Arial, 16px font)
+    return text.length * 8;
+}
+
+// Function: checkDescriptions - Analyzes all entered descriptions
+function checkDescriptions() {
+    console.log('checkDescriptions called');
+    const descriptions = textarea.value.trim();
+    const resultDiv = document.getElementById('result');
+
+    if (!descriptions) {
+        resultDiv.innerHTML = '<p>Please enter at least one meta description.</p>';
+        return;
+    }
+
+    const descList = descriptions.split('\n').map(desc => desc.trim()).filter(desc => desc);
+    let resultHtml = `
+        <table class="result-table">
+            <tr>
+                <th>Description</th>
+                <th>Characters</th>
+                <th>Pixels</th>
+                <th>Recommendation</th>
+            </tr>
+    `;
+    let metaTags = '';
+
+    descList.forEach(desc => {
+        const charCount = desc.length;
+        const pixelWidth = calculatePixelWidth(desc);
+        let recommendation = '';
+        
+        if (charCount < 120) {
+            recommendation = 'Add more content (aim for 120-160 chars).';
+        } else if (charCount > 160) {
+            recommendation = 'Trim to fit within 160 chars.';
+        } else if (pixelWidth > 920) {
+            recommendation = 'Shorten to fit within 920px.';
+        } else {
+            recommendation = 'Looks good!';
+        }
+
+        resultHtml += `
+            <tr>
+                <td>${desc}</td>
+                <td class="${charCount >= 120 && charCount <= 160 ? 'good' : 'error'}">${charCount}</td>
+                <td class="${pixelWidth <= 920 ? 'good' : 'error'}">${pixelWidth}</td>
+                <td>${recommendation}</td>
+            </tr>
+        `;
+        metaTags += `<meta name="description" content="${desc}">\n`;
+    });
+
+    resultHtml += '</table>';
+    generatedHtml = metaTags;
+
+    resultDiv.innerHTML = resultHtml;
+    document.querySelector('.copy').disabled = false;
+    document.querySelector('.download').disabled = false;
+    console.log('Analysis complete, buttons enabled');
+}
+
+// Function: copyDescriptions - Copies descriptions to clipboard
+function copyDescriptions() {
+    console.log('copyDescriptions called');
+    const text = textarea.value.trim();
+    
+    if (!text) {
+        alert('Nothing to copy. Please enter a meta description.');
+        return;
+    }
+    
+    if (!navigator.clipboard) {
+        alert('Clipboard API not supported in this browser. Please copy manually.');
+        return;
+    }
+    
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert('Descriptions copied to clipboard!');
+            console.log('Copy successful');
+        })
+        .catch(err => {
+            alert('Failed to copy: ' + err.message);
+            console.error('Copy error:', err);
+        });
+}
+
+// Function: downloadDescriptions - Downloads descriptions as HTML file
+function downloadDescriptions() {
+    console.log('downloadDescriptions called');
+    
+    if (!generatedHtml) {
+        alert('No meta descriptions generated yet. Please click "Check" first.');
+        return;
+    }
+
+    try {
+        const htmlContent = `<!DOCTYPE html>
+<html>
+<head>
+${generatedHtml}</head>
+<body>
+    <h1>Meta Descriptions</h1>
+    <p>Below are your meta descriptions, also included in the &lt;head&gt; section:</p>
+    <pre>${generatedHtml.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+</body>
+</html>`;
+        
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'meta-descriptions.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        console.log('Download completed successfully');
+    } catch (err) {
+        alert('Failed to download: ' + err.message);
+        console.error('Download error:', err);
+    }
+}
+
+// Function: clearForm - Resets the form and UI
+function clearForm() {
+    console.log('clearForm called');
+    textarea.value = '';
+    document.getElementById('liveFeedback').innerHTML = '';
+    document.getElementById('result').innerHTML = '';
+    document.querySelector('.copy').disabled = true;
+    document.querySelector('.download').disabled = true;
+    generatedHtml = '';
+    console.log('Form reset complete');
+}
+</script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

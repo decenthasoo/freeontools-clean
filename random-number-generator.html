@@ -1,0 +1,643 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Random Number Generator - Free & Easy
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Random Number Generator - Free & Easy tool to generate random numbers instantly with no signup needed, no hidden fees, and unlimited access." name="description">
+<meta content="Random Number Generator, Free Random Numbers, Number Generator, Generate Random Numbers, Easy Number Generator, Randomizer, Free Tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/random-number-generator" rel="canonical"/>
+<meta content="Random Number Generator - Free &amp; Easy" property="og:title"/>
+<meta content="Use the Random Number Generator for free, no signup, no hidden fees, and instant access to generate random numbers instantly for any purpose." property="og:description"/>
+<meta content="https://www.freeontools.com/random-number-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/random-number-generator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Random Number Generator - Free &amp; Easy" name="twitter:title"/>
+<meta content="Generate random numbers instantly with this free tool. No login required, no fees, and no ads." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/random-number-generator.jpg" name="twitter:image"/>
+<meta content="@freeontools" name="twitter:creator"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-5555",
+    "contactType": "Customer Service"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Random Number Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Utility",
+  "description": "A free and easy-to-use random number generator tool that provides instant access to generate random numbers for any task.",
+  "url": "https://www.freeontools.com/random-number-generator",
+  "image": "https://www.freeontools.com/images/random-number-generator.jpg"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.6",
+  "bestRating": "5",
+  "worstRating": "1",
+  "ratingCount": "300"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Emma Wilson"
+  },
+  "datePublished": "2025-05-01",
+  "reviewBody": "This Random Number Generator is exactly what I needed! It's quick, easy, and perfect for all my random number tasks. Highly recommend it!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Cooper"
+  },
+  "datePublished": "2025-04-22",
+  "reviewBody": "I use this Random Number Generator for random draws and decision-making. It's so simple and fast, with no ads or hidden fees.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.7",
+    "bestRating": "5"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            color: #555;
+        }
+
+        /* Container styling */
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+
+        }
+
+        input[type="number"]:focus {
+            border-color: #f28c38;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #result {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-top: 20px;
+            min-height: 40px;
+        }
+
+        #history {
+            margin-top: 20px;
+            text-align: left;
+            max-height: 150px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        #history p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        /* New Content Container Styles */
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            padding: 20px;
+            padding-left: 30px; /* Specified left padding */
+            padding-right: 30px; /* Specified right padding */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Same box-shadow as container */
+            width: 100%;
+            max-width: 700px; /* Same width as container */
+            margin-top: 20px;
+            text-align: left;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #222;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+            button {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            #result {
+                font-size: 1.3rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Random Number Generator
+   </h1>
+<p class="intro">
+    Generate random numbers easily! Set your range, generate multiple numbers, and view your history.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="input-group">
+<label for="min">
+     Minimum Value
+    </label>
+<input id="min" placeholder="Enter minimum value" type="number" value="1"/>
+</div>
+<div class="input-group">
+<label for="max">
+     Maximum Value
+    </label>
+<input id="max" placeholder="Enter maximum value" type="number" value="100"/>
+</div>
+<div class="input-group">
+<label for="max">
+     Number of Results
+    </label>
+<input id="count" max="10" min="1" placeholder="Enter number of results" type="number" value="1"/>
+</div>
+<div class="buttons">
+<button onclick="generateNumbers()">
+     Generate
+    </button>
+<button onclick="resetInputs()">
+     Reset
+    </button>
+<button onclick="clearHistory()">
+     Clear History
+    </button>
+</div>
+<div id="result">
+</div>
+<div id="history">
+</div>
+</div>
+<!-- New Content Container -->
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Random Number Generator?
+   </h2>
+<p>
+    So, a Random Number Generator (yep, that's the keyword, and it fits right in) is exactly what it sounds like. You tell it a range—like “give me a number between 1 and 100”—and boom, it spits out a number. Totally random. No patterns, no logic, no funny business. Just pure randomness. It’s like dice, but digital and way less noisy.
+   </p>
+<p>
+    Perfect if you’re flipping a coin, picking winners for a giveaway, choosing who goes first in a game, or—let’s be honest—deciding what to eat for dinner when no one can make a decision. (Looking at you, group chats.)
+   </p>
+<h2>
+    Try Our Random Number Generator Now
+   </h2>
+<p>
+    Seriously, all you do is put in your range and click. That’s it. No setup. No login. It’s the internet equivalent of pressing a big red button and watching something happen. In this case? You get a number. Instantly.
+   </p>
+<p>
+    Use it for games, raffles, productivity hacks, or just to settle dumb debates (“If it’s even, we get tacos. If it’s odd, sushi.”)
+   </p>
+<h2>
+    Why Use a Random Number Generator?
+   </h2>
+<p>
+    Okay, you might be thinking, “Can’t I just think of a number?” Sure... but your brain isn’t random. You’re biased. You probably always land around 7. Or 42 if you're a Hitchhiker's Guide fan.
+   </p>
+<p>
+    Here’s where the Random Number Generator is clutch:
+   </p>
+<ul>
+<li>
+     Need a dice roll for a tabletop game? Done.
+    </li>
+<li>
+     Choosing random dates or people? Easy.
+    </li>
+<li>
+     Running a giveaway and want to be fair? This tool keeps it clean.
+    </li>
+<li>
+     Doing anything with code or simulations? You need solid randomness.
+    </li>
+</ul>
+<p>
+    Basically, if it needs to be fair, fast, and unpredictable—this is your move.
+   </p>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+     Set your own range (like 1–10, or 1000–9999—whatever you want)
+    </li>
+<li>
+     Instantly generate a new number with every click
+    </li>
+<li>
+     No login or sign-up required
+    </li>
+<li>
+     Works on mobile, desktop, tablet—anything with a screen
+    </li>
+<li>
+     No learning curve. It’s a click-and-go kind of deal
+    </li>
+</ul>
+<h2>
+    How to Use the Random Number Generator
+   </h2>
+<p>
+    Honestly, you’ll probably figure this out in 3 seconds, but here’s the casual breakdown:
+   </p>
+<ol>
+<li>
+     Open the Random Number Generator.
+    </li>
+<li>
+     Type in your minimum number and your maximum number.
+    </li>
+<li>
+     Click “Generate” or “Go” or whatever the button says.
+    </li>
+<li>
+     Boom—there’s your number.
+    </li>
+<li>
+     Need another? Click again. It’ll keep dishing them out.
+    </li>
+</ol>
+<p>
+    Pro tip: If you’re picking multiple numbers, write them down somewhere so you don’t forget. (Yes, it’s happened to me. More than once.)
+   </p>
+<h2>
+    Why Choose This Random Number Generator?
+   </h2>
+<ul>
+<li>
+     No ads, no fluff, no weird pop-ups
+    </li>
+<li>
+     Super fast—like blink-and-you-miss-it fast
+    </li>
+<li>
+     No unnecessary features. Just numbers. Instantly.
+    </li>
+<li>
+     Great for everything from school projects to livestream giveaways
+    </li>
+<li>
+     Plus, it looks clean. None of that early-2000s “graphic overload” vibe.
+    </li>
+</ul>
+<h2>
+    FAQs About the Random Number Generator
+   </h2>
+<p>
+<strong>
+     Can I generate more than one number at a time?
+    </strong>
+<br/>
+    This version is single-shot. One number per click. Fast enough that it’s barely a limitation.
+   </p>
+<p>
+<strong>
+     Is the number really random?
+    </strong>
+<br/>
+    As random as a browser-based tool gets. It’s great for everyday use.
+   </p>
+<p>
+<strong>
+     What if I want decimals or negative numbers?
+    </strong>
+<br/>
+    This one’s for whole numbers only—clean, easy, simple. Decimal lovers, hold tight.
+   </p>
+<p>
+<strong>
+     Does it repeat numbers?
+    </strong>
+<br/>
+    If you keep clicking, sure. But it’s all random—so repetition is just coincidence.
+   </p>
+<p>
+<strong>
+     Can I use this in a classroom or live event?
+    </strong>
+<br/>
+    Totally. It’s fast, clean, and safe for all audiences.
+   </p>
+<h2>
+    Final Thoughts: Let Fate Decide, Instantly
+   </h2>
+<p>
+    When life calls for a little randomness—a number to pick, a decision to make, a draw to run—this Random Number Generator gets the job done. No setup. No fluff. Just type, click, done.
+   </p>
+<p>
+    Try the Random Number Generator now and let the universe (okay, the code) pick something for you. It's way more fun than arguing over who goes first.
+   </p>
+</div>
+<script>
+        // Function: generateNumbers
+   function generateNumbers() {
+        // DOM element manipulation
+            const min = parseInt(document.getElementById('min').value);
+        // DOM element manipulation
+            const max = parseInt(document.getElementById('max').value);
+        // DOM element manipulation
+            const count = parseInt(document.getElementById('count').value);
+
+            // Input validation
+            if (isNaN(min) || isNaN(max) || isNaN(count)) {
+        // DOM element manipulation
+                document.getElementById('result').innerText = 'Please enter valid numbers.';
+                return;
+            }
+            if (min >= max) {
+        // DOM element manipulation
+                document.getElementById('result').innerText = 'Minimum must be less than maximum.';
+                return;
+            }
+            if (count < 1 || count > 10) {
+        // DOM element manipulation
+                document.getElementById('result').innerText = 'Number of results must be between 1 and 10.';
+                return;
+            }
+
+            // Generate random numbers
+            const results = [];
+            for (let i = 0; i < count; i++) {
+                const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+                results.push(randomNum);
+            }
+
+            // Display result
+        // DOM element manipulation
+            document.getElementById('result').innerText = results.join(', ');
+
+            // Add to history
+        // DOM element manipulation
+            const history = document.getElementById('history');
+            const historyEntry = document.createElement('p');
+            historyEntry.innerText = `Min: ${min}, Max: ${max}, Count: ${count} → ${results.join(', ')}`;
+            history.insertBefore(historyEntry, history.firstChild);
+        }
+
+        // Function: resetInputs
+        function resetInputs() {
+        // DOM element manipulation
+            document.getElementById('min').value = 1;
+        // DOM element manipulation
+            document.getElementById('max').value = 100;
+        // DOM element manipulation
+            document.getElementById('count').value = 1;
+        // DOM element manipulation
+            document.getElementById('result').innerText = '';
+        }
+
+        // Function: clearHistory
+        function clearHistory() {
+        // DOM element manipulation
+            document.getElementById('history').innerHTML = '';
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

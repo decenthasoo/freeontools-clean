@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Random Country Generator - Free & Simple</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+    <meta content="Random Country Generator - Generate a random country name with a single click. Perfect for games, learning, or inspiration. Free, no login required, no ads." name="description">
+    <meta content="Random Country Generator, Free Country Picker, Random Country Name, No Ads, 100% Free, Free Without Login" name="keywords">
+    <meta content="index, follow" name="robots"/>
+    <link href="https://www.freeontools.com/random-country-generator" rel="canonical"/>
+    <!-- Open Graph Tags -->
+    <meta content="Random Country Generator - Free & Simple" property="og:title"/>
+    <meta content="Generate a random country name with a single click. Perfect for games, learning, or inspiration. Free, no login required, no ads." property="og:description"/>
+    <meta content="https://www.freeontools.com/images/random-country-generator.png" property="og:image"/>
+    <meta content="https://www.freeontools.com/random-country-generator" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <!-- Twitter Card Tags -->
+    <meta content="Random Country Generator - Free & Simple" name="twitter:title"/>
+    <meta content="Generate a random country name with a single click. Perfect for games, learning, or inspiration. Free, no login required, no ads." name="twitter:description"/>
+    <meta content="https://www.freeontools.com/images/random-country-generator.png" name="twitter:image"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "freeontools Corporation",
+            "url": "https://www.freeontools.com",
+            "logo": "https://www.freeontools.com/images/logo.png",
+            "sameAs": [
+                "https://www.facebook.com/freeontools",
+                "https://twitter.com/freeontools",
+                "https://www.instagram.com/freeontools"
+            ]
+        }
+    </script>
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Random Country Generator",
+            "operatingSystem": "All",
+            "applicationCategory": "Web",
+            "url": "https://www.freeontools.com/random-country-generator",
+            "image": "https://www.freeontools.com/images/random-country-generator.png",
+            "description": "Generate a random country name instantly. Ideal for educational purposes, games, or creative inspiration. No login required, no ads, completely free.",
+            "offers": {
+                "@type": "Offer",
+                "url": "https://www.freeontools.com/random-country-generator",
+                "priceCurrency": "USD",
+                "price": "0.00",
+                "eligibleRegion": {
+                    "@type": "Place",
+                    "name": "Worldwide"
+                }
+            }
+        }
+    </script>
+    <!-- AggregateRating Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "ratingCount": "820"
+        }
+    </script>
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Emma Johnson"
+            },
+            "datePublished": "2025-06-10",
+            "reviewBody": "This Random Country Generator is fantastic! It's super easy to use and great for geography quizzes or travel inspiration. Fast, free, and no ads!",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "itemReviewed": {
+                "@type": "SoftwareApplication",
+                "name": "Random Country Generator"
+            }
+        }
+    </script>
+    <style>
+        /* Reset default styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f6f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .header-section {
+            text-align: center;
+            margin: 20px 0;
+            padding: 0 15px;
+        }
+        .header-section h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        .header-section p {
+            color: #555;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .container {
+            max-width: 900px;
+        margin-left: 220px; /* Default for desktop (901px and above) */
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .generate-btn {
+            background: #f28c38;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+margin-top: 20px
+
+
+        }
+        .generate-btn:hover {
+            background: #d97a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(242, 140, 56, 0.4);
+        }
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+        .generate-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .generate-btn:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+        .generate-btn.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #fff;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        @keyframes spin {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            background: #f8f9fa;
+            animation: fadeIn 0.5s ease-in;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #country-name {
+            font-size: 2em;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 10px;
+            animation: popIn 0.3s ease-out;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        #country-flag {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: popIn 0.3s ease-out;
+        }
+        #country-details {
+            font-size: 16px;
+            color: #34495e;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            justify-content: center;
+        }
+        .detail-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+        .detail-card strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #f28c38;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        .content-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .content-container h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .content-container p {
+            font-size: 16px;
+            color: #34495e;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .content-container ul, .content-container ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        .content-container ul li, .content-container ol li {
+            font-size: 16px;
+            color: #34495e;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .content-container ul li strong, .content-container ol li strong {
+            color: #2c3e50;
+        }
+
+@media (max-width: 1024px) {
+    .container {
+        margin-left: 55px !important;
+    }
+}
+
+@media (max-width: 912px) {
+    .container {
+        margin-left: 6px !important;
+    }
+}
+
+ @media (max-width: 1280px) {
+        .container {
+            margin-left: 188px;
+        }
+    }
+        @media (max-width: 600px) {
+            .container, .content-container {
+                padding: 20px;
+                margin: 15px;
+            }
+            .header-section h1 {
+                font-size: 1.8em;
+            }
+            .header-section p {
+                font-size: 14px;
+            }
+            .generate-btn {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+            #country-name {
+                font-size: 1.5em;
+            }
+            #country-flag {
+                max-width: 120px;
+            }
+            #country-details {
+                grid-template-columns: 1fr;
+            }
+            .detail-card {
+                padding: 10px;
+            }
+        }
+        button { background-color: #f28c38; }
+    </style>
+</head>
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <div class="header-section">
+        <h1>Random Country Generator</h1>
+        <p>Discover a new country with a single click, perfect for learning or fun!</p>
+    </div>
+    <div class="container">
+        <div id="result">
+            <img id="country-flag" src="" alt="Country Flag"/>
+            <div id="country-name"></div>
+            <div id="country-details"></div>
+            <button class="generate-btn" id="generateBtn" onclick="generateCountry()">Generate Country</button>
+        </div>
+    </div>
+    <div class="content-container">
+        <h2>What is a Random Country Generator?</h2>
+        <p>So there’s this thing called a Random Country Generator, right? It’s like, boom, spits out a country name from anywhere on the planet. Super simple. Need a travel vibe? Wanna flex your geography brain? Or maybe you’re just messing around with a game or some project? This tool’s got you. No effort, just click and—poof—country name. I swear, it’s like the laziest way to pick a place without flipping through a globe or whatever. Facts are straight: it’s quick, it’s random, it’s legit. Try it, you’ll probably end up with, like, Kyrgyzstan and be like, “Huh, cool.”
+
+</p>
+        <h2>Try Our Random Country Generator Now</h2>
+        <p>Alright, so you just smash that “Generate Country” button up there, and—bam!—you get a random country name, like, right away. No cost, no annoying ads, no “sign up with your email” nonsense. It’s just pure, instant country roulette.
+
+</p>
+        <h2>Why Use a Random Country Generator?</h2>
+        <p>This tool is perfect for various scenarios:</p>
+        <ul>
+            <li><strong>Educational Purposes:</strong> Know about new countries and cultures.</li>
+            <li><strong>Games and Quizzes:</strong> Use this knowledge for geography games or trivia challenges.</li>
+            <li><strong>Creative Projects:</strong> Need a country for a story or project? Get one instantly.</li>
+        </ul>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Instant Results:</strong> Get a random country with one click.</li>
+            <li><strong>Comprehensive List:</strong> Includes all recognized countries worldwide.</li>
+            <li><strong>Rich Details:</strong> View flag, capital, continent, population, language, currency, and timezone.</li>
+            <li><strong>Free and Ad-Free:</strong> No sign-ups, no costs, no distractions.</li>
+        </ul>
+        <h2>How to Use the Random Country Generator</h2>
+        <ol>
+            <li><strong>Click “Generate”:</strong> Press the “Generate Country” button.</li>
+            <li><strong>View Result:</strong> Instantly see a random country with its flag and details.</li>
+            <li><strong>Repeat:</strong> Click again to get another country.</li>
+        </ol>
+        <h2>Why Choose This Random Country Generator?</h2>
+        <p>Our tool stands out because it’s:</p>
+        <ul>
+            <li><strong>Simple:</strong> Clean interface with no clutter.</li>
+            <li><strong>Fast:</strong> Delivers results instantly.</li>
+            <li><strong>Informative:</strong> Provides detailed country information.</li>
+            <li><strong>Free:</strong> No hidden fees or subscriptions.</li>
+            <li><strong>Fun:</strong> Great for casual use or serious learning.</li>
+        </ul>
+        <h2>FAQs</h2>
+        <ol>
+            <li><strong>How many countries are included?</strong> The tool includes all 195 recognized sovereign countries.</li>
+            <li><strong>Can I use this on my phone?</strong> Yes, the tool is fully responsive and works on all devices.</li>
+            <li><strong>Is it really free?</strong> Absolutely, no costs or sign-ups required.</li>
+            <li><strong>What details are provided?</strong> You get the country’s name, flag, continent, capital, flag, population, language, currency and timezone.</li>
+        </ol>
+    </div>
+    <script>
+const countries = [
+    {
+        name: "Afghanistan",
+        flag: "/images/random-country-flags/Afghanistan.png",
+        capital: "Kabul",
+        continent: "Asia",
+        population: "40,218,234",
+        language: "Pashto, Dari",
+        currency: "Afghan afghani (AFN)",
+        timezone: "UTC+4:30",
+        alt: "Afghanistan Flag - Random Country Generator"
+    },
+    {
+        name: "Albania",
+        flag: "/images/random-country-flags/Albania.png",
+        capital: "Tirana",
+        continent: "Europe",
+        population: "2,877,797",
+        language: "Albanian",
+        currency: "Albanian lek (ALL)",
+        timezone: "UTC+1 (CET)",
+        alt: "Albania Flag - Random Country Generator"
+    },
+    {
+        name: "Algeria",
+        flag: "/images/random-country-flags/Algeria.png",
+        capital: "Algiers",
+        continent: "Africa",
+        population: "43,851,044",
+        language: "Arabic, Berber",
+        currency: "Algerian dinar (DZD)",
+        timezone: "UTC+1 (CET)",
+        alt: "Algeria Flag - Random Country Generator"
+    },
+    {
+        name: "Andorra",
+        flag: "/images/random-country-flags/Andorra.png",
+        capital: "Andorra la Vella",
+        continent: "Europe",
+        population: "77,265",
+        language: "Catalan",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Andorra Flag - Random Country Generator"
+    },
+    {
+        name: "Angola",
+        flag: "/images/random-country-flags/Angola.png",
+        capital: "Luanda",
+        continent: "Africa",
+        population: "32,866,272",
+        language: "Portuguese",
+        currency: "Angolan kwanza (AOA)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Angola Flag - Random Country Generator"
+    },
+    {
+        name: "Antigua and Barbuda",
+        flag: "/images/random-country-flags/Antigua_and_Barbuda.png",
+        capital: "Saint John's",
+        continent: "North America",
+        population: "97,929",
+        language: "English",
+        currency: "East Caribbean dollar (XCD)",
+        timezone: "UTC-4 (AST)",
+        alt: "Antigua_and_Barbuda Flag - Random Country Generator"
+    },
+    {
+        name: "Argentina",
+        flag: "/images/random-country-flags/Argentina.png",
+        capital: "Buenos Aires",
+        continent: "South America",
+        population: "45,195,774",
+        language: "Spanish",
+        currency: "Argentine peso (ARS)",
+        timezone: "UTC-3 (ART)",
+        alt: "Argentina Flag - Random Country Generator"
+    },
+    {
+        name: "Armenia",
+        flag: "/images/random-country-flags/Armenia.png",
+        capital: "Yerevan",
+        continent: "Asia",
+        population: "2,963,243",
+        language: "Armenian",
+        currency: "Armenian dram (AMD)",
+        timezone: "UTC+4 (AMT)",
+        alt: "Armenia Flag - Random Country Generator"
+    },
+    {
+        name: "Australia",
+        flag: "/images/random-country-flags/Australia.png",
+        capital: "Canberra",
+        continent: "Oceania",
+        population: "25,499,884",
+        language: "English",
+        currency: "Australian dollar (AUD)",
+        timezone: "UTC+8 to +10.5",
+        alt: "Australia Flag - Random Country Generator"
+    },
+    {
+        name: "Austria",
+        flag: "/images/random-country-flags/Austria.png",
+        capital: "Vienna",
+        continent: "Europe",
+        population: "9,006,398",
+        language: "German",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Austria Flag - Random Country Generator"
+    },
+    {
+        name: "Azerbaijan",
+        flag: "/images/random-country-flags/Azerbaijan.png",
+        capital: "Baku",
+        continent: "Asia",
+        population: "10,139,177",
+        language: "Azerbaijani",
+        currency: "Azerbaijani manat (AZN)",
+        timezone: "UTC+4 (AZT)",
+        alt: "Azerbaijan Flag - Random Country Generator"
+    },
+    {
+        name: "Bahamas",
+        flag: "/images/random-country-flags/Bahamas.png",
+        capital: "Nassau",
+        continent: "North America",
+        population: "393,244",
+        language: "English",
+        currency: "Bahamian dollar (BSD)",
+        timezone: "UTC-5 (EST)",
+        alt: "Bahamas Flag - Random Country Generator"
+    },
+    {
+        name: "Bahrain",
+        flag: "/images/random-country-flags/Bahrain.png",
+        capital: "Manama",
+        continent: "Asia",
+        population: "1,701,575",
+        language: "Arabic",
+        currency: "Bahraini dinar (BHD)",
+        timezone: "UTC+3 (AST)",
+        alt: "Bahrain Flag - Random Country Generator"
+    },
+    {
+        name: "Bangladesh",
+        flag: "/images/random-country-flags/Bangladesh.png",
+        capital: "Dhaka",
+        continent: "Asia",
+        population: "164,689,383",
+        language: "Bengali",
+        currency: "Bangladeshi taka (BDT)",
+        timezone: "UTC+6 (BST)",
+        alt: "Bangladesh Flag - Random Country Generator"
+    },
+    {
+        name: "Barbados",
+        flag: "/images/random-country-flags/Barbados.png",
+        capital: "Bridgetown",
+        continent: "North America",
+        population: "287,375",
+        language: "English",
+        currency: "Barbadian dollar (BBD)",
+        timezone: "UTC-4 (AST)",
+        alt: "Barbados Flag - Random Country Generator"
+    },
+    {
+        name: "Belarus",
+        flag: "/images/random-country-flags/Belarus.png",
+        capital: "Minsk",
+        continent: "Europe",
+        population: "9,449,323",
+        language: "Belarusian, Russian",
+        currency: "Belarusian ruble (BYN)",
+        timezone: "UTC+3 (MSK)",
+        alt: "Belarus Flag - Random Country Generator"
+    },
+    {
+        name: "Belgium",
+        flag: "/images/random-country-flags/Belgium.png",
+        capital: "Brussels",
+        continent: "Europe",
+        population: "11,589,623",
+        language: "Dutch, French, German",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Belgium Flag - Random Country Generator"
+    },
+    {
+        name: "Belize",
+        flag: "/images/random-country-flags/Belize.png",
+        capital: "Belmopan",
+        continent: "North America",
+        population: "397,628",
+        language: "English",
+        currency: "Belize dollar (BZD)",
+        timezone: "UTC-6 (CST)",
+        alt: "Belize Flag - Random Country Generator"
+    },
+    {
+        name: "Benin",
+        flag: "/images/random-country-flags/Benin.png",
+        capital: "Porto-Novo",
+        continent: "Africa",
+        population: "12,123,200",
+        language: "French",
+        currency: "West African CFA franc (XOF)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Benin Flag - Random Country Generator"
+    },
+    {
+        name: "Bhutan",
+        flag: "/images/random-country-flags/Bhutan.png",
+        capital: "Thimphu",
+        continent: "Asia",
+        population: "771,608",
+        language: "Dzongkha",
+        currency: "Bhutanese ngultrum (BTN)",
+        timezone: "UTC+6 (BTT)",
+        alt: "Bhutan Flag - Random Country Generator"
+    },
+    {
+        name: "Bolivia",
+        flag: "/images/random-country-flags/Bolivia.png",
+        capital: "Sucre",
+        continent: "South America",
+        population: "11,673,021",
+        language: "Spanish, Quechua, Aymara",
+        currency: "Bolivian boliviano (BOB)",
+        timezone: "UTC-4 (BOT)",
+        alt: "Bolivia Flag - Random Country Generator"
+    },
+    {
+        name: "Bosnia and Herzegovina",
+        flag: "/images/random-country-flags/Bosnia_and_Herzegovina.png",
+        capital: "Sarajevo",
+        continent: "Europe",
+        population: "3,280,819",
+        language: "Bosnian, Croatian, Serbian",
+        currency: "Convertible mark (BAM)",
+        timezone: "ITC+1 (CET)",
+        alt: "Bosnia_and_Herzegovina Flag - Random Country Generator"
+    },
+    {
+        name: "Botswana",
+        flag: "/images/random-country-flags/Botswana.png",
+        capital: "Gaborone",
+        continent: "Africa",
+        population: "2,351,627",
+        language: "English, Tswana",
+        currency: "Botswana pula (BWP)",
+        timezone: "UTC+2 (CAT)",
+        alt: "Botswana Flag - Random Country Generator"
+    },
+    {
+        name: "Brazil",
+        flag: "/images/random-country-flags/Brazil.png",
+        capital: "Brasília",
+        continent: "South America",
+        population: "212,559,417",
+        language: "Portuguese",
+        currency: "Brazilian real (R$) (BRL)",
+        timezone: "UTC-2 to -5 (BRT)",
+        alt: "Brazil Flag - Random Country Generator"
+    },
+    {
+        name: "Brunei",
+        flag: "/images/random-country-flags/Brunei.png",
+        capital: "Bandar Seri Begawan",
+        continent: "Asia",
+        population: "437,479",
+        language: "Malay",
+        currency: "Brunei dollar (BND)",
+        timezone: "UTC+8 (BNT)",
+        alt: "Brunei Flag - Random Country Generator"
+    },
+    {
+        name: "Bulgaria",
+        flag: "/images/random-country-flags/Bulgaria.png",
+        capital: "Sofia",
+        continent: "Europe",
+        population: "6,948,445",
+        language: "Bulgarian",
+        currency: "Bulgarian lev (BGN)",
+        timezone: "UTC+2 (EET)",
+        alt: "Bulgaria Flag - Random Country Generator"
+    },
+    {
+        name: "Burkina Faso",
+        flag: "/images/random-country-flags/Burkina_Faso.png",
+        capital: "Ouagadougou",
+        continent: "Africa",
+        population: "20,903,273",
+        language: "French",
+        currency: "West African CFA franc (XOF)",
+        timezone: "UTC (GMT)",
+        alt: "Burkina_Faso Flag - Random Country Generator"
+    },
+    {
+        name: "Burundi",
+        flag: "/images/random-country-flags/Burundi.png",
+        capital: "Gitega",
+        continent: "Africa",
+        population: "11,890,784",
+        language: "Kirundi, French",
+        currency: "Burundian franc (BIF)",
+        timezone: "UTC+2 (CAT)",
+        alt: "Burundi Flag - Random Country Generator"
+    },
+    {
+        name: "Cambodia",
+        flag: "/images/random-country-flags/Cambodia.png",
+        capital: "Phnom Penh",
+        continent: "Asia",
+        population: "16,718,965",
+        language: "Khmer",
+        currency: "Cambodian riel (KHR)",
+        timezone: "UTC+7 (ICT)",
+        alt: "Cambodia Flag - Random Country Generator"
+    },
+    {
+        name: "Cameroon",
+        flag: "/images/random-country-flags/Cameroon.png",
+        capital: "Yaoundé",
+        continent: "Africa",
+        population: "26,545,863",
+        language: "English, French",
+        currency: "Central African CFA franc (XAF)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Cameroon Flag - Random Country Generator"
+    },
+    {
+        name: "Canada",
+        flag: "/images/random-country-flags/Canada.png",
+        capital: "Ottawa",
+        continent: "North America",
+        population: "38,005,238",
+        language: "English, French",
+        currency: "Canadian dollar (CAD)",
+        timezone: "UTC-3.5 to -8",
+        alt: "Canada Flag - Random Country Generator"
+    },
+    {
+        name: "Cape Verde",
+        flag: "/images/random-country-flags/Cape_Verde.png",
+        capital: "Praia",
+        continent: "Africa",
+        population: "555,987",
+        language: "Portuguese",
+        currency: "Cape Verdean escudo (CVE)",
+        timezone: "UTC-1 (CVT)",
+        alt: "Cape_Verde Flag - Random Country Generator"
+    },
+    {
+        name: "Central African Republic",
+        flag: "/images/random-country-flags/Central_African_Republic.png",
+        capital: "Bangui",
+        continent: "Africa",
+        population: "4,829,767",
+        language: "French, Sango",
+        currency: "Central African CFA franc (XAF)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Central_African_Republic Flag - Random Country Generator"
+    },
+    {
+        name: "Chad",
+        flag: "/images/random-country-flags/Chad.png",
+        capital: "N'Djamena",
+        continent: "Africa",
+        population: "16,425,864",
+        language: "French, Arabic",
+        currency: "Central African CFA franc (XAF)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Chad Flag - Random Country Generator"
+    },
+    {
+        name: "Chile",
+        flag: "/images/random-country-flags/Chile.png",
+        capital: "Santiago",
+        continent: "South America",
+        population: "19,116,201",
+        language: "Spanish",
+        currency: "Chilean peso (CLP)",
+        timezone: "UTC-4 to -6",
+        alt: "Chile Flag - Random Country Generator"
+    },
+    {
+        name: "China",
+        flag: "/images/random-country-flags/China.png",
+        capital: "Beijing",
+        continent: "Asia",
+        population: "1,439,323,776",
+        language: "Mandarin",
+        currency: "Chinese yuan (CNY)",
+        timezone: "UTC+8 (CST)",
+        alt: "China Flag - Random Country Generator"
+    },
+    {
+        name: "Colombia",
+        flag: "/images/random-country-flags/Colombia.png",
+        capital: "Bogotá",
+        continent: "South America",
+        population: "50,882,891",
+        language: "Spanish",
+        currency: "Colombian peso (COP)",
+        timezone: "UTC-5 (COT)",
+        alt: "Colombia Flag - Random Country Generator"
+    },
+    {
+        name: "Comoros",
+        flag: "/images/random-country-flags/Comoros.png",
+        capital: "Moroni",
+        continent: "Africa",
+        population: "869,601",
+        language: "Arabic, French",
+        currency: "Comorian franc (KMF)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Comoros Flag - Random Country Generator"
+    },
+    {
+        name: "Costa Rica",
+        flag: "/images/random-country-flags/Costa_Rica.png",
+        capital: "San José",
+        continent: "North America",
+        population: "5,094,118",
+        language: "Spanish",
+        currency: "Costa Rican colón (CRC)",
+        timezone: "UTC-6 (CST)",
+        alt: "Costa_Rica Flag - Random Country Generator"
+    },
+    {
+        name: "Croatia",
+        flag: "/images/random-country-flags/Croatia.png",
+        capital: "Zagreb",
+        continent: "Europe",
+        population: "4,105,267",
+        language: "Croatian",
+        currency: "Croatian kuna (HRK)",
+        timezone: "UTC+1 (CET)",
+        alt: "Croatia Flag - Random Country Generator"
+    },
+    {
+        name: "Cuba",
+        flag: "/images/random-country-flags/Cuba.png",
+        capital: "Havana",
+        continent: "North America",
+        population: "11,326,616",
+        language: "Spanish",
+        currency: "Cuban peso (CUP)",
+        timezone: "UTC-5 (CST)",
+        alt: "Cuba Flag - Random Country Generator"
+    },
+    {
+        name: "Cyprus",
+        flag: "/images/random-country-flags/Cyprus.png",
+        capital: "Nicosia",
+        continent: "Europe",
+        population: "1,207,359",
+        language: "Greek, Turkish",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+2 (EET)",
+        alt: "Cyprus Flag - Random Country Generator"
+    },
+    {
+        name: "Czech Republic",
+        flag: "/images/random-country-flags/Czech_Republic.png",
+        capital: "Prague",
+        continent: "Europe",
+        population: "10,708,981",
+        language: "Czech",
+        currency: "Czech koruna (CZK)",
+        timezone: "UTC+1 (CET)",
+        alt: "Czech_Republic Flag - Random Country Generator"
+    },
+    {
+        name: "Denmark",
+        flag: "/images/random-country-flags/Denmark.png",
+        capital: "Copenhagen",
+        continent: "Europe",
+        population: "5,792,202",
+        language: "Danish",
+        currency: "Danish krone (DKK)",
+        timezone: "UTC+1 (CET)",
+        alt: "Denmark Flag - Random Country Generator"
+    },
+    {
+        name: "Djibouti",
+        flag: "/images/random-country-flags/Djibouti.png",
+        capital: "Djibouti",
+        continent: "Africa",
+        population: "988,000",
+        language: "Arabic, French",
+        currency: "Djiboutian franc (DJF)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Djibouti Flag - Random Country Generator"
+    },
+    {
+        name: "Dominica",
+        flag: "/images/random-country-flags/Dominica.png",
+        capital: "Roseau",
+        continent: "North America",
+        population: "71,986",
+        language: "English",
+        currency: "East Caribbean dollar (XCD)",
+        timezone: "UTC-4 (AST)",
+        alt: "Dominica Flag - Random Country Generator"
+    },
+    {
+        name: "Dominican Republic",
+        flag: "/images/random-country-flags/Dominican_Republic.png",
+        capital: "Santo Domingo",
+        continent: "North America",
+        population: "10,847,910",
+        language: "Spanish",
+        currency: "Dominican peso (DOP)",
+        timezone: "UTC-4 (AST)",
+        alt: "Dominican_Republic Flag - Random Country Generator"
+    },
+    {
+        name: "Ecuador",
+        flag: "/images/random-country-flags/Ecuador.png",
+        capital: "Quito",
+        continent: "South America",
+        population: "17,643,054",
+        language: "Spanish",
+        currency: "United States dollar (USD)",
+        timezone: "UTC-5 to -6",
+        alt: "Ecuador Flag - Random Country Generator"
+    },
+    {
+        name: "Egypt",
+        flag: "/images/random-country-flags/Egypt.png",
+        capital: "Cairo",
+        continent: "Africa",
+        population: "102,334,404",
+        language: "Arabic",
+        currency: "Egyptian pound (EGP)",
+        timezone: "UTC+2 (EET)",
+        alt: "Egypt Flag - Random Country Generator"
+    },
+    {
+        name: "El Salvador",
+        flag: "/images/random-country-flags/El_Salvador.png",
+        capital: "San Salvador",
+        continent: "North America",
+        population: "6,486,205",
+        language: "Spanish",
+        currency: "United States dollar (USD)",
+        timezone: "UTC-6 (CST)",
+        alt: "El_Salvador Flag - Random Country Generator"
+    },
+    {
+        name: "Equatorial Guinea",
+        flag: "/images/random-country-flags/Equatorial_Guinea.png",
+        capital: "Malabo",
+        continent: "Africa",
+        population: "1,402,985",
+        language: "Spanish, French, Portuguese",
+        currency: "Central African CFA franc (XAF)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Equatorial_Guinea Flag - Random Country Generator"
+    },
+    {
+        name: "Eritrea",
+        flag: "/images/random-country-flags/Eritrea.png",
+        capital: "Asmara",
+        continent: "Africa",
+        population: "3,546,421",
+        language: "Tigrinya, Arabic, English",
+        currency: "Eritrean nakfa (ERN)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Eritrea Flag - Random Country Generator"
+    },
+    {
+        name: "Estonia",
+        flag: "/images/random-country-flags/Estonia.png",
+        capital: "Tallinn",
+        continent: "Europe",
+        population: "1,326,535",
+        language: "Estonian",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+2 (EET)",
+        alt: "Estonia Flag - Random Country Generator"
+    },
+    {
+        name: "Eswatini",
+        flag: "/images/random-country-flags/Eswatini.png",
+        capital: "Mbabane",
+        continent: "Africa",
+        population: "1,160,164",
+        language: "English, Swati",
+        currency: "Swazi lilangeni (SZL)",
+        timezone: "UTC+2 (SAST)",
+        alt: "Eswatini Flag - Random Country Generator"
+    },
+    {
+        name: "Ethiopia",
+        flag: "/images/random-country-flags/Ethiopia.png",
+        capital: "Addis Ababa",
+        continent: "Africa",
+        population: "114,963,588",
+        language: "Amharic",
+        currency: "Ethiopian birr (ETB)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Ethiopia Flag - Random Country Generator"
+    },
+    {
+        name: "Fiji",
+        flag: "/images/random-country-flags/Fiji.png",
+        capital: "Suva",
+        continent: "Oceania",
+        population: "896,445",
+        language: "English, Fijian, Hindi",
+        currency: "Fijian dollar (FJD)",
+        timezone: "UTC+12 (FJT)",
+        alt: "Fiji Flag - Random Country Generator"
+    },
+    {
+        name: "Finland",
+        flag: "/images/random-country-flags/Finland.png",
+        capital: "Helsinki",
+        continent: "Europe",
+        population: "5,540,720",
+        language: "Finnish, Swedish",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+2 (EET)",
+        alt: "Finland Flag - Random Country Generator"
+    },
+    {
+        name: "France",
+        flag: "/images/random-country-flags/France.png",
+        capital: "Paris",
+        continent: "Europe",
+        population: "67,391,582",
+        language: "French",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "France Flag - Random Country Generator"
+    },
+    {
+        name: "Gabon",
+        flag: "/images/random-country-flags/Gabon.png",
+        capital: "Libreville",
+        continent: "Africa",
+        population: "2,225,734",
+        language: "French",
+        currency: "Central African CFA franc (XAF)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Gabon Flag - Random Country Generator"
+    },
+    {
+        name: "Gambia",
+        flag: "/images/random-country-flags/Gambia.png",
+        capital: "Banjul",
+        continent: "Africa",
+        population: "2,416,668",
+        language: "English",
+        currency: "Gambian dalasi (GMD)",
+        timezone: "UTC (GMT)",
+        alt: "Gambia Flag - Random Country Generator"
+    },
+    {
+        name: "Georgia",
+        flag: "/images/random-country-flags/Georgia.png",
+        capital: "Tbilisi",
+        continent: "Asia",
+        population: "3,989,167",
+        language: "Georgian",
+        currency: "Georgian lari (GEL)",
+        timezone: "UTC+4 (GET)",
+        alt: "Georgia Flag - Random Country Generator"
+    },
+    {
+        name: "Germany",
+        flag: "/images/random-country-flags/Germany.png",
+        capital: "Berlin",
+        continent: "Europe",
+        population: "83,783,942",
+        language: "German",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Germany Flag - Random Country Generator"
+    },
+    {
+        name: "Ghana",
+        flag: "/images/random-country-flags/Ghana.png",
+        capital: "Accra",
+        continent: "Africa",
+        population: "31,072,940",
+        language: "English",
+        currency: "Ghanaian cedi (GHS)",
+        timezone: "UTC (GMT)",
+        alt: "Ghana Flag - Random Country Generator"
+    },
+    {
+        name: "Greece",
+        flag: "/images/random-country-flags/Greece.png",
+        capital: "Athens",
+        continent: "Europe",
+        population: "10,423,054",
+        language: "Greek",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+2 (EET)",
+        alt: "Greece Flag - Random Country Generator"
+    },
+    {
+        name: "Grenada",
+        flag: "/images/random-country-flags/Grenada.png",
+        capital: "St. George's",
+        continent: "North America",
+        population: "112,523",
+        language: "English",
+        currency: "East Caribbean dollar (XCD)",
+        timezone: "UTC-4 (AST)",
+        alt: "Grenada Flag - Random Country Generator"
+    },
+    {
+        name: "Guatemala",
+        flag: "/images/random-country-flags/Guatemala.png",
+        capital: "Guatemala City",
+        continent: "North America",
+        population: "16,858,333",
+        language: "Spanish",
+        currency: "Guatemalan quetzal (GTQ)",
+        timezone: "UTC-6 (CST)",
+        alt: "Guatemala Flag - Random Country Generator"
+    },
+    {
+        name: "Guinea",
+        flag: "/images/random-country-flags/Guinea.png",
+        capital: "Conakry",
+        continent: "Africa",
+        population: "13,132,795",
+        language: "French",
+        currency: "Guinean franc (GNF)",
+        timezone: "UTC (GMT)",
+        alt: "Guinea Flag - Random Country Generator"
+    },
+    {
+        name: "Guinea-Bissau",
+        flag: "/images/random-country-flags/Guinea_Bissau.png",
+        capital: "Bissau",
+        continent: "Africa",
+        population: "1,968,001",
+        language: "Portuguese",
+        currency: "West African CFA franc (XOF)",
+        timezone: "UTC (GMT)",
+        alt: "Guinea_Bissau Flag - Random Country Generator"
+    },
+    {
+        name: "Guyana",
+        flag: "/images/random-country-flags/Guyana.png",
+        capital: "Georgetown",
+        continent: "South America",
+        population: "786,552",
+        language: "English",
+        currency: "Guyanese dollar (GYD)",
+        timezone: "UTC-4 (GYT)",
+        alt: "Guyana Flag - Random Country Generator"
+    },
+    {
+        name: "Haiti",
+        flag: "/images/random-country-flags/Haiti.png",
+        capital: "Port-au-Prince",
+        continent: "North America",
+        population: "11,402,528",
+        language: "French, Haitian Creole",
+        currency: "Haitian gourde (HTG)",
+        timezone: "UTC-5 (EST)",
+        alt: "Haiti Flag - Random Country Generator"
+    },
+    {
+        name: "Honduras",
+        flag: "/images/random-country-flags/Honduras.png",
+        capital: "Tegucigalpa",
+        continent: "North America",
+        population: "9,904,607",
+        language: "Spanish",
+        currency: "Honduran lempira (HNL)",
+        timezone: "UTC-6 (CST)",
+        alt: "Honduras Flag - Random Country Generator"
+    },
+    {
+        name: "Hungary",
+        flag: "/images/random-country-flags/Hungary.png",
+        capital: "Budapest",
+        continent: "Europe",
+        population: "9,660,351",
+        language: "Hungarian",
+        currency: "Hungarian forint (HUF)",
+        timezone: "UTC+1 (CET)",
+        alt: "Hungary Flag - Random Country Generator"
+    },
+    {
+        name: "Iceland",
+        flag: "/images/random-country-flags/Iceland.png",
+        capital: "Reykjavík",
+        continent: "Europe",
+        population: "341,243",
+        language: "Icelandic",
+        currency: "Icelandic króna (ISK)",
+        timezone: "UTC (GMT)",
+        alt: "Iceland Flag - Random Country Generator"
+    },
+    {
+        name: "India",
+        flag: "/images/random-country-flags/India.png",
+        capital: "New Delhi",
+        continent: "Asia",
+        population: "1,380,004,385",
+        language: "Hindi, English",
+        currency: "Indian rupee (₹) (INR)",
+        timezone: "UTC+5:30 (IST)",
+        alt: "India Flag - Random Country Generator"
+    },
+    {
+        name: "Indonesia",
+        flag: "/images/random-country-flags/Indonesia.png",
+        capital: "Jakarta",
+        continent: "Asia",
+        population: "273,523,615",
+        language: "Indonesian",
+        currency: "Indonesian rupiah (IDR)",
+        timezone: "UTC+7 to +9",
+        alt: "Indonesia Flag - Random Country Generator"
+    },
+    {
+        name: "Iran",
+        flag: "/images/random-country-flags/Iran.png",
+        capital: "Tehran",
+        continent: "Asia",
+        population: "83,992,949",
+        language: "Persian",
+        currency: "Iranian rial (IRR)",
+        timezone: "UTC+3:30 (IRST)",
+        alt: "Iran Flag - Random Country Generator"
+    },
+    {
+        name: "Iraq",
+        flag: "/images/random-country-flags/Iraq.png",
+        capital: "Baghdad",
+        continent: "Asia",
+        population: "40,222,493",
+        language: "Arabic, Kurdish",
+        currency: "Iraqi dinar (IQD)",
+        timezone: "UTC+3 (AST)",
+        alt: "Iraq Flag - Random Country Generator"
+    },
+    {
+        name: "Ireland",
+        flag: "/images/random-country-flags/Ireland.png",
+        capital: "Dublin",
+        continent: "Europe",
+        population: "4,937,786",
+        language: "Irish, English",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC (GMT)",
+        alt: "Ireland Flag - Random Country Generator"
+    },
+    {
+        name: "Israel",
+        flag: "/images/random-country-flags/Israel.png",
+        capital: "Jerusalem",
+        continent: "Asia",
+        population: "8,655,535",
+        language: "Hebrew, Arabic",
+        currency: "Israeli new shekel (ILS)",
+        timezone: "UTC+2 (IST)",
+        alt: "Israel Flag - Random Country Generator"
+    },
+    {
+        name: "Italy",
+        flag: "/images/random-country-flags/Italy.png",
+        capital: "Rome",
+        continent: "Europe",
+        population: "60,461,826",
+        language: "Italian",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Italy Flag - Random Country Generator"
+    },
+    {
+        name: "Jamaica",
+        flag: "/images/random-country-flags/Jamaica.png",
+        capital: "Kingston",
+        continent: "North America",
+        population: "2,961,167",
+        language: "English",
+        currency: "Jamaican dollar (JMD)",
+        timezone: "UTC-5 (EST)",
+        alt: "Jamaica Flag - Random Country Generator"
+    },
+    {
+        name: "Japan",
+        flag: "/images/random-country-flags/Japan.png",
+        capital: "Tokyo",
+        continent: "Asia",
+        population: "126,476,461",
+        language: "Japanese",
+        currency: "Japanese yen (¥) (JPY)",
+        timezone: "UTC+9 (JST)",
+        alt: "Japan Flag - Random Country Generator"
+    },
+    {
+        name: "Jordan",
+        flag: "/images/random-country-flags/Jordan.png",
+        capital: "Amman",
+        continent: "Asia",
+        population: "10,203,134",
+        language: "Arabic",
+        currency: "Jordanian dinar (JOD)",
+        timezone: "UTC+2 (EET)",
+        alt: "Jordan Flag - Random Country Generator"
+    },
+    {
+        name: "Kazakhstan",
+        flag: "/images/random-country-flags/Kazakhstan.png",
+        capital: "Nur-Sultan",
+        continent: "Asia",
+        population: "18,776,707",
+        language: "Kazakh, Russian",
+        currency: "Kazakhstani tenge (KZT)",
+        timezone: "UTC+5 to +6",
+        alt: "Kazakhstan Flag - Random Country Generator"
+    },
+    {
+        name: "Kenya",
+        flag: "/images/random-country-flags/Kenya.png",
+        capital: "Nairobi",
+        continent: "Africa",
+        population: "53,771,296",
+        language: "English, Swahili",
+        currency: "Kenyan shilling (KES)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Kenya Flag - Random Country Generator"
+    },
+    {
+        name: "Kiribati",
+        flag: "/images/random-country-flags/Kiribati.png",
+        capital: "South Tarawa",
+        continent: "Oceania",
+        population: "119,449",
+        language: "English, Gilbertese",
+        currency: "Australian dollar (AUD)",
+        timezone: "UTC+12 to +14",
+        alt: "Kiribati Flag - Random Country Generator"
+    },
+    {
+        name: "Korea, North",
+        flag: "/images/random-country-flags/Korea_North.png",
+        capital: "Pyongyang",
+        continent: "Asia",
+        population: "25,778,816",
+        language: "Korean",
+        currency: "North Korean won (KPW)",
+        timezone: "UTC+9 (PYT)",
+        alt: "Korea_North Flag - Random Country Generator"
+    },
+    {
+        name: "Korea, South",
+        flag: "/images/random-country-flags/Korea_South.png",
+        capital: "Seoul",
+        continent: "Asia",
+        population: "51,269,185",
+        language: "Korean",
+        currency: "South Korean won (KRW)",
+        timezone: "UTC+9 (KST)",
+        alt: "Korea_South Flag - Random Country Generator"
+    },
+    {
+        name: "Kosovo",
+        flag: "/images/random-country-flags/Kosovo.png",
+        capital: "Pristina",
+        continent: "Europe",
+        population: "1,810,366",
+        language: "Albanian, Serbian",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Kosovo Flag - Random Country Generator"
+    },
+    {
+        name: "Kuwait",
+        flag: "/images/random-country-flags/Kuwait.png",
+        capital: "Kuwait City",
+        continent: "Asia",
+        population: "4,270,571",
+        language: "Arabic",
+        currency: "Kuwaiti dinar (KWD)",
+        timezone: "UTC+3 (AST)",
+        alt: "Kuwait Flag - Random Country Generator"
+    },
+    {
+        name: "Kyrgyzstan",
+        flag: "/images/random-country-flags/Kyrgyzstan.png",
+        capital: "Bishkek",
+        continent: "Asia",
+        population: "6,524,195",
+        language: "Kyrgyz, Russian",
+        currency: "Kyrgyzstani som (KGS)",
+        timezone: "UTC+6 (KGT)",
+        alt: "Kyrgyzstan Flag - Random Country Generator"
+    },
+    {
+        name: "Laos",
+        flag: "/images/random-country-flags/Laos.png",
+        capital: "Vientiane",
+        continent: "Asia",
+        population: "7,275,560",
+        language: "Lao",
+        currency: "Lao kip (LAK)",
+        timezone: "UTC+7 (ICT)",
+        alt: "Laos Flag - Random Country Generator"
+    },
+    {
+        name: "Latvia",
+        flag: "/images/random-country-flags/Latvia.png",
+        capital: "Riga",
+        continent: "Europe",
+        population: "1,886,198",
+        language: "Latvian",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+2 (EET)",
+        alt: "Latvia Flag - Random Country Generator"
+    },
+    {
+        name: "Lebanon",
+        flag: "/images/random-country-flags/Lebanon.png",
+        capital: "Beirut",
+        continent: "Asia",
+        population: "6,825,445",
+        language: "Arabic, French",
+        currency: "Lebanese pound (LBP)",
+        timezone: "UTC+2 (EET)",
+        alt: "Lebanon Flag - Random Country Generator"
+    },
+    {
+        name: "Lesotho",
+        flag: "/images/random-country-flags/Lesotho.png",
+        capital: "Maseru",
+        continent: "Africa",
+        population: "2,142,249",
+        language: "English, Sotho",
+        currency: "Lesotho loti (LSL)",
+        timezone: "UTC+2 (SAST)",
+        alt: "Lesotho Flag - Random Country Generator"
+    },
+    {
+        name: "Liberia",
+        flag: "/images/random-country-flags/Liberia.png",
+        capital: "Monrovia",
+        continent: "Africa",
+        population: "5,057,681",
+        language: "English",
+        currency: "Liberian dollar (LRD)",
+        timezone: "UTC (GMT)",
+        alt: "Liberia Flag - Random Country Generator"
+    },
+    {
+        name: "Libya",
+        flag: "/images/random-country-flags/Libya.png",
+        capital: "Tripoli",
+        continent: "Africa",
+        population: "6,871,292",
+        language: "Arabic",
+        currency: "Libyan dinar (LYD)",
+        timezone: "UTC+2 (EET)",
+        alt: "Libya Flag - Random Country Generator"
+    },
+    {
+        name: "Liechtenstein",
+        flag: "/images/random-country-flags/Liechtenstein.png",
+        capital: "Vaduz",
+        continent: "Europe",
+        population: "38,128",
+        language: "German",
+        currency: "Swiss franc (CHF)",
+        timezone: "UTC+1 (CET)",
+        alt: "Liechtenstein Flag - Random Country Generator"
+    },
+    {
+        name: "Lithuania",
+        flag: "/images/random-country-flags/Lithuania.png",
+        capital: "Vilnius",
+        continent: "Europe",
+        population: "2,722,289",
+        language: "Lithuanian",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+2 (EET)",
+        alt: "Lithuania Flag - Random Country Generator"
+    },
+    {
+        name: "Luxembourg",
+        flag: "/images/random-country-flags/Luxembourg.png",
+        capital: "Luxembourg",
+        continent: "Europe",
+        population: "625,978",
+        language: "Luxembourgish, French, German",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Luxembourg Flag - Random Country Generator"
+    },
+    {
+        name: "Madagascar",
+        flag: "/images/random-country-flags/Madagascar.png",
+        capital: "Antananarivo",
+        continent: "Africa",
+        population: "27,691,018",
+        language: "French, Malagasy",
+        currency: "Malagasy ariary (MGA)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Madagascar Flag - Random Country Generator"
+    },
+    {
+        name: "Malawi",
+        flag: "/images/random-country-flags/Malawi.png",
+        capital: "Lilongwe",
+        continent: "Africa",
+        population: "19,129,952",
+        language: "English, Chichewa",
+        currency: "Malawian kwacha (MWK)",
+        timezone: "UTC+2 (CAT)",
+        alt: "Malawi Flag - Random Country Generator"
+    },
+    {
+        name: "Malaysia",
+        flag: "/images/random-country-flags/Malaysia.png",
+        capital: "Kuala Lumpur",
+        continent: "Asia",
+        population: "32,365,999",
+        language: "Malay",
+        currency: "Malaysian ringgit (MYR)",
+        timezone: "UTC+8 (MYT)",
+        alt: "Malaysia Flag - Random Country Generator"
+    },
+    {
+        name: "Maldives",
+        flag: "/images/random-country-flags/Maldives.png",
+        capital: "Malé",
+        continent: "Asia",
+        population: "540,544",
+        language: "Dhivehi",
+        currency: "Maldivian rufiyaa (MVR)",
+        timezone: "UTC+5 (MVT)",
+        alt: "Maldives Flag - Random Country Generator"
+    },
+    {
+        name: "Mali",
+        flag: "/images/random-country-flags/Mali.png",
+        capital: "Bamako",
+        continent: "Africa",
+        population: "20,250,833",
+        language: "French",
+        currency: "West African CFA franc (XOF)",
+        timezone: "UTC (GMT)",
+        alt: "Mali Flag - Random Country Generator"
+    },
+    {
+        name: "Malta",
+        flag: "/images/random-country-flags/Malta.png",
+        capital: "Valletta",
+        continent: "Europe",
+        population: "441,543",
+        language: "Maltese, English",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Malta Flag - Random Country Generator"
+    },
+    {
+        name: "Marshall Islands",
+        flag: "/images/random-country-flags/Marshall_Islands.png",
+        capital: "Majuro",
+        continent: "Oceania",
+        population: "59,190",
+        language: "English, Marshallese",
+        currency: "United States dollar (USD)",
+        timezone: "UTC+12 (MHT)",
+        alt: "Marshall_Islands Flag - Random Country Generator"
+    },
+    {
+        name: "Mauritania",
+        flag: "/images/random-country-flags/Mauritania.png",
+        capital: "Nouakchott",
+        continent: "Africa",
+        population: "4,649,658",
+        language: "Arabic",
+        currency: "Mauritanian ouguiya (MRU)",
+        timezone: "UTC (GMT)",
+        alt: "Mauritania Flag - Random Country Generator"
+    },
+    {
+        name: "Mauritius",
+        flag: "/images/random-country-flags/Mauritius.png",
+        capital: "Port Louis",
+        continent: "Africa",
+        population: "1,271,768",
+        language: "English, French",
+        currency: "Mauritian rupee (MUR)",
+        timezone: "UTC+4 (MUT)",
+        alt: "Mauritius Flag - Random Country Generator"
+    },
+    {
+        name: "Mexico",
+        flag: "/images/random-country-flags/Mexico.png",
+        capital: "Mexico City",
+        continent: "North America",
+        population: "128,932,753",
+        language: "Spanish",
+        currency: "Mexican peso (MXN)",
+        timezone: "UTC-5 to -8",
+        alt: "Mexico Flag - Random Country Generator"
+    },
+    {
+        name: "Micronesia",
+        flag: "/images/random-country-flags/Micronesia.png",
+        capital: "Palikir",
+        continent: "Oceania",
+        population: "115,023",
+        language: "English",
+        currency: "United States dollar (USD)",
+        timezone: "UTC+10 to +11",
+        alt: "Micronesia Flag - Random Country Generator"
+    },
+    {
+        name: "Moldova",
+        flag: "/images/random-country-flags/Moldova.png",
+        capital: "Chișinău",
+        continent: "Europe",
+        population: "4,033,963",
+        language: "Romanian",
+        currency: "Moldovan leu (MDL)",
+        timezone: "UTC+2 (EET)",
+        alt: "Moldova Flag - Random Country Generator"
+    },
+    {
+        name: "Monaco",
+        flag: "/images/random-country-flags/Monaco.png",
+        capital: "Monaco",
+        continent: "Europe",
+        population: "39,242",
+        language: "French",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Monaco Flag - Random Country Generator"
+    },
+    {
+        name: "Mongolia",
+        flag: "/images/random-country-flags/Mongolia.png",
+        capital: "Ulaanbaatar",
+        continent: "Asia",
+        population: "3,278,290",
+        language: "Mongolian",
+        currency: "Mongolian tögrög (MNT)",
+        timezone: "UTC+7 to +8",
+        alt: "Mongolia Flag - Random Country Generator"
+    },
+    {
+        name: "Montenegro",
+        flag: "/images/random-country-flags/Montenegro.png",
+        capital: "Podgorica",
+        continent: "Europe",
+        population: "628,066",
+        language: "Montenegrin",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Montenegro Flag - Random Country Generator"
+    },
+    {
+        name: "Morocco",
+        flag: "/images/random-country-flags/Morocco.png",
+        capital: "Rabat",
+        continent: "Africa",
+        population: "36,910,560",
+        language: "Arabic, Berber",
+        currency: "Moroccan dirham (MAD)",
+        timezone: "UTC (GMT)",
+        alt: "Morocco Flag - Random Country Generator"
+    },
+    {
+        name: "Mozambique",
+        flag: "/images/random-country-flags/Mozambique.png",
+        capital: "Maputo",
+        continent: "Africa",
+        population: "31,255,435",
+        language: "Portuguese",
+        currency: "Mozambican metical (MZN)",
+        timezone: "UTC+2 (CAT)",
+        alt: "Mozambique Flag - Random Country Generator"
+    },
+    {
+        name: "Myanmar",
+        flag: "/images/random-country-flags/Myanmar.png",
+        capital: "Naypyidaw",
+        continent: "Asia",
+        population: "54,409,800",
+        language: "Burmese",
+        currency: "Burmese kyat (MMK)",
+        timezone: "UTC+6:30 (MMT)",
+        alt: "Myanmar Flag - Random Country Generator"
+    },
+    {
+        name: "Namibia",
+        flag: "/images/random-country-flags/Namibia.png",
+        capital: "Windhoek",
+        continent: "Africa",
+        population: "2,540,905",
+        language: "English",
+        currency: "Namibian dollar (NAD)",
+        timezone: "UTC+1 (CAT)",
+        alt: "Namibia Flag - Random Country Generator"
+    },
+    {
+        name: "Nauru",
+        flag: "/images/random-country-flags/Nauru.png",
+        capital: "Yaren",
+        continent: "Oceania",
+        population: "10,824",
+        language: "English, Nauruan",
+        currency: "Australian dollar (AUD)",
+        timezone: "UTC+12 (NRT)",
+        alt: "Nauru Flag - Random Country Generator"
+    },
+    {
+        name: "Nepal",
+        flag: "/images/random-country-flags/Nepal.png",
+        capital: "Kathmandu",
+        continent: "Asia",
+        population: "29,136,808",
+        language: "Nepali",
+        currency: "Nepalese rupee (NPR)",
+        timezone: "UTC+5:45 (NPT)",
+        alt: "Nepal Flag - Random Country Generator"
+    },
+    {
+        name: "Netherlands",
+        flag: "/images/random-country-flags/Netherlands.png",
+        capital: "Amsterdam",
+        continent: "Europe",
+        population: "17,134,872",
+        language: "Dutch",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Netherlands Flag - Random Country Generator"
+    },
+    {
+        name: "New Zealand",
+        flag: "/images/random-country-flags/New_Zealand.png",
+        capital: "Wellington",
+        continent: "Oceania",
+        population: "4,822,233",
+        language: "English, Māori",
+        currency: "New Zealand dollar (NZD)",
+        timezone: "UTC+12 to +13",
+        alt: "New_Zealand Flag - Random Country Generator"
+    },
+    {
+        name: "Nicaragua",
+        flag: "/images/random-country-flags/Nicaragua.png",
+        capital: "Managua",
+        continent: "North America",
+        population: "6,624,554",
+        language: "Spanish",
+        currency: "Nicaraguan córdoba (NIO)",
+        timezone: "UTC-6 (CST)",
+        alt: "Nicaragua Flag - Random Country Generator"
+    },
+    {
+        name: "Niger",
+        flag: "/images/random-country-flags/Niger.png",
+        capital: "Niamey",
+        continent: "Africa",
+        population: "24,206,644",
+        language: "French",
+        currency: "West African CFA franc (XOF)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Niger Flag - Random Country Generator"
+    },
+    {
+        name: "Nigeria",
+        flag: "/images/random-country-flags/Nigeria.png",
+        capital: "Abuja",
+        continent: "Africa",
+        population: "206,139,589",
+        language: "English",
+        currency: "Nigerian naira (NGN)",
+        timezone: "UTC+1 (WAT)",
+        alt: "Nigeria Flag - Random Country Generator"
+    },
+    {
+        name: "North Macedonia",
+        flag: "/images/random-country-flags/North_Macedonia.png",
+        capital: "Skopje",
+        continent: "Europe",
+        population: "2,083,374",
+        language: "Macedonian",
+        currency: "Macedonian denar (MKD)",
+        timezone: "UTC+1 (CET)",
+        alt: "North_Macedonia Flag - Random Country Generator"
+    },
+    {
+        name: "Norway",
+        flag: "/images/random-country-flags/Norway.png",
+        capital: "Oslo",
+        continent: "Europe",
+        population: "5,421,241",
+        language: "Norwegian",
+        currency: "Norwegian krone (NOK)",
+        timezone: "UTC+1 (CET)",
+        alt: "Norway Flag - Random Country Generator"
+    },
+    {
+        name: "Oman",
+        flag: "/images/random-country-flags/Oman.png",
+        capital: "Muscat",
+        continent: "Asia",
+        population: "5,106,626",
+        language: "Arabic",
+        currency: "Omani rial (OMR)",
+        timezone: "UTC+4 (GST)",
+        alt: "Oman Flag - Random Country Generator"
+    },
+    {
+        name: "Pakistan",
+        flag: "/images/random-country-flags/Pakistan.png",
+        capital: "Islamabad",
+        continent: "Asia",
+        population: "220,892,340",
+        language: "Urdu, English",
+        currency: "Pakistani rupee (PKR)",
+        timezone: "UTC+5 (PKT)",
+        alt: "Pakistan Flag - Random Country Generator"
+    },
+    {
+        name: "Palau",
+        flag: "/images/random-country-flags/Palau.png",
+        capital: "Ngerulmud",
+        continent: "Oceania",
+        population: "18,094",
+        language: "English, Palauan",
+        currency: "United States dollar (USD)",
+        timezone: "UTC+9 (PWT)",
+        alt: "Palau Flag - Random Country Generator"
+    },
+    {
+        name: "Panama",
+        flag: "/images/random-country-flags/Panama.png",
+        capital: "Panama City",
+        continent: "North America",
+        population: "4,314,767",
+        language: "Spanish",
+        currency: "Panamanian balboa (PAB)",
+        timezone: "UTC-5 (EST)",
+        alt: "Panama Flag - Random Country Generator"
+    },
+    {
+        name: "Papua New Guinea",
+        flag: "/images/random-country-flags/Papua_New_Guinea.png",
+        capital: "Port Moresby",
+        continent: "Oceania",
+        population: "8,947,024",
+        language: "English, Tok Pisin",
+        currency: "Papua New Guinean kina (PGK)",
+        timezone: "UTC+10 to +11",
+        alt: "Papua_New_Guinea Flag - Random Country Generator"
+    },
+    {
+        name: "Paraguay",
+        flag: "/images/random-country-flags/Paraguay.png",
+        capital: "Asunción",
+        continent: "South America",
+        population: "7,132,538",
+        language: "Spanish, Guarani",
+        currency: "Paraguayan guaraní (PYG)",
+        timezone: "UTC-4 (PYT)",
+        alt: "Paraguay Flag - Random Country Generator"
+    },
+    {
+        name: "Peru",
+        flag: "/images/random-country-flags/Peru.png",
+        capital: "Lima",
+        continent: "South America",
+        population: "32,971,854",
+        language: "Spanish",
+        currency: "Peruvian sol (PEN)",
+        timezone: "UTC-5 (PET)",
+        alt: "Peru Flag - Random Country Generator"
+    },
+    {
+        name: "Philippines",
+        flag: "/images/random-country-flags/Philippines.png",
+        capital: "Manila",
+        continent: "Asia",
+        population: "109,581,078",
+        language: "Filipino, English",
+        currency: "Philippine peso (₱) (PHP)",
+        timezone: "UTC+8 (PHT)",
+        alt: "Philippines Flag - Random Country Generator"
+    },
+    {
+        name: "Poland",
+        flag: "/images/random-country-flags/Poland.png",
+        capital: "Warsaw",
+        continent: "Europe",
+        population: "37,846,611",
+        language: "Polish",
+        currency: "Polish złoty (PLN)",
+        timezone: "UTC+1 (CET)",
+        alt: "Poland Flag - Random Country Generator"
+    },
+    {
+        name: "Portugal",
+        flag: "/images/random-country-flags/Portugal.png",
+        capital: "Lisbon",
+        continent: "Europe",
+        population: "10,196,709",
+        language: "Portuguese",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC (WET)",
+        alt: "Portugal Flag - Random Country Generator"
+    },
+    {
+        name: "Qatar",
+        flag: "/images/random-country-flags/Qatar.png",
+        capital: "Doha",
+        continent: "Asia",
+        population: "2,881,053",
+        language: "Arabic",
+        currency: "Qatari riyal (QAR)",
+        timezone: "UTC+3 (AST)",
+        alt: "Qatar Flag - Random Country Generator"
+    },
+    {
+        name: "Romania",
+        flag: "/images/random-country-flags/Romania.png",
+        capital: "Bucharest",
+        continent: "Europe",
+        population: "19,237,691",
+        language: "Romanian",
+        currency: "Romanian leu (RON)",
+        timezone: "UTC+2 (EET)",
+        alt: "Romania Flag - Random Country Generator"
+    },
+    {
+        name: "Russia",
+        flag: "/images/random-country-flags/Russia.png",
+        capital: "Moscow",
+        continent: "Europe/Asia",
+        population: "145,934,462",
+        language: "Russian",
+        currency: "Russian ruble (RUB)",
+        timezone: "UTC+2 to +12",
+        alt: "Russia Flag - Random Country Generator"
+    },
+    {
+        name: "Rwanda",
+        flag: "/images/random-country-flags/Rwanda.png",
+        capital: "Kigali",
+        continent: "Africa",
+        population: "12,952,218",
+        language: "Kinyarwanda, French, English",
+        currency: "Rwandan franc (RWF)",
+        timezone: "UTC+2 (CAT)",
+        alt: "Rwanda Flag - Random Country Generator"
+    },
+    {
+        name: "Saint Kitts and Nevis",
+        flag: "/images/random-country-flags/Saint_Kitts_and_Nevis.png",
+        capital: "Basseterre",
+        continent: "North America",
+        population: "53,199",
+        language: "English",
+        currency: "East Caribbean dollar (XCD)",
+        timezone: "UTC-4 (AST)",
+        alt: "Saint_Kitts_and_Nevis Flag - Random Country Generator"
+    },
+    {
+        name: "Saint Lucia",
+        flag: "/images/random-country-flags/Saint_Lucia.png",
+        capital: "Castries",
+        continent: "North America",
+        population: "183,627",
+        language: "English",
+        currency: "East Caribbean dollar (XCD)",
+        timezone: "UTC-4 (AST)",
+        alt: "Saint_Lucia Flag - Random Country Generator"
+    },
+    {
+        name: "Saint Vincent and the Grenadines",
+        flag: "/images/random-country-flags/Saint_Vincent_and_the_Grenadines.png",
+        capital: "Kingstown",
+        continent: "North America",
+        population: "110,940",
+        language: "English",
+        currency: "East Caribbean dollar (XCD)",
+        timezone: "UTC-4 (AST)",
+        alt: "Saint_Vincent_and_the_Grenadines Flag - Random Country Generator"
+    },
+    {
+        name: "Samoa",
+        flag: "/images/random-country-flags/Samoa.png",
+        capital: "Apia",
+        continent: "Oceania",
+        population: "198,414",
+        language: "Samoan, English",
+        currency: "Samoan tālā (WST)",
+        timezone: "UTC+13 (WST)",
+        alt: "Samoa Flag - Random Country Generator"
+    },
+    {
+        name: "San Marino",
+        flag: "/images/random-country-flags/San_Marino.png",
+        capital: "San Marino",
+        continent: "Europe",
+        population: "33,931",
+        language: "Italian",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "San_Marino Flag - Random Country Generator"
+    },
+    {
+        name: "Sao Tome and Principe",
+        flag: "/images/random-country-flags/Sao_Tome_and_Principe.png",
+        capital: "São Tomé",
+        continent: "Africa",
+        population: "219,159",
+        language: "Portuguese",
+        currency: "São Tomé and Príncipe dobra (STN)",
+        timezone: "UTC (GMT)",
+        alt: "Sao_Tome_and_Principe Flag - Random Country Generator"
+    },
+    {
+        name: "Saudi Arabia",
+        flag: "/images/random-country-flags/Saudi_Arabia.png",
+        capital: "Riyadh",
+        continent: "Asia",
+        population: "34,813,871",
+        language: "Arabic",
+        currency: "Saudi riyal (SAR)",
+        timezone: "UTC+3 (AST)",
+        alt: "Saudi_Arabia Flag - Random Country Generator"
+    },
+    {
+        name: "Senegal",
+        flag: "/images/random-country-flags/Senegal.png",
+        capital: "Dakar",
+        continent: "Africa",
+        population: "16,743,927",
+        language: "French",
+        currency: "West African CFA franc (XOF)",
+        timezone: "UTC (GMT)",
+        alt: "Senegal Flag - Random Country Generator"
+    },
+    {
+        name: "Serbia",
+        flag: "/images/random-country-flags/Serbia.png",
+        capital: "Belgrade",
+        continent: "Europe",
+        population: "6,963,764",
+        language: "Serbian",
+        currency: "Serbian dinar (RSD)",
+        timezone: "UTC+1 (CET)",
+        alt: "Serbia Flag - Random Country Generator"
+    },
+    {
+        name: "Seychelles",
+        flag: "/images/random-country-flags/Seychelles.png",
+        capital: "Victoria",
+        continent: "Africa",
+        population: "98,347",
+        language: "English, French, Seychellois Creole",
+        currency: "Seychellois rupee (SCR)",
+        timezone: "UTC+4 (SCT)",
+        alt: "Seychelles Flag - Random Country Generator"
+    },
+    {
+        name: "Sierra Leone",
+        flag: "/images/random-country-flags/Sierra_Leone.png",
+        capital: "Freetown",
+        continent: "Africa",
+        population: "7,976,983",
+        language: "English",
+        currency: "Sierra Leonean leone (SLL)",
+        timezone: "UTC (GMT)",
+        alt: "Sierra_Leone Flag - Random Country Generator"
+    },
+    {
+        name: "Singapore",
+        flag: "/images/random-country-flags/Singapore.png",
+        capital: "Singapore",
+        continent: "Asia",
+        population: "5,850,342",
+        language: "English, Malay, Mandarin, Tamil",
+        currency: "Singapore dollar (SGD)",
+        timezone: "UTC+8 (SGT)",
+        alt: "Singapore Flag - Random Country Generator"
+    },
+    {
+        name: "Slovakia",
+        flag: "/images/random-country-flags/Slovakia.png",
+        capital: "Bratislava",
+        continent: "Europe",
+        population: "5,459,642",
+        language: "Slovak",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Slovakia Flag - Random Country Generator"
+    },
+    {
+        name: "Slovenia",
+        flag: "/images/random-country-flags/Slovenia.png",
+        capital: "Ljubljana",
+        continent: "Europe",
+        population: "2,078,938",
+        language: "Slovene",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Slovenia Flag - Random Country Generator"
+    },
+    {
+        name: "Solomon Islands",
+        flag: "/images/random-country-flags/Solomon_Islands.png",
+        capital: "Honiara",
+        continent: "Oceania",
+        population: "686,884",
+        language: "English",
+        currency: "Solomon Islands dollar (SBD)",
+        timezone: "UTC+11 (SBT)",
+        alt: "Solomon_Islands Flag - Random Country Generator"
+    },
+    {
+        name: "Somalia",
+        flag: "/images/random-country-flags/Somalia.png",
+        capital: "Mogadishu",
+        continent: "Africa",
+        population: "15,893,222",
+        language: "Somali, Arabic",
+        currency: "Somali shilling (SOS)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Somalia Flag - Random Country Generator"
+    },
+    {
+        name: "South Africa",
+        flag: "/images/random-country-flags/South_Africa.png",
+        capital: "Pretoria, Bloemfontein, Cape Town",
+        continent: "Africa",
+        population: "59,308,690",
+        language: "Zulu, Xhosa, Afrikaans, English",
+        currency: "South African rand (ZAR)",
+        timezone: "UTC+2 (SAST)",
+        alt: "South_Africa Flag - Random Country Generator"
+    },
+    {
+        name: "South Sudan",
+        flag: "/images/random-country-flags/South_Sudan.png",
+        capital: "Juba",
+        continent: "Africa",
+        population: "11,193,725",
+        language: "English",
+        currency: "South Sudanese pound (SSP)",
+        timezone: "UTC+2 (CAT)",
+        alt: "South_Sudan Flag - Random Country Generator"
+    },
+    {
+        name: "Spain",
+        flag: "/images/random-country-flags/Spain.png",
+        capital: "Madrid",
+        continent: "Europe",
+        population: "46,754,778",
+        language: "Spanish",
+        currency: "Euro (€) (EUR)",
+        timezone: "UTC+1 (CET)",
+        alt: "Spain Flag - Random Country Generator"
+    },
+    {
+        name: "Sri Lanka",
+        flag: "/images/random-country-flags/Sri_Lanka.png",
+        capital: "Colombo, Sri Jayawardenepura Kotte",
+        continent: "Asia",
+        population: "21,413,249",
+        language: "Sinhala, Tamil",
+        currency: "Sri Lankan rupee (LKR)",
+        timezone: "UTC+5:30 (SLST)",
+        alt: "Sri_Lanka Flag - Random Country Generator"
+    },
+    {
+        name: "Sudan",
+        flag: "/images/random-country-flags/Sudan.png",
+        capital: "Khartoum",
+        continent: "Africa",
+        population: "43,849,260",
+        language: "Arabic, English",
+        currency: "Sudanese pound (SDG)",
+        timezone: "UTC+2 (CAT)",
+        alt: "Sudan Flag - Random Country Generator"
+    },
+    {
+        name: "Suriname",
+        flag: "/images/random-country-flags/Suriname.png",
+        capital: "Paramaribo",
+        continent: "South America",
+        population: "586,632",
+        language: "Dutch",
+        currency: "Surinamese dollar (SRD)",
+        timezone: "UTC-3 (SRT)",
+        alt: "Suriname Flag - Random Country Generator"
+    },
+    {
+        name: "Sweden",
+        flag: "/images/random-country-flags/Sweden.png",
+        capital: "Stockholm",
+        continent: "Europe",
+        population: "10,099,265",
+        language: "Swedish",
+        currency: "Swedish krona (SEK)",
+        timezone: "UTC+1 (CET)",
+        alt: "Sweden Flag - Random Country Generator"
+    },
+    {
+        name: "Switzerland",
+        flag: "/images/random-country-flags/Switzerland.png",
+        capital: "Bern",
+        continent: "Europe",
+        population: "8,654,622",
+        language: "German, French, Italian, Romansh",
+        currency: "Swiss franc (CHF)",
+        timezone: "UTC+1 (CET)",
+        alt: "Switzerland Flag - Random Country Generator"
+    },
+    {
+        name: "Syria",
+        flag: "/images/random-country-flags/Syria.png",
+        capital: "Damascus",
+        continent: "Asia",
+        population: "17,500,658",
+        language: "Arabic",
+        currency: "Syrian pound (SYP)",
+        timezone: "UTC+2 (EET)",
+        alt: "Syria Flag - Random Country Generator"
+    },
+    {
+        name: "Taiwan",
+        flag: "/images/random-country-flags/Taiwan.png",
+        capital: "Taipei",
+        continent: "Asia",
+        population: "23,816,775",
+        language: "Mandarin",
+        currency: "New Taiwan dollar (TWD)",
+        timezone: "UTC+8 (CST)",
+        alt: "Taiwan Flag - Random Country Generator"
+    },
+    {
+        name: "Tajikistan",
+        flag: "/images/random-country-flags/Tajikistan.png",
+        capital: "Dushanbe",
+        continent: "Asia",
+        population: "9,537,645",
+        language: "Tajik",
+        currency: "Tajikistani somoni (TJS)",
+        timezone: "UTC+5 (TJT)",
+        alt: "Tajikistan Flag - Random Country Generator"
+    },
+    {
+        name: "Tanzania",
+        flag: "/images/random-country-flags/Tanzania.png",
+        capital: "Dodoma",
+        continent: "Africa",
+        population: "59,734,218",
+        language: "Swahili, English",
+        currency: "Tanzanian shilling (TZS)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Tanzania Flag - Random Country Generator"
+    },
+    {
+        name: "Thailand",
+        flag: "/images/random-country-flags/Thailand.png",
+        capital: "Bangkok",
+        continent: "Asia",
+        population: "69,799,978",
+        language: "Thai",
+        currency: "Thai baht (THB)",
+        timezone: "UTC+7 (ICT)",
+        alt: "Thailand Flag - Random Country Generator"
+    },
+    {
+        name: "Togo",
+        flag: "/images/random-country-flags/Togo.png",
+        capital: "Lomé",
+        continent: "Africa",
+        population: "8,278,724",
+        language: "French",
+        currency: "West African CFA franc (XOF)",
+        timezone: "UTC (GMT)",
+        alt: "Togo Flag - Random Country Generator"
+    },
+    {
+        name: "Tonga",
+        flag: "/images/random-country-flags/Tonga.png",
+        capital: "Nuku'alofa",
+        continent: "Oceania",
+        population: "105,695",
+        language: "English, Tongan",
+        currency: "Tongan paʻanga (TOP)",
+        timezone: "UTC+13 (TOT)",
+        alt: "Tonga Flag - Random Country Generator"
+    },
+    {
+        name: "Trinidad and Tobago",
+        flag: "/images/random-country-flags/Trinidad_and_Tobago.png",
+        capital: "Port of Spain",
+        continent: "North America",
+        population: "1,399,488",
+        language: "English",
+        currency: "Trinidad and Tobago dollar (TTD)",
+        timezone: "UTC-4 (AST)",
+        alt: "Trinidad_and_Tobago Flag - Random Country Generator"
+    },
+    {
+        name: "Tunisia",
+        flag: "/images/random-country-flags/Tunisia.png",
+        capital: "Tunis",
+        continent: "Africa",
+        population: "11,818,619",
+        language: "Arabic",
+        currency: "Tunisian dinar (TND)",
+        timezone: "UTC+1 (CET)",
+        alt: "Tunisia Flag - Random Country Generator"
+    },
+    {
+        name: "Turkey",
+        flag: "/images/random-country-flags/Turkey.png",
+        capital: "Ankara",
+        continent: "Asia",
+        population: "84,339,067",
+        language: "Turkish",
+        currency: "Turkish lira (TRY)",
+        timezone: "UTC+3 (TRT)",
+        alt: "Turkey Flag - Random Country Generator"
+    },
+    {
+        name: "Turkmenistan",
+        flag: "/images/random-country-flags/Turkmenistan.png",
+        capital: "Ashgabat",
+        continent: "Asia",
+        population: "6,031,200",
+        language: "Turkmen",
+        currency: "Turkmenistan manat (TMT)",
+        timezone: "UTC+5 (TMT)",
+        alt: "Turkmenistan Flag - Random Country Generator"
+    },
+    {
+        name: "Tuvalu",
+        flag: "/images/random-country-flags/Tuvalu.png",
+        capital: "Funafuti",
+        continent: "Oceania",
+        population: "11,792",
+        language: "English, Tuvaluan",
+        currency: "Australian dollar (AUD)",
+        timezone: "UTC+12 (TVT)",
+        alt: "Tuvalu Flag - Random Country Generator"
+    },
+    {
+        name: "Uganda",
+        flag: "/images/random-country-flags/Uganda.png",
+        capital: "Kampala",
+        continent: "Africa",
+        population: "45,741,007",
+        language: "English, Swahili",
+        currency: "Ugandan shilling (UGX)",
+        timezone: "UTC+3 (EAT)",
+        alt: "Uganda Flag - Random Country Generator"
+    },
+    {
+        name: "Ukraine",
+        flag: "/images/random-country-flags/Ukraine.png",
+        capital: "Kyiv",
+        continent: "Europe",
+        population: "43,733,762",
+        language: "Ukrainian",
+        currency: "Ukrainian hryvnia (UAH)",
+        timezone: "UTC+2 (EET)"
+            },
+ {
+                name: "United Arab Emirates",
+                flag: "/images/random-country-flags/United_Arab_Emirates.png",
+                capital: "Abu Dhabi",
+                continent: "Asia",
+                population: "9,890,402",
+                language: "Arabic",
+                currency: "UAE dirham (AED)",
+                timezone: "UTC+4 (GST)"
+            },
+            {
+                name: "United Kingdom",
+                flag: "/images/random-country-flags/United_Kingdom.png",
+                capital: "London",
+                continent: "Europe",
+                population: "67,886,011",
+                language: "English",
+                currency: "British pound (£) (GBP)",
+                timezone: "UTC (GMT)"
+            },
+            {
+                name: "United States",
+                flag: "/images/random-country-flags/United_States.png",
+                capital: "Washington, D.C.",
+                continent: "North America",
+                population: "331,002,651",
+                language: "English",
+                currency: "United States dollar ($) (USD)",
+                timezone: "UTC-4 to -12, +10, +11"
+            },
+            {
+                name: "Uruguay",
+                flag: "/images/random-country-flags/Uruguay.png",
+                capital: "Montevideo",
+                continent: "South America",
+                population: "3,473,730",
+                language: "Spanish",
+                currency: "Uruguayan peso (UYU)",
+                timezone: "UTC-3 (UYT)"
+            },
+            {
+                name: "Uzbekistan",
+                flag: "/images/random-country-flags/Uzbekistan.png",
+                capital: "Tashkent",
+                continent: "Asia",
+                population: "33,469,203",
+                language: "Uzbek",
+                currency: "Uzbekistani som (UZS)",
+                timezone: "UTC+5 (UZT)"
+            },
+            {
+                name: "Vanuatu",
+                flag: "/images/random-country-flags/Vanuatu.png",
+                capital: "Port Vila",
+                continent: "Oceania",
+                population: "307,145",
+                language: "Bislama, English, French",
+                currency: "Vanuatu vatu (VUV)",
+                timezone: "UTC+11 (VUT)"
+            },
+            {
+                name: "Vatican City",
+                flag: "/images/random-country-flags/Vatican_City.png",
+                capital: "Vatican City",
+                continent: "Europe",
+                population: "801",
+                language: "Italian, Latin",
+                currency: "Euro (€) (EUR)",
+                timezone: "UTC+1 (CET)"
+            },
+            {
+                name: "Venezuela",
+                flag: "/images/random-country-flags/Venezuela.png",
+                capital: "Caracas",
+                continent: "South America",
+                population: "28,435,940",
+                language: "Spanish",
+                currency: "Venezuelan bolívar soberano (VES)",
+                timezone: "UTC-4 (VET)"
+            },
+            {
+                name: "Vietnam",
+                flag: "/images/random-country-flags/Vietnam.png",
+                capital: "Hanoi",
+                continent: "Asia",
+                population: "97,338,579",
+                language: "Vietnamese",
+                currency: "Vietnamese đồng (₫) (VND)",
+                timezone: "UTC+7 (ICT)"
+            },
+            {
+                name: "Yemen",
+                flag: "/images/random-country-flags/Yemen.png",
+                capital: "Sana'a",
+                continent: "Asia",
+                population: "29,825,964",
+                language: "Arabic",
+                currency: "Yemeni rial (YER)",
+                timezone: "UTC+3 (AST)"
+            },
+            {
+                name: "Zambia",
+                flag: "/images/random-country-flags/Zambia.png",
+                capital: "Lusaka",
+                continent: "Africa",
+                population: "18,383,955",
+                language: "English",
+                currency: "Zambian kwacha (ZMW)",
+                timezone: "UTC+2 (CAT)"
+            },
+            {
+                name: "Zimbabwe",
+                flag: "/images/random-country-flags/Zimbabwe.png",
+                capital: "Harare",
+                continent: "Africa",
+                population: "14,862,924",
+                language: "English, Shona, Ndebele",
+                currency: "Zimbabwean dollar (ZWL)",
+                timezone: "UTC+2 (CAT)"
+            }
+        ];
+
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+            document.getElementById('generateBtn').classList.add('loading');
+            document.getElementById('generateBtn').disabled = true;
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+            document.getElementById('generateBtn').classList.remove('loading');
+            document.getElementById('generateBtn').disabled = false;
+        }
+
+        function generateCountry() {
+            showLoading();
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * countries.length);
+                const country = countries[randomIndex];
+                document.getElementById('country-flag').src = country.flag;
+                document.getElementById('country-flag').alt = `${country.name} Flag`;
+                document.getElementById('country-name').textContent = country.name;
+                document.getElementById('country-details').innerHTML = `
+                    <div class="detail-card">
+                        <strong>Capital:</strong> ${country.capital}
+                    </div>
+                    <div class="detail-card">
+                        <strong>Continent:</strong> ${country.continent}
+                    </div>
+                    <div class="detail-card">
+                        <strong>Population:</strong> ${country.population}
+                    </div>
+                    <div class="detail-card">
+                        <strong>Language:</strong> ${country.language}
+                    </div>
+                    <div class="detail-card">
+                        <strong>Currency:</strong> ${country.currency}
+                    </div>
+                    <div class="detail-card">
+                        <strong>Timezone:</strong> ${country.timezone}
+                    </div>
+                `;
+                document.getElementById('result').style.display = 'block';
+                hideLoading();
+            }, 500);
+        }
+
+        // Load a random country when the page loads
+        window.onload = function() {
+            generateCountry();
+        };
+    </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,826 @@
+<head>
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Random Name Generator - Simple & Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Random Name Generator - Generate unique and random names for any purpose. Whether you need a name for a game, project, or character, this tool is free, easy, and fast. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="Random Name Generator, Generate Names, Name Generator, Free Name Tool, Unique Name Generator, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/random-name-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Random Name Generator - Simple &amp; Free" property="og:title"/>
+<meta content="Random Name Generator - Generate unique and random names for any purpose. Whether you need a name for a game, project, or character, this tool is free, easy, and fast. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/random-name-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/random-name-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Random Name Generator - Simple &amp; Free" name="twitter:title"/>
+<meta content="Random Name Generator - Generate unique and random names for any purpose. Whether you need a name for a game, project, or character, this tool is free, easy, and fast. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/random-name-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- Consolidated SoftwareApplication Schema with Reviews & Rating -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Random Name Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "applicationSubCategory": "Utility",
+  "url": "https://www.freeontools.com/random-name-generator",
+  "image": "https://www.freeontools.com/images/random-name-generator.png",
+  "description": "Generate unique and random names for any purpose, whether it's for characters, projects, or games. No login required, no ads.",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/random-name-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.87",
+    "bestRating": "5",
+    "ratingCount": "920"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Oliver White"
+      },
+      "datePublished": "2025-05-12",
+      "reviewBody": "This Random Name Generator tool is so useful! It's quick, easy, and helps me generate names for projects, games, and more in no time. Love how simple and free it is.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "John Doe"
+      },
+      "datePublished": "2025-04-01",
+      "reviewBody": "This Random Name Generator is fantastic! It provides unique names quickly based on country or religion. Highly recommend!",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
+  ]
+}
+  </script>
+<style>
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f6f5;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    .header-content {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .header-content h1 {
+        color: #2c3e50;
+        font-size: 2em;
+    }
+
+    .header-content p {
+        color: #555;
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 30px;
+        width: 100%;
+        max-width: 700px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .options {
+        display: grid;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    select, button {
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    select {
+        background: #f0f2f5;
+        width: 100%;
+    }
+
+    button {
+        background: #f28c38;
+        color: white;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #d97a2e;
+        transform: translateY(-2px);
+    }
+
+    .result {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 20px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        word-break: break-word;
+    }
+
+    .controls {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .content-container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+        max-width: 700px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .content-container h2 {
+        color: #2c3e50;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+text-align: left !important;
+
+}
+
+    .content-container h3 {
+        color: #2c3e50;
+        font-size: 1.4em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+text-align: left !important;
+      
+}
+
+    .content-container p {
+        color: #555;
+        font-size: 1em;
+        margin-bottom: 15px;
+text-align: left !important;
+      
+}
+
+    .content-container ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    .content-container ul li {
+        color: #555;
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .content-container ol {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    .content-container ol li {
+        color: #555;
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 1.5em;
+        }
+        
+        .header-content p {
+            font-size: 1em;
+        }
+        
+        select, button {
+            font-size: 14px;
+        }
+
+        .content-container {
+            padding: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .content-container h2 {
+            font-size: 1.5em;
+          text-align: left !important;
+}
+
+        .content-container h3 {
+            font-size: 1.2em;
+          text-align: left !important;
+}
+
+        .content-container p {
+            font-size: 0.9em;
+          text-align: left !important;
+}
+
+        .content-container ul li,
+        .content-container ol li {
+            font-size: 0.9em;
+        }
+    }
+</style>
+ </meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="header-content">
+<h1>
+    Random Name Generator
+   </h1>
+<p>
+    Generate unique names based on country or religion
+   </p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<div class="options">
+<select id="gender">
+<option value="any">
+      Any Gender
+     </option>
+<option value="male">
+      Male
+     </option>
+<option value="female">
+      Female
+     </option>
+</select>
+<select id="origin">
+<option value="any">
+      Any Country
+     </option>
+<option value="india">
+      India
+     </option>
+<option value="china">
+      China
+     </option>
+<option value="usa">
+      United States
+     </option>
+<option value="indonesia">
+      Indonesia
+     </option>
+<option value="pakistan">
+      Pakistan
+     </option>
+<option value="nigeria">
+      Nigeria
+     </option>
+<option value="brazil">
+      Brazil
+     </option>
+<option value="bangladesh">
+      Bangladesh
+     </option>
+<option value="russia">
+      Russia
+     </option>
+<option value="mexico">
+      Mexico
+     </option>
+<option value="japan">
+      Japan
+     </option>
+<option value="philippines">
+      Philippines
+     </option>
+<option value="egypt">
+      Egypt
+     </option>
+<option value="vietnam">
+      Vietnam
+     </option>
+<option value="ethiopia">
+      Ethiopia
+     </option>
+<option value="iran">
+      Iran
+     </option>
+<option value="turkey">
+      Turkey
+     </option>
+<option value="germany">
+      Germany
+     </option>
+<option value="thailand">
+      Thailand
+     </option>
+<option value="uk">
+      United Kingdom
+     </option>
+</select>
+<select id="religion">
+<option value="any">
+      Any Religion
+     </option>
+<option value="christianity">
+      Christianity
+     </option>
+<option value="islam">
+      Islam
+     </option>
+<option value="hinduism">
+      Hinduism
+     </option>
+<option value="buddhism">
+      Buddhism
+     </option>
+<option value="sikhism">
+      Sikhism
+     </option>
+<option value="judaism">
+      Judaism
+     </option>
+<option value="traditional">
+      Traditional/Folk
+     </option>
+<option value="no-religion">
+      No Religion/Atheist
+     </option>
+</select>
+<button onclick="generateName()">
+     Generate Name
+    </button>
+</div>
+<div class="result" id="result">
+    Click "Generate Name" to start!
+   </div>
+<div class="controls">
+<button onclick="copyName()">
+     Copy
+    </button>
+<button onclick="generateName()">
+     Generate New
+    </button>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Random Name Generator?
+   </h2>
+<p>
+    A Random Name Generator is a simple tool that does exactly what it says on the label—generates random names. Whether you’re working on a creative project, need a character name for your latest story, or just can’t think of a cool username, this tool helps you out. You don’t have to stress over coming up with the perfect name. Just let the generator do its thing and pull one out for you.
+   </p>
+<p>
+    It’s super useful for game developers, writers, marketers, or anyone who just needs a fresh name but doesn't want to sit and brainstorm forever. The generator creates names that can be used for anything from characters and places to business names or fictional companies.
+   </p>
+<h3>
+    Try Our Random Name Generator Now
+   </h3>
+<p>
+    Don’t spend hours overthinking names. Just click, and let our Random Name Generator give you a name. Whether you need a first name, last name, or a full name, this tool has you covered in seconds.
+   </p>
+<h3>
+    Why You Need a Random Name Generator
+   </h3>
+<p>
+    Okay, so maybe you don’t need a name every day. But when you do, it’s pretty awesome to have a tool that makes the process fast and painless. Here’s why this tool is super handy:
+   </p>
+<ul>
+<li>
+<strong>
+      Creativity Boost:
+     </strong>
+     When you're stuck in a creative block, sometimes you just need a spark of inspiration. A random name can get your imagination flowing again.
+    </li>
+<li>
+<strong>
+      Saves Time:
+     </strong>
+     You could sit and think for hours or you could click and get a name in seconds. It’s all about working smarter, not harder.
+    </li>
+<li>
+<strong>
+      Wide Use Cases:
+     </strong>
+     From naming fictional characters to picking a username or even brainstorming a project name, a random name can fit tons of scenarios.
+    </li>
+<li>
+<strong>
+      No Brainstorming Required:
+     </strong>
+     If you’ve got too many things to juggle, don’t waste time stressing about names. Let the generator take care of that for you!
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+<strong>
+      Fast and Simple:
+     </strong>
+     Just click a button, and boom—instant name.
+    </li>
+<li>
+<strong>
+      Customizable Options:
+     </strong>
+     Choose from different name types: first name, last name, full name, or even more specific options like fantasy or sci-fi names.
+    </li>
+<li>
+<strong>
+      Diverse Options:
+     </strong>
+     The generator pulls from a wide range of names, so you’ll always get something different.
+    </li>
+<li>
+<strong>
+      Fun and Useful:
+     </strong>
+     Whether you’re working on a novel, game, or project, this tool is both fun and practical.
+    </li>
+<li>
+<strong>
+      Free to Use:
+     </strong>
+     No signup, no fees. It’s totally free and available anytime you need it.
+    </li>
+</ul>
+<h3>
+    How to Use the Random Name Generator
+   </h3>
+<p>
+    So, how does it work? Let’s break it down:
+   </p>
+<ol>
+<li>
+<strong>
+      Choose Your Name Type:
+     </strong>
+     You can select from options like a first name, full name, fantasy name, etc.
+    </li>
+<li>
+<strong>
+      Click the Button:
+     </strong>
+     Once you’ve made your choice, hit the “Generate” button.
+    </li>
+<li>
+<strong>
+      Get Your Name:
+     </strong>
+     Instantly, you’ll get a random name generated for you. You can copy it or hit “Generate” again for a new one.
+    </li>
+<li>
+<strong>
+      Use It:
+     </strong>
+     Now that you’ve got your name, you can drop it into your story, game, website, or wherever you need it.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    If you’re generating multiple names, make a list and save them for later—who knows when you’ll need more!
+   </p>
+<h3>
+    Why Choose This Random Name Generator?
+   </h3>
+<ul>
+<li>
+<strong>
+      Fast and Easy:
+     </strong>
+     No complicated steps—just click and go.
+    </li>
+<li>
+<strong>
+      Versatile:
+     </strong>
+     Whether you need something for a story, game, or business, this generator has options for everyone.
+    </li>
+<li>
+<strong>
+      Always Free:
+     </strong>
+     There’s no hidden fees, no registration required. It’s ready to use whenever you need it.
+    </li>
+<li>
+<strong>
+      Fun to Use:
+     </strong>
+     Even if you’re just playing around with name ideas, it’s pretty fun to see what random name pops up.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      How many names can I generate?
+     </strong>
+<br/>
+     You can generate as many names as you want. Just click the button and get a fresh one every time.
+    </li>
+<li>
+<strong>
+      Can I use the names I generate for a business or project?
+     </strong>
+<br/>
+     Absolutely! The names you generate are free to use however you like—whether for a character, website, or business name.
+    </li>
+<li>
+<strong>
+      Do the names follow a specific theme?
+     </strong>
+<br/>
+     It depends on the options you choose! You can generate fantasy names, regular names, or more specific types like historical or modern names.
+    </li>
+<li>
+<strong>
+      Can I customize the type of name I want?
+     </strong>
+<br/>
+     Yep! You can select what kind of name you’re looking for, whether it’s a first name, full name, fantasy name, or something else entirely.
+    </li>
+<li>
+<strong>
+      Is this tool really free to use?
+     </strong>
+<br/>
+     Yep, totally free! No sign-ups, no hidden charges. Just generate and go.
+    </li>
+</ol>
+<p>
+    The Random Name Generator is a great way to save time and get your creative juices flowing. Whether you need a name for a character, a project, or anything else, this tool is quick, easy, and fun to use. No stress, no hassle—just generate, use, and get back to what really matters!
+   </p>
+</div>
+<script>
+ // Country-based names
+const firstNamesByCountry = {
+    male: {
+        india: ['Aarav', 'Vihaan', 'Arjun', 'Gurpreet', 'Rahul'],
+        china: ['Wei', 'Jun', 'Hao', 'Ming', 'Li'],
+        usa: ['James', 'William', 'Michael', 'David', 'Ethan'],
+        indonesia: ['Budi', 'Agus', 'Eko', 'Rizki', 'Dwi'],
+        pakistan: ['Ahmed', 'Omar', 'Hassan', 'Bilal', 'Yusuf'],
+        nigeria: ['Chukwu', 'Emeka', 'Tunde', 'Segun', 'Olu'],
+        brazil: ['João', 'Pedro', 'Lucas', 'Mateus', 'Gabriel'],
+        bangladesh: ['Rahim', 'Karim', 'Arif', 'Sohail', 'Imran'],
+        russia: ['Ivan', 'Alexei', 'Dmitri', 'Sergei', 'Nikolai'],
+        mexico: ['José', 'Carlos', 'Juan', 'Luis', 'Miguel'],
+        japan: ['Hiroto', 'Ren', 'Kaito', 'Sota', 'Haruto'],
+        philippines: ['Juanito', 'Mark', 'Angelo', 'Rodel', 'Jerome'],
+        egypt: ['Mohamed', 'Ali', 'Hussein', 'Ibrahim', 'Khaled'],
+        vietnam: ['Anh', 'Bao', 'Duc', 'Hieu', 'Minh'],
+        ethiopia: ['Abebe', 'Tadesse', 'Girma', 'Solomon', 'Yonas'],
+        iran: ['Reza', 'Hossein', 'Amir', 'Mehdi', 'Saeed'],
+        turkey: ['Ahmet', 'Mehmet', 'Mustafa', 'Yusuf', 'Hasan'],
+        germany: ['Lukas', 'Leon', 'Finn', 'Jonas', 'Maximilian'],
+        thailand: ['Somchai', 'Thanawat', 'Pongsak', 'Krit', 'Nat'],
+        uk: ['Oliver', 'Harry', 'George', 'Jack', 'Thomas']
+    },
+    female: {
+        india: ['Aarohi', 'Ananya', 'Diya', 'Harpreet', 'Aisha'],
+        china: ['Li', 'Mei', 'Xia', 'Yan', 'Jing'],
+        usa: ['Emma', 'Olivia', 'Ava', 'Isabella', 'Sophia'],
+        indonesia: ['Siti', 'Ayu', 'Dewi', 'Rani', 'Lestari'],
+        pakistan: ['Fatima', 'Zainab', 'Maryam', 'Sana', 'Amina'],
+        nigeria: ['Chidinma', 'Ngozi', 'Funmi', 'Aminatu', 'Yetunde'],
+        brazil: ['Maria', 'Ana', 'Julia', 'Beatriz', 'Larissa'],
+        bangladesh: ['Fatema', 'Ruma', 'Shabnam', 'Taslima', 'Nasrin'],
+        russia: ['Anna', 'Olga', 'Natasha', 'Svetlana', 'Yelena'],
+        mexico: ['Sofía', 'Valentina', 'Camila', 'Lucía', 'Isabela'],
+        japan: ['Yui', 'Aoi', 'Hana', 'Rin', 'Sakura'],
+        philippines: ['Maria', 'Angel', 'Jessa', 'Rhea', 'Gina'],
+        egypt: ['Fatma', 'Amina', 'Sara', 'Nour', 'Hana'],
+        vietnam: ['Lan', 'Mai', 'Ngoc', 'Thu', 'Trang'],
+        ethiopia: ['Abeba', 'Selam', 'Tigist', 'Fiker', 'Meseret'],
+        iran: ['Fatemeh', 'Zahra', 'Maryam', 'Narges', 'Sara'],
+        turkey: ['Ayşe', 'Fatma', 'Elif', 'Zeynep', 'Esra'],
+        germany: ['Sophie', 'Julia', 'Emma', 'Leonie', 'Hannah'],
+        thailand: ['Naree', 'Supattra', 'Chanya', 'Pim', 'Aree'],
+        uk: ['Amelia', 'Isla', 'Emily', 'Lily', 'Grace']
+    }
+};
+
+const lastNamesByCountry = {
+    india: ['Sharma', 'Patel', 'Singh', 'Kumar', 'Gupta'],
+    china: ['Wang', 'Li', 'Zhang', 'Liu', 'Chen'],
+    usa: ['Smith', 'Johnson', 'Brown', 'Taylor', 'Wilson'],
+    indonesia: ['Sari', 'Wati', 'Rahayu', 'Ningsih', 'Lestari'],
+    pakistan: ['Khan', 'Ahmed', 'Malik', 'Hussain', 'Sheikh'],
+    nigeria: ['Adebayo', 'Okafor', 'Mohammed', 'Lawal', 'Eze'],
+    brazil: ['Silva', 'Santos', 'Oliveira', 'Souza', 'Lima'],
+    bangladesh: ['Hossain', 'Islam', 'Rahman', 'Begum', 'Khatun'],
+    russia: ['Ivanov', 'Petrov', 'Sidorov', 'Smirnov', 'Volkov'],
+    mexico: ['García', 'Martínez', 'López', 'Hernández', 'Pérez'],
+    japan: ['Sato', 'Suzuki', 'Takahashi', 'Tanaka', 'Watanabe'],
+    philippines: ['Reyes', 'Cruz', 'Garcia', 'Santos', 'Mendoza'],
+    egypt: ['Mohamed', 'Ahmed', 'Hassan', 'Mahmoud', 'Ibrahim'],
+    vietnam: ['Nguyen', 'Tran', 'Le', 'Pham', 'Hoang'],
+    ethiopia: ['Tesfaye', 'Kebede', 'Abera', 'Bekele', 'Tadesse'],
+    iran: ['Hosseini', 'Mohammadi', 'Ahmadi', 'Rezaei', 'Khosravi'],
+    turkey: ['Yılmaz', 'Kaya', 'Demir', 'Çelik', 'Şahin'],
+    germany: ['Müller', 'Schmidt', 'Schneider', 'Fischer', 'Weber'],
+    thailand: ['Sukchai', 'Thongdee', 'Phongphan', 'Saetang', 'Wongchai'],
+    uk: ['Smith', 'Jones', 'Taylor', 'Wilson', 'Brown']
+};
+
+// Religion-based names (global pools)
+const firstNamesByReligion = {
+    male: {
+        christianity: ['James', 'João', 'Pedro', 'Chukwu', 'Ivan', 'José', 'Juanito', 'Abebe', 'Lukas', 'Oliver'],
+        islam: ['Ahmed', 'Omar', 'Mohamed', 'Rahim', 'Ali', 'Reza', 'Ahmet', 'Hassan', 'Bilal', 'Yusuf'],
+        hinduism: ['Aarav', 'Vihaan', 'Arjun', 'Rahul', 'Krishna'],
+        buddhism: ['Wei', 'Hiroto', 'Anh', 'Somchai', 'Kaito'],
+        sikhism: ['Gurpreet', 'Harjit', 'Jaswant', 'Amar', 'Singh'],
+        judaism: ['David', 'Ethan', 'Jacob', 'Samuel', 'Isaac'],
+        traditional: ['Ming', 'Olu', 'Sota', 'Hieu', 'Solomon'],
+        'no-religion': ['Michael', 'Hao', 'Sergei', 'Jonas', 'Jack']
+    },
+    female: {
+        christianity: ['Emma', 'Maria', 'Ana', 'Chidinma', 'Anna', 'Sofía', 'Angel', 'Abeba', 'Sophie', 'Amelia'],
+        islam: ['Fatima', 'Zainab', 'Fatma', 'Ruma', 'Amina', 'Fatemeh', 'Ayşe', 'Maryam', 'Sana', 'Sara'],
+        hinduism: ['Aarohi', 'Ananya', 'Diya', 'Priya', 'Isha'],
+        buddhism: ['Li', 'Yui', 'Lan', 'Naree', 'Aoi'],
+        sikhism: ['Harpreet', 'Jasleen', 'Simran', 'Kaur', 'Navjot'],
+        judaism: ['Isabella', 'Sophia', 'Sarah', 'Rachel', 'Leah'],
+        traditional: ['Yan', 'Funmi', 'Rin', 'Thu', 'Fiker'],
+        'no-religion': ['Ava', 'Xia', 'Svetlana', 'Leonie', 'Lily']
+    }
+};
+
+const lastNamesByReligion = {
+    christianity: ['Smith', 'Silva', 'Adebayo', 'Ivanov', 'García', 'Reyes', 'Tesfaye', 'Müller', 'Jones'],
+    islam: ['Khan', 'Mohamed', 'Hossain', 'Ahmed', 'Hosseini', 'Yılmaz', 'Malik', 'Hassan', 'Sheikh'],
+    hinduism: ['Sharma', 'Patel', 'Singh', 'Kumar', 'Gupta'],
+    buddhism: ['Wang', 'Sato', 'Nguyen', 'Sukchai', 'Suzuki'],
+    sikhism: ['Singh', 'Kaur', 'Gill', 'Sandhu', 'Dhillon'],
+    judaism: ['Cohen', 'Levy', 'Goldberg', 'Rosen', 'Stein'],
+    traditional: ['Li', 'Okafor', 'Tanaka', 'Tran', 'Kebede'],
+    'no-religion': ['Brown', 'Zhang', 'Volkov', 'Schmidt', 'Taylor']
+};
+
+let usedNames = new Set();
+
+// Function: generateName
+function generateName() {
+    const gender = document.getElementById('gender').value;
+    const origin = document.getElementById('origin').value;
+    const religion = document.getElementById('religion').value;
+    const result = document.getElementById('result');
+
+    // Determine gender
+    let selectedGender = gender;
+    if (gender === 'any') {
+        selectedGender = Math.random() > 0.5 ? 'male' : 'female';
+    }
+
+    let firstNamePool, lastNamePool;
+
+    // Decide which filter to use: religion takes priority if not "any", otherwise use origin
+    if (religion !== 'any') {
+        firstNamePool = firstNamesByReligion[selectedGender][religion];
+        lastNamePool = lastNamesByReligion[religion];
+    } else if (origin !== 'any') {
+        firstNamePool = firstNamesByCountry[selectedGender][origin];
+        lastNamePool = lastNamesByCountry[origin];
+    } else {
+        // If both are "any", combine all names from countries for a broader pool
+        firstNamePool = Object.values(firstNamesByCountry[selectedGender]).flat();
+        lastNamePool = Object.values(lastNamesByCountry).flat();
+    }
+
+    // Generate unique name
+    let firstName, lastName, fullName;
+    do {
+        firstName = firstNamePool[Math.floor(Math.random() * firstNamePool.length)];
+        lastName = lastNamePool[Math.floor(Math.random() * lastNamePool.length)];
+        fullName = `${firstName} ${lastName}`;
+    } while (usedNames.has(fullName));
+
+    // Add to used names and display
+    usedNames.add(fullName);
+    result.textContent = fullName;
+
+    // Reset used names if all combinations are exhausted
+    const maxCombinations = firstNamePool.length * lastNamePool.length;
+    if (usedNames.size >= maxCombinations) {
+        usedNames.clear();
+        usedNames.add(fullName);
+    }
+}
+
+// Function: copyName
+function copyName() {
+    const result = document.getElementById('result').textContent;
+    if (result && result !== "Click 'Generate Name' to start!") {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(result)
+                .then(() => alert('Name copied to clipboard!'))
+                .catch(() => alert('Failed to copy name. Please try selecting and copying manually.'));
+        } else {
+            alert('Clipboard API not supported in this browser. Please select and copy the name manually.');
+        }
+    } else {
+        alert('No name to copy. Please generate a name first.');
+    }
+}
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

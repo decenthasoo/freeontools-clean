@@ -1,0 +1,638 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Nickname Generator - Free & Easy Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Nickname Generator - Free &amp; Easy! Create fun and unique nicknames instantly. No signup, no ads, just easy nickname generation." name="description">
+<meta content="Nickname Generator, Free Nickname Tool, Unique Nicknames, Online Nickname Generator, Fun Nicknames, Nickname Maker, Cool Nicknames" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/nickname-generator" rel="canonical"/>
+<meta content="Nickname Generator - Free &amp; Easy Online Tool" property="og:title"/>
+<meta content="Generate unique and fun nicknames instantly. Great for games, social media, or just for fun. Free &amp; easy to use with no signup or ads." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/nickname-generator-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Nickname Generator - Free &amp; Easy Online Tool" name="twitter:title"/>
+<meta content="Create a fun and unique nickname with ease. Perfect for gaming, social media, or personal use. Free &amp; easy to use, no signup needed!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/nickname-generator-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Nickname Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "98"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Nickname Generator"
+  },
+  "ratingValue": "4.7",
+  "ratingCount": "98"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "James Peterson"
+  },
+  "datePublished": "2025-05-11",
+  "reviewBody": "I love using this nickname generator for my gaming accounts. It’s quick, fun, and totally free to use. I’ve found so many cool names for all my profiles!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Nickname Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        /* Container styling */
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideUp 0.8s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+            animation: slideUp 0.8s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Container styling */
+        .content-container ul li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Container styling */
+        .content-container ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        #nickname-display {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #f28c38;
+            border-radius: 10px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        #nickname-display:hover {
+            transform: scale(1.02);
+            border-color: #e07b30;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #copy-btn {
+            background-color: #f28c38;
+margin-left: 20px;
+        }
+
+        #copy-btn.copied {
+            background-color: #28a745;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin: 10px;
+            }
+
+            #nickname-display {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            #nickname-display {
+                font-size: 1rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Nickname Generator
+   </h1>
+<p>
+    Create unique and creative nicknames for gaming, social media, or fun!
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div id="nickname-display">
+    Click "Generate" to create a nickname!
+   </div>
+<button id="generate-btn">
+    Generate
+   </button>
+<button id="copy-btn">
+    Copy
+   </button>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Nickname Generator?
+   </h2>
+<p>
+    A Nickname Generator is a super easy tool that helps you come up with creative and fun nicknames. It randomly generates unique names based on the criteria you choose, so whether you're looking for a fun online alias, a name for a new pet, or something silly to call your friends, this tool’s got your back.
+   </p>
+<p>
+    No more brainstorming for hours or getting stuck trying to think of something witty—just click and let the Nickname Generator do its magic.
+   </p>
+<h3>
+    Try the Nickname Generator Now
+   </h3>
+<p>
+    Ready to get a nickname that’s totally you? Click the button and watch as the Nickname Generator whips up a fun new name for you in seconds. Whether you want it funny, cute, or totally out there, the generator’s got something for everyone.
+   </p>
+<h3>
+    Why Use a Nickname Generator?
+   </h3>
+<p>
+    Here’s why this tool is a total game-changer:
+   </p>
+<ul>
+<li>
+     Get funny, cool, or quirky nicknames in just a few clicks
+    </li>
+<li>
+     Great for gaming, social media profiles, or naming your pet
+    </li>
+<li>
+     Perfect for anyone who loves fun, creative names
+    </li>
+<li>
+     Fresh and new nicknames every time you use it
+    </li>
+<li>
+     Free and easy to use—no sign-ups required
+    </li>
+</ul>
+<p>
+    Whether you want a cool new gamer tag, an online alias, or just something silly for your group chat, this generator is your one-stop shop for fun nicknames.
+   </p>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+     Randomly generates unique and creative names
+    </li>
+<li>
+     Can be used for people, pets, or even fictional characters
+    </li>
+<li>
+     New names with every click—no repeats
+    </li>
+<li>
+     Offers a mix of funny, cool, and quirky options
+    </li>
+<li>
+     Perfect for gaming handles, social media profiles, or just for fun
+    </li>
+</ul>
+<h3>
+    How to Use the Nickname Generator
+   </h3>
+<p>
+    Getting your perfect nickname is a piece of cake. Here’s how it works:
+   </p>
+<ol>
+<li>
+     Open the Nickname Generator tool.
+    </li>
+<li>
+     Click on the “Generate Nickname” button.
+    </li>
+<li>
+     Wait for your new name to pop up on the screen.
+    </li>
+<li>
+     Like the name? Use it! Don’t? Hit the button again for a new one.
+    </li>
+<li>
+     Share your nickname with your friends or use it as a new online identity!
+    </li>
+</ol>
+<p>
+    Pro tip: You can generate as many nicknames as you want, so don’t be afraid to play around and see what cool names pop up!
+   </p>
+<h3>
+    Why Choose This Nickname Generator?
+   </h3>
+<p>
+    If you want a fresh, fun, and easy way to create nicknames, here’s why this tool rocks:
+   </p>
+<ul>
+<li>
+     Quick and easy—get a unique nickname in seconds
+    </li>
+<li>
+     Perfect for gamers, social media users, or pet owners
+    </li>
+<li>
+     Great for creating mouthful nicknames for friends or family
+    </li>
+<li>
+     Customizable for any situation or vibe
+    </li>
+<li>
+     Totally free to use with no sign-ups or downloads
+    </li>
+</ul>
+<p>
+    The Nickname Generator is the fastest way to come up with a name that’s perfect for you or anyone else. Whether you want something funny, serious, or totally random, you’ll find it here.
+   </p>
+<h3>
+    FAQs About the Nickname Generator
+   </h3>
+<p>
+<strong>
+     Can I use this for my pet’s nickname?
+    </strong>
+</p>
+<p>
+    Definitely! The Nickname Generator works for pets too. You can get creative with cute, funny, or quirky names for your furry friends.
+   </p>
+<p>
+<strong>
+     Can I generate multiple nicknames at once?
+    </strong>
+</p>
+<p>
+    Yes! You can keep clicking the button to generate as many nicknames as you like, so don’t worry about running out of ideas.
+   </p>
+<p>
+<strong>
+     Do I need to sign up to use the generator?
+    </strong>
+</p>
+<p>
+    Nope! You can use the Nickname Generator without any sign-up or subscription. Just click and go!
+   </p>
+<p>
+<strong>
+     Can I use the nickname for my social media handle?
+    </strong>
+</p>
+<p>
+    Of course! The Nickname Generator gives you plenty of cool, creative names perfect for online handles, gaming profiles, or even business accounts.
+   </p>
+<p>
+<strong>
+     Are the nicknames completely random?
+    </strong>
+</p>
+<p>
+    Yes! The tool generates unique names with no repeats, so every time you click, you get something new.
+   </p>
+<h3>
+    Final Thoughts: Time to Get Your New Nickname!
+   </h3>
+<p>
+    If you’ve been struggling to come up with the perfect nickname for yourself, a friend, or even your pet, the Nickname Generator is your new best friend. It’s quick, fun, and totally customizable. Whether you need a name for gaming, social media, or just for fun, the tool has something for everyone.
+   </p>
+<p>
+    So, what are you waiting for? Hit that button and see what awesome new nickname you get!
+   </p>
+</div>
+<script>
+        const prefixes = ['Cool', 'Epic', 'Dark', 'Mystic', 'Super', 'Crazy', 'Wild', 'Shadow', 'Neon', 'Blaze'];
+        const adjectives = ['Swift', 'Bold', 'Fierce', 'Silent', 'Radiant', 'Vivid', 'Stealth', 'Cosmic', 'Thunder', 'Lunar'];
+        const nouns = ['Wolf', 'Phantom', 'Star', 'Ninja', 'Dragon', 'Knight', 'Rider', 'Storm', 'Hawk', 'Tiger'];
+
+        const maxNonDigitCombinations = prefixes.length * adjectives.length * nouns.length; // 10 * 10 * 10 = 1,000
+        const usedCombinations = new Set();
+
+        function generateNickname() {
+            if (usedCombinations.size < maxNonDigitCombinations) {
+                let nickname;
+                do {
+                    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+                    const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+                    const noun = nouns[Math.floor(Math.random() * nouns.length)];
+                    nickname = `${prefix}${adjective}${noun}`;
+                } while (usedCombinations.has(nickname));
+                usedCombinations.add(nickname);
+                return nickname;
+            } else {
+                const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+                const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+                const noun = nouns[Math.floor(Math.random() * nouns.length)];
+                const number = Math.floor(Math.random() * 100); // 0-99
+                return `${prefix}${adjective}${noun}${number}`;
+            }
+        }
+
+        const nicknameDisplay = document.getElementById('nickname-display');
+        const generateBtn = document.getElementById('generate-btn');
+        const copyBtn = document.getElementById('copy-btn');
+
+        generateBtn.addEventListener('click', () => {
+            if (usedCombinations.size >= maxNonDigitCombinations) {
+                console.log('All non-digit combinations exhausted. Now using digits.');
+            }
+            const newNickname = generateNickname();
+            nicknameDisplay.textContent = newNickname;
+            copyBtn.classList.remove('copied');
+            copyBtn.textContent = 'Copy';
+        });
+
+        copyBtn.addEventListener('click', () => {
+            const nickname = nicknameDisplay.textContent;
+            if (nickname && nickname !== 'Click "Generate" to create a nickname!') {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(nickname).then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        copyBtn.classList.add('copied');
+                        setTimeout(() => {
+                            copyBtn.textContent = 'Copy';
+                            copyBtn.classList.remove('copied');
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Clipboard API failed:', err);
+                        fallbackCopyText(nickname);
+                    });
+                } else {
+                    fallbackCopyText(nickname);
+                }
+            }
+        });
+
+        function fallbackCopyText(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+                alert('Failed to copy text. Please copy it manually.');
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

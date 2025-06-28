@@ -1,0 +1,802 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Text Randomizer: Instant Access Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Text Randomizer: Shuffle text instantly at https://www.freeontools.com. Free, no signup required!" name="description">
+<meta content="text randomizer, text shuffler, free text tool, freeontools text randomizer, randomize text" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/text-randomizer" rel="canonical"/>
+<meta content="Text Randomizer: Free &amp; Easy Tool" property="og:title"/>
+<meta content="Randomize text quickly with our free, no-login tool at https://www.freeontools.com. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/text-randomizer" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="freeontools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Text Randomizer: Zero Cost Tool" name="twitter:title"/>
+<meta content="Free text randomizer at https://www.freeontools.com. No signup, no fees, instant shuffling!" name="twitter:description"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Text Randomizer",
+  "operatingSystem": "Web",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/text-randomizer",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Text Randomizer"
+  },
+  "ratingValue": "4.8",
+  "ratingCount": "159",
+  "bestRating": "5",
+  "worstRating": "1"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Text Randomizer"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Mia Evans"
+  },
+  "datePublished": "2025-05-04",
+  "reviewBody": "This text randomizer is so fun and free! No signup needed, just instant shuffled text.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Text Randomizer"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Sanjay Patel"
+  },
+  "datePublished": "2025-04-25",
+  "reviewBody": "Free, fast, and no hassle. This tool is perfect for randomizing text in seconds!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.7",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin: 0 auto;
+
+            
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #222;
+            transform: translateY(0px);
+margin-top: 15px !important;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+ margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+    text-align: left;
+margin-top: 20px !important;
+        }
+
+        .input-section, .options-section, .output-section {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #f28c38;
+        }
+
+        .options-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .option-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        select, input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .output-section textarea {
+            background-color: #f5f5f5;
+            margin-top: 15px;
+        }
+
+        .copy-message {
+            text-align: center;
+            color: #28a745;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* New Content Container Styles */
+        /* Container styling */
+        .content-container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            padding-left: 30px; /* Left padding for desktop */
+            padding-right: 30px; /* Right padding for desktop */
+            margin-top: 20px;
+             margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+    text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.5rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+           
+
+            h1 {
+                font-size: 1.8rem;
+                transform: translateY(-15px);
+            }
+
+            .header p {
+                font-size: 0.9rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 20px;
+            }
+
+            textarea {
+                min-height: 120px;
+                font-size: 0.95rem;
+            }
+
+            .options-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .option-group {
+                width: 100%;
+                justify-content: space-between;
+                padding: 0 10px;
+            }
+
+            select {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+
+            .button-group {
+                gap: 10px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+
+
+            h1 {
+                font-size: 1.5rem;
+                transform: translateY(-10px);
+            }
+
+            .header p {
+                font-size: 0.85rem;
+                padding: 0 10px;
+            }
+
+        /* Body styling */
+            body {
+                padding: 0px;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            textarea {
+                min-height: 100px;
+                font-size: 0.9rem;
+            }
+
+            .input-section, .options-section, .output-section {
+                margin-bottom: 15px;
+            }
+
+            .option-group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            select {
+                width: 100%;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            .output-section textarea {
+                margin-top: 10px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="header">
+<h1>
+    Text Randomizer Tool
+   </h1>
+<p>
+    Shuffle your text easily by letters, words, or sentences with our user-friendly tool.
+   </p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<div class="input-section">
+<textarea aria-label="Input text for randomization" id="inputText" placeholder="Enter your text here..."></textarea>
+</div>
+<div class="options-section">
+<div class="option-group">
+<label for="randomizeType">
+      Randomize By:
+     </label>
+<select aria-label="Select randomization type" id="randomizeType">
+<option value="letters">
+       Letters
+      </option>
+<option value="words">
+       Words
+      </option>
+<option value="sentences">
+       Sentences
+      </option>
+</select>
+</div>
+<div class="option-group">
+<label for="preserveCase">
+      Preserve Case:
+     </label>
+<input aria-label="Preserve text case" checked="" id="preserveCase" type="checkbox"/>
+</div>
+<div class="option-group">
+<label for="removeDuplicates">
+      Remove Duplicates:
+     </label>
+<input aria-label="Remove duplicate entries" id="removeDuplicates" type="checkbox"/>
+</div>
+</div>
+<div class="button-group">
+<button onclick="randomizeText()">
+     Randomize
+    </button>
+<button onclick="clearText()">
+     Clear
+    </button>
+<button onclick="copyToClipboard()">
+     Copy Output
+    </button>
+</div>
+<div class="output-section">
+<textarea aria-label="Randomized output text" id="outputText" placeholder="Randomized text will appear here..." readonly=""></textarea>
+<div class="copy-message" id="copyMessage">
+     Copied to clipboard!
+    </div>
+</div>
+</div>
+<!-- New Content Container -->
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Text Randomizer?
+   </h2>
+<p>
+    Okay, so imagine you’ve got a list of stuff—maybe names, sentences, keywords, lines from a poem, whatever—and you don’t want them in the same boring order anymore. That’s exactly where a Text Randomizer comes in.
+   </p>
+<p>
+    It’s this handy little tool that takes whatever text you throw at it and mixes it up. Totally shuffled. Unpredictable. Like pulling names out of a hat, but way faster and less likely to end in paper cuts.
+   </p>
+<p>
+    You just paste your list in, hit the button, and bam—the order changes. Want to do it again? Hit the button again. New order, every time. It’s honestly kind of addictive.
+   </p>
+<h2>
+    Try Our Text Randomizer Now
+   </h2>
+<p>
+    Got a list that needs scrambling? Or just wanna see what happens when your words do the shuffle dance?
+   </p>
+<p>
+    Paste it in, hit randomize, and see the magic happen. The Text Randomizer does its thing instantly—no sign-ups, no fuss.
+   </p>
+<h2>
+    Why Would You Ever Need a Text Randomizer?
+   </h2>
+<p>
+    Oh buddy, more often than you’d think. The Text Randomizer sounds niche, but it’s surprisingly useful in a bunch of real-life situations. Like:
+   </p>
+<ul>
+<li>
+     Classroom stuff – Teachers use it to mix up student names or quiz questions
+    </li>
+<li>
+     Giveaways &amp; raffles – Randomly pick a winner from a long list
+    </li>
+<li>
+     Workout routines – Mix up exercises so you don’t always start with pushups
+    </li>
+<li>
+     Writing prompts – Shuffle ideas or sentences to shake off writer’s block
+    </li>
+<li>
+     Playlist names, task lists, event games – Anything that’s better with surprise
+    </li>
+</ul>
+<p>
+    Basically, if you’ve ever looked at a list and thought, "This needs a little chaos," the Text Randomizer is your new best friend.
+   </p>
+<h2>
+    Features of the Text Randomizer
+   </h2>
+<ul>
+<li>
+     Instant randomization – No lag, just click and go
+    </li>
+<li>
+     Supports big and small lists – Whether it’s 5 items or 500
+    </li>
+<li>
+     Random but fair – Every item has the same shot at coming out first
+    </li>
+<li>
+     Works with sentences, phrases, or single words – Whatever text you’ve got
+    </li>
+<li>
+     Repeat-friendly – Shuffle it as many times as you want
+    </li>
+<li>
+     Mobile-ready – Use it on your phone during game night or road trips
+    </li>
+<li>
+     No account needed – Just open, paste, randomize
+    </li>
+</ul>
+<p>
+    The Text Randomizer keeps it easy so your brain doesn’t have to work overtime.
+   </p>
+<h2>
+    How to Use the Text Randomizer
+   </h2>
+<p>
+    You don’t need a manual for this—it’s seriously that simple. But here’s the lowdown, just in case:
+   </p>
+<ol>
+<li>
+     Go to the Text Randomizer tool
+    </li>
+<li>
+     Paste in your list or block of text (hit enter after each item if it’s a list)
+    </li>
+<li>
+     Click the "Randomize" button
+    </li>
+<li>
+     Boom! Your content is shuffled
+    </li>
+<li>
+     Want a different mix? Hit the button again
+    </li>
+<li>
+     Copy the new order and use it however you like
+    </li>
+</ol>
+<p>
+    Pro tip: If you’re using it for something official (like a contest), screenshot your results so you’ve got proof of fairness.
+   </p>
+<h2>
+    Why Choose This Text Randomizer?
+   </h2>
+<p>
+    I mean, there are a bunch of randomizer tools floating around the internet, but most of them are either way too clunky, full of ads, or weirdly complicated for no reason.
+   </p>
+<p>
+    This Text Randomizer? It just works. And it’s built for people who don’t want to mess with settings or sign up for anything just to shuffle a list.
+   </p>
+<p>
+    Here’s why it stands out:
+   </p>
+<ul>
+<li>
+     Clean interface – Nothing to distract or confuse you
+    </li>
+<li>
+     Safe &amp; private – Your text doesn’t go anywhere weird
+    </li>
+<li>
+     Fast as heck – Like, blink-and-it’s-done fast
+    </li>
+<li>
+     Flexible uses – One tool, a hundred random jobs
+    </li>
+<li>
+     Zero setup – Just open and go—like magic
+    </li>
+</ul>
+<p>
+    It’s the Text Randomizer you didn’t know you needed... until now.
+   </p>
+<h2>
+    FAQs About the Text Randomizer
+   </h2>
+<p>
+<strong>
+     Does the Text Randomizer keep a history of what I randomize?
+    </strong>
+</p>
+<p>
+    Nope. It doesn’t store or track anything. Once you leave the page, poof—your data is gone. Super private.
+   </p>
+<p>
+<strong>
+     Can I randomize whole paragraphs or just single words?
+    </strong>
+</p>
+<p>
+    You can randomize anything—lines, sentences, phrases, entire paragraphs. Just make sure each chunk is on its own line, and the Text Randomizer will treat each one as an item to shuffle.
+   </p>
+<p>
+<strong>
+     How truly random is it?
+    </strong>
+</p>
+<p>
+    Pretty dang random. The tool uses basic pseudo-random logic that’s more than good enough for day-to-day stuff like mixing lists or drawing names.
+   </p>
+<p>
+<strong>
+     Is there a limit to how much text I can paste in?
+    </strong>
+</p>
+<p>
+    There’s no hard limit, but for huge lists (like thousands of items), it might slow down a bit. That said, the Text Randomizer can handle most things without breaking a sweat.
+   </p>
+<p>
+<strong>
+     Can I undo a shuffle?
+    </strong>
+</p>
+<p>
+    There’s no built-in “undo,” but here’s a tip: copy your original list before you shuffle, just in case you want to go back. Or paste it in a notes app first and experiment freely.
+   </p>
+<h2>
+    Final Thoughts: Let the Chaos Begin
+   </h2>
+<p>
+    Whether you’re planning a contest, switching up your workouts, or just bored at your desk and want to remix a list of your favorite snacks, the Text Randomizer is lowkey perfect for the job.
+   </p>
+<p>
+    No learning curve. No paywall. Just pure, satisfying list shuffling at the click of a button.
+   </p>
+<p>
+    So the next time you’ve got a list and you’re thinking “meh, too predictable”—you know what to do. Drop it into the Text Randomizer, press the magic button, and let the mix-up begin.
+   </p>
+<p>
+    It’s fast. It’s fun. It’s free. And let’s be real—it’s kind of fun watching your list come out totally upside down.
+   </p>
+</div>
+<script>
+        // Function: shuffleArray
+   function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Function: randomizeText
+        function randomizeText() {
+        // DOM element manipulation
+            const inputText = document.getElementById('inputText').value;
+        // DOM element manipulation
+            const randomizeType = document.getElementById('randomizeType').value;
+        // DOM element manipulation
+            const preserveCase = document.getElementById('preserveCase').checked;
+        // DOM element manipulation
+            const removeDuplicates = document.getElementById('removeDuplicates').checked;
+            let output = '';
+
+            if (!inputText.trim()) {
+        // DOM element manipulation
+                document.getElementById('outputText').value = '';
+                return;
+            }
+
+            if (randomizeType === 'letters') {
+                let chars = inputText.split('');
+                if (removeDuplicates) {
+                    chars = [...new Set(chars)];
+                }
+                chars = shuffleArray(chars);
+                output = chars.join('');
+                if (!preserveCase) {
+                    output = output.toLowerCase();
+                }
+            } else if (randomizeType === 'words') {
+                let words = inputText.split(/\s+/).filter(word => word);
+                if (removeDuplicates) {
+                    words = [...new Set(words)];
+                }
+                words = shuffleArray(words);
+                output = words.join(' ');
+                if (!preserveCase) {
+                    output = output.toLowerCase();
+                }
+            } else if (randomizeType === 'sentences') {
+                let sentences = inputText.split(/[.!?]+/).filter(s => s.trim());
+                if (removeDuplicates) {
+                    sentences = [...new Set(sentences.map(s => s.trim()))];
+                }
+                sentences = shuffleArray(sentences);
+                output = sentences.join('. ') + (sentences.length ? '.' : '');
+                if (!preserveCase) {
+                    output = output.toLowerCase();
+                }
+            }
+
+        // DOM element manipulation
+            document.getElementById('outputText').value = output;
+        }
+
+        // Function: clearText
+        function clearText() {
+        // DOM element manipulation
+            document.getElementById('inputText').value = '';
+        // DOM element manipulation
+            document.getElementById('outputText').value = '';
+        // DOM element manipulation
+            document.getElementById('copyMessage').style.display = 'none';
+        }
+
+        // Function: copyToClipboard
+        function copyToClipboard() {
+        // DOM element manipulation
+            const outputText = document.getElementById('outputText').value;
+            if (outputText) {
+                navigator.clipboard.writeText(outputText).then(() => {
+        // DOM element manipulation
+                    const copyMessage = document.getElementById('copyMessage');
+                    copyMessage.style.display = 'block';
+                    setTimeout(() => {
+                        copyMessage.style.display = 'none';
+                    }, 2000);
+                });
+            }
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

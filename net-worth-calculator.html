@@ -1,0 +1,693 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Net Worth Calculator - Free Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Net Worth Calculator - Free Online Tool to calculate your net worth easily with no signup needed, no hidden fees, and instant access." name="description">
+<meta content="Net Worth Calculator, Personal Finance Tool, Net Worth Estimator, Free Net Worth Calculator, Financial Calculator, Simple Net Worth Calculator, Wealth Calculator" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/net-worth-calculator" rel="canonical"/>
+<meta content="Net Worth Calculator - Free Online Tool" property="og:title"/>
+<meta content="Use the Net Worth Calculator for free, no signup, no hidden fees, and instant access to calculate your total assets and liabilities easily." property="og:description"/>
+<meta content="https://www.freeontools.com/net-worth-calculator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/net-worth-calculator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Net Worth Calculator - Free Online Tool" name="twitter:title"/>
+<meta content="Instantly calculate your net worth with this free tool. No login required, no fees, and no ads." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/net-worth-calculator.jpg" name="twitter:image"/>
+<meta content="@freeontools" name="twitter:creator"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-5555",
+    "contactType": "Customer Service"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Net Worth Calculator",
+  "operatingSystem": "All",
+  "applicationCategory": "Finance",
+  "description": "A free, easy-to-use net worth calculator tool that provides instant access to calculate your total assets and liabilities.",
+  "url": "https://www.freeontools.com/net-worth-calculator",
+  "image": "https://www.freeontools.com/images/net-worth-calculator.jpg"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "worstRating": "1",
+  "ratingCount": "210"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Sophia Turner"
+  },
+  "datePublished": "2025-05-02",
+  "reviewBody": "The Net Worth Calculator is so easy to use! It helps me track my finances and understand where I stand financially. Highly recommended!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "James Martinez"
+  },
+  "datePublished": "2025-04-19",
+  "reviewBody": "This tool made calculating my net worth a breeze. It's simple, accurate, and free! Definitely worth checking out.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.8",
+    "bestRating": "5"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            background-color: #fff;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+            text-align: left;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #333;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .row input[type="text"],
+        .row input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin: 5px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .row input[type="text"] {
+            flex: 2;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+        }
+
+        .remove-btn {
+            padding: 10px;
+        }
+
+        #result {
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 20px;
+            color: #222;
+        }
+
+        .error {
+            border-color: #e74c3c !important;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .row input[type="text"],
+            .row input[type="number"] {
+                margin: 5px 0;
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Net Worth Calculator
+   </h1>
+<p>
+    Track your financial health by calculating your net worth. Enter your assets and liabilities below to see the results instantly.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="section" id="assets">
+<h2>
+     Assets
+    </h2>
+<div id="asset-rows">
+<div class="row">
+<input aria-label="Asset Name" class="asset-name" placeholder="Asset Name (e.g., Savings)" type="text"/>
+<input aria-label="Asset Value" class="asset-value" min="0" placeholder="Value ($)" type="number"/>
+<button class="remove-btn" onclick="removeRow(this)">
+       Remove
+      </button>
+</div>
+</div>
+<button onclick="addAssetRow()">
+     Add Asset
+    </button>
+</div>
+<div class="section" id="liabilities">
+<h2>
+     Liabilities
+    </h2>
+<div id="liability-rows">
+<div class="row">
+<input aria-label="Liability Name" class="liability-name" placeholder="Liability Name (e.g., Mortgage)" type="text"/>
+<input aria-label="Liability Value" class="liability-value" min="0" placeholder="Amount ($)" type="number"/>
+<button class="remove-btn" onclick="removeRow(this)">
+       Remove
+      </button>
+</div>
+</div>
+<button onclick="addLiabilityRow()">
+     Add Liability
+    </button>
+</div>
+<div id="result">
+    Net Worth: $0
+   </div>
+<div class="error-message" id="error-message">
+    Please enter valid numbers for all values.
+   </div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h3>
+    What Is a Net Worth Calculator?
+   </h3>
+<p>
+    A Net Worth Calculator helps you figure out how much you’re actually worth when you add up your assets (what you own) and subtract your liabilities (what you owe). It's basically a snapshot of your financial health. If you’re ever curious about where you stand financially—whether you’re on the road to wealth or just trying to keep things balanced—this is the tool to use. It gives you a simple, clear number that represents your financial position.
+   </p>
+<p>
+    If you’ve ever thought, “Am I financially in the green or still in the red?”—this tool will give you a solid answer!
+   </p>
+<h3>
+    Try Our Net Worth Calculator Now
+   </h3>
+<p>
+    Wanna know where you stand financially? Just pop in the details about your assets (bank accounts, property, investments, etc.) and liabilities (loans, credit card debt, etc.), hit calculate, and bam—you’ll know your net worth. It's quick, easy, and gives you a sense of your financial picture instantly!
+   </p>
+<h3>
+    Why Use a Net Worth Calculator?
+   </h3>
+<p>
+    Here’s why you’ll want to use the Net Worth Calculator:
+   </p>
+<ul>
+<li>
+<strong>
+      Track your financial health
+     </strong>
+     – It shows you how much you own versus how much you owe, so you can assess your financial situation clearly.
+    </li>
+<li>
+<strong>
+      Set financial goals
+     </strong>
+     – Knowing your net worth helps you set realistic goals for the future, whether it’s paying off debt or saving for retirement.
+    </li>
+<li>
+<strong>
+      Get a sense of progress
+     </strong>
+     – Over time, as you reduce debt and grow your savings, you can use the calculator to track your progress and see how much you’ve improved.
+    </li>
+<li>
+<strong>
+      Financial planning
+     </strong>
+     – Helps you make smarter decisions about where to allocate money or if you need to adjust spending habits.
+    </li>
+</ul>
+<h3>
+    Features of the Net Worth Calculator
+   </h3>
+<p>
+    Here’s what makes the Net Worth Calculator super handy:
+   </p>
+<ul>
+<li>
+<strong>
+      Simple inputs
+     </strong>
+     – All you need are your assets (bank accounts, property, investments, etc.) and liabilities (loans, debts, etc.).
+    </li>
+<li>
+<strong>
+      Instant results
+     </strong>
+     – Get your net worth right away—no waiting around.
+    </li>
+<li>
+<strong>
+      Free and easy
+     </strong>
+     – It’s simple to use and completely free—no signup required.
+    </li>
+<li>
+<strong>
+      Clear financial picture
+     </strong>
+     – You’ll instantly know where you stand financially and what areas you need to work on.
+    </li>
+</ul>
+<h3>
+    How to Use the Net Worth Calculator
+   </h3>
+<p>
+    Here’s how you can use the Net Worth Calculator:
+   </p>
+<ol>
+<li>
+     Open the Net Worth Calculator tool.
+    </li>
+<li>
+     Input the value of your assets. This can include things like your savings accounts, real estate, cars, investments, and other valuable property.
+    </li>
+<li>
+     Input the value of your liabilities. This includes things like credit card debt, student loans, mortgages, and any other debts you owe.
+    </li>
+<li>
+     Hit Calculate to get your net worth—it’s as simple as that!
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    Don’t forget to include all assets and liabilities, no matter how small—every little bit counts toward your final number!
+   </p>
+<h3>
+    Why Choose This Net Worth Calculator?
+   </h3>
+<p>
+    Here’s why this Net Worth Calculator is perfect for you:
+   </p>
+<ul>
+<li>
+<strong>
+      Fast and simple
+     </strong>
+     – Just enter the numbers, and get your result in seconds.
+    </li>
+<li>
+<strong>
+      No sign-up required
+     </strong>
+     – You don’t need to create an account or deal with any hidden fees. Just calculate and move on.
+    </li>
+<li>
+<strong>
+      Great for goal setting
+     </strong>
+     – Whether you’re saving for something big or trying to eliminate debt, this tool gives you a starting point.
+    </li>
+<li>
+<strong>
+      Perfect for budgeting
+     </strong>
+     – Knowing your net worth helps you make better decisions about your money, like where to focus on saving or paying down debt.
+    </li>
+</ul>
+<h3>
+    FAQs About the Net Worth Calculator
+   </h3>
+<p>
+<strong>
+     What is net worth?
+    </strong>
+</p>
+<p>
+    Net worth is the difference between what you own (assets) and what you owe (liabilities). If you have more assets than liabilities, you have a positive net worth. If your liabilities are greater than your assets, you have a negative net worth.
+   </p>
+<p>
+<strong>
+     Should I include everything I own?
+    </strong>
+</p>
+<p>
+    Yes! Include everything of value—savings, property, investments, even things like cars or collectibles. Every asset adds up.
+   </p>
+<p>
+<strong>
+     Do I include all of my debts?
+    </strong>
+</p>
+<p>
+    Yep, include all debts—credit cards, student loans, mortgages, car loans, etc. All liabilities should be counted to get an accurate picture of your financial health.
+   </p>
+<p>
+<strong>
+     How accurate is this calculator?
+    </strong>
+</p>
+<p>
+    It’s as accurate as the numbers you put into it! If you accurately enter your assets and liabilities, you’ll get an accurate calculation of your net worth.
+   </p>
+<p>
+<strong>
+     Is the Net Worth Calculator free?
+    </strong>
+</p>
+<p>
+    Yes! It’s completely free, and there’s no need to sign up or pay for anything. Just enter your numbers, and you’ll get your result right away.
+   </p>
+<h3>
+    Wrap-Up: Know Where You Stand Financially
+   </h3>
+<p>
+    The Net Worth Calculator is your go-to tool for figuring out your financial position. Whether you're trying to track your progress, plan for the future, or just curious about how your assets and liabilities measure up, this tool helps you take a clear look at where you stand.
+   </p>
+<p>
+<strong>
+     Ready to see your financial picture? Use the Net Worth Calculator now and get a simple snapshot of your wealth!
+    </strong>
+</p>
+</div>
+<script>
+        // Function: addAssetRow
+   function addAssetRow() {
+        // DOM element manipulation
+            const assetRows = document.getElementById('asset-rows');
+            const newRow = document.createElement('div');
+            newRow.className = 'row';
+            newRow.innerHTML = `
+                <input type="text" class="asset-name" placeholder="Asset Name (e.g., Savings)" aria-label="Asset Name">
+                <input type="number" class="asset-value" placeholder="Value ($)" aria-label="Asset Value" min="0">
+                <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+            `;
+            assetRows.appendChild(newRow);
+            attachInputListeners();
+        }
+
+        // Function: addLiabilityRow
+        function addLiabilityRow() {
+        // DOM element manipulation
+            const liabilityRows = document.getElementById('liability-rows');
+            const newRow = document.createElement('div');
+            newRow.className = 'row';
+            newRow.innerHTML = `
+                <input type="text" class="liability-name" placeholder="Liability Name (e.g., Mortgage)" aria-label="Liability Name">
+                <input type="number" class="liability-value" placeholder="Amount ($)" aria-label="Liability Value" min="0">
+                <button class="remove-btn" onclick="removeRow(this)">Remove</button>
+            `;
+            liabilityRows.appendChild(newRow);
+            attachInputListeners();
+        }
+
+        // Function: removeRow
+        function removeRow(button) {
+            const row = button.parentElement;
+            row.remove();
+            calculateNetWorth();
+        }
+
+        // Function: attachInputListeners
+        function attachInputListeners() {
+        // DOM element manipulation
+            const inputs = document.querySelectorAll('.asset-value, .liability-value');
+            inputs.forEach(input => {
+                input.removeEventListener('input', calculateNetWorth); // Prevent duplicate listeners
+        // Event listener for user interactions
+                input.addEventListener('input', calculateNetWorth);
+            });
+        }
+
+        // Function: calculateNetWorth
+        function calculateNetWorth() {
+        // DOM element manipulation
+            const assetValues = document.querySelectorAll('.asset-value');
+        // DOM element manipulation
+            const liabilityValues = document.querySelectorAll('.liability-value');
+            let totalAssets = 0;
+            let totalLiabilities = 0;
+            let isValid = true;
+
+            assetValues.forEach(input => {
+                const value = parseFloat(input.value) || 0;
+                if (input.value === '' || isNaN(value) || value < 0) {
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                    totalAssets += value;
+                }
+            });
+
+            liabilityValues.forEach(input => {
+                const value = parseFloat(input.value) || 0;
+                if (input.value === '' || isNaN(value) || value < 0) {
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                    totalLiabilities += value;
+                }
+            });
+
+        // DOM element manipulation
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.style.display = isValid ? 'none' : 'block';
+
+            const netWorth = totalAssets - totalLiabilities;
+        // DOM element manipulation
+            document.getElementById('result').textContent = `Net Worth: $${netWorth.toFixed(2)}`;
+        }
+
+        // Initialize listeners
+        attachInputListeners();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

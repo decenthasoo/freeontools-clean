@@ -1,0 +1,932 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Readability Score Checker - Simple &amp; Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Readability Score Checker - Check the readability score of your text to ensure it is clear and easy to understand. Perfect for articles, blogs, and more. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="Readability Score Checker, Text Readability, Readability Test, Free Readability Tool, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/readability-score-checker" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Readability Score Checker - Simple &amp; Free" property="og:title"/>
+<meta content="Readability Score Checker - Check the readability score of your text to ensure it is clear and easy to understand. Perfect for articles, blogs, and more. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/readability-score-checker.png" property="og:image"/>
+<meta content="https://www.freeontools.com/readability-score-checker" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Readability Score Checker - Simple &amp; Free" name="twitter:title"/>
+<meta content="Readability Score Checker - Check the readability score of your text to ensure it is clear and easy to understand. Perfect for articles, blogs, and more. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/readability-score-checker.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Readability Score Checker",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/readability-score-checker",
+  "image": "https://www.freeontools.com/images/readability-score-checker.png",
+  "description": "Easily check the readability score of your text to make sure it is simple, clear, and easy to understand. Perfect for blog posts, articles, and more. No login required, no ads.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/readability-score-checker",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.88",
+  "bestRating": "5",
+  "ratingCount": "750"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Lily Turner"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This Readability Score Checker is a game-changer! It helps me ensure that my articles are clear and easy to understand. It's fast, accurate, and best of all, free!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Readability Score Checker"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * { margin: 0; padding: 0; box-sizing: border-box;  }
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f6f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .header-section { text-align: center; margin-bottom: 20px; margin-top: 20px; }
+        .header-section h1 { color: #2c3e50; font-size: 2.2em; margin-bottom: 10px; }
+        .header-section p { color: #555; font-size: 16px; max-width: 600px; margin: 0 auto; }
+        /* Container styling */
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+        }
+        .input-tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center; }
+        .tab-btn {
+            flex: 0 0 160px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 10px;
+            border: none;
+            background: #ecf0f1;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .tab-btn.active { background: #f28c38; color: white; }
+        .input-area { display: none; }
+        .input-area.active { display: block; }
+        textarea, input[type="text"], input[type="file"] { width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 10px; margin-bottom: 20px; font-size: 16px; }
+        textarea { min-height: 200px; resize: vertical; }
+        .analyze-btn { background: #f28c38; color: white; border: none; padding: 15px 30px; border-radius: 25px; cursor: pointer; font-size: 18px; display: block; margin: 0 auto; transition: all 0.3s; position: relative; }
+        .analyze-btn:hover { background: #d97a2e; transform: translateY(-2px); }
+        .analyze-btn.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #fff;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        @keyframes spin {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+        #results { margin-top: 30px; padding: 25px; border-radius: 15px; background: #f8f9fa; display: none; animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .score-header { text-align: center; margin-bottom: 20px; color: #2c3e50; font-size: 1.8em; }
+
+        /* Hexagon Badge for Score */
+        .score-hexagon-container {
+            position: relative;
+            width: 200px;
+            height: 230px;
+            margin: 30px auto;
+            padding-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        .score-hexagon-container:hover {
+            transform: scale(1.05);
+        }
+        .score-hexagon {
+            position: absolute;
+            width: 200px;
+            height: 230px;
+            background: #fff;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .score-hexagon-glow {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 230px;
+            height: 260px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: var(--glow-color);
+            z-index: 1;
+            filter: blur(15px);
+            opacity: 0.7;
+            transition: background 0.3s ease;
+        }
+        .score-label {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--label-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            z-index: 3;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .score-details { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+            margin-top: 80px;
+        }
+        .score-card { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            transition: transform 0.2s; 
+            text-align: center;
+        }
+        .score-card:hover { 
+            transform: translateY(-5px); 
+        }
+        .interpretation { 
+            margin-top: 30px; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+            border-radius: 15px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .interpretation:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        .interpretation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .interpretation p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #34495e;
+        }
+        .interpretation em {
+            color: #e74c3c;
+            font-style: italic;
+        }
+        
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            position: relative;
+        }
+        
+        .loading-spinner::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2ecc71;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite reverse;
+            transform: translate(-50%, -50%);
+        }
+
+        /* New Content Container Styles */
+        /* Container styling */
+        .content-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        /* Container styling */
+        .content-container h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+text-align: left !important;
+          
+}
+        /* Container styling */
+        .content-container p {
+            font-size: 16px;
+            color: #34495e;
+            margin-bottom: 20px;
+text-align: left !important;
+          
+}
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 16px;
+            color: #34495e;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        /* Container styling */
+        .content-container ul li strong, .content-container ol li strong {
+            color: #2c3e50;
+        }
+        
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+        /* Container styling */
+            .container { padding: 20px; }
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .score-hexagon-container { 
+                width: 160px; 
+                height: 184px; 
+                padding-bottom: 20px;
+            }
+            .score-hexagon { 
+                width: 160px; 
+                height: 184px; 
+                font-size: 40px; 
+            }
+            .score-hexagon-glow { 
+                width: 190px; 
+                height: 214px; 
+            }
+            .score-label {
+                bottom: 15px;
+                font-size: 12px;
+                padding: 4px 12px;
+            }
+            .tab-btn {
+                flex: 0 0 140px;
+                height: 36px;
+                line-height: 36px;
+                font-size: 13px;
+                padding: 0 8px;
+            }
+            .score-details { margin-top: 50px; }
+            .interpretation { padding: 15px; }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="loading-overlay" id="loadingOverlay">
+<div class="loading-spinner">
+</div>
+</div>
+<div class="header-section">
+<h1>
+    Readability Score Checker
+   </h1>
+<p>
+    Analyze the readability of your text, URLs, or uploaded files with ease.
+   </p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<div class="input-tabs">
+<button class="tab-btn active" onclick="switchTab('text')">
+     Enter Text
+    </button>
+<button class="tab-btn" onclick="switchTab('url')">
+     Enter URL
+    </button>
+<button class="tab-btn" onclick="switchTab('website')">
+     Refer from Website
+    </button>
+<button class="tab-btn" onclick="switchTab('file')">
+     Upload File
+    </button>
+<button class="tab-btn" onclick="switchTab('social')">
+     Social Media Post
+    </button>
+</div>
+<div class="input-area active" id="text-input">
+<textarea id="directText" placeholder="Type or paste your text here..."></textarea>
+</div>
+<div class="input-area" id="url-input">
+<input id="urlText" placeholder="Enter URL (e.g., https://example.com)" type="text"/>
+</div>
+<div class="input-area" id="website-input">
+<input id="websiteText" placeholder="Enter website URL to analyze" type="text"/>
+</div>
+<div class="input-area" id="file-input">
+<input accept=".txt" id="fileUpload" type="file"/>
+</div>
+<div class="input-area" id="social-input">
+<input id="socialText" placeholder="Enter social media post URL" type="text"/>
+</div>
+<button class="analyze-btn" id="analyzeBtn" onclick="analyzeText()">
+    Analyze Now
+   </button>
+<div id="results">
+<h2 class="score-header">
+     Readability Test Results
+    </h2>
+<div class="score-hexagon-container">
+<div class="score-hexagon-glow" id="scoreHexagonGlow">
+</div>
+<div class="score-hexagon" id="scoreHexagon">
+      0
+     </div>
+<div class="score-label" id="scoreLabel">
+      N/A
+     </div>
+</div>
+<div class="score-details">
+<div class="score-card">
+<strong>
+       Flesch Reading Ease:
+      </strong>
+<span id="fleschScore">
+       0
+      </span>
+</div>
+<div class="score-card">
+<strong>
+       Grade Level:
+      </strong>
+<span id="gradeLevel">
+       0
+      </span>
+</div>
+<div class="score-card">
+<strong>
+       Word Count:
+      </strong>
+<span id="wordCount">
+       0
+      </span>
+</div>
+<div class="score-card">
+<strong>
+       Sentence Count:
+      </strong>
+<span id="sentenceCount">
+       0
+      </span>
+</div>
+<div class="score-card">
+<strong>
+       Syllables:
+      </strong>
+<span id="syllableCount">
+       0
+      </span>
+</div>
+<div class="score-card">
+<strong>
+       Avg. Words/Sentence:
+      </strong>
+<span id="avgWords">
+       0
+      </span>
+</div>
+</div>
+<div class="interpretation" id="interpretation">
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Readability Score Checker?
+   </h2>
+<p>
+    A Readability Score Checker is a tool that evaluates how easy it is to read and understand a piece of text. It gives you a score based on factors like sentence length, word complexity, and overall readability. The goal is to help you make your writing clear, concise, and accessible for a wider audience. If you’re crafting content for a blog, website, or even an email, this tool will let you know if your message is easy to grasp or if it’s drowning in jargon and complicated phrasing.
+   </p>
+<p>
+    This tool uses various readability formulas (like the Flesch-Kincaid Grade Level or Gunning Fog Index) to analyze the structure of your text and provide feedback on its difficulty. It’s perfect for anyone who wants their writing to be more effective, whether you're a student, a marketer, or a content creator.
+   </p>
+<h2>
+    Try Our Readability Score Checker Now
+   </h2>
+<p>
+    Just paste your text into our tool, hit the “Check” button, and in seconds, you’ll get a readability score and suggestions on how to make your text more reader-friendly. It’s quick, easy, and totally free!
+   </p>
+<h2>
+    Why You Need a Readability Score Checker
+   </h2>
+<p>
+    You might be wondering, “Why bother checking readability?” Here’s why it matters:
+   </p>
+<ul>
+<li>
+<strong>
+      Improves User Experience:
+     </strong>
+     If your content is easy to read, people are more likely to engage with it. Complex text can scare readers away.
+    </li>
+<li>
+<strong>
+      Broadens Your Audience:
+     </strong>
+     The simpler your writing, the wider your audience can be. Not everyone has a high reading level, so checking readability helps ensure your message is clear to more people.
+    </li>
+<li>
+<strong>
+      Makes Your Message Clearer:
+     </strong>
+     By simplifying your writing, you ensure that your main points are easily understood and remembered.
+    </li>
+<li>
+<strong>
+      Boosts SEO:
+     </strong>
+     Google loves content that’s easy to digest. Readable text can help improve your rankings because it enhances user experience.
+    </li>
+</ul>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+<strong>
+      Instant Feedback:
+     </strong>
+     Get your readability score as soon as you paste in your text.
+    </li>
+<li>
+<strong>
+      Multiple Scoring Systems:
+     </strong>
+     It calculates scores based on multiple readability formulas like Flesch-Kincaid and Gunning Fog.
+    </li>
+<li>
+<strong>
+      Suggestions for Improvement:
+     </strong>
+     If your text needs work, you’ll get tips to make it easier to read.
+    </li>
+<li>
+<strong>
+      Free and Simple:
+     </strong>
+     No sign-ups or fees—just quick, straightforward readability analysis.
+    </li>
+<li>
+<strong>
+      Works for All Types of Text:
+     </strong>
+     Whether you’re checking blog posts, emails, or essays, this tool works for all kinds of writing.
+    </li>
+</ul>
+<h2>
+    How to Use the Readability Score Checker
+   </h2>
+<p>
+    Here’s how to use this tool in just a few simple steps:
+   </p>
+<ol>
+<li>
+<strong>
+      Enter Your Text:
+     </strong>
+     Paste the content you want to check into the text box on the tool’s page.
+    </li>
+<li>
+<strong>
+      Click “Check”:
+     </strong>
+     Hit the “Check” button, and the tool will calculate your readability score right away.
+    </li>
+<li>
+<strong>
+      Review the Score:
+     </strong>
+     The tool will give you a score that tells you how easy your text is to read. It might also provide suggestions for improvement.
+    </li>
+<li>
+<strong>
+      Make Adjustments:
+     </strong>
+     If your score is too low, simplify your sentences, reduce jargon, and break up long paragraphs to improve readability.
+    </li>
+<li>
+<strong>
+      Recheck:
+     </strong>
+     After making edits, paste the updated version in to see if your score improves.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    Aim for a readability score that aligns with your target audience. For general public content, aim for a score of 60–70 on the Flesch-Kincaid scale for easy-to-read text.
+   </p>
+<h2>
+    Why Choose This Readability Score Checker?
+   </h2>
+<p>
+    Here’s why you should use this tool:
+   </p>
+<ul>
+<li>
+<strong>
+      Quick and Easy:
+     </strong>
+     No need for complicated software. Just paste and check!
+    </li>
+<li>
+<strong>
+      Multiple Scoring Options:
+     </strong>
+     It evaluates your text with various readability formulas, so you get a well-rounded understanding.
+    </li>
+<li>
+<strong>
+      Helps Improve Your Writing:
+     </strong>
+     The suggestions will guide you toward clearer, more effective communication.
+    </li>
+<li>
+<strong>
+      Free and Accessible:
+     </strong>
+     Use the tool anytime without any hidden costs or sign-up hurdles.
+    </li>
+</ul>
+<h2>
+    FAQs
+   </h2>
+<ol>
+<li>
+<strong>
+      What’s a good readability score?
+     </strong>
+     A score between 60-70 on the Flesch-Kincaid scale is considered readable for most people. Anything higher might be too easy, and anything lower could be too complex for a general audience.
+    </li>
+<li>
+<strong>
+      Does this tool work for all types of text?
+     </strong>
+     Yes! Whether it’s an article, email, essay, or even a social media post, this tool will check the readability of any text you throw at it.
+    </li>
+<li>
+<strong>
+      Can I use the readability score to improve my writing?
+     </strong>
+     Absolutely! If your score is low, the tool will give you specific suggestions to make your writing clearer and easier to understand.
+    </li>
+<li>
+<strong>
+      How does the readability score work?
+     </strong>
+     The tool uses algorithms like Flesch-Kincaid and Gunning Fog to analyze sentence length, syllable count, and word complexity to determine the ease of reading.
+    </li>
+<li>
+<strong>
+      Is this tool free to use?
+     </strong>
+     Yes! It’s completely free, and there’s no need to create an account or sign up to get started.
+    </li>
+</ol>
+<p>
+    A Readability Score Checker is a simple, effective tool for anyone who wants to improve their writing. Whether you're a marketer, writer, or just want to make sure your content is accessible, this tool helps you create more engaging, user-friendly content.
+   </p>
+</div>
+<script>
+        // Function: switchTab
+   function switchTab(tabId) {
+        // DOM element manipulation
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        // DOM element manipulation
+            document.querySelectorAll('.input-area').forEach(area => area.classList.remove('active'));
+        // DOM element manipulation
+            document.querySelector(`[onclick="switchTab('${tabId}')"]`).classList.add('active');
+        // DOM element manipulation
+            document.getElementById(`${tabId}-input`).classList.add('active');
+        }
+
+        // Function: showLoading
+        function showLoading() {
+        // DOM element manipulation
+            const loadingOverlay = document.getElementById('loadingOverlay');
+        // DOM element manipulation
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            loadingOverlay.style.display = 'flex';
+            analyzeBtn.classList.add('loading');
+            analyzeBtn.disabled = true;
+        }
+
+        // Function: hideLoading
+        function hideLoading() {
+        // DOM element manipulation
+            const loadingOverlay = document.getElementById('loadingOverlay');
+        // DOM element manipulation
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            loadingOverlay.style.display = 'none';
+            analyzeBtn.classList.remove('loading');
+            analyzeBtn.disabled = false;
+        }
+
+        // Function: analyzeText
+        function analyzeText() {
+            showLoading();
+            
+            setTimeout(() => {
+                let text = '';
+        // DOM element manipulation
+                const activeTab = document.querySelector('.input-area.active');
+                let source = '';
+
+                if (activeTab.id === 'text-input') {
+        // DOM element manipulation
+                    text = document.getElementById('directText').value.trim();
+                    source = 'direct input';
+                } else if (activeTab.id === 'url-input') {
+        // DOM element manipulation
+                    const url = document.getElementById('urlText').value.trim();
+                    if (!url) { alert('Please enter a URL!'); hideLoading(); return; }
+                    text = `Sample text from URL: ${url}. This is a placeholder response as actual URL fetching requires server-side processing.`;
+                    source = `URL (${url})`;
+                } else if (activeTab.id === 'website-input') {
+        // DOM element manipulation
+                    const website = document.getElementById('websiteText').value.trim();
+                    if (!website) { alert('Please enter a website URL!'); hideLoading(); return; }
+                    text = `Extracted content from website: ${website}. This is simulated text since website scraping needs backend support.`;
+                    source = `website (${website})`;
+                } else if (activeTab.id === 'file-input') {
+        // DOM element manipulation
+                    const fileInput = document.getElementById('fileUpload');
+                    if (!fileInput.files.length) { alert('Please upload a file!'); hideLoading(); return; }
+                    const file = fileInput.files[0];
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        text = e.target.result;
+                        processText(text, `file (${file.name})`);
+                    };
+                    reader.readAsText(file);
+                    return;
+                } else if (activeTab.id === 'social-input') {
+        // DOM element manipulation
+                    const socialUrl = document.getElementById('socialText').value.trim();
+                    if (!socialUrl) { alert('Please enter a social media post URL!'); hideLoading(); return; }
+                    text = `Sample social media post from ${socialUrl}. This is a demo response as social media API integration is not included.`;
+                    source = `social mediayourself ${socialUrl}`;
+                }
+
+                if (!text) { alert('Please provide some input to analyze!'); hideLoading(); return; }
+                processText(text, source);
+            }, 1500);
+        }
+
+        // Function: processText
+        function processText(text, source) {
+            const words = text.split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+            const sentenceCount = sentences.length;
+            const syllables = countSyllables(words);
+            const avgWordsPerSentence = (wordCount / sentenceCount).toFixed(1);
+
+            const fleschScore = 206.835 - 
+                1.015 * (wordCount / sentenceCount) - 
+                84.6 * (syllables / wordCount);
+
+            const gradeLevel = 0.39 * (wordCount / sentenceCount) + 
+                11.8 * (syllables / wordCount) - 15.59;
+
+        // DOM element manipulation
+            document.getElementById('results').style.display = 'block';
+        // DOM element manipulation
+            document.getElementById('fleschScore').textContent = fleschScore.toFixed(1);
+        // DOM element manipulation
+            document.getElementById('gradeLevel').textContent = Math.max(0, gradeLevel.toFixed(1));
+        // DOM element manipulation
+            document.getElementById('wordCount').textContent = wordCount;
+        // DOM element manipulation
+            document.getElementById('sentenceCount').textContent = sentenceCount;
+        // DOM element manipulation
+            document.getElementById('syllableCount').textContent = syllables;
+        // DOM element manipulation
+            document.getElementById('avgWords').textContent = avgWordsPerSentence;
+
+        // DOM element manipulation
+            const scoreHexagon = document.getElementById('scoreHexagon');
+        // DOM element manipulation
+            const scoreHexagonGlow = document.getElementById('scoreHexagonGlow');
+            scoreHexagon.textContent = Math.round(fleschScore);
+
+        // DOM element manipulation
+            const scoreLabel = document.getElementById('scoreLabel');
+        // DOM element manipulation
+            const interpretation = document.getElementById('interpretation');
+            let labelText, labelColor, glowColor, borderColor;
+
+            if (fleschScore > 60) {
+                labelText = 'Easy';
+                labelColor = '#2ecc71';
+                glowColor = 'rgba(46, 204, 113, 0.5)';
+                borderColor = '#2ecc71';
+            } else if (fleschScore > 30) {
+                labelText = 'Medium';
+                labelColor = '#f1c40f';
+                glowColor = 'rgba(241, 196, 15, 0.5)';
+                borderColor = '#f1c40f';
+            } else {
+                labelText = 'Difficult';
+                labelColor = '#e74c3c';
+                glowColor = 'rgba(231, 76, 60, 0.5)';
+                borderColor = '#e74c3c';
+            }
+
+            scoreLabel.textContent = labelText;
+            scoreLabel.style.setProperty('--label-color', labelColor);
+            scoreHexagonGlow.style.setProperty('--glow-color', glowColor);
+            interpretation.style.setProperty('--border-color', borderColor);
+
+            let ageRange = '';
+            if (fleschScore > 60) ageRange = '13 to 15 year olds';
+            else if (fleschScore > 50) ageRange = '15 to 17 year olds';
+            else if (fleschScore > 30) ageRange = '17 to 19 year olds';
+            else if (fleschScore > 0) ageRange = '18 to 22 year olds';
+            else ageRange = 'college graduates';
+
+        // DOM element manipulation
+            document.getElementById('interpretation').innerHTML = `
+                <p>Your ${source} has an average reading ease of about ${fleschScore.toFixed(1)} out of 100. 
+                It should be easily understood by ${ageRange}.
+                ${fleschScore < 30 ? '<br><em> Note: This text may be challenging for general readers.</em>' : ''}</p>
+            `;
+
+            hideLoading();
+        }
+
+        // Function: countSyllables
+        function countSyllables(words) {
+            let totalSyllables = 0;
+            words.forEach(word => {
+                word = word.toLowerCase();
+                if (word.length <= 3) { totalSyllables += 1; return; }
+                let syllables = 0;
+                let prevCharWasVowel = false;
+                for (let char of word) {
+                    const isVowel = /[aeiouy]/.test(char);
+                    if (isVowel && !prevCharWasVowel) syllables++;
+                    prevCharWasVowel = isVowel;
+                }
+                if (word.endsWith('e')) syllables--;
+                totalSyllables += Math.max(1, syllables);
+            });
+            return totalSyllables;
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
