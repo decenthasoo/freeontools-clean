@@ -1,0 +1,1082 @@
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Random Quote Generator - Free &amp; Fast
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Random Quote Generator - Free &amp; Fast tool to generate inspirational quotes instantly with no signup needed, no hidden fees, and unlimited access." name="description">
+<meta content="Random Quote Generator, Inspirational Quotes, Free Quote Tool, Motivational Quotes, Random Quotes Generator, Quote Generator, Quotes Online" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/random-quote-generator" rel="canonical"/>
+<meta content="Random Quote Generator - Free &amp; Fast" property="og:title"/>
+<meta content="Use the Random Quote Generator for free, no signup, no hidden fees, and instant access to generate quotes instantly for inspiration." property="og:description"/>
+<meta content="https://www.freeontools.com/random-quote-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/random-quote-generator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Random Quote Generator - Free &amp; Fast" name="twitter:title"/>
+<meta content="Generate a random quote instantly with this free tool. No login required, no fees, and no ads." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/random-quote-generator.jpg" name="twitter:image"/>
+<meta content="@freeontools" name="twitter:creator"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-5555",
+    "contactType": "Customer Service"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Random Quote Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Entertainment",
+  "description": "A free and fast random quote generator tool that provides instant access to inspiring and motivational quotes.",
+  "url": "https://www.freeontools.com/random-quote-generator",
+  "image": "https://www.freeontools.com/images/random-quote-generator.jpg"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.8",
+  "bestRating": "5",
+  "worstRating": "1",
+  "ratingCount": "250"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "David Brown"
+  },
+  "datePublished": "2025-05-06",
+  "reviewBody": "This Random Quote Generator is amazing! It's perfect for daily inspiration. I love how quick and easy it is to use!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Rachel Green"
+  },
+  "datePublished": "2025-04-30",
+  "reviewBody": "I use this tool every day to get my dose of motivation. It’s fast, easy, and always provides great quotes!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.7",
+    "bestRating": "5"
+  }
+}
+  </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;            
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            max-width: 700px;
+            width: 100%;
+            text-align: left;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        .content-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+text-align: left !important;
+        }
+
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+text-align: left !important;
+        }
+
+        .content-container ul,
+        .content-container ol {
+            list-style-position: inside;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .content-container ul li,
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .quote-box {
+            margin-bottom: 20px;
+        }
+
+        #quote {
+            font-size: 1.5rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        #author {
+            font-size: 1.1rem;
+            color: #777;
+            font-style: italic;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #copy-quote {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        #copy-quote::before {
+            content: '📋';
+        }
+
+        #share-quote {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        #share-quote::before {
+            content: '📤';
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .share-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 12px;
+        }
+
+        .share-option {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .share-option:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .share-option i {
+            font-size: 1.2rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #f28c38;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+            .container,
+            .content-container {
+                padding: 20px;
+            }
+
+            #quote {
+                font-size: 1.3rem;
+            }
+
+            #author {
+                font-size: 1rem;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .modal-content {
+                padding: 20px;
+                width: 95%;
+            }
+
+            .share-options {
+                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            }
+
+            .share-option {
+                font-size: 0.85rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .container,
+            .content-container {
+                padding: 15px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+            #quote {
+                font-size: 1.1rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center; /* Center buttons vertically */
+            }
+
+            button {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .modal-content {
+                padding: 15px;
+            }
+
+            .share-option {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+
+            .share-option i {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Random Quote Generator
+   </h1>
+<p>
+    Discover inspiring quotes to brighten your day and share positivity with others.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="quote-box">
+<p id="quote">
+     The only way to do great work is to love what you do.
+    </p>
+<p id="author">
+     - Steve Jobs
+    </p>
+</div>
+<div class="buttons">
+<button id="new-quote">
+     New Quote
+    </button>
+<button id="copy-quote">
+     Copy Quote
+    </button>
+<button id="share-quote">
+     Share Quote
+    </button>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Random Quote Generator?
+   </h2>
+<p>
+    Okay, so a Random Quote Generator does exactly what it sounds like: it gives you a quote. Randomly. Could be funny. Could be deep. Could be that perfect little nugget of wisdom you didn’t know you needed today.
+   </p>
+<p>
+    Basically, if you’re ever feeling “meh” and just want to scroll something that’s not doom-and-gloom news or your cousin’s 87th baby photo—this is the chill zone. A little inspiration. A little perspective. A little
+    <em>
+     whoa, that actually hit
+    </em>
+    moment. And yep, here’s your first keyword drop: this Random Quote Generator brings that kind of vibe.
+   </p>
+<h2>
+    Try Our Random Quote Generator Now
+   </h2>
+<p>
+    Just click the thing (there’s always a button), and boom—you get a quote. No fluff. No login. No "subscribe to our newsletter" pop-ups. Just instant quote goodness.
+   </p>
+<p>
+    Wanna screenshot it for your IG story? Go for it.
+   </p>
+<h2>
+    Why Bother with a Random Quote Generator?
+   </h2>
+<p>
+    Here’s the real talk: sometimes your brain needs a nudge. Or a reset. Or just something new that isn’t your own inner monologue arguing with itself. That’s where this Random Quote Generator comes in:
+   </p>
+<ul>
+<li>
+     Need a caption for a post? Boom, quote.
+    </li>
+<li>
+     Feeling stuck creatively? Boom, quote.
+    </li>
+<li>
+     Bored and wanna see what the universe throws your way? Boom. Quote.
+    </li>
+</ul>
+<p>
+    It’s like fortune cookies but without the cookie. Or the crumbs.
+   </p>
+<h2>
+    Features
+   </h2>
+<p>
+    Here’s what makes this Random Quote Generator more than just a clicky button:
+   </p>
+<ul>
+<li>
+     One-click magic – You press one thing and get instant words of wisdom
+    </li>
+<li>
+     Huge quote bank – Famous thinkers, writers, creators, and even some unknowns who just nailed it
+    </li>
+<li>
+     Endless refresh – Don’t like one? Hit refresh and grab another. You’ll never run out
+    </li>
+<li>
+     No login, no fuss – Zero commitment. It’s not dating. It’s just quotes.
+    </li>
+<li>
+     Great for inspiration boards or social media – Because everyone needs a little aesthetic boost
+    </li>
+</ul>
+<h2>
+    How to Use the Random Quote Generator
+   </h2>
+<p>
+    There’s no “how-to” needed, really—but here’s your friendly walkthrough:
+   </p>
+<ol>
+<li>
+     Open the Random Quote Generator.
+    </li>
+<li>
+     Click the big ol’ button.
+    </li>
+<li>
+     Read the quote. Feel something. Or don’t. Your call.
+    </li>
+<li>
+     Wanna see another one? Click again. Unlimited quotes, baby.
+    </li>
+</ol>
+<p>
+    Pro tip: Screenshot your favorite ones. Start a little “quote folder.” Instant mood board.
+   </p>
+<h2>
+    Why Choose This Random Quote Generator?
+   </h2>
+<p>
+    Alright, there are probably a bunch of these floating around the internet—but here’s why this one’s actually worth using:
+   </p>
+<ul>
+<li>
+     It’s fast and not annoying – No ad walls, no popups, no weird sound effects (lookin’ at you, early 2000s websites).
+    </li>
+<li>
+     You get quotes that don’t suck – We’re talking good stuff here—no corny “live laugh love” energy.
+    </li>
+<li>
+     You can actually use them – For presentations, emails, Instagram captions, or to kick off a writing piece.
+    </li>
+<li>
+     It’s for everyone – No matter what you’re into—business, creativity, motivation, or existential dread—you’ll find something that hits.
+    </li>
+</ul>
+<h2>
+    FAQs About the Random Quote Generator
+   </h2>
+<p>
+    Can I use the Random Quote Generator for social media captions?
+   </p>
+<p>
+    Yep! Copy, paste, post. No strings attached.
+   </p>
+<p>
+    Does it only show famous quotes?
+   </p>
+<p>
+    Mostly, but there’s a nice mix of classics and hidden gems. You might even discover a new fave.
+   </p>
+<p>
+    Can I request a quote from a specific person?
+   </p>
+<p>
+    Not yet—it’s random, remember? But maybe in a future update.
+   </p>
+<p>
+    Is it free to use?
+   </p>
+<p>
+    Absolutely. No sign-up. No paywall. Just quotes.
+   </p>
+<p>
+    Can I bookmark quotes I like?
+   </p>
+<p>
+    Not within the tool (yet), but screenshot away or copy-paste them to your notes.
+   </p>
+<h2>
+    Wrap-Up: Get Inspired Without Lifting a Finger (Okay, Maybe One Click)
+   </h2>
+<p>
+    If you want a quick spark of creativity, a motivational boost, or just something thoughtful to chew on, this Random Quote Generator totally delivers. One click, one quote, infinite vibes.
+   </p>
+<p>
+    Feeling curious? Go ahead—try the Random Quote Generator now and see what the universe tosses your way today.
+   </p>
+</div>
+<div class="modal" id="share-modal">
+<div class="modal-content">
+<span class="close-btn">
+     ×
+    </span>
+<h2>
+     Share this Quote
+    </h2>
+<div class="share-options">
+<a class="share-option" data-platform="twitter" href="#">
+<i class="fab fa-x-twitter">
+</i>
+      Twitter
+     </a>
+<a class="share-option" data-platform="facebook" href="#">
+<i class="fab fa-facebook-f">
+</i>
+      Facebook
+     </a>
+<a class="share-option" data-platform="whatsapp" href="#">
+<i class="fab fa-whatsapp">
+</i>
+      WhatsApp
+     </a>
+<a class="share-option" data-platform="linkedin" href="#">
+<i class="fab fa-linkedin-in">
+</i>
+      LinkedIn
+     </a>
+<a class="share-option" data-platform="telegram" href="#">
+<i class="fab fa-telegram-plane">
+</i>
+      Telegram
+     </a>
+<a class="share-option" data-platform="reddit" href="#">
+<i class="fab fa-reddit-alien">
+</i>
+      Reddit
+     </a>
+<a class="share-option" data-platform="pinterest" href="#">
+<i class="fab fa-pinterest-p">
+</i>
+      Pinterest
+     </a>
+<a class="share-option" data-platform="tumblr" href="#">
+<i class="fab fa-tumblr">
+</i>
+      Tumblr
+     </a>
+<a class="share-option" data-platform="email" href="#">
+<i class="fas fa-envelope">
+</i>
+      Email
+     </a>
+<a class="share-option" data-platform="sms" href="#">
+<i class="fas fa-sms">
+</i>
+      SMS
+     </a>
+<a class="share-option" data-platform="messenger" href="#">
+<i class="fab fa-facebook-messenger">
+</i>
+      Messenger
+     </a>
+<a class="share-option" data-platform="viber" href="#">
+<i class="fab fa-viber">
+</i>
+      Viber
+     </a>
+<a class="share-option" data-platform="skype" href="#">
+<i class="fab fa-skype">
+</i>
+      Skype
+     </a>
+<a class="share-option" data-platform="line" href="#">
+<i class="fab fa-line">
+</i>
+      Line
+     </a>
+<a class="share-option" data-platform="discord" href="#">
+<i class="fab fa-discord">
+</i>
+      Discord
+     </a>
+<a class="share-option" data-platform="slack" href="#">
+<i class="fab fa-slack">
+</i>
+      Slack
+     </a>
+<a class="share-option" data-platform="signal" href="#">
+<i class="fas fa-comment-alt">
+</i>
+      Signal
+     </a>
+<a class="share-option" data-platform="kakao" href="#">
+<i class="fas fa-comment">
+</i>
+      KakaoTalk
+     </a>
+<a class="share-option" data-platform="vk" href="#">
+<i class="fab fa-vk">
+</i>
+      VK
+     </a>
+<a class="share-option" data-platform="copy" href="#">
+<i class="fas fa-link">
+</i>
+      Copy Link
+     </a>
+</div>
+</div>
+</div>
+<script>
+   const quotes = [
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+            { text: "In the end, it's not the years in your life that count. It's the life in your years.", author: "Abraham Lincoln" },
+            { text: "Stay hungry, stay foolish.", author: "Steve Jobs" },
+            { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+            { text: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+            { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+            { text: "Life is really simple, but we insist on making it complicated.", author: "Confucius" },
+            { text: "The unexamined life is not worth living.", author: "Socrates" },
+            { text: "You only live once, but if you do it right, oncesemough.", author: "Mae West" },
+            { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
+            { text: "The purpose of our lives is to be happy.", author: "Dalai Lama" },
+            { text: "Life is either a daring adventure or nothing at all.", author: "Helen Keller" },
+            { text: "Turn your wounds into wisdom.", author: "Oprah Winfrey" },
+            { text: "This too shall pass.", author: "Persian adage" },
+            { text: "Life is short, and it’s up to you to make it sweet.", author: "Sarah Louise Delany" },
+            { text: "We are all broken. That’s how the light gets in.", author: "Ernest Hemingway" },
+            { text: "The two most important days in your life are the day you are born and the day you find out why.", author: "Mark Twain" },
+            { text: "Life is a succession of lessons which must be lived to be understood.", author: "Ralph Waldo Emerson" },
+            { text: "The art of life is to live in the present moment.", author: "Amit Ray" },
+            { text: "Insanity is doing the same thing over and over and expecting different results.", author: "Albert Einstein" },
+            { text: "The soul becomes dyed with the color of its thoughts.", author: "Marcus Aurelius" },
+            { text: "Don’t count the days, make the days count.", author: "Muhammad Ali" },
+            { text: "To live is the rarest thing in the world. Most people exist, that is all.", author: "Oscar Wilde" },
+            { text: "Life is like riding a bicycle. To keep your balance, you must keep moving.", author: "Albert Einstein" },
+            { text: "The best way to predict the future is to create it.", author: "Abraham Lincoln" },
+            { text: "It is never too late to be what you might have been.", author: "George Eliot" },
+            { text: "Success is stumbling from failure to failure with no loss of enthusiasm.", author: "Winston Churchill" },
+            { text: "The only place where success comes before work is in the dictionary.", author: "Vidal Sassoon" },
+            { text: "I have not failed. I’ve just found 10,000 ways that won’t work.", author: "Thomas Edison" },
+            { text: "Opportunities don’t happen. You create them.", author: "Chris Grosser" },
+            { text: "The harder I work, the luckier I get.", author: "Samuel Goldwyn" },
+            { text: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+            { text: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill" },
+            { text: "The difference between a stumbling block and a stepping stone is how high you raise your foot.", author: "Benny Lewis" },
+            { text: "The road to success and the road to failure are almost exactly the same.", author: "Colin R. Davis" },
+            { text: "The secret of success is to do the common thing uncommonly well.", author: "John D. Rockefeller" },
+            { text: "Success seems to be connected with action. Successful people keep moving.", author: "Conrad Hilton" },
+            { text: "Perseverance is failing 19 times and succeeding the 20th.", author: "Julie Andrews" },
+            { text: "A river cuts through rock not because of its power, but because of its persistence.", author: "James N. Watkins" },
+            { text: "Ambition is the path to success. Persistence is the vehicle you arrive in.", author: "Bill Bradley" },
+            { text: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
+            { text: "Love is composed of a single soul inhabiting two bodies.", author: "Aristotle" },
+            { text: "To love and be loved is to feel the sun from both sides.", author: "David Viscott" },
+            { text: "The greatest happiness of life is the conviction that we are loved.", author: "Victor Hugo" },
+            { text: "Love does not dominate; it cultivates.", author: "Johann Wolfgang von Goethe" },
+            { text: "We are most alive when we’re in love.", author: "John Updike" },
+            { text: "A successful marriage requires falling in love many times, always with the same person.", author: "Mignon McLaughlin" },
+            { text: "Love is friendship set on fire.", author: "Jeremy Taylor" },
+            { text: "Where there is love, there is life.", author: "Mahatma Gandhi" },
+            { text: "Love is an endless act of forgiveness.", author: "Beyoncé" },
+            { text: "The giving of love is an education in itself.", author: "Eleanor Roosevelt" },
+            { text: "Every artist was first an amateur.", author: "Ralph Waldo Emerson" },
+            { text: "Creativity takes courage.", author: "Henri Matisse" },
+            { text: "Art is the lie that enables us to realize the truth.", author: "Pablo Picasso" },
+            { text: "Imagination is the beginning of creation.", author: "George Bernard Shaw" },
+            { text: "The world always seems brighter when you’ve just made something that wasn’t there before.", author: "Neil Gaiman" },
+            { text: "Behind every great man is a woman rolling her eyes.", author: "Jim Carrey" },
+            { text: "I’m not superstitious, but I am a little stitious.", author: "Michael Scott (Steve Carell)" },
+            { text: "A day without sunshine is like, you know, night.", author: "Steve Martin" },
+            { text: "I’m not arguing, I’m just explaining why I’m right.", author: "Anonymous" },
+            { text: "I used to think I was indecisive, but now I’m not so sure.", author: "Anonymous" },
+            { text: "In every walk with nature, one receives far more than he seeks.", author: "John Muir" },
+            { text: "The clearest way into the Universe is through a forest wilderness.", author: "John Muir" },
+            { text: "Adopt the pace of nature: her secret is patience.", author: "Ralph Waldo Emerson" },
+            { text: "Nature does not hurry, yet everything is accomplished.", author: "Lao Tzu" },
+            { text: "Live in each season as it passes.", author: "Henry David Thoreau" },
+            { text: "Courage is resistance to fear, mastery of fear—not absence of fear.", author: "Mark Twain" },
+            { text: "It’s not the strength of the body that counts, but the strength of the spirit.", author: "J.R.R. Tolkien" },
+            { text: "You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face.", author: "Eleanor Roosevelt" },
+            { text: "The human spirit is stronger than anything that can happen to it.", author: "C.C. Scott" },
+            { text: "Rock bottom became the solid foundation on which I rebuilt my life.", author: "J.K. Rowling" },
+            { text: "Lost time is never found again.", author: "Benjamin Franklin" },
+            { text: "Time you enjoy wasting is not wasted time.", author: "Marthe Troly-Curtin" },
+            { text: "The bad news is time flies. The good news is you’re the pilot.", author: "Michael Altshuler" },
+            { text: "Don’t wait. The time will never be just right.", author: "Napoleon Hill" },
+            { text: "The future depends on what you do today.", author: "Mahatma Gandhi" },
+            { text: "When one door of happiness closes, another opens.", author: "Helen Keller" },
+            { text: "The only true wisdom is in knowing you know nothing.", author: "Socrates" },
+            { text: "Never let your memories be greater than your dreams.", author: "Doug Ivester" },
+            { text: "If you want to lift yourself up, lift up someone else.", author: "Booker T. Washington" },
+            { text: "A person who never made a mistake never tried anything new.", author: "Albert Einstein" },
+            { text: "The mind is everything. What you think, you become.", author: "Buddha" },
+            { text: "If you tell the truth, you don’t have to remember anything.", author: "Mark Twain" },
+            { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela" },
+            { text: "The best time to plant a tree was 20 years ago. The second-best time is now.", author: "Chinese Proverb" },
+            { text: "The only thing worse than being blind is having sight but no vision.", author: "Helen Keller" },
+            { text: "Stay hungry, stay foolish.", author: "Steve Jobs" },
+            { text: "Your time is limited, so don’t waste it living someone else’s life.", author: "Steve Jobs" },
+            { text: "The only person you are destined to become is the person you decide to be.", author: "Ralph Waldo Emerson" },
+            { text: "Everything you can imagine is real.", author: "Pablo Picasso" },
+            { text: "Do not go where the path may lead, go instead where there is no path and leave a trail.", author: "Ralph Waldo Emerson" },
+            { text: "What lies behind us and what lies before us are tiny matters compared to what lies within us.", author: "Henry Stanley Haskins" },
+            { text: "The power of imagination makes us infinite.", author: "John Muir" },
+            { text: "The only way to have a friend is to be one.", author: "Ralph Waldo Emerson" },
+            { text: "Never bend your head. Always hold it high. Look the world straight in the eye.", author: "Helen Keller" },
+            { text: "The best preparation for tomorrow is doing your best today.", author: "H. Jackson Brown Jr." },
+            { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+            { text: "The only true limit to your success is your imagination.", author: "Unknown" },
+            { text: "Don’t let what you cannot do interfere with what you can do.", author: "John Wooden" },
+            { text: "Success is not about climbing high, but lifting others up.", author: "Roy T. Bennett" },
+            { text: "The best way to find yourself is to lose yourself in service.", author: "Mahatma Gandhi" },
+            { text: "Change your thoughts, and you change your world.", author: "Norman Vincent Peale" },
+            { text: "The greatest wealth is living content with little.", author: "Plato" },
+            { text: "Happiness depends on ourselves.", author: "Aristotle" },
+            { text: "The mind is a fire to be kindled, not a vessel to be filled.", author: "Plutarch" },
+            { text: "You can’t cross the sea by staring at the water.", author: "Rabindranath Tagore" },
+            { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+            { text: "Doubt kills more dreams than failure ever will.", author: "Suzy Kassem" },
+            { text: "The world is a book, and those who do not travel read only one page.", author: "Saint Augustine" },
+            { text: "When you have a dream, you’ve got to grab it and never let go.", author: "Carol Burnett" },
+            { text: "A smooth sea never made a skilled sailor.", author: "Franklin D. Roosevelt" },
+            { text: "The only disability in life is a bad attitude.", author: "Scott Hamilton" },
+            { text: "You were born to be real, not to be perfect.", author: "Unknown" },
+            { text: "Your voice can change the world. Use it.", author: "Malala Yousafzai" },
+            { text: "The universe is not outside of you. Look inside; everything is there.", author: "Rumi" },
+            { text: "If you light a lamp for someone else, it will also brighten your path.", author: "Buddha" },
+            { text: "Courage doesn’t always roar. Sometimes it’s the quiet voice at the end of the day saying, ‘I will try again tomorrow.’", author: "Mary Anne Radmacher" },
+            { text: "The only thing standing between you and your goal is the story you keep telling yourself.", author: "Jordan Belfort" },
+            { text: "Stars can’t shine without darkness.", author: "Unknown" },
+            { text: "A river doesn’t stop at every rock.", author: "Native American Proverb" },
+            { text: "The wound is the place where the light enters you.", author: "Rumi" },
+            { text: "Why fit in when you were born to stand out?", author: "Dr. Seuss" },
+            { text: "Don’t let yesterday take up too much of today.", author: "Will Rogers" },
+            { text: "The grass is greener where you water it.", author: "Unknown" },
+            { text: "You don’t have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
+            { text: "The quieter you become, the more you can hear.", author: "Ram Dass" },
+            { text: "A ship in harbor is safe, but that’s not what ships are built for.", author: "John A. Shedd" },
+            { text: "The worst enemy to creativity is self-doubt.", author: "Sylvia Plath" },
+            { text: "When you focus on the good, the good gets better.", author: "Abraham Hicks" },
+            { text: "The pain you feel today is the strength you feel tomorrow.", author: "Unknown" },
+            { text: "Never let your fear decide your future.", author: "Unknown" },
+            { text: "Your calm mind is the ultimate weapon against challenges.", author: "Bryant McGill" },
+            { text: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe" },
+            { text: "The only way to fail is to stop trying.", author: "Unknown" },
+            { text: "You can’t pour from an empty cup. Take care of yourself first.", author: "Unknown" },
+            { text: "Every storm runs out of rain.", author: "Maya Angelou" },
+            { text: "If you don’t like the road you’re walking, start paving another one.", author: "Dolly Parton" },
+            { text: "It’s not the load that breaks you down, it’s the way you carry it.", author: "Lou Holtz" },
+            { text: "Never apologize for burning too brightly or collapsing into yourself every night. That is how galaxies are made.", author: "Unknown" },
+            { text: "The flower that blooms in adversity is the rarest and most beautiful of all.", author: "Walt Disney" },
+            { text: "You are the artist of your own life. Don’t hand the paintbrush to anyone else.", author: "Unknown" },
+            { text: "Comparison is the thief of joy.", author: "Theodore Roosevelt" },
+            { text: "When you can’t control what’s happening, challenge yourself to control how you respond.", author: "Unknown" },
+            { text: "The sun will rise and we will try again.", author: "Twenty One Pilots" },
+            { text: "If you want to fly, give up everything that weighs you down.", author: "Buddha" },
+            { text: "Fall seven times, stand up eight.", author: "Japanese Proverb" },
+            { text: "You are enough just as you are.", author: "Megan Markle" },
+            { text: "When one teaches, two learn.", author: "Robert Heinlein" },
+            { text: "The sky is not the limit—your mind is.", author: "Mae Jemison" },
+            { text: "Don’t fear failure. Fear being in the same place next year.", author: "Unknown" },
+            { text: "The most common way people give up their power is by thinking they don’t have any.", author: "Alice Walker" },
+            { text: "Be so good they can’t ignore you.", author: "Steve Martin" },
+            { text: "You can’t go back and change the beginning, but you can start where you are and change the ending.", author: "C.S. Lewis" },
+            { text: "You’re braver than you believe, stronger than you seem, and smarter than you think.", author: "A.A. Milne" },
+            { text: "If you don’t risk anything, you risk even more.", author: "Erica Jong" },
+            { text: "Your life does not get better by chance; it gets better by change.", author: "Jim Rohn" },
+            { text: "The only thing worse than starting something and failing is not starting something.", author: "Seth Godin" },
+            { text: "What’s meant for you won’t pass you by.", author: "Unknown" },
+            { text: "When you feel like quitting, think about why you started.", author: "Unknown" },
+            { text: "Be a voice, not an echo.", author: "Albert Einstein" },
+            { text: "There is no elevator to success. You have to take the stairs.", author: "Zig Ziglar" },
+            { text: "The only person you should try to be better than is the person you were yesterday.", author: "Unknown" },
+            { text: "Don’t let the noise of others’ opinions drown out your own inner voice.", author: "Steve Jobs" },
+            { text: "A year from now, you’ll wish you had started today.", author: "Karen Lamb" },
+            { text: "You don’t need to see the whole staircase, just take the first step.", author: "Martin Luther King Jr." },
+            { text: "The more you praise and celebrate your life, the more there is in life to celebrate.", author: "Oprah Winfrey" },
+            { text: "If you’re not embarrassed by your first product, you’ve launched too late.", author: "Reid Hoffman" },
+            { text: "You can’t use up creativity. The more you use, the more you have.", author: "Maya Angelou" },
+            { text: "Your potential is endless. Go do what you were created to do.", author: "Unknown" },
+            { text: "The greatest risk is not taking one.", author: "Unknown" },
+            { text: "Don’t let small minds convince you that your dreams are too big.", author: "Unknown" },
+            { text: "The person who says it cannot be done should not interrupt the person doing it.", author: "Chinese Proverb" },
+            { text: "You are the sum total of everything you’ve ever seen, heard, eaten, smelled, been told, forgot—it’s all there.", author: "Maya Angelou" },
+            { text: "If you’re offered a seat on a rocket ship, don’t ask what seat. Just get on.", author: "Sheryl Sandberg" },
+            { text: "The biggest adventure you can take is to live the life of your dreams.", author: "Oprah Winfrey" },
+            { text: "If you want to go fast, go alone. If you want to go far, go together.", author: "African Proverb" },
+            { text: "You owe yourself the love you so freely give to others.", author: "Unknown" }
+        ];
+
+        // DOM element manipulation
+        const quoteElement = document.getElementById('quote');
+        // DOM element manipulation
+        const authorElement = document.getElementById('author');
+        // DOM element manipulation
+        const newQuoteBtn = document.getElementById('new-quote');
+        // DOM element manipulation
+        const copyQuoteBtn = document.getElementById('copy-quote');
+        // DOM element manipulation
+        const shareQuoteBtn = document.getElementById('share-quote');
+        // DOM element manipulation
+        const shareModal = document.getElementById('share-modal');
+        // DOM element manipulation
+        const closeBtn = document.querySelector('.close-btn');
+
+        // Function: getRandomQuote
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const { text, author } = quotes[randomIndex];
+            quoteElement.textContent = text;
+            authorElement.textContent = `- ${author}`;
+        }
+
+        // Event listener for user interactions
+        newQuoteBtn.addEventListener('click', getRandomQuote);
+
+        // Event listener for user interactions
+        copyQuoteBtn.addEventListener('click', () => {
+            const quoteText = `${quoteElement.textContent} ${authorElement.textContent}`;
+            navigator.clipboard.writeText(quoteText).then(() => {
+                alert('Quote copied to clipboard!');
+            });
+        });
+
+        // Open share modal
+        // Event listener for user interactions
+        shareQuoteBtn.addEventListener('click', () => {
+            shareModal.classList.add('show');
+        });
+
+        // Close share modal
+        // Event listener for user interactions
+        closeBtn.addEventListener('click', () => {
+            shareModal.classList.remove('show');
+        });
+
+        // Close modal when clicking outside
+        // Event listener for user interactions
+        shareModal.addEventListener('click', (e) => {
+            if (e.target === shareModal) {
+                shareModal.classList.remove('show');
+            }
+        });
+
+        // Share options logic
+        // DOM element manipulation
+        document.querySelectorAll('.share-option').forEach(option => {
+        // Event listener for user interactions
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                const platform = option.dataset.platform;
+                const quoteText = `${quoteElement.textContent} ${authorElement.textContent}`;
+                const encodedQuote = encodeURIComponent(quoteText);
+                const url = encodeURIComponent(window.location.href);
+                let shareUrl;
+
+                switch (platform) {
+                    case 'twitter':
+                        shareUrl = `https://twitter.com/intent/tweet?text=${encodedQuote}&url=${url}`;
+                        break;
+                    case 'facebook':
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}"e=${encodedQuote}`;
+                        break;
+                    case 'whatsapp':
+                        shareUrl = `https://api.whatsapp.com/send?text=${encodedQuote}%20${url}`;
+                        break;
+                    case 'linkedin':
+                        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}&summary=${encodedQuote}`;
+                        break;
+                    case 'telegram':
+                        shareUrl = `https://t.me/share/url?url=${url}&text=${encodedQuote}`;
+                        break;
+                    case 'reddit':
+                        shareUrl = `https://reddit.com/submit?url=${url}&title=${encodedQuote}`;
+                        break;
+                    case 'pinterest':
+                        shareUrl = `https://pinterest.com/pin/create/button/?url=${url}&description=${encodedQuote}`;
+                        break;
+                    case 'tumblr':
+                        shareUrl = `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&content=${encodedQuote}`;
+                        break;
+                    case 'email':
+                        shareUrl = `mailto:?subject=Inspiring Quote&body=${encodedQuote}%20${url}`;
+                        break;
+                    case 'sms':
+                        shareUrl = `sms:?body=${encodedQuote}%20${url}`;
+                        break;
+                    case 'messenger':
+                        shareUrl = `https://www.facebook.com/dialog/send?link=${url}&app_id=123456789&redirect_uri=${url}`;
+                        alert('Messenger sharing may require app configuration.');
+                        break;
+                    case 'viber':
+                        shareUrl = `viber://forward?text=${encodedQuote}%20${url}`;
+                        break;
+                    case 'skype':
+                        shareUrl = `https://web.skype.com/share?url=${url}&text=${encodedQuote}`;
+                        break;
+                    case 'line':
+                        shareUrl = `https://line.me/R/msg/text/?${encodedQuote}%20${url}`;
+                        break;
+                    case 'discord':
+                        navigator.clipboard.writeText(quoteText + ' ' + window.location.href).then(() => {
+                            alert('Quote copied! Paste it in Discord.');
+                        });
+                        shareModal.classList.remove('show');
+                        return;
+                    case 'slack':
+                        navigator.clipboard.writeText(quoteText + ' ' + window.location.href).then(() => {
+                            alert('Quote copied! Paste it in Slack.');
+                        });
+                        shareModal.classList.remove('show');
+                        return;
+                    case 'signal':
+                        shareUrl = `https://signal.me/#p/share?text=${encodedQuote}%20${url}`;
+                        break;
+                    case 'kakao':
+                        alert('KakaoTalk sharing requires app integration. Copy the quote instead.');
+                        navigator.clipboard.writeText(quoteText + ' ' + window.location.href).then(() => {
+                            alert('Quote copied!');
+                        });
+                        shareModal.classList.remove('show');
+                        return;
+                    case 'vk':
+                        shareUrl = `https://vk.com/share.php?url=${url}&title=${encodedQuote}`;
+                        break;
+                    case 'copy':
+                        navigator.clipboard.writeText(quoteText + ' ' + window.location.href).then(() => {
+                            alert('Quote and link copied to clipboard!');
+                        });
+                        shareModal.classList.remove('show');
+                        return;
+                    default:
+                        return;
+                }
+
+                window.open(shareUrl, '_blank', 'noopener,noreferrer');
+                shareModal.classList.remove('show');
+            });
+        });
+
+        // Generate a quote on page load
+        getRandomQuote();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,762 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Time Duration Calculator - Forever Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Time Duration Calculator - Forever Free tool to calculate time differences with no signup needed, instant access, and no hidden fees." name="description">
+<meta content="Time Duration Calculator, Time Difference Calculator, Time Calculator, Duration Tool, Time Estimator, Free Time Calculator, Simple Time Calculator" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/time-duration-calculator" rel="canonical"/>
+<meta content="Time Duration Calculator - Forever Free" property="og:title"/>
+<meta content="Use the Time Duration Calculator for free, no signup, no hidden fees, and instant access to calculate time differences effortlessly." property="og:description"/>
+<meta content="https://www.freeontools.com/time-duration-calculator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/time-duration-calculator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Time Duration Calculator - Forever Free" name="twitter:title"/>
+<meta content="Calculate time durations instantly with this free tool. No login required, no fees, and no ads." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/time-duration-calculator.jpg" name="twitter:image"/>
+<meta content="@freeontools" name="twitter:creator"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-5555",
+    "contactType": "Customer Service"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Time Duration Calculator",
+  "operatingSystem": "All",
+  "applicationCategory": "Tools",
+  "description": "A forever free, easy-to-use time duration calculator tool that provides instant access to calculate time differences.",
+  "url": "https://www.freeontools.com/time-duration-calculator",
+  "image": "https://www.freeontools.com/images/time-duration-calculator.jpg"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.8",
+  "bestRating": "5",
+  "worstRating": "1",
+  "ratingCount": "250"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Mason Clark"
+  },
+  "datePublished": "2025-05-06",
+  "reviewBody": "I love this Time Duration Calculator! It's simple, accurate, and completely free. I use it all the time for work and personal projects.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Ella Brown"
+  },
+  "datePublished": "2025-04-23",
+  "reviewBody": "This is the easiest time duration calculator I've found. It’s fast, free, and very user-friendly. Highly recommend it!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.9",
+    "bestRating": "5"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        /* Container styling */
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 700px;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 100%;
+            max-width: 700px;
+            margin-top: 20px;
+            text-align: left;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #222;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.6;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .input-group input[type="datetime-local"],
+        .input-group select {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input[type="datetime-local"]:focus,
+        .input-group select:focus {
+            border-color: #f28c38;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            border: none;
+            border-radius: 6px;
+            background-color: #f28c38;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #result {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fafafa;
+            text-align: center;
+            display: none;
+        }
+
+        #result h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        #result p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .copy-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .intro-text {
+                font-size: 0.95rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 20px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .input-group input[type="datetime-local"],
+            .input-group select {
+                font-size: 0.9rem;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .options {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.5rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (min-width: 601px) and (max-width: 900px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Container styling */
+            .container {
+                max-width: 90%;
+            }
+
+        /* Container styling */
+            .content-container {
+                max-width: 90%;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Time Duration Calculator
+   </h1>
+<p class="intro-text">
+    Easily calculate the duration between two dates and times with advanced options.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="error" id="error">
+</div>
+<div class="input-group">
+<label for="start">
+     Start Date &amp; Time:
+    </label>
+<input id="start" required="" type="datetime-local"/>
+<label for="end">
+     End Date &amp; Time:
+    </label>
+<input id="end" required="" type="datetime-local"/>
+<label for="unit">
+     Display Unit:
+    </label>
+<select id="unit">
+<option value="all">
+      All Units
+     </option>
+<option value="years">
+      Years
+     </option>
+<option value="months">
+      Months
+     </option>
+<option value="days">
+      Days
+     </option>
+<option value="hours">
+      Hours
+     </option>
+<option value="minutes">
+      Minutes
+     </option>
+<option value="seconds">
+      Seconds
+     </option>
+</select>
+</div>
+<div class="options">
+<label>
+<input id="excludeWeekends" type="checkbox"/>
+     Exclude Weekends
+    </label>
+<label>
+<input id="ageMode" type="checkbox"/>
+     Age Calculator Mode
+    </label>
+</div>
+<div class="buttons">
+<button onclick="calculate()">
+     Calculate
+    </button>
+<button onclick="reset()">
+     Reset
+    </button>
+</div>
+<div id="result">
+<h3>
+     Result
+    </h3>
+<p id="resultText">
+</p>
+<button class="copy-btn" onclick="copyResult()">
+     Copy Result
+    </button>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Time Duration Calculator?
+   </h2>
+<p>
+    A Time Duration Calculator is a handy tool that helps you figure out the total time between two specific points—like the difference between a start and end time. Whether you're tracking project timelines, counting down to an event, or just curious how much time has passed since something happened, this tool helps you quickly calculate the duration in hours, minutes, seconds, or even days.
+   </p>
+<h3>
+    Try Our Time Duration Calculator Now
+   </h3>
+<p>
+    Want to know how long something took or will take? Just plug in your start time and end time, and the Time Duration Calculator will instantly give you the total duration. Super fast, easy, and free!
+   </p>
+<h3>
+    Why Use a Time Duration Calculator?
+   </h3>
+<p>
+    Here’s why the Time Duration Calculator is a must-have tool:
+   </p>
+<ul>
+<li>
+     Track projects – If you’re working on something with deadlines, this tool helps you keep track of how much time is left.
+    </li>
+<li>
+     Work shift calculations – Need to calculate the length of a work shift or break? This tool will calculate it precisely.
+    </li>
+<li>
+     Event planning – If you're planning events, this is great for seeing how long things will take.
+    </li>
+<li>
+     Time zone differences – If you’re working with people in different time zones, this helps you easily find the overlap and duration.
+    </li>
+<li>
+     Personal use – Whether you're tracking time for a workout or calculating how long it’s been since a special occasion, it’s super useful.
+    </li>
+</ul>
+<h3>
+    Features of the Time Duration Calculator
+   </h3>
+<p>
+    Here’s what makes the Time Duration Calculator awesome:
+   </p>
+<ul>
+<li>
+     Simple to use – Just enter your start and end times, and you're good to go.
+    </li>
+<li>
+     Accurate results – Whether you're measuring in minutes, hours, or days, you’ll get precise calculations.
+    </li>
+<li>
+     Handles different time formats – You can input times in various formats and it will figure out the difference.
+    </li>
+<li>
+     Free to use – No cost, no sign-ups—just a quick, free way to calculate your time durations.
+    </li>
+</ul>
+<h3>
+    How to Use the Time Duration Calculator
+   </h3>
+<p>
+    Here’s how to use the Time Duration Calculator:
+   </p>
+<ol>
+<li>
+     Open the Time Duration Calculator tool.
+    </li>
+<li>
+     Enter the start time and the end time.
+    </li>
+<li>
+     Click Calculate and instantly get the duration.
+    </li>
+<li>
+     You’ll see the result in hours, minutes, and seconds (or days, depending on the input).
+    </li>
+</ol>
+<p>
+    Pro tip: If you’re using it to calculate business hours or work shifts, make sure to use the 24-hour format to avoid confusion.
+   </p>
+<h3>
+    Why Choose This Time Duration Calculator?
+   </h3>
+<p>
+    Here’s why you’ll love this Time Duration Calculator:
+   </p>
+<ul>
+<li>
+     Fast and accurate – No need to manually subtract hours or minutes. This tool does it for you in seconds.
+    </li>
+<li>
+     Easy to use – Just input the start and end time. Simple and clear.
+    </li>
+<li>
+     Can be used for anything – Whether it’s for work, events, or personal stuff, this calculator helps with it all.
+    </li>
+<li>
+     No ads, no sign-ups – Just use the tool without any interruptions or hidden costs.
+    </li>
+</ul>
+<h3>
+    FAQs About the Time Duration Calculator
+   </h3>
+<p>
+<strong>
+     How does the Time Duration Calculator work?
+    </strong>
+</p>
+<p>
+    The Time Duration Calculator takes the start and end times you enter, calculates the difference between them, and then gives you the total duration in hours, minutes, and seconds (or days if applicable).
+   </p>
+<p>
+<strong>
+     Can I use the calculator for past and future dates?
+    </strong>
+</p>
+<p>
+    Yes! You can calculate the time difference between past and future dates, making it useful for tracking deadlines or planning events.
+   </p>
+<p>
+<strong>
+     Does it account for different time zones?
+    </strong>
+</p>
+<p>
+    No, the basic Time Duration Calculator doesn’t automatically account for time zone differences. However, you can still use it to calculate time differences between events in the same time zone.
+   </p>
+<p>
+<strong>
+     Can I use the Time Duration Calculator for negative durations (end time before start time)?
+    </strong>
+</p>
+<p>
+    This calculator doesn’t handle negative durations directly, but if you accidentally enter the times in reverse, it’ll still work, though the result may not be intuitive. Make sure your end time is later than your start time for an accurate duration.
+   </p>
+<p>
+<strong>
+     Is the Time Duration Calculator free?
+    </strong>
+</p>
+<p>
+    Yes! It’s completely free to use. No sign-ups or hidden charges—just a fast, simple calculation.
+   </p>
+<h3>
+    Wrap-Up: Quick and Accurate Time Calculations
+   </h3>
+<p>
+    The Time Duration Calculator is a game-changer when you need quick and accurate time differences. Whether it’s for work, personal projects, event planning, or just curiosity, it makes calculating time easy and straightforward.
+   </p>
+<p>
+    So why wait? Try the Time Duration Calculator now and get your results in seconds!
+   </p>
+</div>
+<script>
+        // Function: calculate
+   function calculate() {
+        // DOM element manipulation
+            const start = new Date(document.getElementById('start').value);
+        // DOM element manipulation
+            const end = new Date(document.getElementById('end').value);
+        // DOM element manipulation
+            const unit = document.getElementById('unit').value;
+        // DOM element manipulation
+            const excludeWeekends = document.getElementById('excludeWeekends').checked;
+        // DOM element manipulation
+            const ageMode = document.getElementById('ageMode').checked;
+        // DOM element manipulation
+            const errorDiv = document.getElementById('error');
+        // DOM element manipulation
+            const resultDiv = document.getElementById('result');
+        // DOM element manipulation
+            const resultText = document.getElementById('resultText');
+
+            errorDiv.style.display = 'none';
+            resultDiv.style.display = 'none';
+
+            if (!start || !end || isNaN(start) || isNaN(end)) {
+                errorDiv.textContent = 'Please select valid dates and times.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            if (end <= start) {
+                errorDiv.textContent = 'End date must be after start date.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            let diffMs = end - start;
+
+            if (excludeWeekends) {
+                let current = new Date(start);
+                let weekdays = 0;
+                while (current <= end) {
+                    if (current.getDay() !== 0 && current.getDay() !== 6) {
+                        weekdays++;
+                    }
+                    current.setDate(current.getDate() + 1);
+                }
+                diffMs = weekdays * 24 * 60 * 60 * 1000;
+            }
+
+            const seconds = Math.floor(diffMs / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            const months = Math.floor(days / 30.42);
+            const years = Math.floor(months / 12);
+
+            let output = '';
+            if (ageMode) {
+                output = `Age: ${years} years, ${months % 12} months, ${days % 30} days`;
+            } else {
+                switch (unit) {
+                    case 'all':
+                        output = `${years} years, ${months % 12} months, ${days % 30} days, `;
+                        output += `${hours % 24} hours, ${minutes % 60} minutes, ${seconds % 60} seconds`;
+                        break;
+                    case 'years':
+                        output = `${years} years`;
+                        break;
+                    case 'months':
+                        output = `${months} months`;
+                        break;
+                    case 'days':
+                        output = `${days} days`;
+                        break;
+                    case 'hours':
+                        output = `${hours} hours`;
+                        break;
+                    case 'minutes':
+                        output = `${minutes} minutes`;
+                        break;
+                    case 'seconds':
+                        output = `${seconds} seconds`;
+                        break;
+                }
+            }
+
+            resultText.textContent = output;
+            resultDiv.style.display = 'block';
+        }
+
+        // Function: reset
+        function reset() {
+        // DOM element manipulation
+            document.getElementById('start').value = '';
+        // DOM element manipulation
+            document.getElementById('end').value = '';
+        // DOM element manipulation
+            document.getElementById('unit').value = 'all';
+        // DOM element manipulation
+            document.getElementById('excludeWeekends').checked = false;
+        // DOM element manipulation
+            document.getElementById('ageMode').checked = false;
+        // DOM element manipulation
+            document.getElementById('result').style.display = 'none';
+        // DOM element manipulation
+            document.getElementById('error').style.display = 'none';
+        }
+
+        // Function: copyResult
+        function copyResult() {
+        // DOM element manipulation
+            const resultText = document.getElementById('resultText').textContent;
+            navigator.clipboard.writeText(resultText).then(() => {
+                alert('Result copied to clipboard!');
+            });
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

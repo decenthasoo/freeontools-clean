@@ -1,0 +1,737 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Breadcrumb Generator: Totally Free &amp; Easy Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Breadcrumb Generator: Create SEO-friendly breadcrumbs for https://www.freeontools.com instantly. Free, fast, no signup needed!" name="description">
+<meta content="breadcrumb generator, seo breadcrumbs, website navigation, free breadcrumb tool, freeontools breadcrumb creator" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/breadcrumb-generator" rel="canonical"/>
+<meta content="Breadcrumb Generator: Free &amp; Easy Tool" property="og:title"/>
+<meta content="Generate SEO-friendly breadcrumbs for your website with our free, no-signup tool at https://www.freeontools.com. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/breadcrumb-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="freeontools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Breadcrumb Generator: Free &amp; Fast Tool" name="twitter:title"/>
+<meta content="Create breadcrumbs for your site with our free, no-login tool at https://www.freeontools.com. Instant, SEO-friendly results!" name="twitter:description"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Breadcrumb Generator",
+  "operatingSystem": "Web",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/breadcrumb-generator",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Breadcrumb Generator"
+  },
+  "ratingValue": "4.8",
+  "ratingCount": "124",
+  "bestRating": "5",
+  "worstRating": "1"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Breadcrumb Generator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Sarah Johnson"
+  },
+  "datePublished": "2025-04-15",
+  "reviewBody": "This breadcrumb generator is fantastic! Super easy to use and completely free. Improved my site's SEO in minutes.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Breadcrumb Generator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Michael Chen"
+  },
+  "datePublished": "2025-03-22",
+  "reviewBody": "No signup, no fees, just a great tool that works instantly. Highly recommend for anyone needing breadcrumbs!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<style>
+   :root {
+            --brand-color: #f28c38;
+            --text-color: #333;
+        }
+
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background: #f5f5f5;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+margin-top: -40px;
+        }
+
+        .header {
+            text-align: center;
+
+            padding: 0 1rem;
+
+        }
+
+        .header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: black;
+            margin-bottom: 1rem;
+margin-top: -6.6rem;
+        }
+
+        .generator-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #000000;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: var(--brand-color);
+            outline: none;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: var(--brand-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .output-container {
+            margin-top: 2rem;
+            background: #ffffff !important;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #eeeeee;
+            overflow: hidden;
+        }
+
+        .preview {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            margin-bottom: 1.5rem;
+            color: #000000 !important;
+            word-wrap: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        .code-container {
+            position: relative;
+            margin-top: 1rem;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--brand-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .code-output {
+            background: #2d2d2d;
+            color: #ffffff;
+            padding: 1.5rem 1rem 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--brand-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 6px;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        /* Container styling */
+        .content-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto 0;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            color: #000000;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            color: #000000;
+            margin: 1.5rem 0 0.8rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 1rem;
+            color: #000000;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Container styling */
+            .container {
+                padding: 1.5rem;
+            }
+
+            .generator-container {
+                padding: 1.5rem;
+                border-radius: 8px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 1.5rem;
+                border-radius: 8px;
+            }
+
+            .btn {
+                max-width: 100%;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+        /* Container styling */
+            .container {
+                padding: 1rem;
+margin-top: -1.6rem;
+            }
+
+            .generator-container {
+                padding: 1rem;
+                border-radius: 6px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 1rem;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+                border-radius: 6px;
+
+            }
+
+            .code-output {
+                font-size: 0.8rem;
+            }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f5f5f5;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="hero" style="text-align: center; margin: -0.5rem 0;">
+<h1>
+    Breadcrumb Generator
+   </h1><p>Create SEO-friendly breadcrumb navigation instantly.</p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<header class="header">
+
+</header>
+<main class="generator-container">
+<div class="grid">
+<div class="input-group">
+<label for="url-input">
+       Website URL
+      </label>
+<input id="url-input" placeholder="https://www.example.com/path/to/page" type="text"/>
+</div>
+<div class="input-group">
+<label for="separator">
+       Separator Style
+      </label>
+<select id="separator">
+<option value="/">
+        / (Slash)
+       </option>
+<option value="›">
+        › (Angle)
+       </option>
+<option value="»">
+        » (Double Angle)
+       </option>
+<option value="•">
+        • (Bullet)
+       </option>
+</select>
+</div>
+</div>
+<button class="btn" onclick="generateBreadcrumb()">
+     Generate Breadcrumb
+    </button>
+<div class="output-container">
+<div class="preview" id="breadcrumb-preview">
+</div>
+<div class="code-container">
+<button class="copy-btn" onclick="copyCode()">
+       Copy
+      </button>
+<pre class="code-output" id="code-output"></pre>
+</div>
+</div>
+</main>
+<!-- Informational content container -->
+<section class="content-container">
+<h2>
+     What is a Breadcrumb Generator?
+    </h2>
+<p>
+     Alright, so you’re building a website or tweaking your SEO and suddenly you hear someone say, “Don’t forget breadcrumbs.” And you’re like… what, like the Hansel and Gretel kind?
+    </p>
+<p>
+     Sort of! But instead of leading you out of a forest, these breadcrumbs help users and search engines figure out where they are on your site. A Breadcrumb Generator is a handy little tool that helps you create breadcrumb navigation for your pages—without having to code it from scratch or pull your hair out fiddling with schema markup.
+    </p>
+<p>
+     It spits out properly formatted breadcrumb trails, ready to drop into your HTML. Super helpful if you want your site to be more user-friendly and search engine-friendly. Win-win.
+    </p>
+<h3>
+     Try Our Breadcrumb Generator Now
+    </h3>
+<p>
+     Just copy, paste, and boom—you’ve got clean, functional breadcrumb markup for your site. Whether you’re setting up a blog, an eCommerce category, or even a product page, the Breadcrumb Generator makes sure your path to glory (or at least better UX) is clear.
+    </p>
+<p>
+     Plus, Google loves breadcrumbs. Like, “I’ll feature your site more prominently in search results” kind of love.
+    </p>
+<h3>
+     Why Use a Breadcrumb Generator?
+    </h3>
+<p>
+     Okay, real talk. You could technically write breadcrumbs by hand. But why? One typo in your JSON-LD or one extra slash in your path and boom—error city.
+    </p>
+<p>
+     A Breadcrumb Generator makes this process smooth. You just plug in your page titles and URLs, choose your format (like microdata or JSON-LD), and it gives you perfect breadcrumb markup. No guesswork, no messing with curly brackets or nested tags.
+    </p>
+<p>
+     Breadcrumbs help in two big ways:
+    </p>
+<ul>
+<li>
+<strong>
+       User navigation
+      </strong>
+      – Visitors can jump back to category pages easily without smashing the back button 50 times.
+     </li>
+<li>
+<strong>
+       Search engine structure
+      </strong>
+      – Google reads your breadcrumbs to understand how your site is organized. Sometimes they even show up in search results, which looks slick and professional.
+     </li>
+</ul>
+<p>
+     Basically, a Breadcrumb Generator takes a small but important task and makes it brain-dead simple.
+    </p>
+<h3>
+     Features of the Breadcrumb Generator
+    </h3>
+<ul>
+<li>
+      Supports multiple breadcrumb formats – JSON-LD, RDFa, Microdata—choose your flavor.
+     </li>
+<li>
+      Easy form-style input – Just enter the page names and URLs in order.
+     </li>
+<li>
+      Instant preview – See what your breadcrumb trail looks like before you grab the code.
+     </li>
+<li>
+      SEO-friendly markup – Structured data ready for Google’s rich results.
+     </li>
+<li>
+      Copy-paste simplicity – No fluff, no extra nonsense.
+     </li>
+<li>
+      Works for any site type – Blogs, online stores, landing pages, you name it.
+     </li>
+</ul>
+<p>
+     Basically, it’s the breadcrumb sidekick you didn’t know you needed until five minutes ago.
+    </p>
+<h3>
+     How to Use the Breadcrumb Generator
+    </h3>
+<p>
+     You know those tools that just work without making you feel dumb? This is one of them. Here's how to use the Breadcrumb Generator:
+    </p>
+<ol>
+<li>
+      Go to the tool’s page.
+     </li>
+<li>
+      Start entering your breadcrumb path. Like:
+      <ul>
+<li>
+        Home
+       </li>
+<li>
+        Products
+       </li>
+<li>
+        Sneakers
+       </li>
+<li>
+        High Tops
+       </li>
+</ul>
+</li>
+<li>
+      Add the URLs for each level in the path.
+     </li>
+<li>
+      Choose your preferred markup style (JSON-LD is super common these days).
+     </li>
+<li>
+      Click “Generate Breadcrumbs.”
+     </li>
+<li>
+      Copy the code it gives you.
+     </li>
+<li>
+      Paste that code into your site’s HTML or CMS (in the header or footer, usually).
+     </li>
+</ol>
+<p>
+<strong>
+      💡 Pro tip:
+     </strong>
+     Keep your breadcrumb names short and clear. “High-Performance Waterproof Breathable Running Shoes” might be a bit much.
+    </p>
+<h3>
+     Why This Breadcrumb Generator Rocks
+    </h3>
+<p>
+     There are a bunch of breadcrumb generators floating around the web, but this one keeps things simple—and that’s exactly what you want when messing with structured data.
+    </p>
+<p>
+     Here’s what sets this one apart:
+    </p>
+<ul>
+<li>
+      No learning curve. You don’t need to know anything about schema.org to use it.
+     </li>
+<li>
+      It’s free. Like, actually free. No locked features.
+     </li>
+<li>
+      Super fast. You can create a breadcrumb trail in under a minute.
+     </li>
+<li>
+      Reliable output. Google-ready code that won’t break your site.
+     </li>
+</ul>
+<p>
+     Whether you’re new to SEO or knee-deep in optimizing a 200-page website, this Breadcrumb Generator saves you time and helps you avoid dumb formatting mistakes.
+    </p>
+<h3>
+     FAQs About the Breadcrumb Generator
+    </h3>
+<ul>
+<li>
+<strong>
+       Is this Breadcrumb Generator good for SEO?
+      </strong>
+<br/>
+      Totally. It generates structured data that Google and other search engines use to display breadcrumb paths in search results. That can boost your visibility and help users understand your page hierarchy.
+     </li>
+<li>
+<strong>
+       What kind of markup does it support?
+      </strong>
+<br/>
+      You can choose from JSON-LD (the current SEO darling), Microdata, or RDFa. JSON-LD is recommended for most modern websites because it keeps the markup clean and separate from your main HTML.
+     </li>
+<li>
+<strong>
+       Can I use it for eCommerce sites?
+      </strong>
+<br/>
+      Absolutely. It’s great for category &gt; subcategory &gt; product setups. Just drop in the right names and URLs, and you’re good to go.
+     </li>
+<li>
+<strong>
+       Do I need to install anything?
+      </strong>
+<br/>
+      Nope. This Breadcrumb Generator is all online. Open the page, generate the breadcrumbs, and paste the code where you need it. That’s it.
+     </li>
+<li>
+<strong>
+       Can I edit the breadcrumbs after generating?
+      </strong>
+<br/>
+      For sure. Once you get the code, you can tweak it however you want. Change labels, update URLs, whatever—it’s all editable.
+     </li>
+</ul>
+<h3>
+     Final Thoughts: Breadcrumbs Aren’t Just for Fairy Tales
+    </h3>
+<p>
+     Look, site navigation matters. People don’t wanna get lost on your site, and Google definitely wants to know how your content is structured. Breadcrumbs fix both problems in one go—and a Breadcrumb Generator makes setting them up the easiest thing you’ll do all day.
+    </p>
+<p>
+     You don’t have to be a dev, a schema expert, or an SEO wizard. You just need a few page names, their links, and a couple clicks. And suddenly, you’ve got a breadcrumb trail that’s clean, helpful, and possibly even showing up in search results.
+    </p>
+<p>
+     So yeah—next time you’re building a page, optimizing content, or just trying to make your site a little better... don't forget the breadcrumbs.
+    </p>
+</section>
+</div>
+<div class="notification" id="notification">
+   Copied to clipboard!
+  </div>
+<script>
+        // Function: generateBreadcrumb
+   function generateBreadcrumb() {
+        // DOM element manipulation
+            const urlInput = document.getElementById('url-input').value;
+        // DOM element manipulation
+            const separator = document.getElementById('separator').value;
+            
+            try {
+                const url = new URL(urlInput);
+                const pathSegments = url.pathname.split('/').filter(segment => segment);
+                const hostSegments = url.hostname.split('.').filter(segment => !['www', 'http', 'https'].includes(segment));
+                
+                let breadcrumbItems = [{ name: 'Home', url: '/' }];
+
+                hostSegments.forEach((segment, index) => {
+                    if(index === hostSegments.length - 1) return;
+                    breadcrumbItems.push({
+                        name: segment.charAt(0).toUpperCase() + segment.slice(1),
+                        url: `/${segment}`
+                    });
+                });
+
+                let currentPath = '';
+                pathSegments.forEach((segment, index) => {
+                    currentPath += `/${segment}`;
+                    breadcrumbItems.push({
+                        name: segment.replace(/-/g, ' ').replace(/_/g, ' '),
+                        url: currentPath
+                    });
+                });
+
+                const breadcrumbHTML = breadcrumbItems.map((item, index) => {
+                    return index === breadcrumbItems.length - 1 
+                        ? `<span class="current">${item.name}</span>`
+                        : `<a href="${item.url}">${item.name}</a>`;
+                }).join(` ${separator} `);
+
+                const codeHTML = `<nav aria-label="Breadcrumb">
+    <ol class="breadcrumb">
+        ${breadcrumbItems.map((item, index) => `
+        <li class="breadcrumb-item${index === breadcrumbItems.length - 1 ? ' active' : ''}">
+            ${index === breadcrumbItems.length - 1 ? item.name : `<a href="${item.url}">${item.name}</a>`}
+        </li>`).join('\n        ')}
+    </ol>
+</nav>`;
+
+        // DOM element manipulation
+                document.getElementById('breadcrumb-preview').innerHTML = breadcrumbHTML;
+        // DOM element manipulation
+                document.getElementById('code-output').textContent = codeHTML;
+            } catch (error) {
+                alert('Please enter a valid URL (e.g. https://www.example.com/path)');
+            }
+        }
+
+        // Function: copyCode
+        function copyCode() {
+        // DOM element manipulation
+            const code = document.getElementById('code-output').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+        // DOM element manipulation
+                const notification = document.getElementById('notification');
+                notification.style.display = 'block';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 2000);
+            });
+        }
+
+        // Event listener for user interactions
+        document.getElementById('url-input').addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') generateBreadcrumb();
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

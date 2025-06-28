@@ -1,0 +1,1096 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Random History Fact - Free Without Login
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Random History Fact - Discover fascinating history facts instantly. Free without login, no ads, and no credit card needed. Try it now!" name="description">
+<meta content="Random History Fact, History Fact Generator, Free History Tool, 100% Free, Free Without Login, No Ads, No Hidden Fees, One-Click Tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/random-history-fact" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Random History Fact - Free Without Login" property="og:title"/>
+<meta content="Random History Fact - Discover fascinating history facts instantly. Free without login, no ads, and no credit card needed. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/random-history-fact.png" property="og:image"/>
+<meta content="https://www.freeontools.com/random-history-fact" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Random History Fact - Free Without Login" name="twitter:title"/>
+<meta content="Random History Fact - Discover fascinating history facts instantly. Free without login, no ads, and no credit card needed. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/random-history-fact.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Random History Fact",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/random-history-fact",
+  "image": "https://www.freeontools.com/images/random-history-fact.png",
+  "description": "Random History Fact - A fast and free tool that shows you interesting and surprising historical facts with just one click. No login or ads required.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/random-history-fact",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.92",
+  "bestRating": "5",
+  "ratingCount": "675"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Rachel Mendez"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "I love this Random History Fact generator! It's fun, educational, and perfect for daily trivia. Plus, it’s completely free with zero hassle!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Random History Fact"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+            animation: slideUp 1s ease-out;
+            text-align: center;
+
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease-out;
+            text-align: center;
+
+        }
+
+        /* Container styling */
+        .container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            margin: 20px auto;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        #fact {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 20px;
+            min-height: 60px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #fact.show {
+            opacity: 1;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            outline: none;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(242, 140, 56, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        /* New Content Container Styles */
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            max-width: 800px;
+            width: 90%;
+            margin: 20px auto;
+            text-align: left;
+            animation: fadeInUp 1s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #333;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 10px 0 20px 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 20px;
+                margin: 10px auto;
+            }
+
+            #fact {
+                font-size: 1rem;
+            }
+
+            button {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            .რ. content-container {
+                padding: 20px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro-text {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+            #fact {
+                font-size: 0.9rem;
+            }
+
+            button {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.4rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.1rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p,
+        /* Container styling */
+            .content-container ul li,
+        /* Container styling */
+            .content-container ol li {
+                font-size: 0.85rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Random History Fact
+   </h1>
+<p class="intro-text">
+    Discover fascinating moments from the past with a single click.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<p id="fact">
+    Click the button to uncover a random history fact!
+   </p>
+<button onclick="getRandomFact()">
+    New Fact
+   </button>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Random History Fact Generator?
+   </h2>
+<p>
+    Alright, buckle up—we’re going on a wild ride through time, but like, the fun kind. A Random History Fact Generator is basically your personal time-travel buddy that serves up bite-sized nuggets of history every time you click. One second it’s the fall of the Roman Empire, the next it’s the invention of bubble wrap (yep, even that has a backstory). No textbooks, no essays, just straight-up cool, weird, and sometimes “wait, what?!” facts from the past.
+   </p>
+<p>
+    You don’t need to be a history buff to love this thing. It’s like flipping open a history book to a random page—minus the dusty pages and tiny font. Whether you're killing time, looking for trivia night ammo, or just wanna sound smart at dinner, this tool’s got your back.
+   </p>
+<h3>
+    Try Our Random History Fact Generator Now
+   </h3>
+<p>
+    Feeling curious? Or just kinda bored? Hit the Random History Fact Generator and let it surprise you. It’s like spinning the history wheel—except you always win (because knowledge is power, duh).
+   </p>
+<h3>
+    Why a Random History Fact Generator Is Weirdly Addictive
+   </h3>
+<p>
+    You know how you scroll through social media and suddenly you’re reading about some medieval king who died from eating too many eels? That’s this. But better. The Random History Fact Generator serves up totally unexpected facts that are way more fun than you’d think. Plus, it’s great for impressing people with stuff like, “Did you know Napoleon was once attacked by bunnies?” (Yes, really.)
+   </p>
+<p>
+    Here’s why people get hooked:
+   </p>
+<ul>
+<li>
+     Quick hits of info – No long reads or videos, just the good stuff.
+    </li>
+<li>
+     Great convo starters – Drop a random fact and watch the room go “Whoa, really?”
+    </li>
+<li>
+     Fun for all ages – Whether you’re 12 or 92, who doesn’t love a good “Did you know?”
+    </li>
+<li>
+     Perfect for trivia prep – Jeopardy dreams? This is how you get there.
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<p>
+    This Random History Fact Generator keeps it simple but spicy.
+   </p>
+<ul>
+<li>
+     One-click fact delivery – Hit the button, get a new gem instantly.
+    </li>
+<li>
+     Endless supply – You’ll never run out of fresh facts.
+    </li>
+<li>
+     Covers all eras – Ancient, medieval, modern, weird stuff from the 20th century—it’s all fair game.
+    </li>
+<li>
+     Mobile and desktop friendly – Use it wherever, whenever.
+    </li>
+<li>
+     Clean, ad-free experience – No junk, just facts.
+    </li>
+</ul>
+<h3>
+    How to Use the Random History Fact Generator
+   </h3>
+<p>
+    You literally can’t mess this up. Here’s the process:
+   </p>
+<ol>
+<li>
+     Open the tool – It loads instantly in your browser.
+    </li>
+<li>
+     Click the “Generate” button – Just one tap.
+    </li>
+<li>
+     Read the fact – That’s it! No quizzes, no pressure.
+    </li>
+<li>
+     Want more? Click again – It’s a rabbit hole in the best way.
+    </li>
+</ol>
+<p>
+    💡
+    <strong>
+     Pro tip:
+    </strong>
+    Save your favorites or screenshot them—you’ll want to share these later.
+   </p>
+<h3>
+    Why Choose This Random History Fact Generator?
+   </h3>
+<p>
+    Look, history doesn’t have to be boring. This generator makes it fun, casual, and totally bingeable. Whether you're looking to spice up your day, get a little smarter without trying, or just find weird stuff to tell your friends, this tool delivers.
+   </p>
+<p>
+    Here’s why it’s awesome:
+   </p>
+<ul>
+<li>
+     Instant fun – No setup, no sign-in, just click and go.
+    </li>
+<li>
+     Zero pressure – No scores, no judgment. Learn at your own pace.
+    </li>
+<li>
+     Kid-safe facts – All ages can enjoy it without any awkward surprises.
+    </li>
+<li>
+     Smart without being snobby – It’s not trying to teach you a lecture—it’s just sharing cool stuff.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      What kind of facts does the Random History Fact Generator give?
+     </strong>
+<br/>
+     Everything from major historical events to quirky, little-known tidbits. Think wars, inventions, ancient cultures, and weird moments that actually happened.
+    </li>
+<li>
+<strong>
+      Are the facts verified?
+     </strong>
+<br/>
+     Yep, they’re pulled from reliable historical sources. We’re not out here making stuff up like it’s ancient gossip.
+    </li>
+<li>
+<strong>
+      Can I use this for trivia night?
+     </strong>
+<br/>
+     Oh, absolutely. This tool is a goldmine for random trivia facts that’ll make you look like a genius.
+    </li>
+<li>
+<strong>
+      Is it safe for kids or students?
+     </strong>
+<br/>
+     Totally! The content stays clean, fun, and age-appropriate. Great for classrooms or curious kiddos.
+    </li>
+<li>
+<strong>
+      How many facts are there?
+     </strong>
+<br/>
+     Thousands—and it keeps growing. You could click all day and still not hit the same one twice (unless your luck’s super weird).
+    </li>
+</ol>
+<p>
+    So yeah, history might’ve felt kinda dry in school, but the Random History Fact Generator makes it snackable, surprising, and honestly pretty fun. Give it a click—you might just learn something that’ll blow your mind (or at least win you a bar bet).
+   </p>
+</div>
+<script>
+   const facts = [
+            "The Great Wall of China, built over 2,000 years ago, stretches over 21,000 kilometers.",
+            "Cleopatra VII, the last pharaoh of Egypt, lived closer in time to the moon landing than to the building of the Great Pyramid.",
+            "The shortest war in history lasted 38 minutes.",
+            "The Roman Empire lasted over 1,000 years, from 27 BC to 1453 AD.",
+            "The first computer 'bug' was an actual insect stuck in a relay in 1947.",
+            "The Eiffel Tower was originally intended to be dismantled after 20 years.",
+            "The wheel was invented around 3500 BC in Mesopotamia.",
+ "The Great Wall of China, built over 2,000 years ago, stretches over 21,000 kilometers.",
+  "The Titanic sank in 1912 after hitting an iceberg on its maiden voyage.",
+  "Leonardo da Vinci could write with one hand and draw with the other at the same time.",
+  "The Berlin Wall fell in 1989, symbolizing the end of the Cold War.",
+  "Julius Caesar was assassinated on the Ides of March, 44 BC.",
+  "The Wright brothers made the first powered flight in 1903.",
+  "The Eiffel Tower was originally meant to be a temporary structure.",
+  "The Black Death killed about 25 million people in Europe during the 14th century.",
+  "Napoleon was once attacked by a horde of bunnies during a hunting expedition.",
+  "The Roman Empire lasted for over 1,000 years.",
+  "Albert Einstein was offered the presidency of Israel in 1952 but declined.",
+  "Cleopatra ruled Egypt for 21 years and was the last active pharaoh.",
+  "The Declaration of Independence was signed in 1776.",
+  "Genghis Khan created the largest contiguous empire in history.",
+  "The Cold War lasted over four decades, from 1947 to 1991.",
+  "The Great Fire of London in 1666 destroyed most of the city.",
+  "World War I began in 1914 and ended in 1918.",
+  "The U.S. dropped atomic bombs on Hiroshima and Nagasaki in 1945.",
+  "The Colosseum in Rome could hold over 50,000 spectators.",
+  "Martin Luther King Jr. gave his iconic 'I Have a Dream' speech in 1963.",
+  "The Magna Carta was signed in 1215, limiting royal power.",
+  "Vikings reached North America around 500 years before Columbus.",
+  "The Soviet Union launched the first satellite, Sputnik, in 1957.",
+  "The Berlin Airlift kept West Berlin supplied during a Soviet blockade in 1948–49.",
+  "The Great Depression began with the stock market crash of 1929.",
+  "Queen Elizabeth I never married and was known as the 'Virgin Queen'.",
+  "The first human in space was Yuri Gagarin in 1961.",
+  "Nelson Mandela spent 27 years in prison before becoming South Africa's president.",
+  "The Suez Canal opened in 1869, connecting the Mediterranean and Red Seas.",
+  "The Ottoman Empire lasted over 600 years until its fall after World War I.",
+  "The Rosetta Stone helped decode Egyptian hieroglyphs.",
+  "The U.S. Constitution was signed in 1787.",
+  "The Aztec Empire fell to Spanish conquistadors in 1521.",
+  "The Inca Empire was conquered by the Spanish in 1533.",
+  "The first Olympic Games were held in ancient Greece in 776 BC.",
+  "The Terracotta Army in China was buried with Emperor Qin Shi Huang.",
+  "The Moon landing occurred in 1969 with Apollo 11.",
+  "The Bayeux Tapestry depicts the Norman conquest of England in 1066.",
+  "The Boston Tea Party took place in 1773 as a protest against British taxes.",
+  "The Great Chicago Fire of 1871 destroyed over 17,000 buildings.",
+  "The Vietnam War lasted from 1955 to 1975.",
+  "The Tower of London was used as a prison for centuries.",
+  "The Crusades were a series of religious wars between 1096 and 1291.",
+  "The Statue of Liberty was a gift from France to the United States in 1886.",
+  "The ancient city of Pompeii was buried by a volcanic eruption in 79 AD.",
+  "The Library of Alexandria was one of the largest libraries in the ancient world.",
+  "Abraham Lincoln issued the Emancipation Proclamation in 1863.",
+  "The American Civil War lasted from 1861 to 1865.",
+  "The first printing press was invented by Johannes Gutenberg in the 1440s.",
+  "The Spanish Armada was defeated by England in 1588.",
+  "Marco Polo traveled to Asia and inspired European exploration.",
+  "The Battle of Waterloo in 1815 marked Napoleon’s final defeat.",
+  "The Taj Mahal was built in the 17th century as a monument of love.",
+  "Christopher Columbus landed in the Americas in 1492.",
+  "The first telephone call was made by Alexander Graham Bell in 1876.",
+  "The Korean War started in 1950 and ended with an armistice in 1953.",
+  "The Hindenburg disaster occurred in 1937 when the airship caught fire.",
+  "The first World Cup was held in Uruguay in 1930.",
+  "The Great Pyramid of Giza is the oldest of the Seven Wonders of the Ancient World.",
+  "The assassination of Archduke Franz Ferdinand triggered World War I.",
+  "The Space Shuttle Challenger exploded shortly after launch in 1986.",
+  "The United Nations was founded in 1945 after World War II.",
+  "The Stone Age is the earliest known period of human history.",
+  "The Boston Massacre happened in 1770, fueling revolution in America.",
+  "The Mayflower brought the Pilgrims to America in 1620.",
+  "The Hundred Years’ War lasted from 1337 to 1453.",
+  "The Industrial Revolution began in the late 18th century.",
+  "The Battle of Hastings in 1066 changed the course of English history.",
+  "The Salem Witch Trials took place in 1692.",
+  "The Bastille was stormed on July 14, 1789, marking the start of the French Revolution.",
+  "The Cuban Missile Crisis brought the world close to nuclear war in 1962.",
+  "The first successful vaccine was developed by Edward Jenner in 1796.",
+  "The Wright Flyer flew for just 12 seconds on its first flight.",
+  "The Harlem Renaissance was a cultural movement in the 1920s.",
+  "The Beatles first performed on The Ed Sullivan Show in 1964.",
+  "The Chernobyl disaster happened in 1986 in Soviet Ukraine.",
+  "The Great Depression lasted roughly a decade, from 1929 to 1939.",
+  "Amelia Earhart disappeared in 1937 during her flight around the world.",
+  "The Treaty of Versailles was signed in 1919, ending World War I.",
+  "The Panama Canal officially opened in 1914.",
+  "Pearl Harbor was attacked by Japan in 1941, leading the U.S. into WWII.",
+  "The ancient city of Troy was once believed to be a myth.",
+  "The Iron Curtain symbolized the division between East and West Europe.",
+  "The Reformation began in 1517 with Martin Luther’s 95 Theses.",
+  "Rosa Parks refused to give up her seat in 1955, sparking the civil rights movement.",
+  "The Zulu Kingdom rose to power under Shaka Zulu in the 19th century.",
+  "The Code of Hammurabi is one of the oldest legal codes.",
+  "The Wright Flyer was made mostly of wood and canvas.",
+  "Mahatma Gandhi led India’s independence movement through non-violence.",
+  "The British Empire once ruled over a quarter of the world’s population.",
+  "The Battle of Stalingrad was one of WWII's bloodiest battles.",
+  "The 1918 flu pandemic killed over 50 million people worldwide.",
+  "The first man-made object to reach space was a German V-2 rocket.",
+  "The Renaissance began in Italy in the 14th century.",
+  "Sputnik 1 orbited Earth for 3 weeks before burning up on re-entry.",
+  "The Gold Rush of 1849 brought thousands to California in search of fortune.",
+  "The Enigma machine was cracked by Alan Turing and his team during WWII.",
+  "Anne Frank wrote her famous diary while hiding from the Nazis.",
+  "The Transcontinental Railroad in the U.S. was completed in 1869.",
+  "The United States bought Alaska from Russia in 1867 for $7.2 million.",
+  "The wheel was invented around 3500 BC in Mesopotamia.",
+"Machu Picchu was built by the Incas in the 15th century and rediscovered in 1911.",
+  "Joan of Arc led French troops to victory during the Hundred Years’ War.",
+  "The Battle of Gettysburg was a turning point in the American Civil War in 1863.",
+  "The Roman Republic preceded the Roman Empire and lasted nearly 500 years.",
+  "The British Parliament was formed in the 13th century.",
+  "The Great Fire of Rome occurred in 64 AD under Emperor Nero.",
+  "The Pharaohs of ancient Egypt were considered gods on Earth.",
+  "Socrates was sentenced to death in ancient Athens for corrupting the youth.",
+  "The Olmec civilization is considered the first major civilization in Mexico.",
+  "Hannibal famously crossed the Alps with elephants to attack Rome.",
+  "The Babylonians developed one of the earliest known legal systems.",
+  "The Parthenon in Athens was built in the 5th century BC.",
+  "The Battle of Agincourt in 1415 was a major English victory in the Hundred Years' War.",
+  "The Mughal Empire ruled much of India from the 16th to the 19th century.",
+  "The Spanish Inquisition began in 1478 to enforce Catholic orthodoxy.",
+  "The Dutch Golden Age was a period of wealth and cultural achievement in the 17th century.",
+  "The Easter Rising in 1916 was a pivotal moment in Irish history.",
+  "The Battle of Midway in 1942 was a decisive victory for the U.S. in WWII.",
+  "The Khmer Empire built the massive temple complex of Angkor Wat in Cambodia.",
+  "The assassination of Mahatma Gandhi occurred in 1948.",
+  "The Treaty of Tordesillas in 1494 divided the New World between Spain and Portugal.",
+  "The Colossus of Rhodes was a giant statue and one of the Seven Wonders of the Ancient World.",
+  "The Edo period in Japan lasted from 1603 to 1868 under Tokugawa rule.",
+  "The Roman aqueducts were engineering marvels that supplied cities with water.",
+  "The Persian Empire was founded by Cyrus the Great in the 6th century BC.",
+  "The Berlin Conference of 1884 divided Africa among European powers.",
+  "The Indian Rebellion of 1857 was a major uprising against British rule.",
+  "The Byzantine Empire was the eastern continuation of the Roman Empire.",
+  "The Balfour Declaration of 1917 supported a Jewish homeland in Palestine.",
+  "The Lascaux caves in France feature prehistoric cave paintings over 17,000 years old.",
+  "The Siege of Leningrad during WWII lasted nearly 900 days.",
+  "The Spanish Civil War (1936–1939) was a precursor to WWII.",
+  "The Ziggurat of Ur is one of the best-preserved ancient structures in Iraq.",
+  "The War of the Roses was a dynastic conflict in England during the 15th century.",
+  "The Peloponnesian War was fought between Athens and Sparta in ancient Greece.",
+  "The Huns were a nomadic group that invaded Europe in the 4th and 5th centuries.",
+  "The first Olympic marathon was won by Spyridon Louis in 1896.",
+  "The invention of paper is credited to the Chinese during the Han dynasty.",
+  "The Qing dynasty was the last imperial dynasty of China.",
+  "The ancient city of Carthage was Rome’s rival and was destroyed in the Punic Wars.",
+  "The Nuremberg Trials prosecuted Nazi war criminals after WWII.",
+  "The Bolshevik Revolution in 1917 led to the creation of the Soviet Union.",
+  "The Partition of India in 1947 created the nations of India and Pakistan.",
+  "The Norman Conquest introduced French influence into English culture and language.",
+  "The Hellenistic period followed the conquests of Alexander the Great.",
+  "The 1969 Woodstock Festival became a symbol of peace and counterculture.",
+  "The Mayan calendar was incredibly accurate for its time.",
+  "The Emancipation of the Serfs in Russia occurred in 1861.",
+  "The Luddites were English workers who destroyed machinery during the Industrial Revolution.",
+  "The Boxer Rebellion was an anti-foreigner uprising in China around 1900.",
+  "The Black Panthers were a revolutionary socialist group in 1960s America.",
+  "The Gallipoli Campaign in WWI was a major failure for the Allies.",
+  "The Meiji Restoration modernized Japan in the late 19th century.",
+  "The Templars were a medieval Christian military order.",
+  "The Ancestral Puebloans built cliff dwellings in the American Southwest.",
+  "The 1885 Berlin Conference led to the Scramble for Africa.",
+  "The American Revolution ended in 1783 with the Treaty of Paris.",
+  "The assassination of Robert F. Kennedy occurred in 1968.",
+  "The Tang dynasty is known as a golden age of Chinese culture.",
+  "The Age of Enlightenment promoted reason and science in the 18th century.",
+  "The Oracle of Delphi was a powerful religious figure in ancient Greece.",
+  "The Iron Age followed the Bronze Age and brought stronger tools.",
+  "The Erie Canal opened in 1825 and revolutionized trade in New York.",
+  "The Maratha Empire challenged Mughal dominance in India.",
+  "The Fall of Constantinople in 1453 marked the end of the Byzantine Empire.",
+  "The Haitian Revolution led to the first Black republic in 1804.",
+  "The Ptolemaic dynasty ruled Egypt after Alexander the Great.",
+  "The Space Race was a Cold War competition between the U.S. and USSR.",
+  "The Aztecs practiced human sacrifice as part of their religion.",
+  "The Berlin Blockade was the first major crisis of the Cold War.",
+  "The Abbasid Caliphate was a major Islamic dynasty with Baghdad as its capital.",
+  "The assassination of President John F. Kennedy happened in 1963.",
+  "The Turing Test was developed to assess machine intelligence.",
+  "The 95 Theses were nailed to a church door by Martin Luther in 1517.",
+  "The Trail of Tears was the forced relocation of Native Americans in the 1830s.",
+  "The Napoleonic Code influenced many modern legal systems.",
+  "The Battle of the Somme was one of the bloodiest battles in WWI.",
+  "The Berlin Wall stood from 1961 to 1989.",
+  "The Treaty of Ghent ended the War of 1812 between the U.S. and Britain.",
+  "The Gunpowder Plot in 1605 aimed to blow up the English Parliament.",
+  "The Chinese Civil War ended in 1949 with the creation of the People's Republic of China.",
+  "The Missouri Compromise attempted to balance slave and free states in 1820.",
+  "The First Crusade began in 1096 to reclaim the Holy Land.",
+  "The Abbasid dynasty was known for its advancements in science and literature.",
+  "The Marshall Plan helped rebuild Europe after WWII.",
+  "The Edict of Milan in 313 AD legalized Christianity in the Roman Empire.",
+  "The Arab Spring began in 2010 and led to uprisings across the Middle East.",
+  "The Reign of Terror occurred during the French Revolution.",
+  "The Salt March led by Gandhi protested British salt taxes in 1930.",
+  "The Peace of Westphalia ended the Thirty Years’ War in 1648.",
+  "The Louisiana Purchase in 1803 doubled the size of the United States.",
+  "The invention of the spinning jenny revolutionized textile production.",
+  "The Dome of the Rock in Jerusalem is one of the oldest Islamic structures.",
+  "The Mycenaean civilization was a precursor to classical Greece.",
+  "The Scopes Trial in 1925 debated evolution in American schools.",
+  "The Norman invasion of Sicily brought Latin and Norman culture to Italy.",
+  "The Dutch East India Company was the world’s first multinational corporation.",
+  "The ancient city of Mohenjo-Daro had advanced urban planning.",
+  "The Battle of Thermopylae was fought between 300 Spartans and the Persian army.",
+"The Hanging Gardens of Babylon are one of the Seven Wonders of the Ancient World, though their existence is debated.",
+  "The Sumerians are credited with creating the earliest known form of writing, cuneiform.",
+  "The Rosetta Stone helped scholars decipher Egyptian hieroglyphs.",
+  "The Terracotta Army was buried with China's first emperor, Qin Shi Huang.",
+  "The Library of Alexandria was one of the largest and most significant libraries of the ancient world.",
+  "The Code of Hammurabi is one of the oldest deciphered writings of laws in history.",
+  "The Battle of Hastings in 1066 changed the course of English history.",
+  "The Indus Valley Civilization featured some of the world’s first urban sanitation systems.",
+  "The Silk Road connected China with the Mediterranean and facilitated cultural exchange.",
+  "The 1918 Spanish flu pandemic killed an estimated 50 million people worldwide.",
+  "The Enlightenment helped inspire the American and French revolutions.",
+  "The Magna Carta, signed in 1215, limited the power of the English monarchy.",
+  "The Treaty of Versailles in 1919 officially ended World War I.",
+  "The Apollo 11 mission in 1969 landed the first humans on the Moon.",
+  "The Stone Age is divided into Paleolithic, Mesolithic, and Neolithic periods.",
+  "The Assyrian Empire was known for its powerful army and brutal tactics.",
+  "The Roman Colosseum could hold up to 80,000 spectators.",
+  "The Mayflower carried the Pilgrims to North America in 1620.",
+  "The Boxer Protocol in 1901 ended the Boxer Rebellion in China.",
+  "The Great Depression began with the U.S. stock market crash in 1929.",
+  "The 13th Amendment to the U.S. Constitution abolished slavery in 1865.",
+  "The Inquisition expanded beyond Spain into Italy, Portugal, and Latin America.",
+  "The League of Nations was created after WWI to promote peace but failed to prevent WWII.",
+  "The Opium Wars weakened the Qing dynasty and led to foreign control of Chinese ports.",
+  "The 1962 Cuban Missile Crisis brought the world to the brink of nuclear war.",
+  "The Indian National Congress was formed in 1885 to seek independence from British rule.",
+  "The Manhattan Project led to the development of the first atomic bomb.",
+  "The Red Scare in the U.S. saw widespread fear of communism in the 20th century.",
+  "The Battle of Stalingrad marked a turning point in WWII on the Eastern Front.",
+  "The Renaissance began in Italy in the 14th century and sparked a cultural revival.",
+  "The Great Schism in 1054 split Christianity into Eastern Orthodoxy and Roman Catholicism.",
+  "The Abbasid Caliphate moved the capital of the Islamic world to Baghdad.",
+  "The Viking Age lasted from around 793 to 1066 AD.",
+  "The Republic of Venice was a powerful maritime state for over a millennium.",
+  "The American Civil Rights Act of 1964 outlawed discrimination based on race, color, religion, sex, or national origin.",
+  "The D-Day invasion of Normandy began on June 6, 1944.",
+  "The Bering Land Bridge theory suggests early humans migrated to the Americas from Asia.",
+  "The invention of the printing press by Gutenberg revolutionized information sharing.",
+  "The Salem witch trials occurred in colonial Massachusetts in 1692.",
+  "The French Revolution began in 1789 and overthrew the monarchy.",
+  "The Great Zimbabwe ruins are evidence of an advanced African kingdom.",
+  "The Moai statues of Easter Island were carved by the Rapa Nui people.",
+  "The Boston Tea Party was a protest against British taxation in 1773.",
+  "The fall of the Soviet Union occurred in 1991.",
+  "The 1973 oil crisis led to economic turmoil in the Western world.",
+  "The Warsaw Pact was a Soviet-led military alliance formed in 1955.",
+  "The Treaty of Waitangi was signed in 1840 between the British and Māori chiefs.",
+  "The Rwandan Genocide in 1994 resulted in over 800,000 deaths.",
+  "The 1954 Brown v. Board of Education decision ended segregation in U.S. schools.",
+  "The 1989 Tiananmen Square protests ended in a violent crackdown in China.",
+  "The ancient Greek city of Sparta was known for its military prowess.",
+  "The Zulu Kingdom resisted British colonization in the 19th century.",
+  "The Great Chicago Fire of 1871 destroyed much of the city.",
+  "The Gulf War began in 1990 after Iraq invaded Kuwait.",
+  "The invention of gunpowder changed warfare forever.",
+  "The Alamo was a pivotal battle in the Texas Revolution.",
+  "The Space Shuttle Challenger disaster occurred in 1986.",
+  "The Treaty of Nanjing ended the First Opium War in 1842.",
+  "The 2001 September 11 attacks changed global security policies.",
+  "The British Raj ruled India for nearly 90 years.",
+  "The Khmer Rouge regime led to the Cambodian genocide.",
+  "The Iranian Revolution of 1979 led to the establishment of an Islamic Republic.",
+  "The invention of the telescope in the 17th century revolutionized astronomy.",
+  "The Emu War in Australia saw soldiers struggle to control emu populations in 1932.",
+  "The African National Congress led the anti-apartheid movement in South Africa.",
+  "The Russian Revolution in 1917 ended Tsarist rule.",
+  "The Berlin Airlift in 1948 helped supply West Berlin during a Soviet blockade.",
+  "The Trans-Siberian Railway is the longest railway line in the world.",
+  "The Ludlow Massacre in 1914 was a labor conflict in the U.S. coal industry.",
+  "The 26th Amendment to the U.S. Constitution lowered the voting age to 18.",
+  "The Great Leap Forward in China led to a major famine.",
+  "The Gold Rush of 1849 drew thousands to California.",
+  "The War of 1812 saw the U.S. and Britain fight for control over North America.",
+  "The First Continental Congress met in 1774 to oppose British policies.",
+  "The Iron Curtain symbolized the division between Eastern and Western Europe during the Cold War.",
+  "The First Fleet brought convicts to Australia in 1788.",
+  "The Bhopal disaster in 1984 was one of the world’s worst industrial catastrophes.",
+  "The assassination of Archduke Franz Ferdinand triggered World War I.",
+  "The Suez Crisis in 1956 marked the decline of British influence in the Middle East.",
+  "The Treaty of Guadalupe Hidalgo ended the Mexican-American War in 1848.",
+  "The Tiananmen protests were led by students demanding political reform.",
+  "The 1986 Chernobyl disaster released radioactive material across Europe.",
+  "The Civil Rights Movement in the U.S. gained momentum in the 1950s and 1960s.",
+  "The Great Fire of London in 1666 destroyed much of the city.",
+  "The 1972 Watergate scandal led to President Nixon’s resignation.",
+  "The Iran-Iraq War lasted from 1980 to 1988.",
+  "The Bay of Pigs Invasion was a failed U.S. attempt to overthrow Fidel Castro.",
+  "The 1936 Berlin Olympics were used as propaganda by Nazi Germany.",
+  "The Pan-African movement sought unity and solidarity among African nations.",
+  "The 1857 Dred Scott decision denied citizenship to African Americans in the U.S.",
+  "The Salt I and II treaties aimed to reduce nuclear arms during the Cold War.",
+  "The discovery of King Tutankhamun’s tomb in 1922 fascinated the world.",
+  "The 1830 Indian Removal Act led to the forced migration of Native American tribes.",
+  "The fall of the Bastille in 1789 symbolized the start of the French Revolution.",
+  "The Euro became the official currency of many European nations in 2002.",
+"The Black Death in the 14th century killed an estimated 25 million people in Europe.",
+  "The Eiffel Tower was originally intended to be a temporary structure for the 1889 World's Fair.",
+  "The Berlin Wall fell on November 9, 1989, marking the end of the Cold War.",
+  "Cleopatra VII was the last active ruler of the Ptolemaic Kingdom of Egypt.",
+  "Nelson Mandela was imprisoned for 27 years before becoming South Africa’s first Black president.",
+  "The Roman Empire split into Eastern and Western empires in 285 AD.",
+  "The Hundred Years’ War between England and France actually lasted 116 years.",
+  "The U.S. dropped atomic bombs on Hiroshima and Nagasaki in August 1945.",
+  "The Battle of Thermopylae was fought between a Greek alliance and Persian forces in 480 BC.",
+  "The Wright brothers made the first powered flight in 1903.",
+  "Genghis Khan’s Mongol Empire became the largest contiguous empire in history.",
+  "The Titanic sank on its maiden voyage in April 1912.",
+  "The Great Fire of Rome occurred during Emperor Nero’s reign in 64 AD.",
+  "The Cuban Revolution ended with Fidel Castro taking power in 1959.",
+  "The Louisiana Purchase in 1803 doubled the size of the United States.",
+  "The Berlin Conference of 1884–85 led to the colonization of Africa by European powers.",
+  "The British Empire was once the largest empire in history, covering a quarter of the Earth’s land area.",
+  "The Cold War saw a nuclear arms race between the USA and the USSR.",
+  "The abolition of slavery in the British Empire occurred in 1833.",
+  "The Aztecs practiced human sacrifice as part of their religious rituals.",
+  "The Bastille was a prison stormed during the French Revolution.",
+  "The Colossus of Rhodes was a massive statue and one of the Seven Wonders of the Ancient World.",
+  "The Soviet Union launched Sputnik, the first artificial satellite, in 1957.",
+  "The Eurotunnel connecting the UK and France was completed in 1994.",
+  "The Boston Massacre in 1770 escalated tensions before the American Revolution.",
+  "The Plague of Justinian in the 6th century killed millions in the Byzantine Empire.",
+  "The 18th Amendment to the U.S. Constitution initiated Prohibition.",
+  "The Emancipation Proclamation was issued by Abraham Lincoln in 1863.",
+  "The Spanish Armada was defeated by England in 1588.",
+  "The Mughal Empire in India was founded by Babur in 1526.",
+  "The Great Fire of Rome lasted six days and destroyed much of the city.",
+  "The Easter Rising of 1916 was a key event in Irish independence.",
+  "The Phoenicians developed one of the earliest known alphabets.",
+  "The Mayan calendar predicted the end of an era in 2012, not the end of the world.",
+  "The Crimean War was fought between Russia and an alliance including Britain and France.",
+  "The Treaty of Tordesillas in 1494 divided the New World between Spain and Portugal.",
+  "The Teotihuacan civilization built one of the largest cities in the pre-Columbian Americas.",
+  "The Great Train Robbery in 1963 was one of the most famous heists in British history.",
+  "The Olympic Games originated in ancient Greece around 776 BC.",
+  "The 1994 Nelson Mandela election ended apartheid in South Africa.",
+  "The Luddites were 19th-century English workers who destroyed machinery in protest.",
+  "The Rosetta Stone was discovered in 1799 and was crucial to understanding Egyptian writing.",
+  "The Parthenon in Athens was built in the 5th century BC.",
+  "The U.S. Civil War began in 1861 and ended in 1865.",
+  "The Panama Canal was completed in 1914, connecting the Atlantic and Pacific Oceans.",
+  "The Crusades were a series of religious wars between Christians and Muslims.",
+  "The Iron Age followed the Bronze Age in human history.",
+  "The Hindenburg disaster occurred in 1937 when a German airship caught fire.",
+  "The Dead Sea Scrolls were discovered in caves in the 1940s.",
+  "The Great Recession began in 2008 and affected the global economy.",
+  "The U.S. Constitution was signed in 1787.",
+  "The Khmer Empire built Angkor Wat, the largest religious monument in the world.",
+  "The Missouri Compromise of 1820 attempted to balance slave and free states in the U.S.",
+  "The Gilded Age was a period of rapid economic growth in 19th-century America.",
+  "The Persian Empire was known for its tolerance and infrastructure.",
+  "The Colosseum in Rome was used for gladiator contests and public spectacles.",
+  "The Japanese samurai followed a code of conduct called Bushido.",
+  "The Byzantine Empire lasted for over a thousand years after the fall of Rome.",
+  "The Spanish Flu spread rapidly due to soldiers returning from World War I.",
+  "The U.S. entered WWII after the attack on Pearl Harbor in 1941.",
+  "The Treaty of Paris in 1783 ended the American Revolutionary War.",
+  "The Red Cross was founded in 1863 in Geneva, Switzerland.",
+  "The 1969 Woodstock Festival became a symbol of the counterculture movement.",
+  "The 1917 Balfour Declaration supported a Jewish homeland in Palestine.",
+  "The 1896 Olympics in Athens revived the ancient sporting tradition.",
+  "The Bayeux Tapestry depicts events leading up to the Norman conquest of England.",
+  "The French and Indian War was part of the global Seven Years' War.",
+  "The Gutenberg Bible was among the first major books printed with movable type.",
+  "The 15th-century Age of Exploration expanded global trade and colonization.",
+  "The Vietnam War officially ended in 1975 with the fall of Saigon.",
+  "The Peace of Westphalia in 1648 ended the Thirty Years' War.",
+  "The 1967 Six-Day War reshaped the Middle East’s political landscape.",
+  "The ancient city of Pompeii was buried by Mount Vesuvius in 79 AD.",
+  "The 1948 Universal Declaration of Human Rights set global human rights standards.",
+  "The United Nations was founded in 1945 to promote peace and cooperation.",
+  "The 1963 March on Washington featured Martin Luther King Jr.’s “I Have a Dream” speech.",
+  "The Transatlantic Slave Trade forcibly moved millions of Africans to the Americas.",
+  "The Great Exhibition of 1851 showcased global industrial advancements in London.",
+  "The Treaty of Brest-Litovsk ended Russia’s involvement in World War I.",
+  "The Civil Rights Act of 1968 banned housing discrimination in the U.S.",
+  "The Long March solidified Mao Zedong’s leadership in China.",
+  "The Salem Witch Trials accused 200 people of witchcraft in colonial America.",
+  "The Dome of the Rock is one of the oldest Islamic structures in existence.",
+  "The Federalist Papers advocated for the ratification of the U.S. Constitution.",
+  "The 1979 Three Mile Island incident was the most serious U.S. nuclear accident.",
+  "The Soviet Gulag system imprisoned millions during Stalin’s reign.",
+  "The 1980 Solidarity movement in Poland challenged communist rule.",
+  "The 1993 Oslo Accords were an attempt to resolve the Israeli-Palestinian conflict.",
+  "The 1947 Partition of India created the nations of India and Pakistan.",
+  "The Irish Potato Famine in the 1840s led to mass starvation and emigration.",
+  "The Warsaw Uprising in 1944 was the largest resistance act against Nazi Germany.",
+  "The discovery of fire revolutionized early human survival and culture.",
+  "The Neolithic Revolution marked the transition from hunting to agriculture.",
+  "The first Olympic Marathon commemorated the Greek messenger Pheidippides.",
+  "The fall of Constantinople in 1453 ended the Byzantine Empire.",
+  "The French Monarchy was abolished in 1792 during the Revolution.",
+  "The Great Wall of Gorgan in Iran is often called the “Red Snake” and rivals China’s wall in length.",
+"The Library of Alexandria was one of the largest and most significant libraries of the ancient world.",
+  "The Rosetta Stone helped scholars decipher Egyptian hieroglyphs.",
+  "The Code of Hammurabi is one of the oldest deciphered writings of significant length.",
+  "The Battle of Hastings in 1066 changed the course of English history.",
+  "The Oracle of Delphi was a major religious site in ancient Greece.",
+  "The Assyrians were among the first to use iron weapons in warfare.",
+  "Julius Caesar was assassinated on the Ides of March in 44 BC.",
+  "The Indus Valley Civilization was known for its advanced urban planning.",
+  "The Hanging Gardens of Babylon are one of the Seven Wonders of the Ancient World.",
+  "The Terracotta Army was buried with China’s first Emperor, Qin Shi Huang.",
+  "The Bering Land Bridge once connected Asia to North America.",
+  "The Great Pyramid of Giza was the tallest man-made structure for over 3,800 years.",
+  "The Magna Carta, signed in 1215, limited the power of the English king.",
+  "The Domesday Book was a great survey of England completed in 1086.",
+  "The Peloponnesian War was fought between Athens and Sparta.",
+  "The Vikings were seafaring Norse people known for their raids and trade.",
+  "The medieval knight’s code of conduct was known as chivalry.",
+  "The Tang Dynasty is considered a golden age of Chinese civilization.",
+  "The Moai statues on Easter Island were carved by the Rapa Nui people.",
+  "The Great Zimbabwe ruins are a testament to a powerful African kingdom.",
+  "The Ottoman Empire lasted over 600 years, ending in 1922.",
+  "The Gunpowder Plot of 1605 aimed to blow up the English Parliament.",
+  "The Spanish Inquisition was established in 1478 to maintain Catholic orthodoxy.",
+  "The Medici family were powerful patrons of the Renaissance in Florence.",
+  "Leonardo da Vinci was not only an artist but also an inventor and scientist.",
+  "Galileo was tried by the Inquisition for supporting heliocentrism.",
+  "The Thirty Years’ War devastated much of Central Europe.",
+  "The Taj Mahal was built by Mughal emperor Shah Jahan in memory of his wife.",
+  "The Great Fire of London occurred in 1666 and destroyed much of the city.",
+  "The English Bill of Rights was passed in 1689.",
+  "The American Declaration of Independence was signed on July 4, 1776.",
+  "The Bastille was stormed on July 14, 1789, during the French Revolution.",
+  "Napoleon crowned himself Emperor of France in 1804.",
+  "The Battle of Waterloo in 1815 marked the end of Napoleon’s rule.",
+  "Simón Bolívar led the independence movements in South America.",
+  "The Industrial Revolution began in Great Britain in the late 1700s.",
+  "The Luddites protested against industrial machinery that threatened jobs.",
+  "The first successful steam locomotive was built by George Stephenson.",
+  "The cotton gin, invented by Eli Whitney, revolutionized cotton processing.",
+  "The Suez Canal was completed in 1869 and shortened sea routes dramatically.",
+  "The Meiji Restoration in 1868 modernized Japan.",
+  "Florence Nightingale revolutionized battlefield medicine during the Crimean War.",
+  "The Eiffel Tower was the tallest man-made structure until the Chrysler Building.",
+  "The Boxer Rebellion was an anti-foreign uprising in China in 1900.",
+  "The Wright brothers’ first flight lasted only 12 seconds.",
+  "The Panama Canal took over 30 years to build due to engineering challenges.",
+  "World War I was triggered by the assassination of Archduke Franz Ferdinand.",
+  "Trench warfare defined much of the fighting in World War I.",
+  "The League of Nations was formed after World War I but failed to prevent WWII.",
+  "The Russian Revolution in 1917 ended centuries of imperial rule.",
+  "The Treaty of Versailles in 1919 imposed heavy reparations on Germany.",
+  "Mahatma Gandhi led a nonviolent struggle for India’s independence.",
+  "The Spanish Civil War (1936–1939) was a precursor to WWII.",
+  "Kristallnacht in 1938 was a violent pogrom against Jews in Nazi Germany.",
+  "D-Day, the Allied invasion of Normandy, occurred on June 6, 1944.",
+  "The Holocaust led to the genocide of six million Jews.",
+  "The Nuremberg Trials prosecuted major Nazi war criminals after WWII.",
+  "The Marshall Plan helped rebuild Europe after World War II.",
+  "The Cold War lasted from 1947 to 1991.",
+  "The Korean War ended in 1953 with an armistice, not a peace treaty.",
+  "The Space Race saw the U.S. and USSR compete for space exploration dominance.",
+  "Martin Luther King Jr. won the Nobel Peace Prize in 1964.",
+  "The Berlin Wall was built in 1961 to separate East and West Berlin.",
+  "The Cuban Missile Crisis in 1962 brought the world close to nuclear war.",
+  "Apollo 11 landed the first humans on the Moon in 1969.",
+  "The Watergate scandal led to President Nixon’s resignation in 1974.",
+  "The Iran Hostage Crisis lasted 444 days from 1979 to 1981.",
+  "The fall of the Soviet Union occurred in 1991.",
+  "The Gulf War began in 1990 after Iraq invaded Kuwait.",
+  "The European Union was formally established in 1993.",
+  "The Rwandan Genocide in 1994 resulted in the deaths of 800,000 people.",
+  "Hong Kong was handed over from Britain to China in 1997.",
+  "The 9/11 attacks in 2001 led to the War on Terror.",
+  "The Arab Spring began in 2010 with protests across the Middle East.",
+  "The COVID-19 pandemic began in 2019 and impacted the world globally.",
+  "Nelson Mandela won the Nobel Peace Prize in 1993.",
+  "The Treaty of Nanking ended the First Opium War in 1842.",
+  "The Seneca Falls Convention in 1848 was the first women’s rights convention.",
+  "The Battle of Stalingrad was a turning point in World War II.",
+  "The Warsaw Pact was created in 1955 as a Soviet response to NATO.",
+  "The Boer Wars were fought between the British Empire and Boer states in South Africa.",
+  "The 1968 Prague Spring was a period of political liberalization in Czechoslovakia.",
+  "The Zulu Kingdom was founded by Shaka Zulu in the early 19th century.",
+  "The Louisiana Purchase cost the U.S. about 3 cents per acre.",
+  "The Battle of Agincourt in 1415 was a major English victory in the Hundred Years’ War.",
+  "The Manhattan Project developed the first nuclear weapons during WWII.",
+  "The Falklands War was fought between Argentina and the UK in 1982.",
+  "The 1969 Stonewall riots were pivotal in the LGBTQ+ rights movement.",
+  "The Iranian Revolution in 1979 overthrew the Shah and established an Islamic Republic.",
+  "The Great Depression began in 1929 and lasted through the 1930s.",
+  "The Hellenistic Period followed the death of Alexander the Great.",
+  "The Abbasid Caliphate was a major Islamic dynasty known for its cultural achievements.",
+  "The Siege of Vienna in 1683 marked the end of Ottoman expansion into Europe.",
+  "The Berlin Airlift in 1948–49 delivered food and supplies to West Berlin.",
+  "The Mayflower carried the Pilgrims to North America in 1620.",
+  "The Scopes Trial in 1925 debated the teaching of evolution in U.S. schools.",
+  "The 2008 financial crisis was the most serious since the Great Depression.",
+
+        ];
+
+        // Function: getRandomFact
+        function getRandomFact() {
+        // DOM element manipulation
+            const factElement = document.getElementById('fact');
+            factElement.classList.remove('show');
+            
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                factElement.textContent = facts[randomIndex];
+                factElement.classList.add('show');
+            }, 500);
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

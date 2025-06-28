@@ -1,0 +1,996 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Pomodoro Timer - Free & Fast Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Pomodoro Timer - Free &amp; Fast! Boost your productivity with our easy-to-use Pomodoro timer. No signup, no ads, just fast and effective time management." name="description">
+<meta content="Pomodoro Timer, Free Pomodoro Timer, Time Management Tool, Focus Timer, Productivity Timer, Online Pomodoro Timer, Pomodoro Technique" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/pomodoro-timer" rel="canonical"/>
+<meta content="Pomodoro Timer - Free &amp; Fast Online Tool" property="og:title"/>
+<meta content="Use our free Pomodoro timer to boost your productivity. Work in focused intervals and take breaks with no signup or ads. Free &amp; fast to use." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/pomodoro-timer-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Pomodoro Timer - Free &amp; Fast Online Tool" name="twitter:title"/>
+<meta content="Increase your productivity with our free Pomodoro timer. Stay focused, work in intervals, and take breaks with ease—free &amp; fast, no signup needed!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/pomodoro-timer-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Pomodoro Timer",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "300"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Pomodoro Timer"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "300"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Oliver Green"
+  },
+  "datePublished": "2025-05-13",
+  "reviewBody": "I use this Pomodoro timer every day to stay focused during work. It’s simple, fast, and really helps me manage my time effectively. Plus, it’s completely free!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Pomodoro Timer"
+  }
+}
+  </script>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px; /* Increased to prevent overlap with buttons */
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px; /* Slightly increased for better spacing */
+    animation: fadeIn 1s ease-in;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 1.2s ease-in;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    animation: slideUp 0.8s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 30px 0;
+    position: relative;
+    min-height: 200px;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+}
+
+.progress-ring__circle {
+    stroke: #f28c38;
+    stroke-width: 8;
+    fill: transparent;
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+#time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.mode-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    background: #f28c38;
+    color: #fff;
+    border: none;
+    padding: 8px 16px; /* Reduced padding to minimize size increase */
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    outline: none;
+    pointer-events: auto;
+}
+
+
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none; /* Remove shadow on click */
+}
+
+/* Move Work button 20px left */
+.mode-buttons button:nth-child(1) {
+    transform: translateX(-20px);
+}
+.mode-buttons button:nth-child(1):hover {
+    transform: translateX(-20px) translateY(-2px); /* Combine transforms */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.mode-buttons button:nth-child(1):active {
+    transform: translateX(-20px) translateY(0);
+    box-shadow: none;
+}
+
+/* Move Long Break button 20px right */
+.mode-buttons button:nth-child(3) {
+    transform: translateX(20px);
+}
+.mode-buttons button:nth-child(3):hover {
+    transform: translateX(20px) translateY(-2px); /* Combine transforms */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.mode-buttons button:nth-child(3):active {
+    transform: translateX(20px) translateY(0);
+    box-shadow: none;
+}
+
+/* Move Start button 20px left */
+.control-buttons button:nth-child(1) {
+    transform: translateX(-20px);
+}
+.control-buttons button:nth-child(1):hover {
+    transform: translateX(-20px) translateY(-2px); /* Combine transforms */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.control-buttons button:nth-child(1):active {
+    transform: translateX(-20px) translateY(0);
+    box-shadow: none;
+}
+
+/* Move Reset button 20px right */
+.control-buttons button:nth-child(3) {
+    transform: translateX(20px);
+}
+.control-buttons button:nth-child(3):hover {
+    transform: translateX(20px) translateY(-2px); /* Combine transforms */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.control-buttons button:nth-child(3):active {
+    transform: translateX(20px) translateY(0);
+    box-shadow: none;
+}
+
+.settings {
+    margin-top: 20px;
+    cursor: pointer;
+    color: #f28c38;
+    font-size: 0.9rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    animation: popIn 0.3s ease-out;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 0.9rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    width: 120px;
+    height: 48px;
+    line-height: 48px;
+}
+
+.session-counter {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.content-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+    animation: slideUp 0.8s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left !important;
+}
+
+.content-container p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: left !important;
+}
+
+.content-container ul,
+.content-container ol {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.content-container ul li,
+.content-container ol li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        justify-content: flex-start;
+    }
+    header {
+        margin-bottom: 20px; /* Adjusted for spacing */
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    .container,
+    .content-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+    .content-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .timer-display {
+        font-size: 2.3rem;
+        min-height: 180px;
+    }
+    .progress-ring {
+        width: 160px;
+        height: 160px;
+    }
+    .progress-ring__circle {
+        r: 72;
+        cx: 80;
+        cy: 80;
+    }
+    #time {
+        font-size: 2.3rem;
+    }
+    .mode-buttons,
+    .control-buttons {
+        gap: 8px;
+    }
+    button {
+        background: #f28c38;
+        color: #fff;
+        padding: 6px 12px; /* Smaller padding */
+        height: 40px;
+        line-height: 28px; /* Adjusted for text alignment */
+        font-size: 0.9rem;
+        border-radius: 20px;
+    }
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    button:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+    /* Ensure specific buttons maintain their translateX */
+    .mode-buttons button:nth-child(1):hover {
+        transform: translateX(-20px) translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .mode-buttons button:nth-child(3):hover {
+        transform: translateX(20px) translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .control-buttons button:nth-child(1):hover {
+        transform: translateX(-20px) translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .control-buttons button:nth-child(3):hover {
+        transform: translateX(20px) translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .modal-content {
+        padding: 15px;
+        max-width: 90%;
+    }
+    .modal-content h2 {
+        font-size: 1.3rem;
+    }
+    .modal-content label {
+        font-size: 0.85rem;
+    }
+    .modal-content input {
+        padding: 6px;
+    }
+    .modal-content button {
+        width: 100px;
+        height: 40px;
+        line-height: 28px;
+    }
+    .content-container h2 {
+        font-size: 1.5rem;
+    }
+    .content-container p,
+    .content-container ul li,
+    .content-container ol li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        justify-content: flex-start;
+    }
+    header {
+        margin-bottom: 15px; /* Further adjusted */
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+    .container,
+    .content-container {
+        padding: 15px;
+        max-width: 95%;
+    }
+    .content-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .timer-display {
+        font-size: 1.8rem;
+        min-height: 140px;
+        margin: 20px 0;
+    }
+    .progress-ring {
+        width: 120px;
+        height: 120px;
+    }
+    .progress-ring__circle {
+        r: 52;
+        cx: 60;
+        cy: 60;
+    }
+    #time {
+        font-size: 1.8rem;
+    }
+    .mode-buttons,
+    .control-buttons {
+        gap: 6px;
+        flex-direction: row;
+    }
+    button {
+        background: #f28c38;
+        color: #fff;
+        padding: 5px 10px; /* Minimal padding */
+        height: 36px;
+        line-height: 26px; /* Adjusted for text alignment */
+        font-size: 0.8rem;
+        border-radius: 18px;
+    }
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    button:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+    /* Ensure specific buttons maintain their translateX */
+    .mode-buttons button:nth-child(1):hover {
+        transform: translateX(-20px) translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .mode-buttons button:nth-child(3):hover {
+        transform: translateX(20px) translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .control-buttons button:nth-child(1):hover {
+        transform: translateX(-20px) translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .control-buttons button:nth-child(3):hover {
+        transform: translateX(20px) translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .modal-content {
+        padding: 10px;
+        max-width: 95%;
+    }
+    .modal-content h2 {
+        font-size: 1.2rem;
+    }
+    .modal-content label {
+        font-size: 0.8rem;
+    }
+    .modal-content input {
+        padding: 5px;
+    }
+    .modal-content button {
+        width: 90px;
+        height: 36px;
+        line-height: 26px;
+    }
+    .session-counter {
+        font-size: 0.8rem;
+    }
+    .settings {
+        font-size: 0.8rem;
+    }
+    .content-container h2 {
+        font-size: 1.3rem;
+    }
+    .content-container p,
+    .content-container ul li,
+    .content-container ol li {
+        font-size: 0.85rem;
+    }
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Pomodoro Timer
+   </h1>
+<p>
+    Boost your productivity with focused work sessions and well-timed breaks.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="mode-buttons">
+<button onclick="setMode('work')">
+     Work
+    </button>
+<button onclick="setMode('shortBreak')">
+     Short Break
+    </button>
+<button onclick="setMode('longBreak')">
+     Long Break
+    </button>
+</div>
+<div class="timer-display">
+<svg class="progress-ring">
+<circle class="progress-ring__circle" cx="90" cy="90" fill="transparent" r="80" stroke="#f28c38" stroke-width="8">
+</circle>
+</svg>
+<span id="time">
+     25:00
+    </span>
+</div>
+<div class="control-buttons">
+<button onclick="startTimer()">
+     Start
+    </button>
+<button onclick="pauseTimer()">
+     Pause
+    </button>
+<button onclick="resetTimer()">
+     Reset
+    </button>
+</div>
+<div class="session-counter">
+    Sessions Completed:
+    <span id="session-count">
+     0
+    </span>
+</div>
+<div class="settings" onclick="openSettings()">
+    Settings
+   </div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Pomodoro Timer?
+   </h2>
+<p>
+    The Pomodoro Timer is based on the Pomodoro Technique, a time management method that encourages you to work in 25-minute blocks (called Pomodoros), followed by a 5-minute break. After four Pomodoros, you take a longer break—typically 15-30 minutes. It’s like setting up mini sprints for your brain, so you can focus hard, but not for too long, before taking a break to recharge.
+   </p>
+<h2>
+    Try the Pomodoro Timer Now
+   </h2>
+<p>
+    Want to get things done without feeling like you're dragging your feet? Just click the button and let the Pomodoro Timer keep you on track. 25 minutes of focus followed by a break sounds pretty good, right? Give it a try!
+   </p>
+<h2>
+    Why Use a Pomodoro Timer?
+   </h2>
+<p>
+    Here’s why this tool is a game-changer:
+   </p>
+<ul>
+<li>
+     Helps you focus on one task at a time
+    </li>
+<li>
+     Reduces the feeling of being overwhelmed by breaking things into small chunks
+    </li>
+<li>
+     Encourages regular breaks to keep your mind fresh
+    </li>
+<li>
+     Improves productivity by reducing burnout
+    </li>
+<li>
+     Easy to use, with no complex setups needed
+    </li>
+</ul>
+<p>
+    Whether you’re studying, working, or handling a long to-do list, the Pomodoro Timer keeps you on track and prevents burnout. It’s like having a productivity coach on your side.
+   </p>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+     Automatically sets 25-minute work intervals
+    </li>
+<li>
+     Reminds you to take breaks every 25 minutes
+    </li>
+<li>
+     Simple to use—just click, start, and work
+    </li>
+<li>
+     Keeps track of your Pomodoros and breaks
+    </li>
+<li>
+     No downloads or signups required—just jump in and get going!
+    </li>
+</ul>
+<h2>
+    How to Use the Pomodoro Timer
+   </h2>
+<p>
+    It’s super easy to use! Just follow these steps:
+   </p>
+<ol>
+<li>
+     Open the Pomodoro Timer tool.
+    </li>
+<li>
+     Hit the "Start" button to begin your first 25-minute work session (Pomodoro).
+    </li>
+<li>
+     Focus on your task until the timer goes off—don’t check your phone, don’t get distracted!
+    </li>
+<li>
+     When the timer rings, take a 5-minute break (stretch, grab a coffee, check your messages).
+    </li>
+<li>
+     After four Pomodoros, take a longer break (15-30 minutes).
+    </li>
+<li>
+     Repeat the process, staying productive and fresh.
+    </li>
+</ol>
+<p>
+    Pro tip: Use the timer to set mini-goals for each Pomodoro. It'll keep you extra motivated to stay focused!
+   </p>
+<h2>
+    Why Choose This Pomodoro Timer?
+   </h2>
+<ul>
+<li>
+     Perfect for anyone who struggles with focus or gets easily distracted
+    </li>
+<li>
+     Makes work feel more manageable by breaking it into small chunks
+    </li>
+<li>
+     Keeps you on schedule with minimal effort
+    </li>
+<li>
+     Free to use and super easy to access
+    </li>
+<li>
+     Great for anyone—whether you’re working, studying, or doing chores
+    </li>
+</ul>
+<p>
+    The Pomodoro Timer is all about maximizing your focus and productivity, while also giving you the breaks you need to stay sharp. No more feeling overwhelmed with a long to-do list.
+   </p>
+<h2>
+    FAQs About the Pomodoro Timer
+   </h2>
+<p>
+<strong>
+     Can I adjust the timer to longer or shorter sessions?
+    </strong>
+</p>
+<p>
+    This one sticks to the classic 25-minute Pomodoro sessions, but there are plenty of other timers out there where you can adjust the intervals if needed!
+   </p>
+<p>
+<strong>
+     Do I have to take a break after each 25 minutes?
+    </strong>
+</p>
+<p>
+    Yes, the Pomodoro Technique emphasizes taking a short break to recharge after each work block. But, if you’re in a flow state, you can skip the break—just don’t overdo it!
+   </p>
+<p>
+<strong>
+     Can I use the Pomodoro Timer for tasks other than work or studying?
+    </strong>
+</p>
+<p>
+    Totally! Whether you’re cleaning, reading, or even doing creative projects, you can use the timer for pretty much anything you want to break into smaller chunks.
+   </p>
+<p>
+<strong>
+     How do I know when it’s time to take a longer break?
+    </strong>
+</p>
+<p>
+    After completing four Pomodoros, the timer will remind you to take a longer break. It’s the perfect time to grab lunch, stretch, or just relax for a bit.
+   </p>
+<h2>
+    Final Thoughts: Time to Focus!
+   </h2>
+<p>
+    The Pomodoro Timer is the perfect way to stay focused, reduce stress, and get more done in less time. Break up your tasks into manageable chunks, stay fresh with regular breaks, and watch your productivity soar.
+   </p>
+<p>
+    Ready to get to work? Hit that start button and let’s do this!
+   </p>
+</div>
+<div class="modal" id="settings-modal">
+<div class="modal-content">
+<h2>
+     Timer Settings
+    </h2>
+<label for="work-time">
+     Work Duration (minutes):
+    </label>
+<input id="work-time" min="1" type="number" value="25"/>
+<label for="short-break">
+     Short Break (minutes):
+    </label>
+<input id="short-break" min="1" type="number" value="5"/>
+<label for="long-break">
+     Long Break (minutes):
+    </label>
+<input id="long-break" min="1" type="number" value="15"/>
+<label for="auto-start">
+     Auto-start next session:
+    </label>
+<input id="auto-start" type="checkbox"/>
+<label for="sound">
+     Enable sound notifications:
+    </label>
+<input id="sound" type="checkbox"/>
+<button onclick="saveSettings()">
+     Save
+    </button>
+</div>
+</div>
+<script>
+   let timeLeft = 25 * 60;
+        let isRunning = false;
+        let interval;
+        let mode = 'work';
+        let sessions = 0;
+        let durations = { work: 25, shortBreak: 5, longBreak: 15 };
+        let autoStart = false;
+        let soundEnabled = false;
+
+        // DOM element manipulation
+        const timeDisplay = document.getElementById('time');
+        // DOM element manipulation
+        const sessionCount = document.getElementById('session-count');
+        // DOM element manipulation
+        const circle = document.querySelector('.progress-ring__circle');
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+
+        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+        circle.style.strokeDashoffset = 0;
+
+        // Function: setProgress
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+        }
+
+        // Function: formatTime
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Function: updateTimer
+        function updateTimer() {
+            timeDisplay.textContent = formatTime(timeLeft);
+            const total = durations[mode] * 60;
+            const percent = ((total - timeLeft) / total) * 100;
+            setProgress(percent);
+
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                isRunning = false;
+                if (mode === 'work') {
+                    sessions++;
+                    sessionCount.textContent = sessions;
+                    playSound();
+                    if (autoStart) {
+                        setMode(sessions % 4 === 0 ? 'longBreak' : 'shortBreak');
+                        startTimer();
+                    }
+                } else {
+                    playSound();
+                    if (autoStart) {
+                        setMode('work');
+                        startTimer();
+                    }
+                }
+            }
+            timeLeft--;
+        }
+
+        // Function: startTimer
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                interval = setInterval(updateTimer, 1000);
+            }
+        }
+
+        // Function: pauseTimer
+        function pauseTimer() {
+            if (isRunning) {
+                clearInterval(interval);
+                isRunning = false;
+            }
+        }
+
+        // Function: resetTimer
+        function resetTimer() {
+            clearInterval(interval);
+            isRunning = false;
+            timeLeft = durations[mode] * 60;
+            timeDisplay.textContent = formatTime(timeLeft);
+            setProgress(0);
+        }
+
+        // Function: setMode
+        function setMode(newMode) {
+            mode = newMode;
+            timeLeft = durations[mode] * 60;
+            resetTimer();
+        }
+
+        // Function: playSound
+        function playSound() {
+            if (soundEnabled) {
+                const sound = new Audio('https://www.soundjay.com/buttons/beep-01a.mp3');
+                sound.play().catch(() => {});
+            }
+        }
+
+        // Function: openSettings
+        function openSettings() {
+        // DOM element manipulation
+            document.getElementById('settings-modal').style.display = 'flex';
+        }
+
+        // Function: saveSettings
+        function saveSettings() {
+        // DOM element manipulation
+            durations.work = parseInt(document.getElementById('work-time').value) || 25;
+        // DOM element manipulation
+            durations.shortBreak = parseInt(document.getElementById('short-break').value) || 5;
+        // DOM element manipulation
+            durations.longBreak = parseInt(document.getElementById('long-break').value) || 15;
+        // DOM element manipulation
+            autoStart = document.getElementById('auto-start').checked;
+        // DOM element manipulation
+            soundEnabled = document.getElementById('sound').checked;
+            setMode(mode);
+        // DOM element manipulation
+            document.getElementById('settings-modal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        // Event listener for user interactions
+        document.getElementById('settings-modal').addEventListener('click', (e) => {
+        // DOM element manipulation
+            if (e.target === document.getElementById('settings-modal')) {
+        // DOM element manipulation
+                document.getElementById('settings-modal').style.display = 'none';
+            }
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

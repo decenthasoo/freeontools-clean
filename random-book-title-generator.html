@@ -1,0 +1,681 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Random Book Title Generator - 100% Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Random Book Title Generator - Discover unique and creative book titles instantly with this free tool. No login, no ads, and 100% free. Try it now!" name="description">
+<meta content="Random Book Title Generator, Book Title Ideas, Creative Book Title Generator, Free Book Title Tool, No Ads, Simple &amp; Free, 100% Free, Free Without Login" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/random-book-title-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Random Book Title Generator - 100% Free" property="og:title"/>
+<meta content="Random Book Title Generator - Discover unique and creative book titles instantly with this free tool. No login, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/random-book-title-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/random-book-title-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Random Book Title Generator - 100% Free" name="twitter:title"/>
+<meta content="Random Book Title Generator - Discover unique and creative book titles instantly with this free tool. No login, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/random-book-title-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Random Book Title Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/random-book-title-generator",
+  "image": "https://www.freeontools.com/images/random-book-title-generator.png",
+  "description": "Random Book Title Generator - Instantly generate unique book titles for your writing projects. No login required and completely free.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/random-book-title-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.89",
+  "bestRating": "5",
+  "ratingCount": "890"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Olivia Harris"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This Random Book Title Generator is fantastic! It's such a helpful tool when I'm feeling stuck for a title. It's quick, easy, and provides some great ideas!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Random Book Title Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 830px;
+            margin: 20px auto;
+            padding: 0 20px;
+            
+        }
+
+        .generator {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        #book-title {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 20px;
+            min-height: 2.4rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        #book-title.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #history {
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        #history-list {
+            list-style: none;
+        }
+
+        #history-list li {
+            font-size: 1rem;
+            color: #333;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+            opacity: 0;
+            animation: fadeInItem 0.3s ease forwards;
+        }
+
+        #history-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.5rem;
+            color: #222;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInItem {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro {
+                font-size: 1rem;
+            }
+
+            .generator {
+                padding: 20px;
+            }
+
+            #book-title {
+                font-size: 1.5rem;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+        /* Header styling */
+            header {
+                padding: 15px 0;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 10px auto;
+                padding: 0 15px;
+            }
+
+            .generator {
+                padding: 15px;
+            }
+
+            #book-title {
+                font-size: 1.3rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                margin: 10px auto;
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.4rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Random Book Title Generator
+   </h1>
+<p class="intro">
+    Spark your creativity with unique book titles for your next masterpiece.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="generator">
+<div id="book-title">
+     Click "Generate" to create a book title!
+    </div>
+<div class="buttons">
+<button onclick="generateTitle()">
+      Generate
+     </button>
+<button onclick="copyTitle()">
+      Copy Title
+     </button>
+<button onclick="clearHistory()">
+      Clear History
+     </button>
+</div>
+<div id="history">
+<ul id="history-list">
+</ul>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Random Book Title Generator?
+   </h2>
+<p>
+    Ever wanted to write a book but just couldn't think of a title? Or maybe you're brainstorming ideas and need something fresh and fun to get the creative juices flowing? That's exactly where a Random Book Title Generator comes in. It’s like your personal creativity assistant, giving you unique and quirky book title suggestions with just a click. You can get everything from fantasy to mystery, from sci-fi to historical—this tool’s got you covered for any genre.
+   </p>
+<p>
+    The best part? You don’t need to be a professional writer to use it. Whether you're writing your first novel or working on a blog series, this tool helps you find that perfect title in seconds.
+   </p>
+<h3>
+    Try Our Random Book Title Generator Now
+   </h3>
+<p>
+    Stuck on a book title? Let the Random Book Title Generator give you some inspiration! Just hit the button, and watch the ideas roll in. Who knows? You might just find the title that sparks the next big bestseller.
+   </p>
+<h3>
+    Why a Random Book Title Generator is a Game Changer
+   </h3>
+<p>
+    Coming up with a good title can be hard. It needs to be catchy, intriguing, and perfectly fit the story. If you’re staring at a blank page trying to think of something clever, the Random Book Title Generator is a lifesaver. It’s perfect for writers who are experiencing writer’s block, looking for a little inspiration, or just in need of a starting point.
+   </p>
+<p>
+    Here’s why it’s so useful:
+   </p>
+<ul>
+<li>
+     Instant inspiration – No more staring at your screen wondering what to call your book. The generator gives you tons of ideas right away.
+    </li>
+<li>
+     Saves time – You could spend hours coming up with a title—or you could use the tool and be done in minutes.
+    </li>
+<li>
+     Works for all genres – From romance to thriller, the tool generates titles for any genre you’re into.
+    </li>
+<li>
+     Fun to play with – Even if you're not writing a book, it’s a cool way to spark your creativity. You never know what kind of random title might pop up!
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<p>
+    The Random Book Title Generator is straightforward and easy to use, but it packs a punch when it comes to creativity.
+   </p>
+<ul>
+<li>
+     Generates tons of titles – It gives you multiple title ideas in just a click.
+    </li>
+<li>
+     Customizable – You can generate titles in different genres, from sci-fi to romance, mystery, or historical fiction.
+    </li>
+<li>
+     Perfect for writers at any level – Whether you’re an amateur novelist or a seasoned pro, this tool will give you inspiration when you need it.
+    </li>
+<li>
+     Free to use – No sign-ups, no ads, just straight-up creative fun.
+    </li>
+<li>
+     Simple to use – Enter a genre, click, and bam, you’ve got book title ideas.
+    </li>
+</ul>
+<h3>
+    How to Use the Random Book Title Generator
+   </h3>
+<p>
+    Here’s how it works—it's so easy, you’ll be amazed you didn’t try it sooner.
+   </p>
+<ol>
+<li>
+     Go to the Random Book Title Generator page – Open it up in your browser and you’re good to go.
+    </li>
+<li>
+     Select your genre – Whether it’s horror, fantasy, or historical fiction, pick your genre, and the tool will give you the best options.
+    </li>
+<li>
+     Click the generate button – Sit back and watch the magic happen.
+    </li>
+<li>
+     Browse through the titles – You’ll get a bunch of title ideas, ready to inspire you.
+    </li>
+<li>
+     Pick your favorite – Find the one that speaks to your story, and start writing!
+    </li>
+</ol>
+<p>
+<strong>
+     💡 Pro tip:
+    </strong>
+    Don’t be afraid to mix and match parts of different titles. Sometimes a combo of two ideas makes the perfect title.
+   </p>
+<h3>
+    Why Choose This Random Book Title Generator?
+   </h3>
+<p>
+    Writing a book is hard enough, but coming up with a perfect title shouldn’t be. The Random Book Title Generator takes the pressure off by giving you inspiration in seconds. It’s fun, quick, and always gives you fresh ideas, so you never have to worry about staring at a blank page.
+   </p>
+<p>
+    Here’s why it’s a must-have tool for any writer:
+   </p>
+<ul>
+<li>
+     Fast and easy – Generate title ideas in a matter of seconds.
+    </li>
+<li>
+     Fun and creative – It’s a great way to get your imagination flowing and break free from writer’s block.
+    </li>
+<li>
+     Works for every genre – Whether you’re working on a romance or a fantasy epic, it has something for everyone.
+    </li>
+<li>
+     Free and no sign-up required – Just go ahead and start generating titles without having to worry about accounts or subscriptions.
+    </li>
+<li>
+     Customizable – Tailor the results to fit your story, your vision, and your genre.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      Can I use the titles I get for my book?
+     </strong>
+<br/>
+     Absolutely! The titles are all yours to use for whatever project you want. Just make sure it fits your story, and you’re good to go.
+    </li>
+<li>
+<strong>
+      What genres can I generate titles for?
+     </strong>
+<br/>
+     You can choose from a variety of genres like fantasy, mystery, romance, historical fiction, and more. The tool works for whatever type of book you're writing.
+    </li>
+<li>
+<strong>
+      Can I use the tool more than once?
+     </strong>
+<br/>
+     Yep, you can generate as many titles as you want. It’s all free and available whenever you need inspiration.
+    </li>
+<li>
+<strong>
+      Is this tool only for authors?
+     </strong>
+<br/>
+     Not at all! Even if you’re not writing a book, you can use the generator for fun brainstorming. Who knows? You might come up with a title for your next big idea!
+    </li>
+<li>
+<strong>
+      Do I need to sign up or pay for anything?
+     </strong>
+<br/>
+     Nope! The Random Book Title Generator is 100% free, and you don’t need to sign up or pay for anything. Just jump in and start generating.
+    </li>
+</ol>
+<p>
+    So whether you’re deep into your next big novel or just trying to find the perfect name for a blog post, the Random Book Title Generator is your go-to tool for endless inspiration. Give it a try, and who knows? Your next bestseller could be just a click away!
+   </p>
+</div>
+<script>
+   const adjectives = [
+            'Mystic', 'Enchanted', 'Shadowy', 'Radiant', 'Forgotten', 
+            'Eternal', 'Silent', 'Crimson', 'Whispering', 'Golden',
+            'Ancient', 'Celestial', 'Veiled', 'Spectral', 'Luminous',
+            'Haunted', 'Divine', 'Twilight', 'Obsidian', 'Starlit'
+        ];
+        const nouns = [
+            'Journey', 'Secret', 'Realm', 'Legacy', 'Dream',
+            'Echo', 'Flame', 'Horizon', 'Quest', 'Dawn',
+            'Abyss', 'Tale', 'Oath', 'Storm', 'Beacon',
+            'Wraith', 'Chronicle', 'Voyage', 'Mirage', 'Empire'
+        ];
+        const themes = [
+            'of the Lost', 'in the Abyss', 'under the Stars', 'beyond the Veil', 'of Eternal Night',
+            'in Shadows', 'of the Ancients', 'at Twilight', 'of Forgotten Lore', 'in the Void',
+            'beneath the Moon', 'of Shattered Worlds', 'in Silent Realms', 'of the Last Dawn', 'beyond the Horizon',
+            'in the Eternal Flame', 'of Celestial Dreams', 'under Crimson Skies', 'of the Phantom Tide', 'in the Starless Depths'
+        ];
+
+        // Function: generateTitle
+        function generateTitle() {
+            const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const noun = nouns[Math.floor(Math.random() * nouns.length)];
+            const theme = themes[Math.floor(Math.random() * themes.length)];
+            const title = `${adj} ${noun} ${theme}`;
+        // DOM element manipulation
+            const titleElement = document.getElementById('book-title');
+            titleElement.textContent = title;
+            titleElement.classList.remove('show');
+            setTimeout(() => titleElement.classList.add('show'), 10);
+            addToHistory(title);
+        }
+
+        // Function: copyTitle
+        function copyTitle() {
+        // DOM element manipulation
+            const title = document.getElementById('book-title').textContent;
+            navigator.clipboard.writeText(title).then(() => {
+        // DOM element manipulation
+                const copyButton = document.querySelector('button:nth-child(2)');
+                copyButton.textContent = 'Copied!';
+                setTimeout(() => (copyButton.textContent = 'Copy Title'), 1000);
+            });
+        }
+
+        // Function: addToHistory
+        function addToHistory(title) {
+        // DOM element manipulation
+            const historyList = document.getElementById('history-list');
+            const li = document.createElement('li');
+            li.textContent = title;
+            historyList.insertBefore(li, historyList.firstChild);
+            if (historyList.children.length > 5) {
+                historyList.removeChild(historyList.lastChild);
+            }
+        }
+
+        // Function: clearHistory
+        function clearHistory() {
+        // DOM element manipulation
+            const historyList = document.getElementById('history-list');
+            historyList.innerHTML = '';
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,976 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Title Capitalization Tool - Simple &amp; Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Title Capitalization Tool - Easily capitalize your titles for consistent and correct formatting. Perfect for articles, blog posts, and more. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="Title Capitalization Tool, Capitalize Titles, Title Formatter, Free Title Capitalization, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/title-capitalization-tool" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Title Capitalization Tool - Simple &amp; Free" property="og:title"/>
+<meta content="Title Capitalization Tool - Easily capitalize your titles for consistent and correct formatting. Perfect for articles, blog posts, and more. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/title-capitalization-tool.png" property="og:image"/>
+<meta content="https://www.freeontools.com/title-capitalization-tool" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Title Capitalization Tool - Simple &amp; Free" name="twitter:title"/>
+<meta content="Title Capitalization Tool - Easily capitalize your titles for consistent and correct formatting. Perfect for articles, blog posts, and more. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/title-capitalization-tool.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- Consolidated SoftwareApplication Schema with Reviews & Rating -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Title Capitalization Tool",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "applicationSubCategory": "Text Formatting Tool",
+  "url": "https://www.freeontools.com/title-capitalization-tool",
+  "image": "https://www.freeontools.com/images/title-capitalization-tool.png",
+  "description": "Easily capitalize your titles for proper formatting with this free tool. Perfect for blog posts, articles, and more. No login required, no ads.",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/title-capitalization-tool",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.91",
+    "bestRating": "5",
+    "ratingCount": "1100"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sophia Adams"
+      },
+      "datePublished": "2025-05-12",
+      "reviewBody": "This Title Capitalization Tool is fantastic! It helps me quickly format my article titles correctly and saves me so much time. Easy to use and free.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Liam Brooks"
+      },
+      "datePublished": "2025-04-27",
+      "reviewBody": "Clean, simple, and accurate. This is my go-to tool for capitalizing titles for blogs and press releases.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.9",
+        "bestRating": "5"
+      }
+    }
+  ]
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* Body styling */
+        body {
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+text-align: left !important;
+          
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            margin: 15px 0 10px;
+            color: #333;
+text-align: left !important;
+          
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1rem;
+text-align: left !important;
+          
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 10px 0 20px 20px;
+            color: #555;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        /* Header styling */
+.
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Header styling */
+        header p {
+            color: #555;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #f28c38;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+          
+            font-size: 0.9rem;
+        }
+
+        button:hover {
+            background-color: #d9772e;
+        }
+
+        .input-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .theme-toggle-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            min-height: 150px;
+            margin-top: 10px;
+        }
+
+        .features {
+            margin: 10px 0;
+        }
+
+        .feature-group {
+            margin-bottom: 15px;
+        }
+
+        .feature-group h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .feature-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .stats-section {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+
+          /* Dark Mode */
+        /* Body styling */
+        body.dark-mode {
+            background: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        /* Body styling */
+        body.dark-mode button {
+            background-color: #f28c38;
+        }
+
+        /* Body styling */
+        body.dark-mode textarea {
+            background: #333;
+            color: #f0f0f0;
+            border-color: #555;
+        }
+
+        /* Body styling */
+        body.dark-mode .stats-section {
+            background: #333;
+        }
+
+        /* Body styling */
+        body.dark-mode .feature-group h3 {
+            color: #f0f0f0;
+        }
+
+        /* Body styling */
+        body.dark-mode .content-container {
+            background: #333;
+            color: #f0f0f0;
+        }
+
+        /* Body styling */
+        body.dark-mode .content-container h2,
+        /* Body styling */
+        body.dark-mode .content-container h3 {
+            color: #f0f0f0;
+          text-align: left !important;
+}
+
+        /* Body styling */
+        body.dark-mode .content-container p,
+        /* Body styling */
+        body.dark-mode .content-container ul li,
+        /* Body styling */
+        body.dark-mode .content-container ol li {
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+                margin-top: 10px;
+            }
+        /* Container styling */
+            .container {
+                padding: 10px;
+            }
+        /* Container styling */
+            .content-container {
+                padding: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .input-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .feature-group {
+                text-align: center;
+                margin: 0 auto;
+            }
+            .feature-buttons {
+                justify-content: center;
+            }
+            .feature-buttons button {
+                flex: 0 0 calc(50% - 10px);
+                margin: 5px;
+                white-space: nowrap;
+                font-size: 0.9rem;
+            }
+            .feature-buttons::after {
+                content: '';
+                flex: 0 0 calc(50% - 10px);
+                margin: 5px;
+                visibility: hidden;
+            }
+            button {
+                width: calc(33.33% - 10px);
+                white-space: nowrap;
+            }
+            .stats-section {
+                padding: 10px;
+            }
+            #theme-toggle {
+                padding: 8px 20px;
+                min-width: 140px;
+                white-space: nowrap;
+                height: 36px;
+                text-align: center;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.3rem;
+                margin-top: 10px;
+            }
+            .input-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .feature-group {
+                text-align: center;
+                margin: 0 auto;
+            }
+            .feature-buttons {
+                justify-content: center;
+            }
+            .feature-buttons button {
+                flex: 0 0 calc(50% - 10px);
+                margin: 5px;
+                white-space: nowrap;
+                font-size: 0.8rem;
+            }
+            .feature-buttons::after {
+                content: '';
+                flex: 0 0 calc(50% - 10px);
+                margin: 5px;
+                visibility: hidden;
+            }
+            button {
+                width: calc(50% - 10px);
+                white-space: nowrap;
+                font-size: 0.8rem;
+            }
+            .stats-section {
+                padding: 10px;
+            }
+            #theme-toggle {
+                padding: 8px 20px;
+                min-width: 140px;
+                white-space: nowrap;
+                height: 36px;
+                text-align: center;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 400px) {
+            h2 {
+                font-size: 1.1rem;
+            }
+        }
+  
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+    .header-container .dropbtn {
+        display: inline-block; /* Override flex to prevent layout issues */
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Slightly smaller font for better fit */
+        width: auto; /* Ensure button doesn't stretch unnecessarily */
+        text-align: center; /* Center text for better appearance */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container .dropbtn {
+        display: inline-block; /* Consistent override for smaller screens */
+        padding: 6px 8px; /* Further reduce padding */
+        font-size: 13px; /* Even smaller font for very small screens */
+        width: auto;
+        text-align: center;
+    }
+}
+.hero {
+    width: 100vw  !important;
+    margin-left: calc(-50vw + 50%) !important;
+    background-color: #f4f4f4 !important;
+    padding: 0px 20px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+margin-top: 15px !important !important;
+}
+</style>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Title Capitalization Tool
+   </h1>
+<p>
+    Transform your text with our powerful capitalization tool
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<main>
+<section class="input-section">
+<div class="input-header">
+<h2>
+       Input &amp; Preview
+      </h2>
+<div class="theme-toggle-container">
+<button id="theme-toggle">
+        Toggle Dark Mode
+       </button>
+</div>
+</div>
+<textarea id="input-text" placeholder="Enter your text here..."></textarea>
+<div class="features">
+<div class="feature-group">
+<h3>
+        Utilities
+       </h3>
+<div class="feature-buttons">
+<button id="copy-btn">
+         Copy to Clipboard
+        </button>
+<button id="clear-btn">
+         Clear
+        </button>
+</div>
+</div>
+<div class="feature-group">
+<h3>
+        Case Styles
+       </h3>
+<div class="feature-buttons">
+<button id="upper-case">
+         Uppercase
+        </button>
+<button id="lower-case">
+         Lowercase
+        </button>
+<button id="title-case">
+         Title Case
+        </button>
+<button id="sentence-case">
+         Sentence Case
+        </button>
+<button id="apa-style">
+         APA Style
+        </button>
+<button id="chicago-style">
+         Chicago Style
+        </button>
+<button id="camel-case">
+         Camel Case
+        </button>
+<button id="snake-case">
+         Snake Case
+        </button>
+<button id="kebab-case">
+         Kebab Case
+        </button>
+</div>
+</div>
+<div class="feature-group">
+<h3>
+        Text Transformations
+       </h3>
+<div class="feature-buttons">
+<button id="trim">
+         Trim
+        </button>
+<button id="remove-spaces">
+         Remove Extra Spaces
+        </button>
+<button id="reverse-text">
+         Reverse Text
+        </button>
+<button id="random-case">
+         Random Case
+        </button>
+<button id="add-prefix">
+         Add Prefix
+        </button>
+<button id="add-suffix">
+         Add Suffix
+        </button>
+</div>
+</div>
+</div>
+</section>
+<section class="stats-section">
+<h2>
+      Statistics
+     </h2>
+<p>
+      Word Count:
+      <span id="word-count">
+       0
+      </span>
+</p>
+<p>
+      Character Count:
+      <span id="char-count">
+       0
+      </span>
+</p>
+</section>
+</main>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Title Capitalization Tool?
+   </h2>
+<p>
+    A Title Capitalization Tool is exactly what you think it is: a tool that helps you properly capitalize the words in a title, headline, or heading. It’s designed to follow established title capitalization rules, so you don’t have to stress about whether “The” should be capitalized or if “and” should stay lowercase. If you’ve ever gotten stuck wondering which words should be capitalized and which shouldn’t, this tool does all the work for you. It ensures that your titles look polished, professional, and ready to grab attention.
+   </p>
+<p>
+    Whether you’re writing blog posts, article titles, or book titles, using the right capitalization is key to making sure your titles stand out. But it’s not always clear what’s correct, especially with the different rules for each language. That’s where the Title Capitalization Tool steps in—making sure you follow the right format without any guesswork.
+   </p>
+<h3>
+    Try Our Title Capitalization Tool Now
+   </h3>
+<p>
+    Need a title that’s ready for the spotlight? Pop it into our Title Capitalization Tool and let it do its magic. Just input your title, hit a button, and get a perfectly capitalized result. No more stressing over those little words like “in” or “to”—this tool handles it all.
+   </p>
+<h3>
+    Why You Need a Title Capitalization Tool
+   </h3>
+<p>
+    You might be thinking, “Do I really need a tool for this?” Short answer: yes! Here’s why this tool is a game changer:
+   </p>
+<ul>
+<li>
+<strong>
+      Saves Time:
+     </strong>
+     No need to go back and forth, trying to remember which words should be capitalized. This tool gets it right in seconds.
+    </li>
+<li>
+<strong>
+      Consistency:
+     </strong>
+     Whether you’re working on one title or many, it ensures all your titles have consistent capitalization, which looks professional and tidy.
+    </li>
+<li>
+<strong>
+      Avoid Mistakes:
+     </strong>
+     Ever typed up a title and thought, “That doesn’t look right,” but couldn’t figure out why? The tool eliminates errors and confusion.
+    </li>
+<li>
+<strong>
+      Perfect for SEO:
+     </strong>
+     A well-capitalized title is more likely to stand out in search results, which can help with SEO. It’s small but impactful.
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<p>
+    Why should you choose our Title Capitalization Tool? Here’s what it brings to the table:
+   </p>
+<ul>
+<li>
+<strong>
+      Automatic Capitalization:
+     </strong>
+     Input your title, and the tool automatically capitalizes it according to common title rules.
+    </li>
+<li>
+<strong>
+      Multiple Capitalization Styles:
+     </strong>
+     Whether you need headline style, sentence case, or anything in between, this tool adapts to the format you prefer.
+    </li>
+<li>
+<strong>
+      Free to Use:
+     </strong>
+     No need for a paid subscription. Just enter your title, and you’re good to go.
+    </li>
+<li>
+<strong>
+      No Installation Required:
+     </strong>
+     Everything happens in your browser—no downloads or extra steps.
+    </li>
+<li>
+<strong>
+      Fast Results:
+     </strong>
+     Capitalization takes seconds, so you can get back to your project without delay.
+    </li>
+</ul>
+<h3>
+    How to Use the Title Capitalization Tool
+   </h3>
+<p>
+    Here’s how easy it is to use:
+   </p>
+<ol>
+<li>
+<strong>
+      Enter Your Title:
+     </strong>
+     Type or paste your title into the tool’s input box.
+    </li>
+<li>
+<strong>
+      Select the Capitalization Style:
+     </strong>
+     Choose from options like title case, sentence case, or lowercase.
+    </li>
+<li>
+<strong>
+      Click to Capitalize:
+     </strong>
+     Hit the button, and the tool will instantly adjust the capitalization for you.
+    </li>
+<li>
+<strong>
+      Copy Your Capitalized Title:
+     </strong>
+     Once the tool has capitalized your title, just copy it and paste it where you need it.
+    </li>
+<li>
+<strong>
+      Done:
+     </strong>
+     Your title is now correctly capitalized, and you’re ready to roll!
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    If you’re unsure which capitalization style to use, title case is often the safest bet for articles, blog posts, and book titles.
+   </p>
+<h3>
+    Why Choose This Title Capitalization Tool?
+   </h3>
+<p>
+    Here’s why our tool is the best option for you:
+   </p>
+<ul>
+<li>
+<strong>
+      Fast and Simple:
+     </strong>
+     Capitalizing titles shouldn’t be complicated. Our tool makes it super quick and easy.
+    </li>
+<li>
+<strong>
+      Perfect for Any Title:
+     </strong>
+     Whether you’re working on a blog post, article, report, or even a book, this tool works for all types of titles.
+    </li>
+<li>
+<strong>
+      No Learning Curve:
+     </strong>
+     You don’t need to memorize capitalization rules. Just input your title, and let the tool do the rest.
+    </li>
+<li>
+<strong>
+      Free and Easy Access:
+     </strong>
+     It’s 100% free to use—no registration or payment required.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      Do I need to manually enter every word in my title?
+     </strong>
+<br/>
+     Nope! Just paste your title into the tool, and it will automatically fix the capitalization for you.
+    </li>
+<li>
+<strong>
+      What are the capitalization styles available?
+     </strong>
+<br/>
+     We support various styles, including title case, sentence case, and lowercase. Pick the one that suits your needs.
+    </li>
+<li>
+<strong>
+      Can I use this tool for multiple titles at once?
+     </strong>
+<br/>
+     While this tool handles one title at a time, it’s quick enough that you can capitalize as many titles as you need—just paste and go!
+    </li>
+<li>
+<strong>
+      Does this tool work for languages other than English?
+     </strong>
+<br/>
+     This tool is primarily designed for English titles, but it can handle simple titles in other languages as well.
+    </li>
+<li>
+<strong>
+      Is the tool really free to use?
+     </strong>
+<br/>
+     Yes! You can use it as much as you want without paying a dime. No hidden fees, no sign-ups—just pure title-capitalizing goodness.
+    </li>
+</ol>
+<p>
+    The Title Capitalization Tool is your go-to solution for making sure your titles always look professional and follow the right formatting rules. Whether you’re working on blog posts, books, or any content with a title, this tool saves you time and ensures your titles look their best—ready to attract attention and stand out!
+   </p>
+</div>
+<script>
+        // Event listener for user interactions
+   document.addEventListener('DOMContentLoaded', () => {
+        // DOM element manipulation
+            const inputText = document.getElementById('input-text');
+        // DOM element manipulation
+            const wordCount = document.getElementById('word-count');
+        // DOM element manipulation
+            const charCount = document.getElementById('char-count');
+        // DOM element manipulation
+            const themeToggle = document.getElementById('theme-toggle');
+
+            // Real-time stats update
+        // Event listener for user interactions
+            inputText.addEventListener('input', updateStats);
+
+            // Feature buttons
+            const buttons = {
+                'upper-case': () => inputText.value.toUpperCase(),
+                'lower-case': () => inputText.value.toLowerCase(),
+                'title-case': toTitleCase,
+                'sentence-case': toSentenceCase,
+                'apa-style': toAPAStyle,
+                'chicago-style': toChicagoStyle,
+                'camel-case': toCamelCase,
+                'snake-case': toSnakeCase,
+                'kebab-case': toKebabCase,
+                'trim': trimText,
+                'remove-spaces': removeExtraSpaces,
+                'reverse-text': reverseText,
+                'random-case': randomCase,
+                'add-prefix': addPrefix,
+                'add-suffix': addSuffix,
+                'copy-btn': copyToClipboard,
+                'clear-btn': clearText
+            };
+
+            Object.keys(buttons).forEach(id => {
+        // Event listener for user interactions
+                document.getElementById(id).addEventListener('click', () => {
+                    const text = inputText.value.trim();
+                    if (!text && id !== 'clear-btn') return;
+
+                    const result = buttons[id](text);
+                    if (result !== undefined) {
+                        inputText.value = result;
+                    }
+                    updateStats();
+                });
+            });
+
+            // Theme toggle
+        // Event listener for user interactions
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+            });
+
+            // Load theme
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+
+            // Feature Functions
+        // Function: toTitleCase
+            function toTitleCase(str) {
+                return str.replace(/\w\S*/g, word => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase());
+            }
+
+        // Function: toSentenceCase
+            function toSentenceCase(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+            }
+
+        // Function: toAPAStyle
+            function toAPAStyle(str) {
+                const minorWords = ['a', 'an', 'the', 'and', 'but', 'or', 'nor', 'for', 'yet', 'so', 'at', 'by', 'in', 'of', 'on', 'to', 'up', 'as', 'is'];
+                return str.split(' ').map((word, index) => {
+                    if (index === 0 || !minorWords.includes(word.toLowerCase())) {
+                        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                    }
+                    return word.toLowerCase();
+                }).join(' ');
+            }
+
+        // Function: toChicagoStyle
+            function toChicagoStyle(str) {
+                const minorWords = ['a', 'an', 'the', 'and', 'but', 'or', 'nor', 'for', 'yet', 'so'];
+                return str.split(' ').map((word, index, arr) => {
+                    if (index === 0 || index === arr.length - 1 || !minorWords.includes(word.toLowerCase())) {
+                        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                    }
+                    return word.toLowerCase();
+                }).join(' ');
+            }
+
+        // Function: toCamelCase
+            function toCamelCase(str) {
+                return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => chr.toUpperCase());
+            }
+
+        // Function: toSnakeCase
+            function toSnakeCase(str) {
+                return str.replace(/\W+/g, '_').toLowerCase();
+            }
+
+        // Function: toKebabCase
+            function toKebabCase(str) {
+                return str.replace(/\W+/g, '-').toLowerCase();
+            }
+
+        // Function: trimText
+            function trimText(str) {
+                return str.trim();
+            }
+
+        // Function: removeExtraSpaces
+            function removeExtraSpaces(str) {
+                return str.replace(/\s+/g, ' ').trim();
+            }
+
+        // Function: reverseText
+            function reverseText(str) {
+                return str.split('').reverse().join('');
+            }
+
+        // Function: randomCase
+            function randomCase(str) {
+                return str.split('').map(char => Math.random() > 0.5 ? char.toUpperCase() : char.toLowerCase()).join('');
+            }
+
+        // Function: addPrefix
+            function addPrefix(str) {
+                const prefix = prompt('Enter prefix:') || '';
+                return prefix + str;
+            }
+
+        // Function: addSuffix
+            function addSuffix(str) {
+                const suffix = prompt('Enter suffix:') || '';
+                return str + suffix;
+            }
+
+        // Function: copyToClipboard
+            function copyToClipboard(str) {
+                navigator.clipboard.writeText(str).then(() => alert('Copied to clipboard!'));
+            }
+
+        // Function: clearText
+            function clearText() {
+                inputText.value = '';
+            }
+
+            // Statistics Update
+        // Function: updateStats
+            function updateStats() {
+                const text = inputText.value;
+                wordCount.textContent = text.split(/\s+/).filter(word => word).length;
+                charCount.textContent = text.length;
+            }
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

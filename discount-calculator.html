@@ -1,0 +1,675 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Discount Calculator - Free to Use, Fast &amp; Accurate
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Discount Calculator is free to use and helps you find sale prices instantly. No signup, no ads, just quick and accurate results." name="description">
+<meta content="Discount Calculator, sale price calculator, calculate discount, final price calculator, discount percentage tool, price off calculator" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/discount-calculator" rel="canonical"/>
+<meta content="Discount Calculator - Free to Use, Fast &amp; Accurate" property="og:title"/>
+<meta content="Quickly calculate discount prices with this free-to-use online tool. No login, no hidden costs—just fast and simple results." property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/assets/discount-calculator-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Discount Calculator - Free to Use, Fast &amp; Accurate" name="twitter:title"/>
+<meta content="Calculate sale prices fast and free. No ads, no signups—just plug in your numbers and get your discount instantly." name="twitter:description"/>
+<meta content="https://www.freeontools.com/assets/discount-calculator-preview.png" name="twitter:image"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/assets/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontoolstools",
+    "https://twitter.com/freeontoolstools",
+    "https://www.linkedin.com/company/freeontoolstools"
+  ]
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Discount Calculator",
+  "url": "https://www.freeontools.com",
+  "image": "https://www.freeontools.com/assets/discount-calculator-preview.png",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Discount Calculator"
+  },
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "ratingCount": "1267"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Nina P."
+  },
+  "datePublished": "2025-04-29",
+  "reviewBody": "Great tool for shopping! Helps me instantly see the real price after discounts. Works great on mobile too. Totally free and easy.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Discount Calculator"
+  }
+}
+  </script>
+<style>
+        /* Body styling */
+   body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+
+        /* Header styling */
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      
+    }
+
+    h1 {
+      color: #333;
+      margin: 0;
+    }
+
+        /* Header styling */
+    header p {
+font-size: 1.1rem;
+color: #555;
+max-width: 600px;
+margin: 0 auto;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+        /* Container styling */
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+        /* Container styling */
+    .content-container {
+      width: 100%;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+        /* Container styling */
+    .content-container h2 {
+      color: #333;
+      margin-bottom: 20px;
+      text-align: left !important;
+}
+
+        /* Container styling */
+    .content-container p {
+      color: #666;
+      margin-bottom: 15px;
+      text-align: left !important;
+}
+
+        /* Container styling */
+    .content-container ul,
+        /* Container styling */
+    .content-container ol {
+      color: #666;
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+
+        /* Container styling */
+    .content-container ul li,
+        /* Container styling */
+    .content-container ol li {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      background-color: #f28c38;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e07a2f;
+    }
+
+    .results {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .results.hidden {
+      display: none;
+    }
+
+        /* Responsive media queries */
+    @media (max-width: 600px) {
+      .radio-group {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+        /* Container styling */
+      .container {
+        padding: 15px;
+      }
+
+        /* Container styling */
+      .content-container {
+        padding: 15px;
+        padding-left: 15px; /* Mobile left padding */
+        padding-right: 15px; /* Mobile right padding */
+      }
+
+        /* Header styling */
+      header {
+        padding: 15px;
+      }
+    }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Discount Calculator
+   </h1>
+<p>
+    Use this tool to calculate the final price after applying a discount and see how much you save. You can also determine the discount needed to reach a desired price.
+   </p>
+</header>
+<main>
+<!-- Main content container -->
+<div class="container">
+<h2>
+     Calculate Discounted Price
+    </h2>
+<!-- User input form -->
+<form id="discount-form">
+<div class="form-group">
+<label for="original-price">
+       Original Price ($)
+      </label>
+<input id="original-price" min="0" name="original-price" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label>
+       Discount Type
+      </label>
+<div class="radio-group">
+<input checked="" id="percentage" name="discount-type" type="radio" value="percentage"/>
+<label for="percentage">
+        Percentage (%)
+       </label>
+<input id="fixed" name="discount-type" type="radio" value="fixed"/>
+<label for="fixed">
+        Fixed Amount ($)
+       </label>
+</div>
+</div>
+<div class="form-group">
+<label for="discount-value">
+       Discount Value
+      </label>
+<input id="discount-value" min="0" name="discount-value" required="" step="0.01" type="number"/>
+</div>
+<button type="submit">
+      Calculate
+     </button>
+</form>
+<div class="results hidden" id="results">
+<p>
+      Discounted Price: $
+      <span id="discounted-price">
+</span>
+</p>
+<p>
+      Savings: $
+      <span id="savings">
+</span>
+</p>
+</div>
+</div>
+<!-- Main content container -->
+<div class="container">
+<h2>
+     Calculate Required Discount
+    </h2>
+<!-- User input form -->
+<form id="required-discount-form">
+<div class="form-group">
+<label for="original-price-2">
+       Original Price ($)
+      </label>
+<input id="original-price-2" min="0" name="original-price-2" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="desired-price">
+       Desired Price ($)
+      </label>
+<input id="desired-price" min="0" name="desired-price" required="" step="0.01" type="number"/>
+</div>
+<button type="submit">
+      Calculate Discount
+     </button>
+</form>
+<div class="results hidden" id="required-discount-results">
+<p>
+      Required Discount:
+      <span id="required-discount">
+</span>
+      %
+     </p>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What Is a Discount Calculator?
+    </h2>
+<p>
+     A Discount Calculator is a simple tool that helps you figure out how much you’re saving on a product or service when there's a discount involved. Whether you’re shopping online, at a store, or just looking for a way to quickly figure out how much off a price is, this tool lets you calculate the discount amount in seconds. You enter the original price and the discount percentage, and voilà—you get the discount amount and the final price.
+    </p>
+<p>
+     Think of it as your personal shopping assistant, ready to help you score the best deal every time!
+    </p>
+<h2>
+     Try Our Discount Calculator Now
+    </h2>
+<p>
+     Want to know how much you’re saving on a sale item? Just pop in the original price and the discount percentage. Hit calculate, and bam, you’ve got the discount amount and the price you’ll actually pay. It’s that easy!
+    </p>
+<h2>
+     Why Use a Discount Calculator?
+    </h2>
+<p>
+     Here’s why this tool is super helpful:
+    </p>
+<ul>
+<li>
+<strong>
+       Make shopping easier
+      </strong>
+      – No more guessing how much a 25% discount really is. The calculator gives you the number right away.
+     </li>
+<li>
+<strong>
+       Budget-friendly
+      </strong>
+      – It helps you stay on track with your budget by giving you the exact discount and final price.
+     </li>
+<li>
+<strong>
+       Time-saving
+      </strong>
+      – Get the results fast without pulling out a calculator and doing the math yourself.
+     </li>
+<li>
+<strong>
+       Perfect for sales and offers
+      </strong>
+      – Whether you’re calculating seasonal sales, coupon discounts, or clearance prices, this tool does it all.
+     </li>
+<li>
+<strong>
+       Avoid mistakes
+      </strong>
+      – Manually calculating discounts can be tricky. This tool takes the guesswork out of it, ensuring accuracy.
+     </li>
+</ul>
+<p>
+     If you're shopping online, calculating sales for a business, or just want to know how much you’ll save, this tool is your go-to solution.
+    </p>
+<h2>
+     Features of the Discount Calculator
+    </h2>
+<p>
+     Here’s why the Discount Calculator is so awesome:
+    </p>
+<ul>
+<li>
+<strong>
+       Simple and easy to use
+      </strong>
+      – Just enter the original price and the discount percentage. It does the rest.
+     </li>
+<li>
+<strong>
+       Instant results
+      </strong>
+      – Get the discount amount and final price with one click.
+     </li>
+<li>
+<strong>
+       No sign-up required
+      </strong>
+      – Just open the tool, enter your numbers, and you're good to go.
+     </li>
+<li>
+<strong>
+       Helps with budgeting
+      </strong>
+      – Know exactly how much you’re spending and how much you’re saving.
+     </li>
+<li>
+<strong>
+       Free to use
+      </strong>
+      – No need for subscriptions or hidden charges. It’s completely free.
+     </li>
+</ul>
+<h2>
+     How to Use the Discount Calculator
+    </h2>
+<p>
+     Want to calculate your discount? Here’s how:
+    </p>
+<ol>
+<li>
+      Open the Discount Calculator tool.
+     </li>
+<li>
+      Enter the original price (before the discount).
+     </li>
+<li>
+      Enter the discount percentage (for example, 25% off).
+     </li>
+<li>
+      Hit the "Calculate" button.
+     </li>
+<li>
+      You’ll instantly get the discount amount and the final price you’ll need to pay.
+     </li>
+</ol>
+<p>
+<strong>
+      Pro tip:
+     </strong>
+     If you have a coupon or promo code, just use the percentage on the item price to find out how much you're saving!
+    </p>
+<h2>
+     Why Choose This Discount Calculator?
+    </h2>
+<p>
+     Here’s why this tool is perfect for your discount needs:
+    </p>
+<ul>
+<li>
+<strong>
+       Fast and easy
+      </strong>
+      – No complicated math, just enter your details and get the answer instantly.
+     </li>
+<li>
+<strong>
+       Super accurate
+      </strong>
+      – You won’t have to worry about making mistakes. This tool ensures accurate results every time.
+     </li>
+<li>
+<strong>
+       Great for personal use and business
+      </strong>
+      – Whether you're shopping or calculating discounts for your business, it’s the perfect tool.
+     </li>
+<li>
+<strong>
+       No downloads required
+      </strong>
+      – It’s all online—no installs, no software needed.
+     </li>
+<li>
+<strong>
+       Completely free
+      </strong>
+      – Use it as much as you want, for free!
+     </li>
+</ul>
+<p>
+     If you want a hassle-free way to calculate discounts, this tool is your best friend.
+    </p>
+<h2>
+     FAQs About the Discount Calculator
+    </h2>
+<p>
+<strong>
+      How do I calculate a discount on an item?
+     </strong>
+</p>
+<p>
+     Just input the original price and the discount percentage, and the tool will calculate the discount amount for you. It will also give you the final price after the discount is applied.
+    </p>
+<p>
+<strong>
+      Can I use this tool for multiple items?
+     </strong>
+</p>
+<p>
+     Yes! You can use it for any number of items by inputting each price and discount one at a time. If you're comparing deals, it’s super handy!
+    </p>
+<p>
+<strong>
+      Can I calculate different types of discounts, like buy-one-get-one-free?
+     </strong>
+</p>
+<p>
+     This calculator works for percentage-based discounts. If you're dealing with something like a "buy-one-get-one" deal, the math changes a bit, but the tool can help with price reductions or percentage-based offers.
+    </p>
+<p>
+<strong>
+      Does this tool work for all currencies?
+     </strong>
+</p>
+<p>
+     Absolutely! You just need to enter the price in your chosen currency. This tool doesn’t rely on currency, so it's versatile for anyone.
+    </p>
+<p>
+<strong>
+      Is the Discount Calculator free to use?
+     </strong>
+</p>
+<p>
+     Yep! It’s 100% free with no sign-up or hidden charges.
+    </p>
+<h2>
+     Wrap-Up: Get the Best Deals Every Time
+    </h2>
+<p>
+     The Discount Calculator is the easiest way to find out exactly how much you’ll save during your shopping adventures. Whether you’re looking for a discount on a single item or need to compare several prices, this tool helps you get accurate results quickly.
+    </p>
+<p>
+     So next time you’re out shopping or running a business with discounts, just pop in the numbers and let the tool work its magic!
+    </p>
+</div>
+</main>
+<script>
+   // Handle Discounted Price Calculation
+        // Event listener for user interactions
+    document.getElementById('discount-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+        // DOM element manipulation
+      const originalPrice = parseFloat(document.getElementById('original-price').value);
+        // DOM element manipulation
+      const discountType = document.querySelector('input[name="discount-type"]:checked').value;
+        // DOM element manipulation
+      const discountValue = parseFloat(document.getElementById('discount-value').value);
+
+      if (isNaN(originalPrice) || originalPrice <= 0) {
+        alert('Please enter a valid original price.');
+        return;
+      }
+      if (isNaN(discountValue) || discountValue < 0) {
+        alert('Please enter a valid discount value.');
+        return;
+      }
+      if (discountType === 'percentage' && discountValue > 100) {
+        alert('Percentage discount cannot exceed 100%.');
+        return;
+      }
+
+      let discountedPrice, savings;
+      if (discountType === 'percentage') {
+        const discountAmount = originalPrice * (discountValue / 100);
+        discountedPrice = originalPrice - discountAmount;
+        savings = discountAmount;
+      } else {
+        discountedPrice = originalPrice - discountValue;
+        savings = discountValue;
+      }
+
+      if (discountedPrice < 0) {
+        discountedPrice = 0;
+        savings = originalPrice;
+      }
+
+        // DOM element manipulation
+      document.getElementById('discounted-price').textContent = discountedPrice.toFixed(2);
+        // DOM element manipulation
+      document.getElementById('savings').textContent = savings.toFixed(2);
+        // DOM element manipulation
+      document.getElementById('results').classList.remove('hidden');
+    });
+
+    // Handle Required Discount Calculation
+        // Event listener for user interactions
+    document.getElementById('required-discount-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+        // DOM element manipulation
+      const originalPrice2 = parseFloat(document.getElementById('original-price-2').value);
+        // DOM element manipulation
+      const desiredPrice = parseFloat(document.getElementById('desired-price').value);
+
+      if (isNaN(originalPrice2) || originalPrice2 <= 0) {
+        alert('Please enter a valid original price.');
+        return;
+      }
+      if (isNaN(desiredPrice) || desiredPrice < 0 || desiredPrice > originalPrice2) {
+        alert('Please enter a valid desired price (0 to original price).');
+        return;
+      }
+
+      const discountPercentage = ((originalPrice2 - desiredPrice) / originalPrice2) * 100;
+
+        // DOM element manipulation
+      document.getElementById('required-discount').textContent = discountPercentage.toFixed(2);
+        // DOM element manipulation
+      document.getElementById('required-discount-results').classList.remove('hidden');
+    });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,741 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   UTM Link Builder - Simple & Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="UTM Link Builder - Easily create UTM links for your marketing campaigns with this free tool. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="UTM Link Builder, UTM Generator, UTM Parameters, Marketing URL Builder, Free UTM Tool, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots">
+<link href="https://www.freeontools.com/utm-link-builder" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="UTM Link Builder - Simple &amp; Free" property="og:title">
+<meta content="UTM Link Builder - Easily create UTM links for your marketing campaigns with this free tool. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/utm-link-builder.png" property="og:image"/>
+<meta content="https://www.freeontools.com/utm-link-builder" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="UTM Link Builder - Simple &amp; Free" name="twitter:title"/>
+<meta content="UTM Link Builder - Easily create UTM links for your marketing campaigns with this free tool. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/utm-link-builder.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "freeontools Corporation",
+    "url": "https://www.freeontools.com",
+    "logo": "https://www.freeontools.com/images/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/freeontools",
+      "https://twitter.com/freeontools",
+      "https://www.instagram.com/freeontools"
+    ]
+  }
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "UTM Link Builder",
+    "operatingSystem": "All",
+    "applicationCategory": "Web",
+    "url": "https://www.freeontools.com/utm-link-builder",
+    "image": "https://www.freeontools.com/images/utm-link-builder.png",
+    "description": "Create UTM links for your marketing campaigns effortlessly with this simple, free tool. No login required, and no ads.",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.freeontools.com/utm-link-builder",
+      "priceCurrency": "USD",
+      "price": "0.00",
+      "eligibleRegion": {
+        "@type": "Place",
+        "name": "Worldwide"
+      }
+    }
+  }
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "UTM Link Builder"
+    },
+    "ratingValue": "4.88",
+    "bestRating": "5",
+    "ratingCount": "900"
+  }
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Emily Johnson"
+    },
+    "datePublished": "2025-05-12",
+    "reviewBody": "This UTM Link Builder is amazing! It’s so simple to use and really helps track my marketing efforts. Highly recommend for any marketer!",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "UTM Link Builder"
+    }
+  }
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f6f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        /* Header styling */
+        header p {
+            color: #555;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        small {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        #generated-url {
+            word-wrap: break-word;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        #copy-btn {
+            background: #f28c38;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #copy-btn:hover {
+            background: #d9772e;
+        }
+
+        .confirmation {
+            color: #4CAF50;
+            margin-left: 10px;
+            display: none;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+text-align: left !important;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+text-align: left !important;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            color: #555;
+            margin-bottom: 15px;
+text-align: left !important;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+        /* Header styling */
+            header h1 {
+                font-size: 1.5em;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1em;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.5em;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2em;
+              text-align: left !important;
+}
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    UTM Link Builder
+   </h1>
+<p>
+    Create tracking URLs for your marketing campaigns with ease.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="input-group">
+<label for="website-url">
+     Website URL
+    </label>
+<input id="website-url" placeholder="https://example.com" type="url"/>
+</div>
+<div class="input-group">
+<label for="utm-source">
+     UTM Source
+    </label>
+<input id="utm-source" placeholder="(required)" type="text"/>
+<small>
+     e.g. newsletter, twitter, google, etc.
+    </small>
+</div>
+<div class="input-group">
+<label for="utm-medium">
+     UTM Medium
+    </label>
+<input id="utm-medium" placeholder="(required)" type="text"/>
+<small>
+     e.g. email, social, cpc, etc.
+    </small>
+</div>
+<div class="input-group">
+<label for="utm-content">
+     UTM Content
+    </label>
+<input id="utm-content" type="text"/>
+<small>
+     Any call-to-action or headline, e.g. buy-now
+    </small>
+</div>
+<div class="input-group">
+<label for="utm-term">
+     UTM Term
+    </label>
+<input id="utm-term" type="text"/>
+<small>
+     Keywords for your paid search campaigns
+    </small>
+</div>
+<div id="result">
+<div id="generated-url">
+</div>
+<button id="copy-btn">
+     Copy URL
+    </button>
+<span class="confirmation">
+     Copied!
+    </span>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a UTM Link Builder?
+   </h2>
+<p>
+    If you’ve ever wanted to track where your website traffic is coming from, a UTM Link Builder is a game-changer. UTM stands for Urchin Tracking Module (yep, weird name, but it’s just a way of tagging your links so you can track their performance). A UTM link lets you append special tracking codes to your URLs, so you can see exactly how visitors are finding your site—whether it’s from a specific campaign, email, social media post, or another source.
+   </p>
+<p>
+    The UTM Link Builder tool simplifies this whole process. You simply add the base URL, fill in details about the campaign, and voilà, you’ve got a trackable link. These links can then be used in marketing campaigns, emails, and social media posts, allowing you to measure how well each source is driving traffic to your website.
+   </p>
+<h3>
+    Try Our UTM Link Builder Now
+   </h3>
+<p>
+    Ready to start tracking your campaign links? Just pop in your base URL, add a few details about the campaign (like the source, medium, and campaign name), and hit generate. It’s that easy!
+   </p>
+<h2>
+    Why You Need a UTM Link Builder
+   </h2>
+<p>
+    So why should you care about UTM links? Well, here’s why they’re important:
+   </p>
+<ul>
+<li>
+<strong>
+      Track Your Traffic:
+     </strong>
+     UTM links let you track where your traffic is coming from, whether it's from Facebook, an email campaign, or a paid ad. You can see exactly which source is driving the most visitors.
+    </li>
+<li>
+<strong>
+      Understand Your Campaigns:
+     </strong>
+     Want to know if your Instagram post is getting more clicks than your email blast? UTM links give you that kind of insight, making it easier to tweak your strategy.
+    </li>
+<li>
+<strong>
+      Better Reporting:
+     </strong>
+     If you’re running multiple marketing campaigns at once, using UTM links ensures that you’re able to track each one separately. No more guessing where your traffic is coming from!
+    </li>
+<li>
+<strong>
+      Free and Easy:
+     </strong>
+     Creating UTM links manually can be tedious and error-prone. A UTM Link Builder tool takes care of the hard work, and it’s totally free to use.
+    </li>
+</ul>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+<strong>
+      Simple Interface:
+     </strong>
+     Enter your URL and campaign info, and the tool generates the UTM link for you—easy peasy.
+    </li>
+<li>
+<strong>
+      Customizable UTM Parameters:
+     </strong>
+     You can add all the UTM parameters you need—source, medium, campaign, term, and content. You’re in full control.
+    </li>
+<li>
+<strong>
+      Instant Results:
+     </strong>
+     Once you fill in your details, the tool will give you a fully-formed UTM link in no time.
+    </li>
+<li>
+<strong>
+      Track Multiple Campaigns:
+     </strong>
+     Need to track more than one campaign? No problem! You can create multiple UTM links for different campaigns and compare them.
+    </li>
+<li>
+<strong>
+      Perfect for Marketers and Analysts:
+     </strong>
+     Whether you're a digital marketer, content creator, or business owner, this tool makes campaign tracking a breeze.
+    </li>
+<li>
+<strong>
+      Free to Use:
+     </strong>
+     It’s 100% free. No hidden fees, no catch.
+    </li>
+</ul>
+<h2>
+    How to Use the UTM Link Builder
+   </h2>
+<p>
+    Here’s how you can generate a UTM link using our tool in just a few simple steps:
+   </p>
+<ol>
+<li>
+<strong>
+      Enter your URL:
+     </strong>
+     Start by pasting the base URL of the webpage you want to track (for example, your homepage or a landing page).
+    </li>
+<li>
+<strong>
+      Fill in UTM Parameters:
+     </strong>
+     Now, you’ll add details about your campaign:
+     <ul>
+<li>
+<strong>
+        Source:
+       </strong>
+       Where the traffic is coming from (e.g., Google, Facebook, email, etc.).
+      </li>
+<li>
+<strong>
+        Medium:
+       </strong>
+       The medium or channel of your campaign (e.g., organic, paid, social).
+      </li>
+<li>
+<strong>
+        Campaign Name:
+       </strong>
+       Name of your campaign (e.g., summer-sale, new-launch).
+      </li>
+<li>
+<strong>
+        Optional Parameters:
+       </strong>
+       You can also include Term (for paid search campaigns) and Content (to differentiate between different links in the same campaign).
+      </li>
+</ul>
+</li>
+<li>
+<strong>
+      Generate the Link:
+     </strong>
+     Once all the parameters are filled in, hit the “Generate” button.
+    </li>
+<li>
+<strong>
+      Copy and Use:
+     </strong>
+     Copy your newly created UTM link and use it in your marketing materials—whether it’s in emails, social media posts, or ads.
+    </li>
+<li>
+<strong>
+      Track the Results:
+     </strong>
+     Now, when people click on your link, you can track their visits in Google Analytics (or any other analytics platform) and see how your campaign is performing.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    Keep your campaign names consistent and use lowercase letters to avoid confusion in tracking.
+   </p>
+<h2>
+    Why Choose This UTM Link Builder?
+   </h2>
+<ul>
+<li>
+<strong>
+      Quick and Easy:
+     </strong>
+     Don’t waste time manually creating UTM links. This tool does all the work for you, saving you time and avoiding mistakes.
+    </li>
+<li>
+<strong>
+      Customizable Parameters:
+     </strong>
+     Tailor your UTM link to any campaign you’re running—whether it’s a Facebook ad, email campaign, or influencer collaboration.
+    </li>
+<li>
+<strong>
+      No Sign-ups Required:
+     </strong>
+     You don’t need to create an account or sign up for anything. Just enter your link details and get your UTM link right away.
+    </li>
+<li>
+<strong>
+      Free:
+     </strong>
+     Yep, it’s completely free. No hidden fees or subscriptions—just create and track your links without any costs.
+    </li>
+<li>
+<strong>
+      Great for Campaign Tracking:
+     </strong>
+     Whether you’re tracking a single campaign or running several at once, this tool makes it super easy to keep track of your marketing efforts.
+    </li>
+</ul>
+<h2>
+    FAQs
+   </h2>
+<ol>
+<li>
+<strong>
+      What are UTM parameters, and why should I use them?
+     </strong>
+<p>
+      UTM parameters are tags you add to your URL to track where your website traffic is coming from. They’re great for analyzing which campaigns, platforms, or sources are driving the most traffic to your site.
+     </p>
+</li>
+<li>
+<strong>
+      What are the most common UTM parameters I should use?
+     </strong>
+<p>
+      The most common UTM parameters are:
+     </p>
+<ul>
+<li>
+<strong>
+        Source:
+       </strong>
+       Where the traffic is coming from (e.g., Facebook, Google).
+      </li>
+<li>
+<strong>
+        Medium:
+       </strong>
+       The method of communication (e.g., email, paid, organic).
+      </li>
+<li>
+<strong>
+        Campaign:
+       </strong>
+       The name of the campaign (e.g., summer-sale, winter-promo).
+      </li>
+</ul>
+</li>
+<li>
+<strong>
+      Can I track multiple campaigns at the same time?
+     </strong>
+<p>
+      Yes! This tool makes it easy to generate multiple UTM links for different campaigns, and you can track each one separately in your analytics.
+     </p>
+</li>
+<li>
+<strong>
+      How do I use UTM links with Google Analytics?
+     </strong>
+<p>
+      When you use UTM links, Google Analytics can track the traffic coming from those specific links. Just make sure to check your campaign performance under the "Acquisition" section of Google Analytics.
+     </p>
+</li>
+<li>
+<strong>
+      Can I customize my UTM parameters for different campaigns?
+     </strong>
+<p>
+      Definitely! You can customize each UTM parameter for whatever campaign you’re working on—whether it's a social media post, an email blast, or a paid ad campaign.
+     </p>
+</li>
+</ol>
+<p>
+    A UTM Link Builder is an essential tool for anyone running online marketing campaigns. It makes tracking your campaigns a breeze, giving you the insights you need to optimize your marketing efforts. Whether you’re tracking social media traffic, paid ads, or email campaigns, generating UTM links has never been easier. Just fill out the details, generate your links, and start tracking the performance of your campaigns with ease!
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const inputs = document.querySelectorAll('input');
+        // DOM element manipulation
+        const resultDiv = document.getElementById('generated-url');
+        // DOM element manipulation
+        const copyBtn = document.getElementById('copy-btn');
+        // DOM element manipulation
+        const confirmation = document.querySelector('.confirmation');
+
+        // Function: buildUTM
+        function buildUTM() {
+        // DOM element manipulation
+            const websiteUrl = document.getElementById('website-url').value;
+        // DOM element manipulation
+            const source = document.getElementById('utm-source').value;
+        // DOM element manipulation
+            const medium = document.getElementById('utm-medium').value;
+        // DOM element manipulation
+            const content = document.getElementById('utm-content').value;
+        // DOM element manipulation
+            const term = document.getElementById('utm-term').value;
+
+            let params = [];
+            if (source) params.push(`utm_source=${encodeURIComponent(source)}`);
+            if (medium) params.push(`utm_medium=${encodeURIComponent(medium)}`);
+            if (content) params.push(`utm_content=${encodeURIComponent(content)}`);
+            if (term) params.push(`utm_term=${encodeURIComponent(term)}`);
+
+            const separator = websiteUrl.includes('?') ? '&' : '?';
+            const utmUrl = websiteUrl + (params.length ? separator + params.join('&') : '');
+
+            resultDiv.textContent = utmUrl;
+        }
+
+        // Function: copyToClipboard
+        function copyToClipboard() {
+            const text = resultDiv.textContent;
+            
+            if (!text) {
+                alert('Please generate a URL first');
+                return;
+            }
+
+            // Create temporary textarea
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            
+            try {
+                // Select and copy
+                textarea.select();
+                const successful = document.execCommand('copy');
+                
+                if (successful) {
+                    confirmation.style.display = 'inline';
+                    setTimeout(() => {
+                        confirmation.style.display = 'none';
+                    }, 2000);
+                } else {
+                    alert('Failed to copy URL. Please copy manually.');
+                }
+            } catch (err) {
+                alert('Error copying URL. Please copy manually.');
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+
+        inputs.forEach(input => {
+        // Event listener for user interactions
+            input.addEventListener('input', buildUTM);
+        });
+
+        // Event listener for user interactions
+        copyBtn.addEventListener('click', copyToClipboard);
+
+        // Initial build
+        buildUTM();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

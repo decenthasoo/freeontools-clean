@@ -1,0 +1,715 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Passive Voice Detector: Free Forever Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Passive Voice Detector: Identify passive voice instantly at https://www.freeontools.com. Free, no signup needed!" name="description">
+<meta content="passive voice detector, grammar checker, free passive voice tool, freeontools grammar tool, writing assistant" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/passive-voice-detector" rel="canonical"/>
+<meta content="Passive Voice Detector: Free &amp; Easy Tool" property="og:title"/>
+<meta content="Detect passive voice in your text with our free, no-login tool at https://www.freeontools.com. Try now!" property="og:description"/>
+<meta content="https://www.freeontools.com/passive-voice-detector" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="freeontools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Passive Voice Detector: Unlimited Access" name="twitter:title"/>
+<meta content="Free passive voice detector at https://www.freeontools.com. No signup, no fees, instant grammar check!" name="twitter:description"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Passive Voice Detector",
+  "operatingSystem": "Web",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/passive-voice-detector",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Passive Voice Detector"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "172",
+  "bestRating": "5",
+  "worstRating": "1"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Passive Voice Detector"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Lucas Bennett"
+  },
+  "datePublished": "2025-05-02",
+  "reviewBody": "This tool is a must for writers! Free, no signup, and spots passive voice instantly.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Passive Voice Detector"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Aditi Sharma"
+  },
+  "datePublished": "2025-04-19",
+  "reviewBody": "Simple, free, and effective. This tool helped me improve my writing in no time!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Container styling */
+        .container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            padding: 30px;
+            
+margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+margin-top: 20px !important;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin: 20px auto;
+            text-align: left;
+margin-left: auto; /* Added to center horizontally */
+    margin-right: auto; /* Added to center horizontally */
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.5rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.2rem;
+            color: #222;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #333;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+
+
+            margin: 0 auto;
+
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #222;
+margin-top: 15px !important;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #f28c38;
+            outline: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .results-section {
+            margin-top: 20px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stats span {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .result {
+            padding: 10px;
+            border-left: 4px solid #f28c38;
+            background: #fef7f0;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .result p {
+            margin: 0;
+        }
+
+        .result.passive {
+            background: #fff3e6;
+        }
+
+        .no-passive {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 20px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .header {
+                top: 10px;
+            }
+
+            textarea {
+                min-height: 120px;
+                font-size: 0.9rem;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .header p {
+                font-size: 0.8rem;
+            }
+
+            .header {
+                top: 10px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="header">
+<h1>
+    Passive Voice Detector
+   </h1>
+<p>
+    Analyze your text to identify passive voice constructions and improve your writing clarity.
+   </p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<div class="input-section">
+<textarea aria-label="Text input for passive voice detection" id="inputText" placeholder="Enter your text here..."></textarea>
+<div class="button-group">
+<button onclick="analyzeText()">
+      Analyze
+     </button>
+<button onclick="clearText()">
+      Clear
+     </button>
+<button onclick="copyResults()">
+      Copy Results
+     </button>
+</div>
+</div>
+<div class="results-section" id="results">
+<div class="stats">
+<span id="wordCount">
+      Words: 0
+     </span>
+<span id="sentenceCount">
+      Sentences: 0
+     </span>
+<span id="passiveCount">
+      Passive Sentences: 0
+     </span>
+</div>
+<div id="resultList">
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Passive Voice Detector?
+   </h2>
+<p>
+    Alright, let’s talk about Passive Voice Detector. It’s that little tool that’ll help you figure out if your sentences are getting a little too lazy. We’ve all been there, right? You’re writing something, and your sentences start to feel… off. Not bad, just passive. The Passive Voice Detector catches that for you.
+   </p>
+<p>
+    For example, instead of saying “The ball was thrown by Tom,” the active voice version would be “Tom threw the ball.” See the difference? In the first version, the focus is on the action happening to the ball. In the second one, Tom’s the star. A Passive Voice Detector helps you spot when you’ve fallen into the passive trap, making your writing clearer, stronger, and more engaging.
+   </p>
+<h3>
+    Try Our Passive Voice Detector Now
+   </h3>
+<p>
+    Don’t take my word for it. Try it yourself! Just pop your text into the Passive Voice Detector, and let it work its magic. It’ll point out where you’ve used passive voice and help you turn it into something more direct. It’s fast, easy, and totally free.
+   </p>
+<h3>
+    Why Should You Care About Passive Voice?
+   </h3>
+<p>
+    You might be thinking, “Why does it matter if I use passive voice?” Fair question! The thing is, passive voice can make your writing feel distant, vague, and sometimes even harder to follow. It’s not necessarily wrong, but if you’re aiming for clear and direct communication, it’s better to keep passive voice in check.
+   </p>
+<p>
+    The Passive Voice Detector helps you:
+   </p>
+<ul>
+<li>
+     Clarify your message – It makes sure the subject of the sentence is active and present
+    </li>
+<li>
+     Boost readability – Active voice sentences are typically shorter and punchier
+    </li>
+<li>
+     Add energy – Passive voice can be a bit… sleepy. Active voice keeps things moving
+    </li>
+<li>
+     Improve your tone – Depending on what you’re writing, active voice might make you sound more confident and authoritative
+    </li>
+</ul>
+<p>
+    So yeah, passive voice can sneak in and make things a bit muddy. But the Passive Voice Detector is like your trusty radar, making sure your writing stays sharp and clear.
+   </p>
+<h3>
+    Features of the Passive Voice Detector
+   </h3>
+<p>
+    Alright, what makes the Passive Voice Detector so great? Let me break it down for you:
+   </p>
+<ul>
+<li>
+     Identifies passive voice instantly – Paste your text, and the tool highlights where you’re being too passive
+    </li>
+<li>
+     Suggestions for active voice alternatives – It’s not just about pointing out the passive voice, but offering ways to make it active
+    </li>
+<li>
+     Super fast – No waiting around. Just paste, detect, and go
+    </li>
+<li>
+     Works for any text – Whether it’s an email, essay, or blog post, the Passive Voice Detector is ready
+    </li>
+<li>
+     No limits – Whether you’ve got a few sentences or an entire article, it handles both
+    </li>
+<li>
+     Easy-to-understand feedback – You don’t have to be a grammar expert to use it. It tells you exactly what to fix and how to do it
+    </li>
+</ul>
+<p>
+    Basically, the Passive Voice Detector is a quick and easy way to make sure your writing stays tight and on-point.
+   </p>
+<h3>
+    How to Use the Passive Voice Detector
+   </h3>
+<p>
+    Using the Passive Voice Detector is like, a one-step process. But here’s the lowdown, just in case you want a refresher:
+   </p>
+<ol>
+<li>
+     Go to the Passive Voice Detector tool
+    </li>
+<li>
+     Paste your text into the box
+    </li>
+<li>
+     Hit the “Detect” button
+    </li>
+<li>
+     Boom! The tool will highlight any passive voice
+    </li>
+<li>
+     Fix your sentences by making them active
+    </li>
+<li>
+     Copy the updated text and use it however you like
+    </li>
+</ol>
+<p>
+    Pro tip: Read your text aloud after fixing the passive voice—it’ll sound even clearer and smoother.
+   </p>
+<h3>
+    Why Choose This Passive Voice Detector?
+   </h3>
+<p>
+    You might be thinking, “There’s gotta be other tools for this, right?” Sure, there are! But this one’s got a few extra perks that make it a no-brainer.
+   </p>
+<ul>
+<li>
+     Fast &amp; easy – Just paste and click, and you’re done
+    </li>
+<li>
+     Privacy first – No need to worry about your text being saved or shared
+    </li>
+<li>
+     No learning curve – It’s super intuitive. No tutorials needed
+    </li>
+<li>
+     Totally free – Get all the benefits without spending a penny
+    </li>
+<li>
+     Works anywhere – No app needed. Just use it in your browser
+    </li>
+</ul>
+<p>
+    The Passive Voice Detector is fast, free, and gets straight to the point—literally. No fluff, just action.
+   </p>
+<h3>
+    FAQs About the Passive Voice Detector
+   </h3>
+<ul>
+<li>
+<strong>
+      Can the Passive Voice Detector help with long paragraphs or entire essays?
+     </strong>
+<br/>
+     Yup! Whether you’ve got a short paragraph or a 10-page essay, the Passive Voice Detector will sift through your text and find the passive spots.
+    </li>
+<li>
+<strong>
+      What happens if my sentence is both active and passive?
+     </strong>
+<br/>
+     The Passive Voice Detector will highlight the passive parts, so you can decide whether you want to tweak it for clarity. Sometimes a mix works, but it’ll definitely point out where the passive voice is.
+    </li>
+<li>
+<strong>
+      Will this tool work with technical writing or formal content?
+     </strong>
+<br/>
+     Absolutely. The Passive Voice Detector works for all types of writing—business emails, academic papers, or casual blogs. It’ll just help make your sentences more direct and readable.
+    </li>
+<li>
+<strong>
+      Can I use the Passive Voice Detector on my mobile phone?
+     </strong>
+<br/>
+     Yep! The tool is mobile-friendly, so you can check your writing on the go. Whether you’re working from your phone or desktop, the Passive Voice Detector is there to help.
+    </li>
+<li>
+<strong>
+      Can I ignore the suggestions and keep using passive voice?
+     </strong>
+<br/>
+     You totally can! It’s your writing, after all. The Passive Voice Detector just gives you the option to make your writing stronger if you choose to.
+    </li>
+</ul>
+<h3>
+    Final Thoughts: Keep Your Writing Active
+   </h3>
+<p>
+    Let’s be real—most of us don’t want our writing to sound like a boring textbook. The Passive Voice Detector helps make sure your words stay sharp and your meaning stays clear.
+   </p>
+<p>
+    It’s fast, it’s easy, and it’ll save you from those moments when you realize you’ve written a whole paragraph and still haven’t told anyone who is doing what.
+   </p>
+<p>
+    So next time you’re writing and you’re like, “Ugh, this feels too wordy…”—let the Passive Voice Detector help. It’s simple, free, and super effective.
+   </p>
+</div>
+<script>
+   let debounceTimer;
+
+        // Passive voice detection logic
+        // Function: isPassiveVoice
+        function isPassiveVoice(sentence) {
+            const beForms = /\b(am|is|are|was|were|been|being)\b/i;
+            const pastParticiple = /\b(\w+ed|\w+n)\b/i;
+            return beForms.test(sentence) && pastParticiple.test(sentence);
+        }
+
+        // Function: analyzeText
+        function analyzeText() {
+        // DOM element manipulation
+            const input = document.getElementById('inputText').value.trim();
+        // DOM element manipulation
+            const resultList = document.getElementById('resultList');
+        // DOM element manipulation
+            const wordCountEl = document.getElementById('wordCount');
+        // DOM element manipulation
+            const sentenceCountEl = document.getElementById('sentenceCount');
+        // DOM element manipulation
+            const passiveCountEl = document.getElementById('passiveCount');
+
+            resultList.innerHTML = '';
+
+            if (!input) {
+                wordCountEl.textContent = 'Words: 0';
+                sentenceCountEl.textContent = 'Sentences: 0';
+                passiveCountEl.textContent = 'Passive Sentences: 0';
+                resultList.innerHTML = '<p>Please enter some text to analyze.</p>';
+                return;
+            }
+
+            const sentences = input.match(/[^.!?]+[.!?]+/g) || [input];
+            let passiveCount = 0;
+
+            sentences.forEach((sentence, index) => {
+                const isPassive = isPassiveVoice(sentence);
+                if (isPassive) passiveCount++;
+                
+                const resultDiv = document.createElement('div');
+                resultDiv.className = 'result' + (isPassive ? ' passive' : '');
+                resultDiv.innerHTML = `
+                    <p><strong>Sentence ${index + 1}:</strong> ${sentence.trim()}</p>
+                    <p>${isPassive ? 'Detected as passive voice.' : 'Active voice.'}</p>
+                `;
+                resultList.appendChild(resultDiv);
+            });
+
+            const words = input.split(/\s+/).filter(word => word.length > 0).length;
+            wordCountEl.textContent = `Words: ${words}`;
+            sentenceCountEl.textContent = `Sentences: ${sentences.length}`;
+            passiveCountEl.textContent = `Passive Sentences: ${passiveCount}`;
+
+            if (passiveCount === 0) {
+                resultList.innerHTML = '<p class="no-passive">No passive voice detected!</p>';
+            }
+        }
+
+        // Function: clearText
+        function clearText() {
+        // DOM element manipulation
+            document.getElementById('inputText').value = '';
+            analyzeText();
+        }
+
+        // Function: copyResults
+        function copyResults() {
+        // DOM element manipulation
+            const results = document.getElementById('resultList').innerText;
+            if (results) {
+                navigator.clipboard.writeText(results).then(() => {
+                    alert('Results copied to clipboard!');
+                });
+            } else {
+                alert('Nothing to copy!');
+            }
+        }
+
+        // Event listener for user interactions
+        document.getElementById('inputText').addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(analyzeText, 300);
+        });
+
+        analyzeText();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

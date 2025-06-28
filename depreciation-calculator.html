@@ -1,0 +1,674 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Depreciation Calculator - Instant Access
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Depreciation Calculator - Instant Access tool to calculate depreciation values with no signup needed, free to use, and no hidden fees." name="description">
+<meta content="Depreciation Calculator, Asset Depreciation, Free Depreciation Tool, Depreciation Estimator, Property Depreciation, Simple Depreciation Calculator, Asset Value Tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/depreciation-calculator" rel="canonical"/>
+<meta content="Depreciation Calculator - Instant Access" property="og:title"/>
+<meta content="Use the Depreciation Calculator for free, no signup, no hidden fees, and instant access to calculate depreciation values easily." property="og:description"/>
+<meta content="https://www.freeontools.com/depreciation-calculator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/depreciation-calculator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Depreciation Calculator - Instant Access" name="twitter:title"/>
+<meta content="Instantly calculate depreciation values with this free tool. No login required, no fees, and no ads." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/depreciation-calculator.jpg" name="twitter:image"/>
+<meta content="@freeontools" name="twitter:creator"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-5555",
+    "contactType": "Customer Service"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Depreciation Calculator",
+  "operatingSystem": "All",
+  "applicationCategory": "Finance",
+  "description": "A free, easy-to-use depreciation calculator tool that provides instant access to calculate asset depreciation values.",
+  "url": "https://www.freeontools.com/depreciation-calculator",
+  "image": "https://www.freeontools.com/images/depreciation-calculator.jpg"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.8",
+  "bestRating": "5",
+  "worstRating": "1",
+  "ratingCount": "200"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Mia Harris"
+  },
+  "datePublished": "2025-05-03",
+  "reviewBody": "This Depreciation Calculator is an awesome tool! It helped me quickly calculate the depreciation on my business assets with ease. Highly recommend!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Benjamin Taylor"
+  },
+  "datePublished": "2025-04-15",
+  "reviewBody": "I love how simple this Depreciation Calculator is to use. It makes the process so much quicker and easier for my accounting needs!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.9",
+    "bestRating": "5"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+ margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 700px;
+            margin-top: 20px;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 100%;
+            max-width: 700px;
+            margin-top: 20px;
+            text-align: left;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #222;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #f28c38;
+        }
+
+        button {
+           
+            padding: 12px;
+            background-color: #f28c38;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            
+        }
+
+        button:hover {
+            background-color: #e07b30;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+            display: none;
+        }
+
+        #result h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        #result p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 20px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Depreciation Calculator
+   </h1>
+<p>
+    Calculate asset depreciation easily using straight-line or declining balance methods.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="form-group">
+<label for="cost">
+     Initial Cost ($):
+    </label>
+<input id="cost" placeholder="Enter initial cost" required="" type="number"/>
+</div>
+<div class="form-group">
+<label for="salvage">
+     Salvage Value ($):
+    </label>
+<input id="salvage" placeholder="Enter salvage value" required="" type="number"/>
+</div>
+<div class="form-group">
+<label for="life">
+     Useful Life (Years):
+    </label>
+<input id="life" placeholder="Enter useful life" required="" type="number"/>
+</div>
+<div class="form-group">
+<label for="method">
+     Depreciation Method:
+    </label>
+<select id="method" required="">
+<option value="straight-line">
+      Straight-Line
+     </option>
+<option value="declining-balance">
+      Declining Balance (Double)
+     </option>
+</select>
+</div>
+<button onclick="calculateDepreciation()">
+    Calculate
+   </button>
+<button onclick="clearForm()">
+    Clear
+   </button>
+<div id="result">
+<h3>
+     Depreciation Results
+    </h3>
+<p id="result-text">
+</p>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Depreciation Calculator?
+   </h2>
+<p>
+    A Depreciation Calculator helps you figure out how much the value of an asset (like a car, equipment, or building) decreases over time. In simpler terms, it calculates how much your stuff is "losing value" year after year. Depreciation is especially important for businesses, as it helps with tax deductions, or for anyone trying to track the value of an asset over time.
+   </p>
+<p>
+    Whether you're managing business assets or just curious about how much that new car will be worth in a few years, this tool is your go-to for getting the numbers.
+   </p>
+<h3>
+    Try Our Depreciation Calculator Now
+   </h3>
+<p>
+    If you’re wondering how much your asset is worth now versus a few years ago, use the Depreciation Calculator! Just enter the initial value, the lifespan of the asset, and the depreciation method (like straight-line or declining balance), and you’ll instantly see how much it’s depreciated over time. Simple!
+   </p>
+<h3>
+    Why Use a Depreciation Calculator?
+   </h3>
+<p>
+    Here’s why you’ll want to use the Depreciation Calculator:
+   </p>
+<ul>
+<li>
+<strong>
+      Track asset value
+     </strong>
+     – Whether it’s a vehicle or machinery, this tool helps you keep track of how much value your assets have lost over time.
+    </li>
+<li>
+<strong>
+      Tax savings
+     </strong>
+     – Depreciation can lower your taxable income for businesses. This tool helps you calculate your depreciation deductions.
+    </li>
+<li>
+<strong>
+      Investment planning
+     </strong>
+     – Understand how quickly an asset depreciates and whether it’s worth investing in the long term.
+    </li>
+<li>
+<strong>
+      Help with financial reports
+     </strong>
+     – If you’re handling finances for a business, this calculator helps keep your reports accurate by calculating depreciation over time.
+    </li>
+</ul>
+<h3>
+    Features of the Depreciation Calculator
+   </h3>
+<p>
+    Here’s what makes the Depreciation Calculator super useful:
+   </p>
+<ul>
+<li>
+<strong>
+      Multiple depreciation methods
+     </strong>
+     – You can choose between different methods like straight-line or declining balance.
+    </li>
+<li>
+<strong>
+      Easy inputs
+     </strong>
+     – All you need is the initial value of the asset, its useful life, and the depreciation method, and you’re good to go.
+    </li>
+<li>
+<strong>
+      Fast calculations
+     </strong>
+     – Get instant results without waiting.
+    </li>
+<li>
+<strong>
+      Free to use
+     </strong>
+     – No sign-ups, no hidden fees, just an easy-to-use tool.
+    </li>
+</ul>
+<h3>
+    How to Use the Depreciation Calculator
+   </h3>
+<p>
+    Here’s how you can use the Depreciation Calculator:
+   </p>
+<ol>
+<li>
+     Open the Depreciation Calculator tool.
+    </li>
+<li>
+     Enter the initial value of the asset (how much it was worth when you bought it).
+    </li>
+<li>
+     Select the useful life of the asset (how long you expect it to last before it’s worthless or replaced).
+    </li>
+<li>
+     Pick a depreciation method – usually, you'll choose between straight-line (equal depreciation every year) or declining balance (higher depreciation in the early years).
+    </li>
+<li>
+     Click Calculate, and you’ll get the depreciation amount for each year, along with the current value of the asset.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    If you’re using straight-line depreciation, just divide the initial value by the asset’s lifespan for an easy manual calculation.
+   </p>
+<h3>
+    Why Choose This Depreciation Calculator?
+   </h3>
+<p>
+    Here’s why this Depreciation Calculator is perfect for you:
+   </p>
+<ul>
+<li>
+<strong>
+      Quick and easy to use
+     </strong>
+     – Just input your values and get your results right away.
+    </li>
+<li>
+<strong>
+      Flexible methods
+     </strong>
+     – Choose the depreciation method that works best for your asset or business.
+    </li>
+<li>
+<strong>
+      Perfect for businesses
+     </strong>
+     – If you’re handling assets for a company, this tool makes it easy to keep track of depreciation for tax purposes.
+    </li>
+<li>
+<strong>
+      Free and online
+     </strong>
+     – You don’t need to download anything or sign up for an account. Just go and get your results.
+    </li>
+</ul>
+<h3>
+    FAQs About the Depreciation Calculator
+   </h3>
+<p>
+<strong>
+     What is depreciation?
+    </strong>
+</p>
+<p>
+    Depreciation is the reduction in value of an asset over time due to factors like wear and tear, aging, or obsolescence. It helps reflect the asset’s actual value compared to what it cost initially.
+   </p>
+<p>
+<strong>
+     What’s the difference between straight-line and declining balance depreciation?
+    </strong>
+</p>
+<p>
+    Straight-line: Depreciation is evenly spread out over the asset’s useful life.
+   </p>
+<p>
+    Declining balance: Depreciation is higher in the earlier years and decreases over time.
+   </p>
+<p>
+<strong>
+     Can I use the Depreciation Calculator for any type of asset?
+    </strong>
+</p>
+<p>
+    Yes! Whether it’s a car, machinery, or a building, this tool works for any asset that depreciates over time.
+   </p>
+<p>
+<strong>
+     Does the Depreciation Calculator account for repairs or maintenance?
+    </strong>
+</p>
+<p>
+    No, this calculator only tracks depreciation. If you want to factor in maintenance or repair costs, you'll need to do that separately.
+   </p>
+<p>
+<strong>
+     Is the Depreciation Calculator free to use?
+    </strong>
+</p>
+<p>
+    Yep! It’s completely free. You just input your numbers and get the results instantly. No signup, no fees.
+   </p>
+<h3>
+    Wrap-Up: Understand Your Assets’ Depreciation
+   </h3>
+<p>
+    The Depreciation Calculator is a powerful, simple tool to help you understand how the value of your assets changes over time. Whether you’re managing business expenses, planning for the future, or just curious about how much a car will be worth in five years, this calculator is a quick and easy way to get those numbers.
+   </p>
+<p>
+<strong>
+     Ready to start tracking depreciation? Use the Depreciation Calculator now and get your results in no time!
+    </strong>
+</p>
+</div>
+<script>
+        // Function: calculateDepreciation
+   function calculateDepreciation() {
+        // DOM element manipulation
+            const cost = parseFloat(document.getElementById('cost').value);
+        // DOM element manipulation
+            const salvage = parseFloat(document.getElementById('salvage').value);
+        // DOM element manipulation
+            const life = parseInt(document.getElementById('life').value);
+        // DOM element manipulation
+            const method = document.getElementById('method').value;
+        // DOM element manipulation
+            const resultDiv = document.getElementById('result');
+        // DOM element manipulation
+            const resultText = document.getElementById('result-text');
+
+            if (isNaN(cost) || isNaN(salvage) || isNaN(life) || cost < 0 || salvage < 0 || life <= 0) {
+                resultText.innerHTML = 'Please enter valid positive numbers for all fields.';
+                resultDiv.style.display = 'block';
+                return;
+            }
+
+            if (salvage >= cost) {
+                resultText.innerHTML = 'Salvage value must be less than initial cost.';
+                resultDiv.style.display = 'block';
+                return;
+            }
+
+            let result = '';
+
+            if (method === 'straight-line') {
+                const annualDepreciation = (cost - salvage) / life;
+                result = `Annual Depreciation: $${annualDepreciation.toFixed(2)}<br>`;
+                result += 'Depreciation Schedule:<br>';
+                let bookValue = cost;
+                for (let year = 1; year <= life; year++) {
+                    bookValue -= annualDepreciation;
+                    result += `Year ${year}: $${bookValue.toFixed(2)}<br>`;
+                }
+            } else if (method === 'declining-balance') {
+                const rate = 2 / life; // Double declining balance
+                let bookValue = cost;
+                result = 'Depreciation Schedule:<br>';
+                for (let year = 1; year <= life; year++) {
+                    const depreciation = bookValue * rate;
+                    bookValue -= depreciation;
+                    if (bookValue < salvage) bookValue = salvage;
+                    result += `Year ${year}: $${bookValue.toFixed(2)}<br>`;
+                    if (bookValue <= salvage) break;
+                }
+            }
+
+            resultText.innerHTML = result;
+            resultDiv.style.display = 'block';
+        }
+
+        // Function: clearForm
+        function clearForm() {
+        // DOM element manipulation
+            document.getElementById('cost').value = '';
+        // DOM element manipulation
+            document.getElementById('salvage').value = '';
+        // DOM element manipulation
+            document.getElementById('life').value = '';
+        // DOM element manipulation
+            document.getElementById('method').value = 'straight-line';
+        // DOM element manipulation
+            document.getElementById('result').style.display = 'none';
+        // DOM element manipulation
+            document.getElementById('result-text').innerHTML = '';
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,675 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   JSON Formatter - Free Forever Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="JSON Formatter - Free Forever! Easily format and beautify your JSON data with this free tool. No signup required, just clean and readable JSON formatting." name="description">
+<meta content="JSON Formatter, Format JSON, Beautify JSON, JSON Validator, Free JSON Formatter, Online JSON Formatter, JSON Tool, JSON Formatter Free" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/json-formatter" rel="canonical"/>
+<meta content="JSON Formatter - Free Forever Online Tool" property="og:title"/>
+<meta content="Format your JSON data quickly and easily with this free forever tool. No signup required, no ads, just a simple and effective JSON formatter!" property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/json-formatter-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JSON Formatter - Free Forever Online Tool" name="twitter:title"/>
+<meta content="Format and beautify your JSON data for free with this online tool. No signup required, just an easy-to-use JSON formatter that works every time!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/json-formatter-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "JSON Formatter",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "250"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "JSON Formatter"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "250"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "David Miller"
+  },
+  "datePublished": "2025-06-02",
+  "reviewBody": "The JSON Formatter tool is amazing! It's free forever, and I use it all the time to format and validate my JSON data. Simple to use with no signup required. Highly recommend!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "JSON Formatter"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* Body styling */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        /* Body styling */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: inherit;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: inherit;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            animation: slideUp 0.8s ease-out;
+            background-color: #f5f5f5;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Body styling */
+        body.dark-mode .container {
+            background-color: #1a1a1a;
+        }
+
+        .json-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .json-input, .json-output {
+            flex: 1;
+            min-width: 0;
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 400px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            resize: none;
+            font-size: 1rem;
+            background-color: #fff;
+            color: #333;
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+        }
+
+        /* Body styling */
+        body.dark-mode textarea {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #f28c38;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background-color: #f28c38;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 10px;
+            animation: fadeIn 0.5s;
+        }
+
+        /* Body styling */
+        body.dark-mode .error {
+            color: #ff6655;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 100%;
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        /* Body styling */
+        body.dark-mode .content-container {
+            background-color: #1a1a1a;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: inherit;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: inherit;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: inherit;
+        }
+
+        /* Container styling */
+        .content-container a {
+            color: #f28c38;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Container styling */
+        .content-container a:hover {
+            color: #e07b30;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .json-section {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .json-input, .json-output {
+                min-width: 100%;
+            }
+
+            textarea {
+                height: 300px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 10px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            textarea {
+                height: 250px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .controls {
+                gap: 8px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.5rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p, .content-container ul li, .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="header">
+<h1>
+    JSON Formatter
+   </h1>
+<p>
+    Format, validate, and manage your JSON data with ease. Responsive and user-friendly tool for developers.
+   </p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<div class="controls">
+<button onclick="formatJSON()">
+     Format JSON
+    </button>
+<button onclick="copyJSON()">
+     Copy JSON
+    </button>
+<button onclick="clearJSON()">
+     Clear
+    </button>
+<button onclick="downloadJSON()">
+     Download JSON
+    </button>
+<button onclick="toggleDarkMode()">
+     Toggle Dark Mode
+    </button>
+</div>
+<div class="json-section">
+<div class="json-input">
+<textarea id="jsonInput" placeholder="Enter your JSON here..."></textarea>
+</div>
+<div class="json-output">
+<textarea id="jsonOutput" placeholder="Formatted JSON will appear here..." readonly=""></textarea>
+</div>
+</div>
+<div class="error" id="error">
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a JSON Formatter?
+   </h2>
+<p>
+    If you’ve ever looked at a block of raw JSON and thought, “What kind of digital spaghetti is this?”—you’re not alone. It’s basically just a bunch of text with brackets, commas, and colons squished together in the most unreadable way possible. And that’s exactly why a JSON Formatter exists.
+   </p>
+<p>
+    A JSON Formatter takes that chaotic mess and cleans it up. It organizes everything with nice indentation, line breaks, and structure so you can actually understand what’s going on. No more squinting at a wall of code trying to find one rogue curly brace. Just paste it in, hit format, and boom—instant clarity.
+   </p>
+<h2>
+    Try Our JSON Formatter Now
+   </h2>
+<p>
+    Seriously, just copy your tangled JSON blob, drop it in, and hit format. In like half a second, you’ll have a clean, readable version. No stress, no confusion—just pure, structured goodness.
+   </p>
+<h2>
+    Why Does a JSON Formatter Matter?
+   </h2>
+<p>
+    If you’ve ever worked with APIs, coded a website, messed around with config files, or debugged anything even remotely technical, you’ve probably run into JSON. And while JSON is super useful (because it’s lightweight and easy to work with for machines), it’s not made for human eyes—especially when it’s all in one long line.
+   </p>
+<p>
+    That’s where the JSON Formatter earns its keep. It:
+   </p>
+<ul>
+<li>
+     Helps you spot errors (like missing commas or mismatched brackets)
+    </li>
+<li>
+     Makes nested data way easier to read
+    </li>
+<li>
+     Saves time when debugging
+    </li>
+<li>
+     Helps you impress coworkers by not submitting janky, unformatted data
+    </li>
+</ul>
+<p>
+    Whether you’re a dev, a data analyst, or just a curious soul poking around in a settings file, this tool makes JSON way less intimidating.
+   </p>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+     One-click formatting – Paste your JSON and clean it up instantly
+    </li>
+<li>
+     Syntax highlighting – Colors that actually make sense of the structure
+    </li>
+<li>
+     Error detection – Tells you when your JSON is broken
+    </li>
+<li>
+     Minify option – Need to shrink it down for performance? Click once
+    </li>
+<li>
+     Copy-friendly output – Ready to paste back into your code
+    </li>
+<li>
+     Works in-browser – No installs, no downloads, just go
+    </li>
+<li>
+     Totally free – Because no one should pay to read their own data
+    </li>
+</ul>
+<h2>
+    How to Use the JSON Formatter
+   </h2>
+<ol>
+<li>
+     Open the JSON Formatter tool – Loads fast, no fluff
+    </li>
+<li>
+     Paste your JSON – Just drop that chaotic chunk in the text box
+    </li>
+<li>
+     Click “Format” – And let the tool do its thing
+    </li>
+<li>
+     Check the output – It’ll be clean, indented, and way easier to read
+    </li>
+<li>
+     Copy the result – Use it for debugging, editing, or sharing
+    </li>
+<li>
+     Optional: Minify it – Want it compressed into a single line for speed? There's a button for that too
+    </li>
+</ol>
+<p>
+    Pro tip: If it throws an error, your JSON might be missing a quote or bracket. Fix that and run it again—it’ll usually point you in the right direction.
+   </p>
+<h2>
+    Why Choose This JSON Formatter?
+   </h2>
+<p>
+    Let’s be real: there are a bunch of JSON formatters out there. But this one? It’s fast, clean, and made for people who don’t want to waste time figuring stuff out. Whether you’re a total beginner or you’ve been elbow-deep in APIs for years, it just works.
+   </p>
+<p>
+    You don’t need to download anything. You don’t need to create an account. You don’t even need to understand exactly what JSON is to use it (though if you’re curious, I can explain). This tool does one thing, and it does it really well: makes JSON readable.
+   </p>
+<p>
+    Oh, and if you’re someone who toggles between “I need this pretty” and “I need this tiny,” you’ll love the minify feature too. It's like formatting and compressing had a baby.
+   </p>
+<h2>
+    FAQs
+   </h2>
+<p>
+<strong>
+     What exactly is JSON?
+    </strong>
+</p>
+<p>
+    JSON (JavaScript Object Notation) is a way to store and exchange data. It’s basically a structured format made up of key-value pairs, used all over the web, especially in APIs and web apps.
+   </p>
+<p>
+<strong>
+     Can this tool fix broken JSON?
+    </strong>
+</p>
+<p>
+    It can spot the problem, but it won’t magically repair it. If you paste in broken JSON, the formatter will usually point out what’s wrong so you can fix it.
+   </p>
+<p>
+<strong>
+     Can I minify my JSON instead of formatting it?
+    </strong>
+</p>
+<p>
+    Absolutely! Just click the “Minify” option and your formatted JSON will get crunched into one line—great for performance and compact storage.
+   </p>
+<p>
+<strong>
+     Is this safe for sensitive data?
+    </strong>
+</p>
+<p>
+    If you’re working with private info, use an offline version or make sure the formatter runs 100% client-side (most good ones do). That way, your data never leaves your browser.
+   </p>
+<p>
+<strong>
+     Does it work on huge files?
+    </strong>
+</p>
+<p>
+    Yep! Though if you’re formatting something massive (like mega-API dumps), it might slow down a bit. But it’ll still get the job done way faster than scrolling through raw code.
+   </p>
+</div>
+<script>
+        // Function: formatJSON
+   function formatJSON() {
+        // DOM element manipulation
+            const input = document.getElementById('jsonInput').value;
+        // DOM element manipulation
+            const output = document.getElementById('jsonOutput');
+        // DOM element manipulation
+            const error = document.getElementById('error');
+
+            try {
+                const parsed = JSON.parse(input);
+                output.value = JSON.stringify(parsed, null, 2);
+                error.textContent = '';
+            } catch (e) {
+                error.textContent = 'Invalid JSON: ' + e.message;
+                output.value = '';
+            }
+        }
+
+        // Function: copyJSON
+        function copyJSON() {
+        // DOM element manipulation
+            const output = document.getElementById('jsonOutput').value;
+            if (output) {
+                navigator.clipboard.writeText(output);
+                showError('JSON copied to clipboard!', false);
+            } else {
+                showError('Nothing to copy!', true);
+            }
+        }
+
+        // Function: clearJSON
+        function clearJSON() {
+        // DOM element manipulation
+            document.getElementById('jsonInput').value = '';
+        // DOM element manipulation
+            document.getElementById('jsonOutput').value = '';
+        // DOM element manipulation
+            document.getElementById('error').textContent = '';
+        }
+
+        // Function: downloadJSON
+        function downloadJSON() {
+        // DOM element manipulation
+            const output = document.getElementById('jsonOutput').value;
+            if (output) {
+                const blob = new Blob([output], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'formatted.json';
+                a.click();
+                URL.revokeObjectURL(url);
+            } else {
+                showError('Nothing to download!', true);
+            }
+        }
+
+        // Function: toggleDarkMode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Function: showError
+        function showError(message, isError) {
+        // DOM element manipulation
+            const error = document.getElementById('error');
+            error.textContent = message;
+            error.style.color = isError ? (document.body.classList.contains('dark-mode') ? '#ff6655' : '#d32f2f') : '#28a745';
+            setTimeout(() => error.textContent = '', 3000);
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

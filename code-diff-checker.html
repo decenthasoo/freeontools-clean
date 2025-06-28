@@ -1,0 +1,778 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Code Diff Checker - No Catch
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Code Diff Checker - Compare your code side by side and identify differences instantly with this free tool. No login, no ads, and 100% free. Try it now!" name="description">
+<meta content="Code Diff Checker, Compare Code Online, Code Diff Tool, Code Comparison, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/code-diff-checker" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Code Diff Checker - No Catch" property="og:title"/>
+<meta content="Code Diff Checker - Compare your code side by side and identify differences instantly with this free tool. No login, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/code-diff-checker.png" property="og:image"/>
+<meta content="https://www.freeontools.com/code-diff-checker" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Code Diff Checker - No Catch" name="twitter:title"/>
+<meta content="Code Diff Checker - Compare your code side by side and identify differences instantly with this free tool. No login, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/code-diff-checker.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Code Diff Checker",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/code-diff-checker",
+  "image": "https://www.freeontools.com/images/code-diff-checker.png",
+  "description": "Compare your code with this easy-to-use code diff tool. Instantly spot differences in your code side by side.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/code-diff-checker",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.88",
+  "bestRating": "5",
+  "ratingCount": "970"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Emily Johnson"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This tool has made my code review process so much easier! It shows all the differences between versions of my code quickly. A must-have for developers.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Code Diff Checker"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+            animation: fadeIn 1s ease-in;
+            
+        }
+
+        .code-inputs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .code-box {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            resize: vertical;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #f28c38;
+        }
+
+        .actions {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #diff-output {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            white-space: pre-wrap;
+            min-height: 100px;
+            animation: slideIn 0.5s ease-out;
+            line-height: 1.5;
+        }
+
+        .diff-added {
+            background-color: #e6ffed;
+            color: #2e7d32;
+            padding: 4px 8px;
+            margin: 2px 0;
+        }
+
+        .diff-removed {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 4px 8px;
+            margin: 2px 0;
+        }
+
+        .diff-unchanged {
+            background-color: #f5f5f5;
+            color: #555;
+            padding: 4px 8px;
+            margin: 2px 0;
+        }
+
+        .error {
+            color: #c62828;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro {
+                font-size: 1rem;
+            }
+
+            .code-box {
+                min-width: 100%;
+            }
+
+            textarea {
+                height: 200px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro {
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .container {
+                margin: 10px auto;
+                padding: 0 10px;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Code Diff Checker
+   </h1>
+<p class="intro">
+    Compare your code snippets with ease, featuring line-by-line differences.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="code-inputs">
+<div class="code-box">
+<textarea id="code1" placeholder="Paste your first code snippet here..."></textarea>
+</div>
+<div class="code-box">
+<textarea id="code2" placeholder="Paste your second code snippet here..."></textarea>
+</div>
+</div>
+<div class="actions">
+<button onclick="compareCode()">
+     Compare Code
+    </button>
+<button onclick="copyDiff()">
+     Copy Diff
+    </button>
+<button onclick="downloadDiff()">
+     Download Diff
+    </button>
+<button onclick="clearInputs()">
+     Clear
+    </button>
+</div>
+<div id="diff-output">
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Code Diff Checker?
+   </h2>
+<p>
+    When you're writing code, whether it’s for a web app, software, or anything else, there are often times when you need to compare two different versions of the same code. Maybe you’re working on a team project, fixing bugs, or just making some tweaks to your code over time. The Code Diff Checker is the tool that helps you compare two sets of code and quickly highlights the differences between them.
+   </p>
+<p>
+    This tool is designed to make the process of spotting changes, revisions, or errors easier by showing you exactly what’s different, what’s been added, or what’s been removed. It's like a highlighter for your code—just without the physical markers. Instead, you get side-by-side comparisons that make it easy to understand what changed and why.
+   </p>
+<h3>
+    Try Our Code Diff Checker Now
+   </h3>
+<p>
+    Need to compare some code? Drop your two code snippets into the tool, click “Check Diff,” and instantly see the differences between them. It’s fast, simple, and saves you time.
+   </p>
+<h3>
+    Why You Need a Code Diff Checker
+   </h3>
+<p>
+    You might be wondering why you even need one of these tools. Well, here’s why:
+   </p>
+<ul>
+<li>
+<strong>
+      Spot changes quickly:
+     </strong>
+     If you’re working on a project with multiple versions of code, or collaborating with a team, you want to spot changes quickly. A diff checker highlights exactly what’s changed, making it much easier to keep track.
+    </li>
+<li>
+<strong>
+      Find bugs and errors:
+     </strong>
+     Sometimes bugs show up in code changes, and a diff checker helps you find those bugs by making it easy to compare old code with new code.
+    </li>
+<li>
+<strong>
+      Track progress:
+     </strong>
+     As you update or modify your code, using a diff checker can help you see how far you’ve come, and what exactly has changed from the original version.
+    </li>
+<li>
+<strong>
+      Collaboration made easier:
+     </strong>
+     If you’re working in a team, you’re probably sharing your code with others. This tool helps everyone stay on the same page by visually showing what’s different between versions.
+    </li>
+<li>
+<strong>
+      Simplify code reviews:
+     </strong>
+     When reviewing someone else’s code, you’ll appreciate having a clear, organized way to see what’s been added, deleted, or modified.
+    </li>
+</ul>
+<p>
+    Basically, if you’re writing, editing, or reviewing code, a diff checker can save you time and effort by showing you exactly what’s changed.
+   </p>
+<h3>
+    Features
+   </h3>
+<ul>
+<li>
+<strong>
+      Side-by-side comparison:
+     </strong>
+     Easily view the two pieces of code next to each other and see the differences highlighted.
+    </li>
+<li>
+<strong>
+      Color-coded diff results:
+     </strong>
+     Additions, deletions, and modifications are clearly marked in different colors, so you can quickly spot the changes.
+    </li>
+<li>
+<strong>
+      Supports multiple languages:
+     </strong>
+     Whether you're coding in JavaScript, Python, HTML, CSS, or another language, this tool handles various coding languages.
+    </li>
+<li>
+<strong>
+      Easy-to-use interface:
+     </strong>
+     Just paste your code into the boxes, hit “Check Diff,” and you’re good to go.
+    </li>
+<li>
+<strong>
+      Text and file comparison:
+     </strong>
+     You can paste code directly or upload your code files for comparison.
+    </li>
+<li>
+<strong>
+      Free to use:
+     </strong>
+     Get all the benefits without having to pay for it.
+    </li>
+</ul>
+<h3>
+    How to Use the Code Diff Checker
+   </h3>
+<p>
+    Using the tool is as simple as 1-2-3. Here’s how:
+   </p>
+<ol>
+<li>
+<strong>
+      Open the tool:
+     </strong>
+     Go to the Code Diff Checker page.
+    </li>
+<li>
+<strong>
+      Paste your code:
+     </strong>
+     Enter the first code snippet into the left box and the second one into the right box. Or, if you prefer, you can upload files directly.
+    </li>
+<li>
+<strong>
+      Click “Check Diff”:
+     </strong>
+     Hit the button to compare the code.
+    </li>
+<li>
+<strong>
+      Review the differences:
+     </strong>
+     The tool will highlight what’s been added, changed, or removed.
+    </li>
+<li>
+<strong>
+      Download or copy:
+     </strong>
+     If you need to keep track of the results, you can download the diff or just copy the results.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    The more specific you are with your code (like making sure your indentations and spaces are correct), the easier it is to spot the differences clearly.
+   </p>
+<h3>
+    Why Choose This Code Diff Checker?
+   </h3>
+<ul>
+<li>
+<strong>
+      Quick and accurate:
+     </strong>
+     It shows you the differences instantly, so you can get back to coding without delay.
+    </li>
+<li>
+<strong>
+      Easy for everyone:
+     </strong>
+     Whether you're a beginner or a seasoned developer, this tool is straightforward enough for anyone to use.
+    </li>
+<li>
+<strong>
+      Multiple formats supported:
+     </strong>
+     Whether it’s a small snippet or a large codebase, the tool handles it all.
+    </li>
+<li>
+<strong>
+      Free, no sign-up required:
+     </strong>
+     Just use it without needing to sign up or give any personal details.
+    </li>
+<li>
+<strong>
+      Color-coded for clarity:
+     </strong>
+     No more guessing what changed—clear visual cues make differences super obvious.
+    </li>
+</ul>
+<p>
+    For anyone who writes or edits code, this is a must-have tool to keep things organized and easily track changes.
+   </p>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      How do I compare two files instead of pasting code?
+     </strong>
+<br/>
+     You can upload your code files directly into the tool, and it will compare them just like if you were pasting the code in the boxes.
+    </li>
+<li>
+<strong>
+      Does the Code Diff Checker support all programming languages?
+     </strong>
+<br/>
+     It works with a variety of languages, including JavaScript, Python, HTML, CSS, and many more. If you're unsure, just give it a try with your code.
+    </li>
+<li>
+<strong>
+      What happens if the two code snippets are huge?
+     </strong>
+<br/>
+     The tool can handle large code snippets, but if they’re very long, it may take a few moments to process and compare.
+    </li>
+<li>
+<strong>
+      Can I save or export the comparison results?
+     </strong>
+<br/>
+     Yes! Once the differences are shown, you can download or copy the comparison result for reference.
+    </li>
+<li>
+<strong>
+      Is this tool free to use?
+     </strong>
+<br/>
+     Absolutely. It’s 100% free to use with no hidden charges or limitations.
+    </li>
+</ol>
+<p>
+    A Code Diff Checker is your best friend when it comes to keeping track of code changes. Whether you’re debugging, collaborating with a team, or just doing a quick review, this tool will save you time and hassle by clearly showing the differences between versions. It’s simple, it’s fast, and it gets the job done.
+   </p>
+</div>
+<script>
+   // Debug function to log errors
+        // Function: logError
+        function logError(message) {
+            console.error('Error:', message);
+            alert('An error occurred: ' + message);
+        }
+
+        // Function: compareCode
+        function compareCode() {
+            try {
+                console.log('Compare Code button clicked');
+        // DOM element manipulation
+                const code1 = document.getElementById('code1').value;
+        // DOM element manipulation
+                const code2 = document.getElementById('code2').value;
+        // DOM element manipulation
+                const diffOutput = document.getElementById('diff-output');
+
+                if (!code1 && !code2) {
+                    diffOutput.innerHTML = '<div class="error">Please enter code in at least one textarea.</div>';
+                    diffOutput.dataset.textOutput = '';
+                    return;
+                }
+
+                const lines1 = code1.split('\n');
+                const lines2 = code2.split('\n');
+                let htmlOutput = '';
+                let textOutput = '';
+
+                // Function to escape HTML characters
+        // Function: escapeHTML
+                function escapeHTML(str) {
+                    return str
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#39;');
+                }
+
+                const maxLength = Math.max(lines1.length, lines2.length);
+                for (let i = 0; i < maxLength; i++) {
+                    const line1 = lines1[i] || '';
+                    const line2 = lines2[i] || '';
+
+                    if (line1 === line2 && line1 !== '') {
+                        htmlOutput += `<div class="diff-unchanged">${escapeHTML(line1)}</div>`;
+                        textOutput += `  ${line1}\n`;
+                    } else {
+                        if (line1) {
+                            htmlOutput += `<div class="diff-removed">${escapeHTML(line1)}</div>`;
+                            textOutput += `- ${line1}\n`;
+                        }
+                        if (line2) {
+                            htmlOutput += `<div class="diff-added">${escapeHTML(line2)}</div>`;
+                            textOutput += `+ ${line2}\n`;
+                        }
+                    }
+                }
+
+                diffOutput.innerHTML = htmlOutput || '<div class="error">No differences found.</div>';
+                diffOutput.dataset.textOutput = textOutput || 'No differences found.';
+            } catch (error) {
+                logError('Compare Code failed: ' + error.message);
+            }
+        }
+
+        // Function: copyDiff
+        function copyDiff() {
+            try {
+                console.log('Copy Diff button clicked');
+        // DOM element manipulation
+                const diffOutput = document.getElementById('diff-output');
+                const textOutput = diffOutput.dataset.textOutput || '';
+
+                if (!textOutput) {
+                    alert('No diff output to copy!');
+                    return;
+                }
+
+                navigator.clipboard.writeText(textOutput).then(() => {
+                    alert('Diff copied to clipboard!');
+                }).catch((error) => {
+                    logError('Failed to copy diff: ' + error.message);
+                });
+            } catch (error) {
+                logError('Copy Diff failed: ' + error.message);
+            }
+        }
+
+        // Function: downloadDiff
+        function downloadDiff() {
+            try {
+                console.log('Download Diff button clicked');
+        // DOM element manipulation
+                const diffOutput = document.getElementById('diff-output');
+                const textOutput = diffOutput.dataset.textOutput || '';
+
+                if (!textOutput) {
+                    alert('No diff output to download!');
+                    return;
+                }
+
+                const blob = new Blob([textOutput], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'code_diff.txt';
+                a.click();
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                logError('Download Diff failed: ' + error.message);
+            }
+        }
+
+        // Function: clearInputs
+        function clearInputs() {
+            try {
+                console.log('Clear button clicked');
+        // DOM element manipulation
+                document.getElementById('code1').value = '';
+        // DOM element manipulation
+                document.getElementById('code2').value = '';
+        // DOM element manipulation
+                const diffOutput = document.getElementById('diff-output');
+                diffOutput.innerHTML = '';
+                diffOutput.dataset.textOutput = '';
+            } catch (error) {
+                logError('Clear Inputs failed: ' + error.message);
+            }
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

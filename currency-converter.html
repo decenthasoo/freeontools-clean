@@ -1,0 +1,783 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Currency Converter - Simple &amp; Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Currency Converter - Convert currencies instantly with our easy-to-use, free online tool. No hidden fees, 100% free without login, and no ads. Try it now!" name="description">
+<meta content="Currency Converter, Convert Currencies, Free Currency Tool, Currency Conversion, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/currency-converter" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Currency Converter - Simple &amp; Free" property="og:title"/>
+<meta content="Currency Converter - Convert currencies instantly with our easy-to-use, free online tool. No hidden fees, 100% free without login, and no ads. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/currency-converter.png" property="og:image"/>
+<meta content="https://www.freeontools.com/currency-converter" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Currency Converter - Simple &amp; Free" name="twitter:title"/>
+<meta content="Currency Converter - Convert currencies instantly with our easy-to-use, free online tool. No hidden fees, 100% free without login, and no ads. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/currency-converter.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Currency Converter",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/currency-converter",
+  "image": "https://www.freeontools.com/images/currency-converter.png",
+  "description": "Easily convert currencies at real-time rates with our free and simple currency converter tool. No hidden fees, no login required, no ads.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/currency-converter",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.90",
+  "bestRating": "5",
+  "ratingCount": "650"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Sophia Lee"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "The Currency Converter is fast and accurate! I’ve used it for international transactions and it works perfectly every time. Highly recommend it!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Currency Converter"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f6f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #222;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .header-section p {
+            color: #555;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .converter-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #1a73e8;
+        }
+
+        .swap-btn {
+            display: block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background: #f28c38;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .swap-btn:hover {
+            background: #d97a2e;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .error {
+            color: #dc3545;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .live-rates {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .live-rates h2 {
+            text-align: center;
+            color: #f28c38;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .rates-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rates-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-left: 30px;
+            padding-right: 30px;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            color: #222;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+text-align: left !important;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+text-align: left !important;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            padding-left: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            .converter-container, .live-rates {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-section p {
+                font-size: 1rem;
+            }
+
+            .live-rates h2 {
+                font-size: 1.2rem;
+            }
+
+            .rates-list li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            .rates-list li span:first-child {
+                flex: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-right: 0.5rem;
+            }
+
+            .rates-list li span:last-child {
+                flex-shrink: 0;
+                text-align: right;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 1.5rem;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p {
+                font-size: 0.9rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container ul li, .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="header-section">
+<h1>
+    Currency Converter
+   </h1>
+<p>
+    Convert between top 100 world currencies with real-time exchange rates and live top 10 updates.
+   </p>
+</div>
+<div class="converter-container">
+<div class="form-group">
+<label for="amount">
+     Amount
+    </label>
+<input id="amount" placeholder="Enter amount" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="fromCurrency">
+     From
+    </label>
+<select id="fromCurrency">
+</select>
+</div>
+<button class="swap-btn" onclick="swapCurrencies()">
+    Swap ↔
+   </button>
+<div class="form-group">
+<label for="toCurrency">
+     To
+    </label>
+<select id="toCurrency">
+</select>
+</div>
+<div class="result" id="result">
+</div>
+<div class="error" id="error">
+</div>
+</div>
+<div class="live-rates">
+<h2>
+    Top 10 Currencies (Live Rates vs USD)
+   </h2>
+<ul class="rates-list" id="liveRates">
+</ul>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Currency Converter?
+   </h2>
+<p>
+    Alright, let’s say you’re traveling, or maybe you’re doing some online shopping from a site overseas. You see prices in a different currency, and now you’re wondering, “How much is this really gonna cost me in my money?” That’s where a Currency Converter comes in. It takes the currency you have (like dollars, euros, yen, whatever) and converts it into another currency. You just input the amount, pick the currencies, and voila! You get the equivalent amount in the other currency. It’s your go-to tool for quick, easy currency conversions.
+   </p>
+<h2>
+    Try Our Currency Converter Now
+   </h2>
+<p>
+    No more guessing exchange rates. Just plug in the amount you need to convert, pick your currencies, and get the answer in seconds. It’s super fast and accurate.
+   </p>
+<h2>
+    Importance of a Currency Converter
+   </h2>
+<p>
+    Why would you even need this? Well, if you’re buying stuff from overseas, traveling abroad, or investing in foreign markets, you’ll want to know how much your money is worth in other currencies. Exchange rates can fluctuate a lot, and without the right converter, you might end up overspending or getting confused. A Currency Converter helps you avoid that by giving you real-time, accurate conversions, so you can plan your spending or investments smartly.
+   </p>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+     Real-time exchange rates – It pulls in up-to-date conversion rates, so you know you’re getting accurate info.
+    </li>
+<li>
+     Super easy to use – Just type in the amount, pick your currencies, and you’re done.
+    </li>
+<li>
+     Supports tons of currencies – You can convert between most global currencies.
+    </li>
+<li>
+     Free and fast – No cost, no hassle, just quick and accurate results.
+    </li>
+<li>
+     Ideal for travelers and online shoppers – Helps you calculate costs in real-time when you’re on the go.
+    </li>
+</ul>
+<h2>
+    How to Use
+   </h2>
+<ol>
+<li>
+     Go to the tool page.
+    </li>
+<li>
+     Enter the amount you want to convert (like 100 USD).
+    </li>
+<li>
+     Choose the currencies (like from USD to EUR).
+    </li>
+<li>
+     Hit “convert,” and boom—you’ll see the converted amount right away.
+    </li>
+<li>
+     Need to do another conversion? Just repeat the steps.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro Tip:
+    </strong>
+    Currency rates change all the time, so it’s always a good idea to check the rates just before you make a purchase or exchange money.
+   </p>
+<h2>
+    Why Choose This Currency Converter?
+   </h2>
+<p>
+    This tool is perfect for anyone who deals with different currencies. Whether you’re traveling abroad, shopping internationally, or investing in foreign markets, it gives you fast, reliable conversions without any hassle. Plus, it’s free, easy to use, and super convenient. Say goodbye to the confusion and hello to clear conversions.
+   </p>
+<h2>
+    FAQs
+   </h2>
+<ul>
+<li>
+<strong>
+      Do I need an internet connection to use this?
+     </strong>
+<br/>
+     Yep, you need to be online since it pulls in real-time exchange rates.
+    </li>
+<li>
+<strong>
+      Can I convert between more than two currencies at once?
+     </strong>
+<br/>
+     This tool works one conversion at a time, but it’s quick enough that you can do multiple conversions back-to-back.
+    </li>
+<li>
+<strong>
+      Can I convert cryptocurrency with this tool?
+     </strong>
+<br/>
+     Nope, this tool is for traditional currencies only, like USD, EUR, GBP, etc.
+    </li>
+<li>
+<strong>
+      Are the exchange rates accurate?
+     </strong>
+<br/>
+     Yes, the tool pulls live rates from trusted sources, so the conversions should be spot-on.
+    </li>
+</ul>
+</div>
+<script>
+   const apiKey = 'bc7e08ad27f8cc56bb8f30a0';
+    const baseUrl = 'https://v6.exchangerate-api.com/v6/';
+        // DOM element manipulation
+    const fromCurrency = document.getElementById('fromCurrency');
+        // DOM element manipulation
+    const toCurrency = document.getElementById('toCurrency');
+        // DOM element manipulation
+    const amount = document.getElementById('amount');
+        // DOM element manipulation
+    const result = document.getElementById('result');
+        // DOM element manipulation
+    const error = document.getElementById('error');
+        // DOM element manipulation
+    const liveRates = document.getElementById('liveRates');
+
+    // Top 100 currencies
+    const currencies = {
+        "AED": "United Arab Emirates Dirham",
+        "AFN": "Afghan Afghani",
+        "ALL": "Albanian Lek",
+        "AMD": "Armenian Dram",
+        "ANG": "Netherlands Antillean Guilder",
+        "AOA": "Angolan Kwanza",
+        "ARS": "Argentine Peso",
+        "AUD": "Australian Dollar",
+        "AWG": "Aruban Florin",
+        "AZN": "Azerbaijani Manat",
+        "BAM": "Bosnia-Herzegovina Convertible Mark",
+        "BBD": "Barbadian Dollar",
+        "BDT": "Bangladeshi Taka",
+        "BGN": "Bulgarian Lev",
+        "BHD": "Bahraini Dinar",
+        "BIF": "Burundian Franc",
+        "BMD": "Bermudian Dollar",
+        "BND": "Brunei Dollar",
+        "BOB": "Bolivian Boliviano",
+        "BRL": "Brazilian Real",
+        "BSD": "Bahamian Dollar",
+        "BTN": "Bhutanese Ngultrum",
+        "BWP": "Botswanan Pula",
+        "BYN": "Belarusian Ruble",
+        "BZD": "Belize Dollar",
+        "CAD": "Canadian Dollar",
+        "CDF": "Congolese Franc",
+        "CHF": "Swiss Franc",
+        "CLP": "Chilean Peso",
+        "CNY": "Chinese Yuan",
+        "COP": "Colombian Peso",
+        "CRC": "Costa Rican Colón",
+        "CUP": "Cuban Peso",
+        "CVE": "Cape Verdean Escudo",
+        "CZK": "Czech Koruna",
+        "DJF": "Djiboutian Franc",
+        "DKK": "Danish Krone",
+        "DOP": "Dominican Peso",
+        "DZD": "Algerian Dinar",
+        "EGP": "Egyptian Pound",
+        "ERN": "Eritrean Nakfa",
+        "ETB": "Ethiopian Birr",
+        "EUR": "Euro",
+        "FJD": "Fijian Dollar",
+        "FKP": "Falkland Islands Pound",
+        "FOK": "Faroese Króna",
+        "GBP": "British Pound",
+        "GEL": "Georgian Lari",
+        "GGP": "Guernsey Pound",
+        "GHS": "Ghanaian Cedi",
+        "GIP": "Gibraltar Pound",
+        "GMD": "Gambian Dalasi",
+        "GNF": "Guinean Franc",
+        "GTQ": "Guatemalan Quetzal",
+        "GYD": "Guyanese Dollar",
+        "HKD": "Hong Kong Dollar",
+        "HNL": "Honduran Lempira",
+        "HRK": "Croatian Kuna",
+        "HTG": "Haitian Gourde",
+        "HUF": "Hungarian Forint",
+        "IDR": "Indonesian Rupiah",
+        "ILS": "Israeli New Shekel",
+        "IMP": "Manx Pound",
+        "INR": "Indian Rupee",
+        "IQD": "Iraqi Dinar",
+        "IRR": "Iranian Rial",
+        "ISK": "Icelandic Króna",
+        "JEP": "Jersey Pound",
+        "JMD": "Jamaican Dollar",
+        "JOD": "Jordanian Dinar",
+        "JPY": "Japanese Yen",
+        "KES": "Kenyan Shilling",
+        "KGS": "Kyrgystani Som",
+        "KHR": "Cambodian Riel",
+        "KID": "Kiribati Dollar",
+        "KMF": "Comorian Franc",
+        "KRW": "South Korean Won",
+        "KWD": "Kuwaiti Dinar",
+        "KYD": "Cayman Islands Dollar",
+        "KZT": "Kazakhstani Tenge",
+        "LAK": "Laotian Kip",
+        "LBP": "Lebanese Pound",
+        "LKR": "Sri Lankan Rupee",
+        "LRD": "Liberian Dollar",
+        "LSL": "Lesotho Loti",
+        "LYD": "Libyan Dinar",
+        "MAD": "Moroccan Dirham",
+        "MDL": "Moldovan Leu",
+        "MGA": "Malagasy Ariary",
+        "MKD": "Macedonian Denar",
+        "MMK": "Myanmar Kyat",
+        "MNT": "Mongolian Tugrik",
+        "MOP": "Macanese Pataca",
+        "MRU": "Mauritanian Ouguiya",
+        "MUR": "Mauritian Rupee",
+        "MVR": "Maldivian Rufiyaa",
+        "MWK": "Malawian Kwacha",
+        "MXN": "Mexican Peso",
+        "MYR": "Malaysian Ringgit",
+        "MZN": "Mozambican Metical",
+    };
+
+    // Top 10 currencies for live update
+    const top10Currencies = ['EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'INR', 'BRL', 'MXN'];
+
+    // Populate currency dropdowns
+        // Function: populateCurrencies
+    function populateCurrencies() {
+        console.log('Populating currencies...');
+        fromCurrency.innerHTML = ''; // Clear existing options
+        toCurrency.innerHTML = ''; // Clear existing options
+        for (let code in currencies) {
+            const option1 = document.createElement('option');
+            const option2 = document.createElement('option');
+            option1.value = option2.value = code;
+            option1.text = option2.text = `${code} - ${currencies[code]}`;
+            fromCurrency.appendChild(option1);
+            toCurrency.appendChild(option2);
+        }
+        // Set default currency for "From" field
+        fromCurrency.value = 'USD';
+        toCurrency.value = 'EUR';
+        // Verify selection
+        if (fromCurrency.value === 'USD') {
+            console.log('From currency set to USD');
+        } else {
+            console.warn('Failed to set USD as default for From currency');
+        }
+        console.log('Currencies populated.');
+    }
+
+    // Convert currency
+    async function convertCurrency() {
+        const amountVal = parseFloat(amount.value);
+        const from = fromCurrency.value;
+        const to = toCurrency.value;
+
+        if (!amountVal || amountVal <= 0) {
+            error.textContent = 'Please enter a valid amount';
+            result.textContent = '';
+            return;
+        }
+
+        if (!from || !to) {
+            error.textContent = 'Please select both currencies';
+            result.textContent = '';
+            return;
+        }
+
+        error.textContent = '';
+        result.textContent = 'Converting...';
+
+        try {
+        // API or data fetching
+            const response = await fetch(`${baseUrl}${apiKey}/latest/${from}`);
+            const data = await response.json();
+            console.log('Convert Currency API Response:', data);
+
+            if (data.result !== 'success') {
+                throw new Error(`API request failed: ${data['error-type'] || 'Unknown error'}`);
+            }
+
+            const rate = data.conversion_rates[to];
+            const convertedAmount = (amountVal * rate).toFixed(2);
+            result.textContent = `${amountVal} ${from} = ${convertedAmount} ${to}`;
+        } catch (err) {
+            error.textContent = `Error fetching exchange rates: ${err.message}`;
+            result.textContent = '';
+            console.error('Convert Currency Error:', err);
+        }
+    }
+
+    // Update top 10 currencies live rates
+    async function updateLiveRates() {
+        console.log('Starting updateLiveRates...');
+        liveRates.innerHTML = '<li>Loading rates...</li>';
+        try {
+        // API or data fetching
+            const response = await fetch(`${baseUrl}${apiKey}/latest/USD`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+            console.log('Live Rates API Response:', data);
+
+            if (data.result !== 'success') {
+                throw new Error(`API request failed: ${data['error-type'] || 'Unknown error'}`);
+            }
+
+            if (!data.conversion_rates) {
+                throw new Error('No conversion rates found in API response');
+            }
+
+            liveRates.innerHTML = '';
+            console.log('Top 10 Currencies:', top10Currencies);
+            top10Currencies.forEach(currency => {
+                if (!data.conversion_rates[currency]) {
+                    console.warn(`No rate found for currency: ${currency}`);
+                    return;
+                }
+                const rate = data.conversion_rates[currency].toFixed(4);
+                const currencyName = currencies[currency] || currency;
+                const li = document.createElement('li');
+                li.innerHTML = `<span>${currency} - ${currencyName}</span><span>1 USD = ${rate} ${currency}</span>`;
+                liveRates.appendChild(li);
+                console.log(`Added list item for ${currency}: ${rate}`);
+            });
+
+            if (liveRates.children.length === 0) {
+                liveRates.innerHTML = '<li>No rates available</li>';
+                console.warn('No list items were added to liveRates');
+            }
+        } catch (err) {
+            liveRates.innerHTML = `<Approved Proposal - 2025-05-12 12:02:12> Error fetching live rates: ${err.message}</li>`;
+            console.error('Update Live Rates Error:', err);
+        }
+    }
+
+    // Swap currencies
+        // Function: swapCurrencies
+    function swapCurrencies() {
+        const temp = fromCurrency.value;
+        fromCurrency.value = toCurrency.value;
+        toCurrency.value = temp;
+        if (amount.value) convertCurrency();
+    }
+
+    // Initialize when DOM is fully loaded
+        // Event listener for user interactions
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM fully loaded, initializing...');
+        populateCurrencies();
+        updateLiveRates();
+        // Auto-update live rates every 30 seconds
+        setInterval(updateLiveRates, 30000);
+    });
+
+    // Event listeners
+        // Event listener for user interactions
+    amount.addEventListener('input', convertCurrency);
+        // Event listener for user interactions
+    fromCurrency.addEventListener('change', convertCurrency);
+        // Event listener for user interactions
+    toCurrency.addEventListener('change', convertCurrency);
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

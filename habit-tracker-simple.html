@@ -1,0 +1,767 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Habit Tracker (Simple) - Free & Easy Online Tool
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Habit Tracker (Simple) - Free &amp; Easy! Track and build your habits effortlessly with this easy-to-use habit tracker. No signup, no ads, just simple habit tracking." name="description">
+<meta content="Habit Tracker, Simple Habit Tracker, Free Habit Tracker, Habit Building Tool, Track Habits Online, Easy Habit Tracker, Habit Tracking Tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/habit-tracker-simple" rel="canonical"/>
+<meta content="Habit Tracker (Simple) - Free &amp; Easy Online Tool" property="og:title"/>
+<meta content="Track your habits with ease using this simple and free habit tracker. No signup or ads required. Start building your habits today!" property="og:description"/>
+<meta content="https://www.freeontools.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/habit-tracker-preview.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Habit Tracker (Simple) - Free &amp; Easy Online Tool" name="twitter:title"/>
+<meta content="Easily track your habits with this free and simple habit tracker. No signup or ads required, just simple tracking for a better you." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/habit-tracker-preview.png" name="twitter:image"/>
+<meta content="https://www.freeontools.com" name="twitter:url"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Tools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Habit Tracker (Simple)",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "150"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Habit Tracker (Simple)"
+  },
+  "ratingValue": "4.7",
+  "ratingCount": "150"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "James Mitchell"
+  },
+  "datePublished": "2025-05-17",
+  "reviewBody": "This habit tracker is exactly what I needed to stay on track with my daily goals. It’s simple to use, and I love that it’s free with no signup required.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Habit Tracker (Simple)"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* Body styling */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            background: #f9f9f9;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+margin-top: 20px;
+
+        }
+
+        p.intro {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        /* Container styling */
+        .container, .content-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            animation: slideUp 0.5s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            margin-top: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.6rem;
+            color: #333;
+            margin: 20px 0 10px;
+            font-weight: 600;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1rem;
+            color: #333;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        /* Container styling */
+        .content-container ul li:last-child, .content-container ol li:last-child {
+            border-bottom: none;
+        }
+
+        /* Container styling */
+        .content-container ul li::before {
+            content: "•";
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            line-height: 1.6;
+        }
+
+        /* Container styling */
+        .content-container ol li {
+            counter-increment: list;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        /* Container styling */
+        .content-container ol li::before {
+            content: counter(list) ".";
+            color: #333;
+            font-weight: 500;
+            position: absolute;
+            left: 0;
+            line-height: 1.6;
+        }
+
+        /* Container styling */
+        .content-container ol {
+            counter-reset: list;
+        }
+
+        /* Container styling */
+        .content-container .faq-item {
+            margin-bottom: 15px;
+        }
+
+        /* Container styling */
+        .content-container .faq-item strong {
+            color: #333;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #f28c38;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #f28c38;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(242, 140, 56, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .progress-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-circle {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .progress-circle svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .progress-circle circle {
+            fill: none;
+            stroke-width: 10;
+            r: 40;
+            cx: 50;
+            cy: 50;
+        }
+
+        .progress-circle .bg {
+            stroke: #ddd;
+        }
+
+        .progress-circle .progress {
+            stroke: #f28c38;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s ease-in-out;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Container styling */
+        .container ul {
+            list-style: none;
+        }
+
+        /* Container styling */
+        .container ul li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Container styling */
+        .container ul li:last-child {
+            border-bottom: none;
+        }
+
+        .habit-text {
+            flex: 1;
+            font-size: 1rem;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .habit-text.completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        /* Container styling */
+        .container li button {
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+
+        /* Container styling */
+        .container li button:last-child {
+            margin-right: 0;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p.intro {
+                font-size: 1rem;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.4rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p, .content-container ul li, .content-container ol li {
+                font-size: 0.95rem;
+            }
+
+            .input-section {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .progress-circle {
+                width: 90px;
+                height: 90px;
+                transform: scale(0.9);
+            }
+
+            .progress-text {
+                font-size: 1.1rem;
+            }
+
+        /* Container styling */
+            .container li {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+        /* Container styling */
+            .container li button {
+                margin-right: 8px;
+                padding: 6px 10px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p.intro {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 12px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p, .content-container ul li, .content-container ol li {
+                font-size: 0.9rem;
+            }
+
+            .progress-circle {
+                width: 80px;
+                height: 80px;
+                transform: scale(0.8);
+            }
+
+            .progress-text {
+                font-size: 1rem;
+            }
+
+        /* Container styling */
+            .container li {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            .habit-text {
+                margin-bottom: 8px;
+            }
+
+        /* Container styling */
+            .container li button {
+                width: auto;
+                margin-right: 6px;
+                margin-bottom: 6px;
+                padding: 6px 8px;
+                font-size: 0.85rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Habit Tracker (Simple)
+   </h1>
+<p class="intro">
+    Track your daily habits and achieve your goals with ease.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="progress-section">
+<div class="progress-circle">
+<svg viewbox="0 0 100 100">
+<circle class="bg" cx="50" cy="50" r="40">
+</circle>
+<circle class="progress" cx="50" cy="50" r="40">
+</circle>
+</svg>
+<div class="progress-text">
+      0%
+     </div>
+</div>
+</div>
+<div class="input-section">
+<input aria-label="New habit input" id="habitInput" placeholder="Enter a new habit" type="text"/>
+<button onclick="addHabit()">
+     Add Habit
+    </button>
+</div>
+<ul id="habitList">
+</ul>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Habit Tracker?
+   </h2>
+<p>
+    A Habit Tracker is a tool designed to help you monitor your daily habits, whether you're aiming to build new ones, like drinking more water or exercising regularly, or break old ones, like reducing late-night screen time. It acts as a personal accountability partner, tracking your progress without judgment, so you can stay focused on your goals.
+   </p>
+<h2>
+    Try Our Habit Tracker Now
+   </h2>
+<p>
+    Ready to start? Pick a habit, track it daily, and watch your progress grow. It’s satisfying to see your efforts add up!
+   </p>
+<h2>
+    Why Does a Habit Tracker Matter?
+   </h2>
+<p>
+    You might wonder why you need a tool to track what you already know you should do. The truth is, a Habit Tracker provides a visual reminder of your progress, helping you stay motivated. Whether you're forming new habits or breaking bad ones, seeing your achievements makes the journey clearer and more rewarding.
+   </p>
+<h2>
+    Features
+   </h2>
+<ul>
+<li>
+     Super easy to use—just pick a habit and start tracking.
+    </li>
+<li>
+     Daily check-ins—mark your progress every day (or skip if you’re feeling rebellious).
+    </li>
+<li>
+     Motivating visuals—watch your streak grow as you stay consistent.
+    </li>
+<li>
+     Simple and free—no fancy tools, just the essentials.
+    </li>
+<li>
+     Customizable habits—track anything from water intake to reading time.
+    </li>
+</ul>
+<h2>
+    How to Use a Habit Tracker
+   </h2>
+<p>
+    Getting started is straightforward. Follow these steps to become a habit-tracking pro:
+   </p>
+<ol>
+<li>
+     Visit the Habit Tracker page.
+    </li>
+<li>
+     Choose a habit to track, like "exercise daily" or "avoid junk food."
+    </li>
+<li>
+     Mark each day you complete the habit.
+    </li>
+<li>
+     Review your progress and celebrate your wins.
+    </li>
+<li>
+     Keep going and add more habits as you feel ready.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro tip:
+    </strong>
+    Start small with one habit at a time to avoid feeling overwhelmed.
+   </p>
+<h2>
+    Why Choose This Habit Tracker?
+   </h2>
+<p>
+    Our Habit Tracker is a simple, no-fuss way to stay on top of your goals. It’s free, versatile, and works for any habit—whether it’s building positive routines or cutting out negative ones. No complicated setups, just straightforward tracking to keep you moving forward.
+   </p>
+<h2>
+    FAQs
+   </h2>
+<div class="faq-item">
+<strong>
+     Can I track multiple habits at once?
+    </strong>
+<p>
+     Yes! Add as many habits as you like, one at a time, and track them all together.
+    </p>
+</div>
+<div class="faq-item">
+<strong>
+     Do I need to track my habits every day?
+    </strong>
+<p>
+     Not at all. Track as often as suits you, but consistency helps you see better results.
+    </p>
+</div>
+<div class="faq-item">
+<strong>
+     Can I see my progress over time?
+    </strong>
+<p>
+     Absolutely. Our tracker provides visuals to show how well you’re doing over time.
+    </p>
+</div>
+<div class="faq-item">
+<strong>
+     Can I use this for long-term goals?
+    </strong>
+<p>
+     Definitely. It’s perfect for 30-day challenges or year-long commitments to keep you focused.
+    </p>
+</div>
+<div class="faq-item">
+<strong>
+     Does it sync across devices?
+    </strong>
+<p>
+     It depends on the tool, but many trackers, including ours, support syncing across phones, tablets, and computers for on-the-go tracking.
+    </p>
+</div>
+<p>
+    That’s all you need to know! A Habit Tracker is a simple, effective way to stay motivated and ensure you’re sticking to the habits that matter to you. Ready to start tracking your success?
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const habitInput = document.getElementById('habitInput');
+        // DOM element manipulation
+        const habitList = document.getElementById('habitList');
+        // DOM element manipulation
+        const progressText = document.querySelector('.progress-text');
+        // DOM element manipulation
+        const progressCircle = document.querySelector('.progress-circle .progress');
+        let habits = JSON.parse(localStorage.getItem('habits')) || [];
+
+        // Function: updateProgress
+        function updateProgress() {
+            const total = habits.length;
+            const completed = habits.filter(h => h.completed).length;
+            const percentage = total ? Math.round((completed / total) * 100) : 0;
+            progressText.textContent = `${percentage}%`;
+
+            const circumference = 2 * Math.PI * 40; // 251.327 for r=40
+            progressCircle.setAttribute('stroke-dasharray', `${circumference} ${circumference}`);
+            progressCircle.setAttribute('stroke-dashoffset', circumference - (circumference * percentage) / 100);
+        }
+
+        // Function: renderHabits
+        function renderHabits() {
+            habitList.innerHTML = '';
+            habits.forEach((habit, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span class="habit-text ${habit.completed ? 'completed' : ''}">${habit.text}</span>
+                    <div>
+                        <button onclick="toggleHabit(${index})">${habit.completed ? 'Undo' : 'Complete'}</button>
+                        <button onclick="editHabit(${index})">Edit</button>
+                        <button onclick="deleteHabit(${index})">Delete</button>
+                    </div>
+                `;
+                habitList.appendChild(li);
+            });
+            updateProgress();
+            localStorage.setItem('habits', JSON.stringify(habits));
+        }
+
+        // Function: addHabit
+        function addHabit() {
+            const text = habitInput.value.trim();
+            if (text) {
+                habits.push({ text, completed: false });
+                habitInput.value = '';
+                renderHabits();
+            }
+        }
+
+        // Function: toggleHabit
+        function toggleHabit(index) {
+            habits[index].completed = !habits[index].completed;
+            renderHabits();
+        }
+
+        // Function: editHabit
+        function editHabit(index) {
+            const newText = prompt('Edit habit:', habits[index].text);
+            if (newText?.trim()) {
+                habits[index].text = newText.trim();
+                renderHabits();
+            }
+        }
+
+        // Function: deleteHabit
+        function deleteHabit(index) {
+            habits.splice(index, 1);
+            renderHabits();
+        }
+
+        // Event listener for user interactions
+        habitInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addHabit();
+        });
+
+        // Initialize on load
+        updateProgress();
+        renderHabits();
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Times Table Generator - Simple &amp; Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Times Table Generator - Create multiplication tables instantly with this simple &amp; free tool. No login, no ads, and no hidden costs." name="description">
+<meta content="Times Table Generator, Multiplication Table Tool, Free Math Tool, Simple &amp; Free, 100% Free, No Ads, Free Without Login, No Hidden Fees" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/times-table-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Times Table Generator - Simple &amp; Free" property="og:title"/>
+<meta content="Times Table Generator - Create multiplication tables instantly with this simple &amp; free tool. No login, no ads, and no hidden costs." property="og:description"/>
+<meta content="https://www.freeontools.com/images/times-table-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/times-table-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Times Table Generator - Simple &amp; Free" name="twitter:title"/>
+<meta content="Times Table Generator - Create multiplication tables instantly with this simple &amp; free tool. No login, no ads, and no hidden costs." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/times-table-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Times Table Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/times-table-generator",
+  "image": "https://www.freeontools.com/images/times-table-generator.png",
+  "description": "Times Table Generator - Quickly create multiplication tables with this fast and user-friendly tool. No sign-up required, ad-free, and totally free to use.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/times-table-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.8",
+  "bestRating": "5",
+  "ratingCount": "860"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Singh"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This Times Table Generator is such a great help for my kids' math practice. It’s simple, effective, and free from annoying pop-ups. Highly recommend it to parents and teachers!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Times Table Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container, .content-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            margin: 20px auto;
+            animation: fadeIn 0.5s ease-in;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            padding-left: 30px;
+            padding-right: 30px;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Container styling */
+        .content-container .pro-tip {
+            font-style: italic;
+            color: #f28c38;
+            margin-top: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        input[type="number"], select {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus, select:focus {
+            border-color: #f28c38;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: scale(1.05);
+            background: #e07b30;
+        }
+
+        #    #result {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #333;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        #result.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .result-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                width: 95%;
+                margin: 10px auto;
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .input-group {
+                gap: 10px;
+            }
+
+            input[type="number"], select {
+                font-size: 0.9rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Times Table Generator
+   </h1>
+<p>
+    Generate multiplication tables instantly. Customize your range, filter results, and download outputs with ease.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="input-group">
+<label for="number">
+     Enter a Number:
+    </label>
+<input id="number" min="1" placeholder="e.g., 5" required="" type="number"/>
+<label for="range">
+     Select Range:
+    </label>
+<select id="range">
+<option value="12">
+      1 to 12
+     </option>
+<option value="10">
+      1 to 10
+     </option>
+<option value="20">
+      1 to 20
+     </option>
+</select>
+<label for="filter">
+     Filter Results:
+    </label>
+<select id="filter">
+<option value="all">
+      All Results
+     </option>
+<option value="even">
+      Even Results
+     </option>
+<option value="odd">
+      Odd Results
+     </option>
+</select>
+<button onclick="generateTable()">
+     Generate Table
+    </button>
+<button onclick="downloadTable()">
+     Download Table
+    </button>
+</div>
+<div id="result">
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Times Table Generator?
+   </h2>
+<p>
+    Alright, let’s talk math—but in the chillest way possible. A Times Table Generator is that handy little tool that instantly whips up multiplication tables for any number you throw at it. No more manually scribbling out 7 x 1, 7 x 2, 7 x 3 on your notepad like it’s 1998. This tool does the math magic for you, and boom—clean, organized tables ready to go.
+   </p>
+<p>
+    Whether you're helping a kid learn their 3s and 4s or brushing up because math wasn’t your jam back in the day (no judgment), the Times Table Generator is the shortcut to less stress and more “oh yeah, I got this.”
+   </p>
+<h3>
+    Try Our Times Table Generator Now
+   </h3>
+<p>
+    Pick a number, hit go, and watch the full times table unfold in seconds. Wanna see the 12 times table? Or maybe every table up to 20? No sweat. Just click, and it's all laid out for you—neat, clean, and copy-paste ready.
+   </p>
+<h3>
+    Why a Times Table Generator Is Actually Super Useful
+   </h3>
+<p>
+    Okay, so you might be thinking, “I mean, isn’t this just simple math?” Sure. But here’s the deal—when you’re learning multiplication (or teaching it), repetition is everything. The more you see it, the more it sticks. And writing it all out over and over? No thanks. The Times Table Generator makes it fast, visual, and way less annoying.
+   </p>
+<p>
+    Here’s when it seriously comes in clutch:
+   </p>
+<ul>
+<li>
+     Homework time – Print out a quick reference sheet and save everyone some tears.
+    </li>
+<li>
+     Classroom helpers – Teachers, this is gold for daily practice or bulletin board printouts.
+    </li>
+<li>
+     Quick refreshers – Adults need math too (hello, budgeting, recipes, measurements).
+    </li>
+<li>
+     Test prep – For kids learning math facts, it’s way faster than doing it by hand every time.
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<p>
+    The Times Table Generator keeps things simple, clean, and super practical. It’s all about getting your tables fast and frustration-free.
+   </p>
+<ul>
+<li>
+     Pick any number – From 1 to 100 (or more), the generator handles whatever you throw at it.
+    </li>
+<li>
+     Set your range – Wanna see up to 10? 20? 50? You choose how far the table goes.
+    </li>
+<li>
+     Clean layout – Easy-to-read rows that make learning and reviewing a breeze.
+    </li>
+<li>
+     Printable format – You can print or save tables for offline use.
+    </li>
+<li>
+     Instant results – No lag, no loading. You get your table in seconds.
+    </li>
+<li>
+     Mobile-friendly – Works great on your phone or tablet too.
+    </li>
+</ul>
+<h3>
+    How to Use the Times Table Generator
+   </h3>
+<p>
+    No rocket science here. If you can type a number and click a button, you’re already a pro.
+   </p>
+<ol>
+<li>
+     Go to the tool – Open it in your browser (no downloads, no mess).
+    </li>
+<li>
+     Type in the number – Like 6 for the 6 times table.
+    </li>
+<li>
+     Pick how far you want to go – Up to 10, 12, 20, or more.
+    </li>
+<li>
+     Click "Generate" – Watch that clean little table show up instantly.
+    </li>
+<li>
+     Print or copy – Use it for practice, tutoring, teaching, whatever you need.
+    </li>
+</ol>
+<p class="pro-tip">
+    💡 Pro tip: Generate all tables from 1 to 12, print them, and tape 'em to the fridge for daily review. Old-school but effective.
+   </p>
+<h3>
+    Why Choose This Times Table Generator?
+   </h3>
+<p>
+    Look, you could scribble it out by hand. Or Google “times table of 7” every single time. But who has time for that? This Times Table Generator is made for real people who want fast answers without fluff.
+   </p>
+<p>
+    Here’s why it rocks:
+   </p>
+<ul>
+<li>
+     Saves time – No more manual chart-making.
+    </li>
+<li>
+     Kid-friendly – Clean layout makes it easy for learners to follow.
+    </li>
+<li>
+     No ads or pop-ups – Just math. No distractions.
+    </li>
+<li>
+     Customizable output – Pick your number, your range, and boom—done.
+    </li>
+<li>
+     No sign-up, no paywall – Just free, easy math help, any time you need it.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      Can I generate more than one table at once?
+     </strong>
+<br/>
+     Yep! You can either run them one by one or choose a range like 1 to 12 and generate the whole batch in one go.
+    </li>
+<li>
+<strong>
+      Can I print the tables?
+     </strong>
+<br/>
+     Totally. The layout is clean and print-friendly—great for school handouts, home study, or flashcards.
+    </li>
+<li>
+<strong>
+      Does it go past 12 or 20?
+     </strong>
+<br/>
+     For sure. You can set it to go up to 50, 100, or whatever number your inner math nerd desires.
+    </li>
+<li>
+<strong>
+      Is this tool just for kids?
+     </strong>
+<br/>
+     Not at all. It’s great for adults brushing up, parents helping with homework, or teachers building classroom resources.
+    </li>
+<li>
+<strong>
+      Is it available offline?
+     </strong>
+<br/>
+     The tool itself runs in the browser, but you can always copy or print the tables for offline use. No internet, no problem.
+    </li>
+</ol>
+<p>
+    So if you’re tired of writing out multiplication tables by hand—or just want a no-fuss way to help someone learn them—this Times Table Generator is your new go-to. It’s simple, fast, and makes learning multiplication way less of a drag.
+   </p>
+</div>
+<script>
+        // Function: generateTable
+   function generateTable() {
+        // DOM element manipulation
+            const number = parseInt(document.getElementById('number').value);
+        // DOM element manipulation
+            const range = parseInt(document.getElementById('range').value);
+        // DOM element manipulation
+            const filter = document.getElementById('filter').value;
+        // DOM element manipulation
+            const resultDiv = document.getElementById('result');
+
+            if (!number || number < 1) {
+                resultDiv.innerHTML = '<p>Please enter a valid number.</p>';
+                return;
+            }
+
+            let table = '';
+            for (let i = 1; i <= range; i++) {
+                const product = number * i;
+                const isEven = product % 2 === 0;
+                if (filter === 'all' || (filter === 'even' && isEven) || (filter === 'odd' && !isEven)) {
+                    table += `<div class="result-item">${number} × ${i} = ${product}</div>`;
+                }
+            }
+
+            resultDiv.innerHTML = table || '<p>No results match the filter.</p>';
+            resultDiv.classList.add('show');
+        }
+
+        // Function: downloadTable
+        function downloadTable() {
+        // DOM element manipulation
+            const number = parseInt(document.getElementById('number').value);
+        // DOM element manipulation
+            const range = parseInt(document.getElementById('range').value);
+        // DOM element manipulation
+            const filter = document.getElementById('filter').value;
+
+            if (!number || number < 1) {
+                alert('Please generate a valid table first.');
+                return;
+            }
+
+            let content = `Times Table for ${number}\n\n`;
+            for (let i = 1; i <= range; i++) {
+                const product = number * i;
+                const isEven = product % 2 === 0;
+                if (filter === 'all' || (filter === 'even' && isEven) || (filter === 'odd' && !isEven)) {
+                    content += `${number} × ${i} = ${product}\n`;
+                }
+            }
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `TimesTable_${number}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

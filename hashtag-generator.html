@@ -1,0 +1,800 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Document head with metadata and resources -->
+<head>
+<title>
+    Hashtag Generator - Free & Fast Online Tool
+   </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Hashtag Generator - Free & Fast tool to create trending hashtags instantly. No signup, no fees, just unlimited access to boost your social media!" name="description">
+<meta content="hashtag generator, free hashtag tool, create hashtags, social media hashtags, trending hashtags, online hashtag generator" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/hashtag-generator" rel="canonical"/>
+<meta content="Hashtag Generator - Totally Free Tool" property="og:title"/>
+<meta content="Generate trending hashtags instantly with our free online tool. No signup, no hidden fees, just fast results at freeontools.com!" property="og:description"/>
+<meta content="https://www.freeontools.com/hashtag-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/hashtag-generator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Hashtag Generator - No Signup Needed" name="twitter:title"/>
+<meta content="Create hashtags instantly with our free, no-login tool. Try it now at freeontools.com for unlimited, fast access!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/hashtag-generator.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://www.twitter.com/freeontools",
+    "https://www.linkedin.com/company/freeontools"
+  ]
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Hashtag Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/hashtag-generator",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Hashtag Generator"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "1563"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Hashtag Generator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Emma Wilson"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "reviewBody": "This Hashtag Generator is a game-changer! Super easy to use, no signup needed, and generates trending hashtags in seconds!",
+  "datePublished": "2025-05-01"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Hashtag Generator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Liam Chen"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.7"
+  },
+  "reviewBody": "Really handy tool for social media! Generates relevant hashtags quickly with no ads or fees. Highly recommend!",
+  "datePublished": "2025-04-10"
+}
+   </script>
+</meta></meta></head>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 1rem 1rem;
+            background-color: #f9f9f9;
+        }
+
+        /* Header styling */
+        header h1 {
+            font-size: 2.5rem;
+            color: #222;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .generator-container, .content-container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+margin-top: -40px !important;
+        }
+
+        /* Container styling */
+        .content-container {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #222;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #333;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .input-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+            min-width: 200px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #f28c38;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+        }
+
+        .category-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .category-section label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        select:focus {
+            border-color: #f28c38;
+        }
+
+        .output-section {
+            margin-top: 2rem;
+        }
+
+        .output-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+
+        .hashtag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            min-height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .hashtag {
+            background-color: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Header styling */
+            header h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+            }
+
+            .input-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            input[type="text"] {
+                min-width: unset;
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .generator-container, .content-container {
+                padding: 1.5rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .button-group button {
+                width: 100%;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+        /* Header styling */
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .generator-container, .content-container {
+                padding: 1rem;
+            }
+
+            input[type="text"], select {
+                font-size: 0.9rem;
+                padding: 0.6rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .output-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .hashtag {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container p, .content-container ul li, .content-container ol li {
+                font-size: 0.9rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 0px 20px;
+    text-align: center;
+    box-sizing: border-box;
+margin-top: 15px !important;
+}
+</style>
+</head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Hashtag Generator
+   </h1>
+<p>
+    Boost your social media reach with trending hashtags!
+   </p>
+</header>
+<main>
+<section class="generator-container">
+<div class="input-section">
+<input aria-label="Keyword input for hashtag generation" id="keywordInput" placeholder="Enter a keyword (e.g., fitness)" type="text"/>
+<button id="generateBtn">
+      Generate Hashtags
+     </button>
+</div>
+<div class="category-section">
+<label for="categorySelect">
+      Select Category (Optional):
+     </label>
+<select aria-label="Select hashtag category" id="categorySelect">
+<option value="">
+       Select a category
+      </option>
+<option value="fitness">
+       Fitness
+      </option>
+<option value="travel">
+       Travel
+      </option>
+<option value="food">
+       Food
+      </option>
+<option value="fashion">
+       Fashion
+      </option>
+<option value="tech">
+       Tech
+      </option>
+</select>
+</div>
+<div class="output-section" id="hashtagOutput">
+<h2>
+      Generated Hashtags
+     </h2>
+<div class="hashtag-list" id="hashtagList">
+</div>
+<div class="button-group">
+<button class="hidden" id="copyBtn">
+       Copy Hashtags
+      </button>
+<button id="clearBtn">
+       Clear
+      </button>
+</div>
+</div>
+</section>
+<!-- Informational content container -->
+<section class="content-container">
+<h2>
+     What Is a Hashtag Generator?
+    </h2>
+<p>
+     Alright, so you know when you post on social media—Instagram, TikTok, X (ugh, still calling it Twitter)? And you wanna get more eyeballs on your stuff? Hashtags are like your little wingmen. They help people find your content without you doing a ton of work.
+    </p>
+<p>
+     But coming up with the right hashtags? Total time suck. That’s where the Hashtag Generator jumps in. You just drop in your topic, keyword, or caption, and it spits out a list of relevant hashtags. Done. Over. You can go back to sipping your coffee or doom-scrolling.
+    </p>
+<p>
+     And yeah, this Hashtag Generator doesn’t just throw out random words—it actually makes sense. It pulls popular, trending, or niche-relevant hashtags based on your input.
+    </p>
+<h2>
+     Try Our Hashtag Generator Now
+    </h2>
+<p>
+     Seriously, if you’ve ever stared at your phone like “uhhh #fun #stuff #noidea,” this is your moment. Paste your caption or keywords into the Hashtag Generator, click once, and boom—ready-to-copy hashtags that might actually help your post do something.
+    </p>
+<h2>
+     Why Use a Hashtag Generator?
+    </h2>
+<p>
+     Okay, let’s be real. Hashtags can feel kinda cringe sometimes. But they still work. Especially if you pick the right ones. That’s the kicker. Using the wrong hashtag is like yelling into the void.
+    </p>
+<p>
+     The Hashtag Generator helps you:
+    </p>
+<ul>
+<li>
+      Boost visibility – More eyes = more engagement
+     </li>
+<li>
+      Use what’s trending – Without spending an hour researching
+     </li>
+<li>
+      Tap into niche communities – It finds those weird, specific tags too
+     </li>
+<li>
+      Avoid spammy tags – You won’t get stuck using the same 3 generic ones
+     </li>
+<li>
+      Save time – No more hashtag panic right before posting
+     </li>
+</ul>
+<p>
+     If you’re trying to grow on social, a solid Hashtag Generator is honestly a game changer.
+    </p>
+<h2>
+     Features of the Hashtag Generator
+    </h2>
+<p>
+     Let’s break it down. What can this tool actually do for you?
+    </p>
+<ul>
+<li>
+      Instant suggestions – Like, you type a word and it’s done
+     </li>
+<li>
+      Keyword-based results – Pulls tags based on relevance
+     </li>
+<li>
+      Smart sorting – Highlights trending or high-engagement tags
+     </li>
+<li>
+      Multi-platform friendly – Works for Insta, TikTok, Twitter, LinkedIn, wherever
+     </li>
+<li>
+      Copy all in one click – No need to select each one manually
+     </li>
+<li>
+      Avoids banned or spammy tags – Helps you stay out of the shadowban dungeon
+     </li>
+<li>
+      Totally free – Yep, all of it
+     </li>
+</ul>
+<p>
+     Basically, the Hashtag Generator handles the annoying part of social posting so you can focus on the content (or just... nap, no judgment).
+    </p>
+<h2>
+     How to Use the Hashtag Generator
+    </h2>
+<p>
+     No rocket science here. Just a few easy steps:
+    </p>
+<ol>
+<li>
+      Go to the Hashtag Generator page
+     </li>
+<li>
+      Type in your keyword, topic, or full caption
+     </li>
+<li>
+      Hit the “Generate” button
+     </li>
+<li>
+      Copy the hashtags you like (all or just the good ones)
+     </li>
+<li>
+      Paste ’em into your post and you’re set
+     </li>
+</ol>
+<p>
+     💡
+     <strong>
+      Pro tip:
+     </strong>
+     Mix a few high-popularity hashtags with medium or niche ones. It gives your post a better shot at not getting buried.
+    </p>
+<h2>
+     Why Choose This Hashtag Generator?
+    </h2>
+<p>
+     Okay, sure, you’ve seen other hashtag tools. But here’s why this one’s a keeper:
+    </p>
+<ul>
+<li>
+      Clean and fast – No clutter, no lag
+     </li>
+<li>
+      Actually smart – Tags feel relevant, not random
+     </li>
+<li>
+      Mobile-first – Works perfectly from your phone
+     </li>
+<li>
+      Great for creators, small biz, or just regular folks
+     </li>
+<li>
+      No paywall – We’re not gonna ask for your credit card after 3 uses
+     </li>
+</ul>
+<p>
+     Basically, if you want hashtags that don’t suck—and don’t require a PhD in social media strategy—this Hashtag Generator is your new best friend.
+    </p>
+<h2>
+     FAQs About the Hashtag Generator
+    </h2>
+<p>
+<strong>
+      Will the Hashtag Generator give me trending tags?
+     </strong>
+</p>
+<p>
+     Yep! It prioritizes what’s hot and relevant. You get a mix of trending, evergreen, and niche stuff depending on your input.
+    </p>
+<p>
+<strong>
+      Can I use this for different platforms?
+     </strong>
+</p>
+<p>
+     Absolutely. Instagram, TikTok, Twitter/X, YouTube, LinkedIn—it’s platform-agnostic. Use it wherever hashtags live.
+    </p>
+<p>
+<strong>
+      How many hashtags does it generate?
+     </strong>
+</p>
+<p>
+     Usually between 10–30, depending on what you type in. Enough to fill your caption without being that person who uses 70 tags. (We all know that person.)
+    </p>
+<p>
+<strong>
+      Are the hashtags safe to use?
+     </strong>
+</p>
+<p>
+     For sure. The Hashtag Generator skips over flagged or banned hashtags, so you’re not risking a shadowban or algorithm drama.
+    </p>
+<p>
+<strong>
+      Is this tool free?
+     </strong>
+</p>
+<p>
+     Yep. Totally, 100% free. Use it as much as you want—no logins, no fees, no “trial expired” pop-ups.
+    </p>
+<h2>
+     Final Thoughts: Less Stress, More #Success
+    </h2>
+<p>
+     Look, hashtags might not be the magic bullet for going viral, but they do help. And using the right ones? It’s a difference-maker. So if you’re posting content and hoping someone actually sees it, do yourself a favor—use the Hashtag Generator.
+    </p>
+<p>
+     It’s quick, free, and makes you look like you actually know what you’re doing (even if you’re winging it, like the rest of us).
+    </p>
+<p>
+     So next time you’re sitting there trying to think of something better than #vibes... don’t. Just let the Hashtag Generator handle it.
+    </p>
+</section>
+</main>
+<script>
+        // Event listener for user interactions
+   document.addEventListener('DOMContentLoaded', () => {
+        // DOM element manipulation
+            const generateBtn = document.getElementById('generateBtn');
+        // DOM element manipulation
+            const copyBtn = document.getElementById('copyBtn');
+        // DOM element manipulation
+            const clearBtn = document.getElementById('clearBtn');
+        // DOM element manipulation
+            const keywordInput = document.getElementById('keywordInput');
+        // DOM element manipulation
+            const categorySelect = document.getElementById('categorySelect');
+        // DOM element manipulation
+            const hashtagList = document.getElementById('hashtagList');
+
+            // Sample hashtag database by category
+            const hashtagDatabase = {
+                fitness: ['#FitnessGoals', '#WorkoutMotivation', '#HealthyLiving', '#GymLife', '#FitFam'],
+                travel: ['#TravelDiaries', '#Wanderlust', '#AdventureAwaits', '#ExploreMore', '#TravelGram'],
+                food: ['#Foodie', '#HealthyEats', '#FoodLovers', '#Yummy', '#Delicious'],
+                fashion: ['#OOTD', '#FashionInspo', '#StyleGoals', '#Trendy', '#Chic'],
+                tech: ['#TechTrends', '#Innovation', '#Gadgets', '#Techie', '#FutureTech']
+            };
+
+        // Event listener for user interactions
+            generateBtn.addEventListener('click', () => {
+                const keyword = keywordInput.value.trim().toLowerCase();
+                const category = categorySelect.value;
+
+                if (!keyword) {
+                    alert('Please enter a keyword!');
+                    return;
+                }
+
+                // Clear previous hashtags
+                hashtagList.innerHTML = '';
+
+                // Generate hashtags
+                let hashtags = [];
+
+                // Add keyword-based hashtags
+                hashtags.push(`#${keyword.replace(/\s+/g, '')}`);
+                hashtags.push(`#${keyword.replace(/\s+/g, '')}Love`);
+                hashtags.push(`#${keyword.replace(/\s+/g, '')}Vibes`);
+
+                // Add category-based hashtags if selected
+                if (category && hashtagDatabase[category]) {
+                    hashtags = [...hashtags, ...hashtagDatabase[category]];
+                }
+
+                // Add trending generic hashtags
+                hashtags.push('#Viral', '#Trending', '#SocialMedia');
+
+                // Remove duplicates
+                hashtags = [...new Set(hashtags)];
+
+                // Display hashtags
+                hashtags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.classList.add('hashtag');
+                    tagElement.textContent = tag;
+                    hashtagList.appendChild(tagElement);
+                });
+
+                // Show copy button
+                copyBtn.classList.remove('hidden');
+            });
+
+        // Event listener for user interactions
+            copyBtn.addEventListener('click', () => {
+                const hashtags = Array.from(hashtagList.querySelectorAll('.hashtag'))
+                    .map(tag => tag.textContent)
+                    .join(' ');
+
+                // Try using navigator.clipboard first
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(hashtags).then(() => {
+                        alert('Hashtags copied to clipboard!');
+                    }).catch(() => {
+                        // Fallback method
+                        const textarea = document.createElement('textarea');
+                        textarea.value = hashtags;
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        try {
+                            document.execCommand('copy');
+                            alert('Hashtags copied to clipboard!');
+                        } catch (err) {
+                            alert('Failed to copy hashtags.');
+                        }
+                        document.body.removeChild(textarea);
+                    });
+                } else {
+                    // Fallback for older browsers
+                    const textarea = document.createElement('textarea');
+                    textarea.value = hashtags;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    try {
+                        document.execCommand('copy');
+                        alert('Hashtags copied to clipboard!');
+                    } catch (err) {
+                        alert('Failed to copy hashtags.');
+                    }
+                    document.body.removeChild(textarea);
+                }
+            });
+
+        // Event listener for user interactions
+            clearBtn.addEventListener('click', () => {
+                keywordInput.value = '';
+                categorySelect.value = '';
+                hashtagList.innerHTML = '';
+                copyBtn.classList.add('hidden');
+            });
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

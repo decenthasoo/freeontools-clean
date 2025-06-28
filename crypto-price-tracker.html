@@ -1,0 +1,689 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Crypto Price Tracker - Simple & Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Crypto Price Tracker - Track live cryptocurrency prices and trends in real-time. No hidden fees, easy-to-use, and 100% free without login. Try it now!" name="description">
+<meta content="Crypto Price Tracker, Cryptocurrency Tracker, Live Crypto Prices, Free Crypto Tool, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/crypto-price-tracker" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Crypto Price Tracker - Simple &amp; Free" property="og:title"/>
+<meta content="Crypto Price Tracker - Track live cryptocurrency prices and trends in real-time. No hidden fees, easy-to-use, and 100% free without login. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/crypto-price-tracker.png" property="og:image"/>
+<meta content="https://www.freeontools.com/crypto-price-tracker" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Crypto Price Tracker - Simple &amp; Free" name="twitter:title"/>
+<meta content="Crypto Price Tracker - Track live cryptocurrency prices and trends in real-time. No hidden fees, easy-to-use, and 100% free without login. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/crypto-price-tracker.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Crypto Price Tracker",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/crypto-price-tracker",
+  "image": "https://www.freeontools.com/images/crypto-price-tracker.png",
+  "description": "Track live cryptocurrency prices and trends in real-time with our easy-to-use tool. No hidden fees, no login required, and no ads.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/crypto-price-tracker",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.90",
+  "bestRating": "5",
+  "ratingCount": "1250"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "James White"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "The Crypto Price Tracker is amazing! It provides real-time updates for all major cryptocurrencies, and it's super easy to use. Highly recommend it!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Crypto Price Tracker"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+        /* Body styling */
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    width: 100%;
+    max-width: 100vw; /* Ensure body fits viewport */
+}
+
+        /* Container styling */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%; /* Ensure container fits parent */
+   
+}
+
+        /* Header styling */
+header {
+    text-align: center;
+    padding: 30px 0;
+    background: #f4f6f9;
+    color: black;
+        width: 100%;
+}
+
+.search-filter {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input, select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    width: 100%;
+    max-width: 300px; /* Limit max width for desktop */
+    box-sizing: border-box;
+}
+
+.crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    table-layout: auto; /* Allow table to adjust column widths */
+}
+
+th, td {
+    padding: 15px;
+    text-align: right;
+}
+
+th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) {
+    text-align: left;
+}
+
+th {
+    background: #f8f9fa;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+tr:hover {
+    background: #f9f9f9;
+}
+
+.positive {
+    color: #00cc00;
+}
+
+.negative {
+    color: #ff3333;
+}
+
+.graph {
+    height: 40px;
+    width: 120px;
+}
+
+.pagination {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.page-btn {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.page-btn:hover {
+    background: #f28c38;
+    color: white;
+    border-color: #1a73e8;
+}
+
+.page-btn.active {
+    background: #f28c38;
+    color: white;
+    border-color: #1a73e8;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #666;
+    width: 100%;
+}
+
+/* Tablet (577px - 768px) */
+        /* Responsive media queries */
+@media (max-width: 768px) {
+        /* Container styling */
+    .container {
+        padding: 10px;
+        max-width: 100%; /* Prevent container from exceeding viewport */
+    }
+
+        /* Header styling */
+    header {
+        padding: 15px 0;
+    }
+
+        /* Header styling */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+        /* Header styling */
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .search-filter {
+        flex-direction: column;
+        align-items: stretch;
+        margin: 10px 0;
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    input, select {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .crypto-table {
+        font-size: 14px;
+        display: block;
+        overflow-x: auto; /* Allow table scrolling */
+        max-width: 100%; /* Fit table to viewport */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    }
+
+    th, td {
+        padding: 10px;
+        min-width: 80px; /* Reduced min-width for tighter fit */
+    }
+
+    th:first-child, td:first-child {
+        min-width: 40px;
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+        min-width: 120px;
+    }
+
+    .graph {
+        width: 80px;
+    }
+
+    .pagination {
+        margin: 10px 0;
+    }
+}
+
+/* Mobile (up to 576px) */
+        /* Responsive media queries */
+@media (max-width: 576px) {
+        /* Container styling */
+    .container {
+        padding: 5px;
+        max-width: 100%;
+    }
+
+        /* Header styling */
+    header {
+        padding: 10px 0;
+    }
+
+        /* Header styling */
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+        /* Header styling */
+    header p {
+        font-size: 0.8rem;
+        margin: 5px 0;
+    }
+
+    .search-filter {
+        margin: 5px 0;
+        padding: 8px;
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    input, select {
+        font-size: 13px;
+        padding: 8px 12px;
+        max-width: 100%;
+    }
+
+    .crypto-table {
+        font-size: 12px;
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+        width: calc(100% - 10px); /* Account for container padding */
+        margin: 0 auto; /* Center table */
+    }
+
+    th, td {
+        padding: 8px;
+        min-width: 60px; /* Further reduced for mobile */
+    }
+
+    th:first-child, td:first-child {
+        min-width: 30px;
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+        min-width: 100px;
+    }
+
+    .graph {
+        width: 50px;
+        height: 25px;
+    }
+
+    .pagination {
+        margin: 10px 0;
+        gap: 5px;
+    }
+
+    .page-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .loading {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+/* Ensure no horizontal overflow on all devices */
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Crypto Price Tracker
+   </h1>
+<p>
+    Crypto Price Tracker is like your chill, no-drama crypto buddy. Wanna know what’s poppin’ with Bitcoin, Ethereum, and all those other coins? Boom. Real-time data with price trends for top cryptocurrencies. No delays, no guesswork, just straight-up numbers that actually matter.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="search-filter">
+<input id="searchInput" placeholder="Search cryptocurrency..." type="text"/>
+<select id="currencySelect">
+<option value="usd">
+      USD
+     </option>
+<option value="eur">
+      EUR
+     </option>
+<option value="gbp">
+      GBP
+     </option>
+<option value="btc">
+      BTC
+     </option>
+</select>
+<select id="sortSelect">
+<option value="market_cap_desc">
+      Market Cap ↓ (High to Low)
+     </option>
+<option value="market_cap_asc">
+      Market Cap ↑ (Low to High)
+     </option>
+<option value="price_desc">
+      Price ↓ (High to Low)
+     </option>
+<option value="price_asc">
+      Price ↑ (Low to High)
+     </option>
+</select>
+</div>
+<table class="crypto-table" id="cryptoTable">
+<thead>
+<tr>
+<th>
+       #
+      </th>
+<th>
+       Name
+      </th>
+<th>
+       Price
+      </th>
+<th>
+       1h%
+      </th>
+<th>
+       24h%
+      </th>
+<th>
+       7d%
+      </th>
+<th>
+       Market Cap
+      </th>
+<th>
+       Volume 24h
+      </th>
+<th>
+       Price Trend
+      </th>
+</tr>
+</thead>
+<tbody id="cryptoBody">
+</tbody>
+</table>
+<div class="pagination" id="pagination">
+</div>
+<div class="loading" id="loading">
+    Loading cryptocurrency data...
+   </div>
+</div>
+<script>
+   const API_URL = 'https://api.coingecko.com/api/v3/coins/markets';
+        // DOM element manipulation
+        const cryptoBody = document.getElementById('cryptoBody');
+        // DOM element manipulation
+        const loading = document.getElementById('loading');
+        // DOM element manipulation
+        const pagination = document.getElementById('pagination');
+        // DOM element manipulation
+        const searchInput = document.getElementById('searchInput');
+        // DOM element manipulation
+        const currencySelect = document.getElementById('currencySelect');
+        // DOM element manipulation
+        const sortSelect = document.getElementById('sortSelect');
+        let cryptoData = [];
+        const ITEMS_PER_PAGE = 50;
+        let currentPage = 1;
+
+        async function fetchCryptoData() {
+            try {
+                const currency = currencySelect.value;
+        // API or data fetching
+                const response = await fetch(`${API_URL}?vs_currency=${currency}&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d&_=${Date.now()}`, {
+                    cache: 'no-store' // Prevent caching
+                });
+                const data = await response.json();
+                cryptoData = data;
+                updateDisplay();
+                loading.style.display = 'none';
+            } catch (error) {
+                console.error('Error fetching crypto data:', error);
+                loading.textContent = 'Error loading data. Please try again.';
+            }
+        }
+
+        // Function: updateDisplay
+        function updateDisplay() {
+            filterAndSortData();
+            renderPagination();
+        }
+
+        // Function: displayCryptoData
+        function displayCryptoData(data) {
+            cryptoBody.innerHTML = '';
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const paginatedData = data.slice(start, end);
+
+            paginatedData.forEach((coin, index) => {
+                const row = document.createElement('tr');
+                
+                const change1hArrow = coin.price_change_percentage_1h_in_currency >= 0 ? '▲' : '▼';
+                const change24hArrow = coin.price_change_percentage_24h_in_currency >= 0 ? '▲' : '▼';
+                const change7dArrow = coin.price_change_percentage_7d_in_currency >= 0 ? '▲' : '▼';
+                const change1hClass = coin.price_change_percentage_1h_in_currency >= 0 ? 'positive' : 'negative';
+                const change24hClass = coin.price_change_percentage_24h_in_currency >= 0 ? 'positive' : 'negative';
+                const change7dClass = coin.price_change_percentage_7d_in_currency >= 0 ? 'positive' : 'negative';
+
+                row.innerHTML = `
+                    <td>${start + index + 1}</td>
+                    <td>
+                        <img src="${coin.image}" alt="${coin.name} logo" width="20" height="20" style="vertical-align: middle; margin-right: 10px;">
+                        ${coin.name} <span style="color: #666;">(${coin.symbol.toUpperCase()})</span>
+                    </td>
+                    <td>${formatPrice(coin.current_price)}</td>
+                    <td class="${change1hClass}">${change1hArrow} ${coin.price_change_percentage_1h_in_currency?.toFixed(2)}%</td>
+                    <td class="${change24hClass}">${change24hArrow} ${coin.price_change_percentage_24h_in_currency?.toFixed(2)}%</td>
+                    <td class="${change7dClass}">${change7dArrow} ${coin.price_change_percentage_7d_in_currency?.toFixed(2)}%</td>
+                    <td>${formatPrice(coin.market_cap)}</td>
+                    <td>${formatPrice(coin.total_volume)}</td>
+                    <td><canvas class="graph" data-1h="${coin.price_change_percentage_1h_in_currency}" data-24h="${coin.price_change_percentage_24h_in_currency}" data-7d="${coin.price_change_percentage_7d_in_currency}"></canvas></td>
+                `;
+                cryptoBody.appendChild(row);
+
+        // DOM element manipulation
+                drawPriceTrend(row.querySelector('.graph'), coin);
+            });
+        }
+
+        // Function: formatPrice
+        function formatPrice(price) {
+            const currency = currencySelect.value;
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: currency === 'btc' ? 'USD' : currency,
+                minimumFractionDigits: price < 1 ? 6 : 2,
+                maximumFractionDigits: price < 1 ? 6 : 2
+            });
+            return formatter.format(price);
+        }
+
+        // Function: drawPriceTrend
+        function drawPriceTrend(canvas, coin) {
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width = 120;
+            const height = canvas.height = 40;
+            const changes = [
+                coin.price_change_percentage_7d_in_currency || 0,
+                coin.price_change_percentage_24h_in_currency || 0,
+                coin.price_change_percentage_1h_in_currency || 0
+            ];
+
+            const maxChange = Math.max(...changes.map(Math.abs), 10);
+            const points = changes.map(change => height / 2 - (change / maxChange) * (height / 2));
+            const step = width / (changes.length - 1);
+
+            const netChange = changes[changes.length - 1] - changes[0];
+            ctx.strokeStyle = netChange >= 0 ? '#00cc00' : '#ff3333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(0, points[0]);
+
+            points.forEach((point, index) => {
+                ctx.lineTo(index * step, point);
+            });
+
+            ctx.stroke();
+        }
+
+        // Function: filterAndSortData
+        function filterAndSortData() {
+            let filteredData = [...cryptoData];
+            const searchTerm = searchInput.value.toLowerCase();
+
+            if (searchTerm) {
+                filteredData = filteredData.filter(coin => 
+                    coin.name.toLowerCase().includes(searchTerm) || 
+                    coin.symbol.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            const [sortField, sortDirection] = sortSelect.value.split('_');
+            filteredData.sort((a, b) => {
+                let valueA = sortField === 'price' ? a.current_price : a.market_cap;
+                let valueB = sortField === 'price' ? b.current_price : b.market_cap;
+                return sortDirection === 'desc' ? valueB - valueA : valueA - valueB;
+            });
+
+            displayCryptoData(filteredData);
+        }
+
+        // Function: renderPagination
+        function renderPagination() {
+            pagination.innerHTML = '';
+            const totalPages = Math.ceil(cryptoData.length / ITEMS_PER_PAGE);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.textContent = i;
+                btn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+        // Event listener for user interactions
+                btn.addEventListener('click', () => {
+                    currentPage = i;
+                    updateDisplay();
+                });
+                pagination.appendChild(btn);
+            }
+        }
+
+        // Event listeners
+        // Event listener for user interactions
+        searchInput.addEventListener('input', () => {
+            currentPage = 1;
+            updateDisplay();
+        });
+        // Event listener for user interactions
+        currencySelect.addEventListener('change', fetchCryptoData);
+        // Event listener for user interactions
+        sortSelect.addEventListener('change', () => {
+            currentPage = 1;
+            updateDisplay();
+        });
+
+        // Initial fetch and auto-refresh every 30 seconds
+        fetchCryptoData();
+        setInterval(() => {
+            fetchCryptoData();
+            console.log('Data refreshed at:', new Date().toLocaleTimeString());
+        }, 30000);
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

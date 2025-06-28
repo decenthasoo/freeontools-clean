@@ -1,0 +1,962 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Favicon Generator - Simple &amp; Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Favicon Generator - Create custom favicons for your website quickly and easily. Upload your image and generate the perfect favicon. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="Favicon Generator, Create Favicon, Free Favicon Tool, Favicon Maker, Website Favicon, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/favicon-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Favicon Generator - Simple &amp; Free" property="og:title"/>
+<meta content="Favicon Generator - Create custom favicons for your website quickly and easily. Upload your image and generate the perfect favicon. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/favicon-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/favicon-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Favicon Generator - Simple &amp; Free" name="twitter:title"/>
+<meta content="Favicon Generator - Create custom favicons for your website quickly and easily. Upload your image and generate the perfect favicon. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/favicon-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Favicon Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/favicon-generator",
+  "image": "https://www.freeontools.com/images/favicon-generator.png",
+  "description": "Create custom favicons for your website with ease. Just upload an image and generate the perfect favicon for your site. No login required, no ads.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/favicon-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.87",
+  "bestRating": "5",
+  "ratingCount": "730"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Ethan Brown"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This Favicon Generator is amazing! It’s so easy to use and saves me so much time. My website now has a great custom favicon, and it's free to use!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Favicon Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            min-height: 100vh;
+            background: #f5f6f5;
+            color: #000000;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        h1.main-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000000;
+            text-align: center;
+            margin: 20px 0 10px;
+        }
+
+        p.main-description {
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+margin-top: 45px !important;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: #f28c38;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .tab-btn:hover {
+            background: #e07b30;
+        }
+
+        .tab-btn.active {
+            background: #f28c38;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .input-section {
+            display: grid;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path fill="%23000000" d="M0 0h12L6 6z"/></svg>') no-repeat right 10px center;
+        }
+
+        .color-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .color-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-preview {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #003087;
+            cursor: pointer;
+        }
+
+        button {
+            background: #f28c38;
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            background: #e07b30;
+        }
+
+        #preview {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #canvas {
+            background: #ffffff;
+            padding: 10px;
+            border: 2px dashed #003087;
+            border-radius: 8px;
+            max-width: 100%;
+        }
+
+        #downloadBtn {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .size-note {
+            font-size: 12px;
+            color: #666666;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h1 {
+            font-size: 24px;
+            color: #000000;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container p {
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.6;
+            margin-bottom: 20px !important;
+          text-align: left !important;
+max-width: 1000px !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            margin-bottom: 10px;
+        }
+
+        /* Container styling */
+        .content-container strong {
+            color: #000000;
+        }
+
+
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Body styling */
+ h1.main-title {
+                font-size: 24px;
+                margin: 20px 0 10px;
+            }
+
+            p.main-description {
+                font-size: 14px;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 20px;
+            }
+
+            .tab-container {
+                gap: 8px;
+            }
+
+            .input-section {
+                gap: 10px;
+            }
+
+            button {
+                padding: 10px 15px;
+            }
+
+        /* Container styling */
+            .content-container h1 {
+                text-align: left; /* Center headings on mobile */
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js">
+</script>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<h1 class="main-title">
+   Favicon Generator
+  </h1>
+<p class="main-description">
+   Create professional favicon sets for your website using text, PNG images, or emojis. Customize styles and generate icons in multiple sizes for all devices, all in a few clicks.
+  </p>
+<!-- Main content container -->
+<div class="container">
+<div class="tab-container">
+<button class="tab-btn active" onclick="showTab('textTab')">
+     Text to ICO
+    </button>
+<button class="tab-btn" onclick="showTab('pngTab')">
+     PNG to ICO
+    </button>
+<button class="tab-btn" onclick="showTab('emojiTab')">
+     Emoji to ICO
+    </button>
+</div>
+<div class="tab-content active" id="textTab">
+<div class="input-section">
+<div class="input-group">
+<label for="faviconText">
+       Text (max 2 characters)
+      </label>
+<input id="faviconText" maxlength="2" placeholder="Enter text" type="text"/>
+</div>
+<div class="input-group">
+<label for="bgShape">
+       Background Shape
+      </label>
+<select id="bgShape">
+<option value="hexagon">
+        Hexagon
+       </option>
+<option value="star">
+        Star
+       </option>
+<option value="diamond">
+        Diamond
+       </option>
+</select>
+</div>
+<div class="input-group">
+<label for="fontFamily">
+       Font Family
+      </label>
+<select id="fontFamily">
+<option value="Arial">
+        Arial
+       </option>
+<option value="Helvetica">
+        Helvetica
+       </option>
+<option value="Times New Roman">
+        Times New Roman
+       </option>
+<option value="Georgia">
+        Georgia
+       </option>
+<option value="Verdana">
+        Verdana
+       </option>
+</select>
+</div>
+<div class="input-group">
+<label for="fontVariant">
+       Font Variant
+      </label>
+<select id="fontVariant">
+<option value="normal">
+        Regular
+       </option>
+<option value="bold">
+        Bold
+       </option>
+<option value="italic">
+        Italic
+       </option>
+<option value="bold italic">
+        Bold Italic
+       </option>
+</select>
+</div>
+<div class="input-group">
+<label for="fontSize">
+       Font Size (10-28px)
+      </label>
+<input id="fontSize" max="28" min="10" type="number" value="20"/>
+</div>
+<div class="input-group">
+<label>
+       Colors
+      </label>
+<div class="color-group">
+<div class="color-input-group">
+<input id="textColor" type="color" value="#000000"/>
+<div class="color-preview" id="textColorPreview" style="background: #000000;">
+</div>
+</div>
+<div class="color-input-group">
+<input id="bgColor" type="color" value="#ffffff"/>
+<div class="color-preview" id="bgColorPreview" style="background: #ffffff;">
+</div>
+</div>
+</div>
+<span class="size-note">
+       Generates all sizes: 16x16, 32x32, 64x64, 128x128, 256x256 in ZIP
+      </span>
+</div>
+<button onclick="generateTextFavicon()">
+      Generate Favicon Set
+     </button>
+</div>
+</div>
+<div class="tab-content" id="pngTab">
+<div class="input-section">
+<div class="input-group">
+<label for="pngInput">
+       Upload PNG Image
+      </label>
+<input accept="image/png" id="pngInput" type="file"/>
+<span class="size-note">
+       Generates all sizes: 16x16, 32x32, 64x64, 128x128, 256x256 in ZIP
+      </span>
+</div>
+<button onclick="generatePngFavicon()">
+      Generate Favicon Set
+     </button>
+</div>
+</div>
+<div class="tab-content" id="emojiTab">
+<div class="input-section">
+<div class="input-group">
+<label for="emojiSelect">
+       Select Emoji
+      </label>
+<select id="emojiSelect">
+<option value="😀">
+        😀 Smiley
+       </option>
+<option value="😊">
+        😊 Happy
+       </option>
+<option value="😂">
+        😂 Laughing
+       </option>
+<option value="😍">
+        😍 Love
+       </option>
+<option value="😎">
+        😎 Cool
+       </option>
+<option value="⭐">
+        ⭐ Star
+       </option>
+<option value="🌟">
+        🌟 Sparkle
+       </option>
+<option value="✨">
+        ✨ Shine
+       </option>
+<option value="☀️">
+        ☀️ Sun
+       </option>
+<option value="🌙">
+        🌙 Moon
+       </option>
+<option value="❤️">
+        ❤️ Heart
+       </option>
+<option value="💡">
+        💡 Light Bulb
+       </option>
+<option value="💻">
+        💻 Laptop
+       </option>
+<option value="📱">
+        📱 Phone
+       </option>
+<option value="🏆">
+        🏆 Trophy
+       </option>
+</select>
+</div>
+<div class="input-group">
+<label for="emojiBgShape">
+       Background Shape
+      </label>
+<select id="emojiBgShape">
+<option value="hexagon">
+        Hexagon
+       </option>
+<option value="star">
+        Star
+       </option>
+<option value="diamond">
+        Diamond
+       </option>
+</select>
+</div>
+<div class="input-group">
+<label>
+       Background Color
+      </label>
+<div class="color-input-group">
+<input id="emojiBgColor" type="color" value="#ffffff"/>
+<div class="color-preview" id="emojiBgColorPreview" style="background: #ffffff;">
+</div>
+</div>
+<span class="size-note">
+       Generates all sizes: 16x16, 32x32, 64x64, 128x128, 256x256 in ZIP
+      </span>
+</div>
+<button onclick="generateEmojiFavicon()">
+      Generate Favicon Set
+     </button>
+</div>
+</div>
+<div id="preview">
+<canvas id="canvas" style="display: none;">
+</canvas>
+<button id="downloadBtn" style="display: none;">
+     Download Favicon Set
+    </button>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h1>
+    What is a Favicon Generator?
+   </h1>
+<p>
+    Alright, so let’s talk favicons. You know those tiny little icons that show up in the browser tab next to the title of a webpage? Yeah, that’s a favicon. It’s like your website’s mini logo, and it’s an easy way to make your site look more legit. A Favicon Generator is the tool that helps you make that little icon. You just upload an image (like your logo), and it converts it into the right format and size for browsers. Boom—instant branding upgrade.
+   </p>
+<h1>
+    Try Our Favicon Generator Now
+   </h1>
+<p>
+    Don’t waste time. Just upload your image, click the button, and your favicon is ready to go. It’s that simple. No hassle, no stress.
+   </p>
+<h1>
+    Importance of a Favicon Generator
+   </h1>
+<p>
+    So why would you even need a favicon? Well, if you’ve got a website or blog, having a favicon is basically a must. It’s a tiny detail, but it makes a big difference in terms of professional polish and branding. It helps your site stand out in browser tabs, bookmarks, and even mobile home screens. Plus, it just looks better when everything’s cohesive, right? A Favicon Generator makes the whole process quick and easy, so you don’t have to stress about sizing or formatting.
+   </p>
+<h1>
+    Features
+   </h1>
+<p>
+    Here’s why you’ll love this tool:
+   </p>
+<ul>
+<li>
+     No fuss – Upload your logo, and it takes care of the rest.
+    </li>
+<li>
+     Multiple sizes – It generates favicons in all the right sizes for various devices.
+    </li>
+<li>
+     No downloads – It works entirely in your browser—just pop in your image, and go.
+    </li>
+<li>
+     Instant results – The favicon’s ready as soon as you hit that button.
+    </li>
+<li>
+     Free to use – Did I mention it’s free? Yeah, no cost to you.
+    </li>
+</ul>
+<h1>
+    How to Use
+   </h1>
+<p>
+    Using the Favicon Generator is seriously easy. Here’s how you do it:
+   </p>
+<ol>
+<li>
+     Go to the tool page.
+    </li>
+<li>
+     Upload the image you want to use (preferably your logo or something that represents your brand).
+    </li>
+<li>
+     Hit the button to generate your favicon.
+    </li>
+<li>
+     Download the file that pops up.
+    </li>
+<li>
+     Now, just upload that file to your website’s root folder or follow your CMS instructions to get it live.
+    </li>
+</ol>
+<p>
+<strong>
+     Pro Tip:
+    </strong>
+    Favicons usually look best when they’re simple and clear. Avoid using too much detail, since the icon is tiny, and you want it to be recognizable.
+   </p>
+<h1>
+    Why Choose This Favicon Generator?
+   </h1>
+<p>
+    This tool is perfect for anyone who wants a quick, no-fuss favicon without the headache of resizing or dealing with technical stuff. It’s fast, free, and takes care of all the details, so you can focus on your website or project. Plus, let’s face it: a professional favicon is just one of those little things that makes your site look way more legit.
+   </p>
+<h1>
+    FAQs
+   </h1>
+<p>
+    Common questions about our Favicon Generator:
+   </p>
+<ul>
+<li>
+<strong>
+      Can I use my own logo as a favicon?
+     </strong>
+     Yep, your logo works great! Just upload it, and the tool will convert it into the right format.
+    </li>
+<li>
+<strong>
+      Do I need to resize my image before uploading it?
+     </strong>
+     Nope. The tool handles all the resizing for you. Just upload and go!
+    </li>
+<li>
+<strong>
+      What size should my favicon be?
+     </strong>
+     The generator takes care of all that for you. It’ll create favicons in multiple sizes that fit different devices.
+    </li>
+<li>
+<strong>
+      Can I use this tool for multiple websites?
+     </strong>
+     Of course! You can make favicons for as many sites as you need.
+    </li>
+</ul>
+</div>
+<script>
+   // Tab switching
+        // Function: showTab
+        function showTab(tabId) {
+        // DOM element manipulation
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        // DOM element manipulation
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        // DOM element manipulation
+            document.getElementById(tabId).classList.add('active');
+        // DOM element manipulation
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+
+        // Draw shapes for favicon backgrounds
+        // Function: drawShape
+        function drawShape(ctx, shape, width, height, color) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            if (shape === 'hexagon') {
+                const r = width / 2;
+                for (let i = 0; i < 6; i++) {
+                    ctx.lineTo(r + r * Math.cos((Math.PI / 3) * i), r + r * Math.sin((Math.PI / 3) * i));
+                }
+                ctx.closePath();
+            } else if (shape === 'star') {
+                const spikes = 5;
+                const outerRadius = width / 2;
+                const innerRadius = outerRadius / 2;
+                const step = Math.PI / spikes;
+                let rot = Math.PI / 2 * 3;
+                ctx.moveTo(width / 2, width / 2 - outerRadius);
+                for (let i = 0; i < spikes; i++) {
+                    ctx.lineTo(width / 2 + Math.cos(rot) * outerRadius, width / 2 + Math.sin(rot) * outerRadius);
+                    rot += step;
+                    ctx.lineTo(width / 2 + Math.cos(rot) * innerRadius, width / 2 + Math.sin(rot) * innerRadius);
+                    rot += step;
+                }
+                ctx.closePath();
+            } else if (shape === 'diamond') {
+                ctx.moveTo(width / 2, 0);
+                ctx.lineTo(width, height / 2);
+                ctx.lineTo(width / 2, height);
+                ctx.lineTo(0, height / 2);
+                ctx.closePath();
+            } else {
+                ctx.fillRect(0, 0, width, height);
+            }
+            ctx.fill();
+        }
+
+        // Generate favicon from text
+        // Function: generateTextFavicon
+        function generateTextFavicon() {
+        // DOM element manipulation
+            const text = document.getElementById('faviconText').value.slice(0, 2);
+            if (!text) {
+                alert('Please enter text (up to 2 characters).');
+                return;
+            }
+        // DOM element manipulation
+            const bgShape = document.getElementById('bgShape').value;
+        // DOM element manipulation
+            const fontFamily = document.getElementById('fontFamily').value;
+        // DOM element manipulation
+            const fontVariant = document.getElementById('fontVariant').value;
+        // DOM element manipulation
+            const fontSize = Math.min(Math.max(parseInt(document.getElementById('fontSize').value) || 20, 10), 28);
+        // DOM element manipulation
+            const textColor = document.getElementById('textColor').value;
+        // DOM element manipulation
+            const bgColor = document.getElementById('bgColor').value;
+
+        // DOM element manipulation
+            const canvas = document.getElementById('canvas');
+            canvas.style.display = 'block';
+            canvas.width = 256;
+            canvas.height = 256;
+            const ctx = canvas.getContext('2d');
+
+            drawShape(ctx, bgShape, 256, 256, bgColor);
+
+            ctx.fillStyle = textColor;
+            ctx.font = `${fontVariant.includes('bold') ? 'bold ' : ''}${fontVariant.includes('italic') ? 'italic ' : ''}${fontSize * 4}px ${fontFamily}`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, 128, 128);
+
+            generateFaviconSet(canvas);
+        }
+
+        // Generate favicon from PNG
+        // Function: generatePngFavicon
+        function generatePngFavicon() {
+        // DOM element manipulation
+            const fileInput = document.getElementById('pngInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please upload a PNG image.');
+                return;
+            }
+            const img = new Image();
+            img.onload = () => {
+        // DOM element manipulation
+                const canvas = document.getElementById('canvas');
+                canvas.style.display = 'block';
+                canvas.width = 256;
+                canvas.height = 256;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, 256, 256);
+                generateFaviconSet(canvas);
+                URL.revokeObjectURL(img.src); // Clean up
+            };
+            img.onerror = () => {
+                alert('Failed to load the image. Please ensure it’s a valid PNG.');
+            };
+            img.src = URL.createObjectURL(file);
+        }
+
+        // Generate favicon from emoji
+        // Function: generateEmojiFavicon
+        function generateEmojiFavicon() {
+        // DOM element manipulation
+            const emoji = document.getElementById('emojiSelect').value;
+        // DOM element manipulation
+            const bgShape = document.getElementById('emojiBgShape').value;
+        // DOM element manipulation
+            const bgColor = document.getElementById('emojiBgColor').value;
+
+        // DOM element manipulation
+            const canvas = document.getElementById('canvas');
+            canvas.style.display = 'block';
+            canvas.width = 256;
+            canvas.height = 256;
+            const ctx = canvas.getContext('2d');
+
+            drawShape(ctx, bgShape, 256, 256, bgColor);
+
+            ctx.font = '160px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(emoji, 128, 128);
+
+            generateFaviconSet(canvas);
+        }
+
+        // Generate favicon set in multiple sizes
+        // Function: generateFaviconSet
+        function generateFaviconSet(canvas) {
+            const sizes = [16, 32, 64, 128, 256];
+            const zip = new JSZip();
+            const promises = sizes.map(size => {
+                return new Promise((resolve, reject) => {
+                    const tempCanvas = document.createElement('canvas');
+                    tempCanvas.width = size;
+                    tempCanvas.height = size;
+                    const ctx = tempCanvas.getContext('2d');
+                    ctx.drawImage(canvas, 0, 0, size, size);
+                    tempCanvas.toBlob(blob => {
+                        if (blob) {
+                            zip.file(`favicon-${size}x${size}.png`, blob);
+                            resolve();
+                        } else {
+                            reject(new Error(`Failed to create blob for size ${size}`));
+                        }
+                    }, 'image/png');
+                });
+            });
+
+            Promise.all(promises)
+                .then(() => {
+                    zip.generateAsync({ type: 'blob' }).then(content => {
+        // DOM element manipulation
+                        const downloadBtn = document.getElementById('downloadBtn');
+                        downloadBtn.style.display = 'block';
+                        downloadBtn.onclick = () => {
+                            const link = document.createElement('a');
+                            link.href = URL.createObjectURL(content);
+                            link.download = 'favicons.zip';
+                            link.click();
+                            URL.revokeObjectURL(link.href); // Clean up
+                        };
+                    });
+                })
+                .catch(error => {
+                    console.error('Error generating favicon set:', error);
+                    alert('An error occurred while generating the favicon set. Please try again.');
+                });
+        }
+
+        // Update color previews
+        // Function: updateColorPreviews
+        function updateColorPreviews() {
+        // DOM element manipulation
+            const textColorInput = document.getElementById('textColor');
+        // DOM element manipulation
+            const bgColorInput = document.getElementById('bgColor');
+        // DOM element manipulation
+            const emojiBgColorInput = document.getElementById('emojiBgColor');
+        // DOM element manipulation
+            const textColorPreview = document.getElementById('textColorPreview');
+        // DOM element manipulation
+            const bgColorPreview = document.getElementById('bgColorPreview');
+        // DOM element manipulation
+            const emojiBgColorPreview = document.getElementById('emojiBgColorPreview');
+
+        // Event listener for user interactions
+            textColorInput.addEventListener('input', () => {
+                textColorPreview.style.background = textColorInput.value;
+            });
+        // Event listener for user interactions
+            bgColorInput.addEventListener('input', () => {
+                bgColorPreview.style.background = bgColorInput.value;
+            });
+        // Event listener for user interactions
+            emojiBgColorInput.addEventListener('input', () => {
+                emojiBgColorPreview.style.background = emojiBgColorInput.value;
+            });
+        }
+
+        // Initialize color previews on page load
+        // Event listener for user interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            updateColorPreviews();
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Document head with metadata and resources -->
+<head>
+<title>
+    Image Flip Tool - 100% Free
+   </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image Flip Tool - Free tool to flip images instantly. No signup, no fees, just fast, unlimited access for perfect adjustments!" name="description">
+<meta content="image flip tool, free image flip, flip images, online image flipper, image editing" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-flip-tool" rel="canonical"/>
+<meta content="Image Flip Tool - Totally Free" property="og:title"/>
+<meta content="Flip images instantly with our free online tool. No signup, no hidden fees, just fast and precise results at freeontools.com!" property="og:description"/>
+<meta content="https://www.freeontools.com/image-flip-tool" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/image-flip-tool.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Flip Tool - Forever Free" name="twitter:title"/>
+<meta content="Easily flip images with our free, no-login tool. Try it now at freeontools.com for fast, unlimited access!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/image-flip-tool.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://www.twitter.com/freeontools",
+    "https://www.linkedin.com/company/freeontools"
+  ]
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Flip Tool",
+  "operatingSystem": "All",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/image-flip-tool",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Flip Tool"
+  },
+  "ratingValue": "4.8",
+  "ratingCount": "1256"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Flip Tool"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Harper Davis"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "reviewBody": "This Image Flip Tool is fantastic! Super easy, no signup needed, and flips images perfectly in seconds!",
+  "datePublished": "2025-05-13"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Flip Tool"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Mason Lee"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.7"
+  },
+  "reviewBody": "Great tool for flipping images! Free, fast, and no hidden fees. Perfect for quick photo edits.",
+  "datePublished": "2025-04-25"
+}
+   </script>
+<style>
+        /* Reset default styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tool-wrapper, .content-wrapper {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-upload {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .upload-label {
+            background-color: #f28c38;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .upload-label:hover {
+            background-color: #e07b30;
+        }
+
+        .image-preview {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .download-section {
+            display: none;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: transparent;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #333;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul {
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Container styling */
+        .content-container ol {
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
+
+            button, .upload-label {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .tool-wrapper, .content-wrapper {
+                padding: 1rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro-text {
+                font-size: 0.9rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            button, .upload-label {
+                width: 100%;
+                padding: 0.6rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .tool-wrapper, .content-wrapper {
+                padding: 0.75rem;
+            }
+        }
+   
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+     Image Flip Tool
+    </h1>
+<p class="intro-text">
+     Easily flip your images horizontally or vertically with our free online tool.
+    </p>
+</header>
+<div class="tool-wrapper">
+<!-- Main content container -->
+<div class="container">
+<div class="image-upload">
+<label class="upload-label" for="imageInput">
+       Upload Image
+      </label>
+<input accept="image/*" id="imageInput" type="file"/>
+</div>
+<div class="image-preview">
+<img alt="Image Preview" id="previewImage" src="#"/>
+</div>
+<div class="controls">
+<button disabled="" id="flipHorizontal">
+       Flip Horizontal
+      </button>
+<button disabled="" id="flipVertical">
+       Flip Vertical
+      </button>
+</div>
+<div class="download-section">
+<button id="downloadImage">
+       Download Flipped Image
+      </button>
+</div>
+</div>
+</div>
+<div class="content-wrapper">
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+      What Is an Image Flip Tool?
+     </h2>
+<p>
+      Alright, so you’ve got an image, and for some reason, you want to flip it. Maybe you’re trying to mirror it, change the perspective, or just want something a little different. That’s where the Image Flip Tool comes in. It lets you flip your image horizontally (side to side) or vertically (upside down) in seconds. Super simple, but super effective.
+     </p>
+<p>
+      It’s like hitting the reverse button on your image, giving it a whole new vibe.
+     </p>
+<h2>
+      Try Our Image Flip Tool Now
+     </h2>
+<p>
+      Ready to flip it? Just upload your image, choose whether you want to flip it horizontally or vertically, and bam, you’ve got a flipped version. No hassle, no waiting. Just quick and easy flipping.
+     </p>
+<h2>
+      Why Use an Image Flip Tool?
+     </h2>
+<p>
+      Wondering why flipping an image is even a thing? Here’s why:
+     </p>
+<ul>
+<li>
+       Mirror effect – Flipping the image horizontally gives you a mirror-image effect. Great for designs or when you want to reflect something.
+      </li>
+<li>
+       Change perspective – Flipping vertically can give your image a fresh take, especially if you want to play around with different compositions.
+      </li>
+<li>
+       Fix orientation – If your image was uploaded or captured the wrong way, flipping can help fix its orientation.
+      </li>
+<li>
+       Creative effects – Sometimes, flipping the image gives you a completely different look, perfect for adding some creativity to your visuals.
+      </li>
+<li>
+       Super easy to do – No need for complicated tools. Just upload and flip.
+      </li>
+</ul>
+<p>
+      Whether you want to create a reflection, fix something, or just have fun with perspective, the Image Flip Tool is your best friend.
+     </p>
+<h2>
+      Features of the Image Flip Tool
+     </h2>
+<p>
+      Here’s why the Image Flip Tool is totally awesome:
+     </p>
+<ul>
+<li>
+       Quick and simple – Just upload your image and choose whether you want to flip it horizontally or vertically.
+      </li>
+<li>
+       Real-time preview – See the flipped version of your image right away.
+      </li>
+<li>
+       Works with all image formats – JPG, PNG, GIF—works with everything.
+      </li>
+<li>
+       No installs or sign-ups needed – Just upload, flip, and download.
+      </li>
+<li>
+       Free and fast – Get your flipped image in a few seconds.
+      </li>
+</ul>
+<p>
+      It’s the fastest way to change up the orientation of your photo without using complicated software.
+     </p>
+<h2>
+      How to Use the Image Flip Tool
+     </h2>
+<p>
+      Wanna flip your image in a flash? Here’s how:
+     </p>
+<ol>
+<li>
+       Open the Image Flip Tool.
+      </li>
+<li>
+       Upload your image (works with JPG, PNG, GIF, and more).
+      </li>
+<li>
+       Choose whether you want to flip your image horizontally (side to side) or vertically (up and down).
+      </li>
+<li>
+       Check out the flipped version in real-time.
+      </li>
+<li>
+       Hit “Apply” when you’re happy with the flip.
+      </li>
+<li>
+       Download your new flipped image.
+      </li>
+</ol>
+<p>
+      Pro tip: Use the horizontal flip for reflections or symmetry, and the vertical flip for creative effects or fixing orientations.
+     </p>
+<h2>
+      Why Choose This Image Flip Tool?
+     </h2>
+<p>
+      Here’s why you’ll love the Image Flip Tool:
+     </p>
+<ul>
+<li>
+       Super easy – No need to be a pro. Just upload and flip.
+      </li>
+<li>
+       Instant results – See your flipped image in real-time as you adjust.
+      </li>
+<li>
+       Works with any type of image – Whether it’s a photo, logo, or artwork, flipping works across the board.
+      </li>
+<li>
+       Free and online – No downloads or sign-ups required. Just get in, get out, and flip your image.
+      </li>
+<li>
+       Perfect for quick edits – It’s the simplest tool for when you just need a quick flip and don’t want to mess with any advanced editing.
+      </li>
+</ul>
+<p>
+      If you need a quick flip, this is the easiest, fastest tool for the job.
+     </p>
+<h2>
+      FAQs About the Image Flip Tool
+     </h2>
+<p>
+      Can I flip an image multiple times?
+     </p>
+<p>
+      Sure! If you want to flip it horizontally, then vertically (or vice versa), you can keep flipping until you get the look you want.
+     </p>
+<p>
+      Is this tool free to use?
+     </p>
+<p>
+      Yep! Completely free—no hidden fees, no sign-ups. Just upload your image and flip it.
+     </p>
+<p>
+      What image formats does the tool support?
+     </p>
+<p>
+      The tool works with JPG, PNG, GIF, and pretty much every image format you can think of.
+     </p>
+<p>
+      Can I flip an image both horizontally and vertically?
+     </p>
+<p>
+      Yes! You can flip your image in either direction—or both—depending on what effect you’re going for.
+     </p>
+<p>
+      How do I fix the orientation of a photo?
+     </p>
+<p>
+      If your photo got uploaded sideways or upside down, simply flip it vertically or horizontally to set it right. It’s quick and easy!
+     </p>
+<h2>
+      Wrap-Up: Flip Your Image in Seconds
+     </h2>
+<p>
+      In a nutshell, the Image Flip Tool is your go-to for flipping images without all the hassle. Whether you want a mirror effect, a fresh perspective, or just need to fix something, this tool makes it easy.
+     </p>
+<p>
+      So, if you need to flip it, just upload your image and click to get the perfect flip!
+     </p>
+</div>
+</div>
+<!-- Page footer section -->
+<script>
+        // DOM element manipulation
+    const imageInput = document.getElementById('imageInput');
+        // DOM element manipulation
+        const previewImage = document.getElementById('previewImage');
+        // DOM element manipulation
+        const imagePreview = document.querySelector('.image-preview');
+        // DOM element manipulation
+        const flipHorizontalBtn = document.getElementById('flipHorizontal');
+        // DOM element manipulation
+        const flipVerticalBtn = document.getElementById('flipVertical');
+        // DOM element manipulation
+        const downloadBtn = document.getElementById('downloadImage');
+        // DOM element manipulation
+        const downloadSection = document.querySelector('.download-section');
+
+        let canvas = document.createElement('canvas');
+        let ctx = canvas.getContext('2d');
+        let currentImage = new Image();
+
+        // Event listener for user interactions
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    currentImage.src = event.target.result;
+                    currentImage.onload = () => {
+                        imagePreview.style.display = 'block';
+                        previewImage.src = currentImage.src;
+                        flipHorizontalBtn.disabled = false;
+                        flipVerticalBtn.disabled = false;
+                        canvas.width = currentImage.width;
+                        canvas.height = currentImage.height;
+                        ctx.drawImage(currentImage, 0, 0);
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Event listener for user interactions
+        flipHorizontalBtn.addEventListener('click', () => {
+            canvas.width = currentImage.width;
+            canvas.height = currentImage.height;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.scale(-1, 1);
+            ctx.drawImage(currentImage, -currentImage.width, 0);
+            ctx.scale(-1, 1);
+            previewImage.src = canvas.toDataURL('image/png');
+            downloadSection.style.display = 'block';
+        });
+
+        // Event listener for user interactions
+        flipVerticalBtn.addEventListener('click', () => {
+            canvas.width = currentImage.width;
+            canvas.height = currentImage.height;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.scale(1, -1);
+            ctx.drawImage(currentImage, 0, -currentImage.height);
+            ctx.scale(1, -1);
+            previewImage.src = canvas.toDataURL('image/png');
+            downloadSection.style.display = 'block';
+        });
+
+        // Event listener for user interactions
+        downloadBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'flipped-image.png';
+            link.click();
+        });
+   </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</head>
+</html>

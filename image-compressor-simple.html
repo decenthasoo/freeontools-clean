@@ -1,0 +1,641 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Document head with metadata and resources -->
+<head>
+<title>
+    Image Compressor - Try It Free Now
+   </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image Compressor - Free tool to compress images instantly. No signup, no fees, just fast, unlimited access for optimized images!" name="description">
+<meta content="image compressor, free image compression, compress images, online image compressor, image optimization" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-compressor" rel="canonical"/>
+<meta content="Image Compressor - No Credit Card Needed" property="og:title"/>
+<meta content="Compress images instantly with our free online tool. No signup, no hidden fees, just fast results at freeontools.com!" property="og:description"/>
+<meta content="https://www.freeontools.com/image-compressor" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/image-compressor.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Compressor - 100% Free" name="twitter:title"/>
+<meta content="Quickly compress images with our free, no-login tool. Try it now at freeontools.com for fast, unlimited access!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/image-compressor.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://www.twitter.com/freeontools",
+    "https://www.linkedin.com/company/freeontools"
+  ]
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Compressor",
+  "operatingSystem": "All",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/image-compressor",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Compressor"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "1623"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Compressor"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Amelia Clark"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "reviewBody": "This Image Compressor is incredible! So easy to use, no signup required, and compresses images perfectly in seconds!",
+  "datePublished": "2025-05-03"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Compressor"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jacob Singh"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.8"
+  },
+  "reviewBody": "Awesome tool for compressing images! Fast, free, and no hidden fees. Perfect for optimizing web images.",
+  "datePublished": "2025-04-08"
+}
+   </script>
+<style>
+        /* Reset default styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .header-content {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #f5f5f5;
+            
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 3rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area.dragover {
+            border-color: #f28c38;
+            background: rgba(242,140,56,0.05);
+        }
+
+        #preview {
+            max-width: 100%;
+            margin: 1rem 0;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .controls {
+            margin: 2rem 0;
+            display: none;
+        }
+
+        .quality-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 6px;
+            background: #ddd;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #f28c38;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        button {
+            background: #f28c38;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 100%;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: translateY(-2px);
+        }
+
+        .result {
+            margin-top: 2rem;
+            display: none;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            color: #666;
+            margin-bottom: 1rem;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            color: #666;
+            margin: 1rem 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Container styling */
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+        /* Container styling */
+            .content-container {
+                margin: 1rem;
+                padding: 1.5rem 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.3rem;
+              text-align: left !important;
+}
+        }
+   
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="header-content">
+<h1>
+     Image Compressor (Simple)
+    </h1>
+<p class="subtitle">
+     Optimize your images instantly with lossless compression. Supports JPG, PNG, and WebP formats.
+    </p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<div class="upload-area" id="dropZone">
+<p>
+      Drag &amp; Drop images here or click to upload
+     </p>
+<input accept="image/*" hidden="" id="fileInput" type="file"/>
+</div>
+<img id="preview"/>
+<div class="controls">
+<div class="quality-control">
+<input id="quality" max="1" min="0" step="0.1" type="range" value="0.8"/>
+<span id="qualityValue">
+       80%
+      </span>
+</div>
+<button id="compressBtn">
+      Compress Image
+     </button>
+</div>
+<div class="result" id="result">
+<a download="" id="downloadBtn">
+<button>
+       Download Compressed Image
+      </button>
+</a>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What Is an Image Compressor?
+    </h2>
+<p>
+     Alright, imagine this: you’ve got a gorgeous image, but it’s huge—like, way too big to upload anywhere. It’s slowing down your website, taking forever to load on your blog, or just eating up way too much space. You need to shrink it down, but still keep it looking good, right?
+    </p>
+<p>
+     That’s where an Image Compressor comes in. It does exactly what it sounds like—it shrinks the size of your images without wrecking the quality. You’re getting the best of both worlds: a lighter file that still looks sharp and clear.
+    </p>
+<h3>
+     Try Our Image Compressor Now
+    </h3>
+<p>
+     Super easy to use, no downloads required. Just upload your image, hit the button, and watch it get smaller. In a couple of seconds, your file is compressed and ready to go.
+    </p>
+<p>
+     No sign-ups. No extra steps. Just upload, compress, and download—boom, done.
+    </p>
+<h3>
+     Why Use an Image Compressor?
+    </h3>
+<p>
+     You might be asking: Do I really need this?
+    </p>
+<p>
+     Here’s why an Image Compressor is the unsung hero of your digital toolkit:
+    </p>
+<ul>
+<li>
+      Faster loading times – Small images load way quicker, which makes websites faster.
+     </li>
+<li>
+      Better performance – Compressing images helps your website or blog run smoother, and helps avoid people bouncing because of slow load times.
+     </li>
+<li>
+      Save space – Whether you’re uploading for the web or storing a bunch of pics on your device, smaller files = more room.
+     </li>
+<li>
+      SEO boost – Google loves fast-loading pages, and compressing images can help you rank better.
+     </li>
+<li>
+      Easier sharing – Need to email a pic? Compress it first so your email doesn’t turn into a never-ending download.
+     </li>
+</ul>
+<p>
+     Honestly, an Image Compressor is a total game-changer if you’re uploading or storing lots of images. Just makes life easier.
+    </p>
+<h3>
+     Features of the Image Compressor
+    </h3>
+<p>
+     Let’s talk about what makes this Image Compressor so awesome:
+    </p>
+<ul>
+<li>
+      One-click compression – No complicated settings. Just upload and click.
+     </li>
+<li>
+      Supports multiple formats – Whether it's PNG, JPG, GIF—you’re covered.
+     </li>
+<li>
+      Fast &amp; efficient – Compress images in seconds, and you won’t lose any noticeable quality.
+     </li>
+<li>
+      Totally free – No hidden fees, no surprise charges. Just a clean, simple tool.
+     </li>
+<li>
+      No need for software – This is all online. No downloads or installations needed.
+     </li>
+<li>
+      Keep original quality – The tool works to reduce file size without turning your high-quality images into blurry messes.
+     </li>
+<li>
+      Super simple – Just drag, drop, compress, and go.
+     </li>
+</ul>
+<p>
+     So yeah, the Image Compressor is like your best friend who helps you declutter without you even having to ask.
+    </p>
+<h3>
+     How to Use the Image Compressor
+    </h3>
+<p>
+     Using this Image Compressor is like taking a selfie—it’s just that easy. Here’s how you do it:
+    </p>
+<ol>
+<li>
+      Open the tool page.
+     </li>
+<li>
+      Upload the image you want to shrink (drag-and-drop or use the “Choose File” button).
+     </li>
+<li>
+      Hit the “Compress” button.
+     </li>
+<li>
+      Wait a couple of seconds (it’s super fast).
+     </li>
+<li>
+      Download the smaller, compressed image to your computer. Done!
+     </li>
+</ol>
+<p>
+     Pro tip: If you need to compress multiple images, you can easily do them one at a time. Just reload and repeat the steps. If you’re dealing with bulk uploads, consider using batch compression tools.
+    </p>
+<h3>
+     Why Choose This Image Compressor?
+    </h3>
+<p>
+     Okay, so you’ve got choices, but here’s why this Image Compressor stands out:
+    </p>
+<ul>
+<li>
+      It’s quick – No waiting around for ages to shrink your files.
+     </li>
+<li>
+      It’s free – No hidden fees or surprise charges. Just upload, compress, and download.
+     </li>
+<li>
+      Simple interface – No unnecessary extras or fancy jargon. Just what you need.
+     </li>
+<li>
+      No software download – Everything works in your browser.
+     </li>
+<li>
+      Keeps your files secure – Your images aren’t saved anywhere else, so your privacy’s intact.
+     </li>
+</ul>
+<p>
+     Basically, it’s the easiest, fastest way to shrink your images without a bunch of extra stuff you don’t need.
+    </p>
+<h3>
+     FAQs About the Image Compressor
+    </h3>
+<p>
+<strong>
+      Does the Image Compressor really reduce image quality?
+     </strong>
+</p>
+<p>
+     It doesn’t ruin quality—just makes the file smaller while keeping it looking pretty much the same. If you compress an image too much, you might notice a little fuzziness, but it’s minimal.
+    </p>
+<p>
+<strong>
+      Can I compress images in different formats?
+     </strong>
+</p>
+<p>
+     Yep, you can compress JPGs, PNGs, GIFs, and other common formats. Whatever you've got, this tool’s got you.
+    </p>
+<p>
+<strong>
+      How many images can I compress at once?
+     </strong>
+</p>
+<p>
+     The tool works with one image at a time, but it’s fast. So no worries there—just rinse and repeat if you need to compress more.
+    </p>
+<p>
+<strong>
+      Does the image compressor work for web images?
+     </strong>
+</p>
+<p>
+     Definitely! It’s perfect for images you plan to upload to websites. Smaller file sizes mean faster loading times and better SEO.
+    </p>
+<p>
+<strong>
+      Is it safe to upload my images here?
+     </strong>
+</p>
+<p>
+     Yes! The tool doesn’t store or share your images, so they’re completely secure. Once you download the compressed image, your file disappears from the server.
+    </p>
+<h3>
+     Wrap-Up: Compress and Conquer
+    </h3>
+<p>
+     Bottom line? If you’ve got images that are too big for their own good, an Image Compressor is your new best friend. It’s fast, easy, and best of all—totally free. Whether you're managing a website, blog, or just trying to make space on your phone, resizing images to a manageable size has never been easier.
+    </p>
+<p>
+     So go ahead—compress those images and make your life a little easier. You got this.
+    </p>
+</div>
+<script>
+        // DOM element manipulation
+    const dropZone = document.getElementById('dropZone');
+        // DOM element manipulation
+        const fileInput = document.getElementById('fileInput');
+        // DOM element manipulation
+        const preview = document.getElementById('preview');
+        // DOM element manipulation
+        const controls = document.querySelector('.controls');
+        // DOM element manipulation
+        const quality = document.getElementById('quality');
+        // DOM element manipulation
+        const qualityValue = document.getElementById('qualityValue');
+        // DOM element manipulation
+        const compressBtn = document.getElementById('compressBtn');
+        // DOM element manipulation
+        const result = document.getElementById('result');
+        // DOM element manipulation
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // Drag & Drop handlers
+        // Event listener for user interactions
+        dropZone.addEventListener('click', () => fileInput.click());
+        // Event listener for user interactions
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        // Event listener for user interactions
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+        // Event listener for user interactions
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            handleFile(file);
+        });
+
+        // Event listener for user interactions
+        fileInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+        // Event listener for user interactions
+        quality.addEventListener('input', () => {
+            qualityValue.textContent = `${Math.round(quality.value * 100)}%`;
+        });
+
+        // Event listener for user interactions
+        compressBtn.addEventListener('click', compressImage);
+
+        // Function: handleFile
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) return;
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                controls.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Function: compressImage
+        function compressImage() {
+            const qualityValue = parseFloat(quality.value);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = () => {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob((blob) => {
+                    const url = URL.createObjectURL(blob);
+                    downloadBtn.href = url;
+                    downloadBtn.download = `compressed-${Date.now()}.jpg`;
+                    result.style.display = 'block';
+                }, 'image/jpeg', qualityValue);
+            };
+            img.src = preview.src;
+        }
+   </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</head>
+</html>

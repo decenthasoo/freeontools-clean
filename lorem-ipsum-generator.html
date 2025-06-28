@@ -1,0 +1,901 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Lorem Ipsum Generator - Simple & Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Lorem Ipsum Generator - Create placeholder text for your projects with this simple and free Lorem Ipsum generator. Ideal for websites, design mockups, and more. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="Lorem Ipsum Generator, Generate Lorem Ipsum, Placeholder Text Generator, Free Lorem Ipsum, Dummy Text Generator, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/lorem-ipsum-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Lorem Ipsum Generator - Simple &amp; Free" property="og:title"/>
+<meta content="Lorem Ipsum Generator - Create placeholder text for your projects with this simple and free Lorem Ipsum generator. Ideal for websites, design mockups, and more. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/lorem-ipsum-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/lorem-ipsum-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Lorem Ipsum Generator - Simple &amp; Free" name="twitter:title"/>
+<meta content="Lorem Ipsum Generator - Create placeholder text for your projects with this simple and free Lorem Ipsum generator. Ideal for websites, design mockups, and more. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/lorem-ipsum-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Lorem Ipsum Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/lorem-ipsum-generator",
+  "image": "https://www.freeontools.com/images/lorem-ipsum-generator.png",
+  "description": "Generate placeholder text for your projects with this free Lorem Ipsum generator. Perfect for mockups, websites, and design projects. No login required, no ads.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/lorem-ipsum-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.92",
+  "bestRating": "5",
+  "ratingCount": "1025"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Emily Johnson"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "The Lorem Ipsum Generator is perfect for my design projects! It's easy to use, generates the text quickly, and it's free. Highly recommend for anyone needing placeholder text.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Lorem Ipsum Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background: #f0f2f5;
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: -120px;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 50px 0;
+            color: #555;
+margin-top: -20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #222;
+            margin-bottom: 10px;
+margin-top: -50px !important;
+        }
+
+        .generator-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+            backdrop-filter: blur(5px);
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            background: #f9f9f9;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        select {
+            max-height: 200px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            transform: translateY(-2px);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        #generate-btn {
+            background: #f28c38;
+            color: white;
+        }
+
+        #generate-btn:hover {
+            background: #e07b30;
+        }
+
+        #output {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            min-height: 400px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+            font-size: 1.1em;
+        }
+
+        #output h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .rtl {
+            direction: rtl;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .copy-btn {
+            background: #f28c38;
+            color: white;
+        }
+
+        .copy-btn:hover {
+            background: #e07b30;
+        }
+
+        .download-btn {
+            background: #f28c38;
+            color: white;
+        }
+
+        .download-btn:hover {
+            background: #e07b30;
+        }
+
+        .clear-btn {
+            background: #f28c38;
+            color: white;
+        }
+
+        .clear-btn:hover {
+            background: #e07b30;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            padding-left: 30px; /* Left padding */
+            padding-right: 30px; /* Right padding */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+            backdrop-filter: blur(5px);
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            margin-top: 20px;
+text-align: left !important;
+          
+}
+
+        /* Container styling */
+        .content-container p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #333;
+text-align: left !important;
+          
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* Container styling */
+        .content-container ol {
+            list-style-type: decimal; /* Ensure ordered list uses numbers */
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            .generator-box { padding: 25px; }
+            .controls { grid-template-columns: 1fr; }
+            .button-container {
+                justify-content: center;
+            }
+        /* Container styling */
+            .content-container {
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f0f2f5;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="hero" style="text-align: center; margin: 2rem 0;">
+<h1>
+    Lorem Ipsum Generator
+   </h1><p>Create custom placeholder text with advanced features for web design, development, and content creation. Perfect for generating dummy text in multiple languages with customizable options.</p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<!-- Page header section -->
+<header>
+</header>
+<div class="generator-box">
+<div class="controls">
+<div class="control-group">
+<label for="paragraphs">
+       Number of Paragraphs (4-5):
+      </label>
+<input id="paragraphs" max="5" min="4" type="number" value="4"/>
+</div>
+<div class="control-group">
+<label for="words">
+       Words per Paragraph:
+      </label>
+<input id="words" max="200" min="50" type="number" value="100"/>
+</div>
+<div class="control-group">
+<label for="style">
+       Text Style:
+      </label>
+<select id="style">
+<option value="classic">
+        Classic Lorem
+       </option>
+<option value="modern">
+        Modern Words
+       </option>
+<option value="mixed">
+        Mixed Style
+       </option>
+</select>
+</div>
+<div class="control-group">
+<label for="language">
+       Language:
+      </label>
+<select id="language" onchange="updateTextDirection()">
+<option value="armenian">
+        Հայերեն (Armenian)
+       </option>
+<option value="albanian">
+        Shqip (Albanian)
+       </option>
+<option value="arabic">
+        العربية (Arabic)
+       </option>
+<option value="bulgarian">
+        Български (Bulgarian)
+       </option>
+<option value="catalan">
+        Català (Catalan)
+       </option>
+<option value="chinese">
+        中文简体 (Chinese Simplified)
+       </option>
+<option value="croatian">
+        Hrvatski (Croatian)
+       </option>
+<option value="czech">
+        Česky (Czech)
+       </option>
+<option value="danish">
+        Dansk (Danish)
+       </option>
+<option value="dutch">
+        Nederlands (Dutch)
+       </option>
+<option value="english">
+        English
+       </option>
+<option value="estonian">
+        Eesti (Estonian)
+       </option>
+<option value="filipino">
+        Filipino
+       </option>
+<option value="finnish">
+        Suomi (Finnish)
+       </option>
+<option value="french">
+        Français (French)
+       </option>
+<option value="georgian">
+        ქართული (Georgian)
+       </option>
+<option value="german">
+        Deutsch (German)
+       </option>
+<option value="greek">
+        Ελληνικά (Greek)
+       </option>
+<option value="hebrew">
+        עברית (Hebrew)
+       </option>
+<option value="hindi">
+        हिन्दी (Hindi)
+       </option>
+<option value="hungarian">
+        Magyar (Hungarian)
+       </option>
+<option value="indonesian">
+        Indonesia
+       </option>
+<option value="italian">
+        Italiano (Italian)
+       </option>
+<option value="latvian">
+        Latviski (Latvian)
+       </option>
+<option value="lithuanian">
+        Lietuviškai (Lithuanian)
+       </option>
+<option value="macedonian">
+        македонски (Macedonian)
+       </option>
+<option value="malay">
+        Melayu (Malay)
+       </option>
+<option value="norwegian">
+        Norsk (Norwegian)
+       </option>
+<option value="polish">
+        Polski (Polish)
+       </option>
+<option value="portuguese">
+        Português (Portuguese)
+       </option>
+<option value="romanian">
+        Română (Romanian)
+       </option>
+<option value="russian">
+        Pyccкий (Russian)
+       </option>
+<option value="serbian">
+        Српски (Serbian)
+       </option>
+<option value="slovak">
+        Slovenčina (Slovak)
+       </option>
+<option value="slovenian">
+        Slovenščina (Slovenian)
+       </option>
+<option value="spanish">
+        Español (Spanish)
+       </option>
+<option value="swedish">
+        Svenska (Swedish)
+       </option>
+<option value="thai">
+        ไทย (Thai)
+       </option>
+<option value="turkish">
+        Türkçe (Turkish)
+       </option>
+<option value="ukrainian">
+        Українська (Ukrainian)
+       </option>
+<option value="urdu">
+        اردو (Urdu)
+       </option>
+<option value="vietnamese">
+        Tiếng Việt (Vietnamese)
+       </option>
+</select>
+</div>
+<div class="control-group">
+<label for="includeHeadings">
+       Include Headings:
+      </label>
+<select id="includeHeadings">
+<option value="yes">
+        Yes
+       </option>
+<option value="no">
+        No
+       </option>
+</select>
+</div>
+</div>
+<div class="button-container">
+<button id="generate-btn" onclick="generateText()">
+      Generate Text
+     </button>
+</div>
+<div id="output">
+</div>
+<div class="action-buttons">
+<button class="copy-btn" onclick="copyText()">
+      Copy to Clipboard
+     </button>
+<button class="download-btn" onclick="downloadText()">
+      Download as TXT
+     </button>
+<button class="clear-btn" onclick="clearOutput()">
+      Clear Output
+     </button>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What is a Lorem Ipsum Generator?
+    </h2>
+<p>
+     A Lorem Ipsum Generator is a tool that creates placeholder text for your designs, mockups, or projects. The text, often referred to as “Lorem Ipsum,” is nonsensical but mimics the look and feel of natural language. Designers and developers use it to fill spaces where content will eventually go, so they can focus on the layout and design without being distracted by actual words. It’s like a stand-in for real content that looks real enough to get the job done.
+    </p>
+<p>
+     If you’ve ever seen blocks of text in a design and thought, “That looks like some weird Latin,” well, that’s exactly what a Lorem Ipsum Generator produces. It helps keep your projects clean and focused while you work on the visuals and structure.
+    </p>
+<h2>
+     Try Our Lorem Ipsum Generator Now
+    </h2>
+<p>
+     Ready to get that placeholder text? Just pop over to our Lorem Ipsum Generator, click the button, and voila—you’ll have the perfect amount of filler text for whatever you need. Whether it's a few words or a whole paragraph, this tool’s got your back.
+    </p>
+<h2>
+     Why You Need a Lorem Ipsum Generator
+    </h2>
+<p>
+     You might be thinking, “Why not just use actual content?” Well, here’s why placeholder text is the way to go:
+    </p>
+<ul>
+<li>
+<strong>
+       Keeps Your Focus on Design:
+      </strong>
+      Lorem Ipsum allows you to focus on the look and feel of your layout, rather than getting sidetracked by content.
+     </li>
+<li>
+<strong>
+       Looks Real:
+      </strong>
+      The gibberish text looks close enough to real writing that it doesn’t distract you, yet it’s empty enough to keep things flexible.
+     </li>
+<li>
+<strong>
+       Helps Visualize:
+      </strong>
+      It fills space so you can visualize how a page, app, or layout will look once real content is added.
+     </li>
+<li>
+<strong>
+       Saves Time:
+      </strong>
+      You don’t have to come up with sample content or use random sentences that don’t match your design goals.
+     </li>
+</ul>
+<h2>
+     Features
+    </h2>
+<p>
+     Here’s why this Lorem Ipsum Generator stands out:
+    </p>
+<ul>
+<li>
+<strong>
+       Customizable Length:
+      </strong>
+      Choose how much text you need—from a couple of sentences to several paragraphs.
+     </li>
+<li>
+<strong>
+       Multiple Output Formats:
+      </strong>
+      You can generate text for different purposes—paragraphs, headings, or even specific word counts.
+     </li>
+<li>
+<strong>
+       Fast &amp; Simple:
+      </strong>
+      Type in how many paragraphs or words you need, and the tool generates the content instantly.
+     </li>
+<li>
+<strong>
+       Free to Use:
+      </strong>
+      No payment, no hassle—just plain old placeholder text when you need it.
+     </li>
+<li>
+<strong>
+       No Need for Design Skills:
+      </strong>
+      The tool is super easy to use, and you don’t need to be a designer to make it work.
+     </li>
+</ul>
+<h2>
+     How to Use the Lorem Ipsum Generator
+    </h2>
+<p>
+     Getting placeholder text has never been easier. Here’s how:
+    </p>
+<ol>
+<li>
+<strong>
+       Choose the Number of Paragraphs/Words:
+      </strong>
+      Decide how much Lorem Ipsum text you need—just a few lines or a full page’s worth.
+     </li>
+<li>
+<strong>
+       Click to Generate:
+      </strong>
+      Hit the “Generate” button, and the tool instantly creates the text for you.
+     </li>
+<li>
+<strong>
+       Copy and Paste:
+      </strong>
+      Once you have your placeholder text, just copy it and paste it where you need it in your design, mockup, or project.
+     </li>
+<li>
+<strong>
+       Done:
+      </strong>
+      That’s it! Now your project is ready to go with some professional-looking placeholder text.
+     </li>
+</ol>
+<p>
+<em>
+      Pro tip:
+     </em>
+     Don’t stress about the text itself—it’s not important for the layout. Focus on how it fits into your design.
+    </p>
+<h2>
+     Why Choose This Lorem Ipsum Generator?
+    </h2>
+<p>
+     Here’s why this tool is a total win for your design projects:
+    </p>
+<ul>
+<li>
+<strong>
+       Quick &amp; Easy:
+      </strong>
+      Need placeholder text? You’re literally just a few clicks away from having it.
+     </li>
+<li>
+<strong>
+       Flexible:
+      </strong>
+      Whether you need a little or a lot, you can customize the amount of text.
+     </li>
+<li>
+<strong>
+       Free Forever:
+      </strong>
+      No need to pay for it or sign up for anything—this tool’s available whenever you need it.
+     </li>
+<li>
+<strong>
+       Works Everywhere:
+      </strong>
+      Whether it’s for a website, app, or print design, you can use this text generator anywhere placeholder content is needed.
+     </li>
+</ul>
+<h2>
+     FAQs
+    </h2>
+<ol>
+<li>
+<strong>
+       What is Lorem Ipsum?
+      </strong>
+<br/>
+      Lorem Ipsum is placeholder text that looks like real language but is actually scrambled Latin. It's used in the design and publishing world to fill spaces before real content is added.
+     </li>
+<li>
+<strong>
+       Can I change the length of the Lorem Ipsum text?
+      </strong>
+<br/>
+      Yep! You can select how many paragraphs, sentences, or words you need. The tool generates exactly what you’re looking for.
+     </li>
+<li>
+<strong>
+       Is Lorem Ipsum really random?
+      </strong>
+<br/>
+      Mostly! While the text follows a specific pattern, it’s designed to look like natural language without meaning anything.
+     </li>
+<li>
+<strong>
+       Can I use this generator for any project?
+      </strong>
+<br/>
+      Absolutely! Whether it’s a website, brochure, or mobile app design, the placeholder text will fit right in.
+     </li>
+<li>
+<strong>
+       Is the Lorem Ipsum Generator free to use?
+      </strong>
+<br/>
+      Yes! There are no fees. It’s completely free to generate the placeholder text as many times as you need.
+     </li>
+</ol>
+<p>
+     A Lorem Ipsum Generator is a must-have tool for designers, developers, and anyone working on projects where real content isn’t ready yet. It helps you visualize your design without getting distracted by the actual words, making your workflow smoother and faster.
+    </p>
+</div>
+<!-- Page footer section -->
+</div>
+<script>
+   const wordSets = {
+            armenian: { classic: ['լորեմ', 'իպսում', 'դոլոր', 'սիթ', 'ամեթ'], modern: ['թվային', 'տեխնոլոգիա', 'նորարարություն', 'հարթակ', 'լուծում'] },
+            albanian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digjital', 'teknologji', 'inovacion', 'platformë', 'zgjidhje'] },
+            arabic: { classic: ['لوريم', 'إيبسوم', 'دولور', 'سيت', 'أميت'], modern: ['رقمي', 'تكنولوجيا', 'ابتكار', 'منصة', 'حل'] },
+            bulgarian: { classic: ['лорем', 'ипсум', 'долор', 'сит', 'амет'], modern: ['цифров', 'технология', 'иновативен', 'платформа', 'решение'] },
+            catalan: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'tecnologia', 'innovació', 'plataforma', 'solució'] },
+            chinese: { classic: ['洛雷姆', '伊普苏姆', '多洛尔', '西特', '阿梅特'], modern: ['数字', '技术', '创新', '平台', '解决方案'] },
+            croatian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitalni', 'tehnologija', 'inovacija', 'platforma', 'rješenje'] },
+            czech: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitální', 'technologie', 'inovace', 'platforma', 'řešení'] },
+            danish: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'teknologi', 'innovation', 'platform', 'løsning'] },
+            dutch: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitaal', 'technologie', 'innovatie', 'platform', 'oplossing'] },
+            english: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur'], modern: ['digital', 'technology', 'innovation', 'platform', 'solution'] },
+            estonian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitaalne', 'tehnoloogia', 'innovatsioon', 'platvorm', 'lahendus'] },
+            filipino: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'teknolohiya', 'inobasyon', 'plataporma', 'solusyon'] },
+            finnish: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitaalinen', 'teknologia', 'innovaatio', 'alusta', 'ratkaisu'] },
+            french: { classic: ['lorem', 'ipsum', 'douleur', 'assis', 'aimé'], modern: ['numérique', 'technologie', 'innovation', 'plateforme', 'solution'] },
+            georgian: { classic: ['ლორემ', 'იფსუმ', 'დოლორ', 'სით', 'ამეთ'], modern: ['ციფრული', 'ტექნოლოგია', 'ინოვაცია', 'პლატფორმა', 'გადაწყვეტა'] },
+            german: { classic: ['lorem', 'ipsum', 'schmerz', 'sitzt', 'geliebt'], modern: ['digital', 'technologie', 'innovation', 'plattform', 'lösung'] },
+            greek: { classic: ['λορεμ', 'ιψουμ', 'δολορ', 'σιτ', 'αμετ'], modern: ['ψηφιακός', 'τεχνολογία', 'καινοτομία', 'πλατφόρμα', 'λύση'] },
+            hebrew: { classic: ['לורם', 'איפסום', 'דולור', 'סיט', 'אמט'], modern: ['דיגיטלי', 'טכנולוגיה', 'חדשנות', 'פלטפורמה', 'פתרון'] },
+            hindi: { classic: ['लोरेम', 'इप्सम', 'डोलोर', 'सिट', 'अमेट'], modern: ['डिजिटल', 'तकनीक', 'नवाचार', 'मंच', 'समाधान'] },
+            hungarian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitális', 'technológia', 'innováció', 'platform', 'megoldás'] },
+            indonesian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'teknologi', 'inovasi', 'platform', 'solusi'] },
+            italian: { classic: ['lorem', 'ipsum', 'dolore', 'siede', 'amato'], modern: ['digitale', 'tecnologia', 'innovazione', 'piattaforma', 'soluzione'] },
+            latvian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitāls', 'tehnoloģija', 'inovācija', 'platforma', 'risinājums'] },
+            lithuanian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['skaitmeninis', 'technologija', 'inovacija', 'platforma', 'sprendimas'] },
+            macedonian: { classic: ['лорем', 'ипсум', 'долор', 'сит', 'амет'], modern: ['дигитален', 'технологија', 'иновативност', 'платформа', 'решение'] },
+            malay: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'teknologi', 'inovasi', 'platform', 'penyelesaian'] },
+            norwegian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'teknologi', 'innovasjon', 'plattform', 'løsning'] },
+            polish: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['cyfrowy', 'technologia', 'innowacja', 'platforma', 'rozwiązanie'] },
+            portuguese: { classic: ['lorem', 'ipsum', 'dor', 'senta', 'amado'], modern: ['digital', 'tecnologia', 'inovação', 'plataforma', 'solução'] },
+            romanian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'tehnologie', 'inovație', 'platformă', 'soluție'] },
+            russian: { classic: ['лорем', 'ипсум', 'долор', 'сит', 'амет'], modern: ['цифровой', 'технология', 'инновация', 'платформа', 'решение'] },
+            serbian: { classic: ['лорем', 'ипсум', 'долор', 'сит', 'амет'], modern: ['дигитални', 'технологија', 'иновација', 'платформа', 'решење'] },
+            slovak: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitálny', 'technológia', 'inovácia', 'platforma', 'riešenie'] },
+            slovenian: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digitalni', 'tehnologija', 'inovacija', 'platforma', 'rešitev'] },
+            spanish: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'tecnología', 'innovación', 'plataforma', 'solución'] },
+            swedish: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['digital', 'teknik', 'innovation', 'plattform', 'lösning'] },
+            thai: { classic: ['ลอเร็ม', 'อิปซัม', 'ดอลอร์', 'ซิต', 'อาเมท'], modern: ['ดิจิทัล', 'เทคโนโลยี', 'นวัตกรรม', 'แพลตฟอร์ม', 'โซลูชัน'] },
+            turkish: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['dijital', 'teknoloji', 'yenilik', 'platform', 'çözüm'] },
+            ukrainian: { classic: ['лорем', 'іпсум', 'долор', 'сіт', 'амет'], modern: ['цифровий', 'технологія', 'інновація', 'платформа', 'рішення'] },
+            urdu: { classic: ['لورم', 'ایپسم', 'ڈولر', 'سیٹ', 'امیٹ'], modern: ['ڈیجیٹل', 'ٹیکنالوجی', 'اختراع', 'پلیٹ فارم', 'حل'] },
+            vietnamese: { classic: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'], modern: ['số', 'công nghệ', 'đổi mới', 'nền tảng', 'giải pháp'] }
+        };
+
+        const headings = {
+            english: ['Section One', 'Chapter Two', 'Main Topic', 'Key Points', 'Overview'],
+            arabic: ['القسم الأول', 'الفصل الثاني', 'الموضوع الرئيسي', 'النقاط الرئيسية', 'نظرة عامة'],
+            hebrew: ['חלק ראשון', 'פרק שני', 'נושא ראשי', 'נקודות מפתח', 'סקירה'],
+            urdu: ['سیکشن ایک', 'باب دو', 'اہم موضوع', 'کلیدی نکات', 'جائزہ'],
+            // Fallback to English for other languages
+        };
+
+        // Function: generateText
+        function generateText() {
+        // DOM element manipulation
+            const paragraphs = parseInt(document.getElementById('paragraphs').value);
+        // DOM element manipulation
+            const wordsPerPara = parseInt(document.getElementById('words').value);
+        // DOM element manipulation
+            const style = document.getElementById('style').value;
+        // DOM element manipulation
+            const language = document.getElementById('language').value;
+        // DOM element manipulation
+            const includeHeadings = document.getElementById('includeHeadings').value === 'yes';
+            let output = '';
+
+            const wordSet = style === 'mixed' ? 
+                [...wordSets[language].classic, ...wordSets[language].modern] :
+                wordSets[language][style];
+            const headingSet = headings[language] || headings.english;
+
+            for (let i = 0; i < paragraphs; i++) {
+                if (includeHeadings) {
+                    const heading = headingSet[i % headingSet.length];
+                    output += `<h2>${heading}</h2>\n`;
+                }
+                let paragraph = '';
+                for (let j = 0; j < wordsPerPara; j++) {
+                    const randomWord = wordSet[Math.floor(Math.random() * wordSet.length)];
+                    paragraph += randomWord + ' ';
+                }
+                output += paragraph.trim() + '\n\n';
+            }
+
+        // DOM element manipulation
+            document.getElementById('output').innerHTML = output.trim();
+            updateTextDirection();
+        }
+
+        // Function: updateTextDirection
+        function updateTextDirection() {
+        // DOM element manipulation
+            const language = document.getElementById('language').value;
+        // DOM element manipulation
+            const output = document.getElementById('output');
+            const rtlLanguages = ['arabic', 'hebrew', 'urdu'];
+            if (rtlLanguages.includes(language)) {
+                output.classList.add('rtl');
+            } else {
+                output.classList.remove('rtl');
+            }
+        }
+
+        // Function: copyText
+        function copyText() {
+        // DOM element manipulation
+            const text = document.getElementById('output').textContent;
+            navigator.clipboard.writeText(text)
+                .then(() => alert('Text copied to clipboard!'))
+                .catch(err => alert('Failed to copy text: ' + err));
+        }
+
+        // Function: downloadText
+        function downloadText() {
+        // DOM element manipulation
+            const text = document.getElementById('output').textContent;
+            const blob = new Blob([text], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'lorem_ipsum.txt';
+            link.click();
+        }
+
+        // Function: clearOutput
+        function clearOutput() {
+        // DOM element manipulation
+            document.getElementById('output').innerHTML = '';
+        }
+
+        window.onload = generateText;
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

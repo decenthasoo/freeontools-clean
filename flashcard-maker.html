@@ -1,0 +1,684 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Flashcard Maker - No Credit Card Needed
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Flashcard Maker - Create study flashcards easily with this 100% free tool. No credit card needed, no login, no ads—just fast, simple learning." name="description">
+<meta content="Flashcard Maker, Free Study Tool, Create Flashcards Online, 100% Free, No Credit Card Needed, No Hidden Fees, Simple &amp; Free, No Ads" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/flashcard-maker" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Flashcard Maker - No Credit Card Needed" property="og:title"/>
+<meta content="Flashcard Maker - Create study flashcards easily with this 100% free tool. No credit card needed, no login, no ads—just fast, simple learning." property="og:description"/>
+<meta content="https://www.freeontools.com/images/flashcard-maker.png" property="og:image"/>
+<meta content="https://www.freeontools.com/flashcard-maker" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Flashcard Maker - No Credit Card Needed" name="twitter:title"/>
+<meta content="Flashcard Maker - Create study flashcards easily with this 100% free tool. No credit card needed, no login, no ads—just fast, simple learning." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/flashcard-maker.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Flashcard Maker",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/flashcard-maker",
+  "image": "https://www.freeontools.com/images/flashcard-maker.png",
+  "description": "Flashcard Maker - A 100% free, no-login-required web tool to help you create digital flashcards for study and learning.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/flashcard-maker",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "ratingCount": "720"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Liam Parker"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "Absolutely love this Flashcard Maker! It’s quick, easy, and completely free. No login or payment required. Helped me study for my exams efficiently!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Flashcard Maker"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        .flashcard-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .flashcard-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .flashcard-form input:focus {
+            outline: none;
+            border-color: #f28c38;
+        }
+
+        .flashcard-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .flashcard-form button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        .flashcard-list {
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .flashcard {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .flashcard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .flashcard h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .flashcard p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .flashcard .delete-btn {
+            margin-top: 10px;
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .flashcard .delete-btn:hover {
+            background: #e07b30;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            animation: fadeIn 0.5s ease-in;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #222;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .flashcard-form {
+                padding: 15px;
+            }
+
+            .flashcard-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .flashcard-form input {
+                padding: 10px;
+            }
+
+            .flashcard-form button {
+                padding: 10px;
+                font-size: 1rem;
+            }
+
+            .flashcard {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Flashcard Maker
+   </h1>
+<p>
+    Create, edit, and study with ease using our premium flashcard tool.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="flashcard-form">
+<input aria-label="Front of flashcard" id="front" placeholder="Front of Card" type="text"/>
+<input aria-label="Back of flashcard" id="back" placeholder="Back of Card" type="text"/>
+<button onclick="addFlashcard()">
+     Add Flashcard
+    </button>
+</div>
+<div class="flashcard-list" id="flashcardList">
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Flashcard Maker?
+   </h2>
+<p>
+    So, you need a way to study or review information quickly, right? That’s where a Flashcard Maker comes in. It’s a useful tool that lets you create your own digital flashcards for anything you want to learn. Whether you're memorizing vocabulary words, formulas, historical dates, or whatever you need, the flashcard maker helps you break down complex info into bite-sized pieces, making it easier to study and remember.
+   </p>
+<p>
+    Flashcards are awesome because they use active recall—aka, forcing your brain to retrieve the info—so they help with memorization and understanding. With a flashcard maker, you can customize your cards exactly how you want them. No more scribbling on index cards or worrying about losing them. Everything’s digital and ready to go!
+   </p>
+<h3>
+    Try Our Flashcard Maker Now
+   </h3>
+<p>
+    Want to memorize something? It’s easy to get started. Just pop in your info, and our Flashcard Maker will help you create the perfect set of digital cards in no time.
+   </p>
+<h2>
+    Why a Flashcard Maker Matters
+   </h2>
+<p>
+    Okay, so why would you use a flashcard maker over just writing stuff down on paper? Here’s why it’s awesome:
+   </p>
+<ul>
+<li>
+<strong>
+      Convenience
+     </strong>
+     – No more messy, physical flashcards. Everything is online, so you can access it from anywhere.
+    </li>
+<li>
+<strong>
+      Customizable
+     </strong>
+     – You can create cards exactly how you want them, from the content to the design.
+    </li>
+<li>
+<strong>
+      Efficient studying
+     </strong>
+     – Flashcards areproven to help with retention by using spaced repetition and active recall. This method is one of the best for memory.
+    </li>
+<li>
+<strong>
+      Save time
+     </strong>
+     – You don’t need to write out flashcards by hand. The tool automates most of it for you, saving you time and effort.
+    </li>
+</ul>
+<h2>
+    Features
+   </h2>
+<p>
+    Here’s what makes our Flashcard Maker tool a must-have for anyone studying or teaching:
+   </p>
+<ul>
+<li>
+<strong>
+      Customizable cards
+     </strong>
+     – Add your questions and answers, or even upload images to make your flashcards more interactive.
+    </li>
+<li>
+<strong>
+      Multiple decks
+     </strong>
+     – Create multiple sets of flashcards for different subjects or topics.
+    </li>
+<li>
+<strong>
+      Review mode
+     </strong>
+     – Study your cards in a flashcard review mode, which helps you go over them at the right intervals.
+    </li>
+<li>
+<strong>
+      Progress tracking
+     </strong>
+     – Keep track of your progress and see which cards you’ve mastered or need to work on.
+    </li>
+<li>
+<strong>
+      Easy export options
+     </strong>
+     – Export your cards to apps like Anki or Quizlet for further study or review.
+    </li>
+</ul>
+<h2>
+    How to Use the Flashcard Maker
+   </h2>
+<p>
+    Building flashcards is a piece of cake. Here’s how to get started:
+   </p>
+<ol>
+<li>
+<strong>
+      Go to the Flashcard Maker tool
+     </strong>
+     – Open it up in your browser—no need to install anything.
+    </li>
+<li>
+<strong>
+      Create a deck
+     </strong>
+     – Start by creating a new deck of flashcards. You can give it a title, like “Spanish Vocabulary” or “Physics Formulas.”
+    </li>
+<li>
+<strong>
+      Add flashcards
+     </strong>
+     – For each card, input a question or concept on the front and the answer or explanation on the back. You can even add images or audio if that helps.
+    </li>
+<li>
+<strong>
+      Review and test
+     </strong>
+     – Once your flashcards are ready, go into review mode to test yourself. You’ll be able to see how well you know the material and which cards you need to revisit.
+    </li>
+<li>
+<strong>
+      Export or share
+     </strong>
+     – When you're done, export your deck to a flashcard app or share it with others. You can also print them if you like the old-school feel of paper cards.
+    </li>
+</ol>
+<h2>
+    Why Choose This Flashcard Maker?
+   </h2>
+<p>
+    There are a lot of flashcard apps out there, but here’s why ours stands out:
+   </p>
+<ul>
+<li>
+<strong>
+      User-friendly
+     </strong>
+     – No steep learning curve here. The interface is simple and intuitive.
+    </li>
+<li>
+<strong>
+      All-in-one
+     </strong>
+     – From creation to review, everything you need is right in the tool. No need to jump between apps or worry about syncing.
+    </li>
+<li>
+<strong>
+      Customizable
+     </strong>
+     – You’re not stuck with default settings. You can tweak your cards to fit your needs perfectly.
+    </li>
+<li>
+<strong>
+      Free and online
+     </strong>
+     – You don’t have to download anything or pay for fancy features. It’s all free and accessible from anywhere.
+    </li>
+<li>
+<strong>
+      Supports different subjects
+     </strong>
+     – Whether it’s language learning, history, math, or any other topic, this tool works for everything.
+    </li>
+</ul>
+<h2>
+    FAQs
+   </h2>
+<ol>
+<li>
+<strong>
+      Can I add images or audio to my flashcards?
+     </strong>
+<br/>
+     Yes! You can upload images or even add audio files to your flashcards to make your studying more interactive.
+    </li>
+<li>
+<strong>
+      How do I track my progress?
+     </strong>
+<br/>
+     Our Flashcard Maker tracks which cards you’ve mastered and which ones you need to review, so you can focus on what matters most.
+    </li>
+<li>
+<strong>
+      Can I share my flashcards with others?
+     </strong>
+<br/>
+     Absolutely. You can export your flashcards or share them directly with friends or classmates.
+    </li>
+<li>
+<strong>
+      Is there a limit to how many flashcards I can create?
+     </strong>
+<br/>
+     Nope! You can create as many flashcards as you need. There’s no limit to how many decks you can make or how many cards you can add.
+    </li>
+<li>
+<strong>
+      Can I study my flashcards on my phone?
+     </strong>
+<br/>
+     Definitely! You can export your cards to apps like Anki or Quizlet, which have mobile versions, so you can study on the go.
+    </li>
+</ol>
+<p>
+    Are you ready to make studying easier and more fun? Try our Flashcard Maker and create your own personalized study materials today. Whether you’re preparing for an exam, learning a new language, or just brushing up on something, this tool will help you study smarter, not harder!
+   </p>
+</div>
+<script>
+   let flashcards = [];
+
+        // Function: addFlashcard
+        function addFlashcard() {
+        // DOM element manipulation
+            const front = document.getElementById('front').value.trim();
+        // DOM element manipulation
+            const back = document.getElementById('back').value.trim();
+
+            if (front && back) {
+                flashcards.push({ front, back });
+        // DOM element manipulation
+                document.getElementById('front').value = '';
+        // DOM element manipulation
+                document.getElementById('back').value = '';
+                renderFlashcards();
+            }
+        }
+
+        // Function: deleteFlashcard
+        function deleteFlashcard(index) {
+            flashcards.splice(index, 1);
+            renderFlashcards();
+        }
+
+        // Function: renderFlashcards
+        function renderFlashcards() {
+        // DOM element manipulation
+            const flashcardList = document.getElementById('flashcardList');
+            flashcardList.innerHTML = '';
+            flashcards.forEach((card, index) => {
+                const flashcard = document.createElement('div');
+                flashcard.className = 'flashcard';
+                flashcard.innerHTML = `
+                    <h3>${card.front}</h3>
+                    <p>${card.back}</p>
+                    <button class="delete-btn" onclick="deleteFlashcard(${index})">Delete</button>
+                `;
+                flashcardList.appendChild(flashcard);
+            });
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

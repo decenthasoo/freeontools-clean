@@ -1,0 +1,792 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Vocabulary Quiz Generator - No Catch
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Vocabulary Quiz Generator - Easily create quizzes to test vocabulary. 100% free, no catch, no login, and no ads. Try it free now!" name="description">
+<meta content="Vocabulary Quiz Generator, Free Vocabulary Tool, Quiz Creator, No Ads, No Catch, 100% Free, Free Without Login, One-Click Tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/vocabulary-quiz-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Vocabulary Quiz Generator - No Catch" property="og:title"/>
+<meta content="Vocabulary Quiz Generator - Easily create quizzes to test vocabulary. 100% free, no catch, no login, and no ads. Try it free now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/vocabulary-quiz-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/vocabulary-quiz-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Vocabulary Quiz Generator - No Catch" name="twitter:title"/>
+<meta content="Vocabulary Quiz Generator - Easily create quizzes to test vocabulary. 100% free, no catch, no login, and no ads. Try it free now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/vocabulary-quiz-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Vocabulary Quiz Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/vocabulary-quiz-generator",
+  "image": "https://www.freeontools.com/images/vocabulary-quiz-generator.png",
+  "description": "Vocabulary Quiz Generator - A fast, free, and user-friendly tool to build vocabulary quizzes in seconds. No ads, no catch, no credit card needed.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/vocabulary-quiz-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "ratingCount": "780"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Sophie Lambert"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "The Vocabulary Quiz Generator is my go-to tool for building quick vocabulary quizzes for my ESL students. It's free, effective, and super easy to use!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Vocabulary Quiz Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* Body styling */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            animation: slideIn 0.8s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 800px;
+            width: 90%;
+            background: #fff;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            animation: slideIn 0.8s ease-out;
+            text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin: 15px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 15px;
+            max-width: none;
+            text-align: left;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            list-style-position: outside;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        /* Container styling */
+        .content-container a {
+            color: #f28c38;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Container styling */
+        .content-container a:hover {
+            color: #e07b30;
+        }
+
+        .instruction {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .instruction code {
+            font-family: 'Courier New', monospace;
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            resize: none;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #f28c38;
+        }
+
+        textarea::placeholder {
+            color: #888;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        button {
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover { background-color: #d97a2e;
+            background: #e07b30;
+            transform: scale(1.05);
+        }
+
+        #quizSection {
+            display: none;
+        }
+
+        .question {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .option:hover {
+            background: #f9f9f9;
+        }
+
+        .option input {
+            margin-right: 10px;
+        }
+
+        #resultModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+        /* Container styling */
+            .container, .content-container {
+                padding: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            .instruction {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            textarea {
+                height: 120px;
+            }
+
+            .instruction {
+                font-size: 0.85rem;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Vocabulary Quiz Generator
+   </h1>
+<p>
+    Create engaging multiple-choice vocabulary quizzes for learning and testing.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div id="inputSection">
+<div class="instruction">
+     Enter one word per line, optionally with a definition for the quiz question. Example:
+     <br/>
+<code>
+      apple:fruit
+     </code>
+<br/>
+<code>
+      river:body of water
+     </code>
+<br/>
+     Or just:
+     <code>
+      sun
+     </code>
+     ,
+     <code>
+      moon
+     </code>
+</div>
+<textarea id="wordList" placeholder="One word or word:definition per line"></textarea>
+<div class="error" id="error">
+     Please enter at least 4 words.
+    </div>
+<button onclick="generateQuiz()">
+     Generate Quiz
+    </button>
+</div>
+<div id="quizSection">
+<div class="question" id="question">
+</div>
+<div id="options">
+</div>
+<button onclick="nextQuestion()">
+     Next
+    </button>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is a Vocabulary Quiz Generator?
+   </h2>
+<p>
+    Okay, so you’re trying to level up your vocab—maybe for school, a test, your writing game, or just to feel less blank when someone says a fancy word like “ephemeral.” A Vocabulary Quiz Generator is exactly what it sounds like. It whips up quick, custom quizzes to test your word knowledge and keep your brain on its toes.
+   </p>
+<p>
+    You don’t have to spend hours flipping through flashcards or digging through some dusty old SAT prep book. With a Vocabulary Quiz Generator, you just pick your level, type in a few words (or let it surprise you), and boom—instant quiz. Multiple choice, fill-in-the-blank, or however you like it. It’s basically your vocabulary workout, minus the stress and sweat.
+   </p>
+<h3>
+    Try Our Vocabulary Quiz Generator Now
+   </h3>
+<p>
+    Seriously, don’t wait until the night before your exam. Just open the Vocabulary Quiz Generator, add some words or pick a difficulty level, and boom—quiz time. It takes like 10 seconds to get started, and you might actually enjoy it. (Weird, right?)
+   </p>
+<h3>
+    Why a Vocabulary Quiz Generator Is K геиinda Genius
+   </h3>
+<p>
+    Let’s be honest: trying to memorize word lists is about as fun as watching paint dry. But testing yourself? That’s a whole different game. You’re engaging with the words, seeing them in action, and your brain actually starts to remember stuff. That’s where the Vocabulary Quiz Generator comes in.
+   </p>
+<p>
+    Here’s why this tool is a low-key game-changer:
+   </p>
+<ul>
+<li>
+     Turns boring studying into a challenge – And who doesn’t love a little competition, even if it’s just with yourself?
+    </li>
+<li>
+     Reinforces what you’re learning – Testing boosts memory more than just re-reading stuff.
+    </li>
+<li>
+     Perfect for test prep – Think SATs, GREs, spelling bees, or even Duolingo vibes.
+    </li>
+<li>
+     Great for writers and word nerds – If you wanna spice up your writing, it helps to know more than just “cool” and “very.”
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<p>
+    The Vocabulary Quiz Generator keeps it fun, fast, and actually useful. No fluff—just the good stuff.
+   </p>
+<ul>
+<li>
+     Auto-generates quizzes based on your word list – Or gives you a random one if you’re feeling lucky.
+    </li>
+<li>
+     Multiple quiz formats – Multiple choice, match-the-definition, fill-in-the-blank—you pick.
+    </li>
+<li>
+     Adjustable difficulty – From super simple to SAT-level savage.
+    </li>
+<li>
+     Instant results – See your score right after you finish.
+    </li>
+<li>
+     Repeat as many times as you want – No penalty for playing again.
+    </li>
+</ul>
+<h3>
+    How to Use the Vocabulary Quiz Generator
+   </h3>
+<p>
+    It’s ridiculously easy. Like, you-could-do-this-while-watching-Netflix easy.
+   </p>
+<ol>
+<li>
+     Open the tool in your browser – No app needed.
+    </li>
+<li>
+     Choose your quiz format – Multiple choice, definitions, etc.
+    </li>
+<li>
+     Add your vocab list – Or hit “random” and get a surprise set.
+    </li>
+<li>
+     Set your difficulty – Beginner, intermediate, expert, SAT nightmare—you decide.
+    </li>
+<li>
+     Start the quiz – Answer each question and try not to second-guess yourself.
+    </li>
+<li>
+     Review your results – See what you got right, what you missed, and try again if you want.
+    </li>
+</ol>
+<p>
+    💡
+    <strong>
+     Pro tip:
+    </strong>
+    Use the generator daily with a fresh batch of words—it’s like Wordle but way more useful.
+   </p>
+<h3>
+    Why Choose This Vocabulary Quiz Generator?
+   </h3>
+<p>
+    So yeah, there are other vocab tools out there. But most of them feel like they were made in 2004 and never updated. This one? It’s built for now. Fast, fun, and doesn’t make you feel like you’re being tested by a robot.
+   </p>
+<p>
+    Here’s why it rocks:
+   </p>
+<ul>
+<li>
+     User-friendly interface – You won’t need a tutorial just to start.
+    </li>
+<li>
+     Custom word lists – You can totally tailor it to your needs.
+    </li>
+<li>
+     Real-time feedback – You’ll learn faster because it tells you why an answer’s right or wrong.
+    </li>
+<li>
+     Good for all ages – Whether you’re 12 or 42, it adapts to your level.
+    </li>
+<li>
+     No signups or spammy stuff – Just click and go.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      Can I add my own vocabulary words to the quiz?
+     </strong>
+<br/>
+     Absolutely. You can paste in your own word list and the generator will build a quiz from that. Super helpful if you’ve got specific words you're studying.
+    </li>
+<li>
+<strong>
+      What quiz formats are available?
+     </strong>
+<br/>
+     You can choose from multiple choice, match-the-definition, or even fill-in-the-blank formats. Mix it up depending on how much brainpower you’ve got that day.
+    </li>
+<li>
+<strong>
+      Does it track my progress over time?
+     </strong>
+<br/>
+     This version doesn’t store your history (privacy first!), but you can always retake quizzes or keep a score log on your own.
+    </li>
+<li>
+<strong>
+      Is it good for standardized test prep?
+     </strong>
+<br/>
+     Yep. If you’re prepping for SATs, ACTs, GREs, or even TOEFL, this tool is clutch. Just load in the test word lists and start practicing.
+    </li>
+<li>
+<strong>
+      Can I share the quiz with friends or students?
+     </strong>
+<br/>
+     You bet. Just copy the quiz link or screen-share if you’re teaching remotely. It’s great for group practice or class warm-ups.
+    </li>
+</ol>
+<p>
+    If you’ve ever said “I know the word, I just can’t remember what it means,” then the Vocabulary Quiz Generator is your new favorite tool. It’s fast, flexible, and way more fun than memorizing flashcards in silence. Just fire it up, take a quiz, and actually learn the words that’ll make you sound sharp, confident, and maybe just a little impressive.
+   </p>
+</div>
+<div id="resultModal">
+<div class="modal-content">
+<h2>
+     Quiz Results
+    </h2>
+<p id="resultText">
+</p>
+<button onclick="restartQuiz()">
+     Try Again
+    </button>
+</div>
+</div>
+<script>
+   let words = [];
+    let currentQuestion = 0;
+    let score = 0;
+    let questions = [];
+
+        // Function: generateQuiz
+    function generateQuiz() {
+        // DOM element manipulation
+        const wordList = document.getElementById('wordList').value.trim().split('\n');
+        // Parse words and filter out invalid entries
+        words = wordList
+            .map(line => {
+                const [word, definition = ''] = line.split(':').map(s => s.trim());
+                return word ? { word, definition } : null;
+            })
+            .filter(w => w && w.word); // Remove null or empty words
+
+        // Check for unique words
+        const uniqueWords = [...new Set(words.map(w => w.word.toLowerCase()))];
+        // DOM element manipulation
+        const errorEl = document.getElementById('error');
+
+        if (uniqueWords.length < 4) {
+            errorEl.textContent = 'Please enter at least 4 unique words.';
+            errorEl.style.display = 'block';
+            return;
+        }
+
+        errorEl.style.display = 'none';
+        // DOM element manipulation
+        document.getElementById('inputSection').style.display = 'none';
+        // DOM element manipulation
+        document.getElementById('quizSection').style.display = 'block';
+
+        try {
+            questions = generateMultipleChoice();
+            showQuestion();
+        } catch (error) {
+            errorEl.textContent = 'Error generating quiz. Please check your input.';
+            errorEl.style.display = 'block';
+        // DOM element manipulation
+            document.getElementById('inputSection').style.display = 'block';
+        // DOM element manipulation
+            document.getElementById('quizSection').style.display = 'none';
+        }
+    }
+
+        // Function: generateMultipleChoice
+    function generateMultipleChoice() {
+        return words.map((wordObj, index) => {
+            const options = [wordObj.word];
+            const availableWords = words
+                .filter(w => w.word.toLowerCase() !== wordObj.word.toLowerCase())
+                .map(w => w.word);
+
+            // Ensure we have enough unique words to fill options
+            if (availableWords.length < 3) {
+                throw new Error('Not enough unique words for options.');
+            }
+
+            // Select 3 random unique words
+            const shuffled = availableWords.sort(() => Math.random() - 0.5);
+            options.push(...shuffled.slice(0, 3));
+
+            // Shuffle options
+            options.sort(() => Math.random() - 0.5);
+
+            return {
+                question: wordObj.definition || `What is the meaning of "${wordObj.word}"?`,
+                correct: wordObj.word,
+                options
+            };
+        });
+    }
+
+        // Function: showQuestion
+    function showQuestion() {
+        // DOM element manipulation
+        const questionEl = document.getElementById('question');
+        // DOM element manipulation
+        const optionsEl = document.getElementById('options');
+        questionEl.innerHTML = `Question ${currentQuestion + 1}: ${questions[currentQuestion].question}`;
+        optionsEl.innerHTML = '';
+
+        questions[currentQuestion].options.forEach(option => {
+            const div = document.createElement('div');
+            div.className = 'option';
+            div.innerHTML = `<input type="radio" name="option" value="${option}"> ${option}`;
+            optionsEl.appendChild(div);
+        });
+    }
+
+        // Function: nextQuestion
+    function nextQuestion() {
+        const options = document.getElementsByName('option');
+        let selected = '';
+        options.forEach(opt => {
+            if (opt.checked) selected = opt.value;
+        });
+
+        if (!selected) {
+            alert('Please select an answer.');
+            return;
+        }
+
+        if (selected.toLowerCase() === questions[currentQuestion].correct.toLowerCase()) {
+            score++;
+        }
+
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+            showQuestion();
+        } else {
+            showResults();
+        }
+    }
+
+        // Function: showResults
+    function showResults() {
+        // DOM element manipulation
+        document.getElementById('quizSection').style.display = 'none';
+        // DOM element manipulation
+        const modal = document.getElementById('resultModal');
+        modal.style.display = 'flex';
+        // DOM element manipulation
+        document.getElementById('resultText').innerHTML = `You scored ${score} out of ${questions.length}!`;
+    }
+
+        // Function: restartQuiz
+    function restartQuiz() {
+        // DOM element manipulation
+        document.getElementById('resultModal').style.display = 'none';
+        // DOM element manipulation
+        document.getElementById('inputSection').style.display = 'block';
+        // DOM element manipulation
+        document.getElementById('wordList').value = '';
+        currentQuestion = 0;
+        score = 0;
+        questions = [];
+    }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

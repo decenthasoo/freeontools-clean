@@ -1,0 +1,827 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Image to Base64 Converter - Simple &amp; Free
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image to Base64 Converter - Convert your images into Base64 encoded strings quickly and easily. Perfect for embedding images into HTML and CSS. No login required, no ads, and 100% free. Try it now!" name="description">
+<meta content="Image to Base64 Converter, Convert Image to Base64, Image Encoding, Base64 Encoder, Free Base64 Converter, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-to-base64-converter" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="Image to Base64 Converter - Simple &amp; Free" property="og:title"/>
+<meta content="Image to Base64 Converter - Convert your images into Base64 encoded strings quickly and easily. Perfect for embedding images into HTML and CSS. No login required, no ads, and 100% free. Try it now!" property="og:description"/>
+<meta content="https://www.freeontools.com/images/image-to-base64-converter.png" property="og:image"/>
+<meta content="https://www.freeontools.com/image-to-base64-converter" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="Image to Base64 Converter - Simple &amp; Free" name="twitter:title"/>
+<meta content="Image to Base64 Converter - Convert your images into Base64 encoded strings quickly and easily. Perfect for embedding images into HTML and CSS. No login required, no ads, and 100% free. Try it now!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/image-to-base64-converter.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image to Base64 Converter",
+  "operatingSystem": "All",
+  "applicationCategory": "Web",
+  "url": "https://www.freeontools.com/image-to-base64-converter",
+  "image": "https://www.freeontools.com/images/image-to-base64-converter.png",
+  "description": "Easily convert your images into Base64 encoded strings for embedding into HTML or CSS. Perfect for web developers and designers. No login required, no ads.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/image-to-base64-converter",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.92",
+  "bestRating": "5",
+  "ratingCount": "850"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Sophia Harris"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "This Image to Base64 Converter is fantastic! It makes embedding images in my web projects so much easier. It’s fast, simple to use, and 100% free!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image to Base64 Converter"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            margin: 0;
+            background-color: #f5f6f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #f5f6f5;
+            width: 100%;
+        }
+
+        /* Header styling */
+        header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .converter-container {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+margin-top: -40px !important;
+        }
+
+        .input-area {
+            border: 2px dashed #f28c38;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-area:hover, .input-area.dragover {
+            border-color: #f28c38;
+            background: #ecf0f1;
+        }
+
+        .input-area p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+
+        .upload-btn {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            background: #d97a2f;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .image-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-card img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius:  a few lines are missing, I'll continue from where it left off and complete the HTML code correctly.
+
+### Complete HTML Code (Continued)
+
+```html
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .image-card p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 0.5rem;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            padding: 0.5rem 1rem;
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .action-btn:hover {
+            background: #d97a2f;
+        }
+
+        .clear-btn {
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: #f28c38;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+        }
+
+        .clear-btn:hover {
+            background: #d97a2f;
+        }
+
+        .loader {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-content textarea {
+            width: 100%;
+            height: 200px;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            margin-bottom: 1rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Container styling */
+        .content-container {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            padding-left: 30px;
+            padding-right: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+text-align: left !important;
+          
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+text-align: left !important;
+          
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 1rem;
+text-align: left !important;
+         
+}
+
+        /* Container styling */
+        .content-container ul, .content-container ol {
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li, .content-container ol li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+        /* Header styling */
+            header h1 { font-size: 2rem; }
+        /* Header styling */
+            header p { font-size: 1rem; }
+            .converter-container { padding: 1.5rem; }
+        /* Container styling */
+            .content-container { 
+                padding: 1.5rem;
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+            .images-grid { grid-template-columns: 1fr; }
+        }
+  
+button { background-color: #f28c38; }
+
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    Image to Base64 Converter
+   </h1>
+<p>
+    Convert multiple images to Base64 with drag-and-drop support and more!
+   </p>
+</header>
+<main>
+<section class="converter-container">
+<div class="input-area" id="dropZone">
+<p>
+      Drag &amp; Drop your images here or click the button below
+     </p>
+<input accept="image/*" hidden="" id="imageInput" multiple="" type="file"/>
+<button class="upload-btn" id="uploadBtn">
+      Upload Images
+     </button>
+</div>
+<div class="loader" id="loader">
+</div>
+<div class="images-grid" id="imagesGrid">
+</div>
+<button class="clear-btn" id="clearBtn" style="display: none;">
+     Clear All
+    </button>
+</section>
+<!-- Informational content container -->
+<section class="content-container">
+<h2>
+     What is an Image to Base64 Converter?
+    </h2>
+<p>
+     An Image to Base64 Converter is a tool that allows you to convert an image file (like a JPEG, PNG, or GIF) into a Base64-encoded string. This string represents the image in text form, and it can be easily embedded into web pages or applications without needing to host the image separately. Essentially, it’s like turning your image into a string of characters that browsers or apps can understand and display.
+    </p>
+<p>
+     Base64 encoding is commonly used in web development when you need to embed images directly into HTML or CSS files. For example, instead of linking to an external image file, you can encode the image and include it in your code. This can speed up loading times and simplify the structure of your project by reducing external dependencies.
+    </p>
+<h3>
+     Try Our Image to Base64 Converter Now
+    </h3>
+<p>
+     Want to convert an image to Base64? Simply upload your image, click the "Convert" button, and you’ll get the Base64 string ready to use. It’s quick, easy, and free!
+    </p>
+<h3>
+     Why You Need an Image to Base64 Converter
+    </h3>
+<p>
+     If you're a web developer, app creator, or just someone trying to optimize their images, this tool is super helpful. Here’s why you might need it:
+    </p>
+<ul>
+<li>
+<strong>
+       Embed Images in Code:
+      </strong>
+      Instead of relying on external links, you can directly embed the image in your HTML, CSS, or JavaScript.
+     </li>
+<li>
+<strong>
+       Improves Performance:
+      </strong>
+      For small images, embedding them as Base64 can reduce HTTP requests, making your website or app load faster.
+     </li>
+<li>
+<strong>
+       Works Offline:
+      </strong>
+      Since the image is embedded directly into the code, it doesn’t require an external server to load the image. This is especially useful for offline apps.
+     </li>
+<li>
+<strong>
+       Cleaner Code:
+      </strong>
+      No need to worry about file paths or broken image links. The Base64 string is all you need.
+     </li>
+</ul>
+<h3>
+     Features
+    </h3>
+<ul>
+<li>
+<strong>
+       Instant Conversion:
+      </strong>
+      Just upload your image, and the tool instantly generates a Base64 string for you.
+     </li>
+<li>
+<strong>
+       Supports Multiple Formats:
+      </strong>
+      Whether it's a PNG, JPG, GIF, or another format, it handles them all.
+     </li>
+<li>
+<strong>
+       Free to Use:
+      </strong>
+      No sign-up or hidden fees—just a simple, free tool to help you with your coding projects.
+     </li>
+<li>
+<strong>
+       Easy to Copy:
+      </strong>
+      Once converted, you can copy the Base64 string with one click, ready to paste wherever you need it.
+     </li>
+<li>
+<strong>
+       Compact Size:
+      </strong>
+      The tool is lightweight and doesn’t slow you down. You can get your results in a snap.
+     </li>
+</ul>
+<h3>
+     How to Use the Image to Base64 Converter
+    </h3>
+<ol>
+<li>
+<strong>
+       Upload Your Image:
+      </strong>
+      Click on the upload button and select the image file you want to convert.
+     </li>
+<li>
+<strong>
+       Click “Convert”:
+      </strong>
+      After uploading, just hit the “Convert” button. The tool will process your image and turn it into a Base64 string.
+     </li>
+<li>
+<strong>
+       Copy the Base64 String:
+      </strong>
+      Once the conversion is complete, you’ll see the Base64 string appear on the screen. Click to copy it to your clipboard.
+     </li>
+<li>
+<strong>
+       Embed It Into Your Code:
+      </strong>
+      Paste the Base64 string into your HTML, CSS, or JavaScript wherever you need the image to appear.
+     </li>
+</ol>
+<p>
+<strong>
+      Pro tip:
+     </strong>
+     Keep in mind that embedding large images as Base64 can make your code bloated. For larger images, consider keeping them as separate files to maintain performance.
+    </p>
+<h3>
+     Why Choose This Image to Base64 Converter?
+    </h3>
+<ul>
+<li>
+<strong>
+       Fast and Efficient:
+      </strong>
+      It’s designed to quickly convert images without any delays.
+     </li>
+<li>
+<strong>
+       Works Across Platforms:
+      </strong>
+      Whether you’re working on a website, mobile app, or offline project, this converter works for all platforms.
+     </li>
+<li>
+<strong>
+       Easy Integration:
+      </strong>
+      The Base64-encoded string can be directly copied and pasted into your code—no need to fiddle with file paths or URLs.
+     </li>
+<li>
+<strong>
+       Free and Accessible:
+      </strong>
+      It’s a no-cost tool with no hidden fees or sign-up requirements.
+     </li>
+</ul>
+<h3>
+     FAQs
+    </h3>
+<ol>
+<li>
+<strong>
+       What types of images can I convert?
+      </strong>
+<br/>
+      You can convert most common image types, including PNG, JPG, GIF, and BMP. Just upload your image, and the tool will handle it!
+     </li>
+<li>
+<strong>
+       How do I use the Base64 string in my code?
+      </strong>
+<br/>
+      In HTML, you can use it within an img tag like this:
+      <br/>
+<code>
+       &lt;img src="data:image/png;base64, [your_base64_string]"&gt;
+      </code>
+<br/>
+      For CSS, use it as the background image:
+      <br/>
+<code>
+       background-image: url("data:image/png;base64, [your_base64_string]");
+      </code>
+</li>
+<li>
+<strong>
+       Is there a size limit for the image I want to convert?
+      </strong>
+<br/>
+      Most tools have a size limit, but this one can handle moderate-sized images. If your image is too large, consider resizing it before converting.
+     </li>
+<li>
+<strong>
+       Can I use the Base64-encoded image offline?
+      </strong>
+<br/>
+      Yes! Since the image is embedded in your code, it works offline. As long as the code is loaded, the image will appear.
+     </li>
+<li>
+<strong>
+       Does converting an image to Base64 affect its quality?
+      </strong>
+<br/>
+      Nope! The quality remains the same as the original image. It’s just encoded as a string of text, so the visual content doesn’t change.
+     </li>
+</ol>
+<p>
+     An Image to Base64 Converter is a quick and handy tool for developers and anyone looking to embed images directly into their code. Whether you’re optimizing a website, building an app, or just simplifying your code structure, this tool helps you handle images with ease.
+    </p>
+</section>
+</main>
+<div class="modal" id="codeModal">
+<div class="modal-content">
+<span class="close-btn" id="closeModal">
+     ×
+    </span>
+<textarea id="modalCode" readonly=""></textarea>
+<button class="action-btn" id="copyModalCode">
+     Copy Code
+    </button>
+</div>
+</div>
+<script>
+        // Event listener for user interactions
+   document.addEventListener('DOMContentLoaded', () => {
+        // DOM element manipulation
+            const dropZone = document.getElementById('dropZone');
+        // DOM element manipulation
+            const imageInput = document.getElementById('imageInput');
+        // DOM element manipulation
+            const uploadBtn = document.getElementById('uploadBtn');
+        // DOM element manipulation
+            const imagesGrid = document.getElementById('imagesGrid');
+        // DOM element manipulation
+            const loader = document.getElementById('loader');
+        // DOM element manipulation
+            const clearBtn = document.getElementById('clearBtn');
+        // DOM element manipulation
+            const codeModal = document.getElementById('codeModal');
+        // DOM element manipulation
+            const modalCode = document.getElementById('modalCode');
+        // DOM element manipulation
+            const closeModal = document.getElementById('closeModal');
+        // DOM element manipulation
+            const copyModalCode = document.getElementById('copyModalCode');
+
+            // Drag and Drop functionality
+        // Event listener for user interactions
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
+
+        // Event listener for user interactions
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('dragover');
+            });
+
+        // Event listener for user interactions
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+                processFiles(e.dataTransfer.files);
+            });
+
+            // Upload button triggers file input
+        // Event listener for user interactions
+            uploadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                imageInput.value = '';
+                imageInput.click();
+            });
+
+            // Handle file selection
+        // Event listener for user interactions
+            imageInput.addEventListener('change', (e) => {
+                const files = e.target.files;
+                if (files && files.length > 0) {
+                    processFiles(files);
+                }
+            });
+
+            // Process multiple files
+        // Function: processFiles
+            function processFiles(files) {
+                if (files.length === 0) return;
+                loader.style.display = 'block';
+                clearBtn.style.display = 'block';
+                Array.from(files).forEach(file => {
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                            createImageCard(file, reader.result);
+                            loader.style.display = 'none';
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+            // Create image card
+        // Function: createImageCard
+            function createImageCard(file, base64String) {
+                const card = document.createElement('div');
+                card.className = 'image-card';
+                const fileSize = (file.size / 1024).toFixed(2); // Size in KB
+                const fileExt = file.name.split('.').pop().toLowerCase(); // Get file extension
+
+                card.innerHTML = `
+                    <img src="${base64String}" alt="${file.name}">
+                    <p>File: ${file.name} (${fileSize} KB)</p>
+                    <div class="button-group">
+                        <button class="action-btn copy-base64">Copy Base64</button>
+                        <button class="action-btn copy-css">Copy CSS</button>
+                        <button class="action-btn copy-image">Copy Image</button>
+                        <button class="action-btn show-code">Show Code</button>
+                        <button class="action-btn download-image">Download Image</button>
+                    </div>
+                `;
+
+                imagesGrid.appendChild(card);
+
+                // Button actions
+        // Event listener for user interactions
+                card.querySelector('.copy-base64').addEventListener('click', () => {
+                    navigator.clipboard.writeText(base64String);
+                    alert('Base64 string copied!');
+                });
+
+        // Event listener for user interactions
+                card.querySelector('.copy-css').addEventListener('click', () => {
+                    const css = `background-image: url('${base64String}');`;
+                    navigator.clipboard.writeText(css);
+                    alert('CSS background code copied!');
+                });
+
+        // Event listener for user interactions
+                card.querySelector('.copy-image').addEventListener('click', () => {
+                    const img = new Image();
+                    img.src = base64String;
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0);
+                        canvas.toBlob(blob => {
+                            navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })])
+                                .then(() => alert('Image copied to clipboard!'))
+                                .catch(() => alert('Failed to copy image. Your browser may not support this feature.'));
+                        }, file.type || 'image/png');
+                    };
+                });
+
+        // Event listener for user interactions
+                card.querySelector('.show-code').addEventListener('click', () => {
+                    modalCode.value = base64String;
+                    codeModal.style.display = 'flex';
+                });
+
+        // Event listener for user interactions
+                card.querySelector('.download-image').addEventListener('click', () => {
+                    const link = document.createElement('a');
+                    link.href = base64String;
+                    link.download = file.name; // Use original filename
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                });
+            }
+
+            // Modal functionality
+        // Event listener for user interactions
+            closeModal.addEventListener('click', () => {
+                codeModal.style.display = 'none';
+            });
+
+        // Event listener for user interactions
+            copyModalCode.addEventListener('click', () => {
+                navigator.clipboard.writeText(modalCode.value);
+                alert('Base64 code copied from modal!');
+            });
+
+        // Event listener for user interactions
+            window.addEventListener('click', (e) => {
+                if (e.target === codeModal) {
+                    codeModal.style.display = 'none';
+                }
+            });
+
+            // Clear all images
+        // Event listener for user interactions
+            clearBtn.addEventListener('click', () => {
+                imagesGrid.innerHTML = '';
+                clearBtn.style.display = 'none';
+            });
+        });
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

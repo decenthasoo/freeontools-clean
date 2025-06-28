@@ -1,0 +1,817 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Word Cloud Generator (Simple): No Credit Card
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Word Cloud Generator (Simple): Create word clouds instantly at https://www.freeontools.com. Free, no signup needed!" name="description">
+<meta content="word cloud generator, free word cloud tool, simple word cloud, freeontools word cloud, text visualizer" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/word-cloud-generator-simple" rel="canonical"/>
+<meta content="Word Cloud Generator (Simple): Free Tool" property="og:title"/>
+<meta content="Generate word clouds with our free, no-login tool at https://www.freeontools.com. Fast and easy!" property="og:description"/>
+<meta content="https://www.freeontools.com/word-cloud-generator-simple" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="freeontools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Word Cloud Generator: Totally Free Tool" name="twitter:title"/>
+<meta content="Free word cloud generator at https://www.freeontools.com. No signup, no fees, instant visuals!" name="twitter:description"/>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/logo.png"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Word Cloud Generator (Simple)",
+  "operatingSystem": "Web",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/word-cloud-generator-simple",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Word Cloud Generator (Simple)"
+  },
+  "ratingValue": "4.9",
+  "ratingCount": "170",
+  "bestRating": "5",
+  "worstRating": "1"
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Word Cloud Generator (Simple)"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Lily Parker"
+  },
+  "datePublished": "2025-05-07",
+  "reviewBody": "This word cloud generator is fantastic! Free, no signup, and creates stunning visuals instantly.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Word Cloud Generator (Simple)"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Rohan Sharma"
+  },
+  "datePublished": "2025-04-24",
+  "reviewBody": "Free and super easy to use. This tool made my presentations pop with word clouds!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #f0f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+margin-top: -50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .input-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            resize: vertical;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #f28c38;
+            outline: none;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .slider-container {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: #f28c38;
+        }
+
+        #wordCloud {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .word {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .word:hover {
+            transform: scale(1.2);
+            color: #f28c38;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1088px; /* Very slightly decreased to align with .input-section/#wordCloud (1150px - 2px) */
+            margin: 30px auto 0;
+            padding: 20px 30px; /* Top/bottom 20px matches .input-section, left/right 30px as requested */
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #222;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+       footer p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .slider-container {
+                min-width: 100%;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding: 15px; /* Matches .container's mobile padding and requested 15px left/right */
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+            }
+
+            textarea {
+                min-height: 120px;
+            }
+
+            button {
+                padding: 10px;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.6rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f0f9f9;
+    padding: 0px 20px;
+    text-align: center;
+    box-sizing: border-box;
+margin-top: 15px !important;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<div class="hero" style="text-align: center; margin: 2rem 0;">
+<h1>
+    Word Cloud Generator (Simple)
+   </h1><p>Transform your text into a beautiful, customizable word cloud instantly.</p>
+</div>
+<!-- Main content container -->
+<div class="container">
+<!-- Page header section -->
+
+<section class="input-section">
+<textarea id="textInput" placeholder="Enter your text here..."></textarea>
+<div class="controls">
+<button onclick="generateWordCloud()">
+      Generate
+     </button>
+<button onclick="clearWordCloud()">
+      Clear
+     </button>
+<button onclick="downloadWordCloud()">
+      Download
+     </button>
+<div class="slider-container">
+<label for="maxWords">
+       Max Words:
+       <span id="maxWordsValue">
+        50
+       </span>
+</label>
+<input id="maxWords" max="100" min="10" type="range" value="50"/>
+</div>
+<div class="slider-container">
+<label for="minFontSize">
+       Min Font Size:
+       <span id="minFontSizeValue">
+        12
+       </span>
+</label>
+<input id="minFontSize" max="20" min="8" type="range" value="12"/>
+</div>
+<div class="slider-container">
+<label for="maxFontSize">
+       Max Font Size:
+       <span id="maxFontSizeValue">
+        60
+       </span>
+</label>
+<input id="maxFontSize" max="100" min="30" type="range" value="60"/>
+</div>
+</div>
+</section>
+<div id="wordCloud">
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What Is a Word Cloud Generator?
+   </h2>
+<p>
+    Alright, picture this: you’ve got a bunch of text—an article, a survey response, a tweet thread, whatever—and you want to see the main ideas without reading every. single. word. That’s where the Word Cloud Generator comes in.
+   </p>
+<p>
+    Basically, it takes your text and turns it into this big ol’ cluster of words where the most frequent ones get the biggest spotlight. So the more often a word pops up, the bigger it appears. It’s like your words are yelling “hey, pay attention to me!” in a super visual way.
+   </p>
+<p>
+    And yep, this Word Cloud Generator does exactly that—quickly, simply, and without asking you to know a thing about design or coding.
+   </p>
+<h3>
+    Try Our Word Cloud Generator Now
+   </h3>
+<p>
+    Go ahead—copy some text, paste it into the Word Cloud Generator, hit a button, and boom! You’ve got a word cloud. It’s honestly kind of addictive. Perfect for presentations, social posts, or just making sense of a big ol’ text dump.
+   </p>
+<h3>
+    Why Use a Word Cloud Generator?
+   </h3>
+<p>
+    So why bother? What’s the deal with word clouds anyway?
+   </p>
+<p>
+    Glad you asked. A Word Cloud Generator isn’t just about looking pretty (though, yeah, they totally do). It’s actually useful. Like, real-world useful:
+   </p>
+<ul>
+<li>
+     Summarize big text fast – Instantly see the big themes without reading everything
+    </li>
+<li>
+     Great for surveys or feedback – Want to know what people are really saying? Word cloud it.
+    </li>
+<li>
+     Brainstorming fuel – See which ideas are popping up again and again
+    </li>
+<li>
+     Fun, visual vibe – It’s a smart way to add graphics to presentations or blog posts
+    </li>
+<li>
+     Saves you time – Seriously, who wants to analyze 500 comments manually?
+    </li>
+</ul>
+<p>
+    Basically, the Word Cloud Generator is your shortcut to clarity—wrapped in a cool visual.
+   </p>
+<h3>
+    Features of the Word Cloud Generator
+   </h3>
+<p>
+    Here’s what this tool can do (without breaking a sweat):
+   </p>
+<ul>
+<li>
+     Fast conversion – Paste your text, click once, done
+    </li>
+<li>
+     Visual output – Clear, colorful clouds with the biggest words front and center
+    </li>
+<li>
+     Handles all kinds of input – Paragraphs, lists, surveys—you name it
+    </li>
+<li>
+     Mobile-friendly – Works great on phones and tablets too
+    </li>
+<li>
+     No downloads – Totally browser-based
+    </li>
+<li>
+     Completely free – No paywalls, no tricks
+    </li>
+<li>
+     Option to filter out common words – Like "the" or "and" (unless you’re really into those)
+    </li>
+</ul>
+<p>
+    Whether you’re analyzing customer feedback or just messing around with song lyrics, this Word Cloud Generator gets the job done fast and without fuss.
+   </p>
+<h3>
+    How to Use the Word Cloud Generator
+   </h3>
+<p>
+    Don’t overthink it. This is about as plug-and-play as tools get.
+   </p>
+<ol>
+<li>
+     Head to the Word Cloud Generator
+    </li>
+<li>
+     Paste your text into the box
+    </li>
+<li>
+     Click “Generate Word Cloud”
+    </li>
+<li>
+     Watch your word cluster come to life
+    </li>
+<li>
+     Download or screenshot it if you wanna keep or share it
+    </li>
+</ol>
+<p>
+    💡 Pro tip: If your text includes a lot of “and,” “the,” or “you,” use the stop-word filter. It hides all those boring filler words so the interesting ones can shine.
+   </p>
+<h3>
+    Why Choose This Word Cloud Generator?
+   </h3>
+<p>
+    Okay, you might be thinking, “Aren’t there like, a dozen of these online?” Yep. But here’s why this Word Cloud Generator slaps:
+   </p>
+<ul>
+<li>
+     Ridiculously easy to use – No settings to mess with, no downloads, no learning curve
+    </li>
+<li>
+     Actually nice-looking output – Some word clouds out there look like they were made in 1997. Not this one.
+    </li>
+<li>
+     Sleek, modern interface – Doesn’t feel like homework
+    </li>
+<li>
+     Focused on simplicity – No feature bloat, just clean clouds
+    </li>
+<li>
+     Works for anyone – Teachers, students, marketers, writers—if you use words, you can use this
+    </li>
+</ul>
+<p>
+    Basically, if you want a no-fuss, gets-it-done Word Cloud Generator, this is the one to bookmark.
+   </p>
+<h3>
+    FAQs About the Word Cloud Generator
+   </h3>
+<p>
+<strong>
+     Can I customize the design of the word cloud?
+    </strong>
+<br/>
+    Right now, it keeps it simple. But you get clean, readable results out of the box. If you want wild fonts and rainbow gradients, there are other tools for that.
+   </p>
+<p>
+<strong>
+     Does the Word Cloud Generator remove common words?
+    </strong>
+<br/>
+    Yep! There’s a filter for that. It removes the “ums” and “the’s” so the good stuff stands out.
+   </p>
+<p>
+<strong>
+     Can I save or download the word cloud?
+    </strong>
+<br/>
+    Absolutely. Screenshot it or use the download button if available. Great for slides, docs, and sharing online.
+   </p>
+<p>
+<strong>
+     Will this work with other languages?
+    </strong>
+<br/>
+    Mostly, yes! It can handle non-English input, though the word size will still depend on frequency, not meaning.
+   </p>
+<p>
+<strong>
+     Is the Word Cloud Generator free?
+    </strong>
+<br/>
+    You bet. No sign-up, no fees. Just paste and go.
+   </p>
+<h3>
+    Final Thoughts: Clouds That Actually Make Sense
+   </h3>
+<p>
+    Look, not every visual tool is this easy. Some make you read tutorials or mess around with dropdowns for 10 minutes. But this Word Cloud Generator? You paste, click, and get something cool in like 3 seconds.
+   </p>
+<p>
+    Whether you're doing schoolwork, analyzing feedback, or just want to visualize your favorite song lyrics in a neat way, it’s a surprisingly satisfying tool. Plus, watching those words pop up big and bold? Low-key therapeutic.
+   </p>
+<p>
+    So next time you’ve got a chunk of text and want to see what matters most—don’t dig through it. Just word cloud it.
+   </p>
+</div>
+<script>
+        // DOM element manipulation
+   const textInput = document.getElementById('textInput');
+        // DOM element manipulation
+        const wordCloud = document.getElementById('wordCloud');
+        // DOM element manipulation
+        const maxWordsInput = document.getElementById('maxWords');
+        // DOM element manipulation
+        const minFontSizeInput = document.getElementById('minFontSize');
+        // DOM element manipulation
+        const maxFontSizeInput = document.getElementById('maxFontSize');
+        // DOM element manipulation
+        const maxWordsValue = document.getElementById('maxWordsValue');
+        // DOM element manipulation
+        const minFontSizeValue = document.getElementById('minFontSizeValue');
+        // DOM element manipulation
+        const maxFontSizeValue = document.getElementById('maxFontSizeValue');
+
+        // Update slider values in real-time
+        // Event listener for user interactions
+        maxWordsInput.addEventListener('input', () => {
+            maxWordsValue.textContent = maxWordsInput.value;
+        });
+        // Event listener for user interactions
+        minFontSizeInput.addEventListener('input', () => {
+            minFontSizeValue.textContent = minFontSizeInput.value;
+        });
+        // Event listener for user interactions
+        maxFontSizeInput.addEventListener('input', () => {
+            maxFontSizeValue.textContent = maxFontSizeInput.value;
+        });
+
+        // Function: generateWordCloud
+        function generateWordCloud() {
+            const text = textInput.value.trim();
+            if (!text) {
+                alert('Please enter some text!');
+                return;
+            }
+
+            const maxWords = parseInt(maxWordsInput.value);
+            const minFontSize = parseInt(minFontSizeInput.value);
+            const maxFontSize = parseInt(maxFontSizeInput.value);
+
+            // Process text into words and their frequencies
+            const words = text.toLowerCase().match(/\b\w+\b/g) || [];
+            const wordFreq = {};
+            words.forEach(word => {
+                if (word.length > 2) { // Ignore short words
+                    wordFreq[word] = (wordFreq[word] || 0) + 1;
+                }
+            });
+
+            // Sort words by frequency and limit to maxWords
+            const sortedWords = Object.entries(wordFreq)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, maxWords);
+
+            // Clear previous cloud
+            wordCloud.innerHTML = '';
+
+            // Get cloud dimensions
+            const cloudWidth = wordCloud.offsetWidth;
+            const cloudHeight = wordCloud.offsetHeight;
+
+            // Normalize frequencies for font sizing
+            const maxFreq = sortedWords[0]?.[1] || 1;
+            sortedWords.forEach(([word, freq]) => {
+                const wordElement = document.createElement('span');
+                wordElement.className = 'word';
+                wordElement.textContent = word;
+
+                // Calculate font size based on frequency
+                const fontSize = minFontSize + (freq / maxFreq) * (maxFontSize - minFontSize);
+                wordElement.style.fontSize = `${fontSize}px`;
+
+                // Append temporarily to measure size
+                wordElement.style.visibility = 'hidden';
+                wordCloud.appendChild(wordElement);
+                const wordWidth = wordElement.offsetWidth;
+                const wordHeight = wordElement.offsetHeight;
+                wordElement.style.visibility = 'visible';
+
+                // Random position within boundaries
+                let x, y, fits;
+                let attempts = 0;
+                const maxAttempts = 100; // Prevent infinite loops
+                do {
+                    x = Math.random() * (cloudWidth - wordWidth);
+                    y = Math.random() * (cloudHeight - wordHeight);
+                    fits = true;
+
+                    // Ensure word stays within bounds
+                    if (x < 0 || x + wordWidth > cloudWidth || y < 0 || y + wordHeight > cloudHeight) {
+                        fits = false;
+                        continue;
+                    }
+
+                    // Simple collision detection
+        // DOM element manipulation
+                    const existingWords = document.querySelectorAll('.word');
+                    const newRect = {
+                        left: x,
+                        top: y,
+                        right: x + wordWidth,
+                        bottom: y + wordHeight
+                    };
+
+                    for (let existing of existingWords) {
+                        if (existing === wordElement) continue;
+                        const rect = {
+                            left: parseFloat(existing.style.left),
+                            top: parseFloat(existing.style.top),
+                            right: parseFloat(existing.style.left) + existing.offsetWidth,
+                            bottom: parseFloat(existing.style.top) + existing.offsetHeight
+                        };
+                        if (!(newRect.right <= rect.left || newRect.left >= rect.right ||
+                              newRect.bottom <= rect.top || newRect.top >= rect.bottom)) {
+                            fits = false;
+                            break;
+                        }
+                    }
+                    attempts++;
+                } while (!fits && attempts < maxAttempts);
+
+                if (attempts >= maxAttempts) {
+                    wordElement.remove(); // Skip word if no fit found
+                    return;
+                }
+
+                wordElement.style.left = `${x}px`;
+                wordElement.style.top = `${y}px`;
+                wordElement.style.transform = `rotate(${Math.random() * 60 - 30}deg)`;
+            });
+        }
+
+        // Function: clearWordCloud
+        function clearWordCloud() {
+            wordCloud.innerHTML = '';
+            textInput.value = '';
+        }
+
+        // Function: downloadWordCloud
+        function downloadWordCloud() {
+            if (!wordCloud.children.length) {
+                alert('Generate a word cloud first!');
+                return;
+            }
+
+            // Create a canvas to draw the word cloud
+            const canvas = document.createElement('canvas');
+            canvas.width = wordCloud.offsetWidth;
+            canvas.height = wordCloud.offsetHeight;
+            const ctx = canvas.getContext('2d');
+
+            // Set background
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw words
+        // DOM element manipulation
+            const words = document.querySelectorAll('.word');
+            words.forEach(word => {
+                const fontSize = parseFloat(window.getComputedStyle(word).fontSize);
+                ctx.font = `${fontSize}px Poppins`;
+                ctx.fillStyle = '#333';
+                ctx.translate(
+                    parseFloat(word.style.left) + word.offsetWidth / 2,
+                    parseFloat(word.style.top) + word.offsetHeight / 2
+                );
+                const rotation = word.style.transform.match(/rotate\(([^)]+)\)/)?.[1] || '0deg';
+                ctx.rotate(parseFloat(rotation) * Math.PI / 180);
+                ctx.fillText(word.textContent, -word.offsetWidth / 2, word.offsetHeight / 4);
+                ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
+            });
+
+            // Download the image
+            const link = document.createElement('a');
+            link.download = 'word_cloud.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

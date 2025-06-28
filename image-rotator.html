@@ -1,0 +1,762 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Document head with metadata and resources -->
+<head>
+<title>
+    Image Rotator - Unlimited Access Tool
+   </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="Image Rotator - Free tool to rotate images instantly. No signup, no fees, just fast, unlimited access for perfect adjustments!" name="description">
+<meta content="image rotator, free image rotate, rotate images, online image rotator, image editing tool" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/image-rotator" rel="canonical"/>
+<meta content="Image Rotator - Free Online Tool" property="og:title"/>
+<meta content="Rotate images instantly with our free online tool. No signup, no hidden fees, just fast and precise results at freeontools.com!" property="og:description"/>
+<meta content="https://www.freeontools.com/image-rotator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.freeontools.com/images/image-rotator.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Rotator - No Hidden Fees" name="twitter:title"/>
+<meta content="Easily rotate images with our free, no-login tool. Try it now at freeontools.com for fast, unlimited access!" name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/image-rotator.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://www.twitter.com/freeontools",
+    "https://www.linkedin.com/company/freeontools"
+  ]
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Rotator",
+  "operatingSystem": "All",
+  "applicationCategory": "Utility",
+  "url": "https://www.freeontools.com/image-rotator",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Rotator"
+  },
+  "ratingValue": "4.7",
+  "ratingCount": "1248"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Rotator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Lily Evans"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "reviewBody": "This Image Rotator is fantastic! Super simple, no signup needed, and rotates images perfectly in seconds!',
+  "datePublished": "2025-04-27"
+}
+   </script>
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Image Rotator"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oliver Khan"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.6"
+  },
+  "reviewBody": "Really useful tool for rotating images! Free, fast, and no ads. Great for quick photo adjustments.",
+  "datePublished": "2025-03-18"
+}
+   </script>
+<!-- Google Fonts: Poppins -->
+<style>
+        /* Reset default styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f5f5f5;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header-text {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Container styling */
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin-top: 20px;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fafafa;
+        }
+
+        #preview {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .main-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .download-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #d97a30;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            display: inline-block;
+            background-color: #f28c38;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .file-label:hover {
+            background-color: #d97a30;
+            transform: scale(1.05);
+        }
+
+        .angle-input {
+            width: 80px;
+            padding: 8px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Container styling */
+        .content-container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            text-align: left;
+            padding-left: 30px;
+            padding-right: 30px;
+margin-left: auto; /* Center horizontally */
+margin-right: auto;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            color: #333;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        /* Responsive media queries */
+        @media (max-width: 600px) {
+        /* Container styling */
+            .container {
+                padding: 15px;
+            }
+
+            .image-container {
+                height: 200px;
+            }
+
+            button, .file-label {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .angle-input {
+                width: 60px;
+                font-size: 0.9rem;
+            }
+
+            .main-controls {
+                justify-content: space-between;
+                gap: 10px;
+            }
+
+            .download-control {
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+        /* Container styling */
+            .content-container {
+                padding-left: 15px; /* Mobile left padding */
+                padding-right: 15px; /* Mobile right padding */
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .header-text {
+                font-size: 0.9rem;
+            }
+
+            .image-container {
+                height: 150px;
+            }
+
+            button, .file-label {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .angle-input {
+                width: 50px;
+                font-size: 0.8rem;
+            }
+
+            .main-controls, .download-control {
+                gap: 8px;
+            }
+        }
+   
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+     Image Rotator
+    </h1>
+<p class="header-text">
+     Easily rotate your images with our intuitive tool, perfect for mobile, tablet, and desktop.
+    </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="image-container">
+<img alt="Image preview" id="preview" src="#" style="display: none;"/>
+</div>
+<div class="controls">
+<div class="main-controls">
+<button onclick="rotateImage(-90)">
+       Rotate Left
+      </button>
+<label class="file-label" for="imageInput">
+       Upload Image
+      </label>
+<input accept="image/*" id="imageInput" type="file"/>
+<button onclick="resetImage()">
+       Reset
+      </button>
+<button onclick="rotateImage(90)">
+       Rotate Right
+      </button>
+</div>
+<div class="download-control">
+<button onclick="clearImage()" style="margin-right: 15px;">
+       Clear
+      </button>
+<button onclick="downloadImage()" style="margin-right: 15px;">
+       Download
+      </button>
+<input class="angle-input" id="angleInput" max="360" min="-360" placeholder="Angle" type="number"/>
+</div>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+     What Is an Image Rotator?
+    </h2>
+<p>
+     Alright, imagine you’ve got an image, and it’s not quite aligned how you want it. Maybe it’s upside down, or just a little off-angle, and you’re thinking, “Ugh, I need to rotate this thing!” That’s exactly what the Image Rotator tool is for.
+    </p>
+<p>
+     It lets you rotate your image—turn it 90°, 180°, or even a custom angle—until it’s exactly how you want it. No need for complicated photo editing software. Just a quick and simple tool to fix that rotation in seconds.
+    </p>
+<h3>
+     Try Our Image Rotator Now
+    </h3>
+<p>
+     Super simple to use. Upload your image, click to rotate it, and bam—you're done! In just a few clicks, you’ll have the image looking exactly how you want it.
+    </p>
+<p>
+     No sign-ups. No downloads. Just quick and easy.
+    </p>
+<h3>
+     Why Use an Image Rotator?
+    </h3>
+<p>
+     Now, you might be thinking,
+     <em>
+      Why would I need to rotate an image?
+     </em>
+     Here’s why:
+    </p>
+<ul>
+<li>
+<strong>
+       Correcting Orientation
+      </strong>
+      – If your photo’s turned sideways or upside down, the Image Rotator gets it back to the right angle.
+     </li>
+<li>
+<strong>
+       Creative Effects
+      </strong>
+      – Maybe you want to rotate an image for a design project or social media post. Rotate it a few degrees for a cool, creative effect.
+     </li>
+<li>
+<strong>
+       Web-Friendly
+      </strong>
+      – Rotating images for thumbnails or banners? It helps make everything look just right for websites or blogs.
+     </li>
+<li>
+<strong>
+       Fix Orientation After Uploading
+      </strong>
+      – Ever uploaded a photo and it just comes out sideways or flipped? This tool helps you fix that instantly.
+     </li>
+<li>
+<strong>
+       Straighten Things Out
+      </strong>
+      – If your photo’s a little off-kilter, rotating it can help line things up perfectly.
+     </li>
+</ul>
+<p>
+     It’s a super handy tool whenever you want to rotate or straighten your images in just a couple of steps.
+    </p>
+<h3>
+     Features of the Image Rotator
+    </h3>
+<p>
+     Let’s dive into why the Image Rotator tool is so useful:
+    </p>
+<ul>
+<li>
+<strong>
+       Quick and easy rotation
+      </strong>
+      – Just upload, rotate, and download. Done.
+     </li>
+<li>
+<strong>
+       Supports multiple formats
+      </strong>
+      – JPG, PNG, GIF—no problem, it handles all of them.
+     </li>
+<li>
+<strong>
+       Free to use
+      </strong>
+      – No hidden charges or subscriptions. It’s totally free.
+     </li>
+<li>
+<strong>
+       Custom angle option
+      </strong>
+      – Want to rotate by 45° or 15° instead of the usual 90° or 180°? You can do that too.
+     </li>
+<li>
+<strong>
+       Fast results
+      </strong>
+      – No waiting around. Rotate and download your image in seconds.
+     </li>
+<li>
+<strong>
+       Works in any browser
+      </strong>
+      – No need to install anything. Just open the tool in your browser and go.
+     </li>
+</ul>
+<p>
+     It’s one of those tools that you don’t realize you need until you use it.
+    </p>
+<h3>
+     How to Use the Image Rotator Tool
+    </h3>
+<p>
+     Here’s how you can rotate your image like a pro in just a few easy steps:
+    </p>
+<ol>
+<li>
+      Open the Image Rotator tool.
+     </li>
+<li>
+      Upload the image you want to rotate.
+     </li>
+<li>
+      Click the rotate button to rotate it by 90°, 180°, or any angle you need.
+     </li>
+<li>
+      Download the rotated image.
+     </li>
+</ol>
+<p>
+<strong>
+      Pro tip:
+     </strong>
+     You can rotate your image multiple times if you need it at a specific angle. Just keep clicking and adjusting until it’s perfect.
+    </p>
+<h3>
+     Why Choose This Image Rotator?
+    </h3>
+<p>
+     Here’s why you’ll love this Image Rotator tool:
+    </p>
+<ul>
+<li>
+<strong>
+       It’s fast
+      </strong>
+      – Just a few clicks, and your image is rotated. No waiting around.
+     </li>
+<li>
+<strong>
+       Free and easy
+      </strong>
+      – No payment, no sign-up, just pure convenience.
+     </li>
+<li>
+<strong>
+       Perfect for fixing orientations
+      </strong>
+      – Uploading photos from your phone? This tool fixes upside-down and sideways images instantly.
+     </li>
+<li>
+<strong>
+       Custom angles
+      </strong>
+      – Need something rotated at a specific angle? You can do that too.
+     </li>
+<li>
+<strong>
+       No software required
+      </strong>
+      – No need to download any heavy software. Everything works right in your browser.
+     </li>
+</ul>
+<p>
+     It’s the kind of tool that saves time and hassle when you need to adjust your images.
+    </p>
+<h3>
+     FAQs About the Image Rotator Tool
+    </h3>
+<p>
+<strong>
+      Does the Image Rotator work with any image format?
+     </strong>
+</p>
+<p>
+     Yes! JPG, PNG, GIF—this tool can handle them all.
+    </p>
+<p>
+<strong>
+      Will rotating an image affect its quality?
+     </strong>
+</p>
+<p>
+     Nope, the quality stays the same! You can rotate as much as you want without losing resolution or clarity.
+    </p>
+<p>
+<strong>
+      How many times can I rotate my image?
+     </strong>
+</p>
+<p>
+     As many times as you want! You can keep adjusting the angle until it’s just right.
+    </p>
+<p>
+<strong>
+      Is the Image Rotator free to use?
+     </strong>
+</p>
+<p>
+     Yes, it’s completely free. No hidden fees or catches.
+    </p>
+<p>
+<strong>
+      Can I rotate an image to a custom angle?
+     </strong>
+</p>
+<p>
+     For sure! You can rotate your image by any angle you choose, whether it’s 45°, 30°, or 123°—whatever you need!
+    </p>
+<h3>
+     Wrap-Up: Get Your Images Aligned!
+    </h3>
+<p>
+     Bottom line? If you’ve got an image that needs to be rotated, this Image Rotator tool is your go-to. It’s quick, simple, and does exactly what you need without any extra fuss.
+    </p>
+<p>
+     Just upload, rotate, and download. It’s that easy. Whether you’re fixing an upside-down photo or creating a cool angle for a design, this tool gets the job done fast.
+    </p>
+</div>
+<script>
+    let currentAngle = 0;
+        // DOM element manipulation
+        const preview = document.getElementById('preview');
+        // DOM element manipulation
+        const imageInput = document.getElementById('imageInput');
+        let currentImageData = null;
+
+        // Event listener for user interactions
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    preview.src = event.target.result;
+                    preview.style.display = 'block';
+                    currentImageData = event.target.result;
+                    currentAngle = 0;
+                    preview.style.transform = `rotate(0deg)`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Function: rotateImage
+        function rotateImage(angle) {
+            currentAngle = (currentAngle + angle) % 360;
+            preview.style.transform = `rotate(${currentAngle}deg)`;
+        }
+
+        // Function: resetImage
+        function resetImage() {
+            currentAngle = 0;
+            preview.style.transform = `rotate(0deg)`;
+        // DOM element manipulation
+            document.getElementById('angleInput').value = '';
+        }
+
+        // Function: clearImage
+        function clearImage() {
+            preview.src = '#';
+            preview.style.display = 'none';
+            currentImageData = null;
+            currentAngle = 0;
+            preview.style.transform = `rotate(0deg)`;
+        // DOM element manipulation
+            document.getElementById('angleInput').value = '';
+        // DOM element manipulation
+            document.getElementById('imageInput').value = '';
+        }
+
+        // Function: downloadImage
+        function downloadImage() {
+        // DOM element manipulation
+            const angle = parseInt(document.getElementById('angleInput').value) || currentAngle;
+            if (!currentImageData) return;
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.src = currentImageData;
+
+            img.onload = () => {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.translate(canvas.width / 2, canvas.height / 2);
+                ctx.rotate((angle * Math.PI) / 180);
+                ctx.drawImage(img, -img.width / 2, -img.height / 2);
+
+                const link = document.createElement('a');
+                link.download = 'rotated_image.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            };
+        }
+   </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</head>
+</html>

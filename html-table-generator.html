@@ -1,0 +1,807 @@
+<!-- HTML5 document declaration -->
+<!DOCTYPE html>
+
+<!-- HTML root element -->
+<html lang="en">
+<head>
+<!-- Character encoding and responsive viewport -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   HTML Table Generator - No Credit Card Needed
+  </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<meta content="HTML Table Generator - Quickly create HTML tables with ease. No sign-up or credit card needed. 100% free and simple tool for developers and beginners alike." name="description">
+<meta content="HTML Table Generator, Table Creator, Free HTML Tool, Table Generator Online, No Ads, 100% Free, Free Without Login, Try It Free Now" name="keywords">
+<meta content="index, follow" name="robots"/>
+<link href="https://www.freeontools.com/html-table-generator" rel="canonical"/>
+<!-- Open Graph Tags -->
+<meta content="HTML Table Generator - No Credit Card Needed" property="og:title"/>
+<meta content="HTML Table Generator - Quickly create HTML tables with ease. No sign-up or credit card needed. 100% free and simple tool for developers and beginners alike." property="og:description"/>
+<meta content="https://www.freeontools.com/images/html-table-generator.png" property="og:image"/>
+<meta content="https://www.freeontools.com/html-table-generator" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card Tags -->
+<meta content="HTML Table Generator - No Credit Card Needed" name="twitter:title"/>
+<meta content="HTML Table Generator - Quickly create HTML tables with ease. No sign-up or credit card needed. 100% free and simple tool for developers and beginners alike." name="twitter:description"/>
+<meta content="https://www.freeontools.com/images/html-table-generator.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Organization Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "freeontools Corporation",
+  "url": "https://www.freeontools.com",
+  "logo": "https://www.freeontools.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/freeontools",
+    "https://twitter.com/freeontools",
+    "https://www.instagram.com/freeontools"
+  ]
+}
+  </script>
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "HTML Table Generator",
+  "operatingSystem": "All",
+  "applicationCategory": "WebApplication",
+  "url": "https://www.freeontools.com/html-table-generator",
+  "image": "https://www.freeontools.com/images/html-table-generator.png",
+  "description": "Easily generate HTML tables with headers, rows, and data. No login or payment required. 100% free and beginner-friendly tool.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.freeontools.com/html-table-generator",
+    "priceCurrency": "USD",
+    "price": "0.00",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  }
+}
+  </script>
+<!-- AggregateRating Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.93",
+  "bestRating": "5",
+  "ratingCount": "1142"
+}
+  </script>
+<!-- Review Schema -->
+<script type="application/ld+json">
+   {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "Maya Hudson"
+  },
+  "datePublished": "2025-05-12",
+  "reviewBody": "Super useful tool for generating clean and customizable HTML tables! I love that it’s free, easy to use, and doesn’t ask for anything. Great job!",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "HTML Table Generator"
+  }
+}
+  </script>
+<style>
+        /* Reset default styles */
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 10px;
+            
+            
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        /* Header styling */
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1220px;
+            padding: 0 15px;
+margin-left: 66px;
+background: #f5f5f5;
+        }
+
+        .controls {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .input-group input,
+        .input-group select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #f28c38;
+            outline: none;
+        }
+
+        button {
+            background-color: #f28c38;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e07b30;
+            transform: translateY(-2px);
+        }
+
+        .preview, .code-output {
+            margin-top: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        /* Container styling */
+        .content-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.5s ease-out;
+            text-align: left;
+        }
+
+        /* Container styling */
+        .content-container h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: #222;
+            margin: 20px 0 10px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+          text-align: left !important;
+}
+
+        /* Container styling */
+        .content-container ul,
+        /* Container styling */
+        .content-container ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        /* Container styling */
+        .content-container ul li,
+        /* Container styling */
+        .content-container ol li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Container styling */
+        .content-container strong {
+            color: #333;
+        }
+
+        /* Container styling */
+        .content-container .pro-tip {
+            background: #f8f8f8;
+            padding: 15px;
+            border-left: 4px solid #f28c38;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .table-preview-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #table-preview table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            min-width: 100%;
+        }
+
+        #table-preview th,
+        #table-preview td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        #table-preview th {
+            background-color: #f28c38;
+            color: #fff;
+        }
+
+        #table-preview td {
+            background-color: #fafafa;
+        }
+
+        pre {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            max-height: 300px;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+        /* Header styling */
+            header p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .input-group {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+
+            }
+
+        /* Container styling */
+            .container{
+                padding: 15px;
+margin-left: 1px;
+}
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+
+            }
+
+            .table-preview-wrapper {
+                overflow-x: auto;
+            }
+
+            #table-preview table {
+                min-width: 600px;
+            }
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        /* Header styling */
+            header {
+                padding: 15px 10px;
+            }
+
+            .controls,
+            .preview,
+            .code-output,
+        /* Container styling */
+            .content-container {
+                padding: 15px;
+            }
+
+            #table-preview th,
+            #table-preview td {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+        /* Container styling */
+            .content-container h2 {
+                font-size: 1.5rem;
+              text-align: left !important;
+}
+
+        /* Container styling */
+            .content-container h3 {
+                font-size: 1.2rem;
+              text-align: left !important;
+}
+
+            #table-preview table {
+                min-width: 500px;
+            }
+        }
+  
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+</style>
+</meta></meta></head>
+<!-- Document body content -->
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+<!-- Page header section -->
+<header>
+<h1>
+    HTML Table Generator
+   </h1>
+<p>
+    Create professional and responsive HTML tables with ease.
+   </p>
+</header>
+<!-- Main content container -->
+<div class="container">
+<div class="controls">
+<div class="input-group">
+<label for="rows">
+      Rows:
+     </label>
+<input id="rows" min="1" type="number" value="3"/>
+</div>
+<div class="input-group">
+<label for="cols">
+      Columns:
+     </label>
+<input id="cols" min="1" type="number" value="3"/>
+</div>
+<div class="input-group">
+<label for="border">
+      Border:
+     </label>
+<select id="border">
+<option value="1">
+       1px
+      </option>
+<option value="2">
+       2px
+      </option>
+<option value="0">
+       None
+      </option>
+</select>
+</div>
+<div class="input-group">
+<label for="header">
+      Table Header:
+     </label>
+<input checked="" id="header" type="checkbox"/>
+</div>
+<button onclick="generateTable()">
+     Generate Table
+    </button>
+<button onclick="copyCode()">
+     Copy HTML Code
+    </button>
+</div>
+<div class="preview">
+<h2>
+     Table Preview
+    </h2>
+<div class="table-preview-wrapper">
+<div id="table-preview">
+</div>
+</div>
+</div>
+<div class="code-output">
+<h2>
+     Generated HTML Code
+    </h2>
+<pre><code id="html-code"></code></pre>
+</div>
+</div>
+<!-- Informational content container -->
+<div class="content-container">
+<h2>
+    What is an HTML Table Generator?
+   </h2>
+<p>
+    You know when you need to organize data into neat rows and columns on a website? Yeah, that’s where an HTML Table Generator comes in. It’s a tool that helps you easily create HTML table code without having to type everything out manually. You can set the number of rows, columns, and even customize it with things like headers and styling options. It takes the headache out of creating tables and speeds up the whole process.
+   </p>
+<p>
+    If you’re building a page with data that needs to be displayed in a grid, whether it’s product info, a schedule, or just some general data, this tool helps you whip up the HTML code in no time. No need to manually adjust every cell—just input your data, and the tool generates everything for you.
+   </p>
+<h3>
+    Try Our HTML Table Generator Now
+   </h3>
+<p>
+    Want a table, but don’t want to deal with the hassle of coding it by hand? Pop in your data, set the number of rows and columns, and let the generator handle the rest. You’ll get your HTML table code, ready to copy and paste wherever you need it.
+   </p>
+<h3>
+    Why an HTML Table Generator Matters
+   </h3>
+<p>
+    Here’s why you’d want to use an HTML table generator:
+   </p>
+<ul>
+<li>
+<strong>
+      Saves time
+     </strong>
+     – Writing out the HTML for a table by hand can be tedious. This tool takes care of it, so you can focus on other aspects of your web page.
+    </li>
+<li>
+<strong>
+      Keeps things organized
+     </strong>
+     – When you have lots of data, organizing it in a table is the most efficient way to display it.
+    </li>
+<li>
+<strong>
+      Customizable
+     </strong>
+     – Need extra rows, columns, or specific styles? You can easily adjust the table settings to fit your needs.
+    </li>
+<li>
+<strong>
+      User-friendly
+     </strong>
+     – You don’t need to be an HTML expert to use this tool. The interface is simple, and it generates the code for you.
+    </li>
+<li>
+<strong>
+      Helps with responsiveness
+     </strong>
+     – With the right tweaks, tables generated here can be responsive, meaning they’ll adjust to mobile screens too.
+    </li>
+</ul>
+<h3>
+    Features
+   </h3>
+<p>
+    What makes this HTML Table Generator so handy?
+   </p>
+<ul>
+<li>
+<strong>
+      Customizable rows and columns
+     </strong>
+     – You can pick exactly how many rows and columns your table needs.
+    </li>
+<li>
+<strong>
+      Header support
+     </strong>
+     – Add a table header row for column labels, which is super helpful for organizing data.
+    </li>
+<li>
+<strong>
+      Auto-generation
+     </strong>
+     – No need to manually write HTML tags; the tool generates the entire table for you.
+    </li>
+<li>
+<strong>
+      Styling options
+     </strong>
+     – Some tools let you tweak the colors or borders to match your website’s look.
+    </li>
+<li>
+<strong>
+      Clean, valid code
+     </strong>
+     – The generated HTML is clean and ready to use, so you don’t have to worry about syntax errors or validation issues.
+    </li>
+</ul>
+<h3>
+    How to Use the HTML Table Generator
+   </h3>
+<p>
+    Here’s how to get your table up and running with just a few clicks:
+   </p>
+<ol>
+<li>
+<strong>
+      Go to the HTML Table Generator tool
+     </strong>
+     – Open the tool in your browser. No downloads or sign-ups required.
+    </li>
+<li>
+<strong>
+      Set the number of rows and columns
+     </strong>
+     – Choose how many rows and columns your table should have.
+    </li>
+<li>
+<strong>
+      Enter your data
+     </strong>
+     – You can either manually enter your data into the tool or upload a CSV file if you have a bunch of data already.
+    </li>
+<li>
+<strong>
+      Customize the table (optional)
+     </strong>
+     – Adjust the table’s styles, like borders, text alignment, or adding headers.
+    </li>
+<li>
+<strong>
+      Click “Generate”
+     </strong>
+     – Once everything looks good, hit the button, and voilà! You’ve got your HTML table code.
+    </li>
+<li>
+<strong>
+      Copy and paste the code
+     </strong>
+     – Grab the HTML code, and paste it into your webpage’s HTML where you want the table to appear.
+    </li>
+</ol>
+<div class="pro-tip">
+<p>
+<strong>
+      💡 Pro tip:
+     </strong>
+     Keep your table content organized. For example, make sure the headers accurately reflect the data in each column to help your users navigate it better.
+    </p>
+</div>
+<h3>
+    Why Choose This HTML Table Generator?
+   </h3>
+<p>
+    Here’s what makes this tool awesome:
+   </p>
+<ul>
+<li>
+<strong>
+      Easy to use
+     </strong>
+     – You don’t need to be a coding whiz to generate a table. Just input the details, and you’re good to go.
+    </li>
+<li>
+<strong>
+      Quick and efficient
+     </strong>
+     – You don’t have to sit there typing out
+     <table>
+      ,
+      <tr>
+       ,
+       <td>
+        , and all that—just fill out the form and let the tool do the work.
+       </td>
+</tr>
+</table>
+</li>
+<li>
+<strong>
+      Customizable for your needs
+     </strong>
+     – Whether you want a simple table or one with specific styles and data, you can make it happen with this generator.
+    </li>
+<li>
+<strong>
+      Clean code
+     </strong>
+     – It’s not just quick—it’s accurate too. The code is clean and ready to integrate into your site without any hassle.
+    </li>
+<li>
+<strong>
+      Free to use
+     </strong>
+     – No need to pay for this tool. You can use it as much as you want, whenever you want.
+    </li>
+</ul>
+<h3>
+    FAQs
+   </h3>
+<ol>
+<li>
+<strong>
+      Can I add a table header with this tool?
+     </strong>
+<br/>
+     Yes! You can easily add a header row to your table, which will give you labels for each column.
+    </li>
+<li>
+<strong>
+      Can I customize the colors and styles of the table?
+     </strong>
+<br/>
+     Some generators allow you to style your table (e.g., borders, background color) directly within the tool. Otherwise, you can always tweak the CSS once the table code is generated.
+    </li>
+<li>
+<strong>
+      Can I upload my data to create the table automatically?
+     </strong>
+<br/>
+     Yes, many tools let you upload CSV files, which will then be automatically turned into a table. This is great if you have a lot of data to work with.
+    </li>
+<li>
+<strong>
+      Is this table generator responsive for mobile?
+     </strong>
+<br/>
+     While the HTML table itself might not be fully responsive by default, you can make it responsive with a little CSS tweak. Some generators may even include responsive options.
+    </li>
+<li>
+<strong>
+      Can I use the generated table on any website?
+     </strong>
+<br/>
+     Absolutely! You can copy the generated HTML table code and paste it into any HTML document or webpage.
+    </li>
+</ol>
+<p>
+<strong>
+     Need a table for your website or project?
+    </strong>
+    Try out our HTML Table Generator—it’s quick, easy, and totally free! Perfect for all your data display needs.
+   </p>
+</div>
+<script>
+        // Function: generateTable
+   function generateTable() {
+        // DOM element manipulation
+            const rows = parseInt(document.getElementById('rows').value) || 3;
+        // DOM element manipulation
+            const cols = parseInt(document.getElementById('cols').value) || 3;
+        // DOM element manipulation
+            const border = document.getElementById('border').value;
+        // DOM element manipulation
+            const header = document.getElementById('header').checked;
+
+            let tableHTML = `<table style="width: 100%; border-collapse: collapse; border: ${border}px solid #ddd;">`;
+
+            if (header) {
+                tableHTML += '<tr>';
+                for (let j = 1; j <= cols; j++) {
+                    tableHTML += `<th style="border: ${border}px solid #ddd; padding: 10px; background-color: #f28c38; color: #fff;">Header ${j}</th>`;
+                }
+                tableHTML += '</tr>';
+            }
+
+            for (let i = 1; i <= rows; i++) {
+                tableHTML += '<tr>';
+                for (let j = 1; j <= cols; j++) {
+                    tableHTML += `<td style="border: ${border}px solid #ddd; padding: 10px; background-color: #fafafa;">Cell ${i}-${j}</td>`;
+                }
+                tableHTML += '</tr>';
+            }
+
+            tableHTML += '</table>';
+
+        // DOM element manipulation
+            document.getElementById('table-preview').innerHTML = tableHTML;
+
+            const escapedHTML = tableHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        // DOM element manipulation
+            document.getElementById('html-code').innerHTML = escapedHTML;
+        }
+
+        // Function: copyCode
+        function copyCode() {
+        // DOM element manipulation
+            const code = document.getElementById('table-preview').innerHTML;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('HTML code copied to clipboard!');
+            });
+        }
+
+        window.onload = generateTable;
+  </script>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+<script src="../js/script.js">
+</script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

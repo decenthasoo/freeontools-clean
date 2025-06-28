@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - FreeonTools</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+    <style>
+        .auth-container .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px 25px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', Arial, sans-serif;
+            text-align: center;
+        }
+
+        .auth-container .container h2 {
+            color: #333;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 12px 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: 'Poppins', Arial, sans-serif;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+            touch-action: manipulation;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+            font-weight: 400;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #f28c38;
+        }
+
+        .auth-container .container .header-btn-signup {
+            width: 100%;
+            background-color: #f28c38;
+            color: #fff;
+            border: 1px solid #f28c38;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 550;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            touch-action: manipulation;
+        }
+
+        .auth-container .container .header-btn-signup:hover {
+            background-color: #d97a2e;
+            border-color: #d97a2e;
+        }
+
+        .terms-notice {
+            font-size: 12px;
+            color: #666;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        .terms-notice a {
+            color: #f28c38;
+            text-decoration: none;
+        }
+
+        .terms-notice a:hover {
+            color: #d97a2e;
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin: 20px 0;
+        }
+
+        .social-divider {
+            font-size: 14px;
+            color: #666;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .social-divider::before,
+        .social-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .social-divider::before {
+            left: 0;
+        }
+
+        .social-divider::after {
+            right: 0;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, border-color 0.3s;
+            touch-action: manipulation;
+        }
+
+        .social-btn i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .google-btn {
+            border-color: #db4437;
+        }
+
+        .google-btn i {
+            color: #db4437;
+        }
+
+        .google-btn:hover {
+            background: #f8e9e7;
+        }
+
+        .facebook-btn {
+            border-color: #3b5998;
+        }
+
+        .facebook-btn i {
+            color: #3b5998;
+        }
+
+        .facebook-btn:hover {
+            background: #e7edf7;
+        }
+
+        .auth-link {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .auth-link a {
+            color: #f28c38;
+            text-decoration: none;
+        }
+
+        .auth-link a:hover {
+            color: #d97a2e;
+            text-decoration: underline;
+        }
+
+        #error-message {
+            margin-top: 15px;
+            color: #d9534f;
+            font-size: 14px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .auth-container .container {
+                max-width: 360px;
+                margin: 40px auto;
+                padding: 25px 20px;
+            }
+            .auth-container .container h2 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .auth-container .container {
+                max-width: 340px;
+                margin: 30px auto;
+                padding: 20px 15px;
+            }
+            .auth-container .container h2 {
+                font-size: 24px;
+            }
+            .form-group input {
+                font-size: 15px;
+                padding: 10px 10px 10px 36px;
+            }
+            .input-icon {
+                font-size: 15px;
+                left: 10px;
+            }
+            .auth-container .container .header-btn-signup {
+                font-size: 15px;
+                padding: 10px;
+            }
+            .social-btn {
+                font-size: 13px;
+                padding: 10px;
+            }
+            .terms-notice {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .auth-container .container {
+                max-width: 90%;
+                margin: 20px auto;
+                padding: 15px 12px;
+            }
+            .auth-container .container h2 {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .form-group input {
+                font-size: 14px;
+                padding: 9px 9px 9px 34px;
+            }
+            .input-icon {
+                font-size: 14px;
+                left: 9px;
+            }
+            .auth-container .container .header-btn-signup {
+                font-size: 14px;
+                padding: 9px;
+            }
+            .social-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .social-btn {
+                width: 100%;
+                font-size: 13px;
+                padding: 9px;
+            }
+            .social-btn i {
+                font-size: 15px;
+            }
+            .social-divider {
+                font-size: 13px;
+            }
+            .terms-notice {
+                font-size: 11px;
+            }
+            .auth-link {
+                font-size: 13px;
+            }
+            #error-message {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .auth-container .container {
+                max-width: 95%;
+                margin: 15px auto;
+                padding: 12px 10px;
+            }
+            .auth-container .container h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .form-group input {
+                font-size: 13px;
+                padding: 8px 8px 8px 32px;
+            }
+            .input-icon {
+                font-size: 13px;
+                left: 8px;
+            }
+            .auth-container .container .header-btn-signup {
+                font-size: 13px;
+                padding: 8px;
+            }
+            .social-btn {
+                font-size: 12px;
+                padding: 8px;
+            }
+            .social-btn i {
+                font-size: 14px;
+            }
+            .social-divider {
+                font-size: 12px;
+            }
+            .terms-notice {
+                font-size: 10px;
+            }
+            .auth-link {
+                font-size: 12px;
+            }
+            #error-message {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Placeholder for dynamic content -->
+<div id="header-placeholder">
+</div>
+    <div class="auth-container">
+        <div class="container">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                </div>
+                <button type="submit" class="header-btn-signup">Sign Up</button>
+                <p class="terms-notice">By creating an account, you agree to FreeonTools' <a href="https://www.freeontools.com/terms-of-service">Terms of Service</a> and <a href="https://www.freeontools.com/privacy-policy">Privacy Policy</a>.</p>
+            </form>
+            <div id="error-message"></div>
+            <div class="social-login">
+                <p class="social-divider">Or continue with</p>
+                <div class="social-buttons">
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </button>
+                </div>
+            </div>
+            <p class="auth-link">Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+<!-- Placeholder for dynamic content -->
+<div id="footer-placeholder">
+</div>
+    <script src="/js/script.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
