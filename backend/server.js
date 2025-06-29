@@ -15,25 +15,34 @@ const User = require('./models/User');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ==================== Configuration ====================
-app.set('trust proxy', 1); // Enable for Render's proxy
+// ==================== Environment Configuration ====================
+// Fallback to Render's alternative variable names if primary not set
+const JWT_SECRET = process.env.JWT_SECRET || process.env.JMT_SECRET;
+const SESSION_SECRET = process.env.SESSION_SECRET || process.env.JMT_SECRET;
+const MONGO_URI = process.env.MONGO_URI || process.env.MONGQ_URI;
+const GMAIL_USER = process.env.GMAIL_USER || process.env.GMATL_USER;
+const GMAIL_PASS = process.env.GMAIL_PASS || process.env.GMATL_PASS;
 
 // ==================== Environment Validation ====================
-if (!process.env.JWT_SECRET || !process.env.SESSION_SECRET) {
-    console.error('Missing JWT_SECRET or SESSION_SECRET in .env');
+if (!JWT_SECRET || !SESSION_SECRET) {
+    console.error('ERROR: Missing JWT secret. Please set either:');
+    console.error('- JWT_SECRET or JMT_SECRET in environment variables');
     process.exit(1);
 }
 
-if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
-    console.error('Missing GMAIL_USER or GMAIL_PASS in .env');
+if (!GMAIL_USER || !GMAIL_PASS) {
+    console.error('ERROR: Missing email credentials. Please set either:');
+    console.error('- GMAIL_USER/GMAIL_PASS or GMATL_USER/GMATL_PASS');
     process.exit(1);
 }
 
 // ==================== Middleware ====================
+app.set('trust proxy', 1);
+
 app.use(cors({
     origin: [
         'https://www.freeontools.com',
-        'http://localhost:8080' // Keep for local testing
+        'http://localhost:8080'
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -41,18 +50,18 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../'))); // Serve frontend files
+app.use(express.static(path.join(__dirname, '../')));
 
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
-        secure: true, // HTTPS only
+        secure: true,
         httpOnly: true,
         sameSite: 'lax',
         maxAge: 24 * 60 * 60 * 1000,
-        domain: 'freeontools.com'
+        domain: process.env.NODE_ENV === 'production' ? 'freeontools.com' : undefined
     }
 }));
 
@@ -60,7 +69,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // ==================== Database & Services ====================
-mongoose.connect(process.env.MONGO_URI, { 
+mongoose.connect(MONGO_URI, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 }).then(() => {
@@ -71,8 +80,8 @@ mongoose.connect(process.env.MONGO_URI, {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS
+        user: GMAIL_USER,
+        pass: GMAIL_PASS
     }
 });
 
@@ -80,43 +89,43 @@ const transporter = nodemailer.createTransport({
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: 'https://www.freeontools.com/auth/facebook/callback',
+    callbackURL: process.env.NODE_ENV === 'production' 
+        ? 'https://www.freeontools.com/auth/facebook/callback'
+        : 'http://localhost:3000/auth/facebook/callback',
     profileFields: ['id', 'emails', 'name']
-}, /* Existing Facebook strategy code */));
+}, /* Existing Facebook strategy */));
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: 'https://www.freeontools.com/auth/google/callback'
-}, /* Existing Google strategy code */));
+    callbackURL: process.env.NODE_ENV === 'production'
+        ? 'https://www.freeontools.com/auth/google/callback'
+        : 'http://localhost:3000/auth/google/callback'
+}, /* Existing Google strategy */));
 
 // ==================== Routes ====================
-// (Keep all your existing route handlers exactly as-is, only update URLs)
+// Keep all your existing routes exactly as they are
+// Just update the JWT signing to use the new variable:
 
-// Example route updates:
 app.get('/auth/facebook/callback', 
     passport.authenticate('facebook', { 
-        failureRedirect: 'https://www.freeontools.com/login.html' 
+        failureRedirect: process.env.NODE_ENV === 'production'
+            ? 'https://www.freeontools.com/login.html'
+            : 'http://localhost:8080/login.html'
     }),
     (req, res) => {
-        const token = jwt.sign({ userId: req.user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
-    }
-);
-
-app.get('/auth/google/callback',
-    passport.authenticate('google', { 
-        failureRedirect: 'https://www.freeontools.com/login.html' 
-    }),
-    (req, res) => {
-        const token = jwt.sign({ userId: req.user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
+        const token = jwt.sign({ userId: req.user._id }, JWT_SECRET, { expiresIn: '1h' });
+        res.redirect(process.env.NODE_ENV === 'production'
+            ? `https://www.freeontools.com/profile.html?token=${token}`
+            : `http://localhost:8080/profile.html?token=${token}`);
     }
 );
 
 // ==================== Server Start ====================
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-    console.log(`Frontend: https://www.freeontools.com`);
-    console.log(`API: https://www.freeontools.com/api`);
+    console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode`);
+    console.log(`Port: ${PORT}`);
+    console.log(`Frontend: ${process.env.NODE_ENV === 'production' 
+        ? 'https://www.freeontools.com' 
+        : 'http://localhost:8080'}`);
 });
