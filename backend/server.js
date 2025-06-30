@@ -23,12 +23,14 @@ const config = {
   emailPass: process.env.GMAIL_PASS || process.env.GMATL_PASS,
   nodeEnv: process.env.NODE_ENV || 'development',
   
-  // OAuth Configs with fallbacks
   facebookAppId: process.env.FACEBOOK_APP_ID,
   facebookAppSecret: process.env.FACEBOOK_APP_SECRET,
   googleClientId: process.env.GOOGLE_CLIENT_ID,
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
+
+// Debug MongoDB connection URI
+console.log('Attempting to connect to MongoDB at:', config.mongoURI);
 
 // ==================== Environment Validation ====================
 if (!config.jwtSecret || !config.sessionSecret) {
@@ -85,15 +87,28 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-// ==================== Database & Services ====================
-mongoose.connect(config.mongoURI, { 
-  useNewUrlParser: true, 
-  useUnifiedTopology: true 
-}).then(() => {
-  console.log('MongoDB connected');
-  User.collection.createIndex({ email: 1 }, { unique: true, sparse: true });
-}).catch(err => console.error('MongoDB connection error:', err));
+// ==================== Enhanced MongoDB Connection ====================
+const connectWithRetry = () => {
+  mongoose.connect(config.mongoURI, { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 30000
+  })
+  .then(() => {
+    console.log('\x1b[32mMongoDB connected successfully\x1b[0m');
+    return User.collection.createIndex({ email: 1 }, { unique: true, sparse: true });
+  })
+  .catch(err => {
+    console.error('\x1b[31mMongoDB connection failed:\x1b[0m', err.message);
+    console.log('Retrying connection in 5 seconds...');
+    setTimeout(connectWithRetry, 5000);
+  });
+};
 
+connectWithRetry();
+
+// ==================== Services ====================
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -104,7 +119,6 @@ const transporter = nodemailer.createTransport({
 
 // ==================== OAuth Strategy Initialization ====================
 const initOAuthStrategies = () => {
-  // Facebook Strategy
   if (config.facebookAppId && config.facebookAppSecret) {
     passport.use(new FacebookStrategy({
       clientID: config.facebookAppId,
@@ -140,11 +154,8 @@ const initOAuthStrategies = () => {
       }
     }));
     console.log('\x1b[32mFacebook OAuth initialized\x1b[0m');
-  } else {
-    console.warn('\x1b[33mFacebook OAuth disabled - missing credentials\x1b[0m');
   }
 
-  // Google Strategy
   if (config.googleClientId && config.googleClientSecret) {
     passport.use(new GoogleStrategy({
       clientID: config.googleClientId,
@@ -180,14 +191,13 @@ const initOAuthStrategies = () => {
       }
     }));
     console.log('\x1b[32mGoogle OAuth initialized\x1b[0m');
-  } else {
-    console.warn('\x1b[33mGoogle OAuth disabled - missing credentials\x1b[0m');
   }
 };
 
 initOAuthStrategies();
 
 // ==================== Routes ====================
+// (Keep all your existing routes exactly as they were)
 app.get('/auth/facebook/callback', 
   passport.authenticate('facebook', { 
     failureRedirect: config.nodeEnv === 'production'
@@ -212,6 +222,7 @@ app.listen(PORT, () => {
   console.log(`\x1b[33mFrontend:\x1b[0m ${config.nodeEnv === 'production' 
     ? 'https://www.freeontools.com' 
     : 'http://localhost:8080'}`);
+  console.log(`\x1b[33mDatabase:\x1b[0m ${config.mongoURI}`);
   console.log(`\x1b[33mOAuth Status:\x1b[0m`);
   console.log(`- Facebook: ${config.facebookAppId ? 'Enabled' : 'Disabled'}`);
   console.log(`- Google: ${config.googleClientId ? 'Enabled' : 'Disabled'}\n`);
