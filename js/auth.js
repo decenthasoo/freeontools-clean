@@ -1,4 +1,4 @@
-const BACKEND_URL = 'https://c9cb-2401-4900-1c45-c83d-cc45-70a5-90dd-1ab1.ngrok-free.app';
+const BACKEND_URL = 'http://localhost:3000';
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('auth.js: DOMContentLoaded, initializing auth listeners for', window.location.pathname);
