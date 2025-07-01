@@ -57,24 +57,29 @@ app.use(cors({
 app.use(express.json());
 
 // Static File Serving
-app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static(path.join(__dirname, '../'), {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-store');
+    }
+  }
+}));
 
 // Redirect Middleware
 app.use((req, res, next) => {
-  // Force HTTPS and www in production
-  if (config.nodeEnv === 'production') {
-    if (req.hostname === 'freeontools.com') {
-      return res.redirect(301, `https://www.freeontools.com${req.url}`);
-    }
-    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
-      return res.redirect(`https://${req.hostname}${req.url}`);
-    }
+  const host = req.hostname;
+  const protocol = req.protocol;
+  const url = req.url;
+  
+  // Force HTTPS and www
+  if (host === 'freeontools.com' || protocol !== 'https') {
+    return res.redirect(301, `https://www.freeontools.com${url}`);
   }
   
   // Remove .html and trailing slash
-  if (req.path.endsWith('.html') || req.path.endsWith('/')) {
-    const cleanUrl = req.path.replace(/\.html$/, '').replace(/\/$/, '');
-    return res.redirect(301, cleanUrl);
+  if (url.match(/(\.html|\/)$/) && !url.match(/(auth|api)/)) {
+    const cleanUrl = url.replace(/\.html$/, '').replace(/\/$/, '');
+    return res.redirect(301, cleanUrl || '/');
   }
   
   next();
@@ -141,88 +146,109 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// OAuth Strategy Initialization
-const initOAuthStrategies = () => {
-  if (config.facebookAppId && config.facebookAppSecret) {
-    passport.use(new FacebookStrategy({
-      clientID: config.facebookAppId,
-      clientSecret: config.facebookAppSecret,
-      callbackURL: config.nodeEnv === 'production' 
-        ? 'https://www.freeontools.com/auth/facebook/callback'
-        : 'http://localhost:3000/auth/facebook/callback',
-      profileFields: ['id', 'emails', 'name', 'displayName']
-    }, async (accessToken, refreshToken, profile, done) => {
-      try {
-        let user = await User.findOne({ 
-          $or: [
-            { facebookId: profile.id },
-            { email: profile.emails[0].value }
-          ]
+// Facebook OAuth Strategy
+if (config.facebookAppId && config.facebookAppSecret) {
+  passport.use(new FacebookStrategy({
+    clientID: config.facebookAppId,
+    clientSecret: config.facebookAppSecret,
+    callbackURL: config.nodeEnv === 'production' 
+      ? 'https://www.freeontools.com/auth/facebook/callback'
+      : 'http://localhost:3000/auth/facebook/callback',
+    profileFields: ['id', 'emails', 'name', 'displayName']
+  }, async (accessToken, refreshToken, profile, done) => {
+    try {
+      let user = await User.findOne({ 
+        $or: [
+          { facebookId: profile.id },
+          { email: profile.emails[0].value }
+        ]
+      });
+
+      if (!user) {
+        user = new User({
+          facebookId: profile.id,
+          email: profile.emails[0].value,
+          name: profile.displayName || `${profile.name.givenName} ${profile.name.familyName}`,
+          isVerified: true
         });
-
-        if (!user) {
-          user = new User({
-            facebookId: profile.id,
-            email: profile.emails[0].value,
-            name: profile.displayName || `${profile.name.givenName} ${profile.name.familyName}`,
-            isVerified: true
-          });
-          await user.save();
-        } else if (!user.facebookId) {
-          user.facebookId = profile.id;
-          await user.save();
-        }
-        return done(null, user);
-      } catch (err) {
-        return done(err);
+        await user.save();
+      } else if (!user.facebookId) {
+        user.facebookId = profile.id;
+        await user.save();
       }
-    }));
-    console.log('\x1b[32mFacebook OAuth initialized\x1b[0m');
-  }
+      return done(null, user);
+    } catch (err) {
+      return done(err);
+    }
+  }));
+  console.log('\x1b[32mFacebook OAuth initialized\x1b[0m');
+}
 
-  if (config.googleClientId && config.googleClientSecret) {
-    passport.use(new GoogleStrategy({
-      clientID: config.googleClientId,
-      clientSecret: config.googleClientSecret,
-      callbackURL: config.nodeEnv === 'production'
-        ? 'https://www.freeontools.com/auth/google/callback'
-        : 'http://localhost:3000/auth/google/callback',
-      scope: ['profile', 'email']
-    }, async (accessToken, refreshToken, profile, done) => {
-      try {
-        let user = await User.findOne({ 
-          $or: [
-            { googleId: profile.id },
-            { email: profile.emails[0].value }
-          ]
+// Google OAuth Strategy
+if (config.googleClientId && config.googleClientSecret) {
+  passport.use(new GoogleStrategy({
+    clientID: config.googleClientId,
+    clientSecret: config.googleClientSecret,
+    callbackURL: config.nodeEnv === 'production'
+      ? 'https://www.freeontools.com/auth/google/callback'
+      : 'http://localhost:3000/auth/google/callback',
+    scope: ['profile', 'email']
+  }, async (accessToken, refreshToken, profile, done) => {
+    try {
+      let user = await User.findOne({ 
+        $or: [
+          { googleId: profile.id },
+          { email: profile.emails[0].value }
+        ]
+      });
+
+      if (!user) {
+        user = new User({
+          googleId: profile.id,
+          email: profile.emails[0].value,
+          name: profile.displayName,
+          isVerified: true
         });
-
-        if (!user) {
-          user = new User({
-            googleId: profile.id,
-            email: profile.emails[0].value,
-            name: profile.displayName,
-            isVerified: true
-          });
-          await user.save();
-        } else if (!user.googleId) {
-          user.googleId = profile.id;
-          await user.save();
-        }
-        return done(null, user);
-      } catch (err) {
-        return done(err);
+        await user.save();
+      } else if (!user.googleId) {
+        user.googleId = profile.id;
+        await user.save();
       }
-    }));
-    console.log('\x1b[32mGoogle OAuth initialized\x1b[0m');
-  }
-};
+      return done(null, user);
+    } catch (err) {
+      return done(err);
+    }
+  }));
+  console.log('\x1b[32mGoogle OAuth initialized\x1b[0m');
+}
 
-initOAuthStrategies();
+// Facebook Auth Route
+app.get('/auth/facebook', passport.authenticate('facebook'));
 
-// Route Handling
-app.get('/auth/facebook/callback', 
+app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { 
+    failureRedirect: config.nodeEnv === 'production'
+      ? 'https://www.freeontools.com/login'
+      : 'http://localhost:8080/login'
+  }),
+  (req, res) => {
+    const token = jwt.sign({ 
+      userId: req.user._id,
+      email: req.user.email
+    }, config.jwtSecret, { expiresIn: '1h' });
+    res.redirect(config.nodeEnv === 'production'
+      ? `https://www.freeontools.com/profile?token=${token}`
+      : `http://localhost:8080/profile?token=${token}`);
+  }
+);
+
+// Google Auth Route
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+app.get('/auth/google/callback',
+  passport.authenticate('google', { 
     failureRedirect: config.nodeEnv === 'production'
       ? 'https://www.freeontools.com/login'
       : 'http://localhost:8080/login'
@@ -240,24 +266,17 @@ app.get('/auth/facebook/callback',
 
 // Final Catch-All Route
 app.get('*', (req, res) => {
-  // Skip API routes
   if (req.path.startsWith('/auth/') || req.path.startsWith('/api/')) {
     return res.status(404).json({ error: 'Not found' });
   }
 
-  const filePath = path.join(__dirname, '../', req.path === '/' ? 'index.html' : req.path);
-  
-  // Try exact path first
+  const requestedPath = req.path === '/' ? '/index' : req.path.replace(/\/$/, '');
+  const filePath = path.join(__dirname, '../', `${requestedPath}.html`);
+
   if (fs.existsSync(filePath)) {
     return res.sendFile(filePath);
   }
   
-  // Try with .html extension
-  if (fs.existsSync(`${filePath}.html`)) {
-    return res.sendFile(`${filePath}.html`);
-  }
-  
-  // Fallback to index.html
   res.sendFile(path.join(__dirname, '../index.html'));
 });
 
@@ -265,11 +284,6 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`\n\x1b[36mServer running in ${config.nodeEnv} mode\x1b[0m`);
   console.log(`\x1b[33mPort:\x1b[0m ${PORT}`);
-  console.log(`\x1b[33mFrontend:\x1b[0m ${config.nodeEnv === 'production' 
-    ? 'https://www.freeontools.com' 
-    : 'http://localhost:8080'}`);
+  console.log(`\x1b[33mFrontend URL:\x1b[0m https://www.freeontools.com`);
   console.log(`\x1b[33mDatabase:\x1b[0m ${config.mongoURI}`);
-  console.log(`\x1b[33mOAuth Status:\x1b[0m`);
-  console.log(`- Facebook: ${config.facebookAppId ? 'Enabled' : 'Disabled'}`);
-  console.log(`- Google: ${config.googleClientId ? 'Enabled' : 'Disabled'}\n`);
 });
