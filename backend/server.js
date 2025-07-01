@@ -13,7 +13,7 @@ const fs = require('fs');
 const User = require('./models/User');
 
 const app = express();
-const PORT = process.env.PORT || 10000; // Using Render's default port
+const PORT = process.env.PORT || 10000; // Render default port
 
 // Environment Configuration
 const config = {
@@ -58,7 +58,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving with proper caching
+// Static File Serving (from root directory)
 app.use(express.static(path.join(__dirname, '../'), {
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.html')) {
@@ -136,7 +136,7 @@ mongoose.connect(config.mongoURI, {
   process.exit(1);
 });
 
-// Email transporter setup
+// Email Transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -275,22 +275,20 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// Frontend Route Handling
+// Dynamic Route Handling for All Pages
 app.get('*', (req, res) => {
-  // Skip API/auth routes
-  if (req.path.startsWith('/auth/') || req.path.startsWith('/api/')) {
-    return res.status(404).json({ error: 'Not found' });
-  }
+  const basePath = path.join(__dirname, '../');
+  const requestedPath = req.path === '/' ? 'index.html' : `${req.path.replace(/^\//, '')}.html`;
+  const filePath = path.join(basePath, requestedPath);
 
-  const requestedPath = req.path === '/' ? 'index' : req.path.replace(/^\//, '').replace(/\/$/, '');
-  const filePath = path.join(__dirname, '../', `${requestedPath}.html`);
-
-  if (fs.existsSync(filePath)) {
-    return res.sendFile(filePath);
-  }
-  
-  // Fallback to index.html for client-side routing
-  res.sendFile(path.join(__dirname, '../index.html'));
+  // Check if file exists
+  fs.access(filePath, fs.constants.F_OK, (err) => {
+    if (err) {
+      // Fallback to index.html for client-side routing
+      return res.sendFile(path.join(basePath, 'index.html'));
+    }
+    res.sendFile(filePath);
+  });
 });
 
 // Error Handling Middleware
