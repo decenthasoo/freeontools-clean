@@ -15,7 +15,7 @@ const User = require('./models/User');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ==================== Environment Configuration ====================
+// Environment Configuration
 const config = {
   jwtSecret: process.env.JWT_SECRET || process.env.JMT_SECRET,
   sessionSecret: process.env.SESSION_SECRET || process.env.JMT_SECRET,
@@ -23,17 +23,16 @@ const config = {
   emailUser: process.env.GMAIL_USER || process.env.GMATL_USER,
   emailPass: process.env.GMAIL_PASS || process.env.GMATL_PASS,
   nodeEnv: process.env.NODE_ENV || 'development',
-  
   facebookAppId: process.env.FACEBOOK_APP_ID,
   facebookAppSecret: process.env.FACEBOOK_APP_SECRET,
   googleClientId: process.env.GOOGLE_CLIENT_ID,
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Debug MongoDB connection URI
+// Debug MongoDB connection
 console.log('Attempting to connect to MongoDB at:', config.mongoURI);
 
-// ==================== Environment Validation ====================
+// Environment Validation
 if (!config.jwtSecret || !config.sessionSecret) {
   console.error('\x1b[31m', 'ERROR: Missing required secrets:');
   console.error('- Set JWT_SECRET or JMT_SECRET');
@@ -42,7 +41,7 @@ if (!config.jwtSecret || !config.sessionSecret) {
   process.exit(1);
 }
 
-// ==================== Middleware ====================
+// Middleware
 app.set('trust proxy', 1);
 
 app.use(cors({
@@ -57,56 +56,31 @@ app.use(cors({
 
 app.use(express.json());
 
-// ==================== Enhanced Static File Serving ====================
-app.use(express.static(path.join(__dirname, '../'), {
-  setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.html')) {
-      res.setHeader('Cache-Control', 'no-store');
-    }
-  }
-});
+// Static File Serving
+app.use(express.static(path.join(__dirname, '../')));
 
-// ==================== Redirect Middleware ====================
+// Redirect Middleware
 app.use((req, res, next) => {
-  const host = req.hostname;
-  const protocol = req.protocol;
-  const url = req.url;
-  
-  // 1. Force HTTPS and www in production
+  // Force HTTPS and www in production
   if (config.nodeEnv === 'production') {
-    // Redirect http://freeontools.com to https://www.freeontools.com
-    if (host === 'freeontools.com' || protocol !== 'https') {
-      return res.redirect(301, `https://www.freeontools.com${url}`);
+    if (req.hostname === 'freeontools.com') {
+      return res.redirect(301, `https://www.freeontools.com${req.url}`);
+    }
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+      return res.redirect(`https://${req.hostname}${req.url}`);
     }
   }
   
-  // 2. Remove .html extensions and trailing slashes
-  const hasHtmlExtension = url.endsWith('.html');
-  const hasTrailingSlash = url.endsWith('/') && url !== '/';
-  
-  if (hasHtmlExtension || hasTrailingSlash) {
-    let cleanUrl = url;
-    
-    // Remove .html extension
-    if (hasHtmlExtension) {
-      cleanUrl = cleanUrl.replace(/\.html$/, '');
-    }
-    
-    // Remove trailing slash
-    if (hasTrailingSlash) {
-      cleanUrl = cleanUrl.replace(/\/$/, '');
-    }
-    
-    // Only redirect if the URL actually changed
-    if (cleanUrl !== url) {
-      return res.redirect(301, cleanUrl);
-    }
+  // Remove .html and trailing slash
+  if (req.path.endsWith('.html') || req.path.endsWith('/')) {
+    const cleanUrl = req.path.replace(/\.html$/, '').replace(/\/$/, '');
+    return res.redirect(301, cleanUrl);
   }
   
   next();
 });
 
-// ==================== Session Configuration ====================
+// Session Configuration
 app.use(session({
   secret: config.sessionSecret,
   resave: false,
@@ -120,7 +94,7 @@ app.use(session({
   }
 }));
 
-// ==================== Passport Setup ====================
+// Passport Setup
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -137,7 +111,7 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-// ==================== MongoDB Connection ====================
+// MongoDB Connection
 const connectWithRetry = () => {
   mongoose.connect(config.mongoURI, { 
     useNewUrlParser: true,
@@ -158,7 +132,7 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
-// ==================== Nodemailer Configuration ====================
+// Nodemailer Configuration
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -167,7 +141,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// ==================== OAuth Strategy Initialization ====================
+// OAuth Strategy Initialization
 const initOAuthStrategies = () => {
   if (config.facebookAppId && config.facebookAppSecret) {
     passport.use(new FacebookStrategy({
@@ -246,12 +220,12 @@ const initOAuthStrategies = () => {
 
 initOAuthStrategies();
 
-// ==================== Route Handling ====================
+// Route Handling
 app.get('/auth/facebook/callback', 
   passport.authenticate('facebook', { 
     failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login.html'
-      : 'http://localhost:8080/login.html'
+      ? 'https://www.freeontools.com/login'
+      : 'http://localhost:8080/login'
   }),
   (req, res) => {
     const token = jwt.sign({ 
@@ -259,35 +233,35 @@ app.get('/auth/facebook/callback',
       email: req.user.email
     }, config.jwtSecret, { expiresIn: '1h' });
     res.redirect(config.nodeEnv === 'production'
-      ? `https://www.freeontools.com/profile.html?token=${token}`
-      : `http://localhost:8080/profile.html?token=${token}`);
+      ? `https://www.freeontools.com/profile?token=${token}`
+      : `http://localhost:8080/profile?token=${token}`);
   }
 );
 
-// ==================== Final Catch-All Route ====================
-app.get('*', (req, res, next) => {
+// Final Catch-All Route
+app.get('*', (req, res) => {
   // Skip API routes
   if (req.path.startsWith('/auth/') || req.path.startsWith('/api/')) {
-    return next();
+    return res.status(404).json({ error: 'Not found' });
   }
 
-  const requestedPath = req.path === '/' ? '/index' : req.path;
-  const filePath = path.join(__dirname, '../', requestedPath);
+  const filePath = path.join(__dirname, '../', req.path === '/' ? 'index.html' : req.path);
   
-  // Try to serve the clean URL version first
+  // Try exact path first
+  if (fs.existsSync(filePath)) {
+    return res.sendFile(filePath);
+  }
+  
+  // Try with .html extension
   if (fs.existsSync(`${filePath}.html`)) {
     return res.sendFile(`${filePath}.html`);
   }
   
-  // Fallback to index.html for client-side routing
-  if (fs.existsSync(path.join(__dirname, '../index.html'))) {
-    return res.sendFile(path.join(__dirname, '../index.html'));
-  }
-  
-  next();
+  // Fallback to index.html
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
-// ==================== Server Start ====================
+// Server Start
 app.listen(PORT, () => {
   console.log(`\n\x1b[36mServer running in ${config.nodeEnv} mode\x1b[0m`);
   console.log(`\x1b[33mPort:\x1b[0m ${PORT}`);
