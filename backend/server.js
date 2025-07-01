@@ -58,16 +58,17 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving (from root directory)
+// Enhanced Static File Serving
 app.use(express.static(path.join(__dirname, '../'), {
+  maxAge: '1y',
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-store');
     } else {
-      res.setHeader('Cache-Control', 'public, max-age=31536000');
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     }
   }
-}));
+});
 
 // Redirect Middleware
 app.use((req, res, next) => {
@@ -226,6 +227,15 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'healthy' });
 });
 
+// Debug Routes
+app.get('/debug/paths', (req, res) => {
+  res.json({
+    "__dirname": __dirname,
+    "process.cwd()": process.cwd(),
+    "rootFiles": fs.readdirSync(path.join(__dirname, '../'))
+  });
+});
+
 // Facebook Auth Routes
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
@@ -275,19 +285,24 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// Dynamic Route Handling for All Pages
+// Enhanced Dynamic Route Handling for All Pages
 app.get('*', (req, res) => {
   const basePath = path.join(__dirname, '../');
-  const requestedPath = req.path === '/' ? 'index.html' : `${req.path.replace(/^\//, '')}.html`;
-  const filePath = path.join(basePath, requestedPath);
-
-  // Check if file exists
-  fs.access(filePath, fs.constants.F_OK, (err) => {
+  let filePath = req.path === '/' 
+    ? 'index.html' 
+    : `${req.path.replace(/^\//, '')}.html`;
+  
+  // Security: Prevent directory traversal
+  filePath = path.normalize(filePath).replace(/^(\.\.[\/\\])+/, '');
+  
+  const fullPath = path.join(basePath, filePath);
+  
+  fs.access(fullPath, fs.constants.F_OK, (err) => {
     if (err) {
       // Fallback to index.html for client-side routing
       return res.sendFile(path.join(basePath, 'index.html'));
     }
-    res.sendFile(filePath);
+    res.sendFile(fullPath);
   });
 });
 
