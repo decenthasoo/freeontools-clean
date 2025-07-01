@@ -64,24 +64,49 @@ app.use(express.static(path.join(__dirname, '../'), {
       res.setHeader('Cache-Control', 'no-store');
     }
   }
-}));
+});
 
 // ==================== Redirect Middleware ====================
 app.use((req, res, next) => {
-  // Force HTTPS and www in production
+  const host = req.hostname;
+  const protocol = req.protocol;
+  const url = req.url;
+  
+  // 1. Force HTTPS and www in production
   if (config.nodeEnv === 'production') {
-    // Handle naked domain redirect
-    if (req.hostname === 'freeontools.com') {
-      return res.redirect(301, `https://www.freeontools.com${req.url}`);
-    }
-    // Force HTTPS
-    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
-      return res.redirect(`https://${req.hostname}${req.url}`);
+    // Redirect http://freeontools.com to https://www.freeontools.com
+    if (host === 'freeontools.com' || protocol !== 'https') {
+      return res.redirect(301, `https://www.freeontools.com${url}`);
     }
   }
+  
+  // 2. Remove .html extensions and trailing slashes
+  const hasHtmlExtension = url.endsWith('.html');
+  const hasTrailingSlash = url.endsWith('/') && url !== '/';
+  
+  if (hasHtmlExtension || hasTrailingSlash) {
+    let cleanUrl = url;
+    
+    // Remove .html extension
+    if (hasHtmlExtension) {
+      cleanUrl = cleanUrl.replace(/\.html$/, '');
+    }
+    
+    // Remove trailing slash
+    if (hasTrailingSlash) {
+      cleanUrl = cleanUrl.replace(/\/$/, '');
+    }
+    
+    // Only redirect if the URL actually changed
+    if (cleanUrl !== url) {
+      return res.redirect(301, cleanUrl);
+    }
+  }
+  
   next();
 });
 
+// ==================== Session Configuration ====================
 app.use(session({
   secret: config.sessionSecret,
   resave: false,
@@ -112,7 +137,7 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-// ==================== Enhanced MongoDB Connection ====================
+// ==================== MongoDB Connection ====================
 const connectWithRetry = () => {
   mongoose.connect(config.mongoURI, { 
     useNewUrlParser: true,
@@ -133,7 +158,7 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
-// ==================== Services ====================
+// ==================== Nodemailer Configuration ====================
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -221,8 +246,7 @@ const initOAuthStrategies = () => {
 
 initOAuthStrategies();
 
-// ==================== Routes ====================
-// (Keep all your existing routes exactly as they were)
+// ==================== Route Handling ====================
 app.get('/auth/facebook/callback', 
   passport.authenticate('facebook', { 
     failureRedirect: config.nodeEnv === 'production'
@@ -240,31 +264,24 @@ app.get('/auth/facebook/callback',
   }
 );
 
-// ==================== Enhanced HTML File Handling ====================
+// ==================== Final Catch-All Route ====================
 app.get('*', (req, res, next) => {
   // Skip API routes
   if (req.path.startsWith('/auth/') || req.path.startsWith('/api/')) {
     return next();
   }
 
-  const filePath = path.join(__dirname, '../', 
-    req.path === '/' ? 'index.html' : 
-    req.path.endsWith('/') ? req.path + 'index.html' : 
-    req.path);
-
-  // Try exact path first
-  if (fs.existsSync(filePath)) {
-    return res.sendFile(filePath);
+  const requestedPath = req.path === '/' ? '/index' : req.path;
+  const filePath = path.join(__dirname, '../', requestedPath);
+  
+  // Try to serve the clean URL version first
+  if (fs.existsSync(`${filePath}.html`)) {
+    return res.sendFile(`${filePath}.html`);
   }
   
-  // Try adding .html extension
-  if (fs.existsSync(filePath + '.html')) {
-    return res.sendFile(filePath + '.html');
-  }
-  
-  // Try removing trailing slash
-  if (req.path.endsWith('/') && fs.existsSync(filePath.slice(0, -1))) {
-    return res.redirect(301, req.path.slice(0, -1));
+  // Fallback to index.html for client-side routing
+  if (fs.existsSync(path.join(__dirname, '../index.html'))) {
+    return res.sendFile(path.join(__dirname, '../index.html'));
   }
   
   next();
