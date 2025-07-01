@@ -65,21 +65,24 @@ app.use(express.static(path.join(__dirname, '../'), {
   }
 }));
 
-// Redirect Middleware
+// ========== CRITICAL REDIRECT FIX ==========
 app.use((req, res, next) => {
   const host = req.hostname;
-  const protocol = req.protocol;
-  const url = req.url;
   
-  // Force HTTPS and www
-  if (host === 'freeontools.com' || protocol !== 'https') {
-    return res.redirect(301, `https://www.freeontools.com${url}`);
+  // Only redirect naked domain (freeontools.com) to www
+  // Don't force HTTPS here - Render handles it automatically
+  if (host === 'freeontools.com') {
+    return res.redirect(301, `https://www.freeontools.com${req.url}`);
   }
   
-  // Remove .html and trailing slash
-  if (url.match(/(\.html|\/)$/) && !url.match(/(auth|api)/)) {
-    const cleanUrl = url.replace(/\.html$/, '').replace(/\/$/, '');
-    return res.redirect(301, cleanUrl || '/');
+  // Remove .html extensions
+  if (req.path.endsWith('.html')) {
+    return res.redirect(301, req.path.replace(/\.html$/, ''));
+  }
+  
+  // Remove trailing slashes
+  if (req.path.endsWith('/') && req.path !== '/') {
+    return res.redirect(301, req.path.replace(/\/$/, ''));
   }
   
   next();
@@ -95,7 +98,7 @@ app.use(session({
     httpOnly: true,
     sameSite: config.nodeEnv === 'production' ? 'lax' : 'none',
     maxAge: 24 * 60 * 60 * 1000,
-    domain: config.nodeEnv === 'production' ? 'freeontools.com' : undefined
+    domain: config.nodeEnv === 'production' ? '.freeontools.com' : undefined
   }
 }));
 
@@ -222,7 +225,7 @@ if (config.googleClientId && config.googleClientSecret) {
   console.log('\x1b[32mGoogle OAuth initialized\x1b[0m');
 }
 
-// Facebook Auth Route
+// Auth Routes
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/callback',
@@ -242,7 +245,6 @@ app.get('/auth/facebook/callback',
   }
 );
 
-// Google Auth Route
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 );
@@ -270,7 +272,7 @@ app.get('*', (req, res) => {
     return res.status(404).json({ error: 'Not found' });
   }
 
-  const requestedPath = req.path === '/' ? '/index' : req.path.replace(/\/$/, '');
+  const requestedPath = req.path === '/' ? 'index' : req.path.replace(/^\//, '').replace(/\/$/, '');
   const filePath = path.join(__dirname, '../', `${requestedPath}.html`);
 
   if (fs.existsSync(filePath)) {
