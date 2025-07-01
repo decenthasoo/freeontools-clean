@@ -9,6 +9,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const path = require('path');
+const fs = require('fs');
 const User = require('./models/User');
 
 const app = express();
@@ -55,7 +56,31 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../')));
+
+// ==================== Enhanced Static File Serving ====================
+app.use(express.static(path.join(__dirname, '../'), {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-store');
+    }
+  }
+}));
+
+// ==================== Redirect Middleware ====================
+app.use((req, res, next) => {
+  // Force HTTPS and www in production
+  if (config.nodeEnv === 'production') {
+    // Handle naked domain redirect
+    if (req.hostname === 'freeontools.com') {
+      return res.redirect(301, `https://www.freeontools.com${req.url}`);
+    }
+    // Force HTTPS
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+      return res.redirect(`https://${req.hostname}${req.url}`);
+    }
+  }
+  next();
+});
 
 app.use(session({
   secret: config.sessionSecret,
@@ -214,6 +239,36 @@ app.get('/auth/facebook/callback',
       : `http://localhost:8080/profile.html?token=${token}`);
   }
 );
+
+// ==================== Enhanced HTML File Handling ====================
+app.get('*', (req, res, next) => {
+  // Skip API routes
+  if (req.path.startsWith('/auth/') || req.path.startsWith('/api/')) {
+    return next();
+  }
+
+  const filePath = path.join(__dirname, '../', 
+    req.path === '/' ? 'index.html' : 
+    req.path.endsWith('/') ? req.path + 'index.html' : 
+    req.path);
+
+  // Try exact path first
+  if (fs.existsSync(filePath)) {
+    return res.sendFile(filePath);
+  }
+  
+  // Try adding .html extension
+  if (fs.existsSync(filePath + '.html')) {
+    return res.sendFile(filePath + '.html');
+  }
+  
+  // Try removing trailing slash
+  if (req.path.endsWith('/') && fs.existsSync(filePath.slice(0, -1))) {
+    return res.redirect(301, req.path.slice(0, -1));
+  }
+  
+  next();
+});
 
 // ==================== Server Start ====================
 app.listen(PORT, () => {
