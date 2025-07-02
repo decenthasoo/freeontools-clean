@@ -54,7 +54,7 @@ if (!fs.existsSync(indexPath)) {
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Enhanced Redirect Middleware - handles both protocol and domain
+// Enhanced Redirect Middleware
 app.use((req, res, next) => {
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   const host = req.get('host');
@@ -68,23 +68,6 @@ app.use((req, res, next) => {
     console.log(`Redirecting to: ${redirectUrl}`);
     return res.redirect(301, redirectUrl);
   }
-  
-  // Redirect .html URLs to clean URLs
-  if (req.path.endsWith('.html') && req.path !== '/Index.html') {
-    const cleanPath = req.path.replace(/\.html$/, '');
-    return res.redirect(301, cleanPath);
-  }
-  
-  next();
-});
-
-// Security Headers Middleware
-app.use((req, res, next) => {
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-  res.setHeader('X-XSS-Protection', '1; mode=block');
-  res.setHeader('Content-Security-Policy', "default-src 'self'");
-  res.setHeader('Content-Type', 'text/html; charset=UTF-8');
   next();
 });
 
@@ -102,10 +85,15 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving with proper caching
+// Static File Serving with proper headers
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
+    // Security headers
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-store');
     } else {
@@ -115,7 +103,7 @@ app.use(express.static(staticPath, {
 }));
 
 // Session Configuration
-const sessionConfig = {
+app.use(session({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: false,
@@ -125,14 +113,7 @@ const sessionConfig = {
     sameSite: config.nodeEnv === 'production' ? 'lax' : 'none',
     maxAge: 24 * 60 * 60 * 1000
   }
-};
-
-if (config.nodeEnv === 'production') {
-  app.set('trust proxy', 1);
-  sessionConfig.cookie.secure = true;
-}
-
-app.use(session(sessionConfig));
+}));
 
 // Passport Setup
 app.use(passport.initialize());
@@ -314,7 +295,7 @@ app.get('/*.html', (req, res, next) => {
   next();
 });
 
-// Catch-all Route for SPA
+// Fix for SPA routing - serve Index.html for all non-API routes
 app.get('*', (req, res, next) => {
   // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
@@ -327,7 +308,7 @@ app.get('*', (req, res, next) => {
     return next();
   }
   
-  // Ensure proper content type for SPA
+  // Set proper content type
   res.setHeader('Content-Type', 'text/html; charset=UTF-8');
   res.sendFile(indexPath);
 });
@@ -336,6 +317,11 @@ app.get('*', (req, res, next) => {
 app.use((err, req, res, next) => {
   console.error('\x1b[31mSERVER ERROR:\x1b[0m', err.stack);
   res.status(500).send('Internal Server Error');
+});
+
+// 404 Handler
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(staticPath, '404.html'));
 });
 
 // Server Start
