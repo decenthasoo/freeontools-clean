@@ -110,7 +110,7 @@ app.use(express.static(staticPath, {
 }));
 
 // Session Configuration
-const sessionConfig = {
+app.use(session({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: false,
@@ -120,14 +120,7 @@ const sessionConfig = {
     sameSite: config.nodeEnv === 'production' ? 'lax' : 'none',
     maxAge: 24 * 60 * 60 * 1000
   }
-};
-
-if (config.nodeEnv === 'production') {
-  app.set('trust proxy', 1);
-  sessionConfig.cookie.secure = true;
-}
-
-app.use(session(sessionConfig));
+}));
 
 // Passport Setup
 app.use(passport.initialize());
@@ -309,7 +302,7 @@ app.get('/*.html', (req, res, next) => {
   next();
 });
 
-// Catch-all Route for SPA
+// Main routing logic - CRITICAL FIX FOR DOUBLE RENDERING
 app.get('*', (req, res, next) => {
   // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
@@ -322,13 +315,14 @@ app.get('*', (req, res, next) => {
     return next();
   }
   
-  // Check if corresponding HTML file exists
+  // Check if this is a request for a specific page
   const htmlPath = path.join(staticPath, `${req.path}.html`);
   if (fs.existsSync(htmlPath)) {
+    // For specific pages, send only that page
     return res.sendFile(htmlPath);
   }
   
-  // Fallback to Index.html for SPA routes
+  // For all other routes, send Index.html (SPA fallback)
   res.sendFile(indexPath);
 });
 
