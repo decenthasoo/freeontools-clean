@@ -29,42 +29,40 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Path configuration - Adjusted for Render.com
+// Path configuration - Case-sensitive paths
 const staticPath = path.join(__dirname, '../');
 const indexPath = path.join(staticPath, 'Index.html');
+const footerPath = path.join(staticPath, 'Footer.html'); // Uppercase F
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
 console.log('Static files path:', staticPath);
 console.log('Index.html path:', indexPath);
+console.log('Footer.html path:', footerPath);
 
-// Verify static directory exists
-if (!fs.existsSync(staticPath)) {
-  console.error('\x1b[31mERROR: Static files directory not found at:', staticPath, '\x1b[0m');
-  process.exit(1);
-}
-
-// Verify Index.html exists
-if (!fs.existsSync(indexPath)) {
-  console.error('\x1b[31mERROR: Index.html not found\x1b[0m');
+// Verify critical files exist
+if (!fs.existsSync(staticPath) || !fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
+  console.error('\x1b[31mERROR: Required files not found\x1b[0m');
+  console.log('Directory contents:', fs.readdirSync(staticPath));
   process.exit(1);
 }
 
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Enhanced Redirect Middleware - FIXED
+// Enhanced Redirect Middleware - Fixes 403 and HTTPS/WWW
 app.use((req, res, next) => {
   const host = req.get('host');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   
-  // Force www and HTTPS in production
   if (config.nodeEnv === 'production') {
-    if (host === 'freeontools.com' || protocol !== 'https') {
+    if (host === 'freeontools.com') {
       return res.redirect(301, `https://www.freeontools.com${req.url}`);
     }
+    if (protocol !== 'https') {
+      return res.redirect(301, `https://${host}${req.url}`);
+    }
   }
-  
   next();
 });
 
@@ -82,15 +80,20 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Fix for MIME type issues with JS files
+// Fix for MIME type and case sensitivity issues
 app.use((req, res, next) => {
+  // Fix JS MIME types
   if (req.path.endsWith('.js')) {
     res.type('application/javascript');
+  }
+  // Case-insensitive route for Footer.html
+  if (req.path.toLowerCase() === '/footer.html') {
+    return res.sendFile(footerPath);
   }
   next();
 });
 
-// Static File Serving - CRITICAL FIX
+// Static File Serving with case-sensitive handling
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
@@ -106,7 +109,6 @@ app.use(session({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: false,
-  store: new session.MemoryStore(), // For production, use Redis or similar
   cookie: {
     secure: config.nodeEnv === 'production',
     httpOnly: true,
@@ -286,19 +288,25 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// MAIN ROUTING SOLUTION - FIXED CONTENT STACKING
-app.get('*', (req, res) => {
+// MAIN ROUTING SOLUTION - Case-sensitive HTML file handling
+app.get('*', (req, res, next) => {
   // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
     return next();
   }
   
-  // Skip files with extensions
+  // Skip files with extensions (css, js, images, etc.)
   if (req.path.includes('.')) {
     return next();
   }
   
-  // For all other routes, send Index.html (SPA handling)
+  // Check if specific HTML page exists (case-sensitive)
+  const htmlPath = path.join(staticPath, `${req.path}.html`);
+  if (fs.existsSync(htmlPath)) {
+    return res.sendFile(htmlPath);
+  }
+  
+  // Fallback to Index.html for all other routes
   res.sendFile(indexPath);
 });
 
