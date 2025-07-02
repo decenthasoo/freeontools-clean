@@ -293,7 +293,7 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// Serve specific HTML files when requested directly
+// Route to handle direct HTML file requests
 app.get('/*.html', (req, res, next) => {
   const htmlPath = path.join(staticPath, req.path);
   if (fs.existsSync(htmlPath)) {
@@ -302,27 +302,26 @@ app.get('/*.html', (req, res, next) => {
   next();
 });
 
-// Main routing logic - CRITICAL FIX FOR DOUBLE RENDERING
+// MAIN ROUTING FIX - CRITICAL CHANGE
 app.get('*', (req, res, next) => {
   // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
     return next();
   }
   
-  // Skip files with extensions
-  const hasExtension = req.path.split('/').pop().includes('.');
-  if (hasExtension) {
+  // Skip files with extensions (css, js, images, etc.)
+  if (req.path.includes('.')) {
     return next();
   }
   
-  // Check if this is a request for a specific page
+  // Check if this is a request for a specific page that exists
   const htmlPath = path.join(staticPath, `${req.path}.html`);
   if (fs.existsSync(htmlPath)) {
-    // For specific pages, send only that page
+    // For specific pages, send ONLY that page (not Index.html)
     return res.sendFile(htmlPath);
   }
   
-  // For all other routes, send Index.html (SPA fallback)
+  // For all other routes (including root), send Index.html
   res.sendFile(indexPath);
 });
 
