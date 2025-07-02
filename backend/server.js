@@ -29,13 +29,14 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Path configuration
-const staticPath = path.join(__dirname, '../../src');
-const indexPath = path.join(staticPath, 'Index.html');
+// Path configuration - UPDATED to match your file structure
+const staticPath = path.join(__dirname, '../'); // Points to project root
+const indexPath = path.join(staticPath, 'Index.html'); // Kept uppercase I
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
 console.log('Static files path:', staticPath);
+console.log('Index.html path:', indexPath);
 
 // Verify static directory exists
 if (!fs.existsSync(staticPath)) {
@@ -44,10 +45,10 @@ if (!fs.existsSync(staticPath)) {
   process.exit(1);
 }
 
-// Verify Index.html exists (case-sensitive)
+// Verify Index.html exists
 if (!fs.existsSync(indexPath)) {
-  console.error('\x1b[31mERROR: Index.html not found in src directory\x1b[0m');
-  console.log('Files in src directory:', fs.readdirSync(staticPath));
+  console.error('\x1b[31mERROR: Index.html not found in static directory\x1b[0m');
+  console.log('Files in static directory:', fs.readdirSync(staticPath));
   process.exit(1);
 }
 
@@ -92,7 +93,15 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving with proper headers
+// Fix for MIME type issues with JS files
+app.use((req, res, next) => {
+  if (req.path.endsWith('.js')) {
+    res.type('application/javascript');
+  }
+  next();
+});
+
+// Static File Serving with proper headers - UPDATED
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
@@ -103,7 +112,7 @@ app.use(express.static(staticPath, {
     
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-store');
-    } else {
+    } else if (filePath.endsWith('.js') || filePath.endsWith('.css')) {
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     }
   }
@@ -244,6 +253,16 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Debug route to check file paths
+app.get('/debug/paths', (req, res) => {
+  res.json({
+    staticPath,
+    indexPath,
+    indexPathExists: fs.existsSync(indexPath),
+    staticFiles: fs.readdirSync(staticPath)
+  });
+});
+
 // Facebook Auth Routes
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
@@ -302,7 +321,7 @@ app.get('/*.html', (req, res, next) => {
   next();
 });
 
-// MAIN ROUTING FIX - CRITICAL CHANGE
+// MAIN ROUTING FIX - CRITICAL UPDATE
 app.get('*', (req, res, next) => {
   // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
@@ -314,14 +333,19 @@ app.get('*', (req, res, next) => {
     return next();
   }
   
-  // Check if this is a request for a specific page that exists
-  const htmlPath = path.join(staticPath, `${req.path}.html`);
-  if (fs.existsSync(htmlPath)) {
-    // For specific pages, send ONLY that page (not Index.html)
-    return res.sendFile(htmlPath);
+  // Check for specific HTML page
+  const possiblePaths = [
+    path.join(staticPath, `${req.path}.html`),
+    path.join(staticPath, req.path, 'index.html')
+  ];
+  
+  for (const filePath of possiblePaths) {
+    if (fs.existsSync(filePath)) {
+      return res.sendFile(filePath);
+    }
   }
   
-  // For all other routes (including root), send Index.html
+  // Fallback to Index.html for all other routes
   res.sendFile(indexPath);
 });
 
