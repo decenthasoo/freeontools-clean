@@ -43,7 +43,7 @@ if (!fs.existsSync(staticPath)) {
 }
 
 // Verify index.html exists
-const indexPath = path.join(staticPath, 'index.html');
+const indexPath = path.join(staticPath, 'Index.html');
 if (!fs.existsSync(indexPath)) {
   console.error('\x1b[31mERROR: index.html not found in src directory\x1b[0m');
   console.log('Files in src directory:', fs.readdirSync(staticPath));
