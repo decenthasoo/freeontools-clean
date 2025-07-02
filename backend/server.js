@@ -29,11 +29,11 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Path configuration for Render.com vs local development
+// 1. CORRECT PATH CONFIGURATION FOR RENDER.COM
 const isRender = process.env.RENDER === 'true';
 const staticPath = isRender 
-  ? path.join(__dirname, '../..')  // For Render.com: /opt/render/project
-  : path.join(__dirname, '..');    // For local development: project root
+  ? path.join(__dirname, '../src')  // For Render.com: /opt/render/project/src
+  : path.join(__dirname, '../');    // For local development: project root
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
@@ -41,15 +41,16 @@ console.log('Static files path:', staticPath);
 
 // Verify static directory exists
 if (!fs.existsSync(staticPath)) {
-  console.error('\x1b[31mERROR: Static files directory not found\x1b[0m');
+  console.error('\x1b[31mERROR: Static files directory not found at:', staticPath, '\x1b[0m');
+  console.log('Current directory structure:', fs.readdirSync(path.dirname(staticPath)));
   process.exit(1);
 }
 
 // Verify index.html exists
 const indexPath = path.join(staticPath, 'index.html');
 if (!fs.existsSync(indexPath)) {
-  console.error('\x1b[31mERROR: index.html not found in root directory\x1b[0m');
-  console.log('Files in root:', fs.readdirSync(staticPath));
+  console.error('\x1b[31mERROR: index.html not found in static directory\x1b[0m');
+  console.log('Files in static directory:', fs.readdirSync(staticPath));
   process.exit(1);
 }
 
@@ -70,7 +71,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving from Root
+// Static File Serving from correct path
 app.use(express.static(staticPath, {
   maxAge: isRender ? '1y' : 0,
   setHeaders: (res, filePath) => {
