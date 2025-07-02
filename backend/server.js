@@ -29,10 +29,10 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Path configuration - Case-sensitive paths
+// Path configuration
 const staticPath = path.join(__dirname, '../');
 const indexPath = path.join(staticPath, 'Index.html');
-const footerPath = path.join(staticPath, 'Footer.html'); // Uppercase F
+const footerPath = path.join(staticPath, 'Footer.html');
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
@@ -43,26 +43,32 @@ console.log('Footer.html path:', footerPath);
 // Verify critical files exist
 if (!fs.existsSync(staticPath) || !fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
   console.error('\x1b[31mERROR: Required files not found\x1b[0m');
-  console.log('Directory contents:', fs.readdirSync(staticPath));
   process.exit(1);
 }
 
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Enhanced Redirect Middleware - Fixes 403 and HTTPS/WWW
+// Enhanced Redirect Middleware - Fixes all domain/HTTPS issues
 app.use((req, res, next) => {
-  const host = req.get('host');
+  const host = req.get('host').replace(/^www\./, '');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
-  
+  const path = req.url;
+
+  // Permanent redirect for .html to clean URLs (SEO fix)
+  if (path.endsWith('.html') && path !== '/Index.html') {
+    const cleanPath = path.replace(/\.html$/, '');
+    return res.redirect(301, `https://www.freeontools.com${cleanPath}`);
+  }
+
+  // Force HTTPS and www in production
   if (config.nodeEnv === 'production') {
-    if (host === 'freeontools.com') {
-      return res.redirect(301, `https://www.freeontools.com${req.url}`);
-    }
-    if (protocol !== 'https') {
-      return res.redirect(301, `https://${host}${req.url}`);
+    // Handle all domain variants
+    if (host === 'freeontools.com' || protocol !== 'https') {
+      return res.redirect(301, `https://www.freeontools.com${path}`);
     }
   }
+
   next();
 });
 
@@ -93,7 +99,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Static File Serving with case-sensitive handling
+// Static File Serving with proper headers
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
@@ -288,7 +294,7 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// MAIN ROUTING SOLUTION - Case-sensitive HTML file handling
+// MAIN ROUTING SOLUTION - SEO-friendly URL handling
 app.get('*', (req, res, next) => {
   // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
@@ -300,7 +306,7 @@ app.get('*', (req, res, next) => {
     return next();
   }
   
-  // Check if specific HTML page exists (case-sensitive)
+  // Check if specific HTML page exists
   const htmlPath = path.join(staticPath, `${req.path}.html`);
   if (fs.existsSync(htmlPath)) {
     return res.sendFile(htmlPath);
