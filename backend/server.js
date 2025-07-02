@@ -29,8 +29,10 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Corrected path configuration with case-sensitive fix
-const staticPath = path.join(__dirname, '../../src'); // Points to /opt/render/project/src
+// Path configuration
+const staticPath = path.join(__dirname, '../../src');
+const indexPath = path.join(staticPath, 'Index.html');
+
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
 console.log('Static files path:', staticPath);
@@ -42,8 +44,7 @@ if (!fs.existsSync(staticPath)) {
   process.exit(1);
 }
 
-// Case-sensitive fix: Looking for 'Index.html' instead of 'index.html'
-const indexPath = path.join(staticPath, 'Index.html');
+// Verify Index.html exists (case-sensitive)
 if (!fs.existsSync(indexPath)) {
   console.error('\x1b[31mERROR: Index.html not found in src directory\x1b[0m');
   console.log('Files in src directory:', fs.readdirSync(staticPath));
@@ -52,6 +53,21 @@ if (!fs.existsSync(indexPath)) {
 
 // Middleware Setup
 app.set('trust proxy', 1);
+
+// Redirect middleware - must come first
+app.use((req, res, next) => {
+  // Redirect naked domain to www
+  if (req.hostname === 'freeontools.com') {
+    return res.redirect(301, `https://www.freeontools.com${req.url}`);
+  }
+  
+  // Force HTTPS in production
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && config.nodeEnv === 'production') {
+    return res.redirect(301, `https://www.freeontools.com${req.url}`);
+  }
+  
+  next();
+});
 
 // CORS Configuration
 app.use(cors({
@@ -67,7 +83,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving from /src
+// Static File Serving
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
@@ -79,16 +95,8 @@ app.use(express.static(staticPath, {
   }
 }));
 
-// Redirect Middleware
-app.use((req, res, next) => {
-  if (req.hostname === 'freeontools.com') {
-    return res.redirect(301, `https://www.freeontools.com${req.url}`);
-  }
-  next();
-});
-
 // Session Configuration
-app.use(session({
+const sessionConfig = {
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: false,
@@ -98,7 +106,15 @@ app.use(session({
     sameSite: config.nodeEnv === 'production' ? 'lax' : 'none',
     maxAge: 24 * 60 * 60 * 1000
   }
-}));
+};
+
+if (config.nodeEnv === 'production') {
+  // In production, trust the first proxy
+  app.set('trust proxy', 1);
+  sessionConfig.cookie.secure = true;
+}
+
+app.use(session(sessionConfig));
 
 // Passport Setup
 app.use(passport.initialize());
@@ -271,8 +287,19 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// Catch-all Route for SPA
-app.get('*', (req, res) => {
+// Catch-all Route for SPA - handles client-side routing
+app.get('*', (req, res, next) => {
+  // Don't serve Index.html for API routes
+  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
+    return next();
+  }
+  
+  // Don't serve Index.html for files with extensions
+  const fileExtension = req.path.split('.').pop();
+  if (fileExtension && fileExtension !== '/' && fileExtension.length <= 5) {
+    return next();
+  }
+  
   res.sendFile(indexPath);
 });
 
