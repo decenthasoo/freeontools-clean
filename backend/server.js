@@ -65,7 +65,13 @@ app.use((req, res, next) => {
   if (!req.secure && req.get('x-forwarded-proto') !== 'https' && config.nodeEnv === 'production') {
     return res.redirect(301, `https://www.freeontools.com${req.url}`);
   }
-  
+
+  // Redirect .html URLs to clean URLs
+  if (req.path.endsWith('.html') && req.path !== '/Index.html') {
+    const cleanPath = req.path.replace(/\.html$/, '');
+    return res.redirect(301, cleanPath);
+  }
+
   next();
 });
 
@@ -109,7 +115,6 @@ const sessionConfig = {
 };
 
 if (config.nodeEnv === 'production') {
-  // In production, trust the first proxy
   app.set('trust proxy', 1);
   sessionConfig.cookie.secure = true;
 }
@@ -287,17 +292,26 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
+// Serve specific HTML files when requested directly
+app.get('/*.html', (req, res, next) => {
+  const htmlPath = path.join(staticPath, req.path);
+  if (fs.existsSync(htmlPath)) {
+    return res.sendFile(htmlPath);
+  }
+  next();
+});
+
 // Catch-all Route for SPA - handles client-side routing
-app.get('*', (req, res, next) => {
+app.get('*', (req, res) => {
   // Don't serve Index.html for API routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
-    return next();
+    return res.status(404).send('Not found');
   }
   
-  // Don't serve Index.html for files with extensions
-  const fileExtension = req.path.split('.').pop();
-  if (fileExtension && fileExtension !== '/' && fileExtension.length <= 5) {
-    return next();
+  // Check if this is a file request (has extension)
+  const hasExtension = req.path.split('/').pop().includes('.');
+  if (hasExtension) {
+    return res.status(404).send('Not found');
   }
   
   res.sendFile(indexPath);
