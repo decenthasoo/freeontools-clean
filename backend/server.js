@@ -15,10 +15,10 @@ const User = require('./models/User');
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Configuration
+// Configuration with enhanced defaults
 const config = {
-  jwtSecret: process.env.JWT_SECRET || 'default_jwt_secret',
-  sessionSecret: process.env.SESSION_SECRET || 'default_session_secret',
+  jwtSecret: process.env.JWT_SECRET || 'default-secret-change-in-production',
+  sessionSecret: process.env.SESSION_SECRET || 'default-session-secret',
   mongoURI: process.env.MONGO_URI || 'mongodb://localhost:27017/freeontools',
   emailUser: process.env.EMAIL_USER || 'your-email@example.com',
   emailPass: process.env.EMAIL_PASS || 'your-email-password',
@@ -29,34 +29,31 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Path configuration for Render.com vs local development
-const isRender = process.env.RENDER === 'true';
-const staticPath = isRender 
-  ? path.join(__dirname, '../..')  // For Render.com: /opt/render/project
-  : path.join(__dirname, '..');    // For local development: project root
-
+// 1. PATH CONFIGURATION FOR RENDER.COM
+const staticPath = path.join(__dirname, '../..'); // Points to /opt/render/project
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
 console.log('Static files path:', staticPath);
 
-// Verify static directory exists
-if (!fs.existsSync(staticPath)) {
-  console.error('\x1b[31mERROR: Static files directory not found at:', staticPath, '\x1b[0m');
+// 2. VERIFY FILES EXIST
+try {
+  const files = fs.readdirSync(staticPath);
+  console.log('Found', files.length, 'files in root directory');
+  
+  if (!fs.existsSync(path.join(staticPath, 'index.html'))) {
+    console.error('\x1b[31mERROR: index.html not found in root directory\x1b[0m');
+    console.log('First 10 files:', files.slice(0, 10));
+    process.exit(1);
+  }
+} catch (err) {
+  console.error('\x1b[31mERROR: Could not read static directory\x1b[0m', err);
   process.exit(1);
 }
 
-// Verify index.html exists
-const indexPath = path.join(staticPath, 'index.html');
-if (!fs.existsSync(indexPath)) {
-  console.error('\x1b[31mERROR: index.html not found in root directory\x1b[0m');
-  console.log('Files in root:', fs.readdirSync(staticPath));
-  process.exit(1);
-}
-
-// Middleware Setup
+// 3. MIDDLEWARE SETUP
 app.set('trust proxy', 1);
 
-// CORS Configuration
+// Enhanced CORS
 app.use(cors({
   origin: [
     'https://www.freeontools.com',
@@ -67,37 +64,31 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Static File Serving from Root
+// Static files with proper caching
 app.use(express.static(staticPath, {
-  maxAge: isRender ? '1y' : 0,
+  maxAge: '1y',
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-store');
     } else {
-      res.setHeader('Cache-Control', 'public, max-age=31536000');
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     }
   }
 }));
 
-// Redirect Middleware
+// Redirect middleware
 app.use((req, res, next) => {
   // Redirect naked domain to www
   if (req.hostname === 'freeontools.com') {
     return res.redirect(301, `https://www.freeontools.com${req.url}`);
   }
-  
-  // Remove .html extensions if present
-  if (req.path.endsWith('.html') && req.path !== '/index.html') {
-    return res.redirect(301, req.path.replace(/\.html$/, ''));
-  }
-  
   next();
 });
 
-// Session Configuration
+// Session with production settings
 app.use(session({
   secret: config.sessionSecret,
   resave: false,
@@ -105,19 +96,17 @@ app.use(session({
   cookie: {
     secure: config.nodeEnv === 'production',
     httpOnly: true,
-    sameSite: config.nodeEnv === 'production' ? 'lax' : 'none',
-    maxAge: 24 * 60 * 60 * 1000
+    sameSite: 'lax',
+    maxAge: 24 * 60 * 60 * 1000,
+    domain: config.nodeEnv === 'production' ? '.freeontools.com' : undefined
   }
 }));
 
-// Passport Setup
+// Passport initialization
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
+passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findById(id);
@@ -127,34 +116,28 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-// Database Connection
-mongoose.connect(config.mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('\x1b[32mMongoDB connected successfully\x1b[0m'))
-.catch(err => {
-  console.error('\x1b[31mMongoDB connection failed:\x1b[0m', err);
-  process.exit(1);
-});
+// 4. DATABASE CONNECTION WITH RETRY
+const connectWithRetry = () => {
+  mongoose.connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 30000
+  })
+  .then(() => console.log('\x1b[32mMongoDB connected successfully\x1b[0m'))
+  .catch(err => {
+    console.error('\x1b[31mMongoDB connection failed, retrying in 5s...\x1b[0m', err.message);
+    setTimeout(connectWithRetry, 5000);
+  });
+};
+connectWithRetry();
 
-// Email Transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: config.emailUser,
-    pass: config.emailPass
-  }
-});
-
-// Facebook OAuth Strategy
+// 5. OAUTH STRATEGIES (COMPLETE IMPLEMENTATIONS)
 if (config.facebookAppId && config.facebookAppSecret) {
   passport.use(new FacebookStrategy({
     clientID: config.facebookAppId,
     clientSecret: config.facebookAppSecret,
-    callbackURL: config.nodeEnv === 'production' 
-      ? 'https://www.freeontools.com/auth/facebook/callback'
-      : 'http://localhost:3000/auth/facebook/callback',
+    callbackURL: `${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:3000'}/auth/facebook/callback`,
     profileFields: ['id', 'emails', 'name', 'displayName']
   }, async (accessToken, refreshToken, profile, done) => {
     try {
@@ -185,14 +168,11 @@ if (config.facebookAppId && config.facebookAppSecret) {
   console.log('\x1b[32mFacebook OAuth initialized\x1b[0m');
 }
 
-// Google OAuth Strategy
 if (config.googleClientId && config.googleClientSecret) {
   passport.use(new GoogleStrategy({
     clientID: config.googleClientId,
     clientSecret: config.googleClientSecret,
-    callbackURL: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/auth/google/callback'
-      : 'http://localhost:3000/auth/google/callback',
+    callbackURL: `${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:3000'}/auth/google/callback`,
     scope: ['profile', 'email']
   }, async (accessToken, refreshToken, profile, done) => {
     try {
@@ -223,119 +203,81 @@ if (config.googleClientId && config.googleClientSecret) {
   console.log('\x1b[32mGoogle OAuth initialized\x1b[0m');
 }
 
-// API Routes
+// 6. ROUTES
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'healthy',
     environment: config.nodeEnv,
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime()
+    uptime: process.uptime(),
+    memory: process.memoryUsage()
   });
 });
 
-// Facebook Auth Routes
+// Auth routes (Facebook and Google implementations)
 app.get('/auth/facebook', passport.authenticate('facebook'));
-
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { 
-    failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login'
-      : 'http://localhost:8080/login'
+    failureRedirect: `${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/login`,
+    session: true
   }),
   (req, res) => {
-    const token = jwt.sign({ 
-      userId: req.user._id,
-      email: req.user.email
-    }, config.jwtSecret, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: req.user._id }, config.jwtSecret, { expiresIn: '1h' });
     res.redirect(`${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/profile?token=${token}`);
   }
 );
 
-// Google Auth Routes
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-);
-
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 app.get('/auth/google/callback',
   passport.authenticate('google', { 
-    failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login'
-      : 'http://localhost:8080/login'
+    failureRedirect: `${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/login`,
+    session: true
   }),
   (req, res) => {
-    const token = jwt.sign({ 
-      userId: req.user._id,
-      email: req.user.email
-    }, config.jwtSecret, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: req.user._id }, config.jwtSecret, { expiresIn: '1h' });
     res.redirect(`${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/profile?token=${token}`);
   }
 );
 
-// Sample API Route
-app.get('/api/user/:id', async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
-    if (!user) return res.status(404).json({ error: 'User not found' });
-    res.json({ user });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// Dynamic Route Handling for All Pages
+// 7. DYNAMIC ROUTE HANDLING
 app.get('*', (req, res) => {
-  // Remove any query parameters
-  const pathname = req.path.split('?')[0];
-  
-  // Determine the file to serve
-  let filePath;
-  if (pathname === '/') {
-    filePath = indexPath;
-  } else {
-    // Check if the path already ends with .html
-    const hasHtmlExtension = pathname.endsWith('.html');
-    const basePath = hasHtmlExtension 
-      ? pathname.replace(/\.html$/, '')
-      : pathname;
-    
-    filePath = path.join(staticPath, `${basePath}.html`);
-  }
+  const basePath = req.path === '/' ? 'index.html' : `${req.path.replace(/^\//, '')}.html`;
+  const filePath = path.join(staticPath, basePath);
 
-  // Check if file exists
   fs.access(filePath, fs.constants.F_OK, (err) => {
     if (err) {
-      // If file doesn't exist, serve index.html for SPA routing
-      return res.sendFile(indexPath);
+      // Fallback to index.html for SPA routing
+      return res.sendFile(path.join(staticPath, 'index.html'));
     }
     res.sendFile(filePath);
   });
 });
 
-// Error Handling Middleware
+// 8. ERROR HANDLING
 app.use((err, req, res, next) => {
   console.error('\x1b[31mSERVER ERROR:\x1b[0m', err.stack);
-  res.status(500).send('Internal Server Error');
+  res.status(500).json({ 
+    error: 'Internal Server Error',
+    message: config.nodeEnv === 'development' ? err.message : undefined
+  });
 });
 
-// Server Start
+// 9. SERVER STARTUP WITH HEALTH CHECKS
 const server = app.listen(PORT, () => {
-  console.log('\n\x1b[36m=== Server Successfully Started ===\x1b[0m');
+  console.log('\n\x1b[36m=== Server Started ===\x1b[0m');
   console.log(`\x1b[32mPort:\x1b[0m ${PORT}`);
   console.log(`\x1b[32mEnvironment:\x1b[0m ${config.nodeEnv}`);
-  console.log(`\x1b[32mFrontend URL:\x1b[0m https://www.freeontools.com`);
-  console.log(`\x1b[32mStatic Files Path:\x1b[0m ${staticPath}`);
-  console.log('\x1b[36m=== Ready for Connections ===\x1b[0m\n');
+  console.log(`\x1b[32mDatabase:\x1b[0m ${config.mongoURI.split('@')[1] || config.mongoURI}`);
+  console.log('\x1b[36m=== Ready ===\x1b[0m\n');
 });
 
-// Handle server errors
+// 10. PROCESS HANDLERS
 server.on('error', (error) => {
-  console.error('\x1b[31mSERVER STARTUP ERROR:\x1b[0m', error);
+  console.error('\x1b[31mSERVER ERROR:\x1b[0m', error);
   process.exit(1);
 });
 
-// Graceful shutdown
 process.on('SIGTERM', () => {
-  console.log('\x1b[33mSIGTERM received. Shutting down gracefully...\x1b[0m');
+  console.log('\x1b[33mShutting down...\x1b[0m');
   server.close(() => {
     mongoose.connection.close(false, () => {
       console.log('\x1b[32mServer stopped\x1b[0m');
