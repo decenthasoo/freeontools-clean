@@ -29,11 +29,11 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// 1. CORRECT PATH CONFIGURATION FOR RENDER.COM
+// Path configuration for Render.com vs local development
 const isRender = process.env.RENDER === 'true';
 const staticPath = isRender 
-  ? path.join(__dirname, '../src')  // For Render.com: /opt/render/project/src
-  : path.join(__dirname, '../');    // For local development: project root
+  ? path.join(__dirname, '../..')  // For Render.com: /opt/render/project
+  : path.join(__dirname, '..');    // For local development: project root
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
@@ -42,15 +42,14 @@ console.log('Static files path:', staticPath);
 // Verify static directory exists
 if (!fs.existsSync(staticPath)) {
   console.error('\x1b[31mERROR: Static files directory not found at:', staticPath, '\x1b[0m');
-  console.log('Current directory structure:', fs.readdirSync(path.dirname(staticPath)));
   process.exit(1);
 }
 
 // Verify index.html exists
 const indexPath = path.join(staticPath, 'index.html');
 if (!fs.existsSync(indexPath)) {
-  console.error('\x1b[31mERROR: index.html not found in static directory\x1b[0m');
-  console.log('Files in static directory:', fs.readdirSync(staticPath));
+  console.error('\x1b[31mERROR: index.html not found in root directory\x1b[0m');
+  console.log('Files in root:', fs.readdirSync(staticPath));
   process.exit(1);
 }
 
@@ -71,7 +70,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving from correct path
+// Static File Serving from Root
 app.use(express.static(staticPath, {
   maxAge: isRender ? '1y' : 0,
   setHeaders: (res, filePath) => {
@@ -89,6 +88,12 @@ app.use((req, res, next) => {
   if (req.hostname === 'freeontools.com') {
     return res.redirect(301, `https://www.freeontools.com${req.url}`);
   }
+  
+  // Remove .html extensions if present
+  if (req.path.endsWith('.html') && req.path !== '/index.html') {
+    return res.redirect(301, req.path.replace(/\.html$/, ''));
+  }
+  
   next();
 });
 
@@ -223,7 +228,8 @@ app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'healthy',
     environment: config.nodeEnv,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
   });
 });
 
@@ -276,9 +282,33 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// Catch-all Route for SPA
+// Dynamic Route Handling for All Pages
 app.get('*', (req, res) => {
-  res.sendFile(indexPath);
+  // Remove any query parameters
+  const pathname = req.path.split('?')[0];
+  
+  // Determine the file to serve
+  let filePath;
+  if (pathname === '/') {
+    filePath = indexPath;
+  } else {
+    // Check if the path already ends with .html
+    const hasHtmlExtension = pathname.endsWith('.html');
+    const basePath = hasHtmlExtension 
+      ? pathname.replace(/\.html$/, '')
+      : pathname;
+    
+    filePath = path.join(staticPath, `${basePath}.html`);
+  }
+
+  // Check if file exists
+  fs.access(filePath, fs.constants.F_OK, (err) => {
+    if (err) {
+      // If file doesn't exist, serve index.html for SPA routing
+      return res.sendFile(indexPath);
+    }
+    res.sendFile(filePath);
+  });
 });
 
 // Error Handling Middleware
