@@ -29,8 +29,8 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// 1. CORRECT PATH CONFIGURATION FOR RENDER.COM
-const staticPath = path.join(__dirname, '../../src'); // Points to /opt/render/project/src
+// 1. UPDATED PATH CONFIGURATION FOR RENDER.COM
+const staticPath = path.join(__dirname, '../..'); // Now points to repository root
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
 console.log('Static files path:', staticPath);
@@ -45,8 +45,8 @@ if (!fs.existsSync(staticPath)) {
 // Verify index.html exists
 const indexPath = path.join(staticPath, 'index.html');
 if (!fs.existsSync(indexPath)) {
-  console.error('\x1b[31mERROR: index.html not found in src directory\x1b[0m');
-  console.log('Files in src directory:', fs.readdirSync(staticPath));
+  console.error('\x1b[31mERROR: index.html not found in directory\x1b[0m');
+  console.log('Files in directory:', fs.readdirSync(staticPath));
   process.exit(1);
 }
 
@@ -67,7 +67,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving from /src
+// Static File Serving from root
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
