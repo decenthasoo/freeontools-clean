@@ -1,7 +1,4 @@
-// 1. Load Environment Variables FIRST
 require('dotenv').config();
-
-// 2. Import ALL Required Modules
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -15,47 +12,44 @@ const path = require('path');
 const fs = require('fs');
 const User = require('./models/User');
 
-// 3. Initialize Express App
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// 4. Configuration Setup
+// Enhanced Configuration
 const config = {
   jwtSecret: process.env.JWT_SECRET || process.env.JMT_SECRET,
   sessionSecret: process.env.SESSION_SECRET || process.env.JMT_SECRET,
   mongoURI: process.env.MONGO_URI || process.env.MONGQ_URI,
   emailUser: process.env.GMAIL_USER || process.env.GMATL_USER,
   emailPass: process.env.GMAIL_PASS || process.env.GMATL_PASS,
-  nodeEnv: process.env.NODE_ENV || 'development',
+  nodeEnv: process.env.NODE_ENV || 'production',
   facebookAppId: process.env.FACEBOOK_APP_ID,
   facebookAppSecret: process.env.FACEBOOK_APP_SECRET,
   googleClientId: process.env.GOOGLE_CLIENT_ID,
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// 5. Critical Startup Checks
-console.log('=== Starting Server Checks ===');
+// 1. FIXED PATH CONFIGURATION
+const isRender = process.env.RENDER === 'true';
+const staticPath = isRender 
+  ? path.join(__dirname, '../..')  // For Render.com: /opt/render/project
+  : path.join(__dirname, '../');   // For local development
 
-// 5.1 Validate Required Environment Variables
-if (!config.jwtSecret || !config.sessionSecret) {
-  console.error('\x1b[31mCRITICAL ERROR: Missing required secrets\x1b[0m');
-  console.error('- JWT_SECRET/JMT_SECRET:', config.jwtSecret ? '✅ Found' : '❌ Missing');
-  console.error('- SESSION_SECRET:', config.sessionSecret ? '✅ Found' : '❌ Missing');
+console.log('\n=== Server Initialization ===');
+console.log('Environment:', config.nodeEnv);
+console.log('Static files path:', staticPath);
+console.log('Files in directory:', fs.readdirSync(staticPath));
+
+// Verify index.html exists
+const indexPath = path.join(staticPath, 'index.html');
+if (!fs.existsSync(indexPath)) {
+  console.error('\x1b[31mERROR: index.html not found at:', indexPath, '\x1b[0m');
   process.exit(1);
 }
 
-// 5.2 Verify MongoDB Connection String
-if (!config.mongoURI) {
-  console.error('\x1b[31mCRITICAL ERROR: Missing MongoDB connection string\x1b[0m');
-  process.exit(1);
-}
-
-// 6. Middleware Setup
-
-// 6.1 Trust Proxy (Important for HTTPS in production)
+// Middleware Setup
 app.set('trust proxy', 1);
 
-// 6.2 CORS Configuration
 app.use(cors({
   origin: [
     'https://www.freeontools.com',
@@ -67,14 +61,10 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// 6.3 Body Parsers
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 7. Static File Serving (Fixed for Render.com)
-const staticPath = path.join(__dirname, process.env.NODE_ENV === 'production' ? '../..' : '..');
-console.log('Static files path:', staticPath);
-
+// 2. FIXED STATIC FILE SERVING
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
@@ -86,22 +76,22 @@ app.use(express.static(staticPath, {
   }
 }));
 
-// 8. Redirect Middleware
+// Redirect Middleware
 app.use((req, res, next) => {
   const host = req.hostname;
   const url = req.url;
 
-  // 8.1 Redirect naked domain to www
+  // Redirect naked domain to www
   if (host === 'freeontools.com') {
     return res.redirect(301, `https://www.freeontools.com${url}`);
   }
 
-  // 8.2 Remove .html extensions
+  // Remove .html extensions
   if (url.endsWith('.html')) {
     return res.redirect(301, url.replace(/\.html$/, ''));
   }
 
-  // 8.3 Remove trailing slashes
+  // Remove trailing slashes (except root)
   if (url.endsWith('/') && url !== '/') {
     return res.redirect(301, url.replace(/\/$/, ''));
   }
@@ -109,7 +99,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// 9. Session Configuration
+// Session Configuration
 app.use(session({
   secret: config.sessionSecret,
   resave: false,
@@ -123,16 +113,14 @@ app.use(session({
   }
 }));
 
-// 10. Passport Setup
+// Passport Setup
 app.use(passport.initialize());
 app.use(passport.session());
 
-// 10.1 Serialization
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
-// 10.2 Deserialization
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findById(id);
@@ -142,8 +130,7 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-// 11. Database Connection
-console.log('\n=== Database Connection ===');
+// Database Connection
 mongoose.connect(config.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -156,7 +143,7 @@ mongoose.connect(config.mongoURI, {
   process.exit(1);
 });
 
-// 12. Email Setup
+// Email Transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -165,9 +152,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// 13. OAuth Strategies
-
-// 13.1 Facebook Strategy
+// Facebook OAuth Strategy
 if (config.facebookAppId && config.facebookAppSecret) {
   passport.use(new FacebookStrategy({
     clientID: config.facebookAppId,
@@ -203,11 +188,9 @@ if (config.facebookAppId && config.facebookAppSecret) {
     }
   }));
   console.log('\x1b[32mFacebook OAuth initialized\x1b[0m');
-} else {
-  console.log('\x1b[33mFacebook OAuth disabled (missing credentials)\x1b[0m');
 }
 
-// 13.2 Google Strategy
+// Google OAuth Strategy
 if (config.googleClientId && config.googleClientSecret) {
   passport.use(new GoogleStrategy({
     clientID: config.googleClientId,
@@ -243,33 +226,26 @@ if (config.googleClientId && config.googleClientSecret) {
     }
   }));
   console.log('\x1b[32mGoogle OAuth initialized\x1b[0m');
-} else {
-  console.log('\x1b[33mGoogle OAuth disabled (missing credentials)\x1b[0m');
 }
 
-// 14. Routes
-
-// 14.1 Health Check
+// Health Check Route
 app.get('/health', (req, res) => {
   res.status(200).json({ 
     status: 'healthy',
-    timestamp: new Date().toISOString(),
-    environment: config.nodeEnv
+    environment: config.nodeEnv,
+    timestamp: new Date().toISOString()
   });
 });
 
-// 14.2 Debug Route
+// Debug Route
 app.get('/debug', (req, res) => {
   res.json({
     server: {
       environment: config.nodeEnv,
       port: PORT,
-      staticFilesPath: staticPath,
-      uptime: process.uptime()
-    },
-    auth: {
-      facebook: !!config.facebookAppId,
-      google: !!config.googleClientId
+      staticPath,
+      files: fs.readdirSync(staticPath),
+      indexExists: fs.existsSync(path.join(staticPath, 'index.html'))
     },
     database: {
       connected: mongoose.connection.readyState === 1
@@ -277,7 +253,7 @@ app.get('/debug', (req, res) => {
   });
 });
 
-// 14.3 Facebook Auth Routes
+// Facebook Auth Routes
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/callback',
@@ -295,7 +271,7 @@ app.get('/auth/facebook/callback',
   }
 );
 
-// 14.4 Google Auth Routes
+// Google Auth Routes
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 );
@@ -315,7 +291,7 @@ app.get('/auth/google/callback',
   }
 );
 
-// 14.5 API Routes
+// API Route
 app.get('/api/user/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -326,21 +302,19 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// 15. Dynamic Route Handling (for SPA)
+// 3. FIXED CATCH-ALL ROUTE
 app.get('*', (req, res) => {
-  const requestedPath = req.path === '/' ? 'index.html' : `${req.path.replace(/^\//, '')}.html`;
-  const fullPath = path.join(staticPath, requestedPath);
+  const filePath = path.join(staticPath, 'index.html');
   
-  fs.access(fullPath, fs.constants.F_OK, (err) => {
-    if (err) {
-      console.log(`File not found: ${fullPath}, serving index.html`);
-      return res.sendFile(path.join(staticPath, 'index.html'));
-    }
-    res.sendFile(fullPath);
-  });
+  if (fs.existsSync(filePath)) {
+    return res.sendFile(filePath);
+  }
+  
+  console.error('Index.html not found at:', filePath);
+  res.status(404).sendFile(path.join(staticPath, '404.html'));
 });
 
-// 16. Error Handling
+// Error Handling Middleware
 app.use((err, req, res, next) => {
   console.error('\x1b[31mSERVER ERROR:\x1b[0m', err.stack);
   res.status(500).json({
@@ -349,33 +323,29 @@ app.use((err, req, res, next) => {
   });
 });
 
-// 17. Server Startup
+// Server Start with Enhanced Logging
 const server = app.listen(PORT, () => {
   console.log('\n\x1b[36m=== Server Successfully Started ===\x1b[0m');
-  console.log(`\x1b[32mMode:\x1b[0m ${config.nodeEnv}`);
   console.log(`\x1b[32mPort:\x1b[0m ${PORT}`);
-  console.log(`\x1b[32mFrontend:\x1b[0m https://www.freeontools.com`);
-  console.log(`\x1b[32mDatabase:\x1b[0m ${config.mongoURI.split('@')[1]}`);
-  console.log(`\x1b[32mStatic Files:\x1b[0m ${staticPath}`);
+  console.log(`\x1b[32mEnvironment:\x1b[0m ${config.nodeEnv}`);
+  console.log(`\x1b[32mFrontend URL:\x1b[0m https://www.freeontools.com`);
+  console.log(`\x1b[32mDatabase:\x1b[0m ${config.mongoURI.split('@')[1] || config.mongoURI}`);
+  console.log(`\x1b[32mStatic Files Path:\x1b[0m ${staticPath}`);
   console.log('\x1b[36m=== Ready for Connections ===\x1b[0m\n');
 });
 
-// 18. Server Error Handling
+// Handle server errors
 server.on('error', (error) => {
-  console.error('\x1b[31mSERVER STARTUP FAILED:\x1b[0m', error);
-  if (error.code === 'EADDRINUSE') {
-    console.error(`\x1b[31mPort ${PORT} is already in use\x1b[0m`);
-  }
+  console.error('\x1b[31mSERVER STARTUP ERROR:\x1b[0m', error);
   process.exit(1);
 });
 
-// 19. Process Termination Handling
+// Graceful shutdown
 process.on('SIGTERM', () => {
   console.log('\x1b[33mSIGTERM received. Shutting down gracefully...\x1b[0m');
   server.close(() => {
-    console.log('\x1b[32mServer closed\x1b[0m');
     mongoose.connection.close(false, () => {
-      console.log('\x1b[32mDatabase connection closed\x1b[0m');
+      console.log('\x1b[32mServer stopped\x1b[0m');
       process.exit(0);
     });
   });
