@@ -15,13 +15,13 @@ const User = require('./models/User');
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Enhanced Configuration
+// Configuration with defaults
 const config = {
-  jwtSecret: process.env.JWT_SECRET || process.env.JMT_SECRET,
-  sessionSecret: process.env.SESSION_SECRET || process.env.JMT_SECRET,
-  mongoURI: process.env.MONGO_URI || process.env.MONGQ_URI,
-  emailUser: process.env.GMAIL_USER || process.env.GMATL_USER,
-  emailPass: process.env.GMAIL_PASS || process.env.GMATL_PASS,
+  jwtSecret: process.env.JWT_SECRET || 'default_jwt_secret_please_change',
+  sessionSecret: process.env.SESSION_SECRET || 'default_session_secret_please_change',
+  mongoURI: process.env.MONGO_URI || 'mongodb://localhost:27017/freeontools',
+  emailUser: process.env.EMAIL_USER || 'your-email@example.com',
+  emailPass: process.env.EMAIL_PASS || 'your-email-password',
   nodeEnv: process.env.NODE_ENV || 'production',
   facebookAppId: process.env.FACEBOOK_APP_ID,
   facebookAppSecret: process.env.FACEBOOK_APP_SECRET,
@@ -29,28 +29,34 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// 1. FIXED PATH CONFIGURATION
+// Path configuration for Render.com vs local development
 const isRender = process.env.RENDER === 'true';
-const staticPath = isRender 
-  ? path.join(__dirname, '../..')  // For Render.com: /opt/render/project
-  : path.join(__dirname, '../');   // For local development
+const staticPath = path.join(__dirname, isRender ? '../../client' : '../client');
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
 console.log('Static files path:', staticPath);
-console.log('Files in directory:', fs.readdirSync(staticPath));
+
+// Verify static directory exists
+if (!fs.existsSync(staticPath)) {
+  console.error('\x1b[31mERROR: Static files directory not found at:', staticPath, '\x1b[0m');
+  console.log('Current directory structure:', fs.readdirSync(path.dirname(staticPath)));
+  process.exit(1);
+}
 
 // Verify index.html exists
 const indexPath = path.join(staticPath, 'index.html');
 if (!fs.existsSync(indexPath)) {
-  console.error('\x1b[31mERROR: index.html not found at:', indexPath, '\x1b[0m');
+  console.error('\x1b[31mERROR: index.html not found in static directory\x1b[0m');
+  console.log('Files in static directory:', fs.readdirSync(staticPath));
   process.exit(1);
 }
 
 // Middleware Setup
 app.set('trust proxy', 1);
 
-app.use(cors({
+// Enhanced CORS Configuration
+const corsOptions = {
   origin: [
     'https://www.freeontools.com',
     'https://freeontools.com',
@@ -58,69 +64,71 @@ app.use(cors({
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+};
+app.use(cors(corsOptions));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Body parsers with increased limit
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// 2. FIXED STATIC FILE SERVING
+// Static file serving with proper caching
 app.use(express.static(staticPath, {
-  maxAge: '1y',
+  maxAge: isRender ? '1y' : 0,
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.html')) {
-      res.setHeader('Cache-Control', 'no-store');
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
     } else {
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     }
   }
 }));
 
-// Redirect Middleware
+// Redirect and security middleware
 app.use((req, res, next) => {
-  const host = req.hostname;
-  const url = req.url;
-
   // Redirect naked domain to www
-  if (host === 'freeontools.com') {
-    return res.redirect(301, `https://www.freeontools.com${url}`);
+  if (req.hostname === 'freeontools.com') {
+    return res.redirect(301, `https://www.freeontools.com${req.url}`);
   }
 
-  // Remove .html extensions
-  if (url.endsWith('.html')) {
-    return res.redirect(301, url.replace(/\.html$/, ''));
-  }
-
-  // Remove trailing slashes (except root)
-  if (url.endsWith('/') && url !== '/') {
-    return res.redirect(301, url.replace(/\/$/, ''));
-  }
+  // Security headers
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
 
   next();
 });
 
-// Session Configuration
-app.use(session({
+// Session configuration with production settings
+const sessionConfig = {
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: false,
   cookie: {
     secure: config.nodeEnv === 'production',
     httpOnly: true,
-    sameSite: config.nodeEnv === 'production' ? 'lax' : 'none',
-    maxAge: 24 * 60 * 60 * 1000,
-    domain: config.nodeEnv === 'production' ? '.freeontools.com' : undefined
+    sameSite: 'lax',
+    maxAge: 24 * 60 * 60 * 1000
   }
-}));
+};
 
-// Passport Setup
+if (config.nodeEnv === 'production') {
+  sessionConfig.cookie.domain = '.freeontools.com';
+}
+
+app.use(session(sessionConfig));
+
+// Passport initialization
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Passport serialization
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
+// Passport deserialization
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findById(id);
@@ -130,20 +138,24 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-// Database Connection
-mongoose.connect(config.mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000,
-  socketTimeoutMS: 30000
-})
-.then(() => console.log('\x1b[32mMongoDB connected successfully\x1b[0m'))
-.catch(err => {
-  console.error('\x1b[31mMongoDB connection failed:\x1b[0m', err.message);
-  process.exit(1);
-});
+// Database connection with retry logic
+const connectWithRetry = () => {
+  mongoose.connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 30000
+  })
+  .then(() => console.log('\x1b[32mMongoDB connected successfully\x1b[0m'))
+  .catch(err => {
+    console.error('\x1b[31mMongoDB connection failed, retrying in 5 seconds...\x1b[0m', err.message);
+    setTimeout(connectWithRetry, 5000);
+  });
+};
 
-// Email Transporter
+connectWithRetry();
+
+// Email transporter setup
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -152,29 +164,36 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// Facebook OAuth Strategy
+transporter.verify((error) => {
+  if (error) {
+    console.error('\x1b[31mEmail transporter verification failed:\x1b[0m', error);
+  } else {
+    console.log('\x1b[32mEmail transporter ready\x1b[0m');
+  }
+});
+
+// Facebook OAuth Strategy (complete implementation)
 if (config.facebookAppId && config.facebookAppSecret) {
   passport.use(new FacebookStrategy({
     clientID: config.facebookAppId,
     clientSecret: config.facebookAppSecret,
-    callbackURL: config.nodeEnv === 'production' 
-      ? 'https://www.freeontools.com/auth/facebook/callback'
-      : 'http://localhost:3000/auth/facebook/callback',
-    profileFields: ['id', 'emails', 'name', 'displayName']
+    callbackURL: `${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:3000'}/auth/facebook/callback`,
+    profileFields: ['id', 'emails', 'name', 'displayName'],
+    enableProof: true
   }, async (accessToken, refreshToken, profile, done) => {
     try {
       let user = await User.findOne({ 
         $or: [
           { facebookId: profile.id },
-          { email: profile.emails[0].value }
+          { email: profile.emails?.[0]?.value }
         ]
       });
 
       if (!user) {
         user = new User({
           facebookId: profile.id,
-          email: profile.emails[0].value,
-          name: profile.displayName || `${profile.name.givenName} ${profile.name.familyName}`,
+          email: profile.emails?.[0]?.value,
+          name: profile.displayName || `${profile.name?.givenName} ${profile.name?.familyName}`,
           isVerified: true
         });
         await user.save();
@@ -190,28 +209,27 @@ if (config.facebookAppId && config.facebookAppSecret) {
   console.log('\x1b[32mFacebook OAuth initialized\x1b[0m');
 }
 
-// Google OAuth Strategy
+// Google OAuth Strategy (complete implementation)
 if (config.googleClientId && config.googleClientSecret) {
   passport.use(new GoogleStrategy({
     clientID: config.googleClientId,
     clientSecret: config.googleClientSecret,
-    callbackURL: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/auth/google/callback'
-      : 'http://localhost:3000/auth/google/callback',
-    scope: ['profile', 'email']
+    callbackURL: `${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:3000'}/auth/google/callback`,
+    scope: ['profile', 'email'],
+    prompt: 'select_account'
   }, async (accessToken, refreshToken, profile, done) => {
     try {
       let user = await User.findOne({ 
         $or: [
           { googleId: profile.id },
-          { email: profile.emails[0].value }
+          { email: profile.emails?.[0]?.value }
         ]
       });
 
       if (!user) {
         user = new User({
           googleId: profile.id,
-          email: profile.emails[0].value,
+          email: profile.emails?.[0]?.value,
           name: profile.displayName,
           isVerified: true
         });
@@ -228,102 +246,131 @@ if (config.googleClientId && config.googleClientSecret) {
   console.log('\x1b[32mGoogle OAuth initialized\x1b[0m');
 }
 
-// Health Check Route
-app.get('/health', (req, res) => {
-  res.status(200).json({ 
+// API Routes
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({
     status: 'healthy',
-    environment: config.nodeEnv,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+    memoryUsage: process.memoryUsage()
   });
 });
 
-// Debug Route
-app.get('/debug', (req, res) => {
+// Debug endpoint
+app.get('/api/debug', (req, res) => {
   res.json({
     server: {
       environment: config.nodeEnv,
       port: PORT,
       staticPath,
       files: fs.readdirSync(staticPath),
-      indexExists: fs.existsSync(path.join(staticPath, 'index.html'))
+      indexExists: fs.existsSync(indexPath)
+    },
+    auth: {
+      facebook: !!config.facebookAppId,
+      google: !!config.googleClientId
     },
     database: {
-      connected: mongoose.connection.readyState === 1
+      connected: mongoose.connection.readyState === 1,
+      host: mongoose.connection?.host || 'disconnected'
+    },
+    process: {
+      version: process.version,
+      platform: process.platform,
+      memory: process.memoryUsage()
     }
   });
 });
 
-// Facebook Auth Routes
-app.get('/auth/facebook', passport.authenticate('facebook'));
+// Facebook auth routes
+app.get('/auth/facebook', passport.authenticate('facebook', {
+  scope: ['email'],
+  authType: 'rerequest'
+}));
 
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { 
     failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login'
-      : 'http://localhost:8080/login'
+      ? 'https://www.freeontools.com/login?error=auth_failed'
+      : 'http://localhost:8080/login?error=auth_failed',
+    session: true
   }),
   (req, res) => {
     const token = jwt.sign({ 
       userId: req.user._id,
       email: req.user.email
     }, config.jwtSecret, { expiresIn: '1h' });
-    res.redirect(`${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/profile?token=${token}`);
+    
+    const redirectUrl = `${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/profile`;
+    res.redirect(`${redirectUrl}?token=${token}&auth=facebook`);
   }
 );
 
-// Google Auth Routes
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-);
+// Google auth routes
+app.get('/auth/google', passport.authenticate('google', {
+  scope: ['profile', 'email'],
+  prompt: 'select_account'
+}));
 
 app.get('/auth/google/callback',
   passport.authenticate('google', { 
     failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login'
-      : 'http://localhost:8080/login'
+      ? 'https://www.freeontools.com/login?error=auth_failed'
+      : 'http://localhost:8080/login?error=auth_failed',
+    session: true
   }),
   (req, res) => {
     const token = jwt.sign({ 
       userId: req.user._id,
       email: req.user.email
     }, config.jwtSecret, { expiresIn: '1h' });
-    res.redirect(`${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/profile?token=${token}`);
+    
+    const redirectUrl = `${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/profile`;
+    res.redirect(`${redirectUrl}?token=${token}&auth=google`);
   }
 );
 
-// API Route
-app.get('/api/user/:id', async (req, res) => {
+// Sample protected API route
+app.get('/api/user', passport.authenticate('jwt', { session: false }), async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
-    if (!user) return res.status(404).json({ error: 'User not found' });
-    res.json({ user });
+    const user = await User.findById(req.user.userId).select('-password -__v');
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(user);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// 3. FIXED CATCH-ALL ROUTE
+// Catch-all route for SPA
 app.get('*', (req, res) => {
-  const filePath = path.join(staticPath, 'index.html');
-  
-  if (fs.existsSync(filePath)) {
-    return res.sendFile(filePath);
+  if (fs.existsSync(indexPath)) {
+    return res.sendFile(indexPath);
   }
-  
-  console.error('Index.html not found at:', filePath);
   res.status(404).sendFile(path.join(staticPath, '404.html'));
 });
 
-// Error Handling Middleware
+// Error handling middleware
 app.use((err, req, res, next) => {
-  console.error('\x1b[31mSERVER ERROR:\x1b[0m', err.stack);
-  res.status(500).json({
-    error: 'Internal Server Error',
-    message: config.nodeEnv === 'development' ? err.message : 'Something went wrong'
+  console.error('\x1b[31mERROR:\x1b[0m', err.stack);
+  
+  const status = err.status || 500;
+  const message = config.nodeEnv === 'development' ? err.message : 'An error occurred';
+  
+  res.status(status).json({
+    error: {
+      status,
+      message,
+      ...(config.nodeEnv === 'development' && { stack: err.stack })
+    }
   });
 });
 
-// Server Start with Enhanced Logging
+// Server startup
 const server = app.listen(PORT, () => {
   console.log('\n\x1b[36m=== Server Successfully Started ===\x1b[0m');
   console.log(`\x1b[32mPort:\x1b[0m ${PORT}`);
@@ -334,7 +381,7 @@ const server = app.listen(PORT, () => {
   console.log('\x1b[36m=== Ready for Connections ===\x1b[0m\n');
 });
 
-// Handle server errors
+// Server error handling
 server.on('error', (error) => {
   console.error('\x1b[31mSERVER STARTUP ERROR:\x1b[0m', error);
   process.exit(1);
@@ -349,4 +396,15 @@ process.on('SIGTERM', () => {
       process.exit(0);
     });
   });
+});
+
+// Unhandled promise rejection handler
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('\x1b[31mUnhandled Rejection at:\x1b[0m', promise, '\x1b[31mreason:\x1b[0m', reason);
+});
+
+// Uncaught exception handler
+process.on('uncaughtException', (err) => {
+  console.error('\x1b[31mUncaught Exception:\x1b[0m', err.stack);
+  process.exit(1);
 });
