@@ -286,7 +286,7 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// Serve specific HTML files when requested directly
+// Route to handle direct HTML file requests
 app.get('/*.html', (req, res, next) => {
   const htmlPath = path.join(staticPath, req.path);
   if (fs.existsSync(htmlPath)) {
@@ -295,22 +295,29 @@ app.get('/*.html', (req, res, next) => {
   next();
 });
 
-// Fix for SPA routing - serve Index.html for all non-API routes
+// SPA Route Handler - Critical Fixes Here
 app.get('*', (req, res, next) => {
   // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
     return next();
   }
   
-  // Skip files with extensions
+  // Skip files with extensions (css, js, images, etc.)
   const hasExtension = req.path.split('/').pop().includes('.');
   if (hasExtension) {
     return next();
   }
   
-  // Set proper content type
+  // Set proper headers for SPA
   res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-  res.sendFile(indexPath);
+  
+  // Send the main index file for all SPA routes
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      console.error('Error sending Index.html:', err);
+      next(err);
+    }
+  });
 });
 
 // Error Handling Middleware
@@ -321,7 +328,7 @@ app.use((err, req, res, next) => {
 
 // 404 Handler
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(staticPath, '404.html'));
+  res.status(404).send('Page not found');
 });
 
 // Server Start
