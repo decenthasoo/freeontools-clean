@@ -29,9 +29,9 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Path configuration - UPDATED to match your file structure
-const staticPath = path.join(__dirname, '../'); // Points to project root
-const indexPath = path.join(staticPath, 'Index.html'); // Kept uppercase I
+// Path configuration - UPDATED to point to project root
+const staticPath = path.join(__dirname, '../');
+const indexPath = path.join(staticPath, 'Index.html');
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
@@ -55,19 +55,21 @@ if (!fs.existsSync(indexPath)) {
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Enhanced Redirect Middleware
+// Enhanced Redirect Middleware - FIXED www and HTTPS redirects
 app.use((req, res, next) => {
-  const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   const host = req.get('host');
+  const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   
-  // Redirect conditions
-  const isNakedDomain = host === 'freeontools.com';
-  const needsHTTPS = protocol !== 'https' && config.nodeEnv === 'production';
-  
-  if (isNakedDomain || needsHTTPS) {
-    const redirectUrl = `https://www.freeontools.com${req.url}`;
-    console.log(`Redirecting to: ${redirectUrl}`);
-    return res.redirect(301, redirectUrl);
+  if (config.nodeEnv === 'production') {
+    // Redirect naked domain to www
+    if (host === 'freeontools.com') {
+      return res.redirect(301, `https://www.freeontools.com${req.url}`);
+    }
+    
+    // Force HTTPS
+    if (protocol !== 'https') {
+      return res.redirect(301, `https://www.freeontools.com${req.url}`);
+    }
   }
   
   // Redirect .html URLs to clean URLs
@@ -93,7 +95,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Fix for MIME type issues with JS files
+// Fix for MIME type issues with JS files - CRITICAL FOR FOOTER
 app.use((req, res, next) => {
   if (req.path.endsWith('.js')) {
     res.type('application/javascript');
@@ -112,7 +114,7 @@ app.use(express.static(staticPath, {
     
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-store');
-    } else if (filePath.endsWith('.js') || filePath.endsWith('.css')) {
+    } else {
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     }
   }
@@ -253,7 +255,7 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Debug route to check file paths
+// Debug route to verify file paths
 app.get('/debug/paths', (req, res) => {
   res.json({
     staticPath,
@@ -321,7 +323,7 @@ app.get('/*.html', (req, res, next) => {
   next();
 });
 
-// MAIN ROUTING FIX - CRITICAL UPDATE
+// MAIN ROUTING FIX - CRITICAL UPDATE (Fixes content stacking)
 app.get('*', (req, res, next) => {
   // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
@@ -333,16 +335,10 @@ app.get('*', (req, res, next) => {
     return next();
   }
   
-  // Check for specific HTML page
-  const possiblePaths = [
-    path.join(staticPath, `${req.path}.html`),
-    path.join(staticPath, req.path, 'index.html')
-  ];
-  
-  for (const filePath of possiblePaths) {
-    if (fs.existsSync(filePath)) {
-      return res.sendFile(filePath);
-    }
+  // Check for specific page request
+  const pagePath = path.join(staticPath, `${req.path}.html`);
+  if (fs.existsSync(pagePath)) {
+    return res.sendFile(pagePath);
   }
   
   // Fallback to Index.html for all other routes
