@@ -54,24 +54,37 @@ if (!fs.existsSync(indexPath)) {
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Redirect middleware - must come first
+// Enhanced Redirect Middleware - handles both protocol and domain
 app.use((req, res, next) => {
-  // Redirect naked domain to www
-  if (req.hostname === 'freeontools.com') {
-    return res.redirect(301, `https://www.freeontools.com${req.url}`);
+  const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+  const host = req.get('host');
+  
+  // Redirect conditions
+  const isNakedDomain = host === 'freeontools.com';
+  const needsHTTPS = protocol !== 'https' && config.nodeEnv === 'production';
+  
+  if (isNakedDomain || needsHTTPS) {
+    const redirectUrl = `https://www.freeontools.com${req.url}`;
+    console.log(`Redirecting to: ${redirectUrl}`);
+    return res.redirect(301, redirectUrl);
   }
   
-  // Force HTTPS in production
-  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && config.nodeEnv === 'production') {
-    return res.redirect(301, `https://www.freeontools.com${req.url}`);
-  }
-
   // Redirect .html URLs to clean URLs
   if (req.path.endsWith('.html') && req.path !== '/Index.html') {
     const cleanPath = req.path.replace(/\.html$/, '');
     return res.redirect(301, cleanPath);
   }
+  
+  next();
+});
 
+// Security Headers Middleware
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Content-Security-Policy', "default-src 'self'");
+  res.setHeader('Content-Type', 'text/html; charset=UTF-8');
   next();
 });
 
@@ -89,7 +102,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static File Serving
+// Static File Serving with proper caching
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
@@ -301,19 +314,21 @@ app.get('/*.html', (req, res, next) => {
   next();
 });
 
-// Catch-all Route for SPA - handles client-side routing
-app.get('*', (req, res) => {
-  // Don't serve Index.html for API routes
+// Catch-all Route for SPA
+app.get('*', (req, res, next) => {
+  // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
-    return res.status(404).send('Not found');
+    return next();
   }
   
-  // Check if this is a file request (has extension)
+  // Skip files with extensions
   const hasExtension = req.path.split('/').pop().includes('.');
   if (hasExtension) {
-    return res.status(404).send('Not found');
+    return next();
   }
   
+  // Ensure proper content type for SPA
+  res.setHeader('Content-Type', 'text/html; charset=UTF-8');
   res.sendFile(indexPath);
 });
 
