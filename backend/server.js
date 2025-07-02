@@ -49,22 +49,32 @@ if (!fs.existsSync(staticPath) || !fs.existsSync(indexPath) || !fs.existsSync(fo
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Enhanced Redirect Middleware - Fixes all domain/HTTPS issues
+// Enhanced Redirect Middleware - Prevents loops
 app.use((req, res, next) => {
-  const host = req.get('host').replace(/^www\./, '');
+  const host = req.get('host');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   const path = req.url;
 
-  // Permanent redirect for .html to clean URLs (SEO fix)
-  if (path.endsWith('.html') && path !== '/Index.html') {
+  // Skip redirect checks for static files and API routes
+  if (path.includes('.') || path.startsWith('/api/') || path.startsWith('/auth/')) {
+    return next();
+  }
+
+  // Handle .html to clean URL redirect (only if direct request)
+  if (path.endsWith('.html') && !req.headers['x-redirect-source']) {
     const cleanPath = path.replace(/\.html$/, '');
     return res.redirect(301, `https://www.freeontools.com${cleanPath}`);
   }
 
   // Force HTTPS and www in production
   if (config.nodeEnv === 'production') {
-    // Handle all domain variants
-    if (host === 'freeontools.com' || protocol !== 'https') {
+    // Skip if already correct
+    if (host === 'www.freeontools.com' && protocol === 'https') {
+      return next();
+    }
+    
+    // Handle redirect to canonical URL
+    if (host !== 'www.freeontools.com' || protocol !== 'https') {
       return res.redirect(301, `https://www.freeontools.com${path}`);
     }
   }
@@ -294,24 +304,23 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// MAIN ROUTING SOLUTION - SEO-friendly URL handling
+// MAIN ROUTING SOLUTION - SEO-friendly with redirect prevention
 app.get('*', (req, res, next) => {
-  // Skip API and auth routes
-  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
+  // Skip API/auth routes and files with extensions
+  if (req.path.startsWith('/api/') || 
+      req.path.startsWith('/auth/') || 
+      (req.path.includes('.') && !req.path.endsWith('.html'))) {
     return next();
   }
-  
-  // Skip files with extensions (css, js, images, etc.)
-  if (req.path.includes('.')) {
-    return next();
-  }
-  
+
   // Check if specific HTML page exists
   const htmlPath = path.join(staticPath, `${req.path}.html`);
   if (fs.existsSync(htmlPath)) {
+    // Add header to prevent redirect loops
+    res.set('x-redirect-source', 'server');
     return res.sendFile(htmlPath);
   }
-  
+
   // Fallback to Index.html for all other routes
   res.sendFile(indexPath);
 });
