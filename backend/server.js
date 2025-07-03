@@ -50,17 +50,19 @@ if (!fs.existsSync(staticPath) || !fs.existsSync(indexPath) || !fs.existsSync(fo
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Enhanced Redirect Middleware - Fixes 403 and HTTPS/WWW
+// Enhanced Redirect Middleware - Handles non-www to www and HTTP to HTTPS
 app.use((req, res, next) => {
   const host = req.get('host');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   
   if (config.nodeEnv === 'production') {
+    // Redirect http://freeontools.com and https://freeontools.com to https://www.freeontools.com
     if (host === 'freeontools.com') {
       return res.redirect(301, `https://www.freeontools.com${req.url}`);
     }
-    if (protocol !== 'https') {
-      return res.redirect(301, `https://${host}${req.url}`);
+    // Redirect any non-HTTPS request to HTTPS with www
+    if (protocol !== 'https' || host !== 'www.freeontools.com') {
+      return res.redirect(301, `https://www.freeontools.com${req.url}`);
     }
   }
   next();
@@ -70,12 +72,10 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   if (req.path.endsWith('.html')) {
     const newPath = req.path.slice(0, -5);
-    // Ensure the corresponding HTML file exists before redirecting
     const htmlPath = path.join(staticPath, `${newPath}.html`);
     if (fs.existsSync(htmlPath)) {
       return res.redirect(301, newPath);
     }
-    // If the file doesn't exist, pass to the next middleware
     return next();
   }
   next();
