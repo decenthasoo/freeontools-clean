@@ -20,7 +20,7 @@ const config = {
   jwtSecret: process.env.JWT_SECRET || 'default-secret-key',
   sessionSecret: process.env.SESSION_SECRET || 'default-session-secret',
   mongoURI: process.env.MONGO_URI || 'mongodb://localhost:27017/freeontools',
-  emailUser: process.env.EMAIL_USER || 'your-email@example.com',
+  emailUser: process.env.EMAIL_USER || 'onlyseotools@gmail.com',
   emailPass: process.env.EMAIL_PASS || 'your-email-password',
   nodeEnv: process.env.NODE_ENV || 'production',
   facebookAppId: process.env.FACEBOOK_APP_ID,
@@ -29,65 +29,64 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Path configuration - Case-sensitive paths
-const staticPath = path.join(__dirname, '../');
+// Path configuration - Points to freeontools-clean root
+const staticPath = path.join(__dirname, '../'); // Points to C:\...\freeontools-clean
 const indexPath = path.join(staticPath, 'Index.html');
-const footerPath = path.join(staticPath, 'Footer.html'); // Uppercase F
+const footerPath = path.join(staticPath, 'Footer.html');
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
-console.log('Static files path:', staticPath);
+console.log('Static files path:', path.resolve(staticPath));
 console.log('Index.html path:', indexPath);
 console.log('Footer.html path:', footerPath);
 
 // Verify critical files exist
-if (!fs.existsSync(staticPath) || !fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
+if (!fs.existsSync(staticPath)) {
+  console.error('\x1b[31mERROR: Static directory not found\x1b[0m');
+  console.log('Directory contents:', fs.readdirSync(__dirname));
+  process.exit(1);
+}
+if (!fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
   console.error('\x1b[31mERROR: Required files not found\x1b[0m');
   console.log('Directory contents:', fs.readdirSync(staticPath));
   process.exit(1);
 }
 
 // Middleware Setup
-app.set('trust proxy', 1);
+app.set('trust proxy', 1); // For Render.com proxy
 
-// Enhanced Redirect Middleware - Handles non-www to www and HTTP to HTTPS
+// Redirect Middleware - Handles non-www to www and HTTP to HTTPS
 app.use((req, res, next) => {
   const host = req.get('host');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
-  
+  console.log(`Request: ${protocol}://${host}${req.url}`);
   if (config.nodeEnv === 'production') {
-    // Redirect http://freeontools.com and https://freeontools.com to https://www.freeontools.com
-    if (host === 'freeontools.com') {
-      return res.redirect(301, `https://www.freeontools.com${req.url}`);
-    }
-    // Redirect any non-HTTPS request to HTTPS with www
-    if (protocol !== 'https' || host !== 'www.freeontools.com') {
+    if (host !== 'www.freeontools.com' || protocol !== 'https') {
+      console.log(`Redirecting to https://www.freeontools.com${req.url}`);
       return res.redirect(301, `https://www.freeontools.com${req.url}`);
     }
   }
   next();
 });
 
-// New middleware to remove .html extension
+// Remove .html extension
 app.use((req, res, next) => {
   if (req.path.endsWith('.html')) {
     const newPath = req.path.slice(0, -5);
     const htmlPath = path.join(staticPath, `${newPath}.html`);
     if (fs.existsSync(htmlPath)) {
+      console.log(`Redirecting ${req.path} to ${newPath}`);
       return res.redirect(301, newPath);
     }
-    return next();
   }
   next();
 });
 
 // CORS Configuration
 app.use(cors({
-  origin: [
-    'https://www.freeontools.com',
-    'https://freeontools.com',
-    'http://localhost:8080'
-  ],
+  origin: config.nodeEnv === 'production'
+    ? ['https://www.freeontools.com']
+    : ['https://www.freeontools.com', 'https://freeontools.com', 'http://localhost:8080'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
@@ -95,20 +94,19 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Fix for MIME type and case sensitivity issues
+// Fix MIME types and case sensitivity
 app.use((req, res, next) => {
-  // Fix JS MIME types
   if (req.path.endsWith('.js')) {
     res.type('application/javascript');
   }
-  // Case-insensitive route for Footer.html
   if (req.path.toLowerCase() === '/footer.html') {
+    console.log(`Serving Footer.html from ${footerPath}`);
     return res.sendFile(footerPath);
   }
   next();
 });
 
-// Static File Serving with case-sensitive handling
+// Static File Serving
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
@@ -154,11 +152,11 @@ mongoose.connect(config.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-.then(() => console.log('\x1b[32mMongoDB connected successfully\x1b[0m'))
-.catch(err => {
-  console.error('\x1b[31mMongoDB connection failed:\x1b[0m', err);
-  process.exit(1);
-});
+  .then(() => console.log('\x1b[32mMongoDB connected successfully\x1b[0m'))
+  .catch(err => {
+    console.error('\x1b[31mMongoDB connection failed:\x1b[0m', err);
+    process.exit(1);
+  });
 
 // Email Transporter
 const transporter = nodemailer.createTransport({
@@ -174,19 +172,18 @@ if (config.facebookAppId && config.facebookAppSecret) {
   passport.use(new FacebookStrategy({
     clientID: config.facebookAppId,
     clientSecret: config.facebookAppSecret,
-    callbackURL: config.nodeEnv === 'production' 
+    callbackURL: config.nodeEnv === 'production'
       ? 'https://www.freeontools.com/auth/facebook/callback'
       : 'http://localhost:3000/auth/facebook/callback',
     profileFields: ['id', 'emails', 'name', 'displayName']
   }, async (accessToken, refreshToken, profile, done) => {
     try {
-      let user = await User.findOne({ 
+      let user = await User.findOne({
         $or: [
           { facebookId: profile.id },
           { email: profile.emails?.[0]?.value }
         ]
       });
-
       if (!user) {
         user = new User({
           facebookId: profile.id,
@@ -218,13 +215,12 @@ if (config.googleClientId && config.googleClientSecret) {
     scope: ['profile', 'email']
   }, async (accessToken, refreshToken, profile, done) => {
     try {
-      let user = await User.findOne({ 
+      let user = await User.findOne({
         $or: [
           { googleId: profile.id },
           { email: profile.emails?.[0]?.value }
         ]
       });
-
       if (!user) {
         user = new User({
           googleId: profile.id,
@@ -247,7 +243,7 @@ if (config.googleClientId && config.googleClientSecret) {
 
 // API Routes
 app.get('/api/health', (req, res) => {
-  res.json({ 
+  res.json({
     status: 'healthy',
     environment: config.nodeEnv,
     timestamp: new Date().toISOString()
@@ -258,13 +254,13 @@ app.get('/api/health', (req, res) => {
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { 
+  passport.authenticate('facebook', {
     failureRedirect: config.nodeEnv === 'production'
       ? 'https://www.freeontools.com/login'
       : 'http://localhost:8080/login'
   }),
   (req, res) => {
-    const token = jwt.sign({ 
+    const token = jwt.sign({
       userId: req.user._id,
       email: req.user.email
     }, config.jwtSecret, { expiresIn: '1h' });
@@ -278,13 +274,13 @@ app.get('/auth/google',
 );
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { 
+  passport.authenticate('google', {
     failureRedirect: config.nodeEnv === 'production'
       ? 'https://www.freeontools.com/login'
       : 'http://localhost:8080/login'
   }),
   (req, res) => {
-    const token = jwt.sign({ 
+    const token = jwt.sign({
       userId: req.user._id,
       email: req.user.email
     }, config.jwtSecret, { expiresIn: '1h' });
@@ -305,23 +301,19 @@ app.get('/api/user/:id', async (req, res) => {
 
 // MAIN ROUTING SOLUTION - Case-sensitive HTML file handling
 app.get('*', (req, res, next) => {
-  // Skip API and auth routes
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
     return next();
   }
-  
-  // Skip files with extensions (css, js, images, etc.)
   if (req.path.includes('.')) {
     return next();
   }
-  
-  // Check if specific HTML page exists (case-sensitive)
   const htmlPath = path.join(staticPath, `${req.path}.html`);
+  console.log(`Attempting to serve: ${htmlPath}`);
   if (fs.existsSync(htmlPath)) {
+    console.log(`Serving HTML file: ${htmlPath}`);
     return res.sendFile(htmlPath);
   }
-  
-  // Fallback to Index.html for all other routes
+  console.log(`Serving Index.html from: ${indexPath}`);
   res.sendFile(indexPath);
 });
 
