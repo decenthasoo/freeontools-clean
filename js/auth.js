@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('token', socialToken);
         localStorage.setItem('sessionAuth', 'true');
         window.history.replaceState({}, document.title, window.location.pathname);
-        await updateHeader();
+        await window.updateHeader();
     }
 
     // Handle reset-password.html
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         } else {
             console.log('auth.js: No reset token in URL, redirecting to login');
-            document.getElementBy kararı: document.getElementById('error-message').textContent = 'No reset token provided';
+            document.getElementById('error-message').textContent = 'No reset token provided';
             setTimeout(() => window.location.href = '/login.html', 2000);
             return;
         }
@@ -93,8 +93,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     }
-
-    FILTERED_TEXT_1
 
     if (signupForm) {
         console.log('auth.js: Signup form found, attaching submit listener');
@@ -229,56 +227,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    await updateHeader();
+    await window.updateHeader();
 });
 
-async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
-    console.log(`auth.js: Checking auth status for ${window.location.pathname}, attempt ${attempt}`);
-    if (window.location.pathname === '/reset-password.html') {
-        console.log('auth.js: On reset-password.html, bypassing auth check');
-        return false;
-    }
-    const token = localStorage.getItem('token');
-    if (token) {
-        console.log('auth.js: Token found, assuming authenticated');
-        localStorage.setItem('sessionAuth', 'true');
-        return true;
-    }
-    try {
-        const response = await fetch(`${BACKEND_URL}/auth/check`, {
-            method: 'GET',
-            credentials: 'include',
-            headers: { 'Accept': 'application/json' },
-            cache: 'no-store',
-        });
-        console.log(`auth.js: /auth/check response status: ${response.status}`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log('auth.js: Auth check response data:', data);
-        if (data.authenticated) {
-            localStorage.setItem('sessionAuth', 'true');
-            console.log('auth.js: Session auth set to true');
-            return true;
-        }
-        localStorage.removeItem('sessionAuth');
-        console.log('auth.js: Session auth removed, response:', data);
-        return false;
-    } catch (error) {
-        console.error(`auth.js: Auth check error on attempt ${attempt}:`, error.message);
-        localStorage.removeItem('sessionAuth');
-        if (attempt < maxAttempts) {
-            console.log(`auth.js: Retrying auth check, attempt ${attempt + 1}`);
-            await new Promise(resolve => setTimeout(resolve, 300));
-            return checkAuthStatus(attempt + 1, maxAttempts);
-        }
-        console.error('auth.js: Max auth check attempts reached');
-        return false;
-    }
-}
-
-async function updateHeader(attempt = 1, maxAttempts = 10) {
+// Explicitly define updateHeader as a global function
+window.updateHeader = async function(attempt = 1, maxAttempts = 10) {
     console.log(`auth.js: updateHeader attempt ${attempt} for ${window.location.pathname}`);
     const token = localStorage.getItem('token');
     const headerButtons = document.querySelector('.header-buttons');
@@ -294,7 +247,7 @@ async function updateHeader(attempt = 1, maxAttempts = 10) {
     }
     if (!headerButtons || !hamburgerContent || !navDropdownContent) {
         console.log(`auth.js: Header elements not found, retrying in 100ms (attempt ${attempt})`);
-        setTimeout(() => updateHeader(attempt + 1, maxAttempts), 100);
+        setTimeout(() => window.updateHeader(attempt + 1, maxAttempts), 100);
         return;
     }
     const isAuthenticated = await checkAuthStatus();
@@ -359,6 +312,52 @@ async function updateHeader(attempt = 1, maxAttempts = 10) {
             logoutLink.classList.remove('header-btn', 'login-btn');
         }
     }
+};
+
+async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
+    console.log(`auth.js: Checking auth status for ${window.location.pathname}, attempt ${attempt}`);
+    if (window.location.pathname === '/reset-password.html') {
+        console.log('auth.js: On reset-password.html, bypassing auth check');
+        return false;
+    }
+    const token = localStorage.getItem('token');
+    if (token) {
+        console.log('auth.js: Token found, assuming authenticated');
+        localStorage.setItem('sessionAuth', 'true');
+        return true;
+    }
+    try {
+        const response = await fetch(`${BACKEND_URL}/auth/check`, {
+            method: 'GET',
+            credentials: 'include',
+            headers: { 'Accept': 'application/json' },
+            cache: 'no-store',
+        });
+        console.log(`auth.js: /auth/check response status: ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('auth.js: Auth check response data:', data);
+        if (data.authenticated) {
+            localStorage.setItem('sessionAuth', 'true');
+            console.log('auth.js: Session auth set to true');
+            return true;
+        }
+        localStorage.removeItem('sessionAuth');
+        console.log('auth.js: Session auth removed, response:', data);
+        return false;
+    } catch (error) {
+        console.error(`auth.js: Auth check error on attempt ${attempt}:`, error.message);
+        localStorage.removeItem('sessionAuth');
+        if (attempt < maxAttempts) {
+            console.log(`auth.js: Retrying auth check, attempt ${attempt + 1}`);
+            await new Promise(resolve => setTimeout(resolve, 300));
+            return checkAuthStatus(attempt + 1, maxAttempts);
+        }
+        console.error('auth.js: Max auth check attempts reached');
+        return false;
+    }
 }
 
 document.addEventListener('click', async (e) => {
@@ -384,3 +383,5 @@ document.addEventListener('click', async (e) => {
         window.location.href = '/index.html';
     }
 });
+
+console.log('auth.js: Loaded and window.updateHeader defined');
