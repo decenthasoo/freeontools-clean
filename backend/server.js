@@ -70,7 +70,13 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   if (req.path.endsWith('.html')) {
     const newPath = req.path.slice(0, -5);
-    return res.redirect(301, newPath);
+    // Ensure the corresponding HTML file exists before redirecting
+    const htmlPath = path.join(staticPath, `${newPath}.html`);
+    if (fs.existsSync(htmlPath)) {
+      return res.redirect(301, newPath);
+    }
+    // If the file doesn't exist, pass to the next middleware
+    return next();
   }
   next();
 });
