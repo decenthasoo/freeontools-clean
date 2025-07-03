@@ -86,7 +86,12 @@ app.get('*.html', (req, res, next) => {
 });
 
 // 3. FIX FOR DOUBLE CONTENT
+let lastRequestUrl = '';
 app.use((req, res, next) => {
+  if (req.url === lastRequestUrl) {
+    return next();
+  }
+  lastRequestUrl = req.url;
   res.locals.contentSent = false;
   next();
 });
