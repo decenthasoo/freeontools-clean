@@ -241,12 +241,118 @@ if (config.googleClientId && config.googleClientSecret) {
   console.log('\x1b[32mGoogle OAuth initialized\x1b[0m');
 }
 
-// API Routes
-app.get('/api/health', (req, res) => {
-  res.json({
-    status: 'healthy',
-    environment: config.nodeEnv,
-    timestamp: new Date().toISOString()
+// Authentication Routes
+app.post('/api/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+    // Note: This assumes User model has a method to check password
+    // Replace with your actual password verification logic
+    const isMatch = password === user.password; // Placeholder; use bcrypt in production
+    if (!isMatch) {
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+    const token = jwt.sign({ userId: user._id, email: user
+
+.email }, config.jwtSecret, { expiresIn: '1h' });
+    req.session.userId = user._id;
+    res.json({ token, message: 'Login successful' });
+  } catch (error) {
+    console.error('auth.js: Login error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+app.post('/api/signup', async (req, res) => {
+  const { name, email, password } = req.body;
+  try {
+    let user = await User.findOne({ email });
+    if (user) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+    user = new User({ name, email, password }); // Add password hashing in production
+    await user.save();
+    const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
+    req.session.userId = user._id;
+    res.json({ token, message: 'Signup successful' });
+  } catch (error) {
+    console.error('auth.js: Signup error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+app.post('/api/forgot-password', async (req, res) => {
+  const { email } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: 'Email not found' });
+    }
+    const token = jwt.sign({ userId: user._id }, config.jwtSecret, { expiresIn: '1h' });
+    const resetLink = `https://www.freeontools.com/reset-password.html?token=${encodeURIComponent(token)}`;
+    await transporter.sendMail({
+      from: config.emailUser,
+      to: email,
+      subject: 'Password Reset Request',
+      html: `Click <a href="${resetLink}">here</a> to reset your password.`
+    });
+    res.json({ message: 'Password reset link sent to your email' });
+  } catch (error) {
+    console.error('auth.js: Forgot password error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+app.post('/api/validate-reset-token', async (req, res) => {
+  const { token } = req.body;
+  try {
+    const decoded = jwt.verify(token, config.jwtSecret);
+    const user = await User.findById(decoded.userId);
+    if (!user) {
+      return res.status(400).json({ valid: false, message: 'Invalid or expired token' });
+    }
+    res.json({ valid: true, message: 'Token is valid' });
+  } catch (error) {
+    console.error('auth.js: Validate reset token error:', error);
+    res.status(400).json({ valid: false, message: 'Invalid or expired token' });
+  }
+});
+
+app.post('/api/reset-password', async (req, res) => {
+  const { token, password } = req.body;
+  try {
+    const decoded = jwt.verify(token, config.jwtSecret);
+    const user = await User.findById(decoded.userId);
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid or expired token' });
+    }
+    user.password = password; // Add password hashing in production
+    await user.save();
+    res.json({ message: 'Password reset successful' });
+  } catch (error) {
+    console.error('auth.js: Reset password error:', error);
+    res.status(400).json({ message: 'Invalid or expired token' });
+  }
+});
+
+app.get('/auth/check', (req, res) => {
+  if (req.session.userId) {
+    res.json({ authenticated: true });
+  } else {
+    res.json({ authenticated: false });
+  }
+});
+
+app.post('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('auth.js: Logout error:', err);
+      return res.status(500).json({ message: 'Logout failed' });
+    }
+    res.json({ message: 'Logout successful' });
   });
 });
 
@@ -256,39 +362,39 @@ app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', {
     failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login'
-      : 'http://localhost:8080/login'
+      ? 'https://www.freeontools.com/login.html'
+      : 'http://localhost:8080/login.html'
   }),
   (req, res) => {
-    const token = jwt.sign({
-      userId: req.user._id,
-      email: req.user.email
-    }, config.jwtSecret, { expiresIn: '1h' });
-    res.redirect(`${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/profile?token=${token}`);
+    const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
+    res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
   }
 );
 
 // Google Auth Routes
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-);
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback',
   passport.authenticate('google', {
     failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login'
-      : 'http://localhost:8080/login'
+      ? 'https://www.freeontools.com/login.html'
+      : 'http://localhost:8080/login.html'
   }),
   (req, res) => {
-    const token = jwt.sign({
-      userId: req.user._id,
-      email: req.user.email
-    }, config.jwtSecret, { expiresIn: '1h' });
-    res.redirect(`${config.nodeEnv === 'production' ? 'https://www.freeontools.com' : 'http://localhost:8080'}/profile?token=${token}`);
+    const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
+    res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
   }
 );
 
-// Sample API Route
+// API Routes
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'healthy',
+    environment: config.nodeEnv,
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.get('/api/user/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id);

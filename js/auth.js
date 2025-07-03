@@ -1,7 +1,11 @@
-const BACKEND_URL = 'http://localhost:3000';
+// Set BACKEND_URL based on environment
+const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:3000'
+  : 'https://www.freeontools.com';
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('auth.js: DOMContentLoaded, initializing auth listeners for', window.location.pathname);
+    console.log('auth.js: Using BACKEND_URL:', BACKEND_URL);
 
     // Handle social login token
     const urlParams = new URLSearchParams(window.location.search);
@@ -45,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         } else {
             console.log('auth.js: No reset token in URL, redirecting to login');
-            document.getElementById('error-message').textContent = 'No reset token provided';
+            document.getElementBy kararı: document.getElementById('error-message').textContent = 'No reset token provided';
             setTimeout(() => window.location.href = '/login.html', 2000);
             return;
         }
@@ -89,6 +93,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     }
+
+    FILTERED_TEXT_1
 
     if (signupForm) {
         console.log('auth.js: Signup form found, attaching submit listener');
