@@ -58,20 +58,20 @@ app.set('trust proxy', 1);
 
 // 1. FIX FOR DOMAIN REDIRECTS (403 errors)
 app.use((req, res, next) => {
-  const host = req.get('host').replace(/:\d+$/, '');
+  const host = req.get('host').replace(/:\d+$/, '').toLowerCase();
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   const url = req.originalUrl;
 
   // Skip static files and API routes
-  if (url.includes('.') || url.startsWith('/api/') || url.startsWith('/auth/')) {
+  if (url.includes('.') && !url.endsWith('.html') || 
+      url.startsWith('/api/') || 
+      url.startsWith('/auth/')) {
     return next();
   }
 
   // Handle all domain variants
-  if (config.nodeEnv === 'production') {
-    if (host === 'freeontools.com' || protocol !== 'https') {
-      return res.redirect(301, `https://www.freeontools.com${url}`);
-    }
+  if (host === 'freeontools.com' || protocol !== 'https') {
+    return res.redirect(301, `https://www.freeontools.com${url}`);
   }
   next();
 });
@@ -289,19 +289,20 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// 4. MAIN ROUTING HANDLER - fixes content duplication
+// 4. MAIN ROUTING HANDLER - fixes all URL issues
 app.get('*', (req, res, next) => {
   // Skip if content already sent
   if (res.locals.contentSent) {
     return next();
   }
 
-  // Skip API routes and files with extensions
-  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/') || req.path.includes('.')) {
+  // Skip API routes and files with extensions (except .html)
+  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/') || 
+     (req.path.includes('.') && !req.path.endsWith('.html'))) {
     return next();
   }
 
-  // Handle .html redirects
+  // Handle .html redirects (301 permanent for SEO)
   if (req.path.endsWith('.html')) {
     const cleanPath = req.path.replace(/\.html$/, '');
     return res.redirect(301, cleanPath);
