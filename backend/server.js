@@ -41,42 +41,53 @@ console.log('Index.html path:', indexPath);
 console.log('Footer.html path:', footerPath);
 
 // Verify critical files exist
-if (!fs.existsSync(staticPath) || !fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
-  console.error('\x1b[31mERROR: Required files not found\x1b[0m');
+if (!fs.existsSync(staticPath)) {
+  console.error('\x1b[31mERROR: Static files directory not found at:', staticPath, '\x1b[0m');
+  process.exit(1);
+}
+if (!fs.existsSync(indexPath)) {
+  console.error('\x1b[31mERROR: Index.html not found\x1b[0m');
+  process.exit(1);
+}
+if (!fs.existsSync(footerPath)) {
+  console.error('\x1b[31mERROR: Footer.html not found\x1b[0m');
   process.exit(1);
 }
 
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Enhanced Redirect Middleware - Prevents loops
+// Enhanced Redirect Middleware - Handles all cases
 app.use((req, res, next) => {
-  const host = req.get('host');
+  const host = req.get('host').toLowerCase();
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
-  const path = req.url;
+  const originalUrl = req.originalUrl;
 
   // Skip redirect checks for static files and API routes
-  if (path.includes('.') || path.startsWith('/api/') || path.startsWith('/auth/')) {
+  if (originalUrl.includes('.') && !originalUrl.endsWith('.html') || 
+      originalUrl.startsWith('/api/') || 
+      originalUrl.startsWith('/auth/')) {
     return next();
   }
 
-  // Handle .html to clean URL redirect (only if direct request)
-  if (path.endsWith('.html') && !req.headers['x-redirect-source']) {
-    const cleanPath = path.replace(/\.html$/, '');
-    return res.redirect(301, `https://www.freeontools.com${cleanPath}`);
+  // Determine target URL
+  let targetUrl = null;
+
+  // Handle .html to clean URL redirect (301 permanent)
+  if (originalUrl.endsWith('.html')) {
+    targetUrl = `https://www.freeontools.com${originalUrl.replace(/\.html$/, '')}`;
+  }
+  // Handle naked domain or HTTP
+  else if (config.nodeEnv === 'production') {
+    if (host === 'freeontools.com' || protocol !== 'https') {
+      targetUrl = `https://www.freeontools.com${originalUrl}`;
+    }
   }
 
-  // Force HTTPS and www in production
-  if (config.nodeEnv === 'production') {
-    // Skip if already correct
-    if (host === 'www.freeontools.com' && protocol === 'https') {
-      return next();
-    }
-    
-    // Handle redirect to canonical URL
-    if (host !== 'www.freeontools.com' || protocol !== 'https') {
-      return res.redirect(301, `https://www.freeontools.com${path}`);
-    }
+  // Perform redirect if needed
+  if (targetUrl && targetUrl !== `https://${host}${originalUrl}`) {
+    console.log(`Redirecting: ${protocol}://${host}${originalUrl} → ${targetUrl}`);
+    return res.redirect(301, targetUrl);
   }
 
   next();
@@ -116,6 +127,8 @@ app.use(express.static(staticPath, {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-store');
+    } else {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     }
   }
 }));
@@ -128,7 +141,7 @@ app.use(session({
   cookie: {
     secure: config.nodeEnv === 'production',
     httpOnly: true,
-    sameSite: 'lax',
+    sameSite: config.nodeEnv === 'production' ? 'lax' : 'none',
     maxAge: 24 * 60 * 60 * 1000
   }
 }));
@@ -316,8 +329,6 @@ app.get('*', (req, res, next) => {
   // Check if specific HTML page exists
   const htmlPath = path.join(staticPath, `${req.path}.html`);
   if (fs.existsSync(htmlPath)) {
-    // Add header to prevent redirect loops
-    res.set('x-redirect-source', 'server');
     return res.sendFile(htmlPath);
   }
 
