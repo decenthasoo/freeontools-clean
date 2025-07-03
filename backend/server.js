@@ -65,6 +65,20 @@ app.use((req, res, next) => {
   }
   next();
 });
+// Remove .html extension from URLs (301 redirect)
+app.use((req, res, next) => {
+  // Skip API and auth routes
+  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
+    return next();
+  }
+  
+  // Remove .html extension
+  if (req.path.endsWith('.html')) {
+    const newPath = req.path.slice(0, -5); // Remove last 5 characters (.html)
+    return res.redirect(301, newPath);
+  }
+  next();
+});
 
 // CORS Configuration
 app.use(cors({
