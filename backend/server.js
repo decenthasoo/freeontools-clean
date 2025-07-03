@@ -30,108 +30,80 @@ const config = {
 };
 
 // Path configuration
-const staticPath = path.join(__dirname, '../');
-const indexPath = path.join(staticPath, 'Index.html');
-const footerPath = path.join(staticPath, 'Footer.html');
+const staticPath = path.resolve(__dirname, '../');
+const indexPath = path.resolve(staticPath, 'Index.html');
+const footerPath = path.resolve(staticPath, 'Footer.html');
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
 console.log('Static files path:', staticPath);
-console.log('Index.html path:', indexPath);
-console.log('Footer.html path:', footerPath);
+console.log('Directory contents:', fs.readdirSync(staticPath));
 
 // Verify critical files exist
 if (!fs.existsSync(staticPath)) {
-  console.error('\x1b[31mERROR: Static files directory not found at:', staticPath, '\x1b[0m');
+  console.error('\x1b[31mERROR: Static files directory not found\x1b[0m');
   process.exit(1);
 }
 if (!fs.existsSync(indexPath)) {
-  console.error('\x1b[31mERROR: Index.html not found\x1b[0m');
+  console.error('\x1b[31mERROR: Index.html not found at:', indexPath, '\x1b[0m');
   process.exit(1);
 }
 if (!fs.existsSync(footerPath)) {
-  console.error('\x1b[31mERROR: Footer.html not found\x1b[0m');
+  console.error('\x1b[31mERROR: Footer.html not found at:', footerPath, '\x1b[0m');
   process.exit(1);
 }
 
 // Middleware Setup
 app.set('trust proxy', 1);
 
-// Enhanced Redirect Middleware - Handles all cases
+// 1. FIX FOR DOMAIN REDIRECTS (403 errors)
 app.use((req, res, next) => {
-  const host = req.get('host').toLowerCase();
+  const host = req.get('host').replace(/:\d+$/, '');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
-  const originalUrl = req.originalUrl;
+  const url = req.originalUrl;
 
-  // Skip redirect checks for static files and API routes
-  if (originalUrl.includes('.') && !originalUrl.endsWith('.html') || 
-      originalUrl.startsWith('/api/') || 
-      originalUrl.startsWith('/auth/')) {
+  // Skip static files and API routes
+  if (url.includes('.') || url.startsWith('/api/') || url.startsWith('/auth/')) {
     return next();
   }
 
-  // Determine target URL
-  let targetUrl = null;
-
-  // Handle .html to clean URL redirect (301 permanent)
-  if (originalUrl.endsWith('.html')) {
-    targetUrl = `https://www.freeontools.com${originalUrl.replace(/\.html$/, '')}`;
-  }
-  // Handle naked domain or HTTP
-  else if (config.nodeEnv === 'production') {
+  // Handle all domain variants
+  if (config.nodeEnv === 'production') {
     if (host === 'freeontools.com' || protocol !== 'https') {
-      targetUrl = `https://www.freeontools.com${originalUrl}`;
+      return res.redirect(301, `https://www.freeontools.com${url}`);
     }
   }
-
-  // Perform redirect if needed
-  if (targetUrl && targetUrl !== `https://${host}${originalUrl}`) {
-    console.log(`Redirecting: ${protocol}://${host}${originalUrl} → ${targetUrl}`);
-    return res.redirect(301, targetUrl);
-  }
-
   next();
 });
 
-// CORS Configuration
-app.use(cors({
-  origin: [
-    'https://www.freeontools.com',
-    'https://freeontools.com',
-    'http://localhost:8080'
-  ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
-}));
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Fix for MIME type and case sensitivity issues
+// 2. FIX FOR DOUBLE CONTENT
 app.use((req, res, next) => {
-  // Fix JS MIME types
+  res.locals.contentSent = false;
+  next();
+});
+
+// Fix MIME types for JS files
+app.use((req, res, next) => {
   if (req.path.endsWith('.js')) {
     res.type('application/javascript');
   }
-  // Case-insensitive route for Footer.html
-  if (req.path.toLowerCase() === '/footer.html') {
-    return res.sendFile(footerPath);
-  }
   next();
 });
 
-// Static File Serving with proper headers
+// Static files with proper caching
 app.use(express.static(staticPath, {
-  maxAge: '1y',
   setHeaders: (res, filePath) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-store');
-    } else {
-      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     }
   }
 }));
+
+// 3. FIX FOR FOOTER - handle both cases
+app.get(['/footer.html', '/Footer.html'], (req, res) => {
+  res.sendFile(footerPath);
+});
 
 // Session Configuration
 app.use(session({
@@ -317,22 +289,33 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// MAIN ROUTING SOLUTION - SEO-friendly with redirect prevention
+// 4. MAIN ROUTING HANDLER - fixes content duplication
 app.get('*', (req, res, next) => {
-  // Skip API/auth routes and files with extensions
-  if (req.path.startsWith('/api/') || 
-      req.path.startsWith('/auth/') || 
-      (req.path.includes('.') && !req.path.endsWith('.html'))) {
+  // Skip if content already sent
+  if (res.locals.contentSent) {
     return next();
   }
 
-  // Check if specific HTML page exists
-  const htmlPath = path.join(staticPath, `${req.path}.html`);
-  if (fs.existsSync(htmlPath)) {
-    return res.sendFile(htmlPath);
+  // Skip API routes and files with extensions
+  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/') || req.path.includes('.')) {
+    return next();
   }
 
-  // Fallback to Index.html for all other routes
+  // Handle .html redirects
+  if (req.path.endsWith('.html')) {
+    const cleanPath = req.path.replace(/\.html$/, '');
+    return res.redirect(301, cleanPath);
+  }
+
+  // Check if specific page exists
+  const pagePath = path.join(staticPath, `${req.path}.html`);
+  if (fs.existsSync(pagePath)) {
+    res.locals.contentSent = true;
+    return res.sendFile(pagePath);
+  }
+
+  // Only send Index.html if no specific page found
+  res.locals.contentSent = true;
   res.sendFile(indexPath);
 });
 
@@ -342,22 +325,12 @@ app.use((err, req, res, next) => {
   res.status(500).send('Internal Server Error');
 });
 
-// Server Start
-const server = app.listen(PORT, () => {
-  console.log('\n\x1b[36m=== Server Successfully Started ===\x1b[0m');
-  console.log(`\x1b[32mPort:\x1b[0m ${PORT}`);
-  console.log(`\x1b[32mEnvironment:\x1b[0m ${config.nodeEnv}`);
-  console.log(`\x1b[32mFrontend URL:\x1b[0m https://www.freeontools.com`);
-  console.log('\x1b[36m=== Ready for Connections ===\x1b[0m\n');
-});
-
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('\x1b[33mSIGTERM received. Shutting down gracefully...\x1b[0m');
-  server.close(() => {
-    mongoose.connection.close().then(() => {
-      console.log('\x1b[32mServer stopped\x1b[0m');
-      process.exit(0);
-    });
-  });
+// Start server
+app.listen(PORT, () => {
+  console.log(`\nServer running on port ${PORT}`);
+  console.log('Production URLs:');
+  console.log('- https://www.freeontools.com (primary)');
+  console.log('- http://freeontools.com → redirects to https://www.freeontools.com');
+  console.log('- https://freeontools.com → redirects to https://www.freeontools.com');
+  console.log('\nReady to handle requests');
 });
