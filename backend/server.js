@@ -11,7 +11,7 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 const fs = require('fs');
 const User = require('./models/User');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const app = express();
 const PORT = process.env.PORT || 10000;
@@ -22,13 +22,19 @@ const config = {
   sessionSecret: process.env.SESSION_SECRET || 'default-session-secret',
   mongoURI: process.env.MONGO_URI || 'mongodb://localhost:27017/freeontools',
   emailUser: process.env.EMAIL_USER || 'onlyseotools@gmail.com',
-  emailPass: process.env.EMAIL_PASS || 'your-email-password',
+  emailPass: process.env.EMAIL_PASS,
   nodeEnv: process.env.NODE_ENV || 'production',
   facebookAppId: process.env.FACEBOOK_APP_ID,
   facebookAppSecret: process.env.FACEBOOK_APP_SECRET,
   googleClientId: process.env.GOOGLE_CLIENT_ID,
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
+
+// Validate email configuration
+if (!config.emailPass) {
+  console.error('\x1b[31mERROR: EMAIL_PASS not set in environment variables\x1b[0m');
+  process.exit(1);
+}
 
 // Path configuration - Points to freeontools-clean root
 const staticPath = path.join(__dirname, '../'); // Points to C:\...\freeontools-clean
@@ -168,6 +174,32 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// Verify SMTP connection
+transporter.verify((error, success) => {
+  if (error) {
+    console.error('\x1b[31mnodemailer: SMTP connection failed:\x1b[0m', error);
+  } else {
+    console.log('\x1b[32mnodemailer: SMTP connection successful\x1b[0m');
+  }
+});
+
+// Temporary test route for nodemailer
+app.get('/api/test-email', async (req, res) => {
+  try {
+    await transporter.sendMail({
+      from: `"FreeOnTools" <${config.emailUser}>`,
+      to: 'test@example.com',
+      subject: 'Test Email',
+      text: 'This is a test email to verify nodemailer configuration.'
+    });
+    console.log('auth.js: Test email sent successfully');
+    res.json({ message: 'Test email sent' });
+  } catch (error) {
+    console.error('auth.js: Test email error:', error);
+    res.status(500).json({ message: 'Test email failed' });
+  }
+});
+
 // Facebook OAuth Strategy
 if (config.facebookAppId && config.facebookAppSecret) {
   passport.use(new FacebookStrategy({
@@ -244,67 +276,80 @@ if (config.googleClientId && config.googleClientSecret) {
 
 // Authentication Routes
 app.post('/api/login', async (req, res) => {
- const { email, password } = req.body;
- try {
- const user = await User.findOne({ email });
- if (!user) {
- return res.status(401).json({ message: 'Invalid email or password' });
- }
- const isMatch = await bcrypt.compare(password, user.password);
- if (!isMatch) {
- return res.status(401).json({ message: 'Invalid email or password' });
- }
- const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
- req.session.userId = user._id;
- res.json({ token, message: 'Login successful' });
- } catch (error) {
- console.error('auth.js: Login error:', error);
- res.status(500).json({ message: 'Server error' });
- }
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email }).select('+password');
+    if (!user) {
+      console.log(`auth.js: Login attempt for non-existent email: ${email}`);
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+    if (!user.password) {
+      console.log(`auth.js: Login error: No password stored for user ${email} (likely social login)`);
+      return res.status(400).json({ 
+        message: 'This account uses social login (Google/Facebook). Please use the appropriate login method or reset your password.' 
+      });
+    }
+    const isMatch = await user.comparePassword(password); // Use User model's method
+    if (!isMatch) {
+      console.log(`auth.js: Login failed for ${email}: Incorrect password`);
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+    const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
+    req.session.userId = user._id;
+    user.lastLogin = new Date();
+    await user.save();
+    console.log(`auth.js: Login successful for ${email}`);
+    res.json({ token, message: 'Login successful' });
+  } catch (error) {
+    console.error('auth.js: Login error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
 });
 
 app.post('/api/signup', async (req, res) => {
- const { name, email, password } = req.body;
- try {
- // Validate password length
- if (password.length < 8) {
- return res.status(400).json({ message: 'Password must be at least 8 characters long' });
- }
- let user = await User.findOne({ email });
- if (user) {
- return res.status(400).json({ message: 'Email already exists' });
- }
- user = new User({ name, email, password: await bcrypt.hash(password, 10) }); // Use bcrypt
- await user.save();
- const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
- req.session.userId = user._id;
- res.json({ token, message: 'Signup successful' });
- } catch (error) {
- console.error('auth.js: Signup error:', error);
- res.status(500).json({ message: 'Server error' });
- }
+  const { name, email, password } = req.body;
+  try {
+    // Validate password length
+    if (password.length < 8) {
+      return res.status(400).json({ message: 'Password must be at least 8 characters long' });
+    }
+    let user = await User.findOne({ email });
+    if (user) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+    user = new User({ name, email, password }); // Password hashed by pre('save') hook
+    await user.save();
+    const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
+    req.session.userId = user._id;
+    res.json({ token, message: 'Signup successful' });
+  } catch (error) {
+    console.error('auth.js: Signup error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
 });
 
 app.post('/api/forgot-password', async (req, res) => {
-const { email } = req.body;
-try {
-const user = await User.findOne({ email });
-if (!user) {
-return res.status(404).json({ message: 'Email not found' });
-}
-const token = jwt.sign({ userId: user._id }, config.jwtSecret, { expiresIn: '1h' });
-const resetLink = `https://www.freeontools.com/reset-password.html?token=${encodeURIComponent(token)}`;
-await transporter.sendMail({
-from: config.emailUser,
-to: email,
-subject: 'Password Reset Request',
-html: `Click <a href="${resetLink}">here</a> to reset your password.`
-});
-res.json({ message: 'Password reset link sent to your email' });
-} catch (error) {
-console.error('auth.js: Forgot password error:', error);
-res.status(500).json({ message: 'Failed to send reset link. Please try again.' });
-}
+  const { email } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      console.log(`auth.js: Forgot password attempt for non-existent email: ${email}`);
+      return res.status(404).json({ message: 'Email not found' });
+    }
+    const token = jwt.sign({ userId: user._id }, config.jwtSecret, { expiresIn: '1h' });
+    const resetLink = `https://www.freeontools.com/reset-password.html?token=${encodeURIComponent(token)}`;
+    await transporter.sendMail({
+      from: `"FreeOnTools" <${config.emailUser}>`,
+      to: email,
+      subject: 'Password Reset Request',
+      html: `Click <a href="${resetLink}">here</a> to reset your password. This link expires in 1 hour.`
+    });
+    console.log(`auth.js: Password reset email sent to ${email}`);
+    res.json({ message: 'Password reset link sent to your email' });
+  } catch (error) {
+    console.error('auth.js: Forgot password error:', error);
+    res.status(500).json({ message: 'Failed to send reset link. Please try again.' });
+  }
 });
 
 app.post('/api/validate-reset-token', async (req, res) => {
@@ -313,6 +358,7 @@ app.post('/api/validate-reset-token', async (req, res) => {
     const decoded = jwt.verify(token, config.jwtSecret);
     const user = await User.findById(decoded.userId);
     if (!user) {
+      console.log(`auth.js: Invalid reset token for user ID: ${decoded.userId}`);
       return res.status(400).json({ valid: false, message: 'Invalid or expired token' });
     }
     res.json({ valid: true, message: 'Token is valid' });
@@ -326,12 +372,18 @@ app.post('/api/reset-password', async (req, res) => {
   const { token, password } = req.body;
   try {
     const decoded = jwt.verify(token, config.jwtSecret);
-    const user = await User.findById(decoded.userId);
+    const user = await User.findById(decoded.userId).select('+password');
     if (!user) {
+      console.log(`auth.js: Reset password failed: User not found for ID ${decoded.userId}`);
       return res.status(400).json({ message: 'Invalid or expired token' });
     }
-    user.password = password; // Add password hashing in production
+    if (password.length < 8) {
+      console.log(`auth.js: Reset password failed: Password too short for user ${user.email}`);
+      return res.status(400).json({ message: 'Password must be at least 8 characters long' });
+    }
+    user.password = password; // Will be hashed by pre('save') hook
     await user.save();
+    console.log(`auth.js: Password reset successful for ${user.email}`);
     res.json({ message: 'Password reset successful' });
   } catch (error) {
     console.error('auth.js: Reset password error:', error);

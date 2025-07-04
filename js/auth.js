@@ -62,37 +62,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     const errorMessage = document.getElementById('error-message');
     const successMessage = document.getElementById('success-message');
 
-    if (loginForm) {
-        console.log('auth.js: Login form found, attaching submit listener');
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            console.log('auth.js: Login form submitted for email:', email);
-            try {
-                const response = await fetch(`${BACKEND_URL}/api/login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password }),
-                });
-                console.log('auth.js: Login response status:', response.status);
-                const data = await response.json();
-                console.log('auth.js: Login response data:', data);
-                if (response.ok) {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('sessionAuth', 'true');
-                    console.log('auth.js: Login successful, redirecting to profile');
-                    window.location.href = '/profile.html';
-                } else {
-                    errorMessage.textContent = data.message || 'Login failed';
-                    console.error('auth.js: Login error:', data.message);
-                }
-            } catch (error) {
-                errorMessage.textContent = 'An error occurred. Please try again.';
-                console.error('auth.js: Login fetch error:', error);
+   if (loginForm) {
+    console.log('auth.js: Login form found, attaching submit listener');
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        console.log('auth.js: Login form submitted for email:', email);
+        try {
+            const response = await fetch(`${BACKEND_URL}/api/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password }),
+            });
+            console.log('auth.js: Login response status:', response.status);
+            const data = await response.json();
+            console.log('auth.js: Login response data:', data);
+            if (response.ok) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('sessionAuth', 'true');
+                console.log('auth.js: Login successful, redirecting to profile');
+                window.location.href = '/profile.html';
+            } else {
+                errorMessage.textContent = data.message || 'Login failed';
+                console.error('auth.js: Login error:', data.message);
             }
-        });
-    }
+        } catch (error) {
+            errorMessage.textContent = 'An error occurred. Please try again.';
+            console.error('auth.js: Login fetch error:', error);
+        }
+    });
+}
 
    if (signupForm) {
  console.log('auth.js: Signup form found, attaching submit listener');
