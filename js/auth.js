@@ -380,7 +380,7 @@ document.addEventListener('click', async (e) => {
             console.error('auth.js: Logout error:', error);
         }
         window.updateHeader();
-        window.location.href = 'https://www.freeontools.com';
+        window.location.href = '/index.html';
     }
 });
 
