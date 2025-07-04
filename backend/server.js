@@ -11,6 +11,7 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 const fs = require('fs');
 const User = require('./models/User');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const PORT = process.env.PORT || 10000;
@@ -243,67 +244,67 @@ if (config.googleClientId && config.googleClientSecret) {
 
 // Authentication Routes
 app.post('/api/login', async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(401).json({ message: 'Invalid email or password' });
-    }
-    // Note: This assumes User model has a method to check password
-    // Replace with your actual password verification logic
-    const isMatch = password === user.password; // Placeholder; use bcrypt in production
-    if (!isMatch) {
-      return res.status(401).json({ message: 'Invalid email or password' });
-    }
-    const token = jwt.sign({ userId: user._id, email: user
-
-.email }, config.jwtSecret, { expiresIn: '1h' });
-    req.session.userId = user._id;
-    res.json({ token, message: 'Login successful' });
-  } catch (error) {
-    console.error('auth.js: Login error:', error);
-    res.status(500).json({ message: 'Server error' });
-  }
+ const { email, password } = req.body;
+ try {
+ const user = await User.findOne({ email });
+ if (!user) {
+ return res.status(401).json({ message: 'Invalid email or password' });
+ }
+ const isMatch = await bcrypt.compare(password, user.password);
+ if (!isMatch) {
+ return res.status(401).json({ message: 'Invalid email or password' });
+ }
+ const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
+ req.session.userId = user._id;
+ res.json({ token, message: 'Login successful' });
+ } catch (error) {
+ console.error('auth.js: Login error:', error);
+ res.status(500).json({ message: 'Server error' });
+ }
 });
 
 app.post('/api/signup', async (req, res) => {
-  const { name, email, password } = req.body;
-  try {
-    let user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({ message: 'Email already exists' });
-    }
-    user = new User({ name, email, password }); // Add password hashing in production
-    await user.save();
-    const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
-    req.session.userId = user._id;
-    res.json({ token, message: 'Signup successful' });
-  } catch (error) {
-    console.error('auth.js: Signup error:', error);
-    res.status(500).json({ message: 'Server error' });
-  }
+ const { name, email, password } = req.body;
+ try {
+ // Validate password length
+ if (password.length < 8) {
+ return res.status(400).json({ message: 'Password must be at least 8 characters long' });
+ }
+ let user = await User.findOne({ email });
+ if (user) {
+ return res.status(400).json({ message: 'Email already exists' });
+ }
+ user = new User({ name, email, password: await bcrypt.hash(password, 10) }); // Use bcrypt
+ await user.save();
+ const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
+ req.session.userId = user._id;
+ res.json({ token, message: 'Signup successful' });
+ } catch (error) {
+ console.error('auth.js: Signup error:', error);
+ res.status(500).json({ message: 'Server error' });
+ }
 });
 
 app.post('/api/forgot-password', async (req, res) => {
-  const { email } = req.body;
-  try {
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(404).json({ message: 'Email not found' });
-    }
-    const token = jwt.sign({ userId: user._id }, config.jwtSecret, { expiresIn: '1h' });
-    const resetLink = `https://www.freeontools.com/reset-password.html?token=${encodeURIComponent(token)}`;
-    await transporter.sendMail({
-      from: config.emailUser,
-      to: email,
-      subject: 'Password Reset Request',
-      html: `Click <a href="${resetLink}">here</a> to reset your password.`
-    });
-    res.json({ message: 'Password reset link sent to your email' });
-  } catch (error) {
-    console.error('auth.js: Forgot password error:', error);
-    res.status(500).json({ message: 'Server error' });
-  }
+const { email } = req.body;
+try {
+const user = await User.findOne({ email });
+if (!user) {
+return res.status(404).json({ message: 'Email not found' });
+}
+const token = jwt.sign({ userId: user._id }, config.jwtSecret, { expiresIn: '1h' });
+const resetLink = `https://www.freeontools.com/reset-password.html?token=${encodeURIComponent(token)}`;
+await transporter.sendMail({
+from: config.emailUser,
+to: email,
+subject: 'Password Reset Request',
+html: `Click <a href="${resetLink}">here</a> to reset your password.`
+});
+res.json({ message: 'Password reset link sent to your email' });
+} catch (error) {
+console.error('auth.js: Forgot password error:', error);
+res.status(500).json({ message: 'Failed to send reset link. Please try again.' });
+}
 });
 
 app.post('/api/validate-reset-token', async (req, res) => {

@@ -94,38 +94,38 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    if (signupForm) {
-        console.log('auth.js: Signup form found, attaching submit listener');
-        signupForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            console.log('auth.js: Signup form submitted for email:', email);
-            try {
-                const response = await fetch(`${BACKEND_URL}/api/signup`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, password }),
-                });
-                console.log('auth.js: Signup response status:', response.status);
-                const data = await response.json();
-                console.log('auth.js: Signup response data:', data);
-                if (response.ok) {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('sessionAuth', 'true');
-                    console.log('auth.js: Signup successful, redirecting to profile');
-                    window.location.href = '/profile.html';
-                } else {
-                    errorMessage.textContent = data.message || 'Signup failed';
-                    console.error('auth.js: Signup error:', data.message);
-                }
-            } catch (error) {
-                errorMessage.textContent = 'An error occurred. Please try again.';
-                console.error('auth.js: Signup fetch error:', error);
-            }
-        });
-    }
+   if (signupForm) {
+ console.log('auth.js: Signup form found, attaching submit listener');
+ signupForm.addEventListener('submit', async (e) => {
+ e.preventDefault();
+ const name = document.getElementById('name').value;
+ const email = document.getElementById('email').value;
+ const password = document.getElementById('password').value;
+ console.log('auth.js: Signup form submitted for email:', email);
+ try {
+ const response = await fetch(`${BACKEND_URL}/api/signup`, {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ name, email, password }),
+ });
+ console.log('auth.js: Signup response status:', response.status);
+ const data = await response.json();
+ console.log('auth.js: Signup response data:', data);
+ if (response.ok) {
+ localStorage.setItem('token', data.token);
+ localStorage.setItem('sessionAuth', 'true');
+ console.log('auth.js: Signup successful, redirecting to profile');
+ window.location.href = '/profile.html';
+ } else {
+ errorMessage.textContent = data.message || 'Signup failed';
+ console.error('auth.js: Signup error:', data.message);
+ }
+ } catch (error) {
+ errorMessage.textContent = 'An error occurred. Please try again.';
+ console.error('auth.js: Signup fetch error:', error);
+ }
+ });
+}
 
     if (forgotPasswordForm) {
         console.log('auth.js: Forgot password form found, attaching submit listener');
@@ -380,7 +380,7 @@ document.addEventListener('click', async (e) => {
             console.error('auth.js: Logout error:', error);
         }
         window.updateHeader();
-        window.location.href = '/index.html';
+        window.location.href = '/'; // Redirect to homepage
     }
 });
 
