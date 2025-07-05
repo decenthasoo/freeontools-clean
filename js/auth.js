@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log('auth.js: On reset-password.html, clearing auth tokens');
         localStorage.removeItem('token');
         localStorage.removeItem('sessionAuth');
+        console.log('auth.js: Current URL:', window.location.href);
+        console.log('auth.js: URL query string:', window.location.search);
         const resetToken = decodeURIComponent(urlParams.get('token') || '');
         console.log('auth.js: Reset token from URL:', resetToken);
         if (resetToken) {
@@ -175,12 +177,37 @@ document.addEventListener('DOMContentLoaded', async () => {
             e.preventDefault();
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
+            console.log('auth.js: Current URL:', window.location.href);
+            console.log('auth.js: URL query string:', window.location.search);
             const resetToken = decodeURIComponent(new URLSearchParams(window.location.search).get('token') || '');
             console.log('auth.js: Reset password submitted with token:', resetToken);
             if (!resetToken) {
                 console.log('auth.js: Reset password failed: No token provided in URL');
                 errorMessage.textContent = 'No reset token provided. Please use the link from your email.';
                 successMessage.textContent = '';
+                return;
+            }
+            // Revalidate token before submission
+            try {
+                const validateResponse = await fetch(`${BACKEND_URL}/api/validate-reset-token`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ token: resetToken }),
+                });
+                const validateData = await validateResponse.json();
+                console.log('auth.js: Pre-submission token validation response:', validateData);
+                if (!validateData.valid) {
+                    console.log('auth.js: Reset password failed: Invalid or expired token');
+                    errorMessage.textContent = validateData.message || 'Invalid or expired token';
+                    successMessage.textContent = '';
+                    setTimeout(() => window.location.href = '/login.html', 2000);
+                    return;
+                }
+            } catch (error) {
+                console.error('auth.js: Error revalidating reset token:', error);
+                errorMessage.textContent = 'Error validating token. Please try again.';
+                successMessage.textContent = '';
+                setTimeout(() => window.location.href = '/login.html', 2000);
                 return;
             }
             if (password !== confirmPassword) {
