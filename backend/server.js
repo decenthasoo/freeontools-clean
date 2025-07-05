@@ -30,11 +30,11 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Validate email configuration
-if (!config.emailPass) {
-  console.error('\x1b[31mERROR: EMAIL_PASS not set in environment variables\x1b[0m');
-  process.exit(1);
-}
+// Temporarily comment out to prevent server crash during debugging
+// if (!config.emailPass) {
+//   console.error('\x1b[31mERROR: EMAIL_PASS not set in environment variables\x1b[0m');
+//   process.exit(1);
+// }
 
 // Path configuration - Points to freeontools-clean root
 const staticPath = path.join(__dirname, '../'); // Points to C:\...\freeontools-clean
@@ -414,9 +414,9 @@ app.post('/logout', (req, res) => {
 });
 
 // Facebook Auth Routes
-app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get('/api/auth/facebook', passport.authenticate('facebook'));
 
-app.get('/auth/facebook/callback',
+app.get('/api/auth/facebook/callback',
   passport.authenticate('facebook', {
     failureRedirect: config.nodeEnv === 'production'
       ? 'https://www.freeontools.com/login.html'
@@ -429,9 +429,9 @@ app.get('/auth/facebook/callback',
 );
 
 // Google Auth Routes
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-app.get('/auth/google/callback',
+app.get('/api/auth/google/callback',
   passport.authenticate('google', {
     failureRedirect: config.nodeEnv === 'production'
       ? 'https://www.freeontools.com/login.html'
