@@ -21,7 +21,7 @@ const config = {
   jwtSecret: process.env.JWT_SECRET || 'default-secret-key',
   sessionSecret: process.env.SESSION_SECRET || 'default-session-secret',
   mongoURI: process.env.MONGO_URI || 'mongodb://localhost:27017/freeontools',
-  emailUser: process.env.EMAIL_USER || 'onlyseotools@gmail.com',
+  emailUser: process.env.EMAIL_USER || 'decenthasoo@gmail.com',
   emailPass: process.env.EMAIL_PASS,
   nodeEnv: process.env.NODE_ENV || 'production',
   facebookAppId: process.env.FACEBOOK_APP_ID,
@@ -288,6 +288,10 @@ app.post('/api/login', async (req, res) => {
       return res.status(400).json({ 
         message: 'This account uses social login (Google/Facebook). Please use the appropriate login method or reset your password.' 
       });
+    }
+    if (!user.isVerified) {
+      console.log(`auth.js: Login failed for ${email}: Account not verified`);
+      return res.status(403).json({ message: 'Please verify your email before logging in.' });
     }
     const isMatch = await user.comparePassword(password); // Use User model's method
     if (!isMatch) {
