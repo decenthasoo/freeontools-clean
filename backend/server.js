@@ -239,8 +239,13 @@ if (config.googleClientId && config.googleClientSecret) {
     callbackURL: config.nodeEnv === 'production'
       ? 'https://www.freeontools.com/api/auth/google/callback'
       : 'http://localhost:3000/api/auth/google/callback',
-    scope: ['profile', 'email']
+    scope: ['profile', 'email'],
+    proxy: true // Added to handle Render's proxy
   }, async (accessToken, refreshToken, profile, done) => {
+    console.log('auth.js: Google OAuth callback received, profile:', profile.id);
+    console.log('auth.js: Google OAuth redirect URI sent:', config.nodeEnv === 'production'
+      ? 'https://www.freeontools.com/api/auth/google/callback'
+      : 'http://localhost:3000/api/auth/google/callback');
     try {
       let user = await User.findOne({
         $or: [
@@ -262,6 +267,7 @@ if (config.googleClientId && config.googleClientSecret) {
       }
       done(null, user);
     } catch (err) {
+      console.error('auth.js: Google OAuth error:', err);
       done(err);
     }
   }));
