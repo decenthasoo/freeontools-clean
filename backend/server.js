@@ -195,8 +195,8 @@ app.get('/api/test-email', async (req, res) => {
     console.log('auth.js: Test email sent successfully');
     res.json({ message: 'Test email sent' });
   } catch (error) {
-    console.error('auth.js: Test email error:', error);
-    res.status(500).json({ message: 'Test email failed' });
+    console.error('auth.js: Test email error:', error.message, error.stack);
+    res.status(500).json({ message: 'Test email failed', error: error.message });
   }
 });
 
@@ -206,8 +206,8 @@ if (config.facebookAppId && config.facebookAppSecret) {
     clientID: config.facebookAppId,
     clientSecret: config.facebookAppSecret,
     callbackURL: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/auth/facebook/callback'
-      : 'http://localhost:3000/auth/facebook/callback',
+      ? 'https://www.freeontools.com/api/auth/facebook/callback'
+      : 'http://localhost:3000/api/auth/facebook/callback',
     profileFields: ['id', 'emails', 'name', 'displayName']
   }, async (accessToken, refreshToken, profile, done) => {
     try {
@@ -243,8 +243,8 @@ if (config.googleClientId && config.googleClientSecret) {
     clientID: config.googleClientId,
     clientSecret: config.googleClientSecret,
     callbackURL: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/auth/google/callback'
-      : 'http://localhost:3000/auth/google/callback',
+      ? 'https://www.freeontools.com/api/auth/google/callback'
+      : 'http://localhost:3000/api/auth/google/callback',
     scope: ['profile', 'email']
   }, async (accessToken, refreshToken, profile, done) => {
     try {
@@ -321,7 +321,7 @@ app.post('/api/signup', async (req, res) => {
     if (user) {
       return res.status(400).json({ message: 'Email already exists' });
     }
-    user = new User({ name, email, password }); // Password hashed by pre('save') hook
+    user = new User({ name, email, password, isVerified: true }); // Set isVerified: true
     await user.save();
     const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
     req.session.userId = user._id;
@@ -351,8 +351,8 @@ app.post('/api/forgot-password', async (req, res) => {
     console.log(`auth.js: Password reset email sent to ${email}`);
     res.json({ message: 'Password reset link sent to your email' });
   } catch (error) {
-    console.error('auth.js: Forgot password error:', error);
-    res.status(500).json({ message: 'Failed to send reset link. Please try again.' });
+    console.error('auth.js: Forgot password error:', error.message, error.stack);
+    res.status(500).json({ message: 'Failed to send reset link. Please try again.', error: error.message });
   }
 });
 
@@ -416,32 +416,26 @@ app.post('/logout', (req, res) => {
 // Facebook Auth Routes
 app.get('/api/auth/facebook', passport.authenticate('facebook'));
 
-app.get('/api/auth/facebook/callback',
-  passport.authenticate('facebook', {
-    failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login.html'
-      : 'http://localhost:8080/login.html'
-  }),
-  (req, res) => {
-    const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
-    res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
-  }
-);
+app.get('/api/auth/facebook/callback', passport.authenticate('facebook', {
+  failureRedirect: config.nodeEnv === 'production'
+    ? 'https://www.freeontools.com/login.html'
+    : 'http://localhost:8080/login.html'
+}), (req, res) => {
+  const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
+  res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
+});
 
 // Google Auth Routes
 app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-app.get('/api/auth/google/callback',
-  passport.authenticate('google', {
-    failureRedirect: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/login.html'
-      : 'http://localhost:8080/login.html'
-  }),
-  (req, res) => {
-    const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
-    res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
-  }
-);
+app.get('/api/auth/google/callback', passport.authenticate('google', {
+  failureRedirect: config.nodeEnv === 'production'
+    ? 'https://www.freeontools.com/login.html'
+    : 'http://localhost:8080/login.html'
+}), (req, res) => {
+  const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
+  res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
+});
 
 // API Routes
 app.get('/api/health', (req, res) => {
