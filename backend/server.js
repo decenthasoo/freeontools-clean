@@ -183,23 +183,6 @@ transporter.verify((error, success) => {
   }
 });
 
-// Temporary test route for nodemailer
-app.get('/api/test-email', async (req, res) => {
-  try {
-    await transporter.sendMail({
-      from: `"FreeOnTools" <${config.emailUser}>`,
-      to: 'test@example.com',
-      subject: 'Test Email',
-      text: 'This is a test email to verify nodemailer configuration.'
-    });
-    console.log('auth.js: Test email sent successfully');
-    res.json({ message: 'Test email sent' });
-  } catch (error) {
-    console.error('auth.js: Test email error:', error.message, error.stack);
-    res.status(500).json({ message: 'Test email failed', error: error.message });
-  }
-});
-
 // Facebook OAuth Strategy
 if (config.facebookAppId && config.facebookAppSecret) {
   passport.use(new FacebookStrategy({
