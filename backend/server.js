@@ -30,14 +30,8 @@ const config = {
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET
 };
 
-// Temporarily comment out to prevent server crash during debugging
-// if (!config.emailPass) {
-//   console.error('\x1b[31mERROR: EMAIL_PASS not set in environment variables\x1b[0m');
-//   process.exit(1);
-// }
-
-// Path configuration - Points to freeontools-clean root
-const staticPath = path.join(__dirname, '../'); // Points to C:\...\freeontools-clean
+// Path configuration
+const staticPath = path.join(__dirname, '../');
 const indexPath = path.join(staticPath, 'Index.html');
 const footerPath = path.join(staticPath, 'Footer.html');
 
@@ -60,7 +54,7 @@ if (!fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
 }
 
 // Middleware Setup
-app.set('trust proxy', 1); // For Render.com proxy
+app.set('trust proxy', 1);
 
 // Redirect Middleware - Handles non-www to www and HTTP to HTTPS
 app.use((req, res, next) => {
@@ -76,14 +70,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// Remove .html extension
+// Remove .html extension and preserve query string
 app.use((req, res, next) => {
   if (req.path.endsWith('.html')) {
     const newPath = req.path.slice(0, -5);
     const htmlPath = path.join(staticPath, `${newPath}.html`);
     if (fs.existsSync(htmlPath)) {
-      console.log(`Redirecting ${req.path} to ${newPath}`);
-      return res.redirect(301, newPath);
+      console.log(`Redirecting ${req.url} to ${newPath}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`);
+      return res.redirect(301, `${newPath}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`);
     }
   }
   next();
@@ -183,6 +177,23 @@ transporter.verify((error, success) => {
   }
 });
 
+// Temporary test route for nodemailer
+app.get('/api/test-email', async (req, res) => {
+  try {
+    await transporter.sendMail({
+      from: `"FreeOnTools" <${config.emailUser}>`,
+      to: 'test@example.com',
+      subject: 'Test Email',
+      text: 'This is a test email to verify nodemailer configuration.'
+    });
+    console.log('auth.js: Test email sent successfully');
+    res.json({ message: 'Test email sent' });
+  } catch (error) {
+    console.error('auth.js: Test email error:', error.message, error.stack);
+    res.status(500).json({ message: 'Test email failed', error: error.message });
+  }
+});
+
 // Facebook OAuth Strategy
 if (config.facebookAppId && config.facebookAppSecret) {
   passport.use(new FacebookStrategy({
@@ -276,7 +287,7 @@ app.post('/api/login', async (req, res) => {
       console.log(`auth.js: Login failed for ${email}: Account not verified`);
       return res.status(403).json({ message: 'Please verify your email before logging in.' });
     }
-    const isMatch = await user.comparePassword(password); // Use User model's method
+    const isMatch = await user.comparePassword(password);
     if (!isMatch) {
       console.log(`auth.js: Login failed for ${email}: Incorrect password`);
       return res.status(401).json({ message: 'Invalid email or password' });
@@ -296,7 +307,6 @@ app.post('/api/login', async (req, res) => {
 app.post('/api/signup', async (req, res) => {
   const { name, email, password } = req.body;
   try {
-    // Validate password length
     if (password.length < 8) {
       return res.status(400).json({ message: 'Password must be at least 8 characters long' });
     }
@@ -304,7 +314,7 @@ app.post('/api/signup', async (req, res) => {
     if (user) {
       return res.status(400).json({ message: 'Email already exists' });
     }
-    user = new User({ name, email, password, isVerified: true }); // Set isVerified: true
+    user = new User({ name, email, password, isVerified: true });
     await user.save();
     const token = jwt.sign({ userId: user._id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
     req.session.userId = user._id;
@@ -373,7 +383,7 @@ app.post('/api/reset-password', async (req, res) => {
       console.log(`auth.js: Reset password failed: Password too short for user ${user.email}`);
       return res.status(400).json({ message: 'Password must be at least 8 characters long' });
     }
-    user.password = password; // Will be hashed by pre('save') hook
+    user.password = password;
     await user.save();
     console.log(`auth.js: Password reset successful for ${user.email}`);
     res.json({ message: 'Password reset successful' });
@@ -444,7 +454,7 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
-// MAIN ROUTING SOLUTION - Case-sensitive HTML file handling
+// MAIN ROUTING SOLUTION
 app.get('*', (req, res, next) => {
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
     return next();

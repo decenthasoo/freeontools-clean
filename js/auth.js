@@ -187,7 +187,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 successMessage.textContent = '';
                 return;
             }
-            // Revalidate token before submission
             try {
                 const validateResponse = await fetch(`${BACKEND_URL}/api/validate-reset-token`, {
                     method: 'POST',
@@ -421,7 +420,7 @@ document.addEventListener('click', async (e) => {
             console.error('auth.js: Logout error:', error);
         }
         window.updateHeader();
-        window.location.href = '/'; // Redirect to homepage
+        window.location.href = '/';
     }
 });
 
