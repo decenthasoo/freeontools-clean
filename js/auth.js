@@ -62,70 +62,70 @@ document.addEventListener('DOMContentLoaded', async () => {
     const errorMessage = document.getElementById('error-message');
     const successMessage = document.getElementById('success-message');
 
-   if (loginForm) {
-    console.log('auth.js: Login form found, attaching submit listener');
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        console.log('auth.js: Login form submitted for email:', email);
-        try {
-            const response = await fetch(`${BACKEND_URL}/api/login`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password }),
-            });
-            console.log('auth.js: Login response status:', response.status);
-            const data = await response.json();
-            console.log('auth.js: Login response data:', data);
-            if (response.ok) {
-                localStorage.setItem('token', data.token);
-                localStorage.setItem('sessionAuth', 'true');
-                console.log('auth.js: Login successful, redirecting to profile');
-                window.location.href = '/profile.html';
-            } else {
-                errorMessage.textContent = data.message || 'Login failed';
-                console.error('auth.js: Login error:', data.message);
+    if (loginForm) {
+        console.log('auth.js: Login form found, attaching submit listener');
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            console.log('auth.js: Login form submitted for email:', email);
+            try {
+                const response = await fetch(`${BACKEND_URL}/api/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password }),
+                });
+                console.log('auth.js: Login response status:', response.status);
+                const data = await response.json();
+                console.log('auth.js: Login response data:', data);
+                if (response.ok) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('sessionAuth', 'true');
+                    console.log('auth.js: Login successful, redirecting to profile');
+                    window.location.href = '/profile.html';
+                } else {
+                    errorMessage.textContent = data.message || 'Login failed';
+                    console.error('auth.js: Login error:', data.message);
+                }
+            } catch (error) {
+                errorMessage.textContent = 'An error occurred. Please try again.';
+                console.error('auth.js: Login fetch error:', error);
             }
-        } catch (error) {
-            errorMessage.textContent = 'An error occurred. Please try again.';
-            console.error('auth.js: Login fetch error:', error);
-        }
-    });
-}
+        });
+    }
 
-   if (signupForm) {
- console.log('auth.js: Signup form found, attaching submit listener');
- signupForm.addEventListener('submit', async (e) => {
- e.preventDefault();
- const name = document.getElementById('name').value;
- const email = document.getElementById('email').value;
- const password = document.getElementById('password').value;
- console.log('auth.js: Signup form submitted for email:', email);
- try {
- const response = await fetch(`${BACKEND_URL}/api/signup`, {
- method: 'POST',
- headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ name, email, password }),
- });
- console.log('auth.js: Signup response status:', response.status);
- const data = await response.json();
- console.log('auth.js: Signup response data:', data);
- if (response.ok) {
- localStorage.setItem('token', data.token);
- localStorage.setItem('sessionAuth', 'true');
- console.log('auth.js: Signup successful, redirecting to profile');
- window.location.href = '/profile.html';
- } else {
- errorMessage.textContent = data.message || 'Signup failed';
- console.error('auth.js: Signup error:', data.message);
- }
- } catch (error) {
- errorMessage.textContent = 'An error occurred. Please try again.';
- console.error('auth.js: Signup fetch error:', error);
- }
- });
-}
+    if (signupForm) {
+        console.log('auth.js: Signup form found, attaching submit listener');
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            console.log('auth.js: Signup form submitted for email:', email);
+            try {
+                const response = await fetch(`${BACKEND_URL}/api/signup`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password }),
+                });
+                console.log('auth.js: Signup response status:', response.status);
+                const data = await response.json();
+                console.log('auth.js: Signup response data:', data);
+                if (response.ok) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('sessionAuth', 'true');
+                    console.log('auth.js: Signup successful, redirecting to profile');
+                    window.location.href = '/profile.html';
+                } else {
+                    errorMessage.textContent = data.message || 'Signup failed';
+                    console.error('auth.js: Signup error:', data.message);
+                }
+            } catch (error) {
+                errorMessage.textContent = 'An error occurred. Please try again.';
+                console.error('auth.js: Signup fetch error:', error);
+            }
+        });
+    }
 
     if (forgotPasswordForm) {
         console.log('auth.js: Forgot password form found, attaching submit listener');
@@ -171,15 +171,27 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (resetPasswordForm) {
         console.log('auth.js: Reset password form found, attaching submit listener');
-        const resetToken = decodeURIComponent(urlParams.get('token') || '');
-        console.log('auth.js: Reset token stored:', resetToken);
         resetPasswordForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
+            const resetToken = decodeURIComponent(new URLSearchParams(window.location.search).get('token') || '');
             console.log('auth.js: Reset password submitted with token:', resetToken);
+            if (!resetToken) {
+                console.log('auth.js: Reset password failed: No token provided in URL');
+                errorMessage.textContent = 'No reset token provided. Please use the link from your email.';
+                successMessage.textContent = '';
+                return;
+            }
             if (password !== confirmPassword) {
+                console.log('auth.js: Reset password failed: Passwords do not match');
                 errorMessage.textContent = 'Passwords do not match';
+                successMessage.textContent = '';
+                return;
+            }
+            if (password.length < 8) {
+                console.log('auth.js: Reset password failed: Password too short');
+                errorMessage.textContent = 'Password must be at least 8 characters long';
                 successMessage.textContent = '';
                 return;
             }
@@ -192,19 +204,21 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const data = await response.json();
                 console.log('auth.js: Reset password response:', data);
                 if (response.ok) {
+                    console.log('auth.js: Password reset successful, redirecting to login');
                     successMessage.textContent = data.message;
                     errorMessage.textContent = '';
                     setTimeout(() => {
                         window.location.href = '/login.html';
                     }, 2000);
                 } else {
+                    console.log('auth.js: Reset password error:', data.message);
                     errorMessage.textContent = data.message || 'Failed to reset password';
                     successMessage.textContent = '';
                 }
             } catch (error) {
+                console.error('auth.js: Reset password fetch error:', error);
                 errorMessage.textContent = 'An error occurred. Please try again.';
                 successMessage.textContent = '';
-                console.error('auth.js: Reset password error:', error);
             }
         });
     }
@@ -217,10 +231,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const provider = button.classList.contains('google-btn') ? 'Google' : 'Facebook';
                 console.log(`auth.js: Social login clicked for ${provider}`);
                 if (provider === 'Google') {
-                    window.location.href = `${BACKEND_URL}/auth/google`;
+                    window.location.href = `${BACKEND_URL}/api/auth/google`;
                     console.log('auth.js: Redirecting to Google auth');
                 } else if (provider === 'Facebook') {
-                    window.location.href = `${BACKEND_URL}/auth/facebook`;
+                    window.location.href = `${BACKEND_URL}/api/auth/facebook`;
                     console.log('auth.js: Redirecting to Facebook auth');
                 }
             });

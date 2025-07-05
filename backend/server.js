@@ -374,7 +374,12 @@ app.post('/api/validate-reset-token', async (req, res) => {
 
 app.post('/api/reset-password', async (req, res) => {
   const { token, password } = req.body;
+  console.log(`auth.js: Reset password attempt with token: ${token}`);
   try {
+    if (!token) {
+      console.log('auth.js: Reset password failed: No token provided');
+      return res.status(400).json({ message: 'Token is required' });
+    }
     const decoded = jwt.verify(token, config.jwtSecret);
     const user = await User.findById(decoded.userId).select('+password');
     if (!user) {
@@ -390,8 +395,8 @@ app.post('/api/reset-password', async (req, res) => {
     console.log(`auth.js: Password reset successful for ${user.email}`);
     res.json({ message: 'Password reset successful' });
   } catch (error) {
-    console.error('auth.js: Reset password error:', error);
-    res.status(400).json({ message: 'Invalid or expired token' });
+    console.error('auth.js: Reset password error:', error.message, error.stack);
+    res.status(400).json({ message: 'Invalid or expired token', error: error.message });
   }
 });
 
@@ -449,7 +454,7 @@ app.get('/api/health', (req, res) => {
 app.get('/api/user/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    if (!user) return res.status(404).json({ error: 'User not found' });
+    if (!user) return res.status(400).json({ error: 'User not found' });
     res.json({ user });
   } catch (err) {
     res.status(500).json({ error: err.message });
