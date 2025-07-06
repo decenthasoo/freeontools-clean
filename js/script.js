@@ -1,5 +1,5 @@
 function loadHTML(file, placeholderId, callback) {
-    console.log(`script.js: Trying to load ${file}`);
+    console.log(`script.js: Loading ${file}`);
     fetch(file, { cache: "no-store" })
         .then(response => {
             console.log(`script.js: ${file} response status: ${response.status}`);
@@ -16,9 +16,9 @@ function loadHTML(file, placeholderId, callback) {
                 console.log(`script.js: Inserted ${file} into ${placeholderId}`);
                 if (callback) callback();
                 // Trigger auth header update after header load
-                if (file === "Header.html") {
-                    console.log("script.js: Header.html loaded, scheduling auth header update");
-                    triggerAuthHeaderUpdate(1, 30);
+                if (file === "Header.html" && typeof window.updateHeader === "function") {
+                    console.log("script.js: Header.html loaded, calling window.updateHeader");
+                    window.updateHeader();
                 }
             } else {
                 console.error(`script.js: Placeholder ${placeholderId} not found`);
@@ -32,7 +32,7 @@ function loadHTML(file, placeholderId, callback) {
 function initializeHeaderScripts() {
     console.log("script.js: Setting up header buttons");
 
-    function setupHeader(attempt = 1, maxAttempts = 10) {
+    function setupHeader(attempt = 1, maxAttempts = 5) {
         const hamburgerBtn = document.querySelector(".hamburger-btn");
         const hamburgerContent = document.querySelector(".hamburger-content");
         const dropdownBtn = document.querySelector(".dropbtn");
@@ -58,7 +58,7 @@ function initializeHeaderScripts() {
                 navCloseBtn: !!navCloseBtn
             });
             if (attempt < maxAttempts) {
-                setTimeout(() => setupHeader(attempt + 1, maxAttempts), 100);
+                setTimeout(() => setupHeader(attempt + 1, maxAttempts), 50);
             } else {
                 console.error(`script.js: Failed to initialize header after ${maxAttempts} attempts`);
             }
@@ -189,19 +189,23 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Handle resize/rotation
+        // Handle resize/rotation with debounce
+        let resizeTimeout;
         window.addEventListener("resize", () => {
-            console.log("script.js: Window resized, rechecking dropdown state");
-            if (window.innerWidth > 1280) {
-                dropdown.classList.remove("active");
-                const dropdownContent = dropdown.querySelector(".dropdown-content");
-                dropdownContent.style.display = "none";
-            }
-            if (window.innerWidth > 834) {
-                navDropdown.classList.remove("active");
-                const navDropdownContent = navDropdown.querySelector(".dropdown-content");
-                navDropdownContent.style.display = "none";
-            }
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                console.log("script.js: Window resized, rechecking dropdown state");
+                if (window.innerWidth > 1280) {
+                    dropdown.classList.remove("active");
+                    const dropdownContent = dropdown.querySelector(".dropdown-content");
+                    dropdownContent.style.display = "none";
+                }
+                if (window.innerWidth > 834) {
+                    navDropdown.classList.remove("active");
+                    const navDropdownContent = navDropdown.querySelector(".dropdown-content");
+                    navDropdownContent.style.display = "none";
+                }
+            }, 100);
         });
 
         // Initialize scroll-up button for nav-has-dropdown dropdown-content
@@ -255,7 +259,7 @@ console.log("script.js: Script started");
 document.addEventListener("DOMContentLoaded", () => {
     console.log("script.js: DOMContentLoaded fired, loading header and footer");
     const headerPath = "Header.html";
-    const footerPath = "Footer.html"; // Fixed case to match server.js
+    const footerPath = "Footer.html";
     loadHTML(headerPath, "header-placeholder", initializeHeaderScripts);
     loadHTML(footerPath, "footer-placeholder", initializeFooterScripts);
 });
@@ -273,7 +277,7 @@ window.addEventListener("load", () => {
     }
 });
 
-// NEW CODE: Apply styles to <h1> and <p> tags following <h1> in tool pages only (non-.html URLs)
+// Style h1 and p tags for non-.html tool pages
 document.addEventListener("DOMContentLoaded", () => {
     console.log(`script.js: Checking for tool page to style h1 and h1 + p. URL: ${window.location.href}, Pathname: ${window.location.pathname}`);
     const pathname = window.location.pathname.toLowerCase();
@@ -285,71 +289,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isToolsPage) {
         console.log("script.js: Confirmed non-.html tool page, applying styles to h1 and h1 + p");
         const headings = document.querySelectorAll("h1");
-        if (headings.length > 0) {
-            headings.forEach(h => {
-                console.log(`script.js: Styling h1 tag: ${h.textContent.substring(0, 30)}...`);
-                h.style.fontSize = "24px";
-                h.style.marginTop = "0px";
-                h.style.marginBottom = "0px";
-                h.style.color = "#000";
-            });
-        } else {
-            console.log("script.js: No h1 elements found on this tool page");
-        }
+        headings.forEach(h => {
+            console.log(`script.js: Styling h1 tag: ${h.textContent.substring(0, 30)}...`);
+            h.style.fontSize = "24px";
+            h.style.marginTop = "0px";
+            h.style.marginBottom = "0px";
+            h.style.color = "#000";
+        });
         const paragraphs = document.querySelectorAll("h1 + p");
-        if (paragraphs.length > 0) {
-            paragraphs.forEach(p => {
-                console.log(`script.js: Styling p tag after h1: ${p.textContent.substring(0, 30)}...`);
-                p.style.fontSize = "16px";
-                p.style.marginTop = "0px";
-                p.style.marginBottom = "0px";
-                p.style.color = "#333";
-                p.style.maxWidth = "600px";
-                p.style.margin = "0 auto";
-            });
-        } else {
-            console.log("script.js: No h1 + p elements found on this tool page");
-        }
-    } else {
-        console.log("script.js: Not a non-.html tool page, skipping h1 and h1 + p styling. Header path: Header.html");
+        paragraphs.forEach(p => {
+            console.log(`script.js: Styling p tag after h1: ${p.textContent.substring(0, 30)}...`);
+            p.style.fontSize = "16px";
+            p.style.marginTop = "0px";
+            p.style.marginBottom = "0px";
+            p.style.color = "#333";
+            p.style.maxWidth = "600px";
+            p.style.margin = "0 auto";
+        });
     }
 });
-
-// NEW CODE: Ensure auth.js header updates after DOM load and navigation
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("script.js: Triggering auth header update after DOM load");
-    triggerAuthHeaderUpdate(1, 30);
-});
-
-// Re-run auth header update on navigation clicks
-document.addEventListener("click", (e) => {
-    const link = e.target.closest('a');
-    if (link && link.href && !link.href.includes('/logout') && !link.href.includes('#')) {
-        console.log(`script.js: Navigation click detected to ${link.href}, scheduling auth header update`);
-        setTimeout(() => {
-            triggerAuthHeaderUpdate(1, 30);
-        }, 200);
-    }
-});
-
-// Helper function to trigger auth header update with retries
-function triggerAuthHeaderUpdate(attempt, maxAttempts) {
-    console.log(`script.js: Attempt ${attempt} to call window.updateHeader for ${window.location.pathname}`);
-    if (typeof window.updateHeader === "function") {
-        console.log(`script.js: Calling window.updateHeader on attempt ${attempt}`);
-        window.updateHeader();
-        // Extra retries for profile.html
-        if (window.location.pathname === '/profile.html' && attempt === 1) {
-            console.log('script.js: On profile.html, scheduling additional header update retries');
-            setTimeout(() => triggerAuthHeaderUpdate(attempt + 1, maxAttempts), 500);
-            setTimeout(() => triggerAuthHeaderUpdate(attempt + 2, maxAttempts), 1000);
-        }
-    } else {
-        console.log(`script.js: window.updateHeader not found on attempt ${attempt}`);
-        if (attempt < maxAttempts) {
-            setTimeout(() => triggerAuthHeaderUpdate(attempt + 1, maxAttempts), 100);
-        } else {
-            console.error(`script.js: Failed to find window.updateHeader after ${maxAttempts} attempts`);
-        }
-    }
-}
