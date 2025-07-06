@@ -3,7 +3,7 @@ const BACKEND_URL = window.location.hostname === 'localhost' || window.location.
   ? 'http://localhost:3000'
   : 'https://www.freeontools.com';
 
-// Load jwt-decode library (assumes it's included via CDN or npm)
+// Check if jwt-decode is loaded
 if (typeof jwt_decode === 'undefined') {
   console.error('auth.js: jwt-decode library not loaded');
 }
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const socialToken = urlParams.get('token');
     if (socialToken && window.location.pathname === '/profile.html') {
-        console.log('auth.js: Storing token from social login');
+        console.log('auth.js: Storing token from social login:', socialToken.slice(0, 20) + '...');
         localStorage.setItem('token', socialToken);
         localStorage.setItem('sessionAuth', 'true');
         window.history.replaceState({}, document.title, window.location.pathname);
@@ -304,7 +304,6 @@ window.updateHeader = async function(attempt = 1, maxAttempts = 10) {
         console.log('auth.js: Auth check pending, showing loading state');
         headerButtons.innerHTML = `<span>Loading...</span>`;
         hamburgerContent.innerHTML = `<span>Loading...</span>`;
-        setTimeout(() => window.updateHeader(attempt + 1, maxAttempts), 100);
         return;
     }
     const isAuthenticated = await checkAuthStatus();
@@ -378,18 +377,18 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
         return false;
     }
     const token = localStorage.getItem('token');
-    if (token) {
-        console.log('auth.js: Token found, validating locally');
+    if (token && typeof jwt_decode === 'function') {
+        console.log('auth.js: Token found, validating locally:', token.slice(0, 20) + '...');
         try {
             const decoded = jwt_decode(token); // Client-side JWT validation
             console.log('auth.js: Decoded JWT:', decoded);
             const currentTime = Math.floor(Date.now() / 1000);
-            if (decoded.exp && decoded.exp > currentTime) {
+            if (decoded.exp && decoded.exp > currentTime && decoded.userId) {
                 console.log('auth.js: Token is valid locally, userId:', decoded.userId);
                 localStorage.setItem('sessionAuth', 'true');
                 return true;
             } else {
-                console.log('auth.js: Token expired, removing sessionAuth');
+                console.log('auth.js: Token expired or invalid, removing sessionAuth');
                 localStorage.removeItem('sessionAuth');
                 localStorage.removeItem('token');
             }
@@ -398,28 +397,38 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
             localStorage.removeItem('sessionAuth');
             localStorage.removeItem('token');
         }
+    } else if (token) {
+        console.error('auth.js: jwt-decode not available, skipping local validation');
+    } else {
+        console.log('auth.js: No token found in localStorage');
     }
-    // Fallback to server-side validation
-    console.log('auth.js: No valid local token, checking server-side');
-    try {
-        const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ token }),
-        });
-        const data = await response.json();
-        console.log('auth.js: Token validation response:', data);
-        if (data.valid) {
-            localStorage.setItem('sessionAuth', 'true');
-            console.log('auth.js: Token validated, setting sessionAuth to true');
-            return true;
+    // Fallback to server-side validation only if necessary
+    if (token) {
+        console.log('auth.js: Attempting server-side token validation');
+        try {
+            const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token }), // Ensure token is sent
+            });
+            const data = await response.json();
+            console.log('auth.js: Token validation response:', data);
+            if (data.valid) {
+                localStorage.setItem('sessionAuth', 'true');
+                console.log('auth.js: Token validated, setting sessionAuth to true');
+                return true;
+            }
+            console.log('auth.js: Token invalid, removing sessionAuth');
+            localStorage.removeItem('sessionAuth');
+            localStorage.removeItem('token');
+        } catch (error) {
+            console.error('auth.js: Token validation error:', error);
+            localStorage.removeItem('sessionAuth');
+            localStorage.removeItem('token');
         }
-        console.log('auth.js: Token invalid, removing sessionAuth');
-        localStorage.removeItem('sessionAuth');
-        localStorage.removeItem('token');
-    } catch (error) {
-        console.error('auth.js: Token validation error:', error);
     }
+    // Fallback to session check
+    console.log('auth.js: No valid token, checking server-side session');
     try {
         const response = await fetch(`${BACKEND_URL}/auth/check`, {
             method: 'GET',

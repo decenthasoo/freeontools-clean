@@ -155,7 +155,6 @@ mongoose.connect(config.mongoURI, {
 })
   .then(async () => {
     console.log('\x1b[32mMongoDB connected successfully\x1b[0m');
-    // Create index on _id for faster queries
     await User.collection.createIndex({ _id: 1 });
     console.log('\x1b[32mMongoDB index created on User._id\x1b[0m');
   })
@@ -378,7 +377,11 @@ app.post('/api/validate-reset-token', async (req, res) => {
 
 app.post('/api/validate-token', async (req, res) => {
   const { token } = req.body;
-  console.log('auth.js: Validate token request for token:', token ? token.slice(0, 20) + '...' : null);
+  if (!token) {
+    console.log('auth.js: Validate token request: No token provided');
+    return res.status(400).json({ valid: false, message: 'No token provided' });
+  }
+  console.log('auth.js: Validate token request for token:', token.slice(0, 20) + '...');
   try {
     const decoded = jwt.verify(token, config.jwtSecret);
     const user = await User.findById(decoded.userId);
@@ -389,7 +392,7 @@ app.post('/api/validate-token', async (req, res) => {
     console.log(`auth.js: Token valid for user: ${user.email}`);
     res.json({ valid: true, message: 'Token is valid' });
   } catch (error) {
-    console.error('auth.js: Validate token error:', error);
+    console.error('auth.js: Validate token error:', error.message);
     res.status(400).json({ valid: false, message: 'Invalid or expired token' });
   }
 });
