@@ -1,17 +1,21 @@
+// Set BACKEND_URL based on environment
 const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost:3000'
   : 'https://www.freeontools.com';
 
+// Check if jwt-decode is loaded
 if (typeof jwt_decode === 'undefined') {
   console.error('auth.js: jwt-decode library not loaded');
 }
 
+// Set loading state for header
 let isAuthCheckPending = false;
 
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('auth.js: DOMContentLoaded, initializing auth for', window.location.pathname);
+    console.log('auth.js: DOMContentLoaded, initializing auth listeners for', window.location.pathname);
     console.log('auth.js: Using BACKEND_URL:', BACKEND_URL);
 
+    // Handle social login token
     const urlParams = new URLSearchParams(window.location.search);
     const socialToken = urlParams.get('token');
     if (socialToken && window.location.pathname === '/profile.html') {
@@ -19,15 +23,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('token', socialToken);
         localStorage.setItem('sessionAuth', 'true');
         window.history.replaceState({}, document.title, window.location.pathname);
-        isAuthCheckPending = true;
+        isAuthCheckPending = true; // Set loading state
         await window.updateHeader();
         isAuthCheckPending = false;
     }
 
+    // Handle reset-password.html
     if (window.location.pathname === '/reset-password.html') {
         console.log('auth.js: On reset-password.html, clearing auth tokens');
         localStorage.removeItem('token');
         localStorage.removeItem('sessionAuth');
+        console.log('auth.js: Current URL:', window.location.href);
+        console.log('auth.js: URL query string:', window.location.search);
         const resetToken = decodeURIComponent(urlParams.get('token') || '');
         console.log('auth.js: Reset token from URL:', resetToken);
         if (resetToken) {
@@ -45,6 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     setTimeout(() => window.location.href = '/login.html', 2000);
                     return;
                 }
+                console.log('auth.js: Valid reset token, rendering form');
             } catch (error) {
                 console.error('auth.js: Error validating reset token:', error);
                 document.getElementById('error-message').textContent = 'Error validating token';
@@ -179,7 +187,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             e.preventDefault();
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
-            const resetToken = decodeURIComponent(urlParams.get('token') || '');
+            console.log('auth.js: Current URL:', window.location.href);
+            console.log('auth.js: URL query string:', window.location.search);
+            const resetToken = decodeURIComponent(new URLSearchParams(window.location.search).get('token') || '');
             console.log('auth.js: Reset password submitted with token:', resetToken);
             if (!resetToken) {
                 console.log('auth.js: Reset password failed: No token provided in URL');
@@ -233,7 +243,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                     console.log('auth.js: Password reset successful, redirecting to login');
                     successMessage.textContent = data.message;
                     errorMessage.textContent = '';
-                    setTimeout(() => window.location.href = '/login.html', 2000);
+                    setTimeout(() => {
+                        window.location.href = '/login.html';
+                    }, 2000);
                 } else {
                     console.log('auth.js: Reset password error:', data.message);
                     errorMessage.textContent = data.message || 'Failed to reset password';
@@ -264,34 +276,36 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
     }
+
+    await window.updateHeader();
 });
 
-window.updateHeader = async function(attempt = 1, maxAttempts = 5) {
+// Explicitly define updateHeader as a global function
+window.updateHeader = async function(attempt = 1, maxAttempts = 10) {
     console.log(`auth.js: updateHeader attempt ${attempt} for ${window.location.pathname}`);
     const token = localStorage.getItem('token');
     const headerButtons = document.querySelector('.header-buttons');
     const hamburgerContent = document.querySelector('.hamburger-content');
     const navDropdownContent = document.querySelector('.nav-has-dropdown .dropdown-content .tool-list');
     console.log('auth.js: Token:', token ? token.slice(0, 20) + '...' : null);
-    console.log('auth.js: Header elements:', { headerButtons: !!headerButtons, hamburgerContent: !!hamburgerContent, navDropdownContent: !!navDropdownContent });
-
-    if (!headerButtons || !hamburgerContent || !navDropdownContent) {
-        if (attempt < maxAttempts) {
-            console.log(`auth.js: Header elements not found, retrying in 50ms (attempt ${attempt})`);
-            setTimeout(() => window.updateHeader(attempt + 1, maxAttempts), 50);
-            return;
-        }
+    console.log('auth.js: Header Buttons found:', !!headerButtons);
+    console.log('auth.js: Hamburger Content found:', !!hamburgerContent);
+    console.log('auth.js: Nav Dropdown Content found:', !!navDropdownContent);
+    if (attempt > maxAttempts) {
         console.error(`auth.js: Failed to update header after ${maxAttempts} attempts`);
         return;
     }
-
+    if (!headerButtons || !hamburgerContent || !navDropdownContent) {
+        console.log(`auth.js: Header elements not found, retrying in 100ms (attempt ${attempt})`);
+        setTimeout(() => window.updateHeader(attempt + 1, maxAttempts), 100);
+        return;
+    }
     if (isAuthCheckPending) {
         console.log('auth.js: Auth check pending, showing loading state');
         headerButtons.innerHTML = `<span>Loading...</span>`;
         hamburgerContent.innerHTML = `<span>Loading...</span>`;
         return;
     }
-
     const isAuthenticated = await checkAuthStatus();
     if (isAuthenticated) {
         console.log('auth.js: Auth present, setting Profile and Logout');
@@ -312,9 +326,18 @@ window.updateHeader = async function(attempt = 1, maxAttempts = 5) {
         const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
         const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
         const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
-        if (profileLink) profileLink.style.display = 'block';
-        if (settingsLink) settingsLink.style.display = 'block';
-        if (logoutLink) settingsLink.style.display = 'block';
+        if (profileLink) {
+            profileLink.style.display = 'block';
+            profileLink.classList.add('header-btn', 'signup-btn');
+        }
+        if (settingsLink) {
+            settingsLink.style.display = 'block';
+            settingsLink.classList.add('header-btn', 'signup-btn');
+        }
+        if (logoutLink) {
+            logoutLink.style.display = 'block';
+            logoutLink.classList.add('header-btn', 'login-btn');
+        }
     } else {
         console.log('auth.js: No auth, setting Sign Up and Login');
         headerButtons.innerHTML = `
@@ -332,13 +355,22 @@ window.updateHeader = async function(attempt = 1, maxAttempts = 5) {
         const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
         const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
         const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
-        if (profileLink) profileLink.style.display = 'none';
-        if (settingsLink) settingsLink.style.display = 'none';
-        if (logoutLink) settingsLink.style.display = 'none';
+        if (profileLink) {
+            profileLink.style.display = 'none';
+            profileLink.classList.remove('header-btn', 'signup-btn');
+        }
+        if (settingsLink) {
+            settingsLink.style.display = 'none';
+            settingsLink.classList.remove('header-btn', 'signup-btn');
+        }
+        if (logoutLink) {
+            logoutLink.style.display = 'none';
+            logoutLink.classList.remove('header-btn', 'login-btn');
+        }
     }
 };
 
-async function checkAuthStatus(attempt = 1, maxAttempts = 5) {
+async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
     console.log(`auth.js: Checking auth status for ${window.location.pathname}, attempt ${attempt}`);
     if (window.location.pathname === '/reset-password.html') {
         console.log('auth.js: On reset-password.html, bypassing auth check');
@@ -348,7 +380,7 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 5) {
     if (token && typeof jwt_decode === 'function') {
         console.log('auth.js: Token found, validating locally:', token.slice(0, 20) + '...');
         try {
-            const decoded = jwt_decode(token);
+            const decoded = jwt_decode(token); // Client-side JWT validation
             console.log('auth.js: Decoded JWT:', decoded);
             const currentTime = Math.floor(Date.now() / 1000);
             if (decoded.exp && decoded.exp > currentTime && decoded.userId) {
@@ -370,13 +402,14 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 5) {
     } else {
         console.log('auth.js: No token found in localStorage');
     }
-    console.log('auth.js: Attempting server-side token validation');
+    // Fallback to server-side validation only if necessary
     if (token) {
+        console.log('auth.js: Attempting server-side token validation');
         try {
             const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token }),
+                body: JSON.stringify({ token }), // Ensure token is sent
             });
             const data = await response.json();
             console.log('auth.js: Token validation response:', data);
@@ -394,6 +427,7 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 5) {
             localStorage.removeItem('token');
         }
     }
+    // Fallback to session check
     console.log('auth.js: No valid token, checking server-side session');
     try {
         const response = await fetch(`${BACKEND_URL}/auth/check`, {
@@ -418,7 +452,7 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 5) {
         localStorage.removeItem('sessionAuth');
         if (attempt < maxAttempts) {
             console.log(`auth.js: Retrying auth check, attempt ${attempt + 1}`);
-            await new Promise(resolve => setTimeout(resolve, 100));
+            await new Promise(resolve => setTimeout(resolve, 300));
             return checkAuthStatus(attempt + 1, maxAttempts);
         }
         console.error('auth.js: Max auth check attempts reached');
