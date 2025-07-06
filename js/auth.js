@@ -362,9 +362,29 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
     }
     const token = localStorage.getItem('token');
     if (token) {
-        console.log('auth.js: Token found, assuming authenticated');
-        localStorage.setItem('sessionAuth', 'true');
-        return true;
+        console.log('auth.js: Token found, validating locally');
+        try {
+            // Attempt to validate token by calling an endpoint or parsing locally
+            const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token }),
+            });
+            const data = await response.json();
+            console.log('auth.js: Token validation response:', data);
+            if (data.valid) {
+                localStorage.setItem('sessionAuth', 'true');
+                console.log('auth.js: Token validated, setting sessionAuth to true');
+                return true;
+            }
+            console.log('auth.js: Token invalid, removing sessionAuth');
+            localStorage.removeItem('sessionAuth');
+            localStorage.removeItem('token');
+        } catch (error) {
+            console.error('auth.js: Token validation error:', error);
+            localStorage.removeItem('sessionAuth');
+            localStorage.removeItem('token');
+        }
     }
     try {
         const response = await fetch(`${BACKEND_URL}/auth/check`, {
@@ -374,9 +394,6 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
             cache: 'no-store',
         });
         console.log(`auth.js: /auth/check response status: ${response.status}`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
         const data = await response.json();
         console.log('auth.js: Auth check response data:', data);
         if (data.authenticated) {
@@ -384,8 +401,8 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
             console.log('auth.js: Session auth set to true');
             return true;
         }
-        localStorage.removeItem('sessionAuth');
         console.log('auth.js: Session auth removed, response:', data);
+        localStorage.removeItem('sessionAuth');
         return false;
     } catch (error) {
         console.error(`auth.js: Auth check error on attempt ${attempt}:`, error.message);

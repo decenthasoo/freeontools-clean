@@ -240,7 +240,7 @@ if (config.googleClientId && config.googleClientSecret) {
       ? 'https://www.freeontools.com/api/auth/google/callback'
       : 'http://localhost:3000/api/auth/google/callback',
     scope: ['profile', 'email'],
-    proxy: true // Added to handle Render's proxy
+    proxy: true
   }, async (accessToken, refreshToken, profile, done) => {
     console.log('auth.js: Google OAuth callback received, profile:', profile.id);
     console.log('auth.js: Google OAuth redirect URI sent:', config.nodeEnv === 'production'
@@ -399,12 +399,21 @@ app.post('/api/reset-password', async (req, res) => {
   }
 });
 
-app.get('/auth/check', (req, res) => {
+app.get('/auth/check', async (req, res) => {
+  console.log('auth.js: /auth/check called, session userId:', req.session.userId);
   if (req.session.userId) {
-    res.json({ authenticated: true });
-  } else {
-    res.json({ authenticated: false });
+    try {
+      const user = await User.findById(req.session.userId);
+      if (user) {
+        console.log(`auth.js: /auth/check authenticated for user: ${user.email}`);
+        return res.json({ authenticated: true });
+      }
+    } catch (error) {
+      console.error('auth.js: /auth/check error:', error);
+    }
   }
+  console.log('auth.js: /auth/check not authenticated');
+  res.json({ authenticated: false });
 });
 
 app.post('/logout', (req, res) => {
@@ -425,6 +434,8 @@ app.get('/api/auth/facebook/callback', passport.authenticate('facebook', {
     ? 'https://www.freeontools.com/login.html'
     : 'http://localhost:8080/login.html'
 }), (req, res) => {
+  console.log(`auth.js: Facebook OAuth callback, user: ${req.user.email}, setting session userId: ${req.user._id}`);
+  req.session.userId = req.user._id; // Set session
   const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
   res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
 });
@@ -437,6 +448,8 @@ app.get('/api/auth/google/callback', passport.authenticate('google', {
     ? 'https://www.freeontools.com/login.html'
     : 'http://localhost:8080/login.html'
 }), (req, res) => {
+  console.log(`auth.js: Google OAuth callback, user: ${req.user.email}, setting session userId: ${req.user._id}`);
+  req.session.userId = req.user._id; // Set session
   const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
   res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
 });
