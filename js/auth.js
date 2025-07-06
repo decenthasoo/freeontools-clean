@@ -6,9 +6,7 @@ if (typeof jwt_decode === 'undefined') {
   console.error('auth.js: jwt-decode library not loaded');
 }
 
-let isAuthCheckPending = false;
-
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     console.log('auth.js: DOMContentLoaded, initializing auth for', window.location.pathname);
     console.log('auth.js: Using BACKEND_URL:', BACKEND_URL);
 
@@ -19,9 +17,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('token', socialToken);
         localStorage.setItem('sessionAuth', 'true');
         window.history.replaceState({}, document.title, window.location.pathname);
-        isAuthCheckPending = true;
-        await window.updateHeader();
-        isAuthCheckPending = false;
     }
 
     if (window.location.pathname === '/reset-password.html') {
@@ -31,31 +26,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         const resetToken = decodeURIComponent(urlParams.get('token') || '');
         console.log('auth.js: Reset token from URL:', resetToken);
         if (resetToken) {
-            try {
-                const response = await fetch(`${BACKEND_URL}/api/validate-reset-token`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ token: resetToken }),
-                });
-                const data = await response.json();
-                console.log('auth.js: Validate reset token response:', data);
-                if (!data.valid) {
-                    console.log('auth.js: Invalid or expired reset token, redirecting to login');
-                    document.getElementById('error-message').textContent = data.message;
+            fetch(`${BACKEND_URL}/api/validate-reset-token`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token: resetToken }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('auth.js: Validate reset token response:', data);
+                    if (!data.valid) {
+                        console.log('auth.js: Invalid or expired reset token, redirecting to login');
+                        document.getElementById('error-message').textContent = data.message;
+                        setTimeout(() => window.location.href = '/login.html', 2000);
+                    }
+                })
+                .catch(error => {
+                    console.error('auth.js: Error validating reset token:', error);
+                    document.getElementById('error-message').textContent = 'Error validating token';
                     setTimeout(() => window.location.href = '/login.html', 2000);
-                    return;
-                }
-            } catch (error) {
-                console.error('auth.js: Error validating reset token:', error);
-                document.getElementById('error-message').textContent = 'Error validating token';
-                setTimeout(() => window.location.href = '/login.html', 2000);
-                return;
-            }
+                });
         } else {
             console.log('auth.js: No reset token in URL, redirecting to login');
             document.getElementById('error-message').textContent = 'No reset token provided';
             setTimeout(() => window.location.href = '/login.html', 2000);
-            return;
         }
     }
 
@@ -264,190 +257,29 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
     }
+
+    document.addEventListener('click', async (e) => {
+        if (e.target.id === 'logout-btn' || e.target.classList.contains('hamburger-logout-btn') || e.target.closest('a[href="/logout"]')) {
+            e.preventDefault();
+            console.log('auth.js: Logout triggered');
+            localStorage.removeItem('token');
+            localStorage.setItem('sessionAuth', 'false');
+            try {
+                const response = await fetch(`${BACKEND_URL}/logout`, {
+                    method: 'POST',
+                    credentials: 'include',
+                });
+                if (response.ok) {
+                    console.log('auth.js: Server-side logout successful');
+                } else {
+                    console.error('auth.js: Server-side logout failed:', response.status);
+                }
+            } catch (error) {
+                console.error('auth.js: Logout error:', error);
+            }
+            window.location.href = '/';
+        }
+    });
 });
 
-window.updateHeader = async function(attempt = 1, maxAttempts = 5) {
-    console.log(`auth.js: updateHeader attempt ${attempt} for ${window.location.pathname}`);
-    const token = localStorage.getItem('token');
-    const headerButtons = document.querySelector('.header-buttons');
-    const hamburgerContent = document.querySelector('.hamburger-content');
-    const navDropdownContent = document.querySelector('.nav-has-dropdown .dropdown-content .tool-list');
-    console.log('auth.js: Token:', token ? token.slice(0, 20) + '...' : null);
-    console.log('auth.js: Header elements:', { headerButtons: !!headerButtons, hamburgerContent: !!hamburgerContent, navDropdownContent: !!navDropdownContent });
-
-    if (!headerButtons || !hamburgerContent || !navDropdownContent) {
-        if (attempt < maxAttempts) {
-            console.log(`auth.js: Header elements not found, retrying in 50ms (attempt ${attempt})`);
-            setTimeout(() => window.updateHeader(attempt + 1, maxAttempts), 50);
-            return;
-        }
-        console.error(`auth.js: Failed to update header after ${maxAttempts} attempts`);
-        return;
-    }
-
-    if (isAuthCheckPending) {
-        console.log('auth.js: Auth check pending, showing loading state');
-        headerButtons.innerHTML = `<span>Loading...</span>`;
-        hamburgerContent.innerHTML = `<span>Loading...</span>`;
-        return;
-    }
-
-    const isAuthenticated = await checkAuthStatus();
-    if (isAuthenticated) {
-        console.log('auth.js: Auth present, setting Profile and Logout');
-        headerButtons.innerHTML = `
-            <a href="/profile.html" class="header-btn signup-btn">Profile</a>
-            <a href="/logout" class="header-btn login-btn" id="logout-btn">Logout</a>
-        `;
-        const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
-        const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
-        if (signupBtn) signupBtn.style.display = 'none';
-        if (loginBtn) loginBtn.style.display = 'none';
-        if (!hamburgerContent.querySelector('.hamburger-profile-btn')) {
-            hamburgerContent.insertAdjacentHTML('beforeend', `
-                <a href="/profile.html" class="header-btn hamburger-signup-btn hamburger-profile-btn">Profile</a>
-                <a href="/logout" class="header-btn hamburger-login-btn hamburger-logout-btn">Logout</a>
-            `);
-        }
-        const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
-        const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
-        const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
-        if (profileLink) profileLink.style.display = 'block';
-        if (settingsLink) settingsLink.style.display = 'block';
-        if (logoutLink) settingsLink.style.display = 'block';
-    } else {
-        console.log('auth.js: No auth, setting Sign Up and Login');
-        headerButtons.innerHTML = `
-            <a href="/signup.html" class="header-btn signup-btn">Sign Up</a>
-            <a href="/login.html" class="header-btn login-btn">Login</a>
-        `;
-        const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
-        const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
-        if (signupBtn) signupBtn.style.display = 'block';
-        if (loginBtn) loginBtn.style.display = 'block';
-        const profileBtn = hamburgerContent.querySelector('.hamburger-profile-btn');
-        const logoutBtn = hamburgerContent.querySelector('.hamburger-logout-btn');
-        if (profileBtn) profileBtn.remove();
-        if (logoutBtn) logoutBtn.remove();
-        const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
-        const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
-        const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
-        if (profileLink) profileLink.style.display = 'none';
-        if (settingsLink) settingsLink.style.display = 'none';
-        if (logoutLink) settingsLink.style.display = 'none';
-    }
-};
-
-async function checkAuthStatus(attempt = 1, maxAttempts = 5) {
-    console.log(`auth.js: Checking auth status for ${window.location.pathname}, attempt ${attempt}`);
-    if (window.location.pathname === '/reset-password.html') {
-        console.log('auth.js: On reset-password.html, bypassing auth check');
-        return false;
-    }
-    const token = localStorage.getItem('token');
-    if (token && typeof jwt_decode === 'function') {
-        console.log('auth.js: Token found, validating locally:', token.slice(0, 20) + '...');
-        try {
-            const decoded = jwt_decode(token);
-            console.log('auth.js: Decoded JWT:', decoded);
-            const currentTime = Math.floor(Date.now() / 1000);
-            if (decoded.exp && decoded.exp > currentTime && decoded.userId) {
-                console.log('auth.js: Token is valid locally, userId:', decoded.userId);
-                localStorage.setItem('sessionAuth', 'true');
-                return true;
-            } else {
-                console.log('auth.js: Token expired or invalid, removing sessionAuth');
-                localStorage.removeItem('sessionAuth');
-                localStorage.removeItem('token');
-            }
-        } catch (error) {
-            console.error('auth.js: Local token validation error:', error);
-            localStorage.removeItem('sessionAuth');
-            localStorage.removeItem('token');
-        }
-    } else if (token) {
-        console.error('auth.js: jwt-decode not available, skipping local validation');
-    } else {
-        console.log('auth.js: No token found in localStorage');
-    }
-    console.log('auth.js: Attempting server-side token validation');
-    if (token) {
-        try {
-            const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token }),
-            });
-            const data = await response.json();
-            console.log('auth.js: Token validation response:', data);
-            if (data.valid) {
-                localStorage.setItem('sessionAuth', 'true');
-                console.log('auth.js: Token validated, setting sessionAuth to true');
-                return true;
-            }
-            console.log('auth.js: Token invalid, removing sessionAuth');
-            localStorage.removeItem('sessionAuth');
-            localStorage.removeItem('token');
-        } catch (error) {
-            console.error('auth.js: Token validation error:', error);
-            localStorage.removeItem('sessionAuth');
-            localStorage.removeItem('token');
-        }
-    }
-    console.log('auth.js: No valid token, checking server-side session');
-    try {
-        const response = await fetch(`${BACKEND_URL}/auth/check`, {
-            method: 'GET',
-            credentials: 'include',
-            headers: { 'Accept': 'application/json' },
-            cache: 'no-store',
-        });
-        console.log(`auth.js: /auth/check response status: ${response.status}`);
-        const data = await response.json();
-        console.log('auth.js: Auth check response data:', data);
-        if (data.authenticated) {
-            localStorage.setItem('sessionAuth', 'true');
-            console.log('auth.js: Session auth set to true');
-            return true;
-        }
-        console.log('auth.js: Session auth removed, response:', data);
-        localStorage.removeItem('sessionAuth');
-        return false;
-    } catch (error) {
-        console.error(`auth.js: Auth check error on attempt ${attempt}:`, error.message);
-        localStorage.removeItem('sessionAuth');
-        if (attempt < maxAttempts) {
-            console.log(`auth.js: Retrying auth check, attempt ${attempt + 1}`);
-            await new Promise(resolve => setTimeout(resolve, 100));
-            return checkAuthStatus(attempt + 1, maxAttempts);
-        }
-        console.error('auth.js: Max auth check attempts reached');
-        return false;
-    }
-}
-
-document.addEventListener('click', async (e) => {
-    if (e.target.id === 'logout-btn' || e.target.classList.contains('hamburger-logout-btn') || e.target.closest('a[href="/logout"]')) {
-        e.preventDefault();
-        console.log('auth.js: Logout triggered');
-        localStorage.removeItem('token');
-        localStorage.removeItem('sessionAuth');
-        try {
-            const response = await fetch(`${BACKEND_URL}/logout`, {
-                method: 'POST',
-                credentials: 'include',
-            });
-            if (response.ok) {
-                console.log('auth.js: Server-side logout successful');
-            } else {
-                console.error('auth.js: Server-side logout failed:', response.status);
-            }
-        } catch (error) {
-            console.error('auth.js: Logout error:', error);
-        }
-        window.updateHeader();
-        window.location.href = '/';
-    }
-});
-
-console.log('auth.js: Loaded and window.updateHeader defined');
+console.log('auth.js: Loaded');

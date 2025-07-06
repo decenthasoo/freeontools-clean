@@ -1,32 +1,131 @@
+// Check auth status synchronously if possible
+async function checkAuthStatusSync() {
+    console.log('script.js: Checking auth status synchronously');
+    const token = localStorage.getItem('token');
+    if (token && typeof jwt_decode === 'function') {
+        try {
+            const decoded = jwt_decode(token);
+            const currentTime = Math.floor(Date.now() / 1000);
+            if (decoded.exp && decoded.exp > currentTime && decoded.userId) {
+                console.log('script.js: Token is valid locally, userId:', decoded.userId);
+                localStorage.setItem('sessionAuth', 'true');
+                return true;
+            } else {
+                console.log('script.js: Token expired or invalid, removing sessionAuth');
+                localStorage.removeItem('sessionAuth');
+                localStorage.removeItem('token');
+            }
+        } catch (error) {
+            console.error('script.js: Local token validation error:', error);
+            localStorage.removeItem('sessionAuth');
+            localStorage.removeItem('token');
+        }
+    }
+    return false;
+}
+
 function loadHTML(file, placeholderId, callback) {
     console.log(`script.js: Loading ${file}`);
-    fetch(file, { cache: "no-store" })
-        .then(response => {
-            console.log(`script.js: ${file} response status: ${response.status}`);
-            if (!response.ok) {
-                throw new Error(`${file} failed to load with status ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log(`script.js: ${file} loaded successfully`);
-            const placeholder = document.getElementById(placeholderId);
-            if (placeholder) {
-                placeholder.innerHTML = data;
-                console.log(`script.js: Inserted ${file} into ${placeholderId}`);
-                if (callback) callback();
-                // Trigger auth header update after header load
-                if (file === "Header.html" && typeof window.updateHeader === "function") {
-                    console.log("script.js: Header.html loaded, calling window.updateHeader");
-                    window.updateHeader();
-                }
-            } else {
-                console.error(`script.js: Placeholder ${placeholderId} not found`);
-            }
-        })
-        .catch(error => {
-            console.error(`script.js: Error loading ${file}: ${error.message}`);
+    if (file === 'Header.html') {
+        // Check auth status before loading header
+        checkAuthStatusSync().then(isAuthenticated => {
+            fetch(file, { cache: "no-store" })
+                .then(response => {
+                    console.log(`script.js: ${file} response status: ${response.status}`);
+                    if (!response.ok) {
+                        throw new Error(`${file} failed to load with status ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    console.log(`script.js: ${file} loaded successfully`);
+                    const placeholder = document.getElementById(placeholderId);
+                    if (placeholder) {
+                        placeholder.innerHTML = data;
+                        console.log(`script.js: Inserted ${file} into ${placeholderId}`);
+                        // Update header buttons based on auth status
+                        const headerButtons = document.querySelector('.header-buttons');
+                        const hamburgerContent = document.querySelector('.hamburger-content');
+                        const navDropdownContent = document.querySelector('.nav-has-dropdown .dropdown-content .tool-list');
+                        if (headerButtons && hamburgerContent && navDropdownContent) {
+                            if (isAuthenticated) {
+                                console.log('script.js: Authenticated, setting Profile and Logout buttons');
+                                headerButtons.innerHTML = `
+                                    <a href="/profile.html" class="header-btn signup-btn">Profile</a>
+                                    <a href="/logout" class="header-btn login-btn" id="logout-btn">Logout</a>
+                                `;
+                                const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
+                                const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
+                                if (signupBtn) signupBtn.style.display = 'none';
+                                if (loginBtn) loginBtn.style.display = 'none';
+                                if (!hamburgerContent.querySelector('.hamburger-profile-btn')) {
+                                    hamburgerContent.insertAdjacentHTML('beforeend', `
+                                        <a href="/profile.html" class="header-btn hamburger-signup-btn hamburger-profile-btn">Profile</a>
+                                        <a href="/logout" class="header-btn hamburger-login-btn hamburger-logout-btn">Logout</a>
+                                    `);
+                                }
+                                const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
+                                const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
+                                const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
+                                if (profileLink) profileLink.style.display = 'block';
+                                if (settingsLink) settingsLink.style.display = 'block';
+                                if (logoutLink) logoutLink.style.display = 'block';
+                            } else {
+                                console.log('script.js: Not authenticated, setting Sign Up and Login buttons');
+                                headerButtons.innerHTML = `
+                                    <a href="/signup.html" class="header-btn signup-btn">Sign Up</a>
+                                    <a href="/login.html" class="header-btn login-btn">Login</a>
+                                `;
+                                const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
+                                const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
+                                if (signupBtn) signupBtn.style.display = 'block';
+                                if (loginBtn) loginBtn.style.display = 'block';
+                                const profileBtn = hamburgerContent.querySelector('.hamburger-profile-btn');
+                                const logoutBtn = hamburgerContent.querySelector('.hamburger-logout-btn');
+                                if (profileBtn) profileBtn.remove();
+                                if (logoutBtn) logoutBtn.remove();
+                                const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
+                                const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
+                                const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
+                                if (profileLink) profileLink.style.display = 'none';
+                                if (settingsLink) settingsLink.style.display = 'none';
+                                if (logoutLink) logoutLink.style.display = 'none';
+                            }
+                        }
+                        if (callback) callback();
+                    } else {
+                        console.error(`script.js: Placeholder ${placeholderId} not found`);
+                    }
+                })
+                .catch(error => {
+                    console.error(`script.js: Error loading ${file}: ${error.message}`);
+                });
         });
+    } else {
+        // Non-header files (e.g., Footer.html)
+        fetch(file, { cache: "no-store" })
+            .then(response => {
+                console.log(`script.js: ${file} response status: ${response.status}`);
+                if (!response.ok) {
+                    throw new Error(`${file} failed to load with status ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(`script.js: ${file} loaded successfully`);
+                const placeholder = document.getElementById(placeholderId);
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                    console.log(`script.js: Inserted ${file} into ${placeholderId}`);
+                    if (callback) callback();
+                } else {
+                    console.error(`script.js: Placeholder ${placeholderId} not found`);
+                }
+            })
+            .catch(error => {
+                console.error(`script.js: Error loading ${file}: ${error.message}`);
+            });
+    }
 }
 
 function initializeHeaderScripts() {
@@ -65,7 +164,6 @@ function initializeHeaderScripts() {
             return;
         }
 
-        // Toggle dropdown (POPULAR TOOLS)
         const toggleDropdown = () => {
             if (window.innerWidth <= 1280) {
                 console.log("script.js: Dropdown button clicked/touched, toggling active class");
@@ -75,7 +173,6 @@ function initializeHeaderScripts() {
             }
         };
 
-        // Toggle nav-has-dropdown (Profile, Settings, Logout)
         const toggleNavDropdown = () => {
             if (window.innerWidth <= 834) {
                 console.log("script.js: Nav dropdown button clicked/touched, toggling active class");
@@ -85,39 +182,33 @@ function initializeHeaderScripts() {
             }
         };
 
-        // Remove existing listeners to prevent duplicates
         dropdownBtn.removeEventListener("click", toggleDropdown);
         dropdownBtn.removeEventListener("touchstart", toggleDropdown);
         navDropdownBtn.removeEventListener("click", toggleNavDropdown);
         navDropdownBtn.removeEventListener("touchstart", toggleNavDropdown);
 
-        // Add listeners for dropdown
         dropdownBtn.addEventListener("click", toggleDropdown);
         dropdownBtn.addEventListener("touchstart", (e) => {
             e.preventDefault();
             toggleDropdown();
         });
 
-        // Add listeners for nav-has-dropdown
         navDropdownBtn.addEventListener("click", toggleNavDropdown);
         navDropdownBtn.addEventListener("touchstart", (e) => {
             e.preventDefault();
             toggleNavDropdown();
         });
 
-        // Hamburger menu
         hamburgerBtn.addEventListener("click", () => {
             console.log("script.js: Hamburger button clicked");
             hamburgerContent.classList.toggle("active");
         });
 
-        // Language dropdown
         languageBtn.addEventListener("click", () => {
             console.log("script.js: Language button clicked");
             languageContent.classList.toggle("active");
         });
 
-        // Close button for dropdown
         dropdownCloseBtn.addEventListener("click", () => {
             if (window.innerWidth <= 1280) {
                 console.log("script.js: Dropdown close button clicked, removing active class");
@@ -127,7 +218,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Close button for nav-has-dropdown
         navCloseBtn.addEventListener("click", () => {
             if (window.innerWidth <= 834) {
                 console.log("script.js: Nav dropdown close button clicked, removing active class");
@@ -137,7 +227,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Add immediate navigation for dropdown links
         const dropdownLinks = document.querySelectorAll(".tool-list a");
         dropdownLinks.forEach(link => {
             link.removeEventListener("click", handleLinkClick);
@@ -153,7 +242,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Add immediate navigation for nav-has-dropdown links
         const navLinks = navDropdown.querySelectorAll(".tool-list a");
         navLinks.forEach(link => {
             link.removeEventListener("click", handleNavLinkClick);
@@ -169,7 +257,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Close dropdowns when clicking outside
         document.addEventListener("click", (event) => {
             if (!hamburgerBtn.contains(event.target) && !hamburgerContent.contains(event.target)) {
                 hamburgerContent.classList.remove("active");
@@ -189,7 +276,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Handle resize/rotation with debounce
         let resizeTimeout;
         window.addEventListener("resize", () => {
             clearTimeout(resizeTimeout);
@@ -208,7 +294,6 @@ function initializeHeaderScripts() {
             }, 100);
         });
 
-        // Initialize scroll-up button for nav-has-dropdown dropdown-content
         initializeDropdownScrollUp();
     }
 
@@ -254,7 +339,6 @@ function initializeFooterScripts() {
     });
 }
 
-// Load header and footer
 console.log("script.js: Script started");
 document.addEventListener("DOMContentLoaded", () => {
     console.log("script.js: DOMContentLoaded fired, loading header and footer");
@@ -264,7 +348,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadHTML(footerPath, "footer-placeholder", initializeFooterScripts);
 });
 
-// Fallback if DOMContentLoaded doesn't fire
 window.addEventListener("load", () => {
     console.log("script.js: Window load fired, checking header and footer");
     if (!document.getElementById("header-placeholder").innerHTML) {
@@ -277,7 +360,6 @@ window.addEventListener("load", () => {
     }
 });
 
-// Style h1 and p tags for non-.html tool pages
 document.addEventListener("DOMContentLoaded", () => {
     console.log(`script.js: Checking for tool page to style h1 and h1 + p. URL: ${window.location.href}, Pathname: ${window.location.pathname}`);
     const pathname = window.location.pathname.toLowerCase();
