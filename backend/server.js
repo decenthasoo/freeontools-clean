@@ -398,30 +398,20 @@ app.post('/api/validate-token', async (req, res) => {
 });
 
 app.get('/auth/check', async (req, res) => {
-  console.log('auth.js: /auth/check called, session userId:', req.session.userId);
-  if (req.session.userId) {
-    try {
-      const user = await User.findById(req.session.userId);
-      if (user) {
-        console.log(`auth.js: /auth/check authenticated for user: ${user.email}`);
-        return res.json({ authenticated: true });
-      }
-    } catch (error) {
-      console.error('auth.js: /auth/check error:', error);
+    console.log('auth.js: /auth/check called, session userId:', req.session.userId);
+    if (req.session.userId) {
+        try {
+            const user = await User.findById(req.session.userId).cache(60); // Cache for 60 seconds (requires node-cache or redis)
+            if (user) {
+                console.log(`auth.js: /auth/check authenticated for user: ${user.email}`);
+                return res.json({ authenticated: true });
+            }
+        } catch (error) {
+            console.error('auth.js: /auth/check error:', error);
+        }
     }
-  }
-  console.log('auth.js: /auth/check not authenticated');
-  res.json({ authenticated: false });
-});
-
-app.post('/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      console.error('auth.js: Logout error:', err);
-      return res.status(500).json({ message: 'Logout failed' });
-    }
-    res.json({ message: 'Logout successful' });
-  });
+    console.log('auth.js: /auth/check not authenticated');
+    res.json({ authenticated: false });
 });
 
 // Facebook Auth Routes
