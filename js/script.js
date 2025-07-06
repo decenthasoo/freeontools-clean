@@ -262,9 +262,9 @@ async function checkAuthStatusCached() {
     return authStatusPromise;
 }
 
-// Load header, footer, and auth status in parallel
+// Load header, footer, auth status, and style content in parallel
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log("script.js: DOMContentLoaded fired, loading header, footer, and checking auth");
+    console.log("script.js: DOMContentLoaded fired, loading header, footer, checking auth, and styling content");
     const headerPath = "Header.html";
     const footerPath = "Footer.html";
 
@@ -289,27 +289,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log("script.js: Header loaded, updating with auth status:", isAuthenticated);
         window.updateHeader(isAuthenticated);
     }
-});
 
-// Fallback if DOMContentLoaded doesn't fire
-window.addEventListener("load", async () => {
-    console.log("script.js: Window load fired, checking header and footer");
-    if (!document.getElementById("header-placeholder").innerHTML) {
-        console.log("script.js: Header not loaded, retrying");
-        await loadHTML("Header.html", "header-placeholder", initializeHeaderScripts);
-        if (typeof window.updateHeader === "function") {
-            const isAuthenticated = await checkAuthStatusCached();
-            window.updateHeader(isAuthenticated);
-        }
-    }
-    if (!document.getElementById("footer-placeholder").innerHTML) {
-        console.log("script.js: Footer not loaded, retrying");
-        await loadHTML("Footer.html", "footer-placeholder", initializeFooterScripts);
-    }
-});
-
-// Style h1 and p tags for non-.html tool pages
-document.addEventListener("DOMContentLoaded", () => {
+    // Style h1 and p tags for non-.html tool pages
     console.log(`script.js: Checking for tool page to style h1 and h1 + p. URL: ${window.location.href}, Pathname: ${window.location.pathname}`);
     const pathname = window.location.pathname.toLowerCase();
     const isToolsPage = !pathname.endsWith(".html") && 
@@ -337,5 +318,26 @@ document.addEventListener("DOMContentLoaded", () => {
             p.style.maxWidth = "600px";
             p.style.margin = "0 auto";
         });
+    }
+});
+
+// Fallback if DOMContentLoaded doesn't fire, but only load if not already loaded
+window.addEventListener("load", async () => {
+    console.log("script.js: Window load fired, checking header and footer");
+    const headerPlaceholder = document.getElementById("header-placeholder");
+    const footerPlaceholder = document.getElementById("footer-placeholder");
+
+    if (headerPlaceholder && !headerPlaceholder.innerHTML.trim()) {
+        console.log("script.js: Header not loaded, retrying");
+        await loadHTML("Header.html", "header-placeholder", initializeHeaderScripts);
+        if (typeof window.updateHeader === "function") {
+            const isAuthenticated = await checkAuthStatusCached();
+            console.log("script.js: Header loaded in fallback, updating with auth status:", isAuthenticated);
+            window.updateHeader(isAuthenticated);
+        }
+    }
+    if (footerPlaceholder && !footerPlaceholder.innerHTML.trim()) {
+        console.log("script.js: Footer not loaded, retrying");
+        await loadHTML("Footer.html", "footer-placeholder", initializeFooterScripts);
     }
 });

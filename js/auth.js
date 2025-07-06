@@ -298,9 +298,26 @@ window.updateHeader = async function(isAuthenticated = null, attempt = 1, maxAtt
         return;
     }
 
-    // Show loading state if auth status is not yet determined
-    if (isAuthenticated === null || isAuthCheckPending) {
-        console.log('auth.js: Auth check pending or undetermined, showing loading state');
+    // Skip loading state if social token is present and valid
+    const urlParams = new URLSearchParams(window.location.search);
+    const socialToken = urlParams.get('token');
+    if (socialToken && window.location.pathname === '/profile.html' && isAuthenticated === null) {
+        try {
+            const decoded = jwt_decode(socialToken);
+            const currentTime = Math.floor(Date.now() / 1000);
+            if (decoded.exp && decoded.exp > currentTime && decoded.userId) {
+                console.log('auth.js: Valid social token, setting isAuthenticated to true');
+                isAuthenticated = true;
+                isAuthCheckPending = false;
+            }
+        } catch (error) {
+            console.error('auth.js: Error decoding social token:', error);
+        }
+    }
+
+    // Show loading state only if auth status is truly pending
+    if (isAuthenticated === null && isAuthCheckPending) {
+        console.log('auth.js: Auth check pending, showing loading state');
         headerButtons.innerHTML = `<span class="loading">Loading...</span>`;
         hamburgerContent.innerHTML = `<span class="loading">Loading...</span>`;
         return;
@@ -369,11 +386,36 @@ window.updateHeader = async function(isAuthenticated = null, attempt = 1, maxAtt
     }
 };
 
-async function checkAuthStatus(attempt = 1, maxAttempts = 3) {
+async function checkAuthStatus(attempt = 1, maxAttempts = 2) {
     console.log(`auth.js: Checking auth status for ${window.location.pathname}, attempt ${attempt}`);
     if (window.location.pathname === '/reset-password.html') {
         console.log('auth.js: On reset-password.html, bypassing auth check');
         return false;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const socialToken = urlParams.get('token');
+    if (socialToken && window.location.pathname === '/profile.html' && attempt === 1) {
+        console.log('auth.js: Social token found in URL, validating:', socialToken.slice(0, 20) + '...');
+        try {
+            const decoded = jwt_decode(socialToken);
+            console.log('auth.js: Decoded JWT:', decoded);
+            const currentTime = Math.floor(Date.now() / 1000);
+            if (decoded.exp && decoded.exp > currentTime && decoded.userId) {
+                console.log('auth.js: Social token is valid, userId:', decoded.userId);
+                localStorage.setItem('sessionAuth', 'true');
+                isAuthCheckPending = false;
+                return true;
+            } else {
+                console.log('auth.js: Social token expired or invalid, removing sessionAuth');
+                localStorage.removeItem('sessionAuth');
+                localStorage.removeItem('token');
+            }
+        } catch (error) {
+            console.error('auth.js: Social token validation error:', error);
+            localStorage.removeItem('sessionAuth');
+            localStorage.removeItem('token');
+        }
     }
 
     const token = localStorage.getItem('token');
@@ -451,7 +493,7 @@ document.addEventListener('click', async (e) => {
         } catch (error) {
             console.error('auth.js: Logout error:', error);
         }
-        window.updateHeader();
+        window.updateHeader(false); // Immediately update to unauthenticated state
         window.location.href = '/';
     }
 });
