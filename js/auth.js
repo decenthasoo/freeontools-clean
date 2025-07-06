@@ -3,6 +3,14 @@ const BACKEND_URL = window.location.hostname === 'localhost' || window.location.
   ? 'http://localhost:3000'
   : 'https://www.freeontools.com';
 
+// Load jwt-decode library (assumes it's included via CDN or npm)
+if (typeof jwt_decode === 'undefined') {
+  console.error('auth.js: jwt-decode library not loaded');
+}
+
+// Set loading state for header
+let isAuthCheckPending = false;
+
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('auth.js: DOMContentLoaded, initializing auth listeners for', window.location.pathname);
     console.log('auth.js: Using BACKEND_URL:', BACKEND_URL);
@@ -15,7 +23,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('token', socialToken);
         localStorage.setItem('sessionAuth', 'true');
         window.history.replaceState({}, document.title, window.location.pathname);
+        isAuthCheckPending = true; // Set loading state
         await window.updateHeader();
+        isAuthCheckPending = false;
     }
 
     // Handle reset-password.html
@@ -290,6 +300,13 @@ window.updateHeader = async function(attempt = 1, maxAttempts = 10) {
         setTimeout(() => window.updateHeader(attempt + 1, maxAttempts), 100);
         return;
     }
+    if (isAuthCheckPending) {
+        console.log('auth.js: Auth check pending, showing loading state');
+        headerButtons.innerHTML = `<span>Loading...</span>`;
+        hamburgerContent.innerHTML = `<span>Loading...</span>`;
+        setTimeout(() => window.updateHeader(attempt + 1, maxAttempts), 100);
+        return;
+    }
     const isAuthenticated = await checkAuthStatus();
     if (isAuthenticated) {
         console.log('auth.js: Auth present, setting Profile and Logout');
@@ -364,27 +381,44 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
     if (token) {
         console.log('auth.js: Token found, validating locally');
         try {
-            // Attempt to validate token by calling an endpoint or parsing locally
-            const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token }),
-            });
-            const data = await response.json();
-            console.log('auth.js: Token validation response:', data);
-            if (data.valid) {
+            const decoded = jwt_decode(token); // Client-side JWT validation
+            console.log('auth.js: Decoded JWT:', decoded);
+            const currentTime = Math.floor(Date.now() / 1000);
+            if (decoded.exp && decoded.exp > currentTime) {
+                console.log('auth.js: Token is valid locally, userId:', decoded.userId);
                 localStorage.setItem('sessionAuth', 'true');
-                console.log('auth.js: Token validated, setting sessionAuth to true');
                 return true;
+            } else {
+                console.log('auth.js: Token expired, removing sessionAuth');
+                localStorage.removeItem('sessionAuth');
+                localStorage.removeItem('token');
             }
-            console.log('auth.js: Token invalid, removing sessionAuth');
-            localStorage.removeItem('sessionAuth');
-            localStorage.removeItem('token');
         } catch (error) {
-            console.error('auth.js: Token validation error:', error);
+            console.error('auth.js: Local token validation error:', error);
             localStorage.removeItem('sessionAuth');
             localStorage.removeItem('token');
         }
+    }
+    // Fallback to server-side validation
+    console.log('auth.js: No valid local token, checking server-side');
+    try {
+        const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token }),
+        });
+        const data = await response.json();
+        console.log('auth.js: Token validation response:', data);
+        if (data.valid) {
+            localStorage.setItem('sessionAuth', 'true');
+            console.log('auth.js: Token validated, setting sessionAuth to true');
+            return true;
+        }
+        console.log('auth.js: Token invalid, removing sessionAuth');
+        localStorage.removeItem('sessionAuth');
+        localStorage.removeItem('token');
+    } catch (error) {
+        console.error('auth.js: Token validation error:', error);
     }
     try {
         const response = await fetch(`${BACKEND_URL}/auth/check`, {

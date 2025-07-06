@@ -153,7 +153,12 @@ mongoose.connect(config.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-  .then(() => console.log('\x1b[32mMongoDB connected successfully\x1b[0m'))
+  .then(async () => {
+    console.log('\x1b[32mMongoDB connected successfully\x1b[0m');
+    // Create index on _id for faster queries
+    await User.collection.createIndex({ _id: 1 });
+    console.log('\x1b[32mMongoDB index created on User._id\x1b[0m');
+  })
   .catch(err => {
     console.error('\x1b[31mMongoDB connection failed:\x1b[0m', err);
     process.exit(1);
@@ -371,31 +376,21 @@ app.post('/api/validate-reset-token', async (req, res) => {
   }
 });
 
-app.post('/api/reset-password', async (req, res) => {
-  const { token, password } = req.body;
-  console.log(`auth.js: Reset password attempt with token: ${token}`);
+app.post('/api/validate-token', async (req, res) => {
+  const { token } = req.body;
+  console.log('auth.js: Validate token request for token:', token ? token.slice(0, 20) + '...' : null);
   try {
-    if (!token) {
-      console.log('auth.js: Reset password failed: No token provided');
-      return res.status(400).json({ message: 'Token is required' });
-    }
     const decoded = jwt.verify(token, config.jwtSecret);
-    const user = await User.findById(decoded.userId).select('+password');
+    const user = await User.findById(decoded.userId);
     if (!user) {
-      console.log(`auth.js: Reset password failed: User not found for ID ${decoded.userId}`);
-      return res.status(400).json({ message: 'Invalid or expired token' });
+      console.log(`auth.js: Invalid token for user ID: ${decoded.userId}`);
+      return res.status(400).json({ valid: false, message: 'Invalid token' });
     }
-    if (password.length < 8) {
-      console.log(`auth.js: Reset password failed: Password too short for user ${user.email}`);
-      return res.status(400).json({ message: 'Password must be at least 8 characters long' });
-    }
-    user.password = password;
-    await user.save();
-    console.log(`auth.js: Password reset successful for ${user.email}`);
-    res.json({ message: 'Password reset successful' });
+    console.log(`auth.js: Token valid for user: ${user.email}`);
+    res.json({ valid: true, message: 'Token is valid' });
   } catch (error) {
-    console.error('auth.js: Reset password error:', error.message, error.stack);
-    res.status(400).json({ message: 'Invalid or expired token', error: error.message });
+    console.error('auth.js: Validate token error:', error);
+    res.status(400).json({ valid: false, message: 'Invalid or expired token' });
   }
 });
 
@@ -435,7 +430,7 @@ app.get('/api/auth/facebook/callback', passport.authenticate('facebook', {
     : 'http://localhost:8080/login.html'
 }), (req, res) => {
   console.log(`auth.js: Facebook OAuth callback, user: ${req.user.email}, setting session userId: ${req.user._id}`);
-  req.session.userId = req.user._id; // Set session
+  req.session.userId = req.user._id;
   const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
   res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
 });
@@ -449,7 +444,7 @@ app.get('/api/auth/google/callback', passport.authenticate('google', {
     : 'http://localhost:8080/login.html'
 }), (req, res) => {
   console.log(`auth.js: Google OAuth callback, user: ${req.user.email}, setting session userId: ${req.user._id}`);
-  req.session.userId = req.user._id; // Set session
+  req.session.userId = req.user._id;
   const token = jwt.sign({ userId: req.user._id, email: req.user.email }, config.jwtSecret, { expiresIn: '1h' });
   res.redirect(`https://www.freeontools.com/profile.html?token=${token}`);
 });
