@@ -23,9 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('token', socialToken);
         localStorage.setItem('sessionAuth', 'true');
         window.history.replaceState({}, document.title, window.location.pathname);
-        isAuthCheckPending = true; // Set loading state
-        await window.updateHeader();
-        isAuthCheckPending = false;
+        isAuthCheckPending = true;
+        // Don't call updateHeader here; script.js will handle it
     }
 
     // Handle reset-password.html
@@ -276,37 +275,37 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
     }
-
-    await window.updateHeader();
 });
 
-// Explicitly define updateHeader as a global function
-window.updateHeader = async function(attempt = 1, maxAttempts = 10) {
+// Modified updateHeader to accept isAuthenticated parameter
+window.updateHeader = async function(isAuthenticated = null, attempt = 1, maxAttempts = 10) {
     console.log(`auth.js: updateHeader attempt ${attempt} for ${window.location.pathname}`);
-    const token = localStorage.getItem('token');
     const headerButtons = document.querySelector('.header-buttons');
     const hamburgerContent = document.querySelector('.hamburger-content');
     const navDropdownContent = document.querySelector('.nav-has-dropdown .dropdown-content .tool-list');
-    console.log('auth.js: Token:', token ? token.slice(0, 20) + '...' : null);
     console.log('auth.js: Header Buttons found:', !!headerButtons);
     console.log('auth.js: Hamburger Content found:', !!hamburgerContent);
     console.log('auth.js: Nav Dropdown Content found:', !!navDropdownContent);
+
     if (attempt > maxAttempts) {
         console.error(`auth.js: Failed to update header after ${maxAttempts} attempts`);
         return;
     }
+
     if (!headerButtons || !hamburgerContent || !navDropdownContent) {
         console.log(`auth.js: Header elements not found, retrying in 100ms (attempt ${attempt})`);
-        setTimeout(() => window.updateHeader(attempt + 1, maxAttempts), 100);
+        setTimeout(() => window.updateHeader(isAuthenticated, attempt + 1, maxAttempts), 100);
         return;
     }
-    if (isAuthCheckPending) {
-        console.log('auth.js: Auth check pending, showing loading state');
-        headerButtons.innerHTML = `<span>Loading...</span>`;
-        hamburgerContent.innerHTML = `<span>Loading...</span>`;
+
+    // Show loading state if auth status is not yet determined
+    if (isAuthenticated === null || isAuthCheckPending) {
+        console.log('auth.js: Auth check pending or undetermined, showing loading state');
+        headerButtons.innerHTML = `<span class="loading">Loading...</span>`;
+        hamburgerContent.innerHTML = `<span class="loading">Loading...</span>`;
         return;
     }
-    const isAuthenticated = await checkAuthStatus();
+
     if (isAuthenticated) {
         console.log('auth.js: Auth present, setting Profile and Logout');
         headerButtons.innerHTML = `
@@ -370,17 +369,18 @@ window.updateHeader = async function(attempt = 1, maxAttempts = 10) {
     }
 };
 
-async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
+async function checkAuthStatus(attempt = 1, maxAttempts = 3) {
     console.log(`auth.js: Checking auth status for ${window.location.pathname}, attempt ${attempt}`);
     if (window.location.pathname === '/reset-password.html') {
         console.log('auth.js: On reset-password.html, bypassing auth check');
         return false;
     }
+
     const token = localStorage.getItem('token');
     if (token && typeof jwt_decode === 'function') {
         console.log('auth.js: Token found, validating locally:', token.slice(0, 20) + '...');
         try {
-            const decoded = jwt_decode(token); // Client-side JWT validation
+            const decoded = jwt_decode(token);
             console.log('auth.js: Decoded JWT:', decoded);
             const currentTime = Math.floor(Date.now() / 1000);
             if (decoded.exp && decoded.exp > currentTime && decoded.userId) {
@@ -397,37 +397,9 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
             localStorage.removeItem('sessionAuth');
             localStorage.removeItem('token');
         }
-    } else if (token) {
-        console.error('auth.js: jwt-decode not available, skipping local validation');
-    } else {
-        console.log('auth.js: No token found in localStorage');
     }
-    // Fallback to server-side validation only if necessary
-    if (token) {
-        console.log('auth.js: Attempting server-side token validation');
-        try {
-            const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token }), // Ensure token is sent
-            });
-            const data = await response.json();
-            console.log('auth.js: Token validation response:', data);
-            if (data.valid) {
-                localStorage.setItem('sessionAuth', 'true');
-                console.log('auth.js: Token validated, setting sessionAuth to true');
-                return true;
-            }
-            console.log('auth.js: Token invalid, removing sessionAuth');
-            localStorage.removeItem('sessionAuth');
-            localStorage.removeItem('token');
-        } catch (error) {
-            console.error('auth.js: Token validation error:', error);
-            localStorage.removeItem('sessionAuth');
-            localStorage.removeItem('token');
-        }
-    }
-    // Fallback to session check
+
+    // Fallback to server-side session check
     console.log('auth.js: No valid token, checking server-side session');
     try {
         const response = await fetch(`${BACKEND_URL}/auth/check`, {
@@ -452,7 +424,7 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
         localStorage.removeItem('sessionAuth');
         if (attempt < maxAttempts) {
             console.log(`auth.js: Retrying auth check, attempt ${attempt + 1}`);
-            await new Promise(resolve => setTimeout(resolve, 300));
+            await new Promise(resolve => setTimeout(resolve, 100));
             return checkAuthStatus(attempt + 1, maxAttempts);
         }
         console.error('auth.js: Max auth check attempts reached');

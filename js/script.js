@@ -1,6 +1,6 @@
 function loadHTML(file, placeholderId, callback) {
     console.log(`script.js: Loading ${file}`);
-    fetch(file, { cache: "no-store" })
+    return fetch(file, { cache: "no-store" })
         .then(response => {
             console.log(`script.js: ${file} response status: ${response.status}`);
             if (!response.ok) {
@@ -15,17 +15,14 @@ function loadHTML(file, placeholderId, callback) {
                 placeholder.innerHTML = data;
                 console.log(`script.js: Inserted ${file} into ${placeholderId}`);
                 if (callback) callback();
-                // Trigger auth header update after header load
-                if (file === "Header.html" && typeof window.updateHeader === "function") {
-                    console.log("script.js: Header.html loaded, calling window.updateHeader");
-                    window.updateHeader();
-                }
             } else {
                 console.error(`script.js: Placeholder ${placeholderId} not found`);
             }
+            return data; // Return data for further processing if needed
         })
         .catch(error => {
             console.error(`script.js: Error loading ${file}: ${error.message}`);
+            throw error;
         });
 }
 
@@ -254,26 +251,60 @@ function initializeFooterScripts() {
     });
 }
 
-// Load header and footer
-console.log("script.js: Script started");
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("script.js: DOMContentLoaded fired, loading header and footer");
+// Cache for authentication status to avoid redundant checks
+let authStatusPromise = null;
+
+async function checkAuthStatusCached() {
+    if (!authStatusPromise) {
+        console.log("script.js: Initiating auth status check");
+        authStatusPromise = window.checkAuthStatus ? window.checkAuthStatus() : Promise.resolve(false);
+    }
+    return authStatusPromise;
+}
+
+// Load header, footer, and auth status in parallel
+document.addEventListener("DOMContentLoaded", async () => {
+    console.log("script.js: DOMContentLoaded fired, loading header, footer, and checking auth");
     const headerPath = "Header.html";
     const footerPath = "Footer.html";
-    loadHTML(headerPath, "header-placeholder", initializeHeaderScripts);
-    loadHTML(footerPath, "footer-placeholder", initializeFooterScripts);
+
+    // Start all async operations concurrently
+    const [headerResult, footerResult, isAuthenticated] = await Promise.all([
+        loadHTML(headerPath, "header-placeholder", initializeHeaderScripts).catch(err => {
+            console.error("script.js: Header load failed", err);
+            return null;
+        }),
+        loadHTML(footerPath, "footer-placeholder", initializeFooterScripts).catch(err => {
+            console.error("script.js: Footer load failed", err);
+            return null;
+        }),
+        checkAuthStatusCached().catch(err => {
+            console.error("script.js: Auth check failed", err);
+            return false;
+        })
+    ]);
+
+    // Update header with authentication status
+    if (typeof window.updateHeader === "function") {
+        console.log("script.js: Header loaded, updating with auth status:", isAuthenticated);
+        window.updateHeader(isAuthenticated);
+    }
 });
 
 // Fallback if DOMContentLoaded doesn't fire
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
     console.log("script.js: Window load fired, checking header and footer");
     if (!document.getElementById("header-placeholder").innerHTML) {
         console.log("script.js: Header not loaded, retrying");
-        loadHTML("Header.html", "header-placeholder", initializeHeaderScripts);
+        await loadHTML("Header.html", "header-placeholder", initializeHeaderScripts);
+        if (typeof window.updateHeader === "function") {
+            const isAuthenticated = await checkAuthStatusCached();
+            window.updateHeader(isAuthenticated);
+        }
     }
     if (!document.getElementById("footer-placeholder").innerHTML) {
         console.log("script.js: Footer not loaded, retrying");
-        loadHTML("Footer.html", "footer-placeholder", initializeFooterScripts);
+        await loadHTML("Footer.html", "footer-placeholder", initializeFooterScripts);
     }
 });
 
