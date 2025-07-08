@@ -2,6 +2,7 @@
   "name": "freeontools-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ../backend/server.js"
+    "start": "node ../backend/server.js",
+    "postinstall": "cd .. && npm install"
   }
 }
