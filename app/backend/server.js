@@ -32,7 +32,7 @@ const config = {
 
 const staticPath = path.join(__dirname, '../');
 const indexPath = path.join(staticPath, 'index.html');
-const footerPath = path.join(staticPath, 'Footer.html');
+const footerPath = path.join(staticPath, 'footer.html');
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
