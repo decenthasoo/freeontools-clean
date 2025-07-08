@@ -14,7 +14,7 @@ const User = require('./models/User');
 const bcrypt = require('bcryptjs');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 10000;
 
 // Configuration
 const config = {
@@ -32,8 +32,8 @@ const config = {
 
 // Path configuration
 const staticPath = path.join(__dirname, '../');
-const indexPath = path.join(staticPath, 'Index.html');
-const footerPath = path.join(staticPath, 'Footer.html');
+const indexPath = path.join(staticPath, 'index.html');
+const footerPath = path.join(staticPath, 'footer.html');
 
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
@@ -496,7 +496,7 @@ app.use((err, req, res, next) => {
 });
 
 // Server Start
-+ const server = app.listen(PORT, '0.0.0.0', () => {
+  const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
