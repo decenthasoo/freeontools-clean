@@ -60,7 +60,12 @@ app.set('trust proxy', 1);
 app.use((req, res, next) => {
   const host = req.get('host');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+
+  // Skip redirect for API and healthcheck
+  if (req.path.startsWith('/api/')) return next();
+
   console.log(`Request: ${protocol}://${host}${req.url}`);
+
   if (config.nodeEnv === 'production') {
     if (host !== 'www.freeontools.com' || protocol !== 'https') {
       console.log(`Redirecting to https://www.freeontools.com${req.url}`);
@@ -69,6 +74,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 
 // Remove .html extension and preserve query string
 app.use((req, res, next) => {
