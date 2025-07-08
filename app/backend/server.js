@@ -496,7 +496,7 @@ app.use((err, req, res, next) => {
 });
 
 // Server Start
-  const server = app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
   console.log('\n\x1b[36m=== Server Successfully Started ===\x1b[0m');
   console.log(`\x1b[32mPort:\x1b[0m ${PORT}`);
