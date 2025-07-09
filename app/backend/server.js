@@ -53,30 +53,33 @@ if (!fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
   process.exit(1);
 }
 
-// Redirect Middleware - Only for browser traffic, not for internal/API requests
+// Improved Redirect Middleware — Avoid redirecting internal/API/preview requests
 app.use((req, res, next) => {
-  const host = req.get('host');
+  const host = req.headers['x-forwarded-host'] || req.get('host');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
 
   const isApi = req.path.startsWith('/api/');
-  const isHealthCheck = req.path === '/api/health';
-  const isInternal = host.includes('localhost') || host.startsWith('127.') || host.includes('.code.run');
+  const isHealth = req.path.includes('/health');
+  const isInternal = host.includes('.code.run') || host.includes('localhost') || host.startsWith('127.');
 
-  // ❌ Do NOT redirect API calls or internal calls
-  if (isApi || isHealthCheck || isInternal) return next();
+  // ✅ Skip redirect for API, health, or internal preview environments like *.code.run
+  if (isApi || isHealth || isInternal) {
+    return next();
+  }
 
   console.log(`Request: ${protocol}://${host}${req.url}`);
 
-  // ✅ Redirect only in production
   if (config.nodeEnv === 'production') {
     if (host !== 'www.freeontools.com' || protocol !== 'https') {
-      console.log(`Redirecting to https://www.freeontools.com${req.url}`);
-      return res.redirect(301, `https://www.freeontools.com${req.url}`);
+      const redirectUrl = `https://www.freeontools.com${req.url}`;
+      console.log(`Redirecting to ${redirectUrl}`);
+      return res.redirect(301, redirectUrl);
     }
   }
 
   next();
 });
+
 
 
 
