@@ -4,24 +4,119 @@ const BACKEND_URL =
     ? 'http://localhost:3000'
     : 'https://api.freeontools.com';
 
-// Check if jwt-decode is loaded
-if (typeof jwt_decode === 'undefined') {
-  console.error('auth.js: jwt-decode library not loaded');
-}
+// Debug log to confirm auth.js is loaded
+console.log('auth.js: Script loaded');
 
-// Track pending state to prevent flicker in UI
-let isAuthCheckPending = false;
+// Add checkAuthStatus function to validate authentication status
+async function checkAuthStatus(attempt = 1, maxAttempts = 10) {
+  console.log(`auth.js: Checking auth status for ${window.location.pathname}, attempt ${attempt}`);
+  if (window.location.pathname === '/reset-password.html') {
+    console.log('auth.js: On reset-password.html, bypassing auth check');
+    return false;
+  }
+  const token = localStorage.getItem('token');
+  if (!token) {
+    console.log('auth.js: No token found, removing sessionAuth');
+    localStorage.removeItem('sessionAuth');
+    return false;
+  }
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/validate-token`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token }),
+    });
+    const data = await response.json();
+    console.log('auth.js: Token validation response:', data);
+    if (data.valid) {
+      localStorage.setItem('sessionAuth', 'true');
+      return true;
+    }
+    console.log('auth.js: Token invalid, removing sessionAuth and token');
+    localStorage.removeItem('sessionAuth');
+    localStorage.removeItem('token');
+    return false;
+  } catch (error) {
+    console.error(`auth.js: Token validation error on attempt ${attempt}:`, error);
+    localStorage.removeItem('sessionAuth');
+    localStorage.removeItem('token');
+    if (attempt < maxAttempts) {
+      await new Promise(resolve => setTimeout(resolve, 300));
+      return checkAuthStatus(attempt + 1, maxAttempts);
+    }
+    console.error('auth.js: Max auth check attempts reached');
+    return false;
+  }
+}
+window.checkAuthStatus = checkAuthStatus;
+
+// Add updateHeader function to update header based on auth status
+async function updateHeader() {
+  console.log(`auth.js: updateHeader called for ${window.location.pathname}`);
+  const headerButtons = document.querySelector('.header-buttons');
+  const hamburgerContent = document.querySelector('.hamburger-content');
+  const navDropdownContent = document.querySelector('.nav-has-dropdown .dropdown-content .tool-list');
+  if (!headerButtons || !hamburgerContent || !navDropdownContent) {
+    console.warn(`auth.js: Header elements not found`);
+    return;
+  }
+  const isAuthenticated = await checkAuthStatus();
+  if (isAuthenticated) {
+    console.log('auth.js: Authenticated, setting Profile and Logout');
+    headerButtons.innerHTML = `
+      <a href="/profile.html" class="header-btn signup-btn">Profile</a>
+      <a href="/logout" class="header-btn login-btn" id="logout-btn">Logout</a>
+    `;
+    const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
+    const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
+    if (signupBtn) signupBtn.style.display = 'none';
+    if (loginBtn) loginBtn.style.display = 'none';
+    if (!hamburgerContent.querySelector('.hamburger-profile-btn')) {
+      hamburgerContent.insertAdjacentHTML('beforeend', `
+        <a href="/profile.html" class="header-btn hamburger-signup-btn hamburger-profile-btn">Profile</a>
+        <a href="/logout" class="header-btn hamburger-login-btn hamburger-logout-btn">Logout</a>
+      `);
+    }
+    const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
+    const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
+    const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
+    if (profileLink) profileLink.style.display = 'block';
+    if (settingsLink) settingsLink.style.display = 'block';
+    if (logoutLink) logoutLink.style.display = 'block';
+  } else {
+    console.log('auth.js: Not authenticated, setting Sign Up and Login');
+    headerButtons.innerHTML = `
+      <a href="/signup.html" class="header-btn signup-btn">Sign Up</a>
+      <a href="/login.html" class="header-btn login-btn">Login</a>
+    `;
+    const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
+    const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
+    const profileBtn = hamburgerContent.querySelector('.hamburger-profile-btn');
+    const logoutBtn = hamburgerContent.querySelector('.hamburger-logout-btn');
+    if (signupBtn) signupBtn.style.display = 'block';
+    if (loginBtn) loginBtn.style.display = 'block';
+    if (profileBtn) profileBtn.remove();
+    if (logoutBtn) logoutBtn.remove();
+    const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
+    const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
+    const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
+    if (profileLink) profileLink.style.display = 'none';
+    if (settingsLink) settingsLink.style.display = 'none';
+    if (logoutLink) logoutLink.style.display = 'none';
+  }
+}
+window.updateHeader = updateHeader;
 
 document.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const socialToken = urlParams.get('token');
 
-  // Store social token from URL
+  // Store social token from URL and update header
   if (socialToken && window.location.pathname === '/profile.html') {
     localStorage.setItem('token', socialToken);
     localStorage.setItem('sessionAuth', 'true');
     window.history.replaceState({}, document.title, window.location.pathname);
-    isAuthCheckPending = true;
+    await window.updateHeader();
   }
 
   // Handle password reset token validation
@@ -66,6 +161,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       window.location.href = `${BACKEND_URL}/api/auth/${provider}`;
     });
   });
+
+  // Initial header update
+  await window.updateHeader();
 });
 
 function setupFormListeners() {
@@ -92,6 +190,7 @@ function setupFormListeners() {
         if (response.ok) {
           localStorage.setItem('token', data.token);
           localStorage.setItem('sessionAuth', 'true');
+          await window.updateHeader();
           window.location.href = '/profile.html';
         } else {
           errorMessage.textContent = data.message || 'Login failed';
@@ -119,6 +218,7 @@ function setupFormListeners() {
         if (response.ok) {
           localStorage.setItem('token', data.token);
           localStorage.setItem('sessionAuth', 'true');
+          await window.updateHeader();
           window.location.href = '/profile.html';
         } else {
           errorMessage.textContent = data.message || 'Signup failed';
@@ -244,7 +344,7 @@ document.addEventListener('click', async (e) => {
         credentials: 'include',
       });
     } catch {}
-    window.updateHeader(false);
+    await window.updateHeader();
     window.location.href = '/';
   }
 });

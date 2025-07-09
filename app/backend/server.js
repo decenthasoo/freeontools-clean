@@ -38,8 +38,8 @@ const footerPath = path.join(staticPath, 'footer.html');
 console.log('\n=== Server Initialization ===');
 console.log('Environment:', config.nodeEnv);
 console.log('Static files path:', path.resolve(staticPath));
-console.log('Index.html path:', indexPath);
-console.log('Footer.html path:', footerPath);
+console.log('index.html path:', indexPath);
+console.log('footer.html path:', footerPath);
 
 // Verify critical files exist
 if (!fs.existsSync(staticPath)) {
@@ -80,10 +80,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
-
-
 // Remove .html extension and preserve query string
 app.use((req, res, next) => {
   if (req.path.endsWith('.html')) {
@@ -93,6 +89,20 @@ app.use((req, res, next) => {
       console.log(`Redirecting ${req.url} to ${newPath}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`);
       return res.redirect(301, `${newPath}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`);
     }
+  }
+  next();
+});
+
+// Handle case-insensitive header.html and footer.html
+app.use((req, res, next) => {
+  if (req.path.toLowerCase() === '/header.html') {
+    const headerPath = path.join(staticPath, 'header.html');
+    console.log(`server.js: Serving header.html from ${headerPath}`);
+    return res.sendFile(headerPath);
+  }
+  if (req.path.toLowerCase() === '/footer.html') {
+    console.log(`server.js: Serving footer.html from ${footerPath}`);
+    return res.sendFile(footerPath);
   }
   next();
 });
@@ -109,14 +119,10 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Fix MIME types and case sensitivity
+// Fix MIME types
 app.use((req, res, next) => {
   if (req.path.endsWith('.js')) {
     res.type('application/javascript');
-  }
-  if (req.path.toLowerCase() === '/footer.html') {
-    console.log(`Serving Footer.html from ${footerPath}`);
-    return res.sendFile(footerPath);
   }
   next();
 });
@@ -218,7 +224,7 @@ if (config.facebookAppId && config.facebookAppSecret) {
     clientID: config.facebookAppId,
     clientSecret: config.facebookAppSecret,
     callbackURL: config.nodeEnv === 'production'
-      ? 'https://api.freeontools.com/api/auth/google/callback'
+      ? 'https://api.freeontools.com/api/auth/facebook/callback'
       : 'http://localhost:3000/api/auth/facebook/callback',
     profileFields: ['id', 'emails', 'name', 'displayName']
   }, async (accessToken, refreshToken, profile, done) => {
@@ -499,7 +505,7 @@ app.get('*', (req, res, next) => {
     console.log(`Serving HTML file: ${htmlPath}`);
     return res.sendFile(htmlPath);
   }
-  console.log(`Serving Index.html from: ${indexPath}`);
+  console.log(`Serving index.html from: ${indexPath}`);
   res.sendFile(indexPath);
 });
 

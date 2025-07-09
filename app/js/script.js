@@ -18,7 +18,7 @@ function loadHTML(file, placeholderId, callback) {
             } else {
                 console.error(`script.js: Placeholder ${placeholderId} not found`);
             }
-            return data; // Return data for further processing if needed
+            return data;
         })
         .catch(error => {
             console.error(`script.js: Error loading ${file}: ${error.message}`);
@@ -255,8 +255,8 @@ function initializeFooterScripts() {
 let authStatusPromise = null;
 
 async function checkAuthStatusCached() {
+    console.log("script.js: Initiating auth status check");
     if (!authStatusPromise) {
-        console.log("script.js: Initiating auth status check");
         authStatusPromise = window.checkAuthStatus ? window.checkAuthStatus() : Promise.resolve(false);
     }
     return authStatusPromise;
@@ -265,7 +265,7 @@ async function checkAuthStatusCached() {
 // Load header, footer, auth status, and style content in parallel
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("script.js: DOMContentLoaded fired, loading header, footer, checking auth, and styling content");
-    const headerPath = "Header.html";
+    const headerPath = "header.html";
     const footerPath = "footer.html";
 
     // Start all async operations concurrently
@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Update header with authentication status
     if (typeof window.updateHeader === "function") {
         console.log("script.js: Header loaded, updating with auth status:", isAuthenticated);
-        window.updateHeader(isAuthenticated);
+        await window.updateHeader();
     }
 
     // Style h1 and p tags for non-.html tool pages
@@ -329,11 +329,11 @@ window.addEventListener("load", async () => {
 
     if (headerPlaceholder && !headerPlaceholder.innerHTML.trim()) {
         console.log("script.js: Header not loaded, retrying");
-        await loadHTML("Header.html", "header-placeholder", initializeHeaderScripts);
+        await loadHTML("header.html", "header-placeholder", initializeHeaderScripts);
         if (typeof window.updateHeader === "function") {
             const isAuthenticated = await checkAuthStatusCached();
             console.log("script.js: Header loaded in fallback, updating with auth status:", isAuthenticated);
-            window.updateHeader(isAuthenticated);
+            await window.updateHeader();
         }
     }
     if (footerPlaceholder && !footerPlaceholder.innerHTML.trim()) {
