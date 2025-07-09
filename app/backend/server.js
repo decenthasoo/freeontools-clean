@@ -53,16 +53,16 @@ if (!fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
   process.exit(1);
 }
 
-// Middleware Setup
-app.set('trust proxy', 1);
-
 // Redirect Middleware - Handles non-www to www and HTTP to HTTPS
 app.use((req, res, next) => {
   const host = req.get('host');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
 
-  // Skip redirect for API and healthcheck
-  if (req.path.startsWith('/api/')) return next();
+  // ✅ Skip redirect for API routes and local IPs
+  const isLocalhost = host.includes('localhost') || host.startsWith('127.0.0.1') || host.startsWith('::1');
+  const isApi = req.path.startsWith('/api/');
+
+  if (isApi || isLocalhost) return next();
 
   console.log(`Request: ${protocol}://${host}${req.url}`);
 
@@ -74,6 +74,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 
 
 // Remove .html extension and preserve query string
