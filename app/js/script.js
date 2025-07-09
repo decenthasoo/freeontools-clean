@@ -338,6 +338,6 @@ window.addEventListener("load", async () => {
     }
     if (footerPlaceholder && !footerPlaceholder.innerHTML.trim()) {
         console.log("script.js: Footer not loaded, retrying");
-        await loadHTML("Footer.html", "footer-placeholder", initializeFooterScripts);
+        await loadHTML("footer.html", "footer-placeholder", initializeFooterScripts);
     }
 });
