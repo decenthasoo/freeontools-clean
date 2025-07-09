@@ -266,7 +266,7 @@ async function checkAuthStatusCached() {
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("script.js: DOMContentLoaded fired, loading header, footer, checking auth, and styling content");
     const headerPath = "Header.html";
-    const footerPath = "Footer.html";
+    const footerPath = "footer.html";
 
     // Start all async operations concurrently
     const [headerResult, footerResult, isAuthenticated] = await Promise.all([
