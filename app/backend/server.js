@@ -53,27 +53,31 @@ if (!fs.existsSync(indexPath) || !fs.existsSync(footerPath)) {
   process.exit(1);
 }
 
-// Redirect Middleware - Handles non-www to www and HTTP to HTTPS
+// Redirect Middleware - Only for browser traffic, not for internal/API requests
 app.use((req, res, next) => {
   const host = req.get('host');
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
 
-  // ✅ Skip redirect for API routes and local IPs
-  const isLocalhost = host.includes('localhost') || host.startsWith('127.0.0.1') || host.startsWith('::1');
   const isApi = req.path.startsWith('/api/');
+  const isHealthCheck = req.path === '/api/health';
+  const isInternal = host.includes('localhost') || host.startsWith('127.') || host.includes('.code.run');
 
-  if (isApi || isLocalhost) return next();
+  // ❌ Do NOT redirect API calls or internal calls
+  if (isApi || isHealthCheck || isInternal) return next();
 
   console.log(`Request: ${protocol}://${host}${req.url}`);
 
+  // ✅ Redirect only in production
   if (config.nodeEnv === 'production') {
     if (host !== 'www.freeontools.com' || protocol !== 'https') {
       console.log(`Redirecting to https://www.freeontools.com${req.url}`);
       return res.redirect(301, `https://www.freeontools.com${req.url}`);
     }
   }
+
   next();
 });
+
 
 
 
