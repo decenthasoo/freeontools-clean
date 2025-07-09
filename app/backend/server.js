@@ -218,7 +218,7 @@ if (config.facebookAppId && config.facebookAppSecret) {
     clientID: config.facebookAppId,
     clientSecret: config.facebookAppSecret,
     callbackURL: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/api/auth/facebook/callback'
+      ? 'https://api.freeontools.com/api/auth/google/callback'
       : 'http://localhost:3000/api/auth/facebook/callback',
     profileFields: ['id', 'emails', 'name', 'displayName']
   }, async (accessToken, refreshToken, profile, done) => {
@@ -255,14 +255,14 @@ if (config.googleClientId && config.googleClientSecret) {
     clientID: config.googleClientId,
     clientSecret: config.googleClientSecret,
     callbackURL: config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/api/auth/google/callback'
+      ? 'https://api.freeontools.com/api/auth/google/callback'
       : 'http://localhost:3000/api/auth/google/callback',
     scope: ['profile', 'email'],
     proxy: true
   }, async (accessToken, refreshToken, profile, done) => {
     console.log('auth.js: Google OAuth callback received, profile:', profile.id);
     console.log('auth.js: Google OAuth redirect URI sent:', config.nodeEnv === 'production'
-      ? 'https://www.freeontools.com/api/auth/google/callback'
+      ? 'https://api.freeontools.com/api/auth/google/callback'
       : 'http://localhost:3000/api/auth/google/callback');
     try {
       let user = await User.findOne({
