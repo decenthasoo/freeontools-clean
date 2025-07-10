@@ -11,12 +11,17 @@ window.authReady = false; // Flag to indicate auth processing is complete
 // Handle social login token synchronously on script load
 const urlParams = new URLSearchParams(window.location.search);
 const socialToken = urlParams.get('token');
-if (socialToken && window.location.pathname === '/profile.html') {
+if (socialToken && window.location.pathname === '/profile') {
     console.log('auth.js: Social login detected, setting token and sessionAuth');
     localStorage.setItem('token', socialToken);
     localStorage.setItem('sessionAuth', 'true');
     window.history.replaceState({}, document.title, window.location.pathname);
     cachedAuthStatus = null; // Reset to force token validation
+    // Immediately validate token and update header
+    checkAuthStatus().then(isAuthenticated => {
+        updateHeader();
+        window.authReady = true; // Signal auth processing is complete
+    });
 }
 
 async function checkAuthStatus(attempt = 1, maxAttempts = 3) {
@@ -25,7 +30,7 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 3) {
         return cachedAuthStatus;
     }
     console.log(`auth.js: Checking auth status for ${window.location.pathname}, attempt ${attempt}`);
-    if (window.location.pathname === '/reset-password.html') {
+    if (window.location.pathname === '/reset-password') {
         console.log('auth.js: On reset-password.html, bypassing auth check');
         return false;
     }
@@ -87,7 +92,7 @@ async function updateHeader(attempt = 1, maxAttempts = 5) {
     if (isAuthenticated) {
         console.log('auth.js: Authenticated, setting Profile and Logout');
         headerButtons.innerHTML = `
-            <a href="/profile.html" class="header-btn signup-btn">Profile</a>
+            <a href="/profile" class="header-btn signup-btn">Profile</a>
             <a href="/logout" class="header-btn login-btn" id="logout-btn">Logout</a>
         `;
         const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
@@ -96,7 +101,7 @@ async function updateHeader(attempt = 1, maxAttempts = 5) {
         if (loginBtn) loginBtn.style.display = 'none';
         if (!hamburgerContent.querySelector('.hamburger-profile-btn')) {
             hamburgerContent.insertAdjacentHTML('beforeend', `
-                <a href="/profile.html" class="header-btn hamburger-signup-btn hamburger-profile-btn">Profile</a>
+                <a href="/profile" class="header-btn hamburger-signup-btn hamburger-profile-btn">Profile</a>
                 <a href="/logout" class="header-btn hamburger-login-btn hamburger-logout-btn" id="hamburger-logout-btn">Logout</a>
             `);
         }
@@ -109,8 +114,8 @@ async function updateHeader(attempt = 1, maxAttempts = 5) {
     } else {
         console.log('auth.js: Not authenticated, setting Sign Up and Login');
         headerButtons.innerHTML = `
-            <a href="/signup.html" class="header-btn signup-btn">Sign Up</a>
-            <a href="/login.html" class="header-btn login-btn">Login</a>
+            <a href="/signup" class="header-btn signup-btn">Sign Up</a>
+            <a href="/login" class="header-btn login-btn">Login</a>
         `;
         const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
         const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
@@ -130,19 +135,10 @@ async function updateHeader(attempt = 1, maxAttempts = 5) {
 }
 window.updateHeader = updateHeader;
 
-// Run initial auth check and header update for social login
-if (socialToken && window.location.pathname === '/profile.html') {
-    console.log('auth.js: Running initial auth check for social login');
-    checkAuthStatus().then(() => {
-        updateHeader();
-        window.authReady = true; // Signal auth processing is complete
-    });
-}
-
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('auth.js: DOMContentLoaded fired');
 
-    if (window.location.pathname === '/reset-password.html') {
+    if (window.location.pathname === '/reset-password') {
         console.log('auth.js: On reset-password.html, clearing auth data');
         localStorage.removeItem('token');
         localStorage.removeItem('sessionAuth');
@@ -158,17 +154,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const data = await response.json();
                 if (!data.valid) {
                     document.getElementById('error-message').textContent = data.message;
-                    setTimeout(() => (window.location.href = '/login.html'), 2000);
+                    setTimeout(() => (window.location.href = '/login'), 2000);
                     return;
                 }
             } catch (error) {
                 document.getElementById('error-message').textContent = 'Error validating token';
-                setTimeout(() => (window.location.href = '/login.html'), 2000);
+                setTimeout(() => (window.location.href = '/login'), 2000);
                 return;
             }
         } else {
             document.getElementById('error-message').textContent = 'No reset token provided';
-            setTimeout(() => (window.location.href = '/login.html'), 2000);
+            setTimeout(() => (window.location.href = '/login'), 2000);
             return;
         }
     }
@@ -183,7 +179,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    if (!(socialToken && window.location.pathname === '/profile.html')) {
+    if (!(socialToken && window.location.pathname === '/profile')) {
         await updateHeader();
     }
 
@@ -217,7 +213,7 @@ function setupFormListeners() {
                     localStorage.setItem('sessionAuth', 'true');
                     cachedAuthStatus = true;
                     await updateHeader();
-                    window.location.href = '/profile.html';
+                    window.location.href = '/profile';
                 } else {
                     errorMessage.textContent = data.message || 'Login failed';
                 }
@@ -247,7 +243,7 @@ function setupFormListeners() {
                     localStorage.setItem('sessionAuth', 'true');
                     cachedAuthStatus = true;
                     await updateHeader();
-                    window.location.href = '/profile.html';
+                    window.location.href = '/profile';
                 } else {
                     errorMessage.textContent = data.message || 'Signup failed';
                 }
@@ -327,7 +323,7 @@ function setupFormListeners() {
                 const validateData = await validateResponse.json();
                 if (!validateData.valid) {
                     errorMessage.textContent = validateData.message || 'Invalid token';
-                    setTimeout(() => (window.location.href = '/login.html'), 2000);
+                    setTimeout(() => (window.location.href = '/login'), 2000);
                     return;
                 }
             } catch {
@@ -345,7 +341,7 @@ function setupFormListeners() {
                 if (response.ok) {
                     successMessage.textContent = data.message;
                     errorMessage.textContent = '';
-                    setTimeout(() => (window.location.href = '/login.html'), 2000);
+                    setTimeout(() => (window.location.href = '/login'), 2000);
                 } else {
                     errorMessage.textContent = data.message || 'Failed to reset password';
                 }
