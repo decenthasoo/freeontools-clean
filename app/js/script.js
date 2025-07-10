@@ -247,6 +247,20 @@ async function checkAuthStatusCached() {
     return authStatusPromise;
 }
 
+async function waitForAuthReady(maxAttempts = 10, delay = 50) {
+    console.log("script.js: Waiting for authReady");
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        if (window.authReady) {
+            console.log("script.js: authReady is true, proceeding with auth check");
+            return true;
+        }
+        console.log(`script.js: authReady not set on attempt ${attempt}, waiting...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+    }
+    console.warn("script.js: authReady not set after max attempts, proceeding anyway");
+    return false;
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("script.js: DOMContentLoaded fired, loading header, footer, checking auth, and styling content");
     const headerPath = "header.html";
@@ -271,6 +285,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         initializeFooterScripts();
     }
 
+    // Wait for auth.js to complete processing before checking auth status
+    await waitForAuthReady();
     loadPromises.push(checkAuthStatusCached());
 
     const [headerResult, footerResult, isAuthenticated] = await Promise.all(loadPromises.map(p => p.catch(err => {

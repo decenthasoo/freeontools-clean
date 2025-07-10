@@ -6,8 +6,9 @@ const BACKEND_URL =
 console.log('auth.js: Script loaded');
 
 let cachedAuthStatus = null;
+window.authReady = false; // Flag to indicate auth processing is complete
 
-// Handle social login token immediately on script load
+// Handle social login token synchronously on script load
 const urlParams = new URLSearchParams(window.location.search);
 const socialToken = urlParams.get('token');
 if (socialToken && window.location.pathname === '/profile.html') {
@@ -99,8 +100,8 @@ async function updateHeader(attempt = 1, maxAttempts = 5) {
                 <a href="/logout" class="header-btn hamburger-login-btn hamburger-logout-btn" id="hamburger-logout-btn">Logout</a>
             `);
         }
-        const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
-        const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
+        const profileLink = navDropdownContent.querySelector('a[href="/profile"]');
+        const settingsLink = navDropdownContent.querySelector('a[href="/settings"]');
         const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
         if (profileLink) profileLink.style.display = 'block';
         if (settingsLink) settingsLink.style.display = 'block';
@@ -119,8 +120,8 @@ async function updateHeader(attempt = 1, maxAttempts = 5) {
         if (loginBtn) loginBtn.style.display = 'block';
         if (profileBtn) profileBtn.remove();
         if (logoutBtn) logoutBtn.remove();
-        const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
-        const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
+        const profileLink = navDropdownContent.querySelector('a[href="/profile"]');
+        const settingsLink = navDropdownContent.querySelector('a[href="/settings"]');
         const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
         if (profileLink) profileLink.style.display = 'none';
         if (settingsLink) settingsLink.style.display = 'none';
@@ -132,7 +133,10 @@ window.updateHeader = updateHeader;
 // Run initial auth check and header update for social login
 if (socialToken && window.location.pathname === '/profile.html') {
     console.log('auth.js: Running initial auth check for social login');
-    checkAuthStatus().then(() => updateHeader());
+    checkAuthStatus().then(() => {
+        updateHeader();
+        window.authReady = true; // Signal auth processing is complete
+    });
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -182,6 +186,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!(socialToken && window.location.pathname === '/profile.html')) {
         await updateHeader();
     }
+
+    window.authReady = true; // Signal auth processing is complete for non-social login
 });
 
 function setupFormListeners() {
