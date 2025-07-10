@@ -7,6 +7,17 @@ console.log('auth.js: Script loaded');
 
 let cachedAuthStatus = null;
 
+// Handle social login token immediately on script load
+const urlParams = new URLSearchParams(window.location.search);
+const socialToken = urlParams.get('token');
+if (socialToken && window.location.pathname === '/profile.html') {
+    console.log('auth.js: Social login detected, setting token and sessionAuth');
+    localStorage.setItem('token', socialToken);
+    localStorage.setItem('sessionAuth', 'true');
+    window.history.replaceState({}, document.title, window.location.pathname);
+    cachedAuthStatus = null; // Reset to force token validation
+}
+
 async function checkAuthStatus(attempt = 1, maxAttempts = 3) {
     if (cachedAuthStatus !== null) {
         console.log('auth.js: Returning cached auth status:', cachedAuthStatus);
@@ -118,20 +129,14 @@ async function updateHeader(attempt = 1, maxAttempts = 5) {
 }
 window.updateHeader = updateHeader;
 
+// Run initial auth check and header update for social login
+if (socialToken && window.location.pathname === '/profile.html') {
+    console.log('auth.js: Running initial auth check for social login');
+    checkAuthStatus().then(() => updateHeader());
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('auth.js: DOMContentLoaded fired');
-    const urlParams = new URLSearchParams(window.location.search);
-    const socialToken = urlParams.get('token');
-
-    if (socialToken && window.location.pathname === '/profile.html') {
-        console.log('auth.js: Social login detected, setting token and sessionAuth');
-        localStorage.setItem('token', socialToken);
-        localStorage.setItem('sessionAuth', 'true');
-        window.history.replaceState({}, document.title, window.location.pathname);
-        cachedAuthStatus = null; // Reset to force token validation
-        await checkAuthStatus(); // Run auth check immediately
-        await updateHeader();
-    }
 
     if (window.location.pathname === '/reset-password.html') {
         console.log('auth.js: On reset-password.html, clearing auth data');
@@ -174,7 +179,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    await updateHeader();
+    if (!(socialToken && window.location.pathname === '/profile.html')) {
+        await updateHeader();
+    }
 });
 
 function setupFormListeners() {
