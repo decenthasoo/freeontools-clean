@@ -58,12 +58,12 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 3) {
 window.checkAuthStatus = checkAuthStatus;
 
 async function updateHeader() {
-    console.log(`auth.js: ${updateHeader called for } window.location.pathname`);
+    console.log(`auth.js: updateHeader called for ${window.location.pathname}`);
     const headerButtons = document.querySelector('.header-buttons');
     const hamburgerContent = document.querySelector('.hamburger-content');
     const navDropdownContent = document.querySelector('.nav-has-dropdown .dropdown-content .tool-list');
     if (!headerButtons || !hamburgerContent || !navDropdownContent) {
-        console.warn('auth.js: Missing header elements not found`);
+        console.warn('auth.js: Header elements not found');
         return;
     }
     const isAuthenticated = await checkAuthStatus();
@@ -71,32 +71,32 @@ async function updateHeader() {
         console.log('auth.js: Authenticated, setting Profile and Logout');
         headerButtons.innerHTML = `
             <a href="/profile.html" class="header-btn signup-btn">Profile</a>
-            <a href="#" class="header-btn login-btn" id="logout-btn">Logout</a>
-            <a href="#" class="logout-btn" id="Logout-btn">Logout</a>`;
+            <a href="/logout" class="header-btn login-btn" id="logout-btn">Logout</a>
+        `;
         const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
-        const loginBtn = document.querySelector('.hamburger-login-btn');
+        const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
         if (signupBtn) signupBtn.style.display = 'none';
         if (loginBtn) loginBtn.style.display = 'none';
         if (!hamburgerContent.querySelector('.hamburger-profile-btn')) {
             hamburgerContent.insertAdjacentHTML('beforeend', `
                 <a href="/profile.html" class="header-btn hamburger-signup-btn hamburger-profile-btn">Profile</a>
                 <a href="/logout" class="header-btn hamburger-login-btn hamburger-logout-btn" id="hamburger-logout-btn">Logout</a>
-            `;
+            `);
         }
-    const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
-    const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
-    const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
-    if (profileLink) profileLink.style.display = 'block';
-    if (settingsLink) settingsLink.style.display = 'block';
-    if (logoutLink) logoutLink.style.display = 'block';
+        const profileLink = navDropdownContent.querySelector('a[href="/profile.html"]');
+        const settingsLink = navDropdownContent.querySelector('a[href="/settings.html"]');
+        const logoutLink = navDropdownContent.querySelector('a[href="/logout"]');
+        if (profileLink) profileLink.style.display = 'block';
+        if (settingsLink) settingsLink.style.display = 'block';
+        if (logoutLink) logoutLink.style.display = 'block';
     } else {
         console.log('auth.js: Not authenticated, setting Sign Up and Login');
         headerButtons.innerHTML = `
-            <a href="/signup.html" class="header-btn">Sign Up</a>
+            <a href="/signup.html" class="header-btn signup-btn">Sign Up</a>
             <a href="/login.html" class="header-btn login-btn">Login</a>
         `;
         const signupBtn = hamburgerContent.querySelector('.hamburger-signup-btn');
-        const loginBtn = document.querySelector('.hamburger-content');
+        const loginBtn = hamburgerContent.querySelector('.hamburger-login-btn');
         const profileBtn = hamburgerContent.querySelector('.hamburger-profile-btn');
         const logoutBtn = hamburgerContent.querySelector('.hamburger-logout-btn');
         if (signupBtn) signupBtn.style.display = 'block';
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (socialToken && window.location.pathname === '/profile.html') {
         localStorage.setItem('token', socialToken);
         localStorage.setItem('sessionAuth', 'true');
-        window.history.replaceState(null, document.title, window.location.pathname);
+        window.history.replaceState({}, document.title, window.location.pathname);
         cachedAuthStatus = true;
         await window.updateHeader();
     }
@@ -336,7 +336,7 @@ function setupFormListeners() {
 document.addEventListener('click', async (e) => {
     if (
         e.target.id === 'logout-btn' ||
-        e.target.classList.contains('hamburger-logout-btn') ||
+        e.target.id === 'hamburger-logout-btn' ||
         e.target.closest('a[href="/logout"]')
     ) {
         e.preventDefault();
