@@ -147,7 +147,7 @@ function initializeHeaderScripts() {
 
             function handleNavLinkClick(e) {
                 e.stopPropagation();
-                console.log(`script.js.navigating to ${link.href}`);
+                console.log(`script.js: Navigating to ${link.href}`);
                 navDropdown.classList.remove("active");
                 const navDropdownContent = navDropdown.querySelector(".dropdown-content");
                 navDropdownContent.style.display = "none";
@@ -289,6 +289,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                         !pathname.includes("/index") && 
                         !pathname.includes("/desktop") &&
                         !pathname.includes("/reset-password") &&
+                        !pathname.includes("/signup") &&
+                        !pathname.includes("/login") &&
+                        !pathname.includes("/profile") &&
                         /^\/[a-z0-9-]+$/i.test(pathname);
     
     if (isToolsPage) {

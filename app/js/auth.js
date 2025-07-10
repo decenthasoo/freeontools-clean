@@ -57,13 +57,18 @@ async function checkAuthStatus(attempt = 1, maxAttempts = 3) {
 }
 window.checkAuthStatus = checkAuthStatus;
 
-async function updateHeader() {
-    console.log(`auth.js: updateHeader called for ${window.location.pathname}`);
+async function updateHeader(attempt = 1, maxAttempts = 5) {
+    console.log(`auth.js: updateHeader called for ${window.location.pathname}, attempt ${attempt}`);
     const headerButtons = document.querySelector('.header-buttons');
     const hamburgerContent = document.querySelector('.hamburger-content');
     const navDropdownContent = document.querySelector('.nav-has-dropdown .dropdown-content .tool-list');
     if (!headerButtons || !hamburgerContent || !navDropdownContent) {
-        console.warn('auth.js: Header elements not found');
+        if (attempt < maxAttempts) {
+            console.warn(`auth.js: Header elements not found on attempt ${attempt}, retrying...`);
+            await new Promise(resolve => setTimeout(resolve, 50));
+            return updateHeader(attempt + 1, maxAttempts);
+        }
+        console.warn(`auth.js: Header elements not found after ${maxAttempts} attempts`);
         return;
     }
     const isAuthenticated = await checkAuthStatus();
@@ -114,23 +119,26 @@ async function updateHeader() {
 window.updateHeader = updateHeader;
 
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log('auth.js: DOMContentLoaded fired');
     const urlParams = new URLSearchParams(window.location.search);
     const socialToken = urlParams.get('token');
 
     if (socialToken && window.location.pathname === '/profile.html') {
+        console.log('auth.js: Social login detected, setting token and sessionAuth');
         localStorage.setItem('token', socialToken);
         localStorage.setItem('sessionAuth', 'true');
         window.history.replaceState({}, document.title, window.location.pathname);
-        cachedAuthStatus = true;
-        await window.updateHeader();
+        cachedAuthStatus = null; // Reset to force token validation
+        await checkAuthStatus(); // Run auth check immediately
+        await updateHeader();
     }
 
     if (window.location.pathname === '/reset-password.html') {
+        console.log('auth.js: On reset-password.html, clearing auth data');
         localStorage.removeItem('token');
         localStorage.removeItem('sessionAuth');
-        const token = decodeURIComponent(urlParams.get('token') || '');
         cachedAuthStatus = null;
-
+        const token = decodeURIComponent(urlParams.get('token') || '');
         if (token) {
             try {
                 const response = await fetch(`${BACKEND_URL}/api/validate-reset-token`, {
@@ -166,7 +174,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    await window.updateHeader();
+    await updateHeader();
 });
 
 function setupFormListeners() {
@@ -191,10 +199,11 @@ function setupFormListeners() {
                 });
                 const data = await response.json();
                 if (response.ok) {
+                    console.log('auth.js: Login successful, setting token and sessionAuth');
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('sessionAuth', 'true');
                     cachedAuthStatus = true;
-                    await window.updateHeader();
+                    await updateHeader();
                     window.location.href = '/profile.html';
                 } else {
                     errorMessage.textContent = data.message || 'Login failed';
@@ -220,10 +229,11 @@ function setupFormListeners() {
                 });
                 const data = await response.json();
                 if (response.ok) {
+                    console.log('auth.js: Signup successful, setting token and sessionAuth');
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('sessionAuth', 'true');
                     cachedAuthStatus = true;
-                    await window.updateHeader();
+                    await updateHeader();
                     window.location.href = '/profile.html';
                 } else {
                     errorMessage.textContent = data.message || 'Signup failed';

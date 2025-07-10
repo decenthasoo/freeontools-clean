@@ -94,14 +94,23 @@ app.use((req, res, next) => {
 
 // Handle case-insensitive header.html and footer.html
 app.use((req, res, next) => {
-  if (req.path.toLowerCase() === '/header.html') {
+  const lowerPath = req.path.toLowerCase();
+  if (lowerPath === '/header.html' || lowerPath === '/Header.html') {
     const headerPath = path.join(staticPath, 'header.html');
     console.log(`server.js: Serving header.html from ${headerPath}`);
-    return res.sendFile(headerPath);
+    if (fs.existsSync(headerPath)) {
+      return res.sendFile(headerPath);
+    }
+    console.warn(`server.js: header.html not found at ${headerPath}`);
+    return res.status(404).send('File not found');
   }
-  if (req.path.toLowerCase() === '/footer.html') {
+  if (lowerPath === '/footer.html' || lowerPath === '/Footer.html') {
     console.log(`server.js: Serving footer.html from ${footerPath}`);
-    return res.sendFile(footerPath);
+    if (fs.existsSync(footerPath)) {
+      return res.sendFile(footerPath);
+    }
+    console.warn(`server.js: footer.html not found at ${footerPath}`);
+    return res.status(404).send('File not found');
   }
   next();
 });
@@ -521,12 +530,14 @@ app.get('*', (req, res, next) => {
     return next();
   }
   const htmlPath = path.join(staticPath, `${req.path}.html`);
-  console.log(`Attempting to serve: ${htmlPath}`);
+  console.log(`server.js: Attempting to serve: ${htmlPath}`);
   if (fs.existsSync(htmlPath)) {
-    console.log(`Serving HTML file: ${htmlPath}`);
+    console.log(`server.js: Serving HTML file: ${htmlPath}`);
     return res.sendFile(htmlPath);
+  } else {
+    console.warn(`server.js: HTML file not found: ${htmlPath}, serving index.html`);
   }
-  console.log(`Serving index.html from: ${indexPath}`);
+  console.log(`server.js: Serving index.html from: ${indexPath}`);
   res.sendFile(indexPath);
 });
 
