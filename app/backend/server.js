@@ -363,7 +363,7 @@ app.post('/api/forgot-password', async (req, res) => {
       return res.status(404).json({ message: 'Email not found' });
     }
     const token = jwt.sign({ userId: user._id }, config.jwtSecret, { expiresIn: '1h' });
-    const resetLink = `https://www.freeontools.com/reset-password.html?token=${encodeURIComponent(token)}`;
+    const resetLink = `https://www.freeontools.com/reset-password?token=${encodeURIComponent(token)}`;
     await transporter.sendMail({
       from: `"FreeOnTools" <${config.emailUser}>`,
       to: email,
@@ -419,22 +419,22 @@ app.post('/api/reset-password', async (req, res) => {
 app.post('/api/validate-token', async (req, res) => {
   const { token } = req.body;
   if (!token) {
-    console.log('Error: Validate token request: No token provided');
-    return res.status(400).json({ message: 'No token provided' });
+    console.log('auth.js: Validate token request: No token provided');
+    return res.status(400).json({ valid: false, message: 'No token provided' });
   }
-  console.log('auth.js: Validate token request for token.slice(0, 7) + '...');
+  console.log(`auth.js: Validate token request for ${token.slice(0, 7)}...`);
   try {
     const decoded = jwt.verify(token, config.jwtSecret);
     const user = await User.findById(decoded.userId);
     if (!user) {
-      console.log(`auth.js: Invalid token id: ${decoded.userId}`);
-      return res.status(400).json({ message: 'Invalid token' });
+      console.log(`auth.js: Invalid token for user ID: ${decoded.userId}`);
+      return res.status(400).json({ valid: false, message: 'Invalid token' });
     }
-    console.log(`auth.js: Token valid: ${user.email}`);
+    console.log(`auth.js: Token valid for user: ${user.email}`);
     res.json({ valid: true, message: 'Token is valid' });
   } catch (error) {
     console.error('auth.js: Validate token error:', error.message);
-    res.status(400).json({ valid: false, message: 'Failed or expired token' });
+    res.status(400).json({ valid: false, message: 'Invalid or expired token' });
   }
 });
 
@@ -453,7 +453,7 @@ app.get('/auth/check', async (req, res) => {
   }
   console.log('auth.js: /auth/check not authenticated');
   res.json({ authenticated: false });
-};
+});
 
 app.post('/logout', (req, res) => {
   req.session.destroy((err) => {
