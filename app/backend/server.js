@@ -62,7 +62,6 @@ app.use((req, res, next) => {
   const isHealth = req.path.includes('/health');
   const isInternal = host.includes('.code.run') || host.includes('localhost') || host.startsWith('127.');
 
-  // ✅ Skip redirect for API, health, or internal preview environments like *.code.run
   if (isApi || isHealth || isInternal) {
     return next();
   }
@@ -395,25 +394,47 @@ app.post('/api/validate-reset-token', async (req, res) => {
   }
 });
 
-app.post('/api/validate-token', async (req, res) => {
-  const { token } = req.body;
-  if (!token) {
-    console.log('auth.js: Validate token request: No token provided');
-    return res.status(400).json({ valid: false, message: 'No token provided' });
-  }
-  console.log('auth.js: Validate token request for token:', token.slice(0, 20) + '...');
+app.post('/api/reset-password', async (req, res) => {
+  const { token, password } = req.body;
   try {
     const decoded = jwt.verify(token, config.jwtSecret);
     const user = await User.findById(decoded.userId);
     if (!user) {
-      console.log(`auth.js: Invalid token for user ID: ${decoded.userId}`);
-      return res.status(400).json({ valid: false, message: 'Invalid token' });
+      console.log(`auth.js: Invalid reset token for user ID: ${decoded.userId}`);
+      return res.status(400).json({ message: 'Invalid or expired token' });
     }
-    console.log(`auth.js: Token valid for user: ${user.email}`);
+    if (password.length < 8) {
+      return res.status(400).json({ message: 'Password must be at least 8 characters long' });
+    }
+    user.password = password; // Password will be hashed in User model pre-save hook
+    await user.save();
+    console.log(`auth.js: Password reset successful for user: ${user.email}`);
+    res.json({ message: 'Password reset successful' });
+  } catch (error) {
+    console.error('auth.js: Reset password error:', error);
+    res.status(500).json({ message: 'Failed to reset password' });
+  }
+});
+
+app.post('/api/validate-token', async (req, res) => {
+  const { token } = req.body;
+  if (!token) {
+    console.log('Error: Validate token request: No token provided');
+    return res.status(400).json({ message: 'No token provided' });
+  }
+  console.log('auth.js: Validate token request for token.slice(0, 7) + '...');
+  try {
+    const decoded = jwt.verify(token, config.jwtSecret);
+    const user = await User.findById(decoded.userId);
+    if (!user) {
+      console.log(`auth.js: Invalid token id: ${decoded.userId}`);
+      return res.status(400).json({ message: 'Invalid token' });
+    }
+    console.log(`auth.js: Token valid: ${user.email}`);
     res.json({ valid: true, message: 'Token is valid' });
   } catch (error) {
     console.error('auth.js: Validate token error:', error.message);
-    res.status(400).json({ valid: false, message: 'Invalid or expired token' });
+    res.status(400).json({ valid: false, message: 'Failed or expired token' });
   }
 });
 
@@ -432,7 +453,7 @@ app.get('/auth/check', async (req, res) => {
   }
   console.log('auth.js: /auth/check not authenticated');
   res.json({ authenticated: false });
-});
+};
 
 app.post('/logout', (req, res) => {
   req.session.destroy((err) => {

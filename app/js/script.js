@@ -62,7 +62,6 @@ function initializeHeaderScripts() {
             return;
         }
 
-        // Toggle dropdown (POPULAR TOOLS)
         const toggleDropdown = () => {
             if (window.innerWidth <= 1280) {
                 console.log("script.js: Dropdown button clicked/touched, toggling active class");
@@ -72,7 +71,6 @@ function initializeHeaderScripts() {
             }
         };
 
-        // Toggle nav-has-dropdown (Profile, Settings, Logout)
         const toggleNavDropdown = () => {
             if (window.innerWidth <= 834) {
                 console.log("script.js: Nav dropdown button clicked/touched, toggling active class");
@@ -82,39 +80,33 @@ function initializeHeaderScripts() {
             }
         };
 
-        // Remove existing listeners to prevent duplicates
         dropdownBtn.removeEventListener("click", toggleDropdown);
         dropdownBtn.removeEventListener("touchstart", toggleDropdown);
         navDropdownBtn.removeEventListener("click", toggleNavDropdown);
         navDropdownBtn.removeEventListener("touchstart", toggleNavDropdown);
 
-        // Add listeners for dropdown
         dropdownBtn.addEventListener("click", toggleDropdown);
         dropdownBtn.addEventListener("touchstart", (e) => {
             e.preventDefault();
             toggleDropdown();
         });
 
-        // Add listeners for nav-has-dropdown
         navDropdownBtn.addEventListener("click", toggleNavDropdown);
         navDropdownBtn.addEventListener("touchstart", (e) => {
             e.preventDefault();
             toggleNavDropdown();
         });
 
-        // Hamburger menu
         hamburgerBtn.addEventListener("click", () => {
             console.log("script.js: Hamburger button clicked");
             hamburgerContent.classList.toggle("active");
         });
 
-        // Language dropdown
         languageBtn.addEventListener("click", () => {
             console.log("script.js: Language button clicked");
             languageContent.classList.toggle("active");
         });
 
-        // Close button for dropdown
         dropdownCloseBtn.addEventListener("click", () => {
             if (window.innerWidth <= 1280) {
                 console.log("script.js: Dropdown close button clicked, removing active class");
@@ -124,7 +116,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Close button for nav-has-dropdown
         navCloseBtn.addEventListener("click", () => {
             if (window.innerWidth <= 834) {
                 console.log("script.js: Nav dropdown close button clicked, removing active class");
@@ -134,7 +125,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Add immediate navigation for dropdown links
         const dropdownLinks = document.querySelectorAll(".tool-list a");
         dropdownLinks.forEach(link => {
             link.removeEventListener("click", handleLinkClick);
@@ -150,7 +140,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Add immediate navigation for nav-has-dropdown links
         const navLinks = navDropdown.querySelectorAll(".tool-list a");
         navLinks.forEach(link => {
             link.removeEventListener("click", handleNavLinkClick);
@@ -158,7 +147,7 @@ function initializeHeaderScripts() {
 
             function handleNavLinkClick(e) {
                 e.stopPropagation();
-                console.log(`script.js: Navigating to ${link.href}`);
+                console.log(`script.js.navigating to ${link.href}`);
                 navDropdown.classList.remove("active");
                 const navDropdownContent = navDropdown.querySelector(".dropdown-content");
                 navDropdownContent.style.display = "none";
@@ -166,7 +155,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Close dropdowns when clicking outside
         document.addEventListener("click", (event) => {
             if (!hamburgerBtn.contains(event.target) && !hamburgerContent.contains(event.target)) {
                 hamburgerContent.classList.remove("active");
@@ -186,7 +174,6 @@ function initializeHeaderScripts() {
             }
         });
 
-        // Handle resize/rotation with debounce
         let resizeTimeout;
         window.addEventListener("resize", () => {
             clearTimeout(resizeTimeout);
@@ -205,7 +192,6 @@ function initializeHeaderScripts() {
             }, 100);
         });
 
-        // Initialize scroll-up button for nav-has-dropdown dropdown-content
         initializeDropdownScrollUp();
     }
 
@@ -251,7 +237,6 @@ function initializeFooterScripts() {
     });
 }
 
-// Cache for authentication status to avoid redundant checks
 let authStatusPromise = null;
 
 async function checkAuthStatusCached() {
@@ -262,40 +247,48 @@ async function checkAuthStatusCached() {
     return authStatusPromise;
 }
 
-// Load header, footer, auth status, and style content in parallel
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("script.js: DOMContentLoaded fired, loading header, footer, checking auth, and styling content");
     const headerPath = "header.html";
     const footerPath = "footer.html";
 
-    // Start all async operations concurrently
-    const [headerResult, footerResult, isAuthenticated] = await Promise.all([
-        loadHTML(headerPath, "header-placeholder", initializeHeaderScripts).catch(err => {
-            console.error("script.js: Header load failed", err);
-            return null;
-        }),
-        loadHTML(footerPath, "footer-placeholder", initializeFooterScripts).catch(err => {
-            console.error("script.js: Footer load failed", err);
-            return null;
-        }),
-        checkAuthStatusCached().catch(err => {
-            console.error("script.js: Auth check failed", err);
-            return false;
-        })
-    ]);
+    const headerPlaceholder = document.getElementById("header-placeholder");
+    const footerPlaceholder = document.getElementById("footer-placeholder");
 
-    // Update header with authentication status
+    const loadPromises = [];
+
+    if (headerPlaceholder && !headerPlaceholder.innerHTML.trim()) {
+        loadPromises.push(loadHTML(headerPath, "header-placeholder", initializeHeaderScripts));
+    } else {
+        console.log("script.js: Header already loaded or placeholder missing");
+        initializeHeaderScripts();
+    }
+
+    if (footerPlaceholder && !footerPlaceholder.innerHTML.trim()) {
+        loadPromises.push(loadHTML(footerPath, "footer-placeholder", initializeFooterScripts));
+    } else {
+        console.log("script.js: Footer already loaded or placeholder missing");
+        initializeFooterScripts();
+    }
+
+    loadPromises.push(checkAuthStatusCached());
+
+    const [headerResult, footerResult, isAuthenticated] = await Promise.all(loadPromises.map(p => p.catch(err => {
+        console.error("script.js: Load error:", err);
+        return null;
+    })));
+
     if (typeof window.updateHeader === "function") {
         console.log("script.js: Header loaded, updating with auth status:", isAuthenticated);
         await window.updateHeader();
     }
 
-    // Style h1 and p tags for non-.html tool pages
     console.log(`script.js: Checking for tool page to style h1 and h1 + p. URL: ${window.location.href}, Pathname: ${window.location.pathname}`);
     const pathname = window.location.pathname.toLowerCase();
     const isToolsPage = !pathname.endsWith(".html") && 
                         !pathname.includes("/index") && 
                         !pathname.includes("/desktop") &&
+                        !pathname.includes("/reset-password") &&
                         /^\/[a-z0-9-]+$/i.test(pathname);
     
     if (isToolsPage) {
@@ -318,26 +311,5 @@ document.addEventListener("DOMContentLoaded", async () => {
             p.style.maxWidth = "600px";
             p.style.margin = "0 auto";
         });
-    }
-});
-
-// Fallback if DOMContentLoaded doesn't fire, but only load if not already loaded
-window.addEventListener("load", async () => {
-    console.log("script.js: Window load fired, checking header and footer");
-    const headerPlaceholder = document.getElementById("header-placeholder");
-    const footerPlaceholder = document.getElementById("footer-placeholder");
-
-    if (headerPlaceholder && !headerPlaceholder.innerHTML.trim()) {
-        console.log("script.js: Header not loaded, retrying");
-        await loadHTML("header.html", "header-placeholder", initializeHeaderScripts);
-        if (typeof window.updateHeader === "function") {
-            const isAuthenticated = await checkAuthStatusCached();
-            console.log("script.js: Header loaded in fallback, updating with auth status:", isAuthenticated);
-            await window.updateHeader();
-        }
-    }
-    if (footerPlaceholder && !footerPlaceholder.innerHTML.trim()) {
-        console.log("script.js: Footer not loaded, retrying");
-        await loadHTML("footer.html", "footer-placeholder", initializeFooterScripts);
     }
 });
