@@ -21,7 +21,7 @@ const config = {
   jwtSecret: process.env.JWT_SECRET || 'default-secret-key',
   sessionSecret: process.env.SESSION_SECRET || 'default-session-secret',
   mongoURI: process.env.MONGO_URI || 'mongodb://localhost:27017/freeontools',
-  emailUser: process.env.EMAIL_USER || 'decenthasoo@gmail.com',
+  emailUser: process.env.EMAIL_USER || 'support@freeontools.com',
   emailPass: process.env.EMAIL_PASS,
   nodeEnv: process.env.NODE_ENV || 'production',
   facebookAppId: process.env.FACEBOOK_APP_ID,
@@ -192,13 +192,17 @@ mongoose.connect(config.mongoURI, {
   });
 
 // Email Transporter
+// Email Transporter for Hostinger
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.hostinger.com',
+  port: 465,
+  secure: true, // true for port 465
   auth: {
     user: config.emailUser,
     pass: config.emailPass
   }
 });
+
 
 // Verify SMTP connection
 transporter.verify((error, success) => {
