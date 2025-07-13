@@ -1,0 +1,1173 @@
+2025-07-12 21:54:40,342 - INFO - Replaced 1 occurrence(s) of pattern in .\301-redirect-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,344 - INFO - Replaced 1 occurrence(s) of pattern in .\301-redirect-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,345 - INFO - Replaced 1 occurrence(s) of pattern in .\301-redirect-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:40,345 - INFO - Added font preload tags below </title> in .\301-redirect-generator.html
+2025-07-12 21:54:40,347 - INFO - Successfully updated .\301-redirect-generator.html
+2025-07-12 21:54:40,391 - INFO - Replaced 1 occurrence(s) of pattern in .\about-us.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,391 - INFO - Replaced 1 occurrence(s) of pattern in .\about-us.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,391 - INFO - Replaced 1 occurrence(s) of pattern in .\about-us.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,391 - INFO - Replaced 1 occurrence(s) of pattern in .\about-us.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:40,391 - INFO - Replaced 1 occurrence(s) of pattern in .\about-us.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:40,391 - INFO - Added font preload tags below </title> in .\about-us.html
+2025-07-12 21:54:40,392 - INFO - Successfully updated .\about-us.html
+2025-07-12 21:54:40,393 - INFO - Replaced 1 occurrence(s) of pattern in .\acronym-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,393 - INFO - Replaced 1 occurrence(s) of pattern in .\acronym-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,393 - INFO - Replaced 1 occurrence(s) of pattern in .\acronym-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:40,393 - INFO - Added font preload tags below </title> in .\acronym-generator.html
+2025-07-12 21:54:40,394 - INFO - Successfully updated .\acronym-generator.html
+2025-07-12 21:54:40,500 - INFO - Replaced 1 occurrence(s) of pattern in .\age-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,501 - INFO - Replaced 1 occurrence(s) of pattern in .\age-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,501 - INFO - Replaced 1 occurrence(s) of pattern in .\age-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:40,501 - INFO - Added font preload tags below </title> in .\age-calculator.html
+2025-07-12 21:54:40,502 - INFO - Successfully updated .\age-calculator.html
+2025-07-12 21:54:40,609 - INFO - Replaced 1 occurrence(s) of pattern in .\ai-story-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,610 - INFO - Replaced 1 occurrence(s) of pattern in .\ai-story-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,610 - INFO - Replaced 1 occurrence(s) of pattern in .\ai-story-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:40,610 - INFO - Added font preload tags below </title> in .\ai-story-generator.html
+2025-07-12 21:54:40,611 - INFO - Successfully updated .\ai-story-generator.html
+2025-07-12 21:54:40,773 - INFO - Replaced 1 occurrence(s) of pattern in .\alt-text-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,773 - INFO - Replaced 1 occurrence(s) of pattern in .\alt-text-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,773 - INFO - Replaced 1 occurrence(s) of pattern in .\alt-text-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:40,773 - INFO - Added font preload tags below </title> in .\alt-text-generator.html
+2025-07-12 21:54:40,774 - INFO - Successfully updated .\alt-text-generator.html
+2025-07-12 21:54:40,885 - INFO - Replaced 1 occurrence(s) of pattern in .\api-tester-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,885 - INFO - Replaced 1 occurrence(s) of pattern in .\api-tester-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,885 - INFO - Replaced 1 occurrence(s) of pattern in .\api-tester-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:40,885 - INFO - Added font preload tags below </title> in .\api-tester-simple.html
+2025-07-12 21:54:40,886 - INFO - Successfully updated .\api-tester-simple.html
+2025-07-12 21:54:40,887 - INFO - Replaced 1 occurrence(s) of pattern in .\backlink-anchor-text-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,887 - INFO - Replaced 1 occurrence(s) of pattern in .\backlink-anchor-text-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:40,887 - INFO - Replaced 1 occurrence(s) of pattern in .\backlink-anchor-text-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:40,888 - INFO - Added font preload tags below </title> in .\backlink-anchor-text-generator.html
+2025-07-12 21:54:40,889 - INFO - Successfully updated .\backlink-anchor-text-generator.html
+2025-07-12 21:54:41,017 - INFO - Replaced 1 occurrence(s) of pattern in .\base64-encoder-decoder.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,018 - INFO - Replaced 1 occurrence(s) of pattern in .\base64-encoder-decoder.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,018 - INFO - Replaced 1 occurrence(s) of pattern in .\base64-encoder-decoder.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:41,018 - INFO - Added font preload tags below </title> in .\base64-encoder-decoder.html
+2025-07-12 21:54:41,019 - INFO - Successfully updated .\base64-encoder-decoder.html
+2025-07-12 21:54:41,100 - INFO - Replaced 1 occurrence(s) of pattern in .\blog.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,100 - INFO - Replaced 1 occurrence(s) of pattern in .\blog.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,100 - INFO - Replaced 1 occurrence(s) of pattern in .\blog.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,100 - INFO - Replaced 1 occurrence(s) of pattern in .\blog.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:41,100 - INFO - Replaced 1 occurrence(s) of pattern in .\blog.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:41,101 - INFO - Added font preload tags below </title> in .\blog.html
+2025-07-12 21:54:41,103 - INFO - Successfully updated .\blog.html
+2025-07-12 21:54:41,452 - INFO - Replaced 1 occurrence(s) of pattern in .\breadcrumb-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,452 - INFO - Replaced 1 occurrence(s) of pattern in .\breadcrumb-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,453 - INFO - Replaced 1 occurrence(s) of pattern in .\breadcrumb-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:41,453 - INFO - Added font preload tags below </title> in .\breadcrumb-generator.html
+2025-07-12 21:54:41,454 - INFO - Successfully updated .\breadcrumb-generator.html
+2025-07-12 21:54:41,757 - INFO - Replaced 1 occurrence(s) of pattern in .\break-even-point-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,757 - INFO - Replaced 1 occurrence(s) of pattern in .\break-even-point-calculator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,757 - INFO - Replaced 1 occurrence(s) of pattern in .\break-even-point-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:41,758 - INFO - Replaced 1 occurrence(s) of pattern in .\break-even-point-calculator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:41,762 - INFO - Replaced 1 occurrence(s) of pattern in .\break-even-point-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:41,763 - INFO - Added font preload tags below </title> in .\break-even-point-calculator.html
+2025-07-12 21:54:41,770 - INFO - Successfully updated .\break-even-point-calculator.html
+2025-07-12 21:54:42,002 - INFO - Replaced 1 occurrence(s) of pattern in .\broken-link-checker-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,003 - INFO - Replaced 1 occurrence(s) of pattern in .\broken-link-checker-simple.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,003 - INFO - Replaced 1 occurrence(s) of pattern in .\broken-link-checker-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,003 - INFO - Replaced 1 occurrence(s) of pattern in .\broken-link-checker-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:42,004 - INFO - Added font preload tags below </title> in .\broken-link-checker-simple.html
+2025-07-12 21:54:42,005 - INFO - Successfully updated .\broken-link-checker-simple.html
+2025-07-12 21:54:42,225 - INFO - Replaced 1 occurrence(s) of pattern in .\budget-planner-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,225 - INFO - Replaced 1 occurrence(s) of pattern in .\budget-planner-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,225 - INFO - Replaced 1 occurrence(s) of pattern in .\budget-planner-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:42,225 - INFO - Added font preload tags below </title> in .\budget-planner-simple.html
+2025-07-12 21:54:42,226 - INFO - Successfully updated .\budget-planner-simple.html
+2025-07-12 21:54:42,357 - INFO - Replaced 1 occurrence(s) of pattern in .\bullet-point-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,357 - INFO - Replaced 1 occurrence(s) of pattern in .\bullet-point-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,357 - INFO - Replaced 1 occurrence(s) of pattern in .\bullet-point-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:42,357 - INFO - Added font preload tags below </title> in .\bullet-point-generator.html
+2025-07-12 21:54:42,358 - INFO - Successfully updated .\bullet-point-generator.html
+2025-07-12 21:54:42,477 - INFO - Replaced 1 occurrence(s) of pattern in .\canonical-tag-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,478 - INFO - Replaced 1 occurrence(s) of pattern in .\canonical-tag-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,478 - INFO - Replaced 1 occurrence(s) of pattern in .\canonical-tag-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:42,478 - INFO - Added font preload tags below </title> in .\canonical-tag-generator.html
+2025-07-12 21:54:42,479 - INFO - Successfully updated .\canonical-tag-generator.html
+2025-07-12 21:54:42,585 - INFO - Replaced 1 occurrence(s) of pattern in .\citation-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,586 - INFO - Replaced 1 occurrence(s) of pattern in .\citation-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,586 - INFO - Replaced 1 occurrence(s) of pattern in .\citation-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:42,586 - INFO - Added font preload tags below </title> in .\citation-generator.html
+2025-07-12 21:54:42,587 - INFO - Successfully updated .\citation-generator.html
+2025-07-12 21:54:42,725 - INFO - Replaced 1 occurrence(s) of pattern in .\code-diff-checker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,725 - INFO - Replaced 1 occurrence(s) of pattern in .\code-diff-checker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,726 - INFO - Replaced 1 occurrence(s) of pattern in .\code-diff-checker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:42,726 - INFO - Added font preload tags below </title> in .\code-diff-checker.html
+2025-07-12 21:54:42,726 - INFO - Successfully updated .\code-diff-checker.html
+2025-07-12 21:54:42,835 - INFO - Replaced 1 occurrence(s) of pattern in .\code-indenter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,835 - INFO - Replaced 1 occurrence(s) of pattern in .\code-indenter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,835 - INFO - Replaced 1 occurrence(s) of pattern in .\code-indenter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:42,835 - INFO - Added font preload tags below </title> in .\code-indenter.html
+2025-07-12 21:54:42,837 - INFO - Successfully updated .\code-indenter.html
+2025-07-12 21:54:42,958 - INFO - Replaced 1 occurrence(s) of pattern in .\coin-flipper.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,958 - INFO - Replaced 1 occurrence(s) of pattern in .\coin-flipper.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:42,958 - INFO - Replaced 1 occurrence(s) of pattern in .\coin-flipper.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:42,958 - INFO - Added font preload tags below </title> in .\coin-flipper.html
+2025-07-12 21:54:42,959 - INFO - Successfully updated .\coin-flipper.html
+2025-07-12 21:54:43,092 - INFO - Replaced 1 occurrence(s) of pattern in .\color-palette-extractor.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,092 - INFO - Replaced 1 occurrence(s) of pattern in .\color-palette-extractor.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,092 - INFO - Replaced 1 occurrence(s) of pattern in .\color-palette-extractor.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,093 - INFO - Added font preload tags below </title> in .\color-palette-extractor.html
+2025-07-12 21:54:43,093 - INFO - Successfully updated .\color-palette-extractor.html
+2025-07-12 21:54:43,213 - INFO - Replaced 1 occurrence(s) of pattern in .\compound-interest-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,213 - INFO - Replaced 1 occurrence(s) of pattern in .\compound-interest-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,213 - INFO - Replaced 1 occurrence(s) of pattern in .\compound-interest-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,213 - INFO - Added font preload tags below </title> in .\compound-interest-calculator.html
+2025-07-12 21:54:43,214 - INFO - Successfully updated .\compound-interest-calculator.html
+2025-07-12 21:54:43,290 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-support.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,290 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-support.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,290 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-support.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,292 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-support.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:43,292 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-support.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,292 - INFO - Added font preload tags below </title> in .\contact-support.html
+2025-07-12 21:54:43,292 - INFO - Successfully updated .\contact-support.html
+2025-07-12 21:54:43,371 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-us.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,371 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-us.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,371 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-us.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,371 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-us.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:43,371 - INFO - Replaced 1 occurrence(s) of pattern in .\contact-us.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,372 - INFO - Added font preload tags below </title> in .\contact-us.html
+2025-07-12 21:54:43,372 - INFO - Successfully updated .\contact-us.html
+2025-07-12 21:54:43,488 - INFO - Replaced 1 occurrence(s) of pattern in .\countdown-timer.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,489 - INFO - Replaced 1 occurrence(s) of pattern in .\countdown-timer.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,489 - INFO - Replaced 1 occurrence(s) of pattern in .\countdown-timer.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,489 - INFO - Added font preload tags below </title> in .\countdown-timer.html
+2025-07-12 21:54:43,490 - INFO - Successfully updated .\countdown-timer.html
+2025-07-12 21:54:43,602 - INFO - Replaced 1 occurrence(s) of pattern in .\crypto-price-tracker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,602 - INFO - Replaced 1 occurrence(s) of pattern in .\crypto-price-tracker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,603 - INFO - Replaced 1 occurrence(s) of pattern in .\crypto-price-tracker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,603 - INFO - Added font preload tags below </title> in .\crypto-price-tracker.html
+2025-07-12 21:54:43,604 - INFO - Successfully updated .\crypto-price-tracker.html
+2025-07-12 21:54:43,712 - INFO - Replaced 1 occurrence(s) of pattern in .\css-flexbox-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,712 - INFO - Replaced 1 occurrence(s) of pattern in .\css-flexbox-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,712 - INFO - Replaced 1 occurrence(s) of pattern in .\css-flexbox-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,712 - INFO - Added font preload tags below </title> in .\css-flexbox-generator.html
+2025-07-12 21:54:43,713 - INFO - Successfully updated .\css-flexbox-generator.html
+2025-07-12 21:54:43,822 - INFO - Replaced 1 occurrence(s) of pattern in .\css-gradient-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,822 - INFO - Replaced 1 occurrence(s) of pattern in .\css-gradient-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,822 - INFO - Replaced 1 occurrence(s) of pattern in .\css-gradient-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,823 - INFO - Added font preload tags below </title> in .\css-gradient-generator.html
+2025-07-12 21:54:43,824 - INFO - Successfully updated .\css-gradient-generator.html
+2025-07-12 21:54:43,921 - INFO - Replaced 1 occurrence(s) of pattern in .\css-minifier.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,921 - INFO - Replaced 1 occurrence(s) of pattern in .\css-minifier.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,922 - INFO - Replaced 1 occurrence(s) of pattern in .\css-minifier.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:43,922 - INFO - Replaced 1 occurrence(s) of pattern in .\css-minifier.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:43,922 - INFO - Replaced 1 occurrence(s) of pattern in .\css-minifier.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:43,922 - INFO - Added font preload tags below </title> in .\css-minifier.html
+2025-07-12 21:54:43,924 - INFO - Successfully updated .\css-minifier.html
+2025-07-12 21:54:44,058 - INFO - Replaced 1 occurrence(s) of pattern in .\css-shadow-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:44,059 - INFO - Replaced 1 occurrence(s) of pattern in .\css-shadow-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:44,059 - INFO - Replaced 1 occurrence(s) of pattern in .\css-shadow-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:44,060 - INFO - Added font preload tags below </title> in .\css-shadow-generator.html
+2025-07-12 21:54:44,061 - INFO - Successfully updated .\css-shadow-generator.html
+2025-07-12 21:54:44,395 - INFO - Replaced 1 occurrence(s) of pattern in .\css-triangle-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:44,395 - INFO - Replaced 1 occurrence(s) of pattern in .\css-triangle-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:44,395 - INFO - Replaced 1 occurrence(s) of pattern in .\css-triangle-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:44,396 - INFO - Replaced 1 occurrence(s) of pattern in .\css-triangle-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:44,396 - INFO - Added font preload tags below </title> in .\css-triangle-generator.html
+2025-07-12 21:54:44,398 - INFO - Successfully updated .\css-triangle-generator.html
+2025-07-12 21:54:44,772 - INFO - Replaced 1 occurrence(s) of pattern in .\currency-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:44,773 - INFO - Replaced 1 occurrence(s) of pattern in .\currency-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:44,773 - INFO - Replaced 1 occurrence(s) of pattern in .\currency-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:44,773 - INFO - Added font preload tags below </title> in .\currency-converter.html
+2025-07-12 21:54:44,774 - INFO - Successfully updated .\currency-converter.html
+2025-07-12 21:54:45,159 - INFO - Replaced 1 occurrence(s) of pattern in .\daily-goal-setter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,159 - INFO - Replaced 1 occurrence(s) of pattern in .\daily-goal-setter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,160 - INFO - Replaced 1 occurrence(s) of pattern in .\daily-goal-setter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:45,160 - INFO - Added font preload tags below </title> in .\daily-goal-setter.html
+2025-07-12 21:54:45,162 - INFO - Successfully updated .\daily-goal-setter.html
+2025-07-12 21:54:45,390 - INFO - Replaced 1 occurrence(s) of pattern in .\depreciation-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,390 - INFO - Replaced 1 occurrence(s) of pattern in .\depreciation-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,394 - INFO - Replaced 1 occurrence(s) of pattern in .\depreciation-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:45,394 - INFO - Added font preload tags below </title> in .\depreciation-calculator.html
+2025-07-12 21:54:45,396 - INFO - Successfully updated .\depreciation-calculator.html
+2025-07-12 21:54:45,747 - INFO - Replaced 1 occurrence(s) of pattern in .\dice-roller.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,747 - INFO - Replaced 1 occurrence(s) of pattern in .\dice-roller.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,747 - INFO - Replaced 1 occurrence(s) of pattern in .\dice-roller.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:45,747 - INFO - Added font preload tags below </title> in .\dice-roller.html
+2025-07-12 21:54:45,748 - INFO - Successfully updated .\dice-roller.html
+2025-07-12 21:54:45,815 - INFO - Replaced 1 occurrence(s) of pattern in .\disclaimer.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,816 - INFO - Replaced 1 occurrence(s) of pattern in .\disclaimer.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,816 - INFO - Replaced 1 occurrence(s) of pattern in .\disclaimer.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,816 - INFO - Replaced 1 occurrence(s) of pattern in .\disclaimer.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:45,816 - INFO - Replaced 1 occurrence(s) of pattern in .\disclaimer.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:45,817 - INFO - Added font preload tags below </title> in .\disclaimer.html
+2025-07-12 21:54:45,818 - INFO - Successfully updated .\disclaimer.html
+2025-07-12 21:54:45,967 - INFO - Replaced 1 occurrence(s) of pattern in .\discount-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,968 - INFO - Replaced 1 occurrence(s) of pattern in .\discount-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:45,968 - INFO - Replaced 1 occurrence(s) of pattern in .\discount-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:45,969 - INFO - Added font preload tags below </title> in .\discount-calculator.html
+2025-07-12 21:54:45,970 - INFO - Successfully updated .\discount-calculator.html
+2025-07-12 21:54:46,070 - INFO - Replaced 1 occurrence(s) of pattern in .\documentation.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:46,070 - INFO - Replaced 1 occurrence(s) of pattern in .\documentation.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:46,071 - INFO - Replaced 1 occurrence(s) of pattern in .\documentation.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:46,071 - INFO - Replaced 1 occurrence(s) of pattern in .\documentation.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:46,071 - INFO - Replaced 1 occurrence(s) of pattern in .\documentation.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:46,072 - INFO - Added font preload tags below </title> in .\documentation.html
+2025-07-12 21:54:46,073 - INFO - Successfully updated .\documentation.html
+2025-07-12 21:54:46,471 - INFO - Replaced 1 occurrence(s) of pattern in .\email-signature-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:46,471 - INFO - Replaced 1 occurrence(s) of pattern in .\email-signature-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:46,471 - INFO - Replaced 1 occurrence(s) of pattern in .\email-signature-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:46,472 - INFO - Added font preload tags below </title> in .\email-signature-generator.html
+2025-07-12 21:54:46,474 - INFO - Successfully updated .\email-signature-generator.html
+2025-07-12 21:54:46,631 - INFO - Replaced 1 occurrence(s) of pattern in .\email-subject-line-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:46,631 - INFO - Replaced 1 occurrence(s) of pattern in .\email-subject-line-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:46,631 - INFO - Replaced 1 occurrence(s) of pattern in .\email-subject-line-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:46,632 - INFO - Added font preload tags below </title> in .\email-subject-line-generator.html
+2025-07-12 21:54:46,633 - INFO - Successfully updated .\email-subject-line-generator.html
+2025-07-12 21:54:47,567 - INFO - Replaced 1 occurrence(s) of pattern in .\emoji-story-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:47,567 - INFO - Replaced 1 occurrence(s) of pattern in .\emoji-story-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:47,567 - INFO - Replaced 1 occurrence(s) of pattern in .\emoji-story-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:47,567 - INFO - Replaced 1 occurrence(s) of pattern in .\emoji-story-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:47,568 - INFO - Replaced 1 occurrence(s) of pattern in .\emoji-story-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:47,568 - INFO - Added font preload tags below </title> in .\emoji-story-generator.html
+2025-07-12 21:54:47,569 - INFO - Successfully updated .\emoji-story-generator.html
+2025-07-12 21:54:47,788 - INFO - Replaced 1 occurrence(s) of pattern in .\essay-outline-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:47,789 - INFO - Replaced 1 occurrence(s) of pattern in .\essay-outline-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:47,789 - INFO - Replaced 1 occurrence(s) of pattern in .\essay-outline-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:47,789 - INFO - Added font preload tags below </title> in .\essay-outline-generator.html
+2025-07-12 21:54:47,791 - INFO - Successfully updated .\essay-outline-generator.html
+2025-07-12 21:54:48,028 - INFO - Replaced 1 occurrence(s) of pattern in .\fancy-text-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,028 - INFO - Replaced 1 occurrence(s) of pattern in .\fancy-text-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,028 - INFO - Replaced 1 occurrence(s) of pattern in .\fancy-text-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,028 - INFO - Added font preload tags below </title> in .\fancy-text-generator.html
+2025-07-12 21:54:48,029 - INFO - Successfully updated .\fancy-text-generator.html
+2025-07-12 21:54:48,090 - INFO - Replaced 1 occurrence(s) of pattern in .\faq.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,091 - INFO - Replaced 1 occurrence(s) of pattern in .\faq.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,091 - INFO - Replaced 1 occurrence(s) of pattern in .\faq.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,091 - INFO - Replaced 1 occurrence(s) of pattern in .\faq.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:48,091 - INFO - Replaced 1 occurrence(s) of pattern in .\faq.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,091 - INFO - Added font preload tags below </title> in .\faq.html
+2025-07-12 21:54:48,092 - INFO - Successfully updated .\faq.html
+2025-07-12 21:54:48,216 - INFO - Replaced 1 occurrence(s) of pattern in .\favicon-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,216 - INFO - Replaced 1 occurrence(s) of pattern in .\favicon-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,216 - INFO - Replaced 1 occurrence(s) of pattern in .\favicon-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,217 - INFO - Added font preload tags below </title> in .\favicon-generator.html
+2025-07-12 21:54:48,218 - INFO - Successfully updated .\favicon-generator.html
+2025-07-12 21:54:48,269 - INFO - Replaced 1 occurrence(s) of pattern in .\feedback.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,269 - INFO - Replaced 1 occurrence(s) of pattern in .\feedback.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,269 - INFO - Replaced 1 occurrence(s) of pattern in .\feedback.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,269 - INFO - Replaced 1 occurrence(s) of pattern in .\feedback.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:48,269 - INFO - Replaced 1 occurrence(s) of pattern in .\feedback.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,269 - INFO - Added font preload tags below </title> in .\feedback.html
+2025-07-12 21:54:48,270 - INFO - Successfully updated .\feedback.html
+2025-07-12 21:54:48,386 - INFO - Replaced 1 occurrence(s) of pattern in .\file-name-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,386 - INFO - Replaced 1 occurrence(s) of pattern in .\file-name-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,386 - INFO - Replaced 1 occurrence(s) of pattern in .\file-name-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,386 - INFO - Added font preload tags below </title> in .\file-name-generator.html
+2025-07-12 21:54:48,387 - INFO - Successfully updated .\file-name-generator.html
+2025-07-12 21:54:48,532 - INFO - Replaced 1 occurrence(s) of pattern in .\flashcard-maker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,532 - INFO - Replaced 1 occurrence(s) of pattern in .\flashcard-maker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,533 - INFO - Replaced 1 occurrence(s) of pattern in .\flashcard-maker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,533 - INFO - Added font preload tags below </title> in .\flashcard-maker.html
+2025-07-12 21:54:48,534 - INFO - Successfully updated .\flashcard-maker.html
+2025-07-12 21:54:48,636 - INFO - Replaced 1 occurrence(s) of pattern in .\focus-mode-toggle.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,636 - INFO - Replaced 1 occurrence(s) of pattern in .\focus-mode-toggle.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,637 - INFO - Replaced 1 occurrence(s) of pattern in .\focus-mode-toggle.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,637 - INFO - Added font preload tags below </title> in .\focus-mode-toggle.html
+2025-07-12 21:54:48,638 - INFO - Successfully updated .\focus-mode-toggle.html
+2025-07-12 21:54:48,681 - WARNING - No </title> tag found in .\footer.html. Font preload tags not added.
+2025-07-12 21:54:48,681 - INFO - No changes needed in .\footer.html
+2025-07-12 21:54:48,720 - INFO - Replaced 1 occurrence(s) of pattern in .\forgot-password.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,720 - INFO - Replaced 1 occurrence(s) of pattern in .\forgot-password.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,720 - INFO - Replaced 1 occurrence(s) of pattern in .\forgot-password.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,720 - INFO - Replaced 1 occurrence(s) of pattern in .\forgot-password.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,720 - INFO - Added font preload tags below </title> in .\forgot-password.html
+2025-07-12 21:54:48,721 - INFO - Successfully updated .\forgot-password.html
+2025-07-12 21:54:48,882 - INFO - Replaced 1 occurrence(s) of pattern in .\fuel-cost-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,882 - INFO - Replaced 1 occurrence(s) of pattern in .\fuel-cost-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:48,882 - INFO - Replaced 1 occurrence(s) of pattern in .\fuel-cost-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:48,882 - INFO - Added font preload tags below </title> in .\fuel-cost-calculator.html
+2025-07-12 21:54:48,883 - INFO - Successfully updated .\fuel-cost-calculator.html
+2025-07-12 21:54:49,011 - INFO - Replaced 1 occurrence(s) of pattern in .\google-analytics-code-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,011 - INFO - Replaced 1 occurrence(s) of pattern in .\google-analytics-code-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,011 - INFO - Replaced 1 occurrence(s) of pattern in .\google-analytics-code-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:49,011 - INFO - Added font preload tags below </title> in .\google-analytics-code-generator.html
+2025-07-12 21:54:49,012 - INFO - Successfully updated .\google-analytics-code-generator.html
+2025-07-12 21:54:49,130 - INFO - Replaced 1 occurrence(s) of pattern in .\grade-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,131 - INFO - Replaced 1 occurrence(s) of pattern in .\grade-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,131 - INFO - Replaced 1 occurrence(s) of pattern in .\grade-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:49,131 - INFO - Added font preload tags below </title> in .\grade-calculator.html
+2025-07-12 21:54:49,132 - INFO - Successfully updated .\grade-calculator.html
+2025-07-12 21:54:49,246 - INFO - Replaced 1 occurrence(s) of pattern in .\gst-vat-tax-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,246 - INFO - Replaced 1 occurrence(s) of pattern in .\gst-vat-tax-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,246 - INFO - Replaced 1 occurrence(s) of pattern in .\gst-vat-tax-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:49,246 - INFO - Added font preload tags below </title> in .\gst-vat-tax-calculator.html
+2025-07-12 21:54:49,247 - INFO - Successfully updated .\gst-vat-tax-calculator.html
+2025-07-12 21:54:49,370 - INFO - Replaced 1 occurrence(s) of pattern in .\habit-tracker-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,371 - INFO - Replaced 1 occurrence(s) of pattern in .\habit-tracker-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,371 - INFO - Replaced 1 occurrence(s) of pattern in .\habit-tracker-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:49,371 - INFO - Added font preload tags below </title> in .\habit-tracker-simple.html
+2025-07-12 21:54:49,372 - INFO - Successfully updated .\habit-tracker-simple.html
+2025-07-12 21:54:49,858 - INFO - Replaced 1 occurrence(s) of pattern in .\hashtag-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,858 - INFO - Replaced 1 occurrence(s) of pattern in .\hashtag-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,858 - INFO - Replaced 1 occurrence(s) of pattern in .\hashtag-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,859 - INFO - Replaced 1 occurrence(s) of pattern in .\hashtag-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:49,859 - INFO - Added font preload tags below </title> in .\hashtag-generator.html
+2025-07-12 21:54:49,860 - INFO - Successfully updated .\hashtag-generator.html
+2025-07-12 21:54:49,887 - WARNING - No </title> tag found in .\header.html. Font preload tags not added.
+2025-07-12 21:54:49,888 - INFO - No changes needed in .\header.html
+2025-07-12 21:54:49,957 - INFO - Replaced 1 occurrence(s) of pattern in .\help-center.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,957 - INFO - Replaced 1 occurrence(s) of pattern in .\help-center.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,957 - INFO - Replaced 1 occurrence(s) of pattern in .\help-center.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:49,957 - INFO - Replaced 1 occurrence(s) of pattern in .\help-center.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:49,958 - INFO - Replaced 1 occurrence(s) of pattern in .\help-center.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:49,958 - INFO - Added font preload tags below </title> in .\help-center.html
+2025-07-12 21:54:49,958 - INFO - Successfully updated .\help-center.html
+2025-07-12 21:54:50,427 - INFO - Replaced 1 occurrence(s) of pattern in .\hex-to-rgb-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,427 - INFO - Replaced 1 occurrence(s) of pattern in .\hex-to-rgb-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,427 - INFO - Replaced 1 occurrence(s) of pattern in .\hex-to-rgb-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:50,427 - INFO - Added font preload tags below </title> in .\hex-to-rgb-converter.html
+2025-07-12 21:54:50,428 - INFO - Successfully updated .\hex-to-rgb-converter.html
+2025-07-12 21:54:50,541 - INFO - Replaced 1 occurrence(s) of pattern in .\hreflang-tag-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,541 - INFO - Replaced 1 occurrence(s) of pattern in .\hreflang-tag-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,541 - INFO - Replaced 1 occurrence(s) of pattern in .\hreflang-tag-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:50,542 - INFO - Replaced 1 occurrence(s) of pattern in .\hreflang-tag-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:50,542 - INFO - Added font preload tags below </title> in .\hreflang-tag-generator.html
+2025-07-12 21:54:50,543 - INFO - Successfully updated .\hreflang-tag-generator.html
+2025-07-12 21:54:50,662 - INFO - Replaced 1 occurrence(s) of pattern in .\html-color-picker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,662 - INFO - Replaced 1 occurrence(s) of pattern in .\html-color-picker.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,663 - INFO - Replaced 1 occurrence(s) of pattern in .\html-color-picker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,663 - INFO - Replaced 1 occurrence(s) of pattern in .\html-color-picker.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:50,663 - INFO - Replaced 1 occurrence(s) of pattern in .\html-color-picker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:50,663 - INFO - Added font preload tags below </title> in .\html-color-picker.html
+2025-07-12 21:54:50,663 - INFO - Successfully updated .\html-color-picker.html
+2025-07-12 21:54:50,777 - INFO - Replaced 1 occurrence(s) of pattern in .\html-encoder-decoder.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,778 - INFO - Replaced 1 occurrence(s) of pattern in .\html-encoder-decoder.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:50,778 - INFO - Replaced 1 occurrence(s) of pattern in .\html-encoder-decoder.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:50,778 - INFO - Added font preload tags below </title> in .\html-encoder-decoder.html
+2025-07-12 21:54:50,779 - INFO - Successfully updated .\html-encoder-decoder.html
+2025-07-12 21:54:50,917 - INFO - Replaced 1 occurrence(s) of pattern in .\html-previewer.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:50,917 - INFO - Added font preload tags below </title> in .\html-previewer.html
+2025-07-12 21:54:50,918 - INFO - Successfully updated .\html-previewer.html
+2025-07-12 21:54:51,032 - INFO - Replaced 1 occurrence(s) of pattern in .\html-table-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,032 - INFO - Replaced 1 occurrence(s) of pattern in .\html-table-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,033 - INFO - Replaced 1 occurrence(s) of pattern in .\html-table-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:51,033 - INFO - Added font preload tags below </title> in .\html-table-generator.html
+2025-07-12 21:54:51,034 - INFO - Successfully updated .\html-table-generator.html
+2025-07-12 21:54:51,198 - INFO - Replaced 1 occurrence(s) of pattern in .\image-blur-tool.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,199 - INFO - Replaced 1 occurrence(s) of pattern in .\image-blur-tool.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,199 - INFO - Replaced 1 occurrence(s) of pattern in .\image-blur-tool.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:51,199 - INFO - Added font preload tags below </title> in .\image-blur-tool.html
+2025-07-12 21:54:51,200 - INFO - Successfully updated .\image-blur-tool.html
+2025-07-12 21:54:51,358 - INFO - Replaced 1 occurrence(s) of pattern in .\image-border-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,358 - INFO - Replaced 1 occurrence(s) of pattern in .\image-border-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,358 - INFO - Replaced 1 occurrence(s) of pattern in .\image-border-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:51,358 - INFO - Added font preload tags below </title> in .\image-border-generator.html
+2025-07-12 21:54:51,360 - INFO - Successfully updated .\image-border-generator.html
+2025-07-12 21:54:51,512 - INFO - Replaced 1 occurrence(s) of pattern in .\image-brightness-adjuster.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,512 - INFO - Replaced 1 occurrence(s) of pattern in .\image-brightness-adjuster.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,512 - INFO - Replaced 1 occurrence(s) of pattern in .\image-brightness-adjuster.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:51,512 - INFO - Added font preload tags below </title> in .\image-brightness-adjuster.html
+2025-07-12 21:54:51,514 - INFO - Successfully updated .\image-brightness-adjuster.html
+2025-07-12 21:54:51,660 - INFO - Replaced 1 occurrence(s) of pattern in .\image-collage-maker-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,661 - INFO - Replaced 1 occurrence(s) of pattern in .\image-collage-maker-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,661 - INFO - Replaced 1 occurrence(s) of pattern in .\image-collage-maker-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:51,661 - INFO - Added font preload tags below </title> in .\image-collage-maker-simple.html
+2025-07-12 21:54:51,662 - INFO - Successfully updated .\image-collage-maker-simple.html
+2025-07-12 21:54:51,924 - INFO - Replaced 1 occurrence(s) of pattern in .\image-compressor-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,925 - INFO - Replaced 1 occurrence(s) of pattern in .\image-compressor-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:51,925 - INFO - Replaced 1 occurrence(s) of pattern in .\image-compressor-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:51,925 - INFO - Added font preload tags below </title> in .\image-compressor-simple.html
+2025-07-12 21:54:51,926 - INFO - Successfully updated .\image-compressor-simple.html
+2025-07-12 21:54:52,104 - INFO - Replaced 1 occurrence(s) of pattern in .\image-contrast-adjuster.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,105 - INFO - Replaced 1 occurrence(s) of pattern in .\image-contrast-adjuster.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,105 - INFO - Replaced 1 occurrence(s) of pattern in .\image-contrast-adjuster.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:52,105 - INFO - Added font preload tags below </title> in .\image-contrast-adjuster.html
+2025-07-12 21:54:52,107 - INFO - Successfully updated .\image-contrast-adjuster.html
+2025-07-12 21:54:52,275 - INFO - Replaced 1 occurrence(s) of pattern in .\image-cropper.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,275 - INFO - Replaced 1 occurrence(s) of pattern in .\image-cropper.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,276 - INFO - Replaced 1 occurrence(s) of pattern in .\image-cropper.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:52,276 - INFO - Added font preload tags below </title> in .\image-cropper.html
+2025-07-12 21:54:52,277 - INFO - Successfully updated .\image-cropper.html
+2025-07-12 21:54:52,441 - INFO - Replaced 1 occurrence(s) of pattern in .\image-flip-tool.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,441 - INFO - Replaced 1 occurrence(s) of pattern in .\image-flip-tool.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,441 - INFO - Replaced 1 occurrence(s) of pattern in .\image-flip-tool.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:52,442 - INFO - Added font preload tags below </title> in .\image-flip-tool.html
+2025-07-12 21:54:52,443 - INFO - Successfully updated .\image-flip-tool.html
+2025-07-12 21:54:52,660 - INFO - Replaced 1 occurrence(s) of pattern in .\image-noise-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,661 - INFO - Replaced 1 occurrence(s) of pattern in .\image-noise-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,661 - INFO - Replaced 1 occurrence(s) of pattern in .\image-noise-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:52,661 - INFO - Added font preload tags below </title> in .\image-noise-generator.html
+2025-07-12 21:54:52,663 - INFO - Successfully updated .\image-noise-generator.html
+2025-07-12 21:54:52,844 - INFO - Replaced 1 occurrence(s) of pattern in .\image-posterize-tool.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,845 - INFO - Replaced 1 occurrence(s) of pattern in .\image-posterize-tool.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:52,845 - INFO - Replaced 1 occurrence(s) of pattern in .\image-posterize-tool.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:52,845 - INFO - Added font preload tags below </title> in .\image-posterize-tool.html
+2025-07-12 21:54:52,847 - INFO - Successfully updated .\image-posterize-tool.html
+2025-07-12 21:54:53,148 - INFO - Replaced 1 occurrence(s) of pattern in .\image-resizer.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,149 - INFO - Replaced 1 occurrence(s) of pattern in .\image-resizer.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,149 - INFO - Replaced 1 occurrence(s) of pattern in .\image-resizer.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:53,150 - INFO - Added font preload tags below </title> in .\image-resizer.html
+2025-07-12 21:54:53,152 - INFO - Successfully updated .\image-resizer.html
+2025-07-12 21:54:53,381 - INFO - Replaced 1 occurrence(s) of pattern in .\image-rotator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,381 - INFO - Replaced 1 occurrence(s) of pattern in .\image-rotator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,381 - INFO - Replaced 1 occurrence(s) of pattern in .\image-rotator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:53,381 - INFO - Added font preload tags below </title> in .\image-rotator.html
+2025-07-12 21:54:53,382 - INFO - Successfully updated .\image-rotator.html
+2025-07-12 21:54:53,582 - INFO - Replaced 1 occurrence(s) of pattern in .\image-sepia-filter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,583 - INFO - Replaced 1 occurrence(s) of pattern in .\image-sepia-filter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,583 - INFO - Replaced 1 occurrence(s) of pattern in .\image-sepia-filter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:53,583 - INFO - Added font preload tags below </title> in .\image-sepia-filter.html
+2025-07-12 21:54:53,585 - INFO - Successfully updated .\image-sepia-filter.html
+2025-07-12 21:54:53,784 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-ascii-art.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,784 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-ascii-art.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,785 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-ascii-art.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:53,785 - INFO - Added font preload tags below </title> in .\image-to-ascii-art.html
+2025-07-12 21:54:53,786 - INFO - Successfully updated .\image-to-ascii-art.html
+2025-07-12 21:54:53,988 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-base64-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,988 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-base64-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:53,988 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-base64-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:53,989 - INFO - Added font preload tags below </title> in .\image-to-base64-converter.html
+2025-07-12 21:54:53,990 - INFO - Successfully updated .\image-to-base64-converter.html
+2025-07-12 21:54:54,121 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-grayscale.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:54,121 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-grayscale.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:54,121 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-grayscale.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:54,121 - INFO - Added font preload tags below </title> in .\image-to-grayscale.html
+2025-07-12 21:54:54,122 - INFO - Successfully updated .\image-to-grayscale.html
+2025-07-12 21:54:54,255 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-hex-color-extractor.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:54,255 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-hex-color-extractor.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:54,256 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-hex-color-extractor.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:54,256 - INFO - Added font preload tags below </title> in .\image-to-hex-color-extractor.html
+2025-07-12 21:54:54,257 - INFO - Successfully updated .\image-to-hex-color-extractor.html
+2025-07-12 21:54:54,456 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-icon-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:54,456 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-icon-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:54,456 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-icon-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:54,457 - INFO - Added font preload tags below </title> in .\image-to-icon-converter.html
+2025-07-12 21:54:54,458 - INFO - Successfully updated .\image-to-icon-converter.html
+2025-07-12 21:54:54,673 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-svg-converter-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:54,673 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-svg-converter-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:54,673 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-svg-converter-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:54,673 - INFO - Added font preload tags below </title> in .\image-to-svg-converter-simple.html
+2025-07-12 21:54:54,675 - INFO - Successfully updated .\image-to-svg-converter-simple.html
+2025-07-12 21:54:55,062 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-text-extractor-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,063 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-text-extractor-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,063 - INFO - Replaced 1 occurrence(s) of pattern in .\image-to-text-extractor-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:55,063 - INFO - Added font preload tags below </title> in .\image-to-text-extractor-simple.html
+2025-07-12 21:54:55,064 - INFO - Successfully updated .\image-to-text-extractor-simple.html
+2025-07-12 21:54:55,179 - INFO - Replaced 1 occurrence(s) of pattern in .\image-transparency-tool.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,180 - INFO - Replaced 1 occurrence(s) of pattern in .\image-transparency-tool.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,180 - INFO - Replaced 1 occurrence(s) of pattern in .\image-transparency-tool.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:55,180 - INFO - Added font preload tags below </title> in .\image-transparency-tool.html
+2025-07-12 21:54:55,181 - INFO - Successfully updated .\image-transparency-tool.html
+2025-07-12 21:54:55,243 - INFO - Replaced 1 occurrence(s) of pattern in .\index.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:55,243 - INFO - Added font preload tags below </title> in .\index.html
+2025-07-12 21:54:55,244 - INFO - Successfully updated .\index.html
+2025-07-12 21:54:55,427 - INFO - Replaced 1 occurrence(s) of pattern in .\inflation-calculator-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,427 - INFO - Replaced 1 occurrence(s) of pattern in .\inflation-calculator-simple.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,428 - INFO - Replaced 1 occurrence(s) of pattern in .\inflation-calculator-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,428 - INFO - Replaced 1 occurrence(s) of pattern in .\inflation-calculator-simple.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:55,429 - INFO - Replaced 1 occurrence(s) of pattern in .\inflation-calculator-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:55,429 - INFO - Added font preload tags below </title> in .\inflation-calculator-simple.html
+2025-07-12 21:54:55,430 - INFO - Successfully updated .\inflation-calculator-simple.html
+2025-07-12 21:54:55,709 - INFO - Replaced 1 occurrence(s) of pattern in .\investment-return-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,710 - INFO - Replaced 1 occurrence(s) of pattern in .\investment-return-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,710 - INFO - Replaced 1 occurrence(s) of pattern in .\investment-return-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:55,710 - INFO - Added font preload tags below </title> in .\investment-return-calculator.html
+2025-07-12 21:54:55,711 - INFO - Successfully updated .\investment-return-calculator.html
+2025-07-12 21:54:55,962 - INFO - Replaced 1 occurrence(s) of pattern in .\javascript-beautifier.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,963 - INFO - Replaced 1 occurrence(s) of pattern in .\javascript-beautifier.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:55,963 - INFO - Replaced 1 occurrence(s) of pattern in .\javascript-beautifier.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:55,963 - INFO - Added font preload tags below </title> in .\javascript-beautifier.html
+2025-07-12 21:54:55,964 - INFO - Successfully updated .\javascript-beautifier.html
+2025-07-12 21:54:56,112 - INFO - Replaced 1 occurrence(s) of pattern in .\json-formatter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,112 - INFO - Replaced 1 occurrence(s) of pattern in .\json-formatter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,112 - INFO - Replaced 1 occurrence(s) of pattern in .\json-formatter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:56,113 - INFO - Added font preload tags below </title> in .\json-formatter.html
+2025-07-12 21:54:56,113 - INFO - Successfully updated .\json-formatter.html
+2025-07-12 21:54:56,220 - INFO - Replaced 1 occurrence(s) of pattern in .\json-to-csv-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,221 - INFO - Replaced 1 occurrence(s) of pattern in .\json-to-csv-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,221 - INFO - Replaced 1 occurrence(s) of pattern in .\json-to-csv-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:56,221 - INFO - Added font preload tags below </title> in .\json-to-csv-converter.html
+2025-07-12 21:54:56,222 - INFO - Successfully updated .\json-to-csv-converter.html
+2025-07-12 21:54:56,334 - INFO - Replaced 1 occurrence(s) of pattern in .\json-validator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,334 - INFO - Replaced 1 occurrence(s) of pattern in .\json-validator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,334 - INFO - Replaced 1 occurrence(s) of pattern in .\json-validator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:56,334 - INFO - Added font preload tags below </title> in .\json-validator.html
+2025-07-12 21:54:56,335 - INFO - Successfully updated .\json-validator.html
+2025-07-12 21:54:56,508 - INFO - Replaced 1 occurrence(s) of pattern in .\keyword-combiner.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,509 - INFO - Replaced 1 occurrence(s) of pattern in .\keyword-combiner.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,509 - INFO - Replaced 1 occurrence(s) of pattern in .\keyword-combiner.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:56,509 - INFO - Added font preload tags below </title> in .\keyword-combiner.html
+2025-07-12 21:54:56,513 - INFO - Successfully updated .\keyword-combiner.html
+2025-07-12 21:54:56,664 - INFO - Replaced 1 occurrence(s) of pattern in .\keyword-density-checker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,665 - INFO - Replaced 1 occurrence(s) of pattern in .\keyword-density-checker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,665 - INFO - Replaced 1 occurrence(s) of pattern in .\keyword-density-checker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:56,665 - INFO - Added font preload tags below </title> in .\keyword-density-checker.html
+2025-07-12 21:54:56,666 - INFO - Successfully updated .\keyword-density-checker.html
+2025-07-12 21:54:56,791 - INFO - Replaced 1 occurrence(s) of pattern in .\loan-repayment-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,792 - INFO - Replaced 1 occurrence(s) of pattern in .\loan-repayment-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,792 - INFO - Replaced 1 occurrence(s) of pattern in .\loan-repayment-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:56,792 - INFO - Added font preload tags below </title> in .\loan-repayment-calculator.html
+2025-07-12 21:54:56,793 - INFO - Successfully updated .\loan-repayment-calculator.html
+2025-07-12 21:54:56,836 - INFO - Replaced 1 occurrence(s) of pattern in .\login.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,836 - INFO - Replaced 1 occurrence(s) of pattern in .\login.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,836 - INFO - Replaced 1 occurrence(s) of pattern in .\login.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:56,836 - INFO - Added font preload tags below </title> in .\login.html
+2025-07-12 21:54:56,837 - INFO - Successfully updated .\login.html
+2025-07-12 21:54:56,953 - INFO - Replaced 1 occurrence(s) of pattern in .\lorem-ipsum-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,953 - INFO - Replaced 1 occurrence(s) of pattern in .\lorem-ipsum-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:56,953 - INFO - Replaced 1 occurrence(s) of pattern in .\lorem-ipsum-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:56,953 - INFO - Added font preload tags below </title> in .\lorem-ipsum-generator.html
+2025-07-12 21:54:56,954 - INFO - Successfully updated .\lorem-ipsum-generator.html
+2025-07-12 21:54:57,063 - INFO - Replaced 1 occurrence(s) of pattern in .\lorem-ipsum-to-html.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,064 - INFO - Replaced 1 occurrence(s) of pattern in .\lorem-ipsum-to-html.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,064 - INFO - Replaced 1 occurrence(s) of pattern in .\lorem-ipsum-to-html.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,064 - INFO - Replaced 1 occurrence(s) of pattern in .\lorem-ipsum-to-html.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:57,065 - INFO - Replaced 1 occurrence(s) of pattern in .\lorem-ipsum-to-html.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:57,065 - INFO - Added font preload tags below </title> in .\lorem-ipsum-to-html.html
+2025-07-12 21:54:57,066 - INFO - Successfully updated .\lorem-ipsum-to-html.html
+2025-07-12 21:54:57,144 - INFO - Replaced 1 occurrence(s) of pattern in .\magic-8-ball-simulator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,144 - INFO - Replaced 1 occurrence(s) of pattern in .\magic-8-ball-simulator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,144 - INFO - Replaced 1 occurrence(s) of pattern in .\magic-8-ball-simulator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:57,144 - INFO - Added font preload tags below </title> in .\magic-8-ball-simulator.html
+2025-07-12 21:54:57,145 - INFO - Successfully updated .\magic-8-ball-simulator.html
+2025-07-12 21:54:57,265 - INFO - Replaced 1 occurrence(s) of pattern in .\math-equation-solver-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,265 - INFO - Replaced 1 occurrence(s) of pattern in .\math-equation-solver-simple.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,265 - INFO - Replaced 1 occurrence(s) of pattern in .\math-equation-solver-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,266 - INFO - Replaced 1 occurrence(s) of pattern in .\math-equation-solver-simple.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:57,266 - INFO - Replaced 1 occurrence(s) of pattern in .\math-equation-solver-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:57,266 - INFO - Added font preload tags below </title> in .\math-equation-solver-simple.html
+2025-07-12 21:54:57,267 - INFO - Successfully updated .\math-equation-solver-simple.html
+2025-07-12 21:54:57,398 - INFO - Replaced 1 occurrence(s) of pattern in .\math-fraction-simplifier.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,398 - INFO - Replaced 1 occurrence(s) of pattern in .\math-fraction-simplifier.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,398 - INFO - Replaced 1 occurrence(s) of pattern in .\math-fraction-simplifier.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:57,398 - INFO - Added font preload tags below </title> in .\math-fraction-simplifier.html
+2025-07-12 21:54:57,399 - INFO - Successfully updated .\math-fraction-simplifier.html
+2025-07-12 21:54:57,517 - INFO - Replaced 1 occurrence(s) of pattern in .\math-percentage-increase-decrease.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,517 - INFO - Replaced 1 occurrence(s) of pattern in .\math-percentage-increase-decrease.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,518 - INFO - Replaced 1 occurrence(s) of pattern in .\math-percentage-increase-decrease.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:57,518 - INFO - Added font preload tags below </title> in .\math-percentage-increase-decrease.html
+2025-07-12 21:54:57,520 - INFO - Successfully updated .\math-percentage-increase-decrease.html
+2025-07-12 21:54:57,695 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-agenda-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,695 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-agenda-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,695 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-agenda-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:57,695 - INFO - Added font preload tags below </title> in .\meeting-agenda-generator.html
+2025-07-12 21:54:57,696 - INFO - Successfully updated .\meeting-agenda-generator.html
+2025-07-12 21:54:57,815 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-cost-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,815 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-cost-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,815 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-cost-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:57,815 - INFO - Added font preload tags below </title> in .\meeting-cost-calculator.html
+2025-07-12 21:54:57,816 - INFO - Successfully updated .\meeting-cost-calculator.html
+2025-07-12 21:54:57,937 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-duration-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,937 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-duration-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:57,937 - INFO - Replaced 1 occurrence(s) of pattern in .\meeting-duration-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:57,937 - INFO - Added font preload tags below </title> in .\meeting-duration-calculator.html
+2025-07-12 21:54:57,938 - INFO - Successfully updated .\meeting-duration-calculator.html
+2025-07-12 21:54:58,040 - INFO - Replaced 1 occurrence(s) of pattern in .\meta-description-length-checker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,040 - INFO - Replaced 1 occurrence(s) of pattern in .\meta-description-length-checker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,040 - INFO - Replaced 1 occurrence(s) of pattern in .\meta-description-length-checker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:58,040 - INFO - Added font preload tags below </title> in .\meta-description-length-checker.html
+2025-07-12 21:54:58,041 - INFO - Successfully updated .\meta-description-length-checker.html
+2025-07-12 21:54:58,280 - INFO - Added font preload tags below </title> in .\meta-tag-generator.html
+2025-07-12 21:54:58,282 - INFO - Successfully updated .\meta-tag-generator.html
+2025-07-12 21:54:58,413 - INFO - Replaced 1 occurrence(s) of pattern in .\net-worth-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,414 - INFO - Replaced 1 occurrence(s) of pattern in .\net-worth-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,414 - INFO - Replaced 1 occurrence(s) of pattern in .\net-worth-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:58,414 - INFO - Added font preload tags below </title> in .\net-worth-calculator.html
+2025-07-12 21:54:58,415 - INFO - Successfully updated .\net-worth-calculator.html
+2025-07-12 21:54:58,540 - INFO - Replaced 1 occurrence(s) of pattern in .\nickname-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,541 - INFO - Replaced 1 occurrence(s) of pattern in .\nickname-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,541 - INFO - Replaced 1 occurrence(s) of pattern in .\nickname-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:58,541 - INFO - Added font preload tags below </title> in .\nickname-generator.html
+2025-07-12 21:54:58,542 - INFO - Successfully updated .\nickname-generator.html
+2025-07-12 21:54:58,660 - INFO - Replaced 1 occurrence(s) of pattern in .\number-to-words-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,660 - INFO - Replaced 1 occurrence(s) of pattern in .\number-to-words-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,660 - INFO - Replaced 1 occurrence(s) of pattern in .\number-to-words-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:58,660 - INFO - Added font preload tags below </title> in .\number-to-words-converter.html
+2025-07-12 21:54:58,661 - INFO - Successfully updated .\number-to-words-converter.html
+2025-07-12 21:54:58,662 - INFO - Replaced 1 occurrence(s) of pattern in .\open-graph-tag-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,663 - INFO - Replaced 1 occurrence(s) of pattern in .\open-graph-tag-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,663 - INFO - Replaced 2 occurrence(s) of pattern in .\open-graph-tag-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:58,663 - INFO - Added font preload tags below </title> in .\open-graph-tag-generator.html
+2025-07-12 21:54:58,664 - INFO - Successfully updated .\open-graph-tag-generator.html
+2025-07-12 21:54:58,776 - INFO - Replaced 1 occurrence(s) of pattern in .\paraphrase-tool-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,777 - INFO - Replaced 1 occurrence(s) of pattern in .\paraphrase-tool-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,777 - INFO - Replaced 1 occurrence(s) of pattern in .\paraphrase-tool-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:58,777 - INFO - Added font preload tags below </title> in .\paraphrase-tool-simple.html
+2025-07-12 21:54:58,777 - INFO - Successfully updated .\paraphrase-tool-simple.html
+2025-07-12 21:54:58,896 - INFO - Replaced 1 occurrence(s) of pattern in .\passive-voice-detector.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,896 - INFO - Replaced 1 occurrence(s) of pattern in .\passive-voice-detector.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:58,896 - INFO - Replaced 1 occurrence(s) of pattern in .\passive-voice-detector.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:58,896 - INFO - Added font preload tags below </title> in .\passive-voice-detector.html
+2025-07-12 21:54:58,897 - INFO - Successfully updated .\passive-voice-detector.html
+2025-07-12 21:54:59,022 - INFO - Replaced 1 occurrence(s) of pattern in .\payroll-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,022 - INFO - Replaced 1 occurrence(s) of pattern in .\payroll-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,022 - INFO - Replaced 1 occurrence(s) of pattern in .\payroll-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:59,022 - INFO - Added font preload tags below </title> in .\payroll-calculator.html
+2025-07-12 21:54:59,023 - INFO - Successfully updated .\payroll-calculator.html
+2025-07-12 21:54:59,135 - INFO - Replaced 1 occurrence(s) of pattern in .\percentage-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,135 - INFO - Replaced 1 occurrence(s) of pattern in .\percentage-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,136 - INFO - Replaced 1 occurrence(s) of pattern in .\percentage-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:59,136 - INFO - Added font preload tags below </title> in .\percentage-calculator.html
+2025-07-12 21:54:59,137 - INFO - Successfully updated .\percentage-calculator.html
+2025-07-12 21:54:59,248 - INFO - Replaced 1 occurrence(s) of pattern in .\periodic-table-reference.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,248 - INFO - Replaced 1 occurrence(s) of pattern in .\periodic-table-reference.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,248 - INFO - Replaced 1 occurrence(s) of pattern in .\periodic-table-reference.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:59,248 - INFO - Added font preload tags below </title> in .\periodic-table-reference.html
+2025-07-12 21:54:59,249 - INFO - Successfully updated .\periodic-table-reference.html
+2025-07-12 21:54:59,512 - INFO - Replaced 1 occurrence(s) of pattern in .\personality-quiz-maker-simple.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:54:59,512 - INFO - Replaced 1 occurrence(s) of pattern in .\personality-quiz-maker-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:59,512 - INFO - Added font preload tags below </title> in .\personality-quiz-maker-simple.html
+2025-07-12 21:54:59,513 - INFO - Successfully updated .\personality-quiz-maker-simple.html
+2025-07-12 21:54:59,657 - INFO - Replaced 1 occurrence(s) of pattern in .\pickup-line-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,657 - INFO - Replaced 1 occurrence(s) of pattern in .\pickup-line-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,658 - INFO - Replaced 1 occurrence(s) of pattern in .\pickup-line-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:59,659 - INFO - Added font preload tags below </title> in .\pickup-line-generator.html
+2025-07-12 21:54:59,660 - INFO - Successfully updated .\pickup-line-generator.html
+2025-07-12 21:54:59,792 - INFO - Replaced 1 occurrence(s) of pattern in .\pixel-art-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,792 - INFO - Replaced 1 occurrence(s) of pattern in .\pixel-art-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,792 - INFO - Replaced 1 occurrence(s) of pattern in .\pixel-art-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:59,792 - INFO - Added font preload tags below </title> in .\pixel-art-generator.html
+2025-07-12 21:54:59,793 - INFO - Successfully updated .\pixel-art-generator.html
+2025-07-12 21:54:59,934 - INFO - Replaced 1 occurrence(s) of pattern in .\plagiarism-checker-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,934 - INFO - Replaced 1 occurrence(s) of pattern in .\plagiarism-checker-simple.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,935 - INFO - Replaced 1 occurrence(s) of pattern in .\plagiarism-checker-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:54:59,935 - INFO - Replaced 1 occurrence(s) of pattern in .\plagiarism-checker-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:54:59,935 - INFO - Added font preload tags below </title> in .\plagiarism-checker-simple.html
+2025-07-12 21:54:59,936 - INFO - Successfully updated .\plagiarism-checker-simple.html
+2025-07-12 21:55:00,106 - INFO - Replaced 1 occurrence(s) of pattern in .\pomodoro-timer.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,107 - INFO - Replaced 1 occurrence(s) of pattern in .\pomodoro-timer.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,107 - INFO - Replaced 1 occurrence(s) of pattern in .\pomodoro-timer.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,107 - INFO - Added font preload tags below </title> in .\pomodoro-timer.html
+2025-07-12 21:55:00,108 - INFO - Successfully updated .\pomodoro-timer.html
+2025-07-12 21:55:00,247 - INFO - Replaced 1 occurrence(s) of pattern in .\ppc-ad-preview-tool.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,247 - INFO - Replaced 1 occurrence(s) of pattern in .\ppc-ad-preview-tool.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,247 - INFO - Replaced 1 occurrence(s) of pattern in .\ppc-ad-preview-tool.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,247 - INFO - Added font preload tags below </title> in .\ppc-ad-preview-tool.html
+2025-07-12 21:55:00,249 - INFO - Successfully updated .\ppc-ad-preview-tool.html
+2025-07-12 21:55:00,341 - INFO - Replaced 1 occurrence(s) of pattern in .\privacy-policy.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,341 - INFO - Replaced 1 occurrence(s) of pattern in .\privacy-policy.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,342 - INFO - Replaced 1 occurrence(s) of pattern in .\privacy-policy.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,342 - INFO - Replaced 1 occurrence(s) of pattern in .\privacy-policy.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:00,342 - INFO - Replaced 1 occurrence(s) of pattern in .\privacy-policy.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,342 - INFO - Added font preload tags below </title> in .\privacy-policy.html
+2025-07-12 21:55:00,343 - INFO - Successfully updated .\privacy-policy.html
+2025-07-12 21:55:00,406 - INFO - Replaced 1 occurrence(s) of pattern in .\profile.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,406 - INFO - Replaced 1 occurrence(s) of pattern in .\profile.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,406 - INFO - Replaced 1 occurrence(s) of pattern in .\profile.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,406 - INFO - Replaced 1 occurrence(s) of pattern in .\profile.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,406 - INFO - Added font preload tags below </title> in .\profile.html
+2025-07-12 21:55:00,407 - INFO - Successfully updated .\profile.html
+2025-07-12 21:55:00,520 - INFO - Replaced 1 occurrence(s) of pattern in .\profit-margin-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,520 - INFO - Replaced 1 occurrence(s) of pattern in .\profit-margin-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,520 - INFO - Replaced 1 occurrence(s) of pattern in .\profit-margin-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,520 - INFO - Added font preload tags below </title> in .\profit-margin-calculator.html
+2025-07-12 21:55:00,521 - INFO - Successfully updated .\profit-margin-calculator.html
+2025-07-12 21:55:00,635 - INFO - Replaced 1 occurrence(s) of pattern in .\progress-bar-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,635 - INFO - Replaced 1 occurrence(s) of pattern in .\progress-bar-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,636 - INFO - Replaced 1 occurrence(s) of pattern in .\progress-bar-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,636 - INFO - Added font preload tags below </title> in .\progress-bar-generator.html
+2025-07-12 21:55:00,637 - INFO - Successfully updated .\progress-bar-generator.html
+2025-07-12 21:55:00,767 - INFO - Replaced 1 occurrence(s) of pattern in .\qr-code-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,767 - INFO - Replaced 1 occurrence(s) of pattern in .\qr-code-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,768 - INFO - Replaced 1 occurrence(s) of pattern in .\qr-code-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,768 - INFO - Added font preload tags below </title> in .\qr-code-generator.html
+2025-07-12 21:55:00,769 - INFO - Successfully updated .\qr-code-generator.html
+2025-07-12 21:55:00,880 - INFO - Replaced 1 occurrence(s) of pattern in .\random-animal-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,880 - INFO - Replaced 1 occurrence(s) of pattern in .\random-animal-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,881 - INFO - Replaced 1 occurrence(s) of pattern in .\random-animal-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,881 - INFO - Replaced 1 occurrence(s) of pattern in .\random-animal-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:00,881 - INFO - Replaced 1 occurrence(s) of pattern in .\random-animal-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,881 - INFO - Added font preload tags below </title> in .\random-animal-generator.html
+2025-07-12 21:55:00,882 - INFO - Successfully updated .\random-animal-generator.html
+2025-07-12 21:55:00,994 - INFO - Replaced 1 occurrence(s) of pattern in .\random-book-title-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,995 - INFO - Replaced 1 occurrence(s) of pattern in .\random-book-title-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:00,995 - INFO - Replaced 1 occurrence(s) of pattern in .\random-book-title-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:00,995 - INFO - Added font preload tags below </title> in .\random-book-title-generator.html
+2025-07-12 21:55:00,996 - INFO - Successfully updated .\random-book-title-generator.html
+2025-07-12 21:55:01,107 - INFO - Replaced 1 occurrence(s) of pattern in .\random-brainstorm-idea-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,107 - INFO - Replaced 1 occurrence(s) of pattern in .\random-brainstorm-idea-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,107 - INFO - Replaced 1 occurrence(s) of pattern in .\random-brainstorm-idea-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,108 - INFO - Replaced 1 occurrence(s) of pattern in .\random-brainstorm-idea-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:01,108 - INFO - Replaced 1 occurrence(s) of pattern in .\random-brainstorm-idea-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:01,108 - INFO - Added font preload tags below </title> in .\random-brainstorm-idea-generator.html
+2025-07-12 21:55:01,109 - INFO - Successfully updated .\random-brainstorm-idea-generator.html
+2025-07-12 21:55:01,336 - INFO - Replaced 1 occurrence(s) of pattern in .\random-color-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,336 - INFO - Replaced 1 occurrence(s) of pattern in .\random-color-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,336 - INFO - Replaced 1 occurrence(s) of pattern in .\random-color-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,336 - INFO - Replaced 1 occurrence(s) of pattern in .\random-color-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:01,336 - INFO - Replaced 1 occurrence(s) of pattern in .\random-color-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:01,337 - INFO - Added font preload tags below </title> in .\random-color-generator.html
+2025-07-12 21:55:01,338 - INFO - Successfully updated .\random-color-generator.html
+2025-07-12 21:55:01,494 - INFO - Replaced 1 occurrence(s) of pattern in .\random-country-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,495 - INFO - Replaced 1 occurrence(s) of pattern in .\random-country-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,496 - INFO - Replaced 1 occurrence(s) of pattern in .\random-country-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:01,496 - INFO - Added font preload tags below </title> in .\random-country-generator.html
+2025-07-12 21:55:01,498 - INFO - Successfully updated .\random-country-generator.html
+2025-07-12 21:55:01,630 - INFO - Replaced 1 occurrence(s) of pattern in .\random-decision-maker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,630 - INFO - Replaced 1 occurrence(s) of pattern in .\random-decision-maker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:01,630 - INFO - Replaced 1 occurrence(s) of pattern in .\random-decision-maker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:01,631 - INFO - Added font preload tags below </title> in .\random-decision-maker.html
+2025-07-12 21:55:01,632 - INFO - Successfully updated .\random-decision-maker.html
+2025-07-12 21:55:02,308 - INFO - Replaced 1 occurrence(s) of pattern in .\random-fact-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:02,309 - INFO - Replaced 1 occurrence(s) of pattern in .\random-fact-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:02,310 - INFO - Replaced 1 occurrence(s) of pattern in .\random-fact-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:02,310 - INFO - Added font preload tags below </title> in .\random-fact-generator.html
+2025-07-12 21:55:02,312 - INFO - Successfully updated .\random-fact-generator.html
+2025-07-12 21:55:02,451 - INFO - Replaced 1 occurrence(s) of pattern in .\random-hash-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:02,451 - INFO - Replaced 1 occurrence(s) of pattern in .\random-hash-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:02,451 - INFO - Replaced 1 occurrence(s) of pattern in .\random-hash-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:02,452 - INFO - Replaced 1 occurrence(s) of pattern in .\random-hash-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:02,452 - INFO - Replaced 1 occurrence(s) of pattern in .\random-hash-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:02,452 - INFO - Added font preload tags below </title> in .\random-hash-generator.html
+2025-07-12 21:55:02,453 - INFO - Successfully updated .\random-hash-generator.html
+2025-07-12 21:55:02,601 - INFO - Replaced 1 occurrence(s) of pattern in .\random-history-fact.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:02,601 - INFO - Replaced 1 occurrence(s) of pattern in .\random-history-fact.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:02,602 - INFO - Replaced 1 occurrence(s) of pattern in .\random-history-fact.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:02,603 - INFO - Added font preload tags below </title> in .\random-history-fact.html
+2025-07-12 21:55:02,604 - INFO - Successfully updated .\random-history-fact.html
+2025-07-12 21:55:02,903 - INFO - Replaced 1 occurrence(s) of pattern in .\random-ip-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:02,903 - INFO - Added font preload tags below </title> in .\random-ip-generator.html
+2025-07-12 21:55:02,904 - INFO - Successfully updated .\random-ip-generator.html
+2025-07-12 21:55:03,215 - INFO - Replaced 1 occurrence(s) of pattern in .\random-joke-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,216 - INFO - Replaced 1 occurrence(s) of pattern in .\random-joke-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,216 - INFO - Replaced 1 occurrence(s) of pattern in .\random-joke-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:03,216 - INFO - Added font preload tags below </title> in .\random-joke-generator.html
+2025-07-12 21:55:03,218 - INFO - Successfully updated .\random-joke-generator.html
+2025-07-12 21:55:03,384 - INFO - Replaced 1 occurrence(s) of pattern in .\random-movie-quote-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,384 - INFO - Replaced 1 occurrence(s) of pattern in .\random-movie-quote-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,385 - INFO - Replaced 1 occurrence(s) of pattern in .\random-movie-quote-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:03,385 - INFO - Added font preload tags below </title> in .\random-movie-quote-generator.html
+2025-07-12 21:55:03,387 - INFO - Successfully updated .\random-movie-quote-generator.html
+2025-07-12 21:55:03,488 - INFO - Replaced 1 occurrence(s) of pattern in .\random-name-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,489 - INFO - Replaced 1 occurrence(s) of pattern in .\random-name-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,489 - INFO - Replaced 1 occurrence(s) of pattern in .\random-name-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:03,489 - INFO - Added font preload tags below </title> in .\random-name-generator.html
+2025-07-12 21:55:03,490 - INFO - Successfully updated .\random-name-generator.html
+2025-07-12 21:55:03,715 - INFO - Replaced 1 occurrence(s) of pattern in .\random-number-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,715 - INFO - Replaced 1 occurrence(s) of pattern in .\random-number-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,715 - INFO - Replaced 1 occurrence(s) of pattern in .\random-number-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:03,716 - INFO - Added font preload tags below </title> in .\random-number-generator.html
+2025-07-12 21:55:03,717 - INFO - Successfully updated .\random-number-generator.html
+2025-07-12 21:55:03,910 - INFO - Replaced 1 occurrence(s) of pattern in .\random-password-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,910 - INFO - Replaced 1 occurrence(s) of pattern in .\random-password-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,910 - INFO - Replaced 1 occurrence(s) of pattern in .\random-password-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:03,911 - INFO - Replaced 1 occurrence(s) of pattern in .\random-password-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:03,911 - INFO - Replaced 1 occurrence(s) of pattern in .\random-password-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:03,911 - INFO - Added font preload tags below </title> in .\random-password-generator.html
+2025-07-12 21:55:03,911 - INFO - Successfully updated .\random-password-generator.html
+2025-07-12 21:55:04,014 - INFO - Replaced 1 occurrence(s) of pattern in .\random-password-strength-checker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,014 - INFO - Replaced 1 occurrence(s) of pattern in .\random-password-strength-checker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,014 - INFO - Replaced 1 occurrence(s) of pattern in .\random-password-strength-checker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:04,015 - INFO - Added font preload tags below </title> in .\random-password-strength-checker.html
+2025-07-12 21:55:04,015 - INFO - Successfully updated .\random-password-strength-checker.html
+2025-07-12 21:55:04,127 - INFO - Replaced 1 occurrence(s) of pattern in .\random-poem-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,127 - INFO - Replaced 1 occurrence(s) of pattern in .\random-poem-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,127 - INFO - Replaced 1 occurrence(s) of pattern in .\random-poem-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,128 - INFO - Replaced 1 occurrence(s) of pattern in .\random-poem-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:04,128 - INFO - Replaced 1 occurrence(s) of pattern in .\random-poem-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:04,128 - INFO - Added font preload tags below </title> in .\random-poem-generator.html
+2025-07-12 21:55:04,129 - INFO - Successfully updated .\random-poem-generator.html
+2025-07-12 21:55:04,270 - INFO - Replaced 1 occurrence(s) of pattern in .\random-priority-sorter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,270 - INFO - Replaced 1 occurrence(s) of pattern in .\random-priority-sorter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,271 - INFO - Replaced 1 occurrence(s) of pattern in .\random-priority-sorter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:04,271 - INFO - Added font preload tags below </title> in .\random-priority-sorter.html
+2025-07-12 21:55:04,274 - INFO - Successfully updated .\random-priority-sorter.html
+2025-07-12 21:55:04,482 - INFO - Replaced 1 occurrence(s) of pattern in .\random-quote-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,483 - INFO - Replaced 1 occurrence(s) of pattern in .\random-quote-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,484 - INFO - Replaced 1 occurrence(s) of pattern in .\random-quote-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:04,484 - INFO - Added font preload tags below </title> in .\random-quote-generator.html
+2025-07-12 21:55:04,485 - INFO - Successfully updated .\random-quote-generator.html
+2025-07-12 21:55:04,608 - INFO - Replaced 1 occurrence(s) of pattern in .\random-recipe-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,608 - INFO - Replaced 1 occurrence(s) of pattern in .\random-recipe-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,608 - INFO - Replaced 1 occurrence(s) of pattern in .\random-recipe-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:04,608 - INFO - Added font preload tags below </title> in .\random-recipe-generator.html
+2025-07-12 21:55:04,609 - INFO - Successfully updated .\random-recipe-generator.html
+2025-07-12 21:55:04,715 - INFO - Replaced 1 occurrence(s) of pattern in .\random-schedule-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,715 - INFO - Replaced 1 occurrence(s) of pattern in .\random-schedule-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,716 - INFO - Replaced 1 occurrence(s) of pattern in .\random-schedule-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:04,716 - INFO - Added font preload tags below </title> in .\random-schedule-generator.html
+2025-07-12 21:55:04,717 - INFO - Successfully updated .\random-schedule-generator.html
+2025-07-12 21:55:04,848 - INFO - Replaced 1 occurrence(s) of pattern in .\random-science-fact.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,848 - INFO - Replaced 1 occurrence(s) of pattern in .\random-science-fact.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,848 - INFO - Replaced 1 occurrence(s) of pattern in .\random-science-fact.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:04,849 - INFO - Added font preload tags below </title> in .\random-science-fact.html
+2025-07-12 21:55:04,850 - INFO - Successfully updated .\random-science-fact.html
+2025-07-12 21:55:04,959 - INFO - Replaced 1 occurrence(s) of pattern in .\random-song-lyric-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,960 - INFO - Replaced 1 occurrence(s) of pattern in .\random-song-lyric-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:04,960 - INFO - Replaced 1 occurrence(s) of pattern in .\random-song-lyric-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:04,960 - INFO - Added font preload tags below </title> in .\random-song-lyric-generator.html
+2025-07-12 21:55:04,961 - INFO - Successfully updated .\random-song-lyric-generator.html
+2025-07-12 21:55:05,077 - INFO - Replaced 1 occurrence(s) of pattern in .\random-team-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:05,077 - INFO - Replaced 1 occurrence(s) of pattern in .\random-team-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:05,077 - INFO - Replaced 1 occurrence(s) of pattern in .\random-team-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:05,077 - INFO - Added font preload tags below </title> in .\random-team-generator.html
+2025-07-12 21:55:05,078 - INFO - Successfully updated .\random-team-generator.html
+2025-07-12 21:55:05,230 - INFO - Replaced 1 occurrence(s) of pattern in .\random-trivia-question.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:05,230 - INFO - Replaced 1 occurrence(s) of pattern in .\random-trivia-question.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:05,231 - INFO - Replaced 1 occurrence(s) of pattern in .\random-trivia-question.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:05,232 - INFO - Added font preload tags below </title> in .\random-trivia-question.html
+2025-07-12 21:55:05,234 - INFO - Successfully updated .\random-trivia-question.html
+2025-07-12 21:55:05,493 - INFO - Replaced 1 occurrence(s) of pattern in .\random-writing-prompt.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:05,494 - INFO - Replaced 1 occurrence(s) of pattern in .\random-writing-prompt.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:05,495 - INFO - Replaced 1 occurrence(s) of pattern in .\random-writing-prompt.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:05,497 - INFO - Added font preload tags below </title> in .\random-writing-prompt.html
+2025-07-12 21:55:05,502 - INFO - Successfully updated .\random-writing-prompt.html
+2025-07-12 21:55:05,783 - INFO - Replaced 1 occurrence(s) of pattern in .\readability-score-checker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:05,783 - INFO - Replaced 1 occurrence(s) of pattern in .\readability-score-checker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:05,784 - INFO - Replaced 1 occurrence(s) of pattern in .\readability-score-checker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:05,784 - INFO - Added font preload tags below </title> in .\readability-score-checker.html
+2025-07-12 21:55:05,785 - INFO - Successfully updated .\readability-score-checker.html
+2025-07-12 21:55:06,037 - INFO - Replaced 1 occurrence(s) of pattern in .\reading-time-estimator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,038 - INFO - Replaced 1 occurrence(s) of pattern in .\reading-time-estimator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,038 - INFO - Replaced 1 occurrence(s) of pattern in .\reading-time-estimator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:06,039 - INFO - Added font preload tags below </title> in .\reading-time-estimator.html
+2025-07-12 21:55:06,040 - INFO - Successfully updated .\reading-time-estimator.html
+2025-07-12 21:55:06,253 - INFO - Replaced 1 occurrence(s) of pattern in .\regex-tester.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,253 - INFO - Replaced 1 occurrence(s) of pattern in .\regex-tester.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,254 - INFO - Replaced 1 occurrence(s) of pattern in .\regex-tester.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:06,254 - INFO - Added font preload tags below </title> in .\regex-tester.html
+2025-07-12 21:55:06,255 - INFO - Successfully updated .\regex-tester.html
+2025-07-12 21:55:06,414 - INFO - Replaced 1 occurrence(s) of pattern in .\rental-yield-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,415 - INFO - Replaced 1 occurrence(s) of pattern in .\rental-yield-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,415 - INFO - Replaced 1 occurrence(s) of pattern in .\rental-yield-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:06,415 - INFO - Added font preload tags below </title> in .\rental-yield-calculator.html
+2025-07-12 21:55:06,416 - INFO - Successfully updated .\rental-yield-calculator.html
+2025-07-12 21:55:06,452 - INFO - Replaced 1 occurrence(s) of pattern in .\reset-password.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,453 - INFO - Replaced 1 occurrence(s) of pattern in .\reset-password.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,453 - INFO - Replaced 1 occurrence(s) of pattern in .\reset-password.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,453 - INFO - Replaced 1 occurrence(s) of pattern in .\reset-password.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:06,453 - INFO - Added font preload tags below </title> in .\reset-password.html
+2025-07-12 21:55:06,454 - INFO - Successfully updated .\reset-password.html
+2025-07-12 21:55:06,643 - INFO - Replaced 1 occurrence(s) of pattern in .\retirement-savings-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,643 - INFO - Replaced 1 occurrence(s) of pattern in .\retirement-savings-calculator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,644 - INFO - Replaced 1 occurrence(s) of pattern in .\retirement-savings-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,644 - INFO - Replaced 1 occurrence(s) of pattern in .\retirement-savings-calculator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:06,644 - INFO - Replaced 1 occurrence(s) of pattern in .\retirement-savings-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:06,644 - INFO - Added font preload tags below </title> in .\retirement-savings-calculator.html
+2025-07-12 21:55:06,646 - INFO - Successfully updated .\retirement-savings-calculator.html
+2025-07-12 21:55:06,843 - INFO - Replaced 1 occurrence(s) of pattern in .\reverse-text-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,843 - INFO - Replaced 1 occurrence(s) of pattern in .\reverse-text-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:06,843 - INFO - Replaced 1 occurrence(s) of pattern in .\reverse-text-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:06,843 - INFO - Added font preload tags below </title> in .\reverse-text-generator.html
+2025-07-12 21:55:06,844 - INFO - Successfully updated .\reverse-text-generator.html
+2025-07-12 21:55:07,235 - INFO - Replaced 1 occurrence(s) of pattern in .\riddle-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,235 - INFO - Replaced 1 occurrence(s) of pattern in .\riddle-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,238 - INFO - Replaced 1 occurrence(s) of pattern in .\riddle-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,239 - INFO - Replaced 1 occurrence(s) of pattern in .\riddle-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:07,244 - INFO - Replaced 1 occurrence(s) of pattern in .\riddle-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:07,244 - INFO - Added font preload tags below </title> in .\riddle-generator.html
+2025-07-12 21:55:07,251 - INFO - Successfully updated .\riddle-generator.html
+2025-07-12 21:55:07,405 - INFO - Replaced 1 occurrence(s) of pattern in .\robots-txt-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,406 - INFO - Replaced 1 occurrence(s) of pattern in .\robots-txt-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,406 - INFO - Replaced 1 occurrence(s) of pattern in .\robots-txt-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:07,406 - INFO - Added font preload tags below </title> in .\robots-txt-generator.html
+2025-07-12 21:55:07,407 - INFO - Successfully updated .\robots-txt-generator.html
+2025-07-12 21:55:07,551 - INFO - Replaced 1 occurrence(s) of pattern in .\savings-goal-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,552 - INFO - Replaced 1 occurrence(s) of pattern in .\savings-goal-calculator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,552 - INFO - Replaced 1 occurrence(s) of pattern in .\savings-goal-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,552 - INFO - Replaced 1 occurrence(s) of pattern in .\savings-goal-calculator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:07,552 - INFO - Replaced 1 occurrence(s) of pattern in .\savings-goal-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:07,552 - INFO - Added font preload tags below </title> in .\savings-goal-calculator.html
+2025-07-12 21:55:07,553 - INFO - Successfully updated .\savings-goal-calculator.html
+2025-07-12 21:55:07,934 - INFO - Replaced 1 occurrence(s) of pattern in .\schema-markup-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,935 - INFO - Replaced 1 occurrence(s) of pattern in .\schema-markup-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:07,936 - INFO - Replaced 1 occurrence(s) of pattern in .\schema-markup-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:07,937 - INFO - Added font preload tags below </title> in .\schema-markup-generator.html
+2025-07-12 21:55:07,941 - INFO - Successfully updated .\schema-markup-generator.html
+2025-07-12 21:55:08,138 - INFO - Replaced 1 occurrence(s) of pattern in .\sentence-case-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:08,138 - INFO - Replaced 1 occurrence(s) of pattern in .\sentence-case-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:08,138 - INFO - Replaced 1 occurrence(s) of pattern in .\sentence-case-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:08,138 - INFO - Added font preload tags below </title> in .\sentence-case-converter.html
+2025-07-12 21:55:08,139 - INFO - Successfully updated .\sentence-case-converter.html
+2025-07-12 21:55:08,414 - INFO - Replaced 1 occurrence(s) of pattern in .\seo-audit-checklist.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:08,414 - INFO - Replaced 1 occurrence(s) of pattern in .\seo-audit-checklist.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:08,415 - INFO - Replaced 1 occurrence(s) of pattern in .\seo-audit-checklist.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:08,415 - INFO - Added font preload tags below </title> in .\seo-audit-checklist.html
+2025-07-12 21:55:08,416 - INFO - Successfully updated .\seo-audit-checklist.html
+2025-07-12 21:55:09,062 - INFO - Replaced 1 occurrence(s) of pattern in .\serp-preview-tool.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,062 - INFO - Replaced 1 occurrence(s) of pattern in .\serp-preview-tool.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,062 - INFO - Replaced 1 occurrence(s) of pattern in .\serp-preview-tool.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,063 - INFO - Replaced 1 occurrence(s) of pattern in .\serp-preview-tool.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:09,063 - INFO - Added font preload tags below </title> in .\serp-preview-tool.html
+2025-07-12 21:55:09,065 - INFO - Successfully updated .\serp-preview-tool.html
+2025-07-12 21:55:09,109 - INFO - Replaced 1 occurrence(s) of pattern in .\signup.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,109 - INFO - Replaced 1 occurrence(s) of pattern in .\signup.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,109 - INFO - Replaced 1 occurrence(s) of pattern in .\signup.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:09,109 - INFO - Added font preload tags below </title> in .\signup.html
+2025-07-12 21:55:09,110 - INFO - Successfully updated .\signup.html
+2025-07-12 21:55:09,237 - INFO - Replaced 1 occurrence(s) of pattern in .\simple-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,238 - INFO - Replaced 1 occurrence(s) of pattern in .\simple-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,238 - INFO - Replaced 1 occurrence(s) of pattern in .\simple-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:09,238 - INFO - Added font preload tags below </title> in .\simple-calculator.html
+2025-07-12 21:55:09,239 - INFO - Successfully updated .\simple-calculator.html
+2025-07-12 21:55:09,388 - INFO - Replaced 1 occurrence(s) of pattern in .\simple-emi-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,388 - INFO - Replaced 1 occurrence(s) of pattern in .\simple-emi-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,388 - INFO - Replaced 1 occurrence(s) of pattern in .\simple-emi-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:09,388 - INFO - Added font preload tags below </title> in .\simple-emi-calculator.html
+2025-07-12 21:55:09,389 - INFO - Successfully updated .\simple-emi-calculator.html
+2025-07-12 21:55:09,514 - INFO - Replaced 1 occurrence(s) of pattern in .\sitemap-generator-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,514 - INFO - Replaced 1 occurrence(s) of pattern in .\sitemap-generator-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,514 - INFO - Replaced 1 occurrence(s) of pattern in .\sitemap-generator-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:09,514 - INFO - Added font preload tags below </title> in .\sitemap-generator-simple.html
+2025-07-12 21:55:09,515 - INFO - Successfully updated .\sitemap-generator-simple.html
+2025-07-12 21:55:09,643 - INFO - Replaced 1 occurrence(s) of pattern in .\sleep-cycle-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,643 - INFO - Replaced 1 occurrence(s) of pattern in .\sleep-cycle-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,643 - INFO - Replaced 1 occurrence(s) of pattern in .\sleep-cycle-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:09,644 - INFO - Added font preload tags below </title> in .\sleep-cycle-calculator.html
+2025-07-12 21:55:09,645 - INFO - Successfully updated .\sleep-cycle-calculator.html
+2025-07-12 21:55:09,756 - INFO - Replaced 1 occurrence(s) of pattern in .\slug-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,756 - INFO - Replaced 1 occurrence(s) of pattern in .\slug-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,757 - INFO - Replaced 1 occurrence(s) of pattern in .\slug-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:09,757 - INFO - Added font preload tags below </title> in .\slug-generator.html
+2025-07-12 21:55:09,757 - INFO - Successfully updated .\slug-generator.html
+2025-07-12 21:55:09,885 - INFO - Replaced 1 occurrence(s) of pattern in .\social-share-button-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,886 - INFO - Replaced 1 occurrence(s) of pattern in .\social-share-button-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:09,886 - INFO - Replaced 1 occurrence(s) of pattern in .\social-share-button-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:09,886 - INFO - Added font preload tags below </title> in .\social-share-button-generator.html
+2025-07-12 21:55:09,887 - INFO - Successfully updated .\social-share-button-generator.html
+2025-07-12 21:55:10,012 - INFO - Replaced 1 occurrence(s) of pattern in .\spelling-checker-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,012 - INFO - Replaced 1 occurrence(s) of pattern in .\spelling-checker-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,012 - INFO - Replaced 1 occurrence(s) of pattern in .\spelling-checker-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:10,012 - INFO - Added font preload tags below </title> in .\spelling-checker-simple.html
+2025-07-12 21:55:10,013 - INFO - Successfully updated .\spelling-checker-simple.html
+2025-07-12 21:55:10,141 - INFO - Replaced 1 occurrence(s) of pattern in .\sql-formatter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,141 - INFO - Replaced 1 occurrence(s) of pattern in .\sql-formatter.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,142 - INFO - Replaced 1 occurrence(s) of pattern in .\sql-formatter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,142 - INFO - Replaced 1 occurrence(s) of pattern in .\sql-formatter.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:10,142 - INFO - Replaced 1 occurrence(s) of pattern in .\sql-formatter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:10,142 - INFO - Added font preload tags below </title> in .\sql-formatter.html
+2025-07-12 21:55:10,143 - INFO - Successfully updated .\sql-formatter.html
+2025-07-12 21:55:10,268 - INFO - Replaced 1 occurrence(s) of pattern in .\sql-query-builder-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,268 - INFO - Replaced 1 occurrence(s) of pattern in .\sql-query-builder-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,268 - INFO - Replaced 1 occurrence(s) of pattern in .\sql-query-builder-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:10,268 - INFO - Added font preload tags below </title> in .\sql-query-builder-simple.html
+2025-07-12 21:55:10,269 - INFO - Successfully updated .\sql-query-builder-simple.html
+2025-07-12 21:55:10,325 - INFO - Replaced 1 occurrence(s) of pattern in .\status.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,325 - INFO - Replaced 1 occurrence(s) of pattern in .\status.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,326 - INFO - Replaced 1 occurrence(s) of pattern in .\status.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,326 - INFO - Replaced 1 occurrence(s) of pattern in .\status.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:10,326 - INFO - Replaced 1 occurrence(s) of pattern in .\status.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:10,326 - INFO - Added font preload tags below </title> in .\status.html
+2025-07-12 21:55:10,327 - INFO - Successfully updated .\status.html
+2025-07-12 21:55:10,437 - INFO - Replaced 1 occurrence(s) of pattern in .\sticky-note-simulator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,437 - INFO - Replaced 1 occurrence(s) of pattern in .\sticky-note-simulator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,438 - INFO - Replaced 1 occurrence(s) of pattern in .\sticky-note-simulator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:10,438 - INFO - Added font preload tags below </title> in .\sticky-note-simulator.html
+2025-07-12 21:55:10,439 - INFO - Successfully updated .\sticky-note-simulator.html
+2025-07-12 21:55:10,544 - INFO - Replaced 1 occurrence(s) of pattern in .\study-timer.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,544 - INFO - Replaced 1 occurrence(s) of pattern in .\study-timer.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,545 - INFO - Replaced 1 occurrence(s) of pattern in .\study-timer.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:10,545 - INFO - Replaced 1 occurrence(s) of pattern in .\study-timer.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:10,545 - INFO - Replaced 1 occurrence(s) of pattern in .\study-timer.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:10,545 - INFO - Added font preload tags below </title> in .\study-timer.html
+2025-07-12 21:55:10,546 - INFO - Successfully updated .\study-timer.html
+2025-07-12 21:55:11,217 - INFO - Replaced 1 occurrence(s) of pattern in .\superhero-name-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,218 - INFO - Replaced 1 occurrence(s) of pattern in .\superhero-name-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,218 - INFO - Replaced 1 occurrence(s) of pattern in .\superhero-name-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:11,218 - INFO - Added font preload tags below </title> in .\superhero-name-generator.html
+2025-07-12 21:55:11,220 - INFO - Successfully updated .\superhero-name-generator.html
+2025-07-12 21:55:11,395 - INFO - Replaced 1 occurrence(s) of pattern in .\synonym-finder.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,396 - INFO - Replaced 1 occurrence(s) of pattern in .\synonym-finder.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,396 - INFO - Replaced 1 occurrence(s) of pattern in .\synonym-finder.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:11,396 - INFO - Added font preload tags below </title> in .\synonym-finder.html
+2025-07-12 21:55:11,397 - INFO - Successfully updated .\synonym-finder.html
+2025-07-12 21:55:11,553 - INFO - Replaced 1 occurrence(s) of pattern in .\task-deadline-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,554 - INFO - Replaced 1 occurrence(s) of pattern in .\task-deadline-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,554 - INFO - Replaced 1 occurrence(s) of pattern in .\task-deadline-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:11,554 - INFO - Added font preload tags below </title> in .\task-deadline-calculator.html
+2025-07-12 21:55:11,555 - INFO - Successfully updated .\task-deadline-calculator.html
+2025-07-12 21:55:11,677 - INFO - Replaced 1 occurrence(s) of pattern in .\tax-bracket-estimator-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,678 - INFO - Replaced 1 occurrence(s) of pattern in .\tax-bracket-estimator-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,678 - INFO - Replaced 1 occurrence(s) of pattern in .\tax-bracket-estimator-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:11,678 - INFO - Added font preload tags below </title> in .\tax-bracket-estimator-simple.html
+2025-07-12 21:55:11,679 - INFO - Successfully updated .\tax-bracket-estimator-simple.html
+2025-07-12 21:55:11,735 - INFO - Replaced 1 occurrence(s) of pattern in .\terms-of-service.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,736 - INFO - Replaced 1 occurrence(s) of pattern in .\terms-of-service.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,736 - INFO - Replaced 1 occurrence(s) of pattern in .\terms-of-service.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,736 - INFO - Replaced 1 occurrence(s) of pattern in .\terms-of-service.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:11,736 - INFO - Replaced 1 occurrence(s) of pattern in .\terms-of-service.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:11,736 - INFO - Added font preload tags below </title> in .\terms-of-service.html
+2025-07-12 21:55:11,737 - INFO - Successfully updated .\terms-of-service.html
+2025-07-12 21:55:11,869 - INFO - Replaced 1 occurrence(s) of pattern in .\text-diff-checker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,869 - INFO - Replaced 1 occurrence(s) of pattern in .\text-diff-checker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,870 - INFO - Replaced 1 occurrence(s) of pattern in .\text-diff-checker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:11,870 - INFO - Added font preload tags below </title> in .\text-diff-checker.html
+2025-07-12 21:55:11,870 - INFO - Successfully updated .\text-diff-checker.html
+2025-07-12 21:55:11,978 - INFO - Replaced 1 occurrence(s) of pattern in .\text-expander.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,978 - INFO - Replaced 1 occurrence(s) of pattern in .\text-expander.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:11,979 - INFO - Replaced 1 occurrence(s) of pattern in .\text-expander.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:11,979 - INFO - Added font preload tags below </title> in .\text-expander.html
+2025-07-12 21:55:11,980 - INFO - Successfully updated .\text-expander.html
+2025-07-12 21:55:12,151 - INFO - Replaced 1 occurrence(s) of pattern in .\text-randomizer.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,151 - INFO - Replaced 1 occurrence(s) of pattern in .\text-randomizer.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,151 - INFO - Replaced 1 occurrence(s) of pattern in .\text-randomizer.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:12,151 - INFO - Added font preload tags below </title> in .\text-randomizer.html
+2025-07-12 21:55:12,152 - INFO - Successfully updated .\text-randomizer.html
+2025-07-12 21:55:12,315 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-ascii-art.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,315 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-ascii-art.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,315 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-ascii-art.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:12,315 - INFO - Added font preload tags below </title> in .\text-to-ascii-art.html
+2025-07-12 21:55:12,316 - INFO - Successfully updated .\text-to-ascii-art.html
+2025-07-12 21:55:12,440 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-binary-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,440 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-binary-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,440 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-binary-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:12,440 - INFO - Added font preload tags below </title> in .\text-to-binary-converter.html
+2025-07-12 21:55:12,441 - INFO - Successfully updated .\text-to-binary-converter.html
+2025-07-12 21:55:12,583 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-emoji-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,583 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-emoji-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,584 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-emoji-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:12,584 - INFO - Added font preload tags below </title> in .\text-to-emoji-converter.html
+2025-07-12 21:55:12,585 - INFO - Successfully updated .\text-to-emoji-converter.html
+2025-07-12 21:55:12,712 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-hex-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,712 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-hex-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,712 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-hex-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:12,712 - INFO - Added font preload tags below </title> in .\text-to-hex-converter.html
+2025-07-12 21:55:12,713 - INFO - Successfully updated .\text-to-hex-converter.html
+2025-07-12 21:55:12,844 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-morse-code.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,844 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-morse-code.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,844 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-morse-code.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:12,844 - INFO - Added font preload tags below </title> in .\text-to-morse-code.html
+2025-07-12 21:55:12,845 - INFO - Successfully updated .\text-to-morse-code.html
+2025-07-12 21:55:12,985 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-speech-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,985 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-speech-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:12,986 - INFO - Replaced 1 occurrence(s) of pattern in .\text-to-speech-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:12,986 - INFO - Added font preload tags below </title> in .\text-to-speech-simple.html
+2025-07-12 21:55:12,987 - INFO - Successfully updated .\text-to-speech-simple.html
+2025-07-12 21:55:13,120 - INFO - Replaced 1 occurrence(s) of pattern in .\time-duration-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,121 - INFO - Replaced 1 occurrence(s) of pattern in .\time-duration-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,121 - INFO - Replaced 1 occurrence(s) of pattern in .\time-duration-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:13,121 - INFO - Added font preload tags below </title> in .\time-duration-calculator.html
+2025-07-12 21:55:13,122 - INFO - Successfully updated .\time-duration-calculator.html
+2025-07-12 21:55:13,247 - INFO - Replaced 1 occurrence(s) of pattern in .\time-value-of-money-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,247 - INFO - Replaced 1 occurrence(s) of pattern in .\time-value-of-money-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,247 - INFO - Replaced 1 occurrence(s) of pattern in .\time-value-of-money-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:13,247 - INFO - Added font preload tags below </title> in .\time-value-of-money-calculator.html
+2025-07-12 21:55:13,248 - INFO - Successfully updated .\time-value-of-money-calculator.html
+2025-07-12 21:55:13,440 - INFO - Replaced 1 occurrence(s) of pattern in .\time-zone-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,440 - INFO - Replaced 1 occurrence(s) of pattern in .\time-zone-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,440 - INFO - Replaced 2 occurrence(s) of pattern in .\time-zone-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:13,440 - INFO - Added font preload tags below </title> in .\time-zone-converter.html
+2025-07-12 21:55:13,442 - INFO - Successfully updated .\time-zone-converter.html
+2025-07-12 21:55:13,557 - INFO - Replaced 1 occurrence(s) of pattern in .\times-table-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,557 - INFO - Replaced 1 occurrence(s) of pattern in .\times-table-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,557 - INFO - Replaced 1 occurrence(s) of pattern in .\times-table-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:13,557 - INFO - Added font preload tags below </title> in .\times-table-generator.html
+2025-07-12 21:55:13,558 - INFO - Successfully updated .\times-table-generator.html
+2025-07-12 21:55:13,685 - INFO - Replaced 1 occurrence(s) of pattern in .\timestamp-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,685 - INFO - Replaced 1 occurrence(s) of pattern in .\timestamp-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,685 - INFO - Replaced 1 occurrence(s) of pattern in .\timestamp-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:13,686 - INFO - Added font preload tags below </title> in .\timestamp-converter.html
+2025-07-12 21:55:13,687 - INFO - Successfully updated .\timestamp-converter.html
+2025-07-12 21:55:13,900 - INFO - Replaced 1 occurrence(s) of pattern in .\tip-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,900 - INFO - Replaced 1 occurrence(s) of pattern in .\tip-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:13,901 - INFO - Replaced 1 occurrence(s) of pattern in .\tip-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:13,901 - INFO - Added font preload tags below </title> in .\tip-calculator.html
+2025-07-12 21:55:13,902 - INFO - Successfully updated .\tip-calculator.html
+2025-07-12 21:55:14,028 - INFO - Replaced 1 occurrence(s) of pattern in .\title-capitalization-tool.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,028 - INFO - Replaced 1 occurrence(s) of pattern in .\title-capitalization-tool.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,029 - INFO - Replaced 1 occurrence(s) of pattern in .\title-capitalization-tool.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,029 - INFO - Added font preload tags below </title> in .\title-capitalization-tool.html
+2025-07-12 21:55:14,030 - INFO - Successfully updated .\title-capitalization-tool.html
+2025-07-12 21:55:14,147 - INFO - Replaced 1 occurrence(s) of pattern in .\title-tag-length-checker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,148 - INFO - Replaced 1 occurrence(s) of pattern in .\title-tag-length-checker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,148 - INFO - Replaced 1 occurrence(s) of pattern in .\title-tag-length-checker.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:14,148 - INFO - Replaced 1 occurrence(s) of pattern in .\title-tag-length-checker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,148 - INFO - Added font preload tags below </title> in .\title-tag-length-checker.html
+2025-07-12 21:55:14,149 - INFO - Successfully updated .\title-tag-length-checker.html
+2025-07-12 21:55:14,259 - INFO - Replaced 1 occurrence(s) of pattern in .\to-do-list-maker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,259 - INFO - Replaced 1 occurrence(s) of pattern in .\to-do-list-maker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,259 - INFO - Replaced 1 occurrence(s) of pattern in .\to-do-list-maker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,259 - INFO - Added font preload tags below </title> in .\to-do-list-maker.html
+2025-07-12 21:55:14,261 - INFO - Successfully updated .\to-do-list-maker.html
+2025-07-12 21:55:14,340 - INFO - Replaced 1 occurrence(s) of pattern in .\tool1.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,340 - INFO - Replaced 1 occurrence(s) of pattern in .\tool1.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,341 - INFO - Replaced 1 occurrence(s) of pattern in .\tool1.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,341 - INFO - Added font preload tags below </title> in .\tool1.html
+2025-07-12 21:55:14,341 - INFO - Successfully updated .\tool1.html
+2025-07-12 21:55:14,446 - INFO - Replaced 1 occurrence(s) of pattern in .\truth-or-dare-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,447 - INFO - Replaced 1 occurrence(s) of pattern in .\truth-or-dare-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,447 - INFO - Replaced 1 occurrence(s) of pattern in .\truth-or-dare-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,447 - INFO - Added font preload tags below </title> in .\truth-or-dare-generator.html
+2025-07-12 21:55:14,448 - INFO - Successfully updated .\truth-or-dare-generator.html
+2025-07-12 21:55:14,520 - INFO - Replaced 1 occurrence(s) of pattern in .\tutorials.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,520 - INFO - Replaced 1 occurrence(s) of pattern in .\tutorials.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,521 - INFO - Replaced 1 occurrence(s) of pattern in .\tutorials.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,521 - INFO - Replaced 1 occurrence(s) of pattern in .\tutorials.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:14,521 - INFO - Replaced 1 occurrence(s) of pattern in .\tutorials.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,521 - INFO - Added font preload tags below </title> in .\tutorials.html
+2025-07-12 21:55:14,522 - INFO - Successfully updated .\tutorials.html
+2025-07-12 21:55:14,650 - INFO - Replaced 1 occurrence(s) of pattern in .\twitter-card-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,650 - INFO - Replaced 1 occurrence(s) of pattern in .\twitter-card-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,650 - INFO - Replaced 1 occurrence(s) of pattern in .\twitter-card-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,650 - INFO - Added font preload tags below </title> in .\twitter-card-generator.html
+2025-07-12 21:55:14,651 - INFO - Successfully updated .\twitter-card-generator.html
+2025-07-12 21:55:14,768 - INFO - Replaced 1 occurrence(s) of pattern in .\unit-converter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,769 - INFO - Replaced 1 occurrence(s) of pattern in .\unit-converter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,769 - INFO - Replaced 1 occurrence(s) of pattern in .\unit-converter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,769 - INFO - Added font preload tags below </title> in .\unit-converter.html
+2025-07-12 21:55:14,770 - INFO - Successfully updated .\unit-converter.html
+2025-07-12 21:55:14,962 - INFO - Replaced 1 occurrence(s) of pattern in .\url-encoder-decoder.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,962 - INFO - Replaced 1 occurrence(s) of pattern in .\url-encoder-decoder.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:14,963 - INFO - Replaced 1 occurrence(s) of pattern in .\url-encoder-decoder.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:14,964 - INFO - Added font preload tags below </title> in .\url-encoder-decoder.html
+2025-07-12 21:55:14,967 - INFO - Successfully updated .\url-encoder-decoder.html
+2025-07-12 21:55:15,256 - INFO - Replaced 1 occurrence(s) of pattern in .\utm-link-builder.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,257 - INFO - Replaced 1 occurrence(s) of pattern in .\utm-link-builder.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,257 - INFO - Replaced 1 occurrence(s) of pattern in .\utm-link-builder.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:15,257 - INFO - Added font preload tags below </title> in .\utm-link-builder.html
+2025-07-12 21:55:15,258 - INFO - Successfully updated .\utm-link-builder.html
+2025-07-12 21:55:15,387 - INFO - Replaced 1 occurrence(s) of pattern in .\uuid-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,388 - INFO - Replaced 1 occurrence(s) of pattern in .\uuid-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,388 - INFO - Replaced 1 occurrence(s) of pattern in .\uuid-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:15,388 - INFO - Added font preload tags below </title> in .\uuid-generator.html
+2025-07-12 21:55:15,389 - INFO - Successfully updated .\uuid-generator.html
+2025-07-12 21:55:15,510 - INFO - Replaced 1 occurrence(s) of pattern in .\vocabulary-quiz-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,511 - INFO - Replaced 1 occurrence(s) of pattern in .\vocabulary-quiz-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,511 - INFO - Replaced 1 occurrence(s) of pattern in .\vocabulary-quiz-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:15,511 - INFO - Added font preload tags below </title> in .\vocabulary-quiz-generator.html
+2025-07-12 21:55:15,513 - INFO - Successfully updated .\vocabulary-quiz-generator.html
+2025-07-12 21:55:15,642 - INFO - Replaced 1 occurrence(s) of pattern in .\watermark-tool.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,643 - INFO - Replaced 1 occurrence(s) of pattern in .\watermark-tool.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,643 - INFO - Replaced 1 occurrence(s) of pattern in .\watermark-tool.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:15,643 - INFO - Added font preload tags below </title> in .\watermark-tool.html
+2025-07-12 21:55:15,644 - INFO - Successfully updated .\watermark-tool.html
+2025-07-12 21:55:15,768 - INFO - Replaced 1 occurrence(s) of pattern in .\word-cloud-generator-simple.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,769 - INFO - Replaced 1 occurrence(s) of pattern in .\word-cloud-generator-simple.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:15,769 - INFO - Replaced 1 occurrence(s) of pattern in .\word-cloud-generator-simple.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:15,769 - INFO - Added font preload tags below </title> in .\word-cloud-generator-simple.html
+2025-07-12 21:55:15,770 - INFO - Successfully updated .\word-cloud-generator-simple.html
+2025-07-12 21:55:16,044 - INFO - Replaced 1 occurrence(s) of pattern in .\word-counter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,045 - INFO - Replaced 1 occurrence(s) of pattern in .\word-counter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,045 - INFO - Replaced 1 occurrence(s) of pattern in .\word-counter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:16,045 - INFO - Added font preload tags below </title> in .\word-counter.html
+2025-07-12 21:55:16,047 - INFO - Successfully updated .\word-counter.html
+2025-07-12 21:55:16,271 - INFO - Replaced 1 occurrence(s) of pattern in .\word-goal-tracker.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,272 - INFO - Replaced 1 occurrence(s) of pattern in .\word-goal-tracker.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,272 - INFO - Replaced 1 occurrence(s) of pattern in .\word-goal-tracker.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,272 - INFO - Replaced 1 occurrence(s) of pattern in .\word-goal-tracker.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:16,272 - INFO - Replaced 1 occurrence(s) of pattern in .\word-goal-tracker.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:16,272 - INFO - Added font preload tags below </title> in .\word-goal-tracker.html
+2025-07-12 21:55:16,274 - INFO - Successfully updated .\word-goal-tracker.html
+2025-07-12 21:55:16,514 - INFO - Replaced 1 occurrence(s) of pattern in .\word-per-minute-calculator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,514 - INFO - Replaced 1 occurrence(s) of pattern in .\word-per-minute-calculator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,514 - INFO - Replaced 1 occurrence(s) of pattern in .\word-per-minute-calculator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:16,514 - INFO - Added font preload tags below </title> in .\word-per-minute-calculator.html
+2025-07-12 21:55:16,515 - INFO - Successfully updated .\word-per-minute-calculator.html
+2025-07-12 21:55:16,724 - INFO - Replaced 1 occurrence(s) of pattern in .\word-scramble-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,724 - INFO - Replaced 1 occurrence(s) of pattern in .\word-scramble-generator.html: <link\s+href="https://fonts\.googleapis\.com/css2\?family=Poppins:wght@400;500;700&display=swap"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,724 - INFO - Replaced 1 occurrence(s) of pattern in .\word-scramble-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,724 - INFO - Replaced 1 occurrence(s) of pattern in .\word-scramble-generator.html: <script\s+src="\.\./js/script\.js"></script>
+2025-07-12 21:55:16,725 - INFO - Replaced 1 occurrence(s) of pattern in .\word-scramble-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:16,725 - INFO - Added font preload tags below </title> in .\word-scramble-generator.html
+2025-07-12 21:55:16,726 - INFO - Successfully updated .\word-scramble-generator.html
+2025-07-12 21:55:16,858 - INFO - Replaced 1 occurrence(s) of pattern in .\would-you-rather-generator.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,858 - INFO - Replaced 1 occurrence(s) of pattern in .\would-you-rather-generator.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,858 - INFO - Replaced 1 occurrence(s) of pattern in .\would-you-rather-generator.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:16,859 - INFO - Added font preload tags below </title> in .\would-you-rather-generator.html
+2025-07-12 21:55:16,860 - INFO - Successfully updated .\would-you-rather-generator.html
+2025-07-12 21:55:16,964 - INFO - Replaced 1 occurrence(s) of pattern in .\xml-formatter.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,965 - INFO - Replaced 1 occurrence(s) of pattern in .\xml-formatter.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:16,965 - INFO - Replaced 1 occurrence(s) of pattern in .\xml-formatter.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:16,965 - INFO - Added font preload tags below </title> in .\xml-formatter.html
+2025-07-12 21:55:16,966 - INFO - Successfully updated .\xml-formatter.html
+2025-07-12 21:55:17,079 - INFO - Replaced 1 occurrence(s) of pattern in .\youtube-thumbnail-downloader.html: <link\s+href="https://cdnjs\.cloudflare\.com/ajax/libs/font-awesome/6\.6\.0/css/all\.min\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:17,079 - INFO - Replaced 1 occurrence(s) of pattern in .\youtube-thumbnail-downloader.html: <link\s+href="\.\./css/style\.css"\s+rel="stylesheet"\s*/>
+2025-07-12 21:55:17,079 - INFO - Replaced 1 occurrence(s) of pattern in .\youtube-thumbnail-downloader.html: <script\s+src="/js/auth\.js"></script>
+2025-07-12 21:55:17,079 - INFO - Added font preload tags below </title> in .\youtube-thumbnail-downloader.html
+2025-07-12 21:55:17,080 - INFO - Successfully updated .\youtube-thumbnail-downloader.html
+2025-07-12 21:55:17,084 - INFO - Added font preload tags below </title> in .\backend\node_modules\jsbn\example.html
+2025-07-12 21:55:17,085 - INFO - Successfully updated .\backend\node_modules\jsbn\example.html
+2025-07-12 21:55:17,085 - INFO - Processing complete. Success: 223, Failures: 0

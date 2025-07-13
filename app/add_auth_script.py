@@ -4,7 +4,7 @@ import re
 # Directory containing HTML files
 root_dir = r"C:\Users\admin\OneDrive\Desktop\tools-hub"
 output_dir = r"C:\Users\admin\OneDrive\Desktop\tools-hub\output"
-auth_script = '<script src="/js/auth.js"></script>'
+auth_script = '<script src="/js/auth.js" defer></script>'
 
 # Create output directory if it doesn't exist
 if not os.path.exists(output_dir):

@@ -4,9 +4,16 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Text Expander - Simple & Free</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="../css/style.css" rel="stylesheet"/>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preload" href="../css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../css/style.css"></noscript>
     <meta content="Text Expander - Instantly expand shorthand text (e.g., 'brb' to 'be right back') with this free, easy-to-use tool. Perfect for messaging, emails, and more. No login required, no ads, 100% free!" name="description">
     <meta content="Text Expander, Shorthand Text, Text Expansion Tool, Free Text Expander, No Ads, 100% Free, Expand Abbreviations" name="keywords">
     <meta content="index, follow" name="robots"/>
@@ -2740,8 +2747,7 @@ function processText(text, source) {
 <!-- Placeholder for dynamic content -->
 <div id="footer-placeholder">
 </div>
-<script src="../js/script.js">
-</script>
-<script src="/js/auth.js"></script>
+<script src="../js/script.js" defer></script>
+<script src="/js/auth.js" defer></script>
 </body>
 </html>

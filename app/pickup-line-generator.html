@@ -10,9 +10,16 @@
 <title>
    Pickup Line Generator - Free to Use Online Tool
   </title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="../css/style.css" rel="stylesheet"/>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preload" href="../css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../css/style.css"></noscript>
 <meta content="Pickup Line Generator - Free to Use! Instantly generate fun and creative pickup lines. No signup required, no ads, just pure fun!" name="description">
 <meta content="Pickup Line Generator, Free Pickup Lines, Funny Pickup Lines, Online Pickup Line Tool, Romantic Pickup Lines, Random Pickup Lines, Love Lines Generator" name="keywords">
 <meta content="index, follow" name="robots"/>
@@ -3075,8 +3082,7 @@ line-height: 1.6;
 <!-- Placeholder for dynamic content -->
 <div id="footer-placeholder">
 </div>
-<script src="../js/script.js">
-</script>
-<script src="/js/auth.js"></script>
+<script src="../js/script.js" defer></script>
+<script src="/js/auth.js" defer></script>
 </body>
 </html>
