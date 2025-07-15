@@ -549,40 +549,27 @@ margin-top: -65px;
     </p>
 </div>
 <script>
-    // Toggle optional fields
+        // Toggle optional fields
         ['siteNameToggle', 'localeToggle', 'imageAltToggle'].forEach(id => {
-        // Event listener for user interactions
             document.getElementById(id).addEventListener('change', function() {
-        // DOM element manipulation
                 const field = document.getElementById(id.replace('Toggle', ''));
                 field.style.display = this.checked ? 'block' : 'none';
             });
         });
 
-        let generatedTags = ''; // Store generated tags for copy/download
+        let generatedTags = '';
 
-        // Function: generateOgTags
         function generateOgTags() {
-        // DOM element manipulation
             const title = document.getElementById('ogTitle').value.trim();
-        // DOM element manipulation
             const description = document.getElementById('ogDescription').value.trim();
-        // DOM element manipulation
             const image = document.getElementById('ogImage').value.trim();
-        // DOM element manipulation
             const url = document.getElementById('ogUrl').value.trim();
-        // DOM element manipulation
             const type = document.getElementById('ogType').value;
-        // DOM element manipulation
             const siteName = document.getElementById('siteNameToggle').checked ? document.getElementById('ogSiteName').value.trim() : '';
-        // DOM element manipulation
             const locale = document.getElementById('localeToggle').checked ? document.getElementById('ogLocale').value : '';
-        // DOM element manipulation
             const imageAlt = document.getElementById('imageAltToggle').checked ? document.getElementById('ogImageAlt').value.trim() : '';
-        // DOM element manipulation
             const resultDiv = document.getElementById('result');
 
-            // Validation
             if (!title || !description || !image || !url) {
                 resultDiv.innerHTML = '<p>Please fill in all required fields (Title, Description, Image URL, Page URL).</p>';
                 return;
@@ -601,7 +588,6 @@ margin-top: -65px;
                 return;
             }
 
-            // Build OG tags
             let ogTags = '';
             ogTags += `<meta property="og:title" content="${title}">\n`;
             ogTags += `<meta property="og:description" content="${description}">\n`;
@@ -612,9 +598,8 @@ margin-top: -65px;
             if (locale) ogTags += `<meta property="og:locale" content="${locale}">\n`;
             if (imageAlt) ogTags += `<meta property="og:image:alt" content="${imageAlt}">\n`;
 
-            generatedTags = ogTags; // Store for copy/download
+            generatedTags = ogTags;
 
-            // Build preview
             const preview = `
                 <div class="preview">
                     ${image ? `<img src="${image}" alt="${imageAlt || 'Preview Image'}">` : ''}
@@ -629,13 +614,10 @@ margin-top: -65px;
                 <div class="tags-output">${ogTags}</div>
                 ${preview}
             `;
-        // DOM element manipulation
             document.querySelector('.copy').disabled = false;
-        // DOM element manipulation
             document.querySelector('.download').disabled = false;
         }
 
-        // Function: copyOgTags
         function copyOgTags() {
             if (!generatedTags) return;
             navigator.clipboard.writeText(generatedTags)
@@ -643,11 +625,9 @@ margin-top: -65px;
                 .catch(err => alert('Failed to copy: ' + err));
         }
 
-        // Function: downloadOgTags
         function downloadOgTags() {
             if (!generatedTags) return;
-            const htmlContent = `<!DOCTYPE html><html><head>\n${generatedTags}</head><body><script src="/js/auth.js" defer></script>
-</body></html>`;
+            const htmlContent = `<!DOCTYPE html><html><head>\n${generatedTags}</head><body></body></html>`;
             const blob = new Blob([htmlContent], { type: 'text/html' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -659,45 +639,27 @@ margin-top: -65px;
             window.URL.revokeObjectURL(url);
         }
 
-        // Function: clearForm
         function clearForm() {
-        // DOM element manipulation
             document.getElementById('ogTitle').value = '';
-        // DOM element manipulation
             document.getElementById('ogDescription').value = '';
-        // DOM element manipulation
             document.getElementById('ogImage').value = '';
-        // DOM element manipulation
             document.getElementById('ogUrl').value = '';
-        // DOM element manipulation
             document.getElementById('ogType').value = 'website';
-        // DOM element manipulation
             document.getElementById('siteNameToggle').checked = false;
-        // DOM element manipulation
             document.getElementById('ogSiteName').value = '';
-        // DOM element manipulation
             document.getElementById('ogSiteName').style.display = 'none';
-        // DOM element manipulation
             document.getElementById('localeToggle').checked = false;
-        // DOM element manipulation
             document.getElementById('ogLocale').value = 'en_US';
-        // DOM element manipulation
             document.getElementById('ogLocale').style.display = 'none';
-        // DOM element manipulation
             document.getElementById('imageAltToggle').checked = false;
-        // DOM element manipulation
             document.getElementById('ogImageAlt').value = '';
-        // DOM element manipulation
             document.getElementById('ogImageAlt').style.display = 'none';
-        // DOM element manipulation
             document.getElementById('result').innerHTML = '';
-        // DOM element manipulation
             document.querySelector('.copy').disabled = true;
-        // DOM element manipulation
             document.querySelector('.download').disabled = true;
             generatedTags = '';
         }
-   </script>
+    </script>
 <!-- Placeholder for dynamic content -->
 <div id="footer-placeholder">
 </div>
