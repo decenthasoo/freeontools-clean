@@ -2,4 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /css/
 Disallow: /js/
+Disallow: /styles.css
+Disallow: /scripts.js
 # Sitemap: https://www.freeontools.com/sitemap.xml
