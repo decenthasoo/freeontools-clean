@@ -547,18 +547,36 @@
 
     const animalDisplay = document.getElementById('animal-display');
     const animalImage = document.getElementById('animal-image');
+    
+    // Create a copy of the original array to track remaining animals
+    let remainingAnimals = [...animals];
+    let usedAnimals = [];
 
     function generateAnimal() {
         console.log('Generate Animal clicked');
-        const randomIndex = Math.floor(Math.random() * animals.length);
-        const selectedAnimal = animals[randomIndex];
+        
+        // If all animals have been shown, reset the lists
+        if (remainingAnimals.length === 0) {
+            remainingAnimals = [...usedAnimals];
+            usedAnimals = [];
+            animalDisplay.textContent = "All animals shown! Starting over...";
+            animalDisplay.classList.add('animate');
+            setTimeout(() => animalDisplay.classList.remove('animate'), 300);
+            return;
+        }
+        
+        const randomIndex = Math.floor(Math.random() * remainingAnimals.length);
+        const selectedAnimal = remainingAnimals[randomIndex];
+        
+        // Move the selected animal from remaining to used
+        remainingAnimals.splice(randomIndex, 1);
+        usedAnimals.push(selectedAnimal);
 
         animalDisplay.textContent = selectedAnimal.name;
         animalDisplay.classList.add('animate');
         setTimeout(() => animalDisplay.classList.remove('animate'), 300);
 
         animalImage.src = selectedAnimal.image;
-        // Set alt tag with underscore-separated name
         const altName = selectedAnimal.name.toLowerCase().replace(/\s+/g, '_');
         animalImage.alt = `${altName} - Random Animal Generator`;
         animalImage.style.display = 'block';
@@ -577,8 +595,12 @@
         animalDisplay.classList.remove('animate');
         animalImage.style.display = 'none';
         animalImage.src = '';
-        animalImage.alt = ''; // Clear alt tag on reset
+        animalImage.alt = '';
         animalImage.style.opacity = '0';
+        
+        // Reset the animal tracking lists
+        remainingAnimals = [...animals];
+        usedAnimals = [];
     }
 </script>
     <div id="footer-placeholder"></div>
