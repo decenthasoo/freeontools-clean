@@ -139,7 +139,6 @@ app.use((req, res, next) => {
 app.use(express.static(staticPath, {
   maxAge: '1y',
   setHeaders: (res, filePath) => {
-    console.log(`server.js: Serving static file: ${filePath}`);
     res.setHeader('X-Content-Type-Options', 'nosniff');
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-store');
@@ -531,13 +530,18 @@ app.get('*', (req, res, next) => {
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) {
     return next();
   }
+  if (req.path.includes('.')) {
+    return next();
+  }
   const htmlPath = path.join(staticPath, `${req.path}.html`);
   console.log(`server.js: Attempting to serve: ${htmlPath}`);
   if (fs.existsSync(htmlPath)) {
     console.log(`server.js: Serving HTML file: ${htmlPath}`);
     return res.sendFile(htmlPath);
+  } else {
+    console.warn(`server.js: HTML file not found: ${htmlPath}, serving index.html`);
   }
-  console.warn(`server.js: File not found: ${htmlPath}, serving index.html for ${req.path}`);
+  console.log(`server.js: Serving index.html from: ${indexPath}`);
   res.sendFile(indexPath);
 });
 
