@@ -1,24 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Emoji Story Generator - No Signup Needed</title>
-<link rel="preload" href="/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/all.min.css"></noscript>
-<link rel="preload" href="/css/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<link rel="preload" href="../css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../css/style.css"></noscript>
-<meta content="Emoji Story Generator - No Signup Needed! Create fun and creative emoji stories instantly. 100% free to use, no ads, no login, no catch." name="description">
-<meta content="Emoji Story Generator, Free Emoji Tool, Fun Story Maker, Create Emoji Stories, Emoji Generator Online, Story with Emojis" name="keywords">
-<meta content="index, follow" name="robots"/>
-<link href="https://www.freeontools.com/emoji-story-generator" rel="canonical"/>
-<meta content="Emoji Story Generator - No Signup Needed" property="og:title"/>
+<link as="style" href="/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="/css/all.min.css" rel="stylesheet"/></noscript>
+<link as="font" crossorigin="" href="/css/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" rel="preload" type="font/woff2"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link as="style" href="../css/style.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="../css/style.css" rel="stylesheet"/></noscript>
+<meta content="Emoji Story Generator - No Signup Needed! Create fun and creative emoji stories instantly. 100% free to use, no ads, no login, no catch." name="description"/>
+<meta content="Emoji Story Generator, Free Emoji Tool, Fun Story Maker, Create Emoji Stories, Emoji Generator Online, Story with Emojis" name="keywords"/>
+<meta content="index, follow" name="robots">
+<link href="https://www.freeontools.com/emoji-story-generator" rel="canonical">
+<meta content="Emoji Story Generator - No Signup Needed" property="og:title">
 <meta content="Generate fun emoji stories in one click. No signup, no limits. Just a simple, free way to express stories with emojis!" property="og:description"/>
 <meta content="https://www.freeontools.com" property="og:url"/>
 <meta content="website" property="og:type"/>
@@ -37,16 +37,15 @@
   "logo": "https://www.freeontools.com/images/logo.png"
 }
 </script>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Emoji Story Generator",
-  "operatingSystem": "All",
+  "operatingSystem": "Web Browser",
   "applicationCategory": "WebApplication",
   "offers": {
     "@type": "Offer",
-    "price": "0",
+    "price": 0.0,
     "priceCurrency": "USD"
   },
   "aggregateRating": {
@@ -54,22 +53,19 @@
     "ratingValue": "4.9",
     "reviewCount": "162"
   }
-}
-</script>
-<script type="application/ld+json">
-{
+}</script>
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "AggregateRating",
   "itemReviewed": {
     "@type": "SoftwareApplication",
     "name": "Emoji Story Generator"
   },
-  "ratingValue": "4.9",
-  "ratingCount": "162"
-}
-</script>
-<script type="application/ld+json">
-{
+  "ratingValue": 4.9,
+  "ratingCount": 162,
+  "worstRating": 1
+}</script>
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Review",
   "author": {
@@ -80,14 +76,18 @@
   "reviewBody": "This emoji story generator is hilarious and super fun to use! No signup or ads—just pure creativity and laughs.",
   "reviewRating": {
     "@type": "Rating",
-    "ratingValue": "5"
+    "ratingValue": 5.0,
+    "worstRating": 1
   },
   "itemReviewed": {
     "@type": "SoftwareApplication",
     "name": "Emoji Story Generator"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "User Reviews"
   }
-}
-</script>
+}</script>
 <style>
 /* Reset default styles */
 * {
@@ -378,86 +378,86 @@ button:focus {
     box-sizing: border-box;
 }
 </style>
-</head>
+</meta></link></meta></head>
 <body>
 <div id="header-placeholder"></div>
 <h1>Emoji Story Generator</h1>
 <p>Create a fun, emoji-inspired story by choosing a length or adding your own emojis!</p>
 <div class="container">
-    <div class="emojis" id="emojis"></div>
-    <div class="story-output" id="storyOutput"></div>
-    <select aria-label="Select story length" id="storyLength">
-        <option value="short">Short (3 emojis)</option>
-        <option value="medium">Medium (5 emojis)</option>
-        <option value="long">Long (7 emojis)</option>
-    </select>
-    <input aria-label="Custom emoji input" id="customEmoji" placeholder="Add custom emojis (e.g., 😺🚀)" type="text"/>
-    <input aria-label="Custom story template input" id="customStory" placeholder="Enter your story template (use {0}, {1}, etc. for emojis)" type="text"/>
-    <div class="button-container">
-        <button onclick="generateStory()">Generate Story</button>
-        <button onclick="copyStory()">Copy Story</button>
-        <button onclick="saveFavorite()">Save to Favorites</button>
-    </div>
-    <div class="copied" id="copied">Story copied to clipboard!</div>
-    <div class="favorites">
-        <h3>Your Favorite Stories</h3>
-        <div id="favorites"></div>
-    </div>
+<div class="emojis" id="emojis"></div>
+<div class="story-output" id="storyOutput"></div>
+<select aria-label="Select story length" id="storyLength">
+<option value="short">Short (3 emojis)</option>
+<option value="medium">Medium (5 emojis)</option>
+<option value="long">Long (7 emojis)</option>
+</select>
+<input aria-label="Custom emoji input" id="customEmoji" placeholder="Add custom emojis (e.g., 😺🚀)" type="text"/>
+<input aria-label="Custom story template input" id="customStory" placeholder="Enter your story template (use {0}, {1}, etc. for emojis)" type="text"/>
+<div class="button-container">
+<button onclick="generateStory()">Generate Story</button>
+<button onclick="copyStory()">Copy Story</button>
+<button onclick="saveFavorite()">Save to Favorites</button>
+</div>
+<div class="copied" id="copied">Story copied to clipboard!</div>
+<div class="favorites">
+<h3>Your Favorite Stories</h3>
+<div id="favorites"></div>
+</div>
 </div>
 <div class="content-container">
-    <h2>About the Emoji Story Generator</h2>
-    <p>It’s like Mad Libs met a bunch of emojis and said, “Let’s make this weird.” An Emoji Story Generator takes a word, a theme, or just some vibes, and spits out a story made entirely—or mostly—out of emojis. Some versions might mix in a few words, but the main point? Communicate using little digital faces, animals, food, and weather icons. Seriously.</p>
-    <p>Want to tell the plot of Titanic in emojis? This thing can do it. Trying to describe your Friday night with nothing but tacos, dancing, and a facepalm? Covered.</p>
-    <h3>Try the Emoji Story Generator Now</h3>
-    <p>Got a phrase, mood, or idea in mind? Type it in, and watch the Emoji Story Generator go nuts. It’ll whip up a string of emojis that somehow—magically—make sense. Or at least they make people laugh.</p>
-    <p>Just for fun? Sure. But also? Great for captions, messages, and annoying your friends in the most creative way possible.</p>
-    <h3>Why Even Use an Emoji Story Generator?</h3>
-    <p>Okay, so you’re not curing diseases with this thing. But hear me out—emoji storytelling is kind of an art form. And this tool makes it super easy to:</p>
-    <ul>
-        <li>Turn boring texts into dramatic soap operas</li>
-        <li>Spice up your IG captions or TikTok bios</li>
-        <li>Make your friends guess what movie you're describing</li>
-        <li>Break writer’s block with a dose of weird inspiration</li>
-        <li>Train your brain to think visually, not just verbally</li>
-    </ul>
-    <p>Let’s be honest: emojis are universal. Grandma might not get your memes, but she will understand the sad face + broken heart + boat sinking combo.</p>
-    <h3>Features</h3>
-    <ul>
-        <li>Generates emoji chains based on your input word or phrase</li>
-        <li>Uses smart matching to keep the story vaguely logical</li>
-        <li>Theme options—romance, adventure, comedy, chaos</li>
-        <li>Easy copy-paste output (for texting, posting, or whatever)</li>
-        <li>Random mode if you’re feeling spicy and don’t want to type anything</li>
-        <li>100% free—no account, no strings</li>
-    </ul>
-    <h3>How to Use the Emoji Story Generator</h3>
-    <ol>
-        <li>Head to the Emoji Story Generator</li>
-        <li>Enter a word, sentence, or idea (or leave it blank and get a surprise)</li>
-        <li>Pick a theme if the option’s there</li>
-        <li>Click the magic button</li>
-        <li>Read your emoji masterpiece—and copy it if you dare</li>
-    </ol>
-    <p>Pro tip: Try putting in things like “first date,” “Monday morning,” or “alien invasion.” The results are usually hilarious.</p>
-    <h3>Why Choose This Emoji Story Generator?</h3>
-    <ul>
-        <li>Actually tries to make the emoji story make sense (ish)</li>
-        <li>Fast, clean, no weird ads popping up</li>
-        <li>Works perfectly on mobile—emoji chaos in your pocket</li>
-        <li>Great balance between random and relatable</li>
-        <li>Surprisingly good for content ideas, too</li>
-    </ul>
-    <p>It’s a silly tool. And that’s what makes it awesome.</p>
-    <h3>FAQs About the Emoji Story Generator</h3>
-    <p><strong>Can I choose the emojis it uses?</strong><br/>Not exactly—but you can guide it by choosing a theme or feeding it specific keywords.</p>
-    <p><strong>Does it support multiple languages?</strong><br/>It’s emoji-based, so technically… yeah. It’s kinda universal. But input works best in English.</p>
-    <p><strong>Can I create long stories?</strong><br/>Depends on the version. Some keep it short and punchy, others go full emoji-novel.</p>
-    <p><strong>Is this safe for kids?</strong><br/>Totally. Emojis are family-friendly, though your results depend on your input (and humor).</p>
-    <p><strong>Can I use it for captions or social media posts?</strong><br/>Heck yes. That’s one of the best uses—emoji storytelling for max engagement.</p>
-    <h3>Final Thoughts: Time to Tell a Story… with Emojis</h3>
-    <p>The Emoji Story Generator is one of those little tools that adds a whole lot of fun to your screen. Whether you’re trying to tell your day like it’s a movie, drop the perfect caption, or just kill five minutes in a hilarious way, it’s the digital equivalent of a doodle on your notebook.</p>
-    <p>So go ahead—turn that grocery list into an epic emoji saga. Or describe your dream vacation using only palm trees, cocktails, and airplane icons. You’ve got the emojis. Now tell the story.</p>
-    <p>Wanna level it up with custom length or theme packs? Let me know—I can help tweak it.</p>
+<h2>About the Emoji Story Generator</h2>
+<p>It’s like Mad Libs met a bunch of emojis and said, “Let’s make this weird.” An Emoji Story Generator takes a word, a theme, or just some vibes, and spits out a story made entirely—or mostly—out of emojis. Some versions might mix in a few words, but the main point? Communicate using little digital faces, animals, food, and weather icons. Seriously.</p>
+<p>Want to tell the plot of Titanic in emojis? This thing can do it. Trying to describe your Friday night with nothing but tacos, dancing, and a facepalm? Covered.</p>
+<h3>Try the Emoji Story Generator Now</h3>
+<p>Got a phrase, mood, or idea in mind? Type it in, and watch the Emoji Story Generator go nuts. It’ll whip up a string of emojis that somehow—magically—make sense. Or at least they make people laugh.</p>
+<p>Just for fun? Sure. But also? Great for captions, messages, and annoying your friends in the most creative way possible.</p>
+<h3>Why Even Use an Emoji Story Generator?</h3>
+<p>Okay, so you’re not curing diseases with this thing. But hear me out—emoji storytelling is kind of an art form. And this tool makes it super easy to:</p>
+<ul>
+<li>Turn boring texts into dramatic soap operas</li>
+<li>Spice up your IG captions or TikTok bios</li>
+<li>Make your friends guess what movie you're describing</li>
+<li>Break writer’s block with a dose of weird inspiration</li>
+<li>Train your brain to think visually, not just verbally</li>
+</ul>
+<p>Let’s be honest: emojis are universal. Grandma might not get your memes, but she will understand the sad face + broken heart + boat sinking combo.</p>
+<h3>Features</h3>
+<ul>
+<li>Generates emoji chains based on your input word or phrase</li>
+<li>Uses smart matching to keep the story vaguely logical</li>
+<li>Theme options—romance, adventure, comedy, chaos</li>
+<li>Easy copy-paste output (for texting, posting, or whatever)</li>
+<li>Random mode if you’re feeling spicy and don’t want to type anything</li>
+<li>100% free—no account, no strings</li>
+</ul>
+<h3>How to Use the Emoji Story Generator</h3>
+<ol>
+<li>Head to the Emoji Story Generator</li>
+<li>Enter a word, sentence, or idea (or leave it blank and get a surprise)</li>
+<li>Pick a theme if the option’s there</li>
+<li>Click the magic button</li>
+<li>Read your emoji masterpiece—and copy it if you dare</li>
+</ol>
+<p>Pro tip: Try putting in things like “first date,” “Monday morning,” or “alien invasion.” The results are usually hilarious.</p>
+<h3>Why Choose This Emoji Story Generator?</h3>
+<ul>
+<li>Actually tries to make the emoji story make sense (ish)</li>
+<li>Fast, clean, no weird ads popping up</li>
+<li>Works perfectly on mobile—emoji chaos in your pocket</li>
+<li>Great balance between random and relatable</li>
+<li>Surprisingly good for content ideas, too</li>
+</ul>
+<p>It’s a silly tool. And that’s what makes it awesome.</p>
+<h3>FAQs About the Emoji Story Generator</h3>
+<p><strong>Can I choose the emojis it uses?</strong><br/>Not exactly—but you can guide it by choosing a theme or feeding it specific keywords.</p>
+<p><strong>Does it support multiple languages?</strong><br/>It’s emoji-based, so technically… yeah. It’s kinda universal. But input works best in English.</p>
+<p><strong>Can I create long stories?</strong><br/>Depends on the version. Some keep it short and punchy, others go full emoji-novel.</p>
+<p><strong>Is this safe for kids?</strong><br/>Totally. Emojis are family-friendly, though your results depend on your input (and humor).</p>
+<p><strong>Can I use it for captions or social media posts?</strong><br/>Heck yes. That’s one of the best uses—emoji storytelling for max engagement.</p>
+<h3>Final Thoughts: Time to Tell a Story… with Emojis</h3>
+<p>The Emoji Story Generator is one of those little tools that adds a whole lot of fun to your screen. Whether you’re trying to tell your day like it’s a movie, drop the perfect caption, or just kill five minutes in a hilarious way, it’s the digital equivalent of a doodle on your notebook.</p>
+<p>So go ahead—turn that grocery list into an epic emoji saga. Or describe your dream vacation using only palm trees, cocktails, and airplane icons. You’ve got the emojis. Now tell the story.</p>
+<p>Wanna level it up with custom length or theme packs? Let me know—I can help tweak it.</p>
 </div>
 <script>
 const emojiPool = [
@@ -632,7 +632,7 @@ customStory.addEventListener('keypress', (e) => {
 generateStory();
 </script>
 <div id="footer-placeholder"></div>
-<script src="/js/script.js" defer></script>
-<script src="/js/auth.js" defer></script>
+<script defer="" src="/js/script.js"></script>
+<script defer="" src="/js/auth.js"></script>
 </body>
 </html>
