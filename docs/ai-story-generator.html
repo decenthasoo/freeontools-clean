@@ -37,7 +37,7 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <!-- Organization Schema -->
 <script type="application/ld+json">
-   {
+{
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "freeontools Corporation",
@@ -49,15 +49,15 @@
     "https://www.instagram.com/freeontools"
   ]
 }
-  </script>
-<!-- SoftwareApplication Schema -->
+</script>
+
 <script type="application/ld+json">
-   {
+{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "AI Story Generator",
-  "operatingSystem": "All",
-  "applicationCategory": "Web",
+  "operatingSystem": "Web Browser",
+  "applicationCategory": "WebApplication",
   "url": "https://www.freeontools.com/ai-story-generator",
   "image": "https://www.freeontools.com/images/ai-story-generator.png",
   "description": "Generate creative and unique stories using AI technology. Perfect for content creators and writers who need inspiration or a quick story idea. No login required, no ads.",
@@ -65,46 +65,58 @@
     "@type": "Offer",
     "url": "https://www.freeontools.com/ai-story-generator",
     "priceCurrency": "USD",
-    "price": "0.00",
+    "price": 0,
+    "priceValidUntil": "2030-12-31",
+    "availability": "https://schema.org/InStock",
     "eligibleRegion": {
-      "@type": "Place",
+      "@type": "Country",
       "name": "Worldwide"
     }
   }
 }
-  </script>
-<!-- AggregateRating Schema -->
+</script>
+
 <script type="application/ld+json">
-   {
+{
   "@context": "https://schema.org",
   "@type": "AggregateRating",
-  "ratingValue": "4.90",
-  "bestRating": "5",
-  "ratingCount": "1020"
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "AI Story Generator"
+  },
+  "ratingValue": 4.9,
+  "bestRating": 5,
+  "worstRating": 1,
+  "ratingCount": 1020
 }
-  </script>
-<!-- Review Schema -->
+</script>
+
 <script type="application/ld+json">
-   {
+{
   "@context": "https://schema.org",
   "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "AI Story Generator"
+  },
   "author": {
     "@type": "Person",
     "name": "Oliver Martinez"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "User Reviews"
   },
   "datePublished": "2025-05-12",
   "reviewBody": "I love the AI Story Generator! It gives me amazing story ideas and helps me overcome writer's block. So easy to use and completely free!",
   "reviewRating": {
     "@type": "Rating",
-    "ratingValue": "5",
-    "bestRating": "5"
-  },
-  "itemReviewed": {
-    "@type": "SoftwareApplication",
-    "name": "AI Story Generator"
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1
   }
 }
-  </script>
+</script>
 <style>
         /* Reset default styles */
    * {
