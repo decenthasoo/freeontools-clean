@@ -66,11 +66,15 @@
         }
     }
     </script>
-    <!-- AggregateRating Schema -->
+    <!-- AggregateRating Schema - CORRECTED -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "AggregateRating",
+        "itemReviewed": {
+            "@type": "SoftwareApplication",
+            "name": "Text Expander"
+        },
         "ratingValue": "4.9",
         "bestRating": "5",
         "ratingCount": "820"
